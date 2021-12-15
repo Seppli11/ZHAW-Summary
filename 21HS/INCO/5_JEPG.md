@@ -38,7 +38,7 @@ Man benutzt bei JPG die Luminance, da das menschliche Auge auf Helligkeit empfin
 
 Im Folgenden Bild sieht man die Beziehung von Cb und Cr:
 
-![](/res/2021-11-01-10-37-21-image.png)
+![](res/2021-11-01-10-37-21-image.png)
 
 Um die Luminaz von einem Pixel zu berechnen, kann man eine gewichtetes Summe der RGB Pixel errechnen: $L=0.299\cdot R + 0.587 \cdot G + 0.115\cdot B$. Die Faktoren kommen davon, dass das menschliche Auge die Farben Blau, Gelb und Rot verschieden wahrnehmen.
 
@@ -52,7 +52,7 @@ $\begin{bmatrix} Y \ C_B \ C_R \end{bmatrix} = \begin{bmatrix}0.299 & 0.587 & 0.
 
 Man gibt mit dem folgenden Muster "Blockbreite:Reduktion Breite:Redutktion Höhe"
 
-![](/res/2021-11-01-11-05-11-image.png)
+![](res/2021-11-01-11-05-11-image.png)
 
 Kompressionsrate: $R=$
 
@@ -64,11 +64,11 @@ Beim Quantisieren wird das Resultat der DCT gewichtet. Dafür nimmt man eine wei
 
 <img title="" src="file:///home/sebi/Documents/zhaw/HS21/res/2021-11-08-10-20-26-image.png" alt="" width="352">
 
-![](/res/2021-11-08-10-22-26-image.png)
+![](res/2021-11-08-10-22-26-image.png)
 
 ## Run-Lenght Encoding
 
-![](/res/2021-11-08-13-59-37-image.png)
+![](res/2021-11-08-13-59-37-image.png)
 
 Es gibt folgende Tokens:
 
@@ -104,11 +104,11 @@ MPEG schreibt nicht vor, wie man nach diesen Blöcke sucht. Meistens schränkt m
 
 * Bidirectional Frame (B-Frame) - ein vorheriges Frame, wie auch das nächste Frame kann als Referenz benutzt werden
 
-![](/res/2021-11-08-11-24-19-image.png)
+![](res/2021-11-08-11-24-19-image.png)
 
 Da man bei den B-Frames auch voraussehen kann, ist die Reihenfolge der Frames wie man es schaut, nicht dieselbe, wie man es sendet.
 
-![](/res/2021-11-08-11-25-54-image.png)
+![](res/2021-11-08-11-25-54-image.png)
 
 ### Geschichte
 

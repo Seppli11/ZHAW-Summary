@@ -10,11 +10,11 @@ Wenn man $2\cdot f_{max}$ übersteigt, beginnt sich die Frequenz zu spiegeln. Di
 
 Das Quantisierungsrauschen entsteht bei Rundungsfehler auf die nächste Zahl, welche abgespeichert weren kann.
 
-![](/res/2021-11-15-10-27-40-image.png)
+![](res/2021-11-15-10-27-40-image.png)
 
 Das Rauschen ist die Differenz zwischen dem Analogensignal und dem digitalen Signal. Das Rauschen wird durch die grüne "Kurve" dargestellt.
 
-![](/res/2021-11-15-10-31-28-image.png)
+![](res/2021-11-15-10-31-28-image.png)
 
 **Um jede erhöhung um 1 Bit nimmt das Rauschen um 6dB ab**
 
@@ -51,7 +51,7 @@ PCM kann auf mehrere Arten abgespeichert werden
 * Diffrerential-PCM (DPCM): Es werden nur die Differenzen gespeichert 
 
 * Adaptive Differential-PCM (ADPCM): Es werden die Differenzen der Differenzen Gespeichert. Der Sinn dahinter: Bei Audio-Files ändert sich die Differenz nicht fest, also ist es effizenter nur die Differenzen der Differenzen zu speichern
-  ![](/res/2021-11-15-10-43-48-image.png)
+  ![](res/2021-11-15-10-43-48-image.png)
 
 ## Linear Prediction Coder (LPC)
 
@@ -61,7 +61,7 @@ Das Äquivelent zu der DCT in der Audio Welt. Wird heutzutage nicht mehr verwend
 
 Hier ist das Header Format von einem Wave-Files, welches PCM Daten enthält. Werte im Wave-Format sind im Little-Endian Format abgespeichert (Tieferer Wert kommt zu erst)
 
-![](/res/2021-11-15-11-01-01-image.png)
+![](res/2021-11-15-11-01-01-image.png)
 
 ## FLAC (Free Lossless Audio Codec)
 
@@ -74,27 +74,27 @@ Hier ist das Header Format von einem Wave-Files, welches PCM Daten enthält. Wer
 Es werden zwei Fakten des Menschlichen Gehöhres ausgenutzt:
 
 1. die menschliche Höhrschwelle
-   ![](/res/2021-11-15-11-12-35-image.png)
+   ![](res/2021-11-15-11-12-35-image.png)
    Die Höhrschwelle ist bei jedem Mensch verschieden und ändert isch auch über das Leben einer Person.
-   ![](/res/2021-11-15-11-14-13-image.png)
+   ![](res/2021-11-15-11-14-13-image.png)
 
 2. Spektrale Maskierung
    Wenn ein Lauterton abgespielt wird, werden leisere Töne unhöhrbar. Kurz bevor einem Lautenton höhrt man bereits leisse Töne nicht mehr. Dasselbe gillt auch für danach.
-   ![](/res/2021-11-15-11-15-28-image.png)
+   ![](res/2021-11-15-11-15-28-image.png)
 
 Diese zwei Fakten müssen zusammen betrachtet werden. In der Unteren Graphik sieht man, wie die beiden Effekte kombiniert wurden.
 
-![](/res/2021-11-15-11-16-58-image.png)
+![](res/2021-11-15-11-16-58-image.png)
 
 Man unterteilt das Audiosignal in mehrere Frequenzbänder. Jedes Frequenband enkodiert man mit genau so viel Bits, so dass das Quantisierungsrauschen unter der Höhrschwelle bzw. Maskierungsschwelle bleibt.  
 
-![](/res/2021-11-15-11-26-21-image.png)
+![](res/2021-11-15-11-26-21-image.png)
 
 ### MP3
 
 * Frequenzbänder in MP3: 512 (in ACC: 2048 Frequenbänder)
 
-![](/res/2021-11-15-11-28-30-image.png)
+![](res/2021-11-15-11-28-30-image.png)
 
 * Frequenz-Transformation - Adiosignal in mehrere Frequenzbänder aufteilen
 

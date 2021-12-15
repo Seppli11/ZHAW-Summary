@@ -114,7 +114,7 @@ oder Verkürzt geschrieben:
 
 #### Beispiel 2
 
-![](/res/2021-11-30-11-18-16-image.png)
+![](res/2021-11-30-11-18-16-image.png)
 
 ### Teilerfremd
 
@@ -160,13 +160,13 @@ Beispiel:
 
 Man geht jede (noch nicht gestrichene) Zahl und streicht die Vielfachen der Zahl. Dies wiederholt man so lange, bis die Quadradtzahl der aktuellen Zahl ist ausserhalb dem Suchbereich.
 
-![](/res/2021-11-30-13-14-54-image.png)
+![](res/2021-11-30-13-14-54-image.png)
 
 ### $\pi$ Funktion
 
 Die Funktion $\pi(n)$ gibt zurück, wie viele Primzahlen es gibt, welche kleiner als n sind.
 
-![](/res/2021-11-30-13-52-56-image.png)
+![](res/2021-11-30-13-52-56-image.png)
 
 ## Modulare Arithmetik
 
@@ -313,7 +313,7 @@ Hier sind die Schritte für den Algorithmus:
 >
 > 2. Als nächstes werden die multiplikative Inverse $N_k$ berechnet
 >    $$
->          
+>             
 >    $$
 >    
 

@@ -189,11 +189,11 @@ Man kann sie folgendermassen Darstellen:
 4. Graph im Koordinatensystem
 
 5. Bipartifer Graph
-   ![](/res/2021-10-26-11-06-48-image.png
+   ![](res/2021-10-26-11-06-48-image.png)
 
 6. Gerichter Graphen
    Dieser funktioniert nur mit heterogenen Relationen. Hier ist ein Beispiel:
-   ![](/res/2021-10-26-11-08-52-image.png
+   ![](res/2021-10-26-11-08-52-image.png)
 
 ### Komposition
 
@@ -201,7 +201,7 @@ Mit $S\circ R$ wird R mit S gejoint (**Achtung mit der Reihenfolge!!**)
 
 $S\circ R = {(x, z) \in A \times C | \exists y \in B (xRy \wedge y \in Z)}$
 
-![2021-10-26-11-20-32-image.png](/res/2021-10-26-11-20-32-image.png
+![2021-10-26-11-20-32-image.png](res/2021-10-26-11-20-32-image.png)
 
 ### Inverse Relationen
 
@@ -215,7 +215,7 @@ Der folgende gerichtete Graph zeigt die Teilbarkeit von Zahlen in der Menge $\{1
 
 Die Relation wäre folgendes: {(1, 1), (1, 2), (1, 3), (1,4), (2, 2), (2, 3), (2,4), (3, 3), (3, 4), (4, 4)}
 
-![](/res/2021-11-02-10-19-04-image.png)
+![](res/2021-11-02-10-19-04-image.png)
 
 ### Relationen und Funktionen
 
@@ -245,29 +245,29 @@ Eine Relation ist homogen, wenn beide Mengen gleich sind. Mathematischer ausgedr
 
 Es gilt $\forall x \in X (xRx)$ . In Deutsch heisst dies, dass jedes Element auf sich selbst zeigt. Es darf auch Verbindungen gehen, welche nicht auf sich selbst zeigen, aber jedes Element brauch sicher eine Verbindung mit sich selbst.
 
-![](/res/2021-11-02-12-52-59-image.png)
+![](res/2021-11-02-12-52-59-image.png)
 
 #### Symmetrisch
 
 $\forall x,y \in X (xRy \Rightarrow yRx)$ oder in Deutsch, wenn x zu y zeigt, muss auch y zu x zeigen.
 
-![](/res/2021-11-02-12-54-19-image.png)
+![](res/2021-11-02-12-54-19-image.png)
 
 ### Antisymmetrisch
 
 $\forall x,y \in X (xRy \wedge yRx \Rightarrow x=y)$ oder in Deutsch, es darf nur Pfeile geben, welche nur in eine Richtung oder auf sich selbst zeigen.
 
-![](/res/2021-11-02-12-56-35-image.png)
+![](res/2021-11-02-12-56-35-image.png)
 
 #### Transitiv
 
 $\forall x,y,z \in X (xRy \wedge yRz \Rightarrow xRz)$ oder in Deutsch, wenn wenn x zu y und y zu z in Verbindung steht, dann muss auch x zu z in Verbindung stehen. 
 
-![](/res/2021-11-02-12-58-19-image.png)
+![](res/2021-11-02-12-58-19-image.png)
 
 Transitiv ist eine Relation auch, wenn es nur ein Element gibt, oder auch in speziellen Fälle bei zwei Elemente. Folgende Relation wäre transitiv.
 
-![](/res/2021-11-02-13-01-43-image.png)
+![](res/2021-11-02-13-01-43-image.png)
 
 ### Heterogene Relation
 
@@ -289,7 +289,7 @@ Das erste diagonale Argument besagt, dass die Menge $\mathbb N \times \mathbb N$
 
 Dies kann erreicht wrden, in dem man die Tupels als 2D-Array darstellt und diagonal zählt
 
-<img src="file:///home/sebi/Documents/zhaw/HS21/res/2021-11-06-15-16-13-image.png" title="" alt="" width="388">
+![](res/2021-11-06-15-16-13-image.png)
 
 Aus dem kann man auch schliessen, dass Vereinigungen von abzählbaren Mengen, abzählbar sind.
 
@@ -340,7 +340,7 @@ Nun gibt es noch Begriffe, um Ordnungsrelationen zu benennen:
 | totale-/ lineare Ordnung | Relation, welche eine Halbordnung ist und keine R-unvergleichbaren Elemente besitzt (jedes Element muss mit Jedem indirekt verbunden sein) |
 | Wohlordnung              | Relation von M, welche eine totale Ordnung ist, bei welcher alle Teilmengen (ausser $\empty$), mindestens ein R-minimal Element enthalten  |
 
-![](/res/2021-11-09-11-10-08-image.png)
+![](res/2021-11-09-11-10-08-image.png)
 
 Es gibt **noch** mehr Begriffe!!!
 
@@ -366,4 +366,4 @@ $G(V, E \setminus \Delta_V)$
 
 Dabei steht $\Delta_V$ für alle zyklischen Verbindungen. Im unteren Beispiel sieht man einen Graph. Mit den roten Pfeilen wäre es keinen DAG, da diese zyklisch sind.
 
-![](/res/2021-11-16-10-26-20-image.png)
+![](res/2021-11-16-10-26-20-image.png)
