@@ -48,4 +48,4 @@ Der Wiederstand eines Drahtes kann mit der Formel $R=\rho \frac L A$. Grundsätz
 
 Da man im Computer nicht genau 0V oder 5V, definiert man Spannungsbänder, in welcher eine Schaltung einen Input oder Output als 1 oder 0 erkennt.
 
-![](/home/sebi/Documents/zhaw/Current%20Semester/GED/notizen/res/2021-10-27-08-57-35-image.png)
+![](/res/2021-10-27-08-57-35-image.png

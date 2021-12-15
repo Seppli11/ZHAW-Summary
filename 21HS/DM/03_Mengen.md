@@ -86,7 +86,7 @@ $X \cap Y$
 
 In der Schnittmenge von zwei Meingen sind alle Elemente, welche in beiden Mengen enthalten sind.
 
-![](/home/sebi/Documents/zhaw/Current%20Semester/res/2021-11-06-14-05-00-image.png)
+![](/res/2021-11-06-14-05-00-image.png
 
 ### Vereinigung
 
@@ -189,11 +189,11 @@ Man kann sie folgendermassen Darstellen:
 4. Graph im Koordinatensystem
 
 5. Bipartifer Graph
-   ![](/home/sebi/Documents/zhaw/Current%20Semester/DM/notizen/res/2021-10-26-11-06-48-image.png)
+   ![](/res/2021-10-26-11-06-48-image.png
 
 6. Gerichter Graphen
    Dieser funktioniert nur mit heterogenen Relationen. Hier ist ein Beispiel:
-   ![](/home/sebi/Documents/zhaw/Current%20Semester/DM/notizen/res/2021-10-26-11-08-52-image.png)
+   ![](/res/2021-10-26-11-08-52-image.png
 
 ### Komposition
 
@@ -201,7 +201,7 @@ Mit $S\circ R$ wird R mit S gejoint (**Achtung mit der Reihenfolge!!**)
 
 $S\circ R = {(x, z) \in A \times C | \exists y \in B (xRy \wedge y \in Z)}$
 
-![2021-10-26-11-20-32-image.png](/home/sebi/Documents/zhaw/Current%20Semester/DM/notizen/res/2021-10-26-11-20-32-image.png)
+![2021-10-26-11-20-32-image.png](/res/2021-10-26-11-20-32-image.png
 
 ### Inverse Relationen
 

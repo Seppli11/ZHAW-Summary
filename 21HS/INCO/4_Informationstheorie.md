@@ -107,7 +107,7 @@ Falls ein Match gefunden wurde, wird ein Token geschrieben. In diesem ist der Of
 
 Falls kein Match gefunden wurde, wird folgender Token geschrieben (0, 0, Zeichen). Dies ist nötig, da zu Beginn des Algorithmus noch nichts im Such-Buffer ist.
 
-![](/home/sebi/Documents/zhaw/Current%20Semester/INCO/notizen/res/2021-10-25-10-31-37-image.png)
+![](/res/2021-10-25-10-31-37-image.png
 
 Um dies zu dekodieren, wird dies Rückwärts durch gearbeitet
 
