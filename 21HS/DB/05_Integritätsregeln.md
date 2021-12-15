@@ -1,6 +1,6 @@
 # Integritätsregeln
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-12-06-08-10-27-image.png)
+![](/res/2021-12-06-08-10-27-image.png)
 
 Wichtig anzumerken, nur weill die Datenbank konsistenz ist, heisst nicht, dass die Daten darin korrekt sind.
 

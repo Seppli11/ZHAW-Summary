@@ -4,7 +4,7 @@ Man kann nicht **garantieren**, dass ein Kanal eine Übertragung fehlerlos über
 
 ## Binären Kanal
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-22-10-21-25-image.png)
+![](/res/2021-11-22-10-21-25-image.png)
 
 $\varepsilon$ (Epsilon) ist die Wahrscheinlichkeit, wie oft ein Fehlerauftritt (Bit Error Ratio = BER)
 
@@ -14,11 +14,11 @@ Ein symetrischen kanal hat die selben $\varepsilon$ für beide wege. Ein Asymetr
 
 In dem folgenden Bild sieht man ein symmetrischen Kanal
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-22-10-25-50-image.png) 
+![](/res/2021-11-22-10-25-50-image.png) 
 
 $P(y_m|x_n)$ steht für die Wahrscheinlichkeit, dass $x_n$ zu $y_m$ wird.
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-22-10-52-52-image.png)
+![](/res/2021-11-22-10-52-52-image.png)
 
 Im obigen Bild sieht man nun, wie die Formeln für die Wahrscheinlichkeit für das $y_0$ eintritt, bzw. dass $y_1$ eintritt. Die Summe von $P(y_1)$ und $P(y_0)$ muss 1 ergeben.
 
@@ -36,7 +36,7 @@ $C_{BSC}(\varepsilon)=1-H(\varepsilon)=1-(\varepsilon \cdot log_2 \frac 1 \varep
 
 $C_{BSC}$ hat die Masseinheit bits/bits (bits pro bits).
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-22-14-27-03-image.png)
+![](/res/2021-11-22-14-27-03-image.png)
 
 ### Mathe
 
@@ -64,7 +64,7 @@ Einige Taschenrechner haben eine Taste *nCr*, welche dies ausrechnen kann (der C
 
 ### Framegrössen
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-22-10-31-51-image.png)
+![](/res/2021-11-22-10-31-51-image.png)
 
 Im obigen Bild sieht man die Wahrscheinlichkeit, dass ein Frame ankommt für eine gewisse Frame-Grösse.
 
@@ -77,7 +77,7 @@ In dieser Abbildung sieht man, dass grosse Frames erst wirklich Sinn ergeben, we
 Es wird eine gewisse Redundanz hinzugefügt (z.B. CRC), welche es erlauben, einen Fehler zu erkennen und die Daten nochmals anzufordern. 
 
 * Der Empfänger schickt eine Quittung zurück. Wenn keine Quittung erhalten wurde, wird das Packet nochmals gesendet.
-  ![](/home/sebi/Documents/zhaw/HS21/res/2021-11-22-10-14-18-image.png)
+  ![](/res/2021-11-22-10-14-18-image.png)
 
 * Nachteile:
   
@@ -95,13 +95,13 @@ Die Hamming-Distanz beschreibt, wie viel Bits sich zwischen zwei Codewörter än
 
 Die Codwörter können auch auf einem Würfel dargestellt werden in dem die Codewörter in folgendes Koordinatensystem eingetragen werden:
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-22-14-08-07-image.png)
+![](/res/2021-11-22-14-08-07-image.png)
 
 Wenn alle Codewörter  (im Beispiel unten ein 3-Zeichen langen Block-Code) in einem solchen Koordiantesystem eingetragen werden, kommt einen Würfel oder ähliches heraus.
 
 Pro Zahl braucht man eine Dimension.
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-22-14-06-58-image.png)
+![](/res/2021-11-22-14-06-58-image.png)
 
 Die minimale Hamming-Distanz ist die kleinste Distanz zwischen zwei korrekten Code-Words.
 
@@ -115,7 +115,7 @@ Systematische Blockcodes sind Blockcodes, bei welcher die Fehlerschutzbits zu Be
 
 In einem Systematischer Block-Code sind die Informationsbits klar von den Fehlerschutz-Bits getrennt. Als entweder kommen zuerst die informations-Bits und dann die Fehlerschutz-Bits oder umgekehrt.
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-22-14-02-12-image.png)
+![](/res/2021-11-22-14-02-12-image.png)
 
 ### Linearer Block-Code
 
@@ -131,7 +131,7 @@ Ein zyklischer Block-Code kann man um eins Rotieren und bekommt wieder ein valid
 
 Als Beispiel. Aus "110"  wird "011", dann "101" und dann wieder "110".
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-22-14-02-36-image.png)
+![](/res/2021-11-22-14-02-36-image.png)
 
 ### Perfekter Block-Code
 
@@ -141,7 +141,7 @@ Ein Perfekter Blockcode hat die selbe Hamming-Distanz zwischen allen Codwörtern
 
 ### Parity
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-29-10-13-09-image.png)
+![](/res/2021-11-29-10-13-09-image.png)
 
 Für ein Datenblock gibt es ein Parity-Bit.
 
@@ -155,7 +155,7 @@ Mit dieser Methode kann 1-Bit Fehler erkennt wrden.
 
 ### Quer-Pariy
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-29-10-18-35-image.png)
+![](/res/2021-11-29-10-18-35-image.png)
 
 Es wird ein Parity-Bit horizontal gebildet und ein Parity-Bit vertikal. Für einen Block gibt es nun eine Linie für die horizontale gebildete Parity-Bits und eine Line für die vertikal gebildete Parity-Bits. Diese zwei Parity-Bit-Linien werden nun in ein Gesamt-Parity-Bit gerechnet.
 
@@ -177,7 +177,7 @@ Die Prüfsumme wird über ein Frame gebildet mit der Wortbreite von 16 Bis.
 
 ## 1-Bit Arithmetik
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-29-10-30-00-image.png)
+![](/res/2021-11-29-10-30-00-image.png)
 
 Wichtig ist, dass es keine 2 geben kann (1+1=0). Der Übertrag wird vergessen.
 
@@ -207,7 +207,7 @@ Ebenfalls wichtig ist, dass wenn man durch eine Zahl teilt, ist der Rest höchst
 
 ### Forward Error Correction
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-12-06-10-10-49-image.png)
+![](/res/2021-12-06-10-10-49-image.png)
 
 Wenn man eine Hammingdistanz von 3 hat, kann man ein Bit korigieren. Dabei wird angenommen, dass ein Bit falsch ist und korrigiert zum nächsten validen Codewort. **Dies kann aber auch falsch sein!!**
 
@@ -215,8 +215,8 @@ Wie man oben bereits gesehen hat, nimmt man das Codewort, welches am nächsten i
 
 Dabei kann man $\left \lfloor*{d_{mint}/2}\right \rfloor$ Fehler korrigieren.
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-12-06-10-13-57-image.png)
+![](/res/2021-12-06-10-13-57-image.png)
 
 ## Faltungscode
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-12-13-10-14-17-image.png)
+![](/res/2021-12-13-10-14-17-image.png)

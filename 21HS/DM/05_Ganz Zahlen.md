@@ -4,10 +4,10 @@
 
 ## Begriffe
 
-| Begriff           | Erklärung                                                    |
-| ----------------- | ------------------------------------------------------------ |
+| Begriff           | Erklärung                                                                        |
+| ----------------- | -------------------------------------------------------------------------------- |
 | Neutrales Element | Das neutrale Element einer Operation, gibt wieder das eigentliche Element zurück |
-| Absorbtion        | Das Element, welches bei jedem anderen Element 0 zurück gibt. |
+| Absorbtion        | Das Element, welches bei jedem anderen Element 0 zurück gibt.                    |
 
 ### Teilbarkeit
 
@@ -114,7 +114,7 @@ oder Verkürzt geschrieben:
 
 #### Beispiel 2
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-30-11-18-16-image.png)
+![](/res/2021-11-30-11-18-16-image.png)
 
 ### Teilerfremd
 
@@ -160,13 +160,13 @@ Beispiel:
 
 Man geht jede (noch nicht gestrichene) Zahl und streicht die Vielfachen der Zahl. Dies wiederholt man so lange, bis die Quadradtzahl der aktuellen Zahl ist ausserhalb dem Suchbereich.
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-30-13-14-54-image.png)
+![](/res/2021-11-30-13-14-54-image.png)
 
 ### $\pi$ Funktion
 
 Die Funktion $\pi(n)$ gibt zurück, wie viele Primzahlen es gibt, welche kleiner als n sind.
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-11-30-13-52-56-image.png)
+![](/res/2021-11-30-13-52-56-image.png)
 
 ## Modulare Arithmetik
 
@@ -192,11 +192,11 @@ nützlich sein kann: $[38]_9+[22]_9=[2]_9+[4]_9=[6]_9$
 
 #### Notation für Restklassen
 
-| Formel                    | Erklärung                                                    |
-| ------------------------- | ------------------------------------------------------------ |
-| $\Z/n=\{[z]_n\|z\in \Z\}$ | Die Menge aller Restklasse                                   |
+| Formel                    | Erklärung                                                                                                                                                                                                      |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| $\Z/n=\{[z]_n\|z\in \Z\}$ | Die Menge aller Restklasse                                                                                                                                                                                     |
 | $\Z^*_{/n}$               | Das Primes Restklassenssytem, welches nur die Restklassen enthält, welche zu n teilerfremd sind. Alle Restklassen in diesem System können multipliziert werden (Siehe [Prime Restklassen](#prime-restklassen)) |
-| $[z]_n=\overline{z}$      | Die Restklasse, bzw. Äquivalenzklasse mit dem Teiler n und dem Vertreter $z$ |
+| $[z]_n=\overline{z}$      | Die Restklasse, bzw. Äquivalenzklasse mit dem Teiler n und dem Vertreter $z$                                                                                                                                   |
 
 ## Restklassen-Rechnen
 

@@ -14,7 +14,7 @@ Die Energie einer Strahlung kann mit $E=h\nu$ errechnet werden. $h$ ist dabei di
 
 
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-12-04-14-19-08-image.png)
+![](/res/2021-12-04-14-19-08-image.png)
 
 Der Absorptionskoeffizent beschreibt, wie viel der Frequenzen ein Körper absorbiert. `1` heisst, dass alles absorbiert wird, `0`, dass nichts absorbiert wird. 
 
@@ -22,7 +22,7 @@ Der Gegenpol, der Reflexionskoeffizent, beschreibt, wie viel der Frequenzen refl
 
 Oft sind diese Koeffizenten abhähngig von der Frequenz (also $\alpha(\nu)$ und $\rho(\nu)$). Ein blaues T-Shirt würde die "blauen Frequenzen" reflektieren und die anderen absorbieren.
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-12-04-16-32-12-image.png)
+![](/res/2021-12-04-16-32-12-image.png)
 
 Bei einem **schwarzen Strahler** kann bewiessen werden, dass es keinen Unterschied gibt, ob die Strahlung vom Material 1 ins Material 2 oder umgekehrt geht.
 
@@ -47,7 +47,7 @@ Mit $\lambda_{max}=\frac b T$ kann man die Temperatur **in Kelvin** zu der maxim
 
 Mit dieser Formel kann man auch die Lichtfarbe, welche in Kelvin angegeben wird, erklären.
 
-![](/home/sebi/Documents/zhaw/HS21/res/2021-12-04-16-04-19-image.png)
+![](/res/2021-12-04-16-04-19-image.png)
 
 ## Stefan-Boltzmann Gesetzt (Gesammtleistung)
 
