@@ -1,0 +1,1 @@
+{"rule":"SWISS_GERMAN_SPELLER_RULE","sentence":"^\\QDas Summenzeichen ist eine Art For-Loop in Mathe.\\E$"}

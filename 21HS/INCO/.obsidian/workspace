@@ -1,0 +1,93 @@
+{
+  "main": {
+    "id": "6cb831d78ad523c2",
+    "type": "split",
+    "children": [
+      {
+        "id": "779b13f30d080773",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "4_Informationstheorie.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3451f698782707c6",
+    "type": "split",
+    "children": [
+      {
+        "id": "9e560834ad549f69",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fa51fc6614e57455",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "c4135d1b3162d8bb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7790fcf2b5cbe498",
+    "type": "split",
+    "children": [
+      {
+        "id": "09d1c69435d18dce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2033264f93195553",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "4_Informationstheorie.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "779b13f30d080773",
+  "lastOpenFiles": [
+    "4_Informationstheorie.md"
+  ]
+}
