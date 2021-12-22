@@ -1,0 +1,5 @@
+# Patterns
+
+## Strategy Pattern
+
+​	

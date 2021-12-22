@@ -313,7 +313,7 @@ Hier sind die Schritte für den Algorithmus:
 >
 > 2. Als nächstes werden die multiplikative Inverse $N_k$ berechnet
 >    $$
->             
+>                
 >    $$
 >    
 
@@ -335,6 +335,8 @@ $$
    x & \equiv 2 \cdot 7 \cdot 1 + 5 \cdot 3 \cdot 5 \mod (3\cdot 7)\\
    & \equiv (14 + 75)\equiv 89 \equiv 5 \mod 21
    $$
+   
+3. 
 
 $$
 x\equiv2 \mod3 & a_1=2 &m_1=3\\
@@ -360,11 +362,14 @@ $$
    \equiv 233 \mod105 \equiv 23 \mod 105\\
    \mathbb L=[23]_105
    $$
+   
+   
+4. 
 
 ### Satz von Euler
 
 $$
-   a^e ... \mod n\\
+a^e ... \mod n\\
    3^{160}\equiv_{10}(3^2)^{80}\equiv_{10}9^{80}\equiv{10}(-1)^{80}\equiv_{10}1
 $$
 

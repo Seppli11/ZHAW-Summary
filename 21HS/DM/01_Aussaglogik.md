@@ -4,7 +4,7 @@
 
 - Sprachliche Sätze sind nicht eindeutig!
 
-T ($\top$) = Tautologie = immer wahr<br>
+T ($\top$) = Tautologie = immer wahr
 W ($\bot$)= Wiederspruch = immer falsch
 
 # Was ist eine Aussage
@@ -76,7 +76,7 @@ Beispiel:
 
 ## Disjunktion (oder)
 
-\wee -> $\vee$
+\vee -> $\vee$
 
 Beispiel:
 
@@ -133,7 +133,7 @@ Bsp:
 
 ## Reihenfolge
 
-Reihenfolge der Bilding $\neg$, $\wedge$, $\vee$, $\Rightarrow$, $\Leftrightarrow$
+Reihenfolge der Bildung $\neg$, $\wedge$, $\vee$, $\Rightarrow$, $\Leftrightarrow$
 
 Bsp:
 

@@ -382,6 +382,10 @@ Ein Index hat einige Vorteile, aber auch Nachteille:
 
 ## Transaktionen
 
+Im folgenden Bild sind die verschiedenen Statis einer Transakti
+
+![image-20211220090739312](res/image-20211220090739312.png)
+
 ### Lost-Update
 
 * Es darf nicht gleizeitig aus zwei Transaktionen geschrieben werden. Dies verhindert ein Lost-Update
