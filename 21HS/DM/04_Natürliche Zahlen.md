@@ -1,9 +1,9 @@
 # Natürliche Zahlen
 
+[TOC]
+
 - Jede natürliche Zahl plus 1 ergibt die nächste natürliche Zahl
-
 - Die Zahl 0 hat als einzige natürliche Zahl keinen Vorgänger
-
 - Jede natürliche Zahl ist Nachfolger von höchstens einer natürlichen Zahl
 
 ## Volständige Induktion

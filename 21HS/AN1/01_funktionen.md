@@ -1,6 +1,6 @@
 # Summenzeichen
 
-\sum\limits_{laufvariable}^{limit} expr -> $\sum\limits_{k=1}^{5} 2\cdot k$
+$\sum\limits_{k=1}^{5} 2\cdot k$
 
 Das Summenzeichen ist eine Art For-Loop in Mathe.
 

@@ -2,6 +2,8 @@
 
 > Menge: Zusammenfassung wohlunterscheidbarer unsortierten Objekte (keine Duplikate sind erlaubt)
 
+[TOC]
+
 ## Darstellung
 
 * Explizite Darstellung (Aufzählung)
@@ -367,3 +369,6 @@ $G(V, E \setminus \Delta_V)$
 Dabei steht $\Delta_V$ für alle zyklischen Verbindungen. Im unteren Beispiel sieht man einen Graph. Mit den roten Pfeilen wäre es keinen DAG, da diese zyklisch sind.
 
 ![](res/2021-11-16-10-26-20-image.png)
+
+##### topologische Sortierung
+

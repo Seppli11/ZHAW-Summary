@@ -139,7 +139,7 @@ x_k=x_{k-2}-q_k\cdot x_{k-1}\\
 y_0=0\\
 y_1=1\\
 y_k=y_{k-2}-q_k\cdot y_{k-1}
-$$
+$$ {title: "test"}
 
 Beispiel:
 ![image-20211214102138249](res/image-20211214102138249.png)
@@ -270,9 +270,7 @@ Prime Restklassen sind die Restklassen, welche ein Inverseselement für die Mult
 Um die Mächtigkeit einer Prime Restklasse zu bestimmen kann folgenden getan werden:
 
 1. $\varphi(n\cdot m)=\varphi(n)\cdot \varphi(m)$, wobei gillt $ggT(n, m)=1$
-
 2. $\varphi(p)=p-1$, wobei gillt $p\in \mathbb P$
-
 3. $\varphi(p^k)=p^k-p^{k-1}$, wobei gillt $k\in \N_{\gt0}$
 
 > Beispiel:
@@ -312,10 +310,7 @@ Hier sind die Schritte für den Algorithmus:
 >    $$
 >
 > 2. Als nächstes werden die multiplikative Inverse $N_k$ berechnet
->    $$
->                
->    $$
->    
+> 
 
 Beispiel:
 $$
@@ -362,9 +357,6 @@ $$
    \equiv 233 \mod105 \equiv 23 \mod 105\\
    \mathbb L=[23]_105
    $$
-   
-   
-4. 
 
 ### Satz von Euler
 
