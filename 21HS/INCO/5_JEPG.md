@@ -46,7 +46,7 @@ $\begin{bmatrix} Y \\ C_B \\ C_R \end{bmatrix} = \begin{bmatrix}0.299 & 0.587 & 
 
 Umgekehrt kann man folgende Formel benutzen:
 
-$\begin{bmatrix} Y \ C_B \ C_R \end{bmatrix} = \begin{bmatrix}0.299 & 0.587 & 0.114\\ -0.1687 & -0.3313 & 0.5\\ 0.5 & -0.4187 & -0.0813\end{bmatrix} \cdot \begin{bmatrix} R\\G\\B \end{bmatrix} + \begin{bmatrix} 0 \\ 128 \\ 128 \end{bmatrix}$
+$\begin{bmatrix} R \\ G \\ B \end{bmatrix} = \begin{bmatrix}1 & 0 & 1.402\\ 1 & -0.34414 & -0.71414\\ 1 & 1.772 & 0\end{bmatrix} \cdot \begin{bmatrix} Y\\C_B - 128\\C_R - 128\end{bmatrix}$
 
 ## Downsampling
 
@@ -54,9 +54,35 @@ Man gibt mit dem folgenden Muster "Blockbreite:Reduktion Breite:Redutktion Höhe
 
 ![](res/2021-11-01-11-05-11-image.png)
 
-Kompressionsrate: $R=$
+## Diskrete Cosinus Transformation (DCT)
 
-## Diskrete Cosinus Transformation
+Die Idee von einer DCT ist, dass anstatt in einem Pixel zu speichern, wie Schwarz dieser Pixel ist, speichert man, wie stark eine Frequenz in einem 8x8-Block vorkommt. Diese Operation ist komplet reversieble und es werden keine Informationen verloren.
+
+Im unteren Beispiel sieht man eine 1D-DCT. In diesem Fall ist der Pixel-Block 8x1 gross. Im ersten Pixel wird gespeichert, wie hell das Bild ist. Dieser Wert wird auch DC-Wert genannt von Direct Current, da die dargestelle "Frequenz" 0Hz hat, wie man im unteren Beispiel sieht.
+
+Der zweite Pixel stellt danach dar, wie stark die Frequenz mit 1Hz in diesem 8x1-Block verterten ist. Der dritte Pixel, wie stark 2Hz vertretten sind und so weiter.
+
+![image-20211231112621026](res/image-20211231112621026.png)
+
+Dieses Prinzip, wie es in 1D funktioniert, kann auch für ein 2D Bild angewendet werden. Hierbei stellen die Pixel dar, wie stark eine horizontale und vertikale Frequenz vertreten sind. Im Beispiel unten ist der Pixel 1/1 (der erste Pixel) wieder der DC, mit den Frequenzen 0Hz/0Hz. Der Pixel 2/2 hat die Frequenz 1Hz/1Hz, der Pixel 4/3 hat die Frequenzen 3Hz/2Hz. Im unteren Bild sieht man die Muster, welche erkannt werden.
+
+![image-20211231112630746](res/image-20211231112630746.png)
+
+Für diese Konvertierung gilt die folgende Formel:
+$$
+F_{vu}=\frac 1 4 C_u C_v \sum^7_{x=0}\sum^7_{y=0}B_{yx} \cos(\frac {(2x+1)u\pi} {16})\cos(\frac{(2y+1)v\pi} {16})
+$$
+Dies gibt für jedes $B_{yx}$ einen Wert $F_{vu}$.
+
+Diese Konvertierung kann mit einer Inversen DCT wieder rückgängig gemacht werden:
+$$
+B_{yx}=\frac 1 4 \sum^7_{u=0}\sum^7_{v=0}C_uC_vF_{vu}\cos(\frac{(2x+1)u\pi}{16})\cos(\frac{(2y+1)v\pi}{16})
+$$
+Nach einer DCT ergibt dies ein Resultat, wie dies:
+
+![image-20211231114631310](res/image-20211231114631310.png)
+
+In diesem Bild gibt es einige grössere Werte im oberen linken Ecken. Die anderen Werte sind relative klein. 
 
 ## Quantisierung
 
@@ -80,7 +106,7 @@ Es gibt folgende Tokens:
 
 Dies wird danach noch mit einem Huffmancode enkodiert. Dafür kann eine fixen Code verwendet werden oder der Encoder kann einen selbst erstellen.
 
-## Dekomprimieren
+Der DC Wert wird mit eine "horizontale Prädiktion" verwendet. Dabei sieht ein Token (Anzahl Bits,  $DC_n-DC_{n-1}$). Es wird also die Differenz des DC-Wertes zwischen zwei Blöcken gespeichert, da sich diese selten komplet ändert.
 
 # MPEG
 

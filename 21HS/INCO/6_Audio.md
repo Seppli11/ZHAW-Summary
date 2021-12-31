@@ -63,6 +63,25 @@ Hier ist das Header Format von einem Wave-Files, welches PCM Daten enthält. Wer
 
 ![](res/2021-11-15-11-01-01-image.png)
 
+| Offset | Byte | Name          | Erklärung                                                    |
+| ------ | ---- | ------------- | ------------------------------------------------------------ |
+| 0      | 4    | ChunkID       | Contains the letters "RIFF" in ASCII form                    |
+| 4      | 4    | ChunkSize     | 36 + SubChunk2Size, or more precisely:4 + (8 + SubChunk1Size) + (8 + SubChunk2Size)This is the size of the rest of the chunkfollowing this number. This is the size of theentire file in bytes minus 8 bytes for thetwo fields not included in this count: ChunkID and ChunkSize. |
+| 8      | 4    | Format        | Contains the 4 letters "WAVE"                                |
+| 12     | 4    | Subchunk1ID   | Contains the 4 letters "fmt "                                |
+| 16     | 4    | Subchung1Size | 16 for PCM. This is the size of the rest of the Subchunk which follows this number. |
+| 20     | 2    | AudioFormat   | PCM = 1 (i.e. Linear quantization) Values other than 1 indicate some form of compression. |
+| 22     | 2    | NumChannels   | Mono = 1, Stereo = 2, etc.                                   |
+| 24     | 4    | SampleRate    | 8000, 44100, etc.                                            |
+| 28     | 4    | ByteRate      | == SampleRate * NumChannels * BitsPerSample/8                |
+| 32     | 2    | BlockAlign    | == NumChannels * BitsPerSample/8<br/>The number of bytes for one sample including all channels. |
+| 34     | 2    | BitsPerSample | 8 bits = 8, 16 bits = 16, etc.                               |
+| 36     | 4    | Subchunk2Id   | Contains the 4 letters "data"                                |
+| 40     | 4    | Cubchank2Size | == NumSamples * NumChannels * BitsPerSample/8<br/>This is the number of bytes in the data. You can also think of this as the size of the read of the subchunk following this number. |
+| 44     | *    | Data          | The actual sound data.                                       |
+
+
+
 ## FLAC (Free Lossless Audio Codec)
 
 * Kompressionsrate: 30-50%

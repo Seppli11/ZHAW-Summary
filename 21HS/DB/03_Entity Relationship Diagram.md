@@ -39,11 +39,11 @@ Folgende Fakten kann man über das obere Beispiel schreiben:
 - Eine *Zuordung* ordnet mehreren *Empfehlungen* ein *Fach* zu
 - *Nutzung* kann mehrere Klassen mit mehreren Zuordnungen verbinden
 
-Die Rechteck-Romben sind Zwischentabellen, welche aber auch referenziert werden und daher auch noch Identitäten sind.
+Die Rechteck-Romben sind Zwischentabellen, welche aber auch referenziert werden und daher auch noch Identitäten sind. Sie werden `Zusammengesetzte Entitätstypen` genannt.
 
 ## Terziere Beziehung
 
-``![](./res/2021-10-18-13-34-27-image.png)
+![](./res/2021-10-18-13-34-27-image.png)
 
 | x   | y   | z   | Schlüssel          |
 | --- | --- | --- | ------------------ |
@@ -55,6 +55,10 @@ Die Rechteck-Romben sind Zwischentabellen, welche aber auch referenziert werden 
 | 1   | m   | 1   | {A2, A1}, {A2, A3} |
 | 1   | 1   | m   | {A3, A1}, {A3, A2} |
 | 1   | 1   | 1   | {A1}, {A2}, {A3}   |
+
+![image-20211229140939283](res/image-20211229140939283.png)
+
+Ein Beispiel, wie oben, kann interpretiert werden als, pro Klasse und Buch (da beide ein `m` haben) gibt es höchstens 1 Lehrer und Fach.
 
 ## Abhängig und Unabhängige Typen
 
@@ -94,4 +98,10 @@ Mit folgenden Regeln, wird ein korrektes ER-Diagramm erstellt:
 
 6. Definiere die ISA-Abhänigen Entitätstypen (Pfeile mit ISA)
 
+### Relationales Modell
+
+Entitäten werden im Format "Name(<u>Schlüssel1</u>, Attribute2)" angegeben. Wenn ein Attribut unterstrichen ist, dann ist es ein Schlüssel. Die Reihenfolge sollte dieselbe sein, in welcher die Entitäten erstellt wurden.
+
 ## BCNF (Boyce-Codd Normal-Form)
+
+* 

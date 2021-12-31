@@ -105,6 +105,10 @@ Pro Zahl braucht man eine Dimension.
 
 Die minimale Hamming-Distanz ist die kleinste Distanz zwischen zwei korrekten Code-Words.
 
+### Fehlerkorrektur mit Matrizen
+
+
+
 ## Block-Code
 
 Bei einem Blockcode werden die Informationen in Blöcke verschickt. Dabei gibt es die N, die Anzahl Bits für Informationen und K, die Bits für den Fehlerschutz
@@ -185,7 +189,9 @@ Man kann eine solche Zahl auch als Polynom darstellen.
 
 $1011=1\cdot z^3+0\cdot z^2+1\cdot z^1+1\cdot z^0$
 
-*//TODO*
+Auch mit diesem Polynomen kann man mit der 1-Bit Arithmetik rechnen. Beispiel: $\begin{alignat} {1} (z^3+z^2+1)\pm(z^2+z+1)=&z^3\cdot(1\pm0)+z^2\cdot(1\pm1)+z^1\cdot(0\pm1)+z^0\cdot (1\pm1)\\=&z^3+z\end{alignat}$
+
+Dasselbe Spiel kann auch den anderen Rechnenoperationen durchgespielt werden.
 
 ## CRC
 

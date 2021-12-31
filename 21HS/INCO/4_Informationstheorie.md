@@ -1,6 +1,6 @@
 # Was ist Information
 
-- Etwas, was das eigene Wissen erweitert
+- Etwas, was das eigene Wissen erweitert; etwas **neues**, was wir vorhin noch nicht wussten
 - mit $F=ceiling(log(_2(N))$
 
 # Daten Quellen
@@ -40,6 +40,10 @@ Die Entropie ist der gewichtete Durchschnitt der Informationen und wird mit folg
 
 $H(X)=\sum^{N-1}_{n=0} P(x_n)\cdot I(x_n)=\sum^{N-1}_{n=0}P(x_n)\cdot log_2(\frac 1 {P(x_n)})$
 
+Das folgende Bild zeigt die Entropie von einer BMS mit der Wahrscheinlichkeit von $p$ für das eine Zeichen (und die Wahrscheinlichkeit $1-p$ für das andere Zeichen). Wie man sieht, ist die Entropie am höchsten, wenn alle Zeichen gleich oft Vorkommen.
+
+![image-20211230192508661](res/image-20211230192508661.png)
+
 ## Zweier Logarithmus ohne zweier Logarithmus
 
 - $2^x=K$
@@ -76,16 +80,13 @@ Codes mit dem Huffmanverfahren sind:
 ### Vorgehen
 
 1. Ordne alle Symbole nach aufsteigenen Auftretenswahrscheinlichkeiten auf einer Zeile. Dies sind die Blätter
-
 2. Notiere unter jedes Blatt seine Wahrscheinlichkeit
-
 3. Schliesse die beiden Blätter mit der kleinsten Wahrscheinlichekit an einer gemeinsamen Astgabel an und ordne dem Ast die Summe der Wahrscheinlichkeiten zu
-
 4. Wiederhole Schritt 2 es nur noch ein Stamm gibt
-
 5. Jedem Ast wird nun ein eine 0, wenn man links geht und eine 1 wenn man rechts geht, zugewiessen
-
 6. Die Pfade zu allen Blätter aufschreiben. Das ist der Huffmancode
+
+![image-20211230204709104](res/image-20211230204709104.png)
 
 # Lauflängenkodierung
 
