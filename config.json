@@ -1,17 +1,15 @@
 {
-	"imports": [
-		"https://github.com/Seppil11/thoth-default-theme"
-	],
-	"srcDirs": {
-		"21HS": {
+	"srcDirs": [
+		{
+			"glob": "21HS",
 			"type": "folder",
-			"children": {
-				"*": {
-					"type": "book-folder"
+			"children": [
+				{
+					"glob": "*",
+					"type": "item"
 				}
-			}
+			]
 		}
-	},
-	"theme": "./theme"
+	]
 	
 }
