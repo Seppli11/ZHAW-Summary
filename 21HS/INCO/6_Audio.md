@@ -50,7 +50,7 @@ PCM kann auf mehrere Arten abgespeichert werden
 
 * Diffrerential-PCM (DPCM): Es werden nur die Differenzen gespeichert 
 
-* Adaptive Differential-PCM (ADPCM): Es werden die Differenzen der Differenzen Gespeichert. Der Sinn dahinter: Bei Audio-Files ändert sich die Differenz nicht fest, also ist es effizenter nur die Differenzen der Differenzen zu speichern
+* Adaptive Differential-PCM (ADPCM): Es werden die Differenzen der Differenzen gespeichert. Der Sinn dahinter: Bei Audio-Files ändert sich die Differenz nicht fest, also ist es effizenter nur die Differenzen der Differenzen zu speichern
   ![](res/2021-11-15-10-43-48-image.png)
 
 ## Linear Prediction Coder (LPC)

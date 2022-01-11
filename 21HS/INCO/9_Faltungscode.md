@@ -26,7 +26,11 @@ Die Coderate kann folgendermassen ausgerechnet werden: $R=\frac N {2\cdot(N+m)}$
 
 Dabei ist $N$ die Anzahl Inputs und $m$ die Anzahl Tailbits, bzw. wie gross das Gedächniss des Faltungscode ist.
 
-### Freie Distanz
+### Freie Hamming-Distanz
+
+Das ist der Pfad im Zustandsdiagramm mit möglichst wenig `1` (aber nicht nur `0`) beim Output des Encoders.  Im oberen Zustandsdiagram hätten wir eine Freie Hamming-Distanz von 5 (Von `00` zu `10` (dabei hat man 2 `1`); von `10` zu `01` (dabei hat man 1x`1`); von `01`  zu `00` (nochmals 2x`1`); Im gesammten kommt man auf 5). Dies funktioniert auch im Tellis-Diagramm.
+
+Aus dies kann ausgerechnet werden, wie viel Fehler behoben werden können: $\lfloor\frac{d_{free}-1}2\rfloor$
 
 ### Generatoren
 
@@ -56,3 +60,7 @@ $$
 ![](res/2021-12-13-11-21-37-image.png)
 
 Beim Decodieren wird jeden möglichen Pfad durch gerechnet und dabei die Bitfehler gezählt, welche auftretten müssten. Wenn zwei Pfade sich treffen, wird der Pfad mit den kleinsten Bitfehler gewählt. Am Ende bleibt ein Pfad mit den wenigsten Bitfehler, welcher am Wahrscheinlichsten ist.
+
+## Tail-Bits
+
+Dies sind Bits, welche am Ende eines Inputs noch angehängt werden müssen um die Schaltung wieder in den `0`-Zustand zurück zu setzten. Dass heisst, wenn die Schaltung des Faltungscodes zwei Bits, bzw. zwei Flip-Flops enthält, dann werden zwei Tail-Bits benötigt.

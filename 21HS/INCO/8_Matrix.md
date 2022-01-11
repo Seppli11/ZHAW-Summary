@@ -40,6 +40,8 @@ Das Feld (2/1) wird berechnet, in dem die Reihe 2 mit der Spalte 1 multipliziert
 
 Wegen dieser Rechnenart, ist die Multiplikation mit zwei Matrizen nicht kommunikativ.
 
+Mit dem TR und Ein-Bit Arithmethik, kann modulo 2 gerechnet werden, um das korrekte Resultat zu bekommen.
+
 ## Einheitsmatrix
 
 Eine Einheitsmatrix, ist eine quadratische Matrix, welche Diagonal überall eine `1` hat und sonst `0`:
@@ -57,7 +59,7 @@ Diese Matrix hat die Eigenschaft, dass wenn eine Matrix $A$ mit einer Identität
 
 Die Inverse Matrix, ist die Matrix $A^{-1}$, welche mit der Matrix $A$, eine Identitätsmatrix $I$ ergibt:
 
-$A\cdot A^{-1}=I$$
+$A\cdot A^{-1}=I$
 
 ## Transponierte Matrix
 

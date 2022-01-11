@@ -33,3 +33,8 @@ In dieser Datei werden alle Formeln und Konstanten zusammen gefasst.
 | $\rho(\nu)=1-\alpha(\nu)$ | Umrechnungs Formel zwischen Reflektionskoeffizenten ($\rho$) und Absorptionskoeffizenten ($\alpha$)                    |
 |                           |                                                                                                                        |
 |                           |                                                                                                                        |
+
+## Fragen
+
+1. Wie darf man sich ein Linien-/Flussintegral vorstellen? Die Summe v
+1. Exercise 8&9/Aufgabe 3 - was...??

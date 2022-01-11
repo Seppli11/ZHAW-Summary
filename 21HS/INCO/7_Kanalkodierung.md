@@ -129,6 +129,8 @@ Der Code C={000, 110, 001, 101} wäre zum Beispiel einer.
 
 Jeder Linearer Block-Code benötigt einen Code mit nur 0.
 
+Wenn Codewörter aus einer Generatormatrix generiert wird, dann ist der Code linear.
+
 ### Zyklischer Block-Code
 
 Ein zyklischer Block-Code kann man um eins Rotieren und bekommt wieder ein valides Codewort. 
@@ -219,10 +221,7 @@ Wenn man eine Hammingdistanz von 3 hat, kann man ein Bit korigieren. Dabei wird 
 
 Wie man oben bereits gesehen hat, nimmt man das Codewort, welches am nächsten ist. 
 
-Dabei kann man $\left \lfloor*{d_{mint}/2}\right \rfloor$ Fehler korrigieren.
+Dabei kann man $\left \lfloor{\frac{d_{min}-1)} 2}\right \rfloor$ Fehler korrigieren.
 
 ![](res/2021-12-06-10-13-57-image.png)
 
-## Faltungscode
-
-![](res/2021-12-13-10-14-17-image.png)
