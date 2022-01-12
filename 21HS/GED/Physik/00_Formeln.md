@@ -2,6 +2,18 @@
 
 In dieser Datei werden alle Formeln und Konstanten zusammen gefasst.
 
+|       |           |
+| ----- | --------- |
+|       |           |
+|       |           |
+|       |           |
+|       |           |
+| milli | $10^{-4}$ |
+| micro |           |
+| nano  |           |
+
+
+
 ## Elektronik
 
 | Thema        | Formeln                                          | Erklärung                                                    |

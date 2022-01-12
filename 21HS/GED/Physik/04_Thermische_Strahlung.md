@@ -4,6 +4,34 @@
 > 
 > Um von Celsius zu Kelvin zu konvertieren: $T_{kelvin}=T_{celsius}+273.15$
 
+## Formeln
+
+| Formel | Erklärung |
+| ------ | --------- |
+|        | $E$       |
+|        |           |
+|        |           |
+
+## Sichtbares Licht
+
+![PHYSICS Form 4 Form5: Electromagnetic (EM ) waves](res/bF9DaGFydC5qcGc.jpeg)
+
+Sichtbares Licht:
+
+## Lichtbrechung
+
+![image-20220112111924064](res/image-20220112111924064.png)
+$$
+\frac{\sin(\alpha)}{\sin(\beta)}=\frac {c_1} {c_2}=\frac{n_2}{n_1}
+$$
+Dabei stellt $c$ die Lichtgeschwindigkeit im jeweiligen Material dar und $n$ der Brechungsindex.
+
+### Totalreflexion
+
+Wenn ein Lichtstrahl genug Flach auf die "Bruchkanta" (z.B. die Wasseroberfläche). In diesemfall wird alles zurück reflektiert. Für die Formel heisst das, dass $\alpha\ge 90°$ oder $\beta \ge 90°$ 
+
+![image-20220112112651711](res/image-20220112112651711.png)
+
 ## Photonen
 
 Jedem Photon wird eine Wellenlänge, bzw eine Frequenz zu geordnet: $E=h\nu$ , dabei ist die Planck'sche Konstante $h=6.626\cdot 10^{-34} [Js]$ und $E$ die Energie des Photons.
@@ -45,7 +73,7 @@ Ein Körper mit dem Reflexionskoeffizent $\rho=0$ und Absorptionskoeffizenten vo
 
 ### Grauer Strahler
 
-Ein grauer Strahler ist ein Körper,  welcher in gewissen Wellenbereichen nicht so stark strahlen, wie ein schwarzer Strahler. Dass heisst, dass $\varepsilon$ nicht umbedingt `1` muss sein.
+Ein grauer Strahler ist ein Körper,  welcher in gewissen Wellenbereichen nicht so stark strahlen, wie ein schwarzer Strahler. Dass heisst, dass der Emmisionskoeffizent $\varepsilon$ nicht umbedingt `1` muss sein.
 
 ## Wien'sches Verschiebungsgesetzt
 
@@ -57,7 +85,7 @@ Mit dieser Formel kann man auch die Lichtfarbe, welche in Kelvin angegeben wird,
 
 ## Stefan-Boltzmann Gesetzt (Gesammtleistung)
 
-Um die Gesamtleistung eines Strahlendenkörpers zu berechnen kann man die folgende Formel benützten: $P_{rad}=\sigma AT^4$ Dabei ist $\sigma=5.67\cdot10^{-8}$ , $A$ die Oberfläche des Körpers und $T$ die Temperatur des Körpers.
+Um die Gesamtleistung eines Strahlendenkörpers zu berechnen kann man die folgende Formel benützten: $P_{rad}=\sigma AT^4$ Dabei ist $\sigma=5.67\cdot10^{-8} [Wm^{-2}K^{-4}]$ , $A$ die Oberfläche des Körpers und $T$ die Temperatur des Körpers.
 
 ### Energetische Bilanz eines Strahlers
 

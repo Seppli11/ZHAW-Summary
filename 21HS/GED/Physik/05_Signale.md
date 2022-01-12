@@ -60,8 +60,11 @@ $$
 
 ## Signal-to-Noise Ratio
 
+$A_{noise}=?$
 $$
-SNR=\frac{P_{signal}} {P_{noise}}=\frac{I_{signal}} {I_{noise}}
+SNR=\frac{P_{signal}} {P_{noise}}=\frac{I_{signal}} {I_{noise}}=\frac{A^2_{signal}}{A^2_{noise}}
 $$
+
+Dabei bezeichnet $P$ die Leistung, $I$ die Intensität und $A$ die Amplitude.
 
 ![image-20220104163929991](res/image-20220104163929991.png)

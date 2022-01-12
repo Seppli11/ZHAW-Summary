@@ -8,8 +8,7 @@
 | $\vec E(\vec r)=\frac 1 {4\pi\varepsilon_0}\cdot \frac Q {|\vec r - \vec r_Q|^2}\cdot\frac {\vec r - \vec r_Q}{|\vec r - \vec r_Q|}$ | Das Elektrische Feld $\vec E$ einer Ladung am Ort $\vec r_Q$, welches von der Ladung $Q$ erzeugt wurde |
 | $\vec F =q\vec E(\vec r, t)$                                 | Die Kraft $\vec F$, welche das Feld $\vec E$ die Probeladung $q$ anzieht |
 | $\vec F_L=q\cdot(\vec v\times\vec B)$                        | Die Kraft, eines Magnetfeldes auf eine Ladung $q$, welche sich mit $\vec v$ bewegt. |
-| $m=\frac{rq|\vec B|}{v}$                                     | Speziallfall, wenn $\vec v$ senkrecht auf $\vec B$ steht und $\vec B$ konstant ist. $m$ ist die Masse von der Ladung $q$ mit der Geschwindigkeit $\vec v$ |
-|                                                              |                                                              |
+| $m=\frac{rq|\vec B|}{v}$                                     | Spezialfall, wenn $\vec v$ senkrecht auf $\vec B$ steht und $\vec B$ konstant ist. $m$ ist die Masse von der Ladung $q$ mit der Geschwindigkeit $\vec v$ |
 
 ![Vectors and Matrices](res/vectorcrossproduct.gif)
 
