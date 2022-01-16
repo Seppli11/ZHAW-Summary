@@ -1,0 +1,4 @@
+{
+    "markdownConverter.DestinationPattern": "${workspaceFolder}/out/${dirname}/${basename}.${extension}",
+    "markdownConverter.Parser.Toc.Indicator": "^\\[TOC\\]"
+}
