@@ -22,3 +22,5 @@ Hier sind einige gängige Formeln aufgelistet, welche hilfreich bei Beschleunigu
 | a   | $t=\frac{2s}{v}$        | $s=\frac{vt}{2}$   | $v=\frac{2s}{t}$ | -                  |
 
 ## Energie
+
+Energie ist $Kraft \cdot Strecke$. Es gilt also die Formel $E=F\cdot s [J]$. Die Masseinheit $J$ kann auch als $\frac{kgm^2}{s^2}$ 

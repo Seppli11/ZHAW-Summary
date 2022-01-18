@@ -96,6 +96,14 @@ Wenn ein Leiter positiv geladen ist, wirkt er abstossend zu Elektronen, wenn ein
 
 Um das Elektrofeld einer einzuelne Ladung zu berechnen, kann die folgende Formel verwendet werden
 
+## Elektrofelder und Magnetfelder zusammen
+
+Zeitlich veränderliche B-Felder erzeugen zeitlich veränderliche E-Felder, welche wiederum zeitlich veränderliche B-Felder erzeugen. Diesen Effekt führt zu einer Welle, welche sich ausbreitet.
+
+Initialisiert kann es z.B. von einer Antenne werden, welche nichts anderses als Ströme zeitlich verändert durch einen Draht schickt.
+
+![image-20220118202847399](res/image-20220118202847399.png)
+
 ## Magnete
 
 Magnete haben immer einen Nord- und Südpol. Wenn man ein Magnet trennt, entstehen zwei neue Magnete, mit jeweils einem Nord- und Südpol.  

@@ -56,5 +56,3 @@ In dieser Datei werden alle Formeln und Konstanten zusammen gefasst.
 
 * B-Felder induziert E-Felder
   * In welche Richtung positive E-Felder anziehen oder abstossen
-* Signal-To-Noise-Ratio
-* Low und High-Pass-Filter

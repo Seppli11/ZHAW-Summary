@@ -60,7 +60,7 @@ $$
 
 ## Signal-to-Noise Ratio
 
-$A_{noise}=?$
+$A_{noise}=\text{Die durchschnittliche Noise Amplitude}$
 $$
 SNR=\frac{P_{signal}} {P_{noise}}=\frac{I_{signal}} {I_{noise}}=\frac{A^2_{signal}}{A^2_{noise}}
 $$
