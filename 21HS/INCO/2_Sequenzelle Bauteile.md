@@ -44,6 +44,6 @@ Typsiche Anwendungen
 
 # Paralleles Register
 
-# Zusands-Automaten
+# Zustands-Automaten
 
 *Zustands Tabelle einfügen*

@@ -2,17 +2,23 @@
 
 In dieser Datei werden alle Formeln und Konstanten zusammen gefasst.
 
-|       |           |
-| ----- | --------- |
-|       |           |
-|       |           |
-|       |           |
-|       |           |
-| milli | $10^{-4}$ |
-| micro |           |
-| nano  |           |
-
-
+| Prefix | Exponent   |
+| ------ | ---------- |
+| peta   | $10^{15}$  |
+| tera   | $10^{12}$  |
+| giga   | $10^9$     |
+| mega   | $10^6$     |
+| kilo   | $10^3$     |
+| hecto  | $10^2$     |
+| deca   | $10^1$     |
+| -      | $10^0$     |
+| dezi   | $10^{-1}$  |
+| cento  | $10^{-2}$  |
+| milli  | $10^{-3}$  |
+| micro  | $10^{-6}$  |
+| nano   | $10^{-9}$  |
+| pico   | $10^{-12}$ |
+| femto  | $10^{-15}$ |
 
 ## Elektronik
 
@@ -46,7 +52,9 @@ In dieser Datei werden alle Formeln und Konstanten zusammen gefasst.
 |                           |                                                                                                                        |
 |                           |                                                                                                                        |
 
-## Fragen
+## Noch zu lernen
 
-1. Wie darf man sich ein Linien-/Flussintegral vorstellen? Die Summe v
-1. Exercise 8&9/Aufgabe 3 - was...??
+* B-Felder induziert E-Felder
+  * In welche Richtung positive E-Felder anziehen oder abstossen
+* Signal-To-Noise-Ratio
+* Low und High-Pass-Filter

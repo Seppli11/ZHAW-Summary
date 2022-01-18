@@ -2,8 +2,8 @@
 
 ## Signalarten
 
-| Name           | Bild                                                         |
-| -------------- | ------------------------------------------------------------ |
+| Name           | Bild                                                                                          |
+| -------------- | --------------------------------------------------------------------------------------------- |
 | Sinussignal    | <img src="res/image-20220104160724805.png" alt="image-20220104160724805" style="zoom:50%;" /> |
 | Rechtecksignal | <img src="res/image-20220104160736803.png" alt="image-20220104160736803" style="zoom:50%;" /> |
 | Sägezahnsignal | <img src="res/image-20220104160746033.png" alt="image-20220104160746033" style="zoom:50%;" /> |

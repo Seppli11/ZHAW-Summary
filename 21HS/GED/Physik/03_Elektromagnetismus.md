@@ -2,13 +2,13 @@
 
 ## Formeln
 
-| Formel                                                       | Erklärung                                                    |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| $\vec F_{12}=\frac 1 {4\pi\varepsilon_0}\cdot \frac {Q_1Q_2}{|\vec r_{12}|^2}\cdot \vec n_{12}$ | Kraft zwischen den Ladungen $Q_1$ und $Q_2$.  Der Einheitsvektor $\vec n_{12}$ von Ladung $Q_2$ zu $Q_1$ $\vec n_{12}=\frac{\vec r_{12}}{|\vec r_{12}|}$(Konstante: $\varepsilon_0=8.859\cdot 10^{-12}[\frac {C^2}{Jm}]$) |
-| $\vec E(\vec r)=\frac 1 {4\pi\varepsilon_0}\cdot \frac Q {|\vec r - \vec r_Q|^2}\cdot\frac {\vec r - \vec r_Q}{|\vec r - \vec r_Q|}$ | Das Elektrische Feld $\vec E$ einer Ladung am Ort $\vec r_Q$, welches von der Ladung $Q$ erzeugt wurde |
-| $\vec F =q\vec E(\vec r, t)$                                 | Die Kraft $\vec F$, welche das Feld $\vec E$ die Probeladung $q$ anzieht |
-| $\vec F_L=q\cdot(\vec v\times\vec B)$                        | Die Kraft, eines Magnetfeldes auf eine Ladung $q$, welche sich mit $\vec v$ bewegt. |
-| $m=\frac{rq|\vec B|}{v}$                                     | Spezialfall, wenn $\vec v$ senkrecht auf $\vec B$ steht und $\vec B$ konstant ist. $m$ ist die Masse von der Ladung $q$ mit der Geschwindigkeit $\vec v$ |
+| Formel                                                        | Erklärung                                                                           |
+| ------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| $\vec F_{12}=\frac 1 {4\pi\varepsilon_0}\cdot \frac {Q_1Q_2}{ | \vec r_{12}                                                                         | ^2}\cdot \vec n_{12}$              | Kraft zwischen den Ladungen $Q_1$ und $Q_2$.  Der Einheitsvektor $\vec n_{12}$ von Ladung $Q_2$ zu $Q_1$ $\vec n_{12}=\frac{\vec r_{12}}{                | \vec r_{12} | }$(Konstante: $\varepsilon_0=8.859\cdot 10^{-12}[\frac {C^2}{Jm}]$)                                    |
+| $\vec E(\vec r)=\frac 1 {4\pi\varepsilon_0}\cdot \frac Q {    | \vec r - \vec r_Q                                                                   | ^2}\cdot\frac {\vec r - \vec r_Q}{ | \vec r - \vec r_Q                                                                                                                                        | }$          | Das Elektrische Feld $\vec E$ einer Ladung am Ort $\vec r_Q$, welches von der Ladung $Q$ erzeugt wurde |
+| $\vec F =q\vec E(\vec r, t)$                                  | Die Kraft $\vec F$, mit welcher das Feld $\vec E$ die Probeladung $q$ beschleunigt  |
+| $\vec F_L=q\cdot(\vec v\times\vec B)$                         | Die Kraft, eines Magnetfeldes auf eine Ladung $q$, welche sich mit $\vec v$ bewegt. |
+| $m=\frac{rq                                                   | \vec B                                                                              | }{v}$                              | Spezialfall, wenn $\vec v$ senkrecht auf $\vec B$ steht und $\vec B$ konstant ist. $m$ ist die Masse von der Ladung $q$ mit der Geschwindigkeit $\vec v$ |
 
 ![Vectors and Matrices](res/vectorcrossproduct.gif)
 
@@ -29,10 +29,10 @@ Spannung kann auch als Linienintegral angesehen werden: $U(\gamma)=\int_\gamma\v
 
 ### Spezialfälle
 
-| Name                                                         | Formel                                               | Bild                                                        |
-| ------------------------------------------------------------ | :--------------------------------------------------- | ----------------------------------------------------------- |
-| **Kreis**<br />Das Vektorfeld liegt überall tangential an der Kurve und alle Vektoren haben dieselbe Länge. | $\int_\gamma\vec U\cdot d\vec\gamma =2\pi r|\vec U|$ | ![image-20220104112658889](res/image-20220104112658889.png) |
-| **Rechteck**<br />Das Vektorfeld ist parallel zu zwei Seiten (A, C) des Rechteck. Entlang einer Seite haben die Vektoren eine konstante Grösse | $\int_\gamma\vec U \cdot d\vec \gamma=aU_1-aU_5$     | ![image-20220104112728886](res/image-20220104112728886.png) |
+| Name                                                         | Formel                                                       | Bild                                                        |
+| ------------------------------------------------------------ | :----------------------------------------------------------- | ----------------------------------------------------------- |
+| **Kreis**<br />Das Vektorfeld liegt überall tangential an der Kurve und alle Vektoren haben dieselbe Länge. | $\int_\gamma\vec U\cdot d\vec\gamma =2\pi r\vert\vec U\vert$ | ![image-20220104112658889](res/image-20220104112658889.png) |
+| **Rechteck**<br />Das Vektorfeld ist parallel zu zwei Seiten (A, C) des Rechteck. Entlang einer Seite haben die Vektoren eine konstante Grösse | $\int_\gamma\vec U \cdot d\vec \gamma=aU_1-aU_5$             | ![image-20220104112728886](res/image-20220104112728886.png) |
 
 ## Flussintegrale
 
@@ -109,3 +109,18 @@ Magnete wirken eine Kraft auf **bewegte Ladung**  aus. Auf ruhende Ladung hat es
 Wenn $\vec v$ senkrecht auf $\vec B$ steht,und $\vec B$ konstant ist, kann mit folgender Formel den Zusammenhang von der Geschwindigkeit der Ladung $\vec v$ mit dem Magnetfeld $\vec B$ und dem Radius $r$ beschrieben werden: $m=\frac{rq|\vec B|}{v}$
 
 Bei Elementarteilchen ist die Ladung entweder $0$, $e$ oder $-e$.
+
+## Intensität
+
+Die Intensität einer ebenen Welle kann mit der folgenden Formeln berechnet werden:
+$$
+I_{em}=\frac{E_0B_0}{2 \mu _0}=\frac{E^2_0}{2c\mu_0}=\frac{cB^2_0}{2\mu_0}\\
+$$
+Dabei ist $\mu_0$ die magnetische Feldkonstante $1.257\cdot10^{-6}=4\pi\cdot 10^{-7}$
+
+## Strahlendruck
+
+![image-20220117134206090](res/image-20220117134206090.png)
+$$
+p_s=\frac{I_{em}}c=\frac{E_0B_0}{2c\mu_0}=\frac{E^2}{2c^2\mu_0}=\frac{B^2_0}{2\mu_0}
+$$

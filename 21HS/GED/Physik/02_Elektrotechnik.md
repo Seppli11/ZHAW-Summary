@@ -1,6 +1,5 @@
 # Elektrotechnik
 
-[TOC]
 ## Strom, Spannung und Leistung
 
 Ampere ist die Einheit des Stromes $I$ und ist Coulomb pro Sekunde $[Cs^{-1}]$. 
@@ -46,10 +45,10 @@ Da für die Leistung gillt $P=U\cdot I$ , kann in diese Formel das Ohm'sche Gese
 
 Wegen der Knoten und Maschenregeln verhalten sich Wiederstände (wie auch andere Bauteile) anderst, jenach dem, ob sie Parallel oder Serial angeschlossen sind.
 
-| Name                | Erklärung                                                    | Bild                                                        |
-| ------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
+| Name                | Erklärung                                                                                                                                | Bild                                                        |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
 | Parallel geschaltet | In einer Parallelschaltung müssen Wiederstände folgendermassen zusammen gefasst werden: $R_{12}=\frac 1 {\frac 1 {R_1} + \frac 1 {R_2}}$ | ![image-20220103092219330](res/image-20220103092219330.png) |
-| Seriel geschaltet   | In einer Serielschaltung müssen Wiederstände folgendermassen zusamengefasst werden: $R_{12}=R_1+R_2$ | ![image-20220103092249589](res/image-20220103092249589.png) |
+| Seriel geschaltet   | In einer Serielschaltung müssen Wiederstände folgendermassen zusamengefasst werden: $R_{12}=R_1+R_2$                                     | ![image-20220103092249589](res/image-20220103092249589.png) |
 
 ### Kondensator
 
@@ -57,14 +56,14 @@ Ein Kondensator (oder Capacitor) kann man sich als Feder vorstellen, welche aus 
 
 ![image-20211214222202840](res/image-20211214222202840.png)
 
-| formel                                          | Erklärung                                                    |
-| ----------------------------------------------- | ------------------------------------------------------------ |
-| $\frac {dQ}{dt}=I$                              | Die Veränderungsrate der Ladung, ist der Strom $I$           |
-| $CU_c=Q$                                        | Der Zusammenhang zwischen der Spannung $U [V]$ und der Ladung $Q$ abhängig von der Kapazität $C [F]$ in Farad |
-| $Q(t)=CU_0(1-e^{-\frac t{RC}})$                 | Wie sich die Ladung $Q$ beim Laden                           |
-| $U_C(t)=\frac{Q(t)}{C}=U_0(1-e^{-\frac t{RC}})$ | Wie sich die Spannung $U$ beim Laden verhaltet               |
-| $U_C(t)=U_0\cdot e^{-\frac t {RC}}$             | Wie sich die Spannung $U$ beim Entladen verhaltet            |
-| $I(t)=\frac{U_0}{R}e^{-\frac t {RC}}$           | Wie sich der Strom $I$ beim Laden verhaltet                  |
+| formel                                          | Erklärung                                                                                                                                                                                                                                                          |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| $\frac {dQ}{dt}=I$                              | Die Veränderungsrate der Ladung, ist der Strom $I$                                                                                                                                                                                                                 |
+| $CU_c=Q$                                        | Der Zusammenhang zwischen der Spannung $U [V]$ und der Ladung $Q$ abhängig von der Kapazität $C [F]$ in Farad                                                                                                                                                      |
+| $Q(t)=CU_0(1-e^{-\frac t{RC}})$                 | Wie sich die Ladung $Q$ beim Laden                                                                                                                                                                                                                                 |
+| $U_C(t)=\frac{Q(t)}{C}=U_0(1-e^{-\frac t{RC}})$ | Wie sich die Spannung $U$ beim Laden verhaltet                                                                                                                                                                                                                     |
+| $U_C(t)=U_0\cdot e^{-\frac t {RC}}$             | Wie sich die Spannung $U$ beim Entladen verhaltet                                                                                                                                                                                                                  |
+| $I(t)=\frac{U_0}{R}e^{-\frac t {RC}}$           | Wie sich der Strom $I$ beim Laden verhaltet                                                                                                                                                                                                                        |
 | $\tau=R\cdot C$                                 | Die Zeitkonstante $\tau$ . Der Strom des Kondensator fällt auf ca $\frac 1 e\approx0.37$ ab in der Zeit $\tau$ oder steigt auf $1-\frac 1 e\approx0.63$ in $\tau$ an, wenn der Kondensator geladen wird![image-20211214223047701](res/image-20211214223047701.png) |
 
 ### Spulen
@@ -77,10 +76,10 @@ Die Richtung des Magnetfeldes findet man heraus, in dem man die **Rechte**hand n
 
 ![image-20220103101153203](res/image-20220103101153203.png)
 
-| Formel               | Erklärung                                                    |
-| -------------------- | ------------------------------------------------------------ |
+| Formel               | Erklärung                                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------------------------- |
 | $U_L=L\frac{dI}{dt}$ | Die Veränderungsrate von dem Strom $I$ mit der Konstante $L [Henry]$ multipliziert, ergibt die Spannung |
-|                      |                                                              |
+|                      |                                                                                                         |
 
 ### Ungedämpfte Schwingkreise
 
@@ -95,13 +94,13 @@ In einem Schwingungskreis, schwingen die Elektronen zwischen den zwei Platten de
 5. So bald die Spule "leer" ist, wechselt die Stromrichtung wieder
 6. Der Zyklus wiederholt sich nun wiede
 
-| Formel                                                       | Erklärung                                                    |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| $Q(t)=CU_0\cdot \cos(\frac 1 {\sqrt {LC}}\cdot t)$           | Die Ladung $Q$ eines Schwinungskreises                       |
-| $I(t)=-\sqrt {\frac C L}\cdot U_0\cdot \sin(\frac 1 {\sqrt {LC}}\cdot t)$ | Der Strom $I$ eines Schwinungskreises                        |
-| $U_L(t)=-\frac 1 {\sqrt{LC}}\cdot U_0\cdot \cos(\frac 1 {\sqrt{LC}} \cdot t)$ | Die Spannun $U_L$ eines Schwinungskreises                    |
-| $f=\frac 1 {2\pi\sqrt{LC}}$                                  | Die Frequenz $f$, mit welcher der Schwingunskreis schwingt   |
-| $T=2\pi\sqrt{LC}$                                            | Die Periodendauer $T$, welche eine Schwinung des Schwingungskreis benötigt![image-20220103122901046](res/image-20220103122901046.png) |
+| Formel                                                                        | Erklärung                                                                                                                             |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| $Q(t)=CU_0\cdot \cos(\frac 1 {\sqrt {LC}}\cdot t)$                            | Die Ladung $Q$ eines Schwinungskreises                                                                                                |
+| $I(t)=-\sqrt {\frac C L}\cdot U_0\cdot \sin(\frac 1 {\sqrt {LC}}\cdot t)$     | Der Strom $I$ eines Schwinungskreises                                                                                                 |
+| $U_L(t)=-\frac 1 {\sqrt{LC}}\cdot U_0\cdot \cos(\frac 1 {\sqrt{LC}} \cdot t)$ | Die Spannun $U_L$ eines Schwinungskreises                                                                                             |
+| $f=\frac 1 {2\pi\sqrt{LC}}$                                                   | Die Frequenz $f$, mit welcher der Schwingunskreis schwingt                                                                            |
+| $T=2\pi\sqrt{LC}$                                                             | Die Periodendauer $T$, welche eine Schwinung des Schwingungskreis benötigt![image-20220103122901046](res/image-20220103122901046.png) |
 
 ### Gedämpfte Schwingungskreise
 
@@ -109,11 +108,23 @@ In einem Schwingungskreis, schwingen die Elektronen zwischen den zwei Platten de
 
 Der Strom im Schwinungskreis wird schwächer, wenn $R < 2\sqrt {\frac L C}$  (oder wenn $\frac{R^2}{4L^2}>\frac 1 {LC}$ ist) Wenn dies gegeben ist, dann ist es ein gedämpfter Schwingungskreis.
 
-| Formel                                                       | Erklärung                                                    |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| $Q(t)=Q_0e^{-\frac t \tau}\cos(\omega_dt-\phi_0)$            | Die Ladung des Schwinungskreis1                              |
-| $f=\frac 1 {2\pi}\sqrt{\frac 1 {LC} -\frac{R^2}{4L^2}}$ , $T=\frac 1 f$ | Die (Kreis-)frequenz $\omega_d$                              |
-| $\tau=\frac{2L} R$                                           | Die Zeitkonstante $\tau$ der Dämpfung. Der Strom des Kondensator fällt/steigt auf ca $\frac 1 e\approx0.37\%$ auf/ab in der Zeit $\tau$ |
+| Formel                                                                  | Erklärung                                                                                                                               |
+| ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| $Q(t)=Q_0e^{-\frac t \tau}\cos(\omega_dt-\phi_0)$                       | Die Ladung des Schwinungskreis1                                                                                                         |
+| $f=\frac 1 {2\pi}\sqrt{\frac 1 {LC} -\frac{R^2}{4L^2}}$ , $T=\frac 1 f$ | Die (Kreis-)frequenz $\omega_d$                                                                                                         |
+| $\tau=\frac{2L} R$                                                      | Die Zeitkonstante $\tau$ der Dämpfung. Der Strom des Kondensator fällt/steigt auf ca $\frac 1 e\approx0.37\%$ auf/ab in der Zeit $\tau$ |
+
+### Low-Pass und High-Pass-Filter
+
+Bei einem Low-Pass-Filter werden die tiefen Frequenzen durchgelassen und die Hochen weggefiltert.
+
+Bei einem High-Pass-Filter ist es umgekehrt und die hochen Frequenzen werden duch gelassen und die tiefen weggefiltert.
+
+![image-20220118101506997](res/image-20220118101506997.png)
+
+Über dem Wiederstand misst man ein Signal, bei welchem die tiefen Frequenzen gedämpft wurden und die hochen Frequenzen fast unverändert. Dies wäre ein High-Pass-Filter.
+
+Hingegen über dem Kondensator misst werden die hochen Frequenzen gedämpft und die tiefen durchgelassen, was ein Low-Pass-Filter ist.
 
 ## Draht
 
@@ -160,6 +171,12 @@ Die Ebenen 2, 4 und 6 sind die Transformatorenebenen. Auf diesen Ebenen wird der
 ## Wechsel- vs. Gleichstrom
 
 Man hat sich in der Vergangenheit auf Wechselstrom geeinigt, weil es relativ einfach ist, Wechselstrom zu transformieren. Heute ist dies aber auch mit Gleichstrom möglich. Gleichstrom erzeugt weniger Verlüste, wenn transportiert auf lange Streckenen, als Wechselstrom, da Wechselstrom nah an der Kabeloberflächse fliest und daher ein stärkeres Magnetfeld erzeugt.
+
+![image-20220117113947166](res/image-20220117113947166.png)
+
+Der $U_{Eff}$ kann mit der folgender Formel berechnet werden: $U_{Eff}=\frac{U_S}{\sqrt 2}$ . Dies berechnet den quadratischen Mittelwert einer Wechselspannung.
+
+Der Sinus kann mit der folgenden Formel angegebene werden: $f(t)=U_{Eff}\cos(\omega\cdot t)=U_{Eff}\cos(f\cdot 2\pi\cdot t)$
 
 ## Drehstrom
 
