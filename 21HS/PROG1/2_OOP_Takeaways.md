@@ -54,8 +54,12 @@ Als Beispiel: Wenn eine `Calculator` Klasse die Methoden `add(int, int)`, `sub(i
 
 Als Hilfe kann man sich immer Fragen: Gibt es ein passenden Klassennamen für diese Klasse?
 
+Der Vorteil von einer hohen Kohäsion ist, dass eine Klasse oder Methode wiederverwendbarer wird, da sie nur etwas macht und es so wahrscheinlicher ist, dass dieselbe Klasse oder Methode mehrmals verwendet werden kann.
+
 ## Koppelung
 
 Koppelung beschreibt, wie fest Klassen abhängig von einander sind. Grundsätzlich ist eine tiefere Koppelung besser, da so Änderungen sich nicht durch die ganze Codebasee ziehen. Dafür möchte man möglichst kleine Schnittstellen, da so die Abhängigkeitsmöglichkeiten von einer Klasse reduziert werden.
+
+Der Vorteil von einer loser Kopplung ist, dass sich Änderungen an einer einzelnen Klasse einfacher durchführen lassen, da diese Änderungen mehr lokale Auswirkungen haben anstatt globale.
 
 ## Polymorphie
