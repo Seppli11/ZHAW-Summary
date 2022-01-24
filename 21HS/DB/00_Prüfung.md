@@ -16,8 +16,6 @@
       3. Welche Probleme (Dirty-Read, Non-Repeatable-Read, Phantom-Read) können tolliertiert werden?
       4. Was ist der Unterschied zwischen einem Trigger und einer Stored Proceedure?
 
-
-
 Fragen:
 
 1. Sind die technischen Details von Indexen relevant? (B-Baum, Dünn vs dichter Index, ...)

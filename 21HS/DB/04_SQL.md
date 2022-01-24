@@ -148,17 +148,15 @@ Fügt ein Tupel in eine Tabelle ein. Ebenfalls kann anstatt fixe Werte ein SELEC
   * Spalten von Tabellen vom FROM-Teil 
     
     * Mathe/Funktionen mit spalten (z.B. saler * 1.2 + 1000 als spalte)
-  
   * `DISTINCT <spalte>` - dies eliminiert Duplikate in der angegebenen Spalte
-  
   * '*' steht für alle Spalten vom FROM-Teil
-  
   * Konstante (z.B. 1)
-  
   * Aggregate Funktionen, wie `AVG(<spalte>)`, `SUM(<spalte>)`. Dafür sollte aber auch `GROUP BY` spezifiziert sein
-  
   * Jede "Spalte" von dieser Liste kann mit `AS <name>` umbenennt werden
-
+  * Mit `EXTRACT (YEAR from <spalte>)` kann z.B. das Jahr von einem Datum extrahiert werden
+  * Mit `CASE WHEN <condition> THEN <value1> [WHEN <condition> THEN <vallue2>] ELSE <valueN> END` kann eine "If"-Bedinung gestallten werden
+  * Mit `COALESCE(<args1>, <argN>, ...)` wird das erste Argument zurück geben, welches nicht Null ist
+  
 * Als tabellen kann folgendes geschrieben werden:
   
   * Eine oder mehrere Tabellen. Wenn mehrere Tabellen definiert werden, wird das Kreuzprodukt gebildet
@@ -231,6 +229,8 @@ Die Aggregationsfunktionen operieren auf den Gruppen, welche von `GROUP BY` erst
 
 Wichtig zu erwähnen ist, dass `HAVING` auf dem aggregiertem Ergebniss filtert und `WHERE` vor dem Gruppieren. 
 
+In einer Aggregationsfunktion kann `DISTINCT` verwendet werden (wie `COUNT(DISTINCT <spalte>))`. Somit werden nur verschiedene Werte gezählt, summiert,...
+
 ### Subqueries
 
 Abfragen können miteinander verbunden werden:
@@ -238,10 +238,10 @@ Abfragen können miteinander verbunden werden:
 `<query> (UNIION | INTERSECT | EXCEPT) [ALL|DISTINCT] <query>` 
 
 * `UNION ALL` = Bag Concatenation 
-
 * `INTERSECT ALL` = $\cap$
-
 * `EXCEPT ALL` = \
+
+Ohne `ALL` wird automatisch `DISTINCT` gebraucht, was Duplikate entfernt.
 
 ### `ALL` und `ANY`
 

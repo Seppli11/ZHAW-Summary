@@ -22,9 +22,9 @@ In der Mengenlehre werden Duplikate immer gleich entfernt. Ein SQL-Server typisc
 - $R' = \sigma_{Selektionsbedingung}(R)$
 - $\sigma_A(\sigma_B) = \sigma_B(\sigma_A)$
 - Wenn die Bedinung immer falsch ist, wird eine leere Relation zurück gegeben
+- Wenn es ein Attribut in der Bedinung nicht gibt, ist der Ausdruck nicht berechenbar
 - Entfernt Tupels, welche nicht dem Prädikat entsprechen
 - Das Format der Relation ändert sich nicht, ist aber eine neue Relation
-- Wenn die Bedingung auf kein Tupel zutrifft, dann ist das Ergebnis eine leere Relation
 - Beispiel:
   - $\sigma_{Länge>100}(Filme)$ -> Alle Filme, welche eine grössere Länge als 100 haben
   - $\sigma_{City = 'Zürich' \wedge Discount \geq 0.15}(Customers)$ -> Finde alle Züricher Kunden, die einen Rabatt von 15% oder mehr erhalten
@@ -107,7 +107,7 @@ Bei einem Full-Outer-Join werden alle Werte von beiden Relationen ausgegeben. We
 - Gibt alle Einträge von beiden Mengen zurück. Duplikate werden entfernt
 - Beide Relationen, welche vereinigt werden, müssen dasselbe Schema haben
 
-Wenn die Vereinigung in Bag-Algebra durchgeführt wird, werden die Duplikate eines Tupels der linken und rechten Seite gezählt und alle Duplikate dieses Tupels von der Seite mit mehr Duplikaten genommen. Die doppelten Tupels der anderen Seite werden verworfen.
+Wenn die Vereinigung in Bag-Algebra durchgeführt wird, werden die Duplikate einer Tupel-Art der linken und rechten Seite gezählt und alle Duplikate dieser Tupel-Art von der Seite mit mehr Duplikaten genommen. Die doppelten Tupels der anderen Seite werden verworfen.
 
 #### Bag Concatenation ($\sqcup$)
 
