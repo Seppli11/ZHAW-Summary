@@ -1,4 +1,4 @@
-#  TuBegriffe
+#  Begriffe
 
 *in Tabelle formatieren*
 
