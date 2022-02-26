@@ -1,15 +1,7 @@
 {
-	"srcDirs": [
-		{
-			"glob": "21HS",
-			"type": "folder",
-			"children": [
-				{
-					"glob": "*",
-					"type": "item"
-				}
-			]
-		}
+	"folderLevels": [
+		{"level": 1, "type": "Semester"},
+		{"level": 2, "type": "Fach"}
 	]
 	
 }
