@@ -56,7 +56,7 @@ Der start eines Wortes $w$ wird **Präfix** genannt.
 Symbole in der Mitte werden **Infixe** oder auch Teilwörter. 
 Das Ende eines Wortes $w$ wird **Suffix** genannt.
 
-Ein Präfix, Infix oder Suffix ist echt, wenn er nicht gleich das Wort $w$ ist
+Ein Präfix, Infix oder Suffix ist echt, wenn sie nicht gleich das Wort $w$ ist
 
 ### Menge aller Wörter mit einer Länge
 
@@ -78,7 +78,7 @@ Beispiel: $\{0, 1\}^2=\{00, 01, 10, 11\}$
 >
 > Es gilt zudem: $|x|+|y|=|xy|=|x\circ y|$
 
-Beispiel: ...
+Beispiel: $x=22$ und $y=100$, dann gilt: $xy=x\circ y=22100$
 
 ### Wortpotenzen
 
@@ -101,9 +101,9 @@ Beispiel:
 >
 > Wenn $\Sigma_1 \subseteq \Sigma_2$ und $L$ eine Sprache über $\Sigma_1$ ist, dann ist $L$ auch eine Sprache  über $\Sigma_2$
 >
-> $\emptyset$ ist eine leere Sprache; Also eine Sprache ohne Wörter. ($\empty\neq \{\varepsilon\}$)
+> $\emptyset$ ist eine leere Sprache; Also eine Sprache ohne Wörter und gilt für jedes Alphabet ($\empty\neq \{\varepsilon\}$) 
 
-Sprache können aus unendlich vielen Wörtern bestehen. Die Wörter müssen aus einem endlichen Alphabet gebildet werden und müssen eindlich lang sein.
+Sprache können aus unendlich vielen Wörtern bestehen. Die Wörter müssen aus einem endlichen Alphabet gebildet werden und müssen endlich lang sein.
 
 Darstellungsmöglichkeiten:
 
@@ -120,6 +120,8 @@ Darstellungsmöglichkeiten:
 ### Kleenesche Hülle einer Sprache
 
 > Die Kleenesche Hülle $A*$ einer Sprache $A$  ist durch ${\varepsilon}\cup A \cup AA \cup AAA \cup ...$
+>
+> Die Kleenische Hèlle einer Sprache ist selbst eine Liste von Wörter, da die Liste aber unendlich ist, ist sie selbst keine Sprache (**stimmt das?**)
 
 ## Entscheidungsproblem
 
@@ -127,3 +129,9 @@ Darstellungsmöglichkeiten:
 >
 > Input: Eine Sprache $L$ und ein Wort $x\in\Sigma^*$
 > Output: JA, falls $x\in L$ ist und NEIN, falls $x\not \in L$ ist
+>
+> In Deutsch: "Gehört ein Wort eines Alphabetes zu einer Sprache?"
+
+## Fragen
+
+* Ist die Kleenische Hülle einer Sprache wieder eine Sprache? - Ja

@@ -1,0 +1,123 @@
+# Endliche Automaten
+
+* Endliche Automaten haben keine Variabeln oder Speicher; Das einzige gespeicherte, ist der aktuelle Zustand
+* Endliche Automaten arbeiten in Echtzeit
+* Das "Resultat" ist der Endzustand und ob der Endzustand akkzeptiert/valid ist
+
+## Definition eines Endlichen Autommaten
+
+> **Eindlichen Automat**: $M=(Q, \Sigma, \delta, q_0, F)$
+>
+> * $Q$ : Alle Zustände des Automaten $Q=\{q_0, q_1, ...,q_n\}$
+> * $\Sigma$: Eingabealpabet
+> * $\delta: Q\times \Sigma \rightarrow Q$: Übergangsfunktionen, welche von einem Zustand und einem Eingabe Symbol zum nächsten Zustand führt
+> * $q_0$: Startzustand
+> * $F\subseteq Q$: Menge der akzeptierten Zuständen. Mindestens ein Zustand muss akzeptiert sein
+
+### Konfiguration
+
+Eine Konfiguration ist: $(q, w) \in Q\times\Sigma^*$
+
+Eine Startkonfiguration ist ein Element aus $\{q_0\}\times \Sigma^*$ . Als Beispiel: $(q_0, w_1)$
+
+Eine Endkonfiguration ist: $(q, w)\in Q\times\{\epsilon\}$. Als Beispiel: $(q2, \epsilon)$
+
+Das Wort $w$ in einer Konfiguration $(q, w)$ ist der noch zu verarbeitende Teil des Inputwortes. Es ist daher ein Sufix des Inputwortes.
+
+### Berechnungsschritte
+
+Der Berechnungsschritt $\vdash_M$ der Endlichen Maschine $M$ ist definiert als $(q, w)\vdash_M(p,x)$, wenn $w=ax, a\in\Sigma$ und $\delta(q, a)=p$ ergibt. 
+
+Oder in Deutsch $\vdash_M$ der Endlichen Maschine M ist der Berechnungschritt zwischen einem und dem nächsten Zustand.
+
+#### Beispiel
+
+![image-20220301145922958](res/image-20220301145922958.png)
+
+Bei dieser Maschine würde folgendes Beispiel gültig sein: $(q0, a_1a_2a_3)...$
+
+### Berechnungen
+
+**TODO**
+
+### Akzeptierende und verwerfende Zustände
+
+### Sprache eins endlichen Automaten
+
+Die Sprache eines endlichen Automaten $M$ besteht aus allen Wörtern, welche bei $M$ auf einem akzeptierenden Zustand fallen.
+
+$L(M)=\{w\in\Sigma^*|\text{Berechnung von } M \text{ auf } w \text{ ist akzeptiert}\}$
+
+Jeder endlichen Automat kann als Regex geschrieben werden und umgekehrt.
+
+### Ausführung von Automaten
+
+* stranden
+* Abfallzustand
+
+## Elemente
+
+| Was                                                          | Beschreibung                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="res/image-20220301140455457.png" alt="image-20220301140455457" style="zoom:67%;" /> | Der Startzustand                                             |
+| <img src="res/image-20220301140523138.png" alt="image-20220301140523138" style="zoom:67%;" /> | Normaler Zustand                                             |
+| <img src="res/image-20220301140534949.png" alt="image-20220301140534949" style="zoom: 67%;" /> | Akzeptierter Endzustand                                      |
+| <img src="res/image-20220301140548641.png" alt="image-20220301140548641" style="zoom:50%;" /> | Übergangsfunktionen: Vom Zustand "0.50" kann zu "1.50" gelaufen werden |
+
+Zusätzlich wird das **Eingabealphabet** definiert. Dies sind die Symbole, welche dem Automaten als Input gegeben weden kann.
+
+## Moore Automaten vs Mealy Automaten
+
+Bei einem Mealy Automaten hängt der nächste Zustand vom aktuellen Zustand und dem Input ab. Beim Moore Automaten hingegen hängt der nächste Zustand nur vom aktuellen Zustand ab.
+
+Für jeder Mealy Automat gibt es einen Moore Automat und umgekehrt.
+
+## Berechnungsmodell
+
+1. 
+
+## (Nicht-)Deterministische endlichen Automaten
+
+Bei einem determinisctischen endlichen Automaten ist jede Konfiguration einzigartig. Also bei einem Zustand gibt es für jedes Inputwort ein möglichen nächsten Zustand.
+
+Bei einem **nicht-deterministischen endlichen Automaten** (NEA) ist dies nicht gegeben. Bei der folgenden NEA kann man von $q_0$ mit $0$ zu $q_1$ oder bei $q_0$ bleiben. Daher ist die Berechnungsfunktion $\delta$ anderst definiert: $\delta: Q\times \Sigma\rightarrow \mathcal P(Q)$. Als $\delta$ gibt eine Menge von Zustände zurück ($\mathcal P(Q)$ ist die Potenzmenge von $Q$, also alle Möglichen Teilmengen von $Q$)
+
+![image-20220301152624080](res/image-20220301152624080.png)
+
+Bei solchen Automaten wird jede Möglichkeit ausprobiert. Gewisse Möglichkeiten werden in Sackgassen geraten und gewisse auf einem nicht akzeptierten Feld.
+
+Damit eine NEA ein Wort akzeptiert reicht wenn eine Möglichkeit gefunden wird, bei welchem den Endzustand akzeptiert wird.
+
+ DEA und NEA sind gleichwertig. Eine Sprache kann in beiden Automaten abgebildet werden.
+
+### NEA mit $\epsilon$-Übergänge
+
+<img src="res/image-20220301155414657.png" alt="image-20220301155414657" style="zoom:80%;float:right;" />Eine Zusätzliche Eigenheit von NEAs sind die die $\epsilon$-Übergänge. Mit diesen kann die NEA den Zustand wechseln, ohne ein Inputwort zu konsumieren.
+
+Die Übergangsfunktion muss mit $\epsilon$-Übergänge noch mals modifiziert werden, da nun das leere Symbol noch hinzugefügt werden muss: $\delta: Q\times \Sigma \cup \{\epsilon\}\rightarrow \mathcal P(Q)$
+
+Unten folgt noch ein Beispiel mit $\epsilon$-Übergänge:
+![image-20220301155612650](res/image-20220301155612650.png)
+
+DEAs sind ebenfalls equivalent zu $\epsilon$-NEAs und umgekehrt. Also jede DEA kann in eine $\epsilon$-NEA umgewandelt werden und umgekehrt. 
+
+Um von einer $\epsilon$-NEA zu einer DEA umwandeln, müssen zuerst die $\epsilon$-Übergänge aufgelöst werden. Dafür kann man sich überlegen, was für Zeichen konsumiert werden könnten, wenn man den $\epsilon$-Übergang nimmt. Diese Übergange in den ursprünglichen Zustand aufnehmen. Es kann helfen, dies grafisch zu erledigen. Nach dem auflösen der $\epsilon$-Übergänge wird eine Teilmengenkonstruktion durchgeführt.
+
+## Teilmengenkonstruktion
+
+Mit einer Teilmengenkonstruktion kann aus einer NEA eine DEA erstellt werden.
+
+Die DEA $D=(Q_D, \Sigma, \delta_D, q_0, F_D)$ wird aus der NEA $N=(Q_N, \Sigma, \delta_N, q_0, F_N)$
+
+* $Q_d=\mathcal P(Q_N)$
+* $\delta_q=$
+
+D
+
+## Äquivalenz von Automaten
+
+* eine DEA ist äquivalent zu einem Regularen Ausdruck und umgekehrt
+
+Dabei ist eine Regularen Ausdruck ein beschreibenden Mechanismus und die DEAs, NEAs und $\epsilon$-EAS akzeptierende Mechanismen.
+
+![image-20220301161943754](res/image-20220301161943754.png)

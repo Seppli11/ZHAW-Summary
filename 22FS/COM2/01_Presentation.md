@@ -18,7 +18,7 @@ Form: 5-10 seitigen Bericht mit Autorenangaben, Titel, Abstract
 
 Fachtext:
 
-* kein "mann"
+* kein "man"
 * Umformung ins Passiv
 * Umformung ins Ersatzpassiv
 * Nominalsierung statt Verbalisierung

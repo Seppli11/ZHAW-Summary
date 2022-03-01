@@ -99,3 +99,7 @@ $$
 Es gilt folgendes Gesetzt: $(A\cdot B)^T=B^T\cdot A^T$
 
 Bemerke, dass sich die Reihenfolge von $A$ und $B$ sich ändert.
+
+## Gleichheit
+
+Zwei Matrizen sind gleich, wenn alle Elemente der Matritzen gleich sind.
