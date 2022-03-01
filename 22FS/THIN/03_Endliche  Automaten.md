@@ -34,13 +34,19 @@ Oder in Deutsch $\vdash_M$ der Endlichen Maschine M ist der Berechnungschritt zw
 
 ![image-20220301145922958](res/image-20220301145922958.png)
 
-Bei dieser Maschine würde folgendes Beispiel gültig sein: $(q0, a_1a_2a_3)...$
+Bei dieser Maschine würde folgendes Beispiel gültig sein: $(q0, a_1a_2a_3)\vdash_A(q_1, a_2a_3)\vdash_A(q_2, a_3)\vdash_A(q4, \epsilon)$
 
 ### Berechnungen
 
-**TODO**
+Eine endliche Folge von Berechnungsschritten, nennt man **Berechnung**. Es wird die folgende Notation benützt: $(q_a, w_1,w_2...w_n)\vdash_M(q_b, w_2...w_n)\vdash_M...\vdash_M(q_e,w_j...w_n)\vdash_M=(q_a, w_1,w_2...w_n)\vdash^*_M(q_e, w_j...w_n)$
 
-### Akzeptierende und verwerfende Zustände
+Der $\vdash^*$ Operator stellt alle Berechnungschritten zwischen den zwei angegebenen Schritten dar.
+
+### Ausführung von Automaten (akzeptieren, verwerfen, stranden, Abfallzustand)
+
+Eine Berechnung wird **akzeptiert**, wenn der Endzustand $q_e\in F$ ist, also ein Endzustand ist. Falls dies nicht der Fall ist, wird die Berechnung **verworfen**. Die Maschine wird dann auch gestrantet genannt.
+
+Wenn ein Eingabewort nicht verarbeitet werden kann, weil es für ein Input-Symbol keinen Übergang gibt, geht die Maschine zum **Abfallzustand**. Das Eingabewort wird verworfen.
 
 ### Sprache eins endlichen Automaten
 
@@ -49,11 +55,6 @@ Die Sprache eines endlichen Automaten $M$ besteht aus allen Wörtern, welche bei
 $L(M)=\{w\in\Sigma^*|\text{Berechnung von } M \text{ auf } w \text{ ist akzeptiert}\}$
 
 Jeder endlichen Automat kann als Regex geschrieben werden und umgekehrt.
-
-### Ausführung von Automaten
-
-* stranden
-* Abfallzustand
 
 ## Elemente
 
@@ -109,10 +110,22 @@ Mit einer Teilmengenkonstruktion kann aus einer NEA eine DEA erstellt werden.
 
 Die DEA $D=(Q_D, \Sigma, \delta_D, q_0, F_D)$ wird aus der NEA $N=(Q_N, \Sigma, \delta_N, q_0, F_N)$
 
-* $Q_d=\mathcal P(Q_N)$
-* $\delta_q=$
+* $Q_d=\mathcal P(Q_N)$ : Alle Teilmengen von $Q_N$ sind Zustände im DEA
+* $F_D=\{S\in Q_D \vert S \cap F_N\neq \O\}$: Alle Zuständ-Teilmengen, welche ein Element mit den akzeptierten Zuständen $F_N$  teilen
+* $\delta_q$: 
 
-D
+Oder in Worten ausgedrückt:
+
+1. Die Zustände sind die Potenzmenge von $Q_N$
+2. Die potentielle Startzustand Kandidaten sind alle diese Teilmengen von $Q_N$, welche $q_0$ enthalten
+3. Akzeptierte Zustände sind alle Teilmengen, welche ein Element aus $F_N$ besitzen
+4. Aus den Zuständen und eingaben soll nun eine Tabelle gezeichnet werden. Bei dieser können alle Zustände gestrichen werden, welche nicht erreichbar sind. Also nie bei einer Eingabe-Spalte auftauchen. Dies muss solange wiederholt werden, bis nichts gestrichen werden kann. 
+   Wenn $\{q_1\}$ in einer Eingabe-Spalte steht, heisst das nur, dass $\{q_1\}$ vorhanden ist. $\{q_1, q_2\}$ muss immer noch gestrichen werden, wenn es nicht selbst vorkommt
+5. Die noch nicht gestrichenen Resultaten können nun Namen verteilt werden (z.B A-Z)
+
+![image-20220301200210053](res/image-20220301200210053.png)
+
+Das resultiertende DEA aus dem NEA oben ist:![image-20220301200242103](res/image-20220301200242103.png)
 
 ## Äquivalenz von Automaten
 
