@@ -42,6 +42,10 @@ i_5 & i_6 & c_3
 \end{array} \right)
 $$
 
+## Homogene Gleichungssysteme
+
+Homogene Gleichungssysteme sind Gleichungssysteme bei denen das Resultat bei allen Gleichungen `0`  ist. 
+
 ## Zeilenstufenform
 
 Die Zeilenstufenform ist definiert durch die folgenden Regeln:
@@ -97,14 +101,62 @@ $$
 $$
 Anzumerken ist, dass $x_2$ bei der $\lambda$ Matrix ein `1` hat. Dies liegt daran, dass $x_2=\lambda$ ist. Dasselbe gilt auch mit $x_4=\mu$ und der $\mu$ Spalte bei $x_4$
 
-## Zeilenstufenform herleiten (Jordan-Gauss-Verfahren)
+## Zeilenstufenform herleiten (Gauss-Verfahren und Gauss-Jordan-Verfahren)
 
 Ein Gleichungssystem, welches bereits in der Zeilenstufenform ist zu lösen, ist einfach. Die Frage ist nun, wie jemand ein solches Form herleiten kann.
 
-1. Wir nennen die am weitesten links stehende Spalte mit Element $\neq0$ *Pivot-Spalte*
+1. Wir nennen die am weitesten links stehende **Spalte** mit Element $\neq0$ *Pivot-Spalte*
 2. Wenn die Zeile mit dem führenden Eins nicht zu oberst ist, wird sie mit der obersten Zeile getauscht
 3. Die oberste Zeile wird durch die erste Element $\neq 0$ in der Spalte geteilt. So wird eine führende Eins erzeugt
 4. Um `0` in der Pivot-Spalte unter der obersten Zeile zu erzeugen, wird jede Zeile unter der obersten Zeile mit einem Vielfachen der obersten Zeile addiert um `0` zu forderst zu erzeugen
 5. Schritte 1-5 wiederholen, bis eine Zeilenstufenform vorhanden ist
 
-Wenn eine reduzierte Zeilenstufenform verlangt wird, muss danach ein Vielfaches der unterste Zeile auf die oberen Zeile addiert werden, so dass diese `0` ergeben.
+Wenn eine reduzierte Zeilenstufenform verlangt wird, muss danach ein Vielfaches der unterste Zeile auf die oberen Zeile addiert werden, so dass diese `0` ergeben. Wenn man mithilfe der reduzierten Form die Gleichung löst, spricht man vom Gauss-Jordan-Verfahren, ansonsten nur vom Gauss-Verfahren.
+
+Das folgende Beispiel wird an dem folgenden Gleichungssystem durchgeführt:
+
+
+$$
+\left(\begin{array} {ccc|c}
+	1 & -1 & 1 & 0\\
+	3 & 1 & 0 & 18\\
+	0 & 1 & 2 & 10
+\end{array}\right)
+$$
+
+
+| Schritt                                                      | Beispiel                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| A1. Die erste Spalte ist die Pivot-Spalte<br />A2. Das oberste Element der Pivot-Spalte ist bereits $\neq 0$<br />A3. Es wird von der zweiten Zeile drei mal die erste Zeile abgezogen. Die dritte Zeile hat bereits eine `0` in der Pivot-Spalte | $\left(\begin{array} {ccc|c} 1 & -1 & 1 & 0\\ 0 & 4 & -3 & 18\\ 0 & 1 & 2 & 10 \end{array}\right)$ |
+| B1. Die zweite Spalte ist nun die Pivot-Spalte<br />B2. Das oberste Element (die erste Zeile wird ignoriert, daher ist dies in der zweiten Zeile), ist eine `4`, daher wird die zweite Zeile durch eine `4` geteilt | $\left(\begin{array} {ccc|c} 1 & -1 & 1 & 0\\ 0 & 1 & -0.75 & 4.5\\ 0 & 1 & 2 & 10 \end{array}\right)$ |
+| B3. Es wird das $(-1)$ Fache von der Zeile 2 zu der Zeile 3 addiert | $\left(\begin{array} {ccc|c} 1 & -1 & 1 & 0\\ 0 & 1 & -0.75 & 4.5\\ 0 & 0 & 2.75 & 5.5 \end{array}\right)$ |
+| C1. Die dritte Spalte ist nun die Pivot-Spalte<br />C2. Die ersten zwei Zeilen werden ignoriert, daher wird die letzte Zeile durch `2.75` geteilt, damit eine `1` zu forderst steht. | $\left(\begin{array} {ccc|c} 1 & -1 & 1 & 0\\ 0 & 1 & -0.75 & 4.5\\ 0 & 0 & 1 & 2 \end{array}\right)$ |
+
+Die Matrix ist nun in der Zeilenstufenform. Wenn die reduzierte Stufenzeilenform verlangt wird, muss der fünfte Schritt noch durch geführt werden:
+
+| Schritt                                                      | Beispiel                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| A5. Die zweite Zeile wird mit dem $(-0.75)$ Fachen der Zeile drei addiert und die erste Zeile mit der Zeile drei addiert (also $\cdot 1$) | $\left(\begin{array} {ccc|c} 1 & -1 & 0 & -2\\ 0 & 1 & 0 & 6\\ 0 & 0 & 1 & 2 \end{array}\right)$ |
+| B5. Die erste Zeile wird mit der zweiten Zeile addiert       | $\left(\begin{array} {ccc|c} 1 & 0 & 0 & 4\\ 0 & 1 & 0 & 6\\ 0 & 0 & 1 & 2 \end{array}\right)$ |
+
+Nun ist die Matrix in der reduzierten Zeilenstufenform.
+
+## Lösbarkeit von linearen Gleichungssystemen
+
+Ein **lineares** Gleichungssystem hat drei verschiedene Lösungsmöglichkeiten: Keine Lösung, eine Lösung, unendliche Lösungen.
+
+Graphisch gezeichnet, sieht dies so aus:![image-20220305142750918](res/image-20220305142750918.png)
+
+Um nicht jedes mal ein Gleichungssystem zeichen zu müssen, kann man den **Rang** des Gleichungssystems zu hilfe ziehen:
+
+> Der Rang $rg(A)$ des Gleichungssystems $A$ ist definiert als $rg(A)=\text{Gesamtanzahl Zeilen} - \text{Anzahl Nullzeilen}$ in der **Zeilenstufenform**
+>
+> $rg(A)$ ist dabei die Matrix ohne die Koeffizienten $\vec c$ (also **ohne** die Zahlen nach dem langen Strich). $rg(A|\vec c)$ ist der Rang der kompletten Matrix (mit den Zahlen nach dem Strich inklusive)
+
+- Ein lineares Gleichungssystem ist lösbar, wenn $rg(A)=rg(A|\vec c)$
+- Es hat genau eine Lösung, wenn gilt: $rg(A)=n$ , $n$ ist die Anzahl Spalten von $A$
+- Es hat unendlich viele Lösungen, wenn gilt: $rg(A)<n$, $n$ ist die Anzahl Spalten von $A$
+
+Ein homogenes Gleichungssystem (alle Koeffizienten sind $0$) ist immer lösbar, da $rg(A)=rg(A|\vec c)$ immer gilt. 
+
+Wenn mit Restklassen gearbeitet werden, kann es vorkommen, dass ein Gleichungssystem keine Lösung hat, da es kein multiplikatives Invers einer Restklasse gibt und somit die Zeilenstufenform nicht geformt werden kann.

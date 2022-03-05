@@ -44,3 +44,37 @@ A **thread** is part of a process and runs one flow. It shares its memory with t
 ![image-20220224112520675](res/image-20220224112520675.png)
 
 A Thread is considered "alive" and `Thread.isAlive()` will return true, when the Thread is either ready, running oder suspended (the blocks with the dotted outline)
+
+## Executor Framework
+
+### Executor Service).length
+
+<img src="res/image-20220303102501193.png" alt="image-20220303102501193" style="zoom:45%; float: right;" />
+An `Executor` just promises to execute a given task.
+
+An `ExecutorService` extends `Executor` to allow to shutdown the Executor and to track the progress and the state of a task. The `shutdownNow()` method uses `Thread.interrupt()` under the hood and is thus not deprecated.
+
+The `ScheduledExecutorService` extends the `ExecutorService` to allow a task to be scheduled. The method signitures of the new methods are: 
+
+* `schedule(Runnable task, long delay, TimeUnit unit)`,
+* `scheduleAtFixedRate(Runnable task, long initialDelay, long period, TimeUnit unit)`
+*  `scheduleWithFixedDelay(Runnable task, long initialDelay, long delay, TimeUnit unit)`
+
+### Thread Pools
+
+A thread pool uses multiple threads which are reused for multiple tasks. Thread pools usually use a queue to hold the tasks to be executed.
+
+A special kind of thread pool is a **Blocking Queue**, which when it's full, will reject newly submitted tasks.
+
+Most `Executor Services` use thread pools underneath.
+
+### Different Executors
+
+| Executor Name                                         | Description                                                  |
+| ----------------------------------------------------- | ------------------------------------------------------------ |
+| `Executors.newSingleThreadExecutor()`                 | Creates an Executor which only uses one thread               |
+| `Executors.newFixedThreadPool(int numOfThreads)`      | Creates an Executor which has the given number of threads. Those thread will be reused |
+| `Executors.newCachedThreadPool()`                     | Creates new threads as needed. It will retain Threads for an amount of time (approx. up to 60s) and will stop it after. |
+| `Executors.newScheduledThreadPoool(int numOfThreads)` | Creates a new scheduled thread pool with the given number of threads. |
+| `Executors.newSingleThreadExecutor()`                 | Creates a new scheduled executor with a single thread        |
+
