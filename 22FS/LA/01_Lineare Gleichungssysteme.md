@@ -54,11 +54,15 @@ Die Zeilenstufenform ist definiert durch die folgenden Regeln:
 * Wenn eine Zeile nicht nur aus `0` besteht, ist die erste Zahl, welche keine `0` ist, eine `1`. Diese `1` wird als *führende Eins* bezeichnet
 * Eine führende Eins, welche weiter unten steht, muss auch weiter rechts stehen, als die anderen führenden Einsen
 
-Zusätzlich gibt es noch die *reduzierte Zeilenstufenform*, bei welcher noch die Regel gilt, dass nur eine `1` pro **Spalte** stehen darf. Die restlichen Elemente müssen `0` sein.
+Zusätzlich gibt es noch die *reduzierte Zeilenstufenform*, bei welcher noch die Regel gilt, dass in den Spalten mit einer führenden Eins, die weiteren Elemente `0` sein müssen.
 
 Bei der erweiterten Koeffizientenmatrix sind die Resultat-Werte (die $c_i$ Werte) von den Regel ausgenommen werden.
 
 ![image-20220301200427246](res/image-20220301200427246.png)
+
+Folgendes Matrix ist in der Zeilenstufenform: ![image-20220305144601952](res/image-20220305144601952.png)
+
+
 
 ## Lösung aus der Zeilenstufenform
 
