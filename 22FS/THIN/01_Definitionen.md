@@ -123,6 +123,12 @@ Darstellungsmöglichkeiten:
 >
 > Die Kleenische Hèlle einer Sprache ist selbst eine Liste von Wörter, da die Liste aber unendlich ist, ist sie selbst keine Sprache (**stimmt das?**)
 
+### Komplement einer Sprache
+
+> Das Komplement einer Sprache sind alle Wörter, **welche** nicht in der Sprache sind
+>
+> $\overline L=\Sigma^*-L=\Sigma^*\setminus L$
+
 ## Entscheidungsproblem
 
 > Sei eine Sprache $L$ über einem Alphabet $\Sigma$ gegeben. Das Entscheidungsproblem $(\Sigma, L)$ ist die folgende:

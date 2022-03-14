@@ -16,7 +16,7 @@
 
 ### Konfiguration
 
-Eine Konfiguration ist: $(q, w) \in Q\times\Sigma^*$
+Eine Konfiguration ist: $(q, w) \in Q\times\Sigma^*$ oder in Worten ist eine Konfiguration ein Zustand mit zusätzlich das noch zu verarbeitende Wort
 
 Eine Startkonfiguration ist ein Element aus $\{q_0\}\times \Sigma^*$ . Als Beispiel: $(q_0, w_1)$
 
@@ -112,7 +112,7 @@ Die DEA $D=(Q_D, \Sigma, \delta_D, q_0, F_D)$ wird aus der NEA $N=(Q_N, \Sigma, 
 
 * $Q_d=\mathcal P(Q_N)$ : Alle Teilmengen von $Q_N$ sind Zustände im DEA
 * $F_D=\{S\in Q_D \vert S \cap F_N\neq \O\}$: Alle Zuständ-Teilmengen, welche ein Element mit den akzeptierten Zuständen $F_N$  teilen
-* $\delta_q$: 
+* $\delta_q$: **TODO**
 
 Oder in Worten ausgedrückt:
 
@@ -134,3 +134,43 @@ Das resultiertende DEA aus dem NEA oben ist:![image-20220301200242103](res/image
 Dabei ist eine Regularen Ausdruck ein beschreibenden Mechanismus und die DEAs, NEAs und $\epsilon$-EAS akzeptierende Mechanismen.
 
 ![image-20220301161943754](res/image-20220301161943754.png)
+
+## Automaten in einen RegEx umwandeln
+
+1. Für jeden Zustand eine separate Sprache definieren. Diese darf sich selbst referenzieren oder auch andere Sprachen
+2. Kürzen und einsetzen. Meistens ist es am einfachsten von den Endzuständen zu kürzen zu beginnen
+
+### Beispiel
+
+1. Für jeden Zustand einen Ausdruck aufschreiben:
+   $$
+   \begin{align}
+   L_{q_0}&=(0|1)L_{q_0}|0L_{q_1}\Rightarrow(0|1)^*0L_{q_1}\Rightarrow(0|1)*01\\
+   L_{q_1}&=1L_{q_2} \Rightarrow1\varepsilon=1\\ 
+   L_{q_2}&=\varepsilon\\
+   \end{align}
+   $$
+   
+
+![](res/image-20220308125550874.png)
+
+### Arden'sches Lemma
+
+> $L=UL|V\Rightarrow L=U^*V$, dabei ist $L$ eine Spraceh und $U$ einen andren Ausdruch
+
+## Zustandsklassen
+
+> $[p]=\{w \in \Sigma^*\vert M \text{ endet nach Lesen des Input-Worts } w \text{ im Zustand } p\}$, dabei ist $M$ einen Automaten, $w$ ein eingabe Wort und $p$ ein Zustand (nicht unbedingt der Endzustand)
+
+Folgende Regeln gelten für die Zustandsklassen:
+
+* Jedes Wort landet in einem Zustand (wenn ein Automat strandet oder ein Input nicht verwendet werden kann, wird der zuletzt erreichten Zustand genommen)
+* Kein Wort landet in einer DEA in zwei Zustände (gilt nicht für NEAs)
+
+## Untere Schranke für endliche Automaten
+
+**TODO**
+
+## Wann ist ein Automaten Nicht-Regulär?
+
+* Wenn ein Automaten zwischen unendlich vielen Zuständen unterscheiden müsste können

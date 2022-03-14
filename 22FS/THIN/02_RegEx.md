@@ -8,7 +8,7 @@ Die Semantik sagt aus, was die Symbole bedeuten (z.B. dass die Zahl 101 im Zehne
 
 ## Syntax
 
-* $(0|1)$ - entweder 0 oder 1
+* $(0|1)$ - entweder 0 oder 1 (Manchmal wird dies auch als $(0+1)$ geschrieben)
 * $x^*$ - beliebig oft $x$, auch null mal
 * $x^+=xx^*$ - mindestens 1-mal $x$
 * $x?=(x|\epsilon)$ - $x$ ist optional
@@ -36,6 +36,21 @@ Die Semantik sagt aus, was die Symbole bedeuten (z.B. dass die Zahl 101 im Zehne
 * $L(R^*)=L(R)^*$
 * $L(R|S)=L(R) \cup L(S)$
 * $L(RS)=L(R)L(S)$
+
+## Wann ist Sprachen regulär
+
+Eine Sprache nennt sich regulär, wenn sie mit einem Regulären Ausdruck gebildet werden kann. Dafür gibt es eine Regeln:
+
+Die Sprache $L_1$ und $L_2$ sind jeweils regulär:
+
+1. $L_1L_2$ ist regulär
+2. $L_1\cup L_2$ (Vereinigung) ist regulär
+3. $L_1\cap L_1$ (Schnittmenge) ist regulär
+4. $L_1\setminus L_2$ (Differenz) ist regulär
+5. $L_1^*$ ist regulär
+6. $\overline {L_1}$ ist regulär
+
+**Kurz gesagt: Wenn zwei Sprachen regulär sind, ist das Resultat von einem Operator mit diesen Sprachen regulär**
 
 # Fragen
 
