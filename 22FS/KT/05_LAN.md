@@ -53,11 +53,27 @@ Die Baum-Topologie kann aus mehreren Stern-Topologien hergestellt werden.
 * 1000BASE-T = Ethernet mit Basisband-Kanalcodierung mit einer Bitrate von 1Gbit/s mit Twisted-Pairs
 * 10BASE5= 10Mbit/s Basisband-Ethernet mit max 500m Segmentenlänge
 
-## Manchester-Codierung
+## Manchester-Codierung (10Mbit/s)
 
+In Ethernet wird die Manchester-Codierung zwischen 0V und -2V angewendet.
 
+* Eine steigene Flanke ist eine `1`
+* eine sinkende Flanke ist eine `0` 
 
-## Manchester-CodierungShared-Ethernet
+Um z.B. zwei `1`  senden zu können, muss nach dem ersten `1` zuerst auf -2V gehen, damit eine zweite steigende Flanke gebildet werden kann. Da diese sinkende Flanke ausserhalb des Clocksignal ist, erkennt der Sender dies nicht.
+
+Ein Nachteil der Manchester-Codierung ist, dass nur die Hälfte der Bandbreite genutzt werden kann, da für zwei `1` das Signal 4 Flanken machen muss. Daher wird bei Geschwindigkeit höher als 10Mbit/s **keine** Manchester-Codierung verwendet
+
+![image-20220314144944190](res/image-20220314144944190.png)
+
+## NRZ-I (100Mbit/s)
+
+* bei einer `1` wechselt der Pegel
+* bei einer `0` bleibt der Pegel 
+
+![image-20220314150226345](res/image-20220314150226345.png)
+
+## Shared-Ethernet
 
 Das ursprüngliche Ethernet wurde für eine Bus-Topologie entwickelt. Dabei wurden Koaxial-Kabel verwendet, welche angebohrt wurden (Daher auch der Name Tick-Wire-Ethernet)
 

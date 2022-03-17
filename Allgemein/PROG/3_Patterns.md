@@ -13,3 +13,14 @@ Ein Problem, dass bei einer solchen Hirarchie entstehen kann, ist dass es redunt
 Als Alternative kann hier das Strategy-Pattern genutzt werden. Nun hat die Ente-Klasse Referenzen zu Strategy-Implementationen, welche entscheiden, ob eine Ente fliegen oder nicht fliegen kann. So kann duplizierter Code verhindert werden
 
 ![image-20220120185113772](res/image-20220120185113772.png)
+
+## MVC
+
+> **Model**: Contains the data with the domain logic, but it has to be independent from the View-Classes.
+>
+> **View:** The UI components which render the data. The view doesn't call the model directly (usually), but it knows about the types of the model (for example via generics).
+>
+> **Controller:** The glue between the model and the UI. It listens to events from the UI and calls the model accordingly
+>
+> <img src="res/image-20220317102517540.png" alt="image-20220317102517540" style="zoom:50%;" />
+

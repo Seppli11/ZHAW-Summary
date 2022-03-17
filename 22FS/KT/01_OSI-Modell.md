@@ -99,15 +99,17 @@ Die Anzahl Symbole pro Sekunde. Ein Symbol ist dabei ein Zustand im Datenstrom
 
 $f_s\le2B$, dabei ist $f_s$ die Symbolrate/Baudrate und $B$ die Bandbreite des Kanals in Hz.
 
-Diese Formel besagt, dass die Baudrate (oder Nyquist Rate) doppelt so gross, wie die Frequenz des Übertragungskanal ist.
+Diese Formel besagt, dass die Symbolrate in Baud (oder Nyquist Rate) doppelt so gross, wie die Frequenz des Übertragungskanal ist.
 
 ### Maximale Bitrate (Hartley's Gesetzt)
 
+Die Bitrate $R [bit/s] \le 2B [Hz] \cdot \log_2(M)$ 
 
+wobei $M$ folgendermassen definiert ist: $M=1+\frac A {\Delta V}$
 
-$M=1+\frac A {\Delta V}$
+**TODO**
 
-### Kanalkapazität
+### Kanalkapazität (Theorem von Shanon)
 
 $C_s=B\cdot \log_2(1+\frac S N)$, wo bei $C_s$ die Kanalkapazität, $B$ die Baudrate, $S$ die Signal-Aplitude und $N$ die Noise-Aplitude ist. $\frac S N$ ist die Signal-to-Noise Ratio
 
