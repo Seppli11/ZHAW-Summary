@@ -12,13 +12,17 @@
 >* $\$\in \Gamma$ ist ein ausgezeichnetes Symbol vom Alphabet des Stacks/Kellers
 >* $F\subseteq Q$ ist die Menge der akzeptierten Zustände 
 >
->**TODO: Einschränkungen eines Keller Automaten**
+>Zu dem gilt für die Übergangsfunktion $\delta$, wenn $\delta(q, b, x)$ definiert ist, darf $\delta(q, \varepsilon, x)$ nicht definiert sein. Das heisst, das leere Wort darf nur benutzt werden, wenn für eine Stackposition kein anderes Symbol definiert ist. Dies stellt sicher, dass der Automat deterministisch ist.
 >
->Damit 
+>Zu begin der Ausführung ist im Strack $\$$, was ein leerer Stack darstellt.
 
 
 
 ![image-20220315145153384](res/image-20220315145153384.png)
+
+Als ein weiteres Beispiel, in welchem $*$ als Platzhalter für ein beliebiges Zeichen steht:
+
+![image-20220326193950829](res/image-20220326193950829.png)
 
 ## Nichtdeterministischen Kellerautomaten
 
@@ -26,3 +30,18 @@
 >
 > Wie auch bei einer NEA kann nun im $\varepsilon$ (das leere Wort) für $\Sigma$ in der Übergangsfunktion. 
 
+## Berechnungsschritte
+
+![image-20220326193612394](res/image-20220326193612394.png)
+
+Die Berechnungssfunktion dazu wäre: $\delta(q, b, c)=(p, w)$
+Dabei befindet sich der Automaten im Zustand $q$, list das Symbol $b$ von der Eingabe und wird das Kellersymbol $c$ vom Stack lesen und $w$ zurück schreiben. Der nächste Zustand wird $p$ sein.
+
+## Berechnung
+
+Eine Berechnung besteht aus mehhreren Berechnungsschritte und eine Start- und Endkonfiguration.
+
+Beispiel: $(q_0, 0011, \$) \vdash (q_0, 011, 0\$)\vdash (q_0, 11, 00\$)\vdash(q_1, 1, 0\$)\vdash(q_1, \varepsilon, \$)\vdash(q2, \varepsilon, \$)$ 
+Dies kann auch als $(q_0, 0011, \$)\vdash^*(q2, \varepsilon, \$)$ geschrieben werden.
+
+## Sprache eines Kellerautomaten

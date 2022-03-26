@@ -37,13 +37,13 @@ Dabei kann man **linksseitig Ableiten** und **rechtsseitig Ableiten**. Beim link
 
 ## Ableitung
 
-Eine **Ableitung** ist eine Folge von Ableitungsschritten.
+Eine **Ableitung** ist eine Folge von Ableitungsschritten. Wenn vom Startsymbol $A$ zum Endwort $w$ abgeleitet wurde, kann dies als $A\overset{*}{\Rightarrow}w$ schreiben. Dazu wird auch gesagt, dass $A$ generiert oder erzeugt $w$.
 
 Ein Wort ist **ableitbar**, wenn es eine Ableitung mit einer Grammatik gibt, welche das Wort ergeben.
 
 ## Ableitungsbaum
 
-Der Ableitungsbaum zeigt auf, in welcher Reihenfolge die Ableitungsschritte angewendet wurde.
+Der Ableitungsbaum/Parsebäume zeigt auf, in welcher Reihenfolge die Ableitungsschritte angewendet wurde.
 
 ![image-20220315132416296](res/image-20220315132416296.png)
 

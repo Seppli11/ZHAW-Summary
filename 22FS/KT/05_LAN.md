@@ -42,16 +42,17 @@ Die Baum-Topologie kann aus mehreren Stern-Topologien hergestellt werden.
 
 | Art       | Erklärung                                                    |
 | --------- | ------------------------------------------------------------ |
-| Unicast   | Ein Paket hat wird genau an ein Ziel gesendet. Das Paket wird mit einer Adresse ausgestattet, so dass es am Ziel sicher ankommt. |
-| Broadcast | Das Paket wird an alle Knoten im Netzwerk gesendet. Das Paket wird mit einer Broadcast-Adresse ausgestattet |
-| Multicast | Das Paket wird an eine Gruppen von Knoten gesendet.          |
+| Unicast   | Ein Paket hat wird genau an ein Ziel gesendet. Das Paket wird mit einer Adresse ausgestattet, so dass es am Ziel sicher ankommt. (Netflix) |
+| Broadcast | Das Paket wird an alle Knoten im Netzwerk gesendet. Das Paket wird mit einer Broadcast-Adresse ausgestattet (Live-Stream/Twitch) |
+| Multicast | Das Paket wird an eine Gruppen von Knoten gesendet. (Radio)  |
+| (Anycast) | Mehrere Server mit den selben Adressen. Der Knoten davor entscheidet, an welchen Knoten übertragen wird |
 
 ## IEEE Namensgebung
 
 ![image-20220314110750571](res/image-20220314110750571.png)
 
 * 1000BASE-T = Ethernet mit Basisband-Kanalcodierung mit einer Bitrate von 1Gbit/s mit Twisted-Pairs
-* 10BASE5= 10Mbit/s Basisband-Ethernet mit max 500m Segmentenlänge
+* 10BASE5 = 10Mbit/s Basisband-Ethernet mit max 500m Segmentenlänge
 
 ## Manchester-Codierung (10Mbit/s)
 
@@ -79,4 +80,21 @@ Das ursprüngliche Ethernet wurde für eine Bus-Topologie entwickelt. Dabei wurd
 
 ![image-20220314111623939](res/image-20220314111623939.png)
 
-## 
+## MAC-Adresse
+
+![image-20220321150238968](res/image-20220321150238968.png)
+
+* Individual/Group
+  * 0 = individual address
+  * 1 = group address
+* Universally / Locally 
+  * 0 = universally administrated address (Normalfall)
+  * 1 = locally administrated address
+
+![image-20220321150509004](res/image-20220321150509004.png)
+
+## Ethernet Frame Format
+
+![image-20220321150851834](res/image-20220321150851834.png)
+
+![image-20220321150935109](res/image-20220321150935109.png)

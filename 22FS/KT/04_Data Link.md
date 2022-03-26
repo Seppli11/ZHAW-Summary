@@ -1,5 +1,15 @@
 # Data Link Layer
 
+
+
+## Layer 2 Protokolle
+
+* HDLC
+* PPP
+* X.25 / Frame Relay
+* MPLS
+* ATM
+
 ## Synchrone Übertragung
 
 Bei der synchronen Übertragung wird immer gesendet, auch wenn keine Daten übertragen werden. In diesem Fall werden konstant Flags übertragen. Folgeadermassen wird eine Möglichkeit aufgezeichnet, wie dies gestaltet werden könnte.

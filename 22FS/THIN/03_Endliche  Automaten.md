@@ -75,7 +75,15 @@ Für jeder Mealy Automat gibt es einen Moore Automat und umgekehrt.
 
 ## Berechnungsmodell
 
-1. 
+Das Berechnungsmodel beschriebt, wie ein Automat berechnet wird.
+
+1. Definiere die Struktur des Automaten. Für einen endlichen Automaten ist es: $M=(Q, \Sigma, \delta, q_0, F)$. 
+2. Beschreibung der Bedeutung (Semantik) der Struktur
+   1. **Konfiguration**: Die vollständige Beschreibung eines Zustandes des Automats
+   2. **Berechnungsschritt**: Der Übergang von einer Konfiguration zur nächsten
+
+3. **Berechnung:** Die Berechnungsschritte werden gefolgt
+4. Jedem Zustand des Automaten können eine Bedeutung zu gewissen werden.
 
 ## (Nicht-)Deterministische endlichen Automaten
 
@@ -112,7 +120,7 @@ Die DEA $D=(Q_D, \Sigma, \delta_D, q_0, F_D)$ wird aus der NEA $N=(Q_N, \Sigma, 
 
 * $Q_d=\mathcal P(Q_N)$ : Alle Teilmengen von $Q_N$ sind Zustände im DEA
 * $F_D=\{S\in Q_D \vert S \cap F_N\neq \O\}$: Alle Zuständ-Teilmengen, welche ein Element mit den akzeptierten Zuständen $F_N$  teilen
-* $\delta_q$: **TODO**
+* $\delta_D(S, a)=\cup_{p \in S}\delta_N(p, a)$:  Alle Zustände, welche von einem Zustand in der Menge $S \in Q_D$, erreichbar sind
 
 Oder in Worten ausgedrückt:
 
@@ -121,6 +129,7 @@ Oder in Worten ausgedrückt:
 3. Akzeptierte Zustände sind alle Teilmengen, welche ein Element aus $F_N$ besitzen
 4. Aus den Zuständen und eingaben soll nun eine Tabelle gezeichnet werden. Bei dieser können alle Zustände gestrichen werden, welche nicht erreichbar sind. Also nie bei einer Eingabe-Spalte auftauchen. Dies muss solange wiederholt werden, bis nichts gestrichen werden kann. 
    Wenn $\{q_1\}$ in einer Eingabe-Spalte steht, heisst das nur, dass $\{q_1\}$ vorhanden ist. $\{q_1, q_2\}$ muss immer noch gestrichen werden, wenn es nicht selbst vorkommt
+   Wenn eine Verbindung das leeres Wort nimmt, werden die Zustände, welche man vom leeren Wort Zustand erreichen kann, auch vom ursprünglichen Wort als erreichbar angesehen.
 5. Die noch nicht gestrichenen Resultaten können nun Namen verteilt werden (z.B A-Z)
 
 ![image-20220301200210053](res/image-20220301200210053.png)
@@ -171,6 +180,4 @@ Folgende Regeln gelten für die Zustandsklassen:
 
 **TODO**
 
-## Wann ist ein Automaten Nicht-Regulär?
-
-* Wenn ein Automaten zwischen unendlich vielen Zuständen unterscheiden müsste können
+* 

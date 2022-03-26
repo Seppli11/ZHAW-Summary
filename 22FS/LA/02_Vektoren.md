@@ -1,5 +1,7 @@
 # Vektoren
 
+[TOC]
+
 > **Vektor**
 > Ein Vektor wird durch seine Richtung und Betrag definiert (**Nicht aber der Ort**)
 >
@@ -109,4 +111,35 @@ $$
 $$
 Ein Speziallfal ist, wenn $\vec a$ oder $\vec b$ den Nullvektor $\vec 0$ ist. In diesem Fall ist das Skalarprodukt $0$.
 
-Da es zwei 
+Da es zwei Definition für das Skalarprodukt gibt, können diese gleichgesetzt werden und nach dem Zwischenwinkel afugelöst werden.
+$$
+\varphi =cos^{-1}\left(\frac{\vec a \cdot \vec b}{|\vec a|\cdot |\vec b|}\right)
+$$
+
+| Skalarprodukt Resultat | Winkel |
+| ---------------------- | ------ |
+|                        |        |
+|                        |        |
+|                        |        |
+
+## Senkrechte Projektion
+
+$$
+\vec b_a =\frac{\vec a \cdot \vec b}{|\vec a|^2}\cdot \vec a\\
+|\vec b_a|=\frac{|\vec a \cdot \vec b|}{|\vec a|}
+$$
+
+## Vektorprodukt
+
+<img src="res/IMG0760.png">
+$$
+\vec a \times \vec b \in \R^3\\
+|\vec a \times \vec b| = |\vec a|\cdot |\vec b|\cdot \sin(\varphi)\\
+...
+$$
+
+## Gerade als Vektoren
+
+Eine Gerade kann folgendermassen dargestellt werden: $\vec r(P)+\lambda\cdot \vec {PQ}$, wobei $\vec r(P)$, ein Ortsvektor ist, $\lambda$ ein beliebiger Faktor und $\vec{PQ}$ ein Richtungsvektor, welcher die Richtung der Gerade anzeigt.
+
+![image-20220324083000391](res/image-20220324083000391.png)

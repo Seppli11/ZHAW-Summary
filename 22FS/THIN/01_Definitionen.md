@@ -138,6 +138,10 @@ Darstellungsmöglichkeiten:
 >
 > In Deutsch: "Gehört ein Wort eines Alphabetes zu einer Sprache?"
 
+## Chomsky-Hirarchie
+
+![image-20220322130545131](res/image-20220322130545131.png)
+
 ## Fragen
 
 * Ist die Kleenische Hülle einer Sprache wieder eine Sprache? - Ja
