@@ -30,6 +30,12 @@ Als ein weiteres Beispiel, in welchem $*$ als Platzhalter für ein beliebiges Ze
 >
 > Wie auch bei einer NEA kann nun im $\varepsilon$ (das leere Wort) für $\Sigma$ in der Übergangsfunktion. 
 
+## Möglichkeiten eines Kellerautomaten
+
+Anders als bei NDA und NEA, welche das gleiche können, gibt es Sprachen, welche nur von nicht deterministischen Kellerautomaten verarbeitet werden können.
+
+Ebenfalls gibt es kontextfreie Sprachen, welche nicht von einem deterministischen Kellerautomaten erkennt werden können. Falls dies aber möglich ist, ist die Sprache eindeutig.
+
 ## Berechnungsschritte
 
 ![image-20220326193612394](res/image-20220326193612394.png)
@@ -45,3 +51,6 @@ Beispiel: $(q_0, 0011, \$) \vdash (q_0, 011, 0\$)\vdash (q_0, 11, 00\$)\vdash(q_
 Dies kann auch als $(q_0, 0011, \$)\vdash^*(q2, \varepsilon, \$)$ geschrieben werden.
 
 ## Sprache eines Kellerautomaten
+
+In einer Sprache eines Kellerautomaten sind alle Wörter, welche von diesem Kellerautomaten akzeptiert werden.
+
