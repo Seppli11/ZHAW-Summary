@@ -1,13 +1,14 @@
-# Turing Machine
+# Turing Maschine
 
 >![image-20220322130917520](res/image-20220322130917520.png)
 >
->Eine (determinischtische) Turing-Machine ist ein 7-Tupel: $M=(Q,\Sigma, \Gamma, \delta, \textvisiblespace, F)$
+>Eine (determinischtische) Turing-Maschine ist ein 7-Tupel: $M=(Q,\Sigma, \Gamma, \delta, \textvisiblespace, F)$
 >
 >* $Q$: die endliche Menge von Zustände
 >* $\Sigma$: das Eingabe Alphabet
 >* $\delta: Q\times \Gamma \rightarrow Q\times\Gamma\times D, D=\{L, R\}$: Die Übergangsfunktion, welche den nächsten Zustand, was geschrieben werden soll und ob das Band nach Links (L) oder nach rechts (R) geschoben werden soll
->* $\Gamma$: 
+>* $\Gamma$: Das Bandalphabet, dabei muss $\Sigma \subset \Gamma$
+>* $\textvisiblespace$: Das Leerzeichen, dabei muss $\textvisiblespace \in \Gamma$ und $\textvisiblespace \not \in \Sigma$
 >
 >Das Band hat einzelne Zelle, in welchen ein Zeichen von $\Gamma$ enhaltet...
 
@@ -24,20 +25,22 @@ Im folgenden Bild wird eine Übergangsfunktion einer Turing Maschine gezeigt: $\
 Eine Konfiguration einer Turing-Maschine ist:
 
 * der aktuelle Zustand $q \in Q$
-* die Position des Lese-/Schreibekopf $i$
+* die Position des Lese-/Schreibkopf $i$
 * der Bandinhalt $X_1,...,X_n \in \Gamma$
 
 Ein Beispiel einer Konfiguration: $X_1,...X_{i-1}qX_iX_{i+1},...,X_n$
 
+Die Startkonfiguration ist: $q_0X_1X_2...X_n$
+
 ## Berechnungsschritten
 
-Ein Berechungsschritt ist der Übergang von einer Konfiguration zur nächsten:
+Ein Berechnungsschritt ist der Übergang von einer Konfiguration zur nächsten:
 
 $X_1,...X_{i-1}qX_iX_{i+1},...,X_n\vdash X_1,...X_{i-1}pX_iX_{i+1},...,X_n$
 
 ## Berechnungen
 
-Eine Berechnung ist eine **endliche** Menge von Berechungsschritte: $K_1 \vdash K_2 \vdash ... \vdash K_n$.
+Eine Berechnung ist eine **endliche** Menge von Berechnungsschritte: $K_1 \vdash K_2 \vdash ... \vdash K_n$.
 
 Dies kann auch abgekürzt als $K_1\vdash^* K_n$ geschrieben werden.
 
@@ -47,3 +50,4 @@ Dies kann auch abgekürzt als $K_1\vdash^* K_n$ geschrieben werden.
 
 ## Rekursiv aufzählbare Sprachen
 
+Eine Sprache nennt sich rekursive aufzählbar, wenn sie von einer Turing Maschine akzeptiert wird. Eine rekursive aufzählbar

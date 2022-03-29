@@ -1,4 +1,4 @@
-# Übertragungsmedien
+# Übertragungsmedien (Layer 1)
 
 ![image-20220228150817493](res/image-20220228150817493.png)
 

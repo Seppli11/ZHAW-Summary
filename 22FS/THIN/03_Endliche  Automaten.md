@@ -178,6 +178,15 @@ Folgende Regeln gelten für die Zustandsklassen:
 
 ## Untere Schranke für endliche Automaten
 
-**TODO**
+Die grundsätzliche Idee  ist, dass wenn die Worte $x$ und $y$ in derselben Zustandsklasse ist, dann ist $zx=zy$, wobei $z$ irgend ein Wort ist.
 
-* 
+Es müssen nun die folgende Schritte gefolgt werden:
+
+1. Es wird eine Annahme getroffen, wie viele Zustände eine Maschine benötigt
+2. Es müssen für jeden Zustand ein Wort gefunden werden, welches in diesem Zustand endet
+3. Es wird nun für jede Kombination von Wörter von Schritt 2. ein Prefix oder Postfix $z$ gefunden werden, welcher kombiniert mit dem einen Wort, ein Wort ergibt, welches in der Sprache ist und mit dem anderen Wort ein, ein Wort welches **nicht** in der Sprache ist
+4. Wenn dies für jedes Wort von Schritt 2. getan werden kann, dann werden mindestens so viel Zustände benötigt.  Da wenn zwei Wörter mit demselben Wort verbunden wird und diese in unterschiedlichen Sprache sind, die zwei Wörter in unterschiedlichen Zustände endet.
+
+Beispiel:
+
+![image-20220329130733299](res/image-20220329130733299.png)

@@ -143,3 +143,49 @@ $$
 Eine Gerade kann folgendermassen dargestellt werden: $\vec r(P)+\lambda\cdot \vec {PQ}$, wobei $\vec r(P)$, ein Ortsvektor ist, $\lambda$ ein beliebiger Faktor und $\vec{PQ}$ ein Richtungsvektor, welcher die Richtung der Gerade anzeigt.
 
 ![image-20220324083000391](res/image-20220324083000391.png)
+
+### Wie stehen zwei Vektoren zu einander
+
+![image-20220329082547808](res/image-20220329082547808.png)
+
+### Abstand eines Punktes zu einer Gerade
+
+![image-20220329082708504](res/image-20220329082708504.png)
+
+**TODO**
+
+## Koordinatendarstellung von Geraden
+
+Die Geradendarstellung $\vec r(P)+\lambda\cdot \vec{PQ}$ kann umgestellt werden in $ax+bx+c=0$. Dies kann auch gelesen werden als, alle Punkte $P(x, y)$, welche diese Gleichung erfüllt, ist auf der Gerade.
+
+**TODO: Bedeutung von a, b, c**
+
+### Umformen von Parameterdarstellung zu Koordinatendarstellung
+
+**TODO**
+
+### Umformen von Koordinatendarstellung zu Parameterdarstellung
+
+**TODO**
+
+### Parameterdarstellung von Ebenen im Raum
+
+## Darstellung einer Ebenen
+
+### Parameterdarstellung von Ebenen
+
+**TODO**
+
+### Koordinatendarstellung von Ebenen
+
+### Umrechnung von Parameterdarstellung zu Koordinatendarstellung
+
+### Liegt ein Punkt auf einer Ebene
+
+**TODO**
+
+### Normierte Ebene
+
+### Wie Ebenen zu einander stehen
+
+### Abstand von Punkt zu Ebene
