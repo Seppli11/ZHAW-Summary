@@ -41,13 +41,13 @@ A **thread** is part of a process and runs one flow. It shares its memory with t
 
 #### Lifecycle of a Thread
 
-![image-20220224112520675](res/image-20220224112520675.png)
+![image-20220331105956003](res/image-20220331105956003.png)
 
 A Thread is considered "alive" and `Thread.isAlive()` will return true, when the Thread is either ready, running oder suspended (the blocks with the dotted outline)
 
 ## Executor Framework
 
-### Executor Service).length
+### Executor Service
 
 <img src="res/image-20220303102501193.png" alt="image-20220303102501193" style="zoom:45%; float: right;" />
 An `Executor` just promises to execute a given task.
