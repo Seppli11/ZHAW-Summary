@@ -82,6 +82,13 @@ Die Inverse Matrix, ist die Matrix $A^{-1}$, welche mit der Matrix $A$, eine Ide
 
 $A\cdot A^{-1}=I$
 
+### Inverse Matrix von 2x2-Matrix
+
+Für 2x2-Matrizen gibt es eine Formel, um das Inverse zu errechnen. Dabei gilt aber: $ad\neq bc$
+$$
+\pmatrix{a & b\\ c & d}^{-1}=\frac 1 {ad-bc}\cdot \pmatrix{d & -b \\ -c & a}
+$$
+
 ## Transponierte Matrix
 
 Eine transponierte Matrix $A^T$ von $A$ ist, wenn die Spalten in $A$ zu Reihen werden und die Reihen in $A$ zu Spalten werden. Man kann es sich auch vorstellen, als ob man die Matrix um 90° gegen den Uhrzeigersinn dreht:
@@ -103,3 +110,7 @@ Bemerke, dass sich die Reihenfolge von $A$ und $B$ sich ändert.
 ## Gleichheit
 
 Zwei Matrizen sind gleich, wenn alle Elemente der Matritzen gleich sind.
+
+
+
+## Singuläre und reguläre Matrizen

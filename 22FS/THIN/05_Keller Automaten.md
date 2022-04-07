@@ -45,7 +45,7 @@ Dabei befindet sich der Automaten im Zustand $q$, list das Symbol $b$ von der Ei
 
 ## Berechnung
 
-Eine Berechnung besteht aus mehhreren Berechnungsschritte und eine Start- und Endkonfiguration.
+Eine Berechnung besteht aus mehreren Berechnungsschritte und eine Start- und Endkonfiguration.
 
 Beispiel: $(q_0, 0011, \$) \vdash (q_0, 011, 0\$)\vdash (q_0, 11, 00\$)\vdash(q_1, 1, 0\$)\vdash(q_1, \varepsilon, \$)\vdash(q2, \varepsilon, \$)$ 
 Dies kann auch als $(q_0, 0011, \$)\vdash^*(q2, \varepsilon, \$)$ geschrieben werden.
