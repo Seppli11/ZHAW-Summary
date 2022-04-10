@@ -89,6 +89,14 @@ $$
 \pmatrix{a & b\\ c & d}^{-1}=\frac 1 {ad-bc}\cdot \pmatrix{d & -b \\ -c & a}
 $$
 
+### Singuläre und reguläre Matrizen
+
+Eine Matrix wird regulär genannt, wenn es ein Inverse von der Matrix gibt. Ansonsten wird sie Siongulär genannt.
+
+### Gauss-Jordan Verfahren zur Berechnung der Inverse
+
+**TODO**
+
 ## Transponierte Matrix
 
 Eine transponierte Matrix $A^T$ von $A$ ist, wenn die Spalten in $A$ zu Reihen werden und die Reihen in $A$ zu Spalten werden. Man kann es sich auch vorstellen, als ob man die Matrix um 90° gegen den Uhrzeigersinn dreht:
@@ -113,4 +121,3 @@ Zwei Matrizen sind gleich, wenn alle Elemente der Matritzen gleich sind.
 
 
 
-## Singuläre und reguläre Matrizen
