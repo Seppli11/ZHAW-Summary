@@ -10,7 +10,7 @@
 
 ## Übertragungsverfahren
 
-Daten könen seriell oder parallel übertragen werden. Bei der parallelen übertragungen werden mehrere Bits gleichzeitig übertragen. Dies funktioniert nur auf kurze Distanze, da sonst die Toleranzen zu gross wären.
+Daten könen seriell oder parallel übertragen werden. Bei der parallelen Übertragungen werden mehrere Bits gleichzeitig übertragen. Dies funktioniert nur auf kurze Distanz, da sonst die Toleranzen zu gross wären.
 
 Bei der seriellen Übertragen werden die Bits nacheinander übertragen. Hier sind sehr viel höhrere Datenraten auf längere Distanzen möglich, da nicht mehrere Leitungen synchronisiert werden müssen.
 
@@ -158,8 +158,6 @@ $$
 ## Autonegotiation
 
 Dieses Protokoll wird ab 100BASE-T unterstützt und schaut, dass der Empfänger und Sender die selbe Geschwindigkeit unterstützt.
-
-**TODO**
 
 ## VLAN
 

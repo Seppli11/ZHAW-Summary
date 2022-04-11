@@ -16,7 +16,13 @@ Die Klasse D (224.0.0.0 - 239.255.255.255) sind für Multicast-Adressen vorgeseh
 
 Die Klasse E (224.0.0.0 - 255.255.255.255) ist reserviert für zukünftige Netzwerke.
 
-**TODO: Private Netzwerke**
+Die folgenden privaten Netzwerke gibt es:
+
+| Klasse | Netzadresse                 | Subnetmaske   |
+| ------ | --------------------------- | ------------- |
+| A      | 10.0.0.0                    | 255.0.0.0     |
+| B      | 172.16.0.0 - 172.31.0.0     | 255.255.0.0   |
+| C      | 192.168.0.0 - 192.168.255.0 | 255.255.255.0 |
 
 ### Netmask
 
