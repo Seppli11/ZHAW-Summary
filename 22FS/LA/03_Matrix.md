@@ -57,7 +57,9 @@ Die folgenden Rechenregeln funktioniert für gleichgrosse Matrizen.
 
 * Kommutativ-Gesetz: $A+B=B+A$ (Geht **NICHT** bei Multiplikation)
 * Assoziativ-Gesetzt: $A+(B+C)=(A+B)+C$
-* Distributiv-Gesetzt: $\lambda\cdot(A+B)=\lambda\cdot A + \lambda \cdot B$
+* Distributiv-Gesetzt: $\lambda\cdot(A+B)=\lambda\cdot A + \lambda \cdot B$ 
+  * Aber Achtung: $\lambda\cdot A + B\cdot \lambda$ kann **nicht** ausgeklammert werden (In könnte einfach $\lambda \cdot A$ und $B\cdot \lambda$ ausgerechnet werden)
+
 * Distributiv-Gesetzt mit Transportierten Matrizen: 
   * $(A\cdot B)^T=B^T \cdot A^T$ (Beachte die Reihenfolge von A und B)
   * $(A+B)^T=A^T+B^T=B^T+A^T$
@@ -82,6 +84,10 @@ Die Inverse Matrix, ist die Matrix $A^{-1}$, welche mit der Matrix $A$, eine Ide
 
 $A\cdot A^{-1}=I$
 
+Das Inverse Skalar-Multiplikationen kann folgendermassen gebildet werden: $(3A)^{-1}=\frac 1 3 A^{-1}$
+
+
+
 ### Inverse Matrix von 2x2-Matrix
 
 Für 2x2-Matrizen gibt es eine Formel, um das Inverse zu errechnen. Dabei gilt aber: $ad\neq bc$
@@ -91,7 +97,7 @@ $$
 
 ### Singuläre und reguläre Matrizen
 
-Eine Matrix wird regulär genannt, wenn es ein Inverse von der Matrix gibt. Ansonsten wird sie Siongulär genannt.
+Eine Matrix wird regulär genannt, wenn es ein Inverse von der Matrix gibt. Ansonsten wird sie Singulär genannt.
 
 ### Gauss-Jordan Verfahren zur Berechnung der Inverse
 
@@ -118,6 +124,12 @@ Bemerke, dass sich die Reihenfolge von $A$ und $B$ sich ändert.
 ## Gleichheit
 
 Zwei Matrizen sind gleich, wenn alle Elemente der Matritzen gleich sind.
+
+## Determinanten
+
+**TODO**
+
+![image-20220412105845025](res/image-20220412105845025.png)
 
 
 

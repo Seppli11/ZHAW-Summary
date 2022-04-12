@@ -12,6 +12,10 @@ Die Schicht 1-4 wird übllicherweisse vom OS abgedeckt. Die Schichten 5-7 werden
 
 Daten werden von jeder Schicht bearbeitet und an die nächste Schicht weitergegeben. Wenn ein Packet verschickt wird, werden die Daten zuerst vom Layer 7 zum Layer 1 verpackt und beim Empfänger vom Layer 1 wird bis zum Layer 7 enpackt.
 
+Veschiedene Protokolle weden in verschiedene Layers eingeteilt. Unten folgt ein Bild mit den meist verwendeten Protokolle.
+
+![image-20220411144839594](res/image-20220411144839594.png)
+
 ## Physical Layer (Bitübertragungsschicht)
 
 Das physikalische Medium, was die Geräte verbindet. Dies kann ausgetauscht werden und die anderen Schichten bleiben umbetroffen.
@@ -23,7 +27,7 @@ Stellt eine sichere Verbindung den höhreren Schichten zu verfügung.
 Dieser Layer muss folgendes sicherstellen:
 
 * sichere Verbindung zwischen zwei Punkten. Dafür braucht es Massnahmen zur Fehlererkennung und Fehlerkorrektur
-* Datenblöcke vom Network Layer werden verpackt, um die Funktionalität des Layers sicherzustellen
+* Framing bzw. Datenblöcke vom Network Layer werden verpackt, um die Funktionalität des Layers sicherzustellen
 * Fluss-Steuerung, dass der Sender nicht schneller sendet, als es der Empfänger verstehen kann
 
 Wenn an das Übertragungsmedium mehr als zwei Teilnehmer angeschlossen sind, muss der Layer zusätzlich auch noch:

@@ -60,6 +60,45 @@ Das folgende Diagramm zeigt der Header des IP-Protokolles:
 
 ### Address Resolution Protocoll (ARP)
 
+![image-20220411150357003](res/image-20220411150357003.png)
+
+ARP ist ein Layer 2 Protokoll, da es die Namensauflösung von IP-Adressen zu MAC-Adressen zulässt.
+
+Geräte haben typischerweisse eine ARP-Tabelle, in welcher ARP-Responses gecachet weden.
+
+**TODO: Beispiel**
+
+#### Gratuitous ARP
+
+Gratuitous heisst unnötigt/unbegründet.
+
+**TODO**
+
 ## Fragmentieren und Reassembly
 
 Fragmentieren wird gebraucht, wenn ein Paket über eine Leitung geschickt werden soll, welches weniger **TODO**
+
+## Internet Control Message Protocol (ICMP)
+
+ICMP Pakete werden der Schicht 3 zugeordnet, obwohl sie in einem IP-Paket gekapselt werden.
+
+Es gibt einige Typen von ICMP Paketen:
+
+![image-20220411151143350](res/image-20220411151143350.png)
+
+| ICMP-Type | Bedeutung               | Beispiel                                                     |
+| --------- | ----------------------- | ------------------------------------------------------------ |
+| 3         | Destination Unreachable | Wenn der Router ein Node nicht erreiche kann, weil z.B. die MTU zu klein ist oder der Note ausgesteckt wurde: **TODO Code** Protocol Unreachable=Node kommuniziert nicht über das Protokol;  Port Unreachable = Kein Program hört auf diesen Port; 13 Communication adminstrativvely prohibited = Die Firewall blockiert etwas.<br />Destination Unreachable kann auch genutzt werden, um die MTU einer Leitung zu finden |
+| 4         |                         |                                                              |
+| 5         |                         |                                                              |
+| 11        | Time Exceeded           | Wenn das TTL-Feld =0 ist, wird es vom Router nicht mehr weitergesendet. Dies kann für Trace-Rout genutzt weden. Jeder Router reduziert das TTL-Feld um 1![image-20220411152802784](res/image-20220411152802784.png) |
+
+### Struktur von ICMP-Pakete
+
+![image-20220411151123525](res/image-20220411151123525.png)
+
+Das ICMP Paket wird in einem IP-Paket verschachtelt (`Protocol=1` steht für den IP-Header).
+
+![image-20220411151543114](res/image-20220411151543114.png)
+
+**TODO**
