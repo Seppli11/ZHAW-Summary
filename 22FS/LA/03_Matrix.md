@@ -131,5 +131,28 @@ Zwei Matrizen sind gleich, wenn alle Elemente der Matritzen gleich sind.
 
 ![image-20220412105845025](res/image-20220412105845025.png)
 
+## Rechenoperation mit Bilder
 
+Man kann die einzelnen Elemente einer Matrix als Pixel in einem Bild darstellen.
 
+![image-20220419102639947](res/image-20220419102639947.png)
+
+### Skalaroperation
+
+Mit einer Skalarmultiplikation kann das ganze Bild heller oder dunkler gestalltet werden. Wenn zwei Matrizen addiert werden, überlagern sich ihre Pixel.
+
+![image-20220419102854529](res/image-20220419102854529.png)
+
+### Matrixen Produkt
+
+Mit dem Matrizen-Produkt können Zeilen vertauscht werden.
+
+![image-20220419103351891](res/image-20220419103351891.png)
+
+![image-20220419103806044](res/image-20220419103806044.png)
+
+### Transponieren
+
+Wenn eine Matrix transponiert wird, wird das Bild entlang der Hauptdiagonalen g
+
+![image-20220419164155115](res/image-20220419164155115.png)

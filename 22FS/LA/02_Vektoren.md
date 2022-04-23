@@ -4,13 +4,13 @@
 
 > **Vektor**
 > Ein Vektor wird durch seine Richtung und Betrag definiert (**Nicht aber der Ort**)
->
+> 
 > **Nullvektor**
 > Ein Nullvektor $\vec 0$ hat den Betrag `0` und hat keine Richtung
->
+> 
 > **Einheitsvektor/normierter Vektor**
 > Ein Vektor $\vec e$ oder $\vec e_a$, welchen der Betrag `1` hat und kann folgendermassen berechnet werden: $\vec e_a=\frac{\vec a}{\vert a \vert}$
->
+> 
 > **Gegenvektor**
 > Der Gegenvektor zum Vektor $\vec a$ ist $-\vec a$. Es ist also ein Vektor welcher parallel zu $\vec a$ ist, denselben Betrag hat, aber in die entgegengesetzte Richtung zeigt.
 
@@ -41,7 +41,6 @@ $$
 \end{align}
 $$
 
-
 ## Kollinear
 
 ![image-20220312201313995](res/image-20220312201313995.png)
@@ -53,6 +52,27 @@ Zwei Vektoren sind kollinear, wenn es eine Gerade gibt, zu der beide parallel si
 Drei Vektoren heissen komplanar, wenn es eine Ebene gibt, zu der alle drei parallel sind.
 
 ![image-20220312215110578](res/image-20220312215110578.png)
+
+## Linear (Un)abhängig
+
+Vektoren werden linear unabhängig genannt, wenn es nur eine Möglichkeit gibt, mit einer Linearkombination den $\vec 0$ zu bekommen.
+$$
+\lambda_1 \cdot \vec a_1+\lambda_2\cdot \vec a_2 +...+\lambda_n\cdot \vec a_n=\vec 0
+$$
+Diese Definition ist kompatible mit Komplanar und Kollinear.
+
+Wenn nur ein Vektor $\vec v$ gegeben ist, welcher ungleich $\vec 0$ ist, ist dieser linear unabhängig. Der $\vec 0$ ist linear abhängig.
+
+Wenn $\vec a$ und $\vec b$ linear unabhängig sind, dann ist $\begin{vmatrix}a_x & b_x\\ a_y & b_y\end{vmatrix}\neq 0$. Wenn der Determinant nicht ausgerechnet werden kann, kann man sich überlegen, ob zwei Vektoren vielfaches voneinander sind, über den Rang oder über ein lineares Gleichungssystem.
+
+Eigenschaften:
+
+* $\det(A)\neq 0$
+* $\Leftrightarrow$ Spalten sind linear unabhängig
+* $\Leftrightarrow$ Zeilen sind linear unabhängig
+* $\Leftrightarrow rg(A)=n$
+* $\Leftrightarrow$ A ist regulär, bzw. invertierbar
+* $\Leftrightarrow A\cdot \vec x=\vec 0$ ist eindeutig lösbar   
 
 ## Satz 1
 
@@ -74,8 +94,6 @@ Ein Kordinaten-System im Raum $\R^2=R\times R$ hat folgendes:
 - Ein zweiten Einheitsvektor $\vec e_2$, welcher 90° im Gegenurzeigersinn zu $\vec e_1$ ist
 
 Jeder Vektor in diesem Kordinatensystem kann als Linearkombination von $\vec e_1$ und $\vec e_2$ gebildet werden.
-
-
 
 ![image-20220315082426831](res/image-20220315082426831.png)
 
@@ -138,6 +156,8 @@ $$
 ...
 $$
 
+Das Vektorprodukt ist nur für Vektoren im Raum $\R^3$ definiert.
+
 ## Gerade als Vektoren
 
 Eine Gerade kann folgendermassen dargestellt werden: $\vec r(P)+\lambda\cdot \vec {PQ}$, wobei $\vec r(P)$, ein Ortsvektor ist, $\lambda$ ein beliebiger Faktor und $\vec{PQ}$ ein Richtungsvektor, welcher die Richtung der Gerade anzeigt.
@@ -151,6 +171,10 @@ Eine Gerade kann folgendermassen dargestellt werden: $\vec r(P)+\lambda\cdot \ve
 ### Abstand eines Punktes zu einer Gerade
 
 ![image-20220329082708504](res/image-20220329082708504.png)
+
+**TODO**
+
+## Projektion von einem Vektor auf einen anderen
 
 **TODO**
 
@@ -291,13 +315,13 @@ $$
 \left(
 \begin{array}{ccc|cr}
 1 & -2 & 2 & 1\\
-2 & -3 & -1 & -2	
+2 & -3 & -1 & -2    
 \end{array}
 \right) \Rightarrow
 \left(
 \begin{array}{ccc|cr}
 1 & 0 & -8 & -7\\
-0 & 1 & -5 & -4	
+0 & 1 & -5 & -4    
 \end{array}
 \right)\\
 \\
