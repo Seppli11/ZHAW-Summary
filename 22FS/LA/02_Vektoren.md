@@ -63,7 +63,9 @@ Diese Definition ist kompatible mit Komplanar und Kollinear.
 
 Wenn nur ein Vektor $\vec v$ gegeben ist, welcher ungleich $\vec 0$ ist, ist dieser linear unabhängig. Der $\vec 0$ ist linear abhängig.
 
-Wenn $\vec a$ und $\vec b$ linear unabhängig sind, dann ist $\begin{vmatrix}a_x & b_x\\ a_y & b_y\end{vmatrix}\neq 0$. Wenn der Determinant nicht ausgerechnet werden kann, kann man sich überlegen, ob zwei Vektoren vielfaches voneinander sind, über den Rang oder über ein lineares Gleichungssystem.
+Wenn $\vec a$ und $\vec b$ linear unabhängig sind, dann ist $\begin{vmatrix}a_x & b_x\\ a_y & b_y\end{vmatrix}\neq 0$. Wenn der Determinant nicht ausgerechnet werden kann, kann man sich überlegen, ob zwei Vektoren vielfaches voneinander sind, über den Rang oder über ein lineares Gleichungssystem. 
+
+Ein weiterer Tip: in $\R^m$ können maximal $m$ Vektoren linear unabhängig sein. Wenn es mehr Vektoren sind, können sie **nicht** linear unabhängig sein.
 
 Eigenschaften:
 
@@ -74,14 +76,14 @@ Eigenschaften:
 * $\Leftrightarrow$ A ist regulär, bzw. invertierbar
 * $\Leftrightarrow A\cdot \vec x=\vec 0$ ist eindeutig lösbar   
 
-## Satz 1
+### Satz 1
 
 Es lässt sich der Vektor $\vec c$ als Linearkombination der Vektoren $\vec a$ und $\vec b$ im 2D-Raum darstellen, wenn
 
 * $\vec a$, $\vec b$ und $\vec c$ komplanar zueinander sind
 * $\vec a$ und $\vec b$ nicht kollinear sind
 
-## Satz 2
+### Satz 2
 
 Wen drei Vektoren $\vec a$, $\vec b$ und $\vec c$ nicht komplanar sind, lässt sich jeder Vektor $\vec d$ in $\R^3$ als eine Linearkombination von $\vec a$, $\vec b$ und $\vec c$ darstellen
 

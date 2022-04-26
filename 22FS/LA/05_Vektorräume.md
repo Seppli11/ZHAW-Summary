@@ -1,5 +1,9 @@
 # Vektorräume
 
+[TOC]
+
+
+
 Ein Vektorraum ist eine Menge $V$ mit den Funktionen Addition und Skalar-Multiplikation: 
 $$
 +:V \times V \rightarrow V\\
@@ -50,3 +54,16 @@ Die Vektoren $\vec a_1, \vec a_2, ...\vec a_n$ *spannen* den linearen Spann auf 
 
 
 ## Basis und Dimensionen
+
+## Erzeugendensystem
+
+Eine Menge von Vektoren $\{\vec b_1, \vec b_2, ..., \vec b_N\}$ bildet ein Erzeugendensystsem von $V$, falls $V=span(\vec b_1, \vec b_2, ..., \vec b_n)$. Dies ist nur der Fall, wenn die $\vec b_i$ Vektoren linear unabhängig sind.
+
+Aus dem gehen die folgenden folgende Bedingungen:
+$$
+\begin{align}
+& V=span(\vec b_1, \vec b_2, ..., \vec b_n)\\
+\Leftrightarrow & B\cdot \vec x = \vec a \text {für jedes } \vec a \in \R^m\\
+\Leftrightarrow & rg(B)=m
+\end{align}
+$$
