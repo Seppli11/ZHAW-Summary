@@ -45,15 +45,7 @@ $spann(\vec a_1, \vec a_2, ..., \vec a_n)$ ist definiert als alle möglichen Vek
 
 Die Vektoren $\vec a_1, \vec a_2, ...\vec a_n$ *spannen* den linearen Spann auf und formen eine geometrische Form.
 
-| in $\r^2$ |      |
-| --------- | ---- |
-|           |      |
-|           |      |
-|           |      |
-
-
-
-## Basis und Dimensionen
+![image-20220426215658009](res/image-20220426215658009.png)
 
 ## Erzeugendensystem
 
@@ -63,7 +55,30 @@ Aus dem gehen die folgenden folgende Bedingungen:
 $$
 \begin{align}
 & V=span(\vec b_1, \vec b_2, ..., \vec b_n)\\
-\Leftrightarrow & B\cdot \vec x = \vec a \text {für jedes } \vec a \in \R^m\\
-\Leftrightarrow & rg(B)=m
+\Leftrightarrow \text{ } & B\cdot \vec x = \vec a \text { für jedes } \vec a \in \R^m\\
+\Leftrightarrow \text{ } & rg(B)=m
 \end{align}
 $$
+
+## Basis und Dimensionen
+
+Ein Vektor $\vec a = \pmatrix{a_1 \\ a_2}$ kann auch als $\vec a = a_1\cdot \vec e_1 + a_2 \cdot \vec e_2$ geschrieben werden. Anstatt der Vektormenge $\mathcal S=\{\vec e_1; \vec e_2\}$ kann auch eine andere Menge $\mathcal B=\{\vec b_1; \vec b_2\}$ benützt werden. Der Vektor $\vec a = \pmatrix{\alpha_1\\ \alpha_2}_\mathcal{B}$ ist nun equivalent zu $\vec a=\alpha_1 \cdot \vec b_1 + \alpha_2 \cdot \vec b_2$.
+
+In diesem Beispiel sind die Vektoren $\vec a$, $\vec c$ und $\vec d$ die selben, nur die Vektormenge, durche welche das Koordinatensystem definiert wird, ändert sich.
+
+![image-20220426220903480](res/image-20220426220903480.png)
+
+Damit dies möglich ist, muss die Vektormenge folgende Eigenschaften erfüllen:
+
+* $\mathcal B=\{\vec b_1, \vec b_2, ...,\vec b_n\}$ muss ein Erzeugendensystem sein
+* $\vec b_1$, $\vec b_2$, ..., $\vec b$ müssen linear unabhängig sein
+
+Oder in Deutsch: Es darf nur genau eine mögliche Linearkombination für jeden Vektor  geben
+
+Aus diesen zwei Regeln gehen folgende Sätze hervor:
+
+* Eine Basis $\R^n$ besteht genau aus $n$ Vektoren
+* $\rm rg(B)=n$ (wobei $B$ alle Vektoren in eine Matrix gesteckt werden)
+* $\rm det(B)\neq 0$
+* $B$ ist invertierbar
+* Das lineare Gleichungssystem $B\cdot \vec x=\vec c$ hat genau eine eindeutige Lösung
