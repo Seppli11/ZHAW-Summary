@@ -86,7 +86,7 @@ $A\cdot A^{-1}=I$
 
 Das Inverse Skalar-Multiplikationen kann folgendermassen gebildet werden: $(3A)^{-1}=\frac 1 3 A^{-1}$
 
-
+Das Inverse einer Matrix kann gebildet werden, wenn die $\mathrm{det}(A)\neq 0$ ist, bzw. die "Vektoren" in der Matrix linear unabhängig sind.
 
 ### Inverse Matrix von 2x2-Matrix
 

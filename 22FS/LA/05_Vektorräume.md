@@ -2,7 +2,11 @@
 
 [TOC]
 
+$$
+\newcommand{\det}[0]{\mathrm{det}}
+$$
 
+## Definition von Vektorräumen
 
 Ein Vektorraum ist eine Menge $V$ mit den Funktionen Addition und Skalar-Multiplikation: 
 $$
@@ -47,9 +51,17 @@ Die Vektoren $\vec a_1, \vec a_2, ...\vec a_n$ *spannen* den linearen Spann auf 
 
 ![image-20220426215658009](res/image-20220426215658009.png)
 
+### Geometrische Objekte
+
+Jenachdem, wie viele Vektoren gegeben sind, wird ein anderes geometrisches Objekt gebildet:
+
+* Bei `1` Vektor, wird eine Ursprungs-Gerade gebildet
+* Bei `2` Vektoren, wird eine Ursprungs-Ebene
+* Bei `3` Vektoren, wird ein "Ursprungs-Körper" gebildet
+
 ## Erzeugendensystem
 
-Eine Menge von Vektoren $\{\vec b_1, \vec b_2, ..., \vec b_N\}$ bildet ein Erzeugendensystsem von $V$, falls $V=span(\vec b_1, \vec b_2, ..., \vec b_n)$. Dies ist nur der Fall, wenn die $\vec b_i$ Vektoren linear unabhängig sind.
+Eine Menge von Vektoren $\{\vec b_1, \vec b_2, ..., \vec b_N\}$ bildet ein Erzeugendensystem von $V$, falls $V=span(\vec b_1, \vec b_2, ..., \vec b_n)$. Dies ist nur der Fall, wenn die Vektoren nicht kollinear, bzw. komplanar sind.
 
 Aus dem gehen die folgenden folgende Bedingungen:
 $$
@@ -60,11 +72,13 @@ $$
 \end{align}
 $$
 
+Mit den Vektoren $\vec b_i$ in einem Erzeugendensystem können alle anderen Vektor $V$ (also z.B. $\R^2$) bilden.
+
 ## Basis und Dimensionen
 
 Ein Vektor $\vec a = \pmatrix{a_1 \\ a_2}$ kann auch als $\vec a = a_1\cdot \vec e_1 + a_2 \cdot \vec e_2$ geschrieben werden. Anstatt der Vektormenge $\mathcal S=\{\vec e_1; \vec e_2\}$ kann auch eine andere Menge $\mathcal B=\{\vec b_1; \vec b_2\}$ benützt werden. Der Vektor $\vec a = \pmatrix{\alpha_1\\ \alpha_2}_\mathcal{B}$ ist nun equivalent zu $\vec a=\alpha_1 \cdot \vec b_1 + \alpha_2 \cdot \vec b_2$.
 
-In diesem Beispiel sind die Vektoren $\vec a$, $\vec c$ und $\vec d$ die selben, nur die Vektormenge, durche welche das Koordinatensystem definiert wird, ändert sich.
+In diesem Beispiel sind die Vektoren $\vec a$, $\vec c$ und $\vec d$ die selben, nur die Vektormenge, durch welche das Koordinatensystem definiert wird, ändert sich.
 
 ![image-20220426220903480](res/image-20220426220903480.png)
 
@@ -79,6 +93,24 @@ Aus diesen zwei Regeln gehen folgende Sätze hervor:
 
 * Eine Basis $\R^n$ besteht genau aus $n$ Vektoren
 * $\rm rg(B)=n$ (wobei $B$ alle Vektoren in eine Matrix gesteckt werden)
-* $\rm det(B)\neq 0$
+* $\det(B)\neq 0$
 * $B$ ist invertierbar
 * Das lineare Gleichungssystem $B\cdot \vec x=\vec c$ hat genau eine eindeutige Lösung
+
+## Dimensionen
+
+Die Dimension $\mathrm{dim}(V)$ gibt an, wie viel Dimensionen ein Vektorraum oder Basis hat. 
+
+Bei einer Basis $\mathcal B$ ist die Basis die Anzahl Vektoren, welche die Basis definiert. Das heisst $\mathrm {dim}(\R^n)=n$ und $\mathrm{dim}(\mathbb P_n[x])=n+1$ 
+
+Bei einem Vektorraum ist die Anzahl Dimensionen gleich der Anzahl Vektoren, welche den Spann des Vektorraumes definieren. Bei Vektorräume gilt auch, dass ein Unterraum $R$ von $V$ : $\mathrm{dim}(R) \le \mathrm{dim}(V)$. Die Dimension des Vektorraums $\{\vec 0\}$ ist gleich $\mathrm{dim}(\{\vec 0\})=0$
+
+**TODO: Matrixen**
+
+## Umwandeln zwischen Komponentendarstellungen
+
+Um einen Vektor $\vec v_{\mathcal B}$ in den Vektor $\vec v_{\mathcal{S}}$ zu umwandeln, kann folgendes getan werden: $\vec v_{\mathcal B}=v_1\cdot \vec b_1+v_2\cdot \vec b_2+...+v_n\cdot \vec b_n$
+
+In die umgekehrte Richtung gibt es ein Lineares Gleichungssystem: $\vec v_\mathcal{S}\cdot B=\vec v_\mathcal{B}$
+
+![image-20220428092334710](res/image-20220428092334710.png)
