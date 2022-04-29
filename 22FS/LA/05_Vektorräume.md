@@ -2,9 +2,6 @@
 
 [TOC]
 
-$$
-\newcommand{\det}[0]{\mathrm{det}}
-$$
 
 ## Definition von Vektorräumen
 
@@ -99,11 +96,11 @@ Aus diesen zwei Regeln gehen folgende Sätze hervor:
 
 ## Dimensionen
 
-Die Dimension $\mathrm{dim}(V)$ gibt an, wie viel Dimensionen ein Vektorraum oder Basis hat. 
+Die Dimension $\dim(V)$ gibt an, wie viel Dimensionen ein Vektorraum oder Basis hat. 
 
-Bei einer Basis $\mathcal B$ ist die Basis die Anzahl Vektoren, welche die Basis definiert. Das heisst $\mathrm {dim}(\R^n)=n$ und $\mathrm{dim}(\mathbb P_n[x])=n+1$ 
+Bei einer Basis $\mathcal B$ ist die Basis die Anzahl Vektoren, welche die Basis definiert. Das heisst $\dim(\R^n)=n$ und $\mathrm{dim}(\mathbb P_n[x])=n+1$ 
 
-Bei einem Vektorraum ist die Anzahl Dimensionen gleich der Anzahl Vektoren, welche den Spann des Vektorraumes definieren. Bei Vektorräume gilt auch, dass ein Unterraum $R$ von $V$ : $\mathrm{dim}(R) \le \mathrm{dim}(V)$. Die Dimension des Vektorraums $\{\vec 0\}$ ist gleich $\mathrm{dim}(\{\vec 0\})=0$
+Bei einem Vektorraum ist die Anzahl Dimensionen gleich der Anzahl Vektoren, welche den Spann des Vektorraumes definieren. Bei Vektorräume gilt auch, dass ein Unterraum $R$ von $V$ : $\dim(R) \le \dim(V)$. Die Dimension des Vektorraums $\{\vec 0\}$ ist gleich $\dim(\{\vec 0\})=0$
 
 **TODO: Matrixen**
 

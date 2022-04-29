@@ -83,4 +83,20 @@ Some common lenses are :
 
 ### Composing Lenses
 
-Lenses compose very easily.
+Lenses compose very easily.  Imagin each lens being a domino which can be fitted together if the types match. From the expression below, we'll get `address :: Lens' Person StreetAddress`. The `Address` type is "hidden" in the composition. ![image-20220429235216484](res/image-20220429235216484.png)
+
+At the the right end of a domino line, we can use an action to do something, like modifying the focused value. ![image-20220429235453171](res/image-20220429235453171.png)
+
+Here an actual Example:
+```haskell
+wave :: Wool -> Sweater
+weave Wool = Sweater
+
+gameState :: (Player, Item Wool)
+gameState = (Player Item Wool 5)
+
+-- crafts a sweater
+gameState' :: (Player, Item Sweater)
+gameState' = over (_2 . material ) weave gameState
+```
+
