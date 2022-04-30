@@ -1,5 +1,18 @@
 # Optics
 
+## Operators
+
+There is a general patterns applied to most operators in the Optics library. This means that the name of an operator can usually be guessed.
+
+| Symbol | Explenation                                                  | Example    |
+| ------ | ------------------------------------------------------------ | ---------- |
+| `^`    | Denotes that the action **views/gets** something             | `^.`       |
+| `.`    | Denotes the absence of any other modifiers                   | `^.`       |
+| `%`    | Denotes an actinon which **modifies** using a function       | `%~`       |
+| `~`    | Denotes that this action **updates/sets** something          | `%~`, `.~` |
+| `<`    | A prefix for update/set actions, which will return the altered value as well as the whole structure | `<+~`      |
+| `<<`   | A prefix for update/set action, which will return the old value | `<<+~`     |
+
 ## Lenses
 
 A lens abstracts the getter and setter into one value. A lens can focus a single type and always returns a type (so a lens can't return `a` from `Either a b`, because the type could also be `b`).
@@ -74,12 +87,58 @@ The following operators can be used with lenses:
 * `over :: Lens s t a b -> (a -> b) -> s -> t` or `over :: Lens' s a -> (a -> a) -> s -> s`
   Fetches the focused value, applies the given function and then uses set t set the focused value
 
+There are infix operator which are synonyms to the operators above:
+
+| Operator | Action       | Type                                 |
+| -------- | ------------ | ------------------------------------ |
+| `^.`     | flipped view | `s -> Lens' s a -> a`                |
+| `.~`     | set          | `Lens s t a b -> b -> s -> t`        |
+| `%~`     | over         | `Lens s t a b -> (a -> b) -> s -> t` |
+
 Some common lenses are :
 
 * `_1 :: Lens (a, other) (b, other) a b`
   Sets the focus on the first element of a tuple
 * `_2 :: Lens (other, a) (other, b) a b`
   Sets the focus on the second element of a tuple
+
+```haskell
+data Payload = Payload
+  { _weightKilos :: Int,
+    _cargo :: String
+  }
+  deriving (Show)
+  
+makeLenses ''Payload
+
+data Ship = Ship {_payload :: Payload}
+  deriving (Show)
+
+makeLenses ''Ship
+
+serenity :: Ship
+serenity = Ship (Payload 5000 "Livestock")
+
+-- get
+>>> view payload . cargo serenity
+-- > "Livestock"
+>>> serenity ^. payload . cargo 
+-- > "Livestock"
+
+-- set
+>>> set (payload . cargo) "Medicine" serenity
+>>> serenity & payload . cargo .~ "Medicine"
+>>> serenity 
+		& payload . cargo .~ "Chocolate"
+		& payload . weightKilos .~ 2310
+
+-- over
+>>> serenity 
+		& payload . weightKilos .% subtract 1000
+		& payload . cargo .~ "Chocolate"
+```
+
+
 
 ### Composing Lenses
 
