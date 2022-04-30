@@ -1,5 +1,7 @@
 # Matrix
 
+[TOC]
+
 Eine Matrix ist ein rechteckiges Zahlenfeld, wie z.B. diese 3x2 Matrix: $\begin{bmatrix}7 & 6 & 2\\2 & 3 & 3\end{bmatrix}$
 
 ## Spezial-Typen
