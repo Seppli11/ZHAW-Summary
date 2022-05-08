@@ -209,6 +209,10 @@ Um von der Koordinatnedarstellung in die Parameterdarstellung einer Gerade zu we
 
 Um zwei Punkte aus der Koordinatendarstellung zu lesen, hilft es, die $x$ oder $y$ auf  `0` zu setzen und der andere Parameter zu ändern bis `0` erreicht wird.
 
+### Normalisieren der Parameterdarstellung
+
+**TODO**
+
 ## Darstellung einer Ebenen
 
 ### Parameterdarstellung von Ebenen
