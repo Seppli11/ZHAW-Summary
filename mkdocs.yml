@@ -1,10 +1,30 @@
 site_name: Seppli's Summaries
 site_author: Sebastian Zumbrunn
+repo_name: https://github.com/Seppli11/ZHAW-Summary
+docs_dir: summaries
 theme:
   name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+plugins:
+  - git-revision-date
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 
 extra_javascript:
   - javascript/mathjax.js

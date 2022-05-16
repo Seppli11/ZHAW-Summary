@@ -1,4 +1,7 @@
 {
     "markdownConverter.DestinationPattern": "${workspaceFolder}/out/${dirname}/${basename}.${extension}",
-    "markdownConverter.Parser.Toc.Indicator": "^\\[TOC\\]"
+    "markdownConverter.Parser.Toc.Indicator": "^\\[TOC\\]",
+    "yaml.schemas": {
+        "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+    }
 }
