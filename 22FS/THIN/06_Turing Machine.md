@@ -50,7 +50,7 @@ Dies kann auch abgekürzt als $K_1\vdash^* K_n$ geschrieben werden.
 
 ## Rekursiv aufzählbare Sprachen
 
-Eine Sprache nennt sich rekursive aufzählbar, wenn sie von einer Turing Maschine akzeptiert wird. Eine rekursive aufzählbar
+Eine Sprache nennt sich rekursive aufzählbar, wenn sie von einer Turing Maschine akzeptiert wird. Eine rekursive aufzählbar...**TODO**
 
 ## Turing Maschine mit Speicher
 

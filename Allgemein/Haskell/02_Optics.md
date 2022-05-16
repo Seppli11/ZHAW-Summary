@@ -1,5 +1,7 @@
 # Optics
 
+[TOC]
+
 ## Operators
 
 There is a general patterns applied to most operators in the Optics library. This means that the name of an operator can usually be guessed.
@@ -138,8 +140,6 @@ serenity = Ship (Payload 5000 "Livestock")
 		& payload . cargo .~ "Chocolate"
 ```
 
-
-
 ### Composing Lenses
 
 Lenses compose very easily.  Imagin each lens being a domino which can be fitted together if the types match. From the expression below, we'll get `address :: Lens' Person StreetAddress`. The `Address` type is "hidden" in the composition. ![image-20220429235216484](res/image-20220429235216484.png)
@@ -158,4 +158,42 @@ gameState = (Player Item Wool 5)
 gameState' :: (Player, Item Sweater)
 gameState' = over (_2 . material ) weave gameState
 ```
+
+## Folds
+
+A fold is like a query and can:
+
+* focus on multiple things
+* can only get, not set data
+
+A fold has the data type `Fold s a`, where the `s` is the structure on which the query runs and `a` is the return value. A fold returns zero or more from `a`
+
+A fold, like a lens, doesn't contain data. It is an "operation" which knows how to extract zero or more elements from an type.
+
+### Operators
+
+With `folded : Foldable f => Fold (f a) a` an instance of `Foldable` like a list can be converted into a `Fold`. 
+
+A lens can be used to focus in on an element of a fold. This works because every lens has a getter to focus on one element exactly. This fits into the definition of a fold which needs to focus on zero or more elements.
+
+To use a fold on data the function `toListOf :: Fold s a -> s -> [a]` can be used. This will take a `Fold` and a `Foldable` structure and extracts `[a]` out of it. A synonym is `(^..) :: s -> Fold s a -> [a]`
+
+```haskell
+data CartItem = 
+	CartItem { _name :: String
+			 , _count :: Int}
+makeLenses ''CarItem
+
+cart :: [CartItem]
+cart = [CartItem "Black Shirt" 3, CarItem "Water Bottle" 2]
+
+-- get a list of all items
+cart ^.. folded -- will return [CartItem "Black Shirt" 3, CarItem "Water Bottle" 2]
+toListOf folded cart -- the same as above
+
+cart ^.. folded . name -- ["Black Shirt", "Water Bottle"]
+toListOf (folded . name) cart -- the same as above
+```
+
+
 
