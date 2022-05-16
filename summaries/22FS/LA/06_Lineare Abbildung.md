@@ -1,10 +1,10 @@
+# Lineare Abbildung
+
 $$
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\span}{span}
 \DeclareMathOperator{\rg}{rg}
-$$ {S}
-# Lineare Abbildung
-
+$$
 Eine Lineare Abbildung wird mit Hilfe einer Funktion $f: V \to W$ , welche ein Parameter vom Typ $V$ nimt und als Rückgabetyp $W$ zurück gibt. Wichtig ist, dass die Funktion folgende zwei Rechungsregeln einhält:
 
 * $f(x+y)=f(x)+f(y)$
@@ -145,5 +145,4 @@ $$
 \dim(\ker(A)) + \dim(\im(A)) = \dim(A)\\
 \dim(\im(A)) = \rg(A)
 $$
-
 

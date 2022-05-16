@@ -1,3 +1,5 @@
+# Glossar
+
 | Begriff       | Definition                                                   |
 | ------------- | ------------------------------------------------------------ |
 | Protokoll     | Definiert, wie Daten versendet werden                        |
