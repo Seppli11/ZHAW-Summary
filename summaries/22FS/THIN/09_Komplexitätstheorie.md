@@ -37,13 +37,19 @@ Im folgende Beispiel gilt:
 
 ## Polynomzeit Verifizieren
 
+Ein Polynomzeit-Verifizierer ist eine Turing-Maschine, welche in polynomen Zeit ($\mathcal O(n^k)$, wobei gilt $k \in \N$) überprüft, ob das Resultat einer Berechnung stimmt.
+
+**Frage: ** Sind p-Verifizierer und Polynomzeit-Verifizierer das selbe?
+
+Alle Probleme, welche ein Polynomzeit-Verifizierer haben, sind in der Gruppe $NP$ enthalten.
+
 ![image-20220510141502811](res/image-20220510141502811.png)
 
 ![image-20220510143538147](res/image-20220510143538147.png)
 
 ## Polynomielle Reduktion
 
-![image-20220517125710524](res/image-20220517125710524.png)
+Eine Sprache $L_1$ ist **polynominell** auf $L_2$ **reduzierbar** ($L_1 \preceq_p L_2$), wenn eine Turing Maschine gebaut werden kann, welche von $L_1$ zu $L_2$ umwandeln kann. Dies muss in $O(n^k)$ möglich sein.
 
 ## NP-Schwer und NP-Vollständig
 
