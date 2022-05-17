@@ -27,7 +27,7 @@ Im folgende Beispiel gilt:
 
 ## ![image-20220510132104482](res/image-20220510132104482.png)
 
-## Klassifizierung von Problemen (NP vs)
+## Klassifizierung von Problemen (NP vs P)
 
 ![image-20220510132924004](res/image-20220510132924004.png)
 
@@ -40,3 +40,53 @@ Im folgende Beispiel gilt:
 ![image-20220510141502811](res/image-20220510141502811.png)
 
 ![image-20220510143538147](res/image-20220510143538147.png)
+
+## Polynomielle Reduktion
+
+![image-20220517125710524](res/image-20220517125710524.png)
+
+## NP-Schwer und NP-Vollständig
+
+Ein Problem ist **NP-schwer**, wenn es auf alle NP-Probleme (Probleme, welche mit einer Nicht-Deterministiersch-Maschine lösbar/verifizierbar sind) reduzieren lässt. Aus dem geht hervor, dass ein Problem, welches NP-schwer ist, gleich schwer oder schwerer zum lösen ist, wie alle NP-Problem einzeln.
+
+Ein Problem ist **NP-vollständig**, wenn es ein NP-Problem und NP-schwer ist.
+
+Ein NP-vollständiges Problem ist gleich schwer zum lösen, wie das am schwierigsten lösbaren NP-Problem.
+
+### $P=NP$ Problem
+
+Wenn es jemandem gelingt ein Problem zu finden, welches NP-vollständig ist und gleichzeitig auch zu P gehöhrt, dann würde gelten $P=NP$, da P zu jedem NP-Problem reduziert werden könnte.
+
+Bis jetzt wurde kein solches Beispiel gefunden
+
+## Konjunktive Normalform (KNF)
+
+Ein Ausdruck, welcher in der konjuktiver Normalform steht, besteht nur aus $\neg$, $\vee$, $\wedge$, $()$ und Literale. 
+
+Beispiele:
+
+* $x$
+* $x_1 \vee x_2$
+* $x_1 \wedge x_2$
+* $(x_1 \vee x_2) \wedge (x_3 \vee x_4) \wedge \neg x_5$ 
+
+Hingegen $(x_1 \wedge x_2) \vee x_3$ wäre nicht in der konjunktive Normalform
+
+## SAT
+
+SAT war das "erste" NP-vollständige Problem. Anhand diesem wurden alle weiteren Beweise für NP-Vollständigkeit aufgehängt.
+
+Das SAT Problem ist zu einscheiden, ob eine Formel in der KNF erfüllbar ist. Also es sicherlich eine Belegung gibt, welche `1` zurück gibt.
+
+Es muss gezeigt werden das:
+
+* $SAT \in NP$: Es ist möglich eine Nicht-Deterministische Maschine zu bauen, welche überprüfen kann, ob eine Formel erfüllbar ist
+* SAT ist NP-schwer: Das Problem kann zu allen NP-Problemen reduziert werden
+
+## NP-Vollständigkeits-Nachweis weiteren Problemen
+
+> **Satz**
+> Wenn $P1$ NP-schwer und $P2$ in NP enthalten ist und eine polynomielle
+> Reduktion $P1 \preceq_p P2$ existiert, dann ist $P2$ NP-vollständig.
+
+Dass heisst, wenn ein Problem in NP enthalten ist und es eine Reduktion zu dem SAT Problem gibt, dann ist es NP-vollständig.
