@@ -27,7 +27,7 @@ Im folgende Beispiel gilt:
 
 ## ![image-20220510132104482](res/image-20220510132104482.png)
 
-## Klassifizierung von Problemen
+## Klassifizierung von Problemen (NP vs)
 
 ![image-20220510132924004](res/image-20220510132924004.png)
 

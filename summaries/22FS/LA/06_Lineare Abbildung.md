@@ -146,3 +146,7 @@ $$
 \dim(\im(A)) = \rg(A)
 $$
 
+Um die Dimensionen zu bestimmen gibt es mehrere Möglichkeiten:
+
+1. Mit der Zeilenstuffenform von $A$ den Rang ablesen. Von diesem kann die Dimension von $\im(A)$ abgelesen werden und dank des Satzes von oben auch $\dim(\ker(A))$ bestimmen
+2. Da die Menge, welche von $\ker(A)$ zurück gegeben werden, auch ein Unterraum ist, kann eine Basis mit $A$ erstellt werden. Es müssen alle Vektoren $a_i$ gefunden werden, welche linear Unabhängig sind
