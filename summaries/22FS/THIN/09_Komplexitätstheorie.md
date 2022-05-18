@@ -39,7 +39,7 @@ Im folgende Beispiel gilt:
 
 Ein Polynomzeit-Verifizierer ist eine Turing-Maschine, welche in polynomen Zeit ($\mathcal O(n^k)$, wobei gilt $k \in \N$) überprüft, ob das Resultat einer Berechnung stimmt.
 
-**Frage: ** Sind p-Verifizierer und Polynomzeit-Verifizierer das selbe?
+**Frage: ** Sind p-Verifizierer und Polynomzeit-Verifizierer das selbe? --> Ja
 
 Alle Probleme, welche ein Polynomzeit-Verifizierer haben, sind in der Gruppe $NP$ enthalten.
 
