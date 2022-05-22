@@ -44,7 +44,7 @@ $$
 
 ## Homogene Gleichungssysteme
 
-Homogene Gleichungssysteme sind Gleichungssysteme bei denen das Resultat bei allen Gleichungen `0`  ist. 
+Homogene Gleichungssysteme sind Gleichungssysteme bei denen das Resultat bei allen Gleichungen `0`  ist. Es kann eine oder unendlich viele Lösungen haben. Es ist nicht möglich, dass es keine Lösung hat.
 
 ## Zeilenstufenform
 

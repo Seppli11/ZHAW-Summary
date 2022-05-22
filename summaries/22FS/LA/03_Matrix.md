@@ -133,6 +133,19 @@ Zwei Matrizen sind gleich, wenn alle Elemente der Matritzen gleich sind.
 
 ![image-20220412105845025](res/image-20220412105845025.png)
 
+### Eigenschaften
+
+Wenn der Determinant $\neq 0$ ist, dann gilt:
+
+* $\rg(A)=0$
+* Die Matrix ist invertierbar
+
+Wenn der Determinant $=0$ ist, dann gilt:
+
+* $\rg(A) < n$ (wobei $n$ die Anzahl Spalten der Matrix $A$ ist)
+
+
+
 ## Rechenoperation mit Bilder
 
 Man kann die einzelnen Elemente einer Matrix als Pixel in einem Bild darstellen.

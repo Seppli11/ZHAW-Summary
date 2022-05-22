@@ -1,7 +1,5 @@
 # Vektoren
 
-[TOC]
-
 > **Vektor**
 > Ein Vektor wird durch seine Richtung und Betrag definiert (**Nicht aber der Ort**)
 > 
@@ -159,6 +157,8 @@ $$
 $$
 
 Das Vektorprodukt ist nur für Vektoren im Raum $\R^3$ definiert.
+
+Der resultierende Vektor ist senkrecht zu $\vec a$ und $\vec b$. Der Betrag von $|\vec a \times \vec b|$ ist die Fläche eines Paralelogrammes aufgespannt von $\vec a$ und $\vec b$.
 
 ## Gerade als Vektoren
 
