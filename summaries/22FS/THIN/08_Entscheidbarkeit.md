@@ -47,3 +47,8 @@ Wenn $A$ und $B$ entscheidbar ist, dann ist auch $A\cup B$ und $A\cap B$ entsche
 ![image-20220426142621521](res/image-20220426142621521.png)
 
 ## Satz von Rice
+
+Es gibt eine Menge $R$, in welcher alle berechenbare Funktion sind. Die Menge $S\subset R$ ist eine echte, nicht leere Teilmenge von R. Die folgende Sprache ist nun unentscheidbar:
+$$
+C(S)=\{w\in\{0,1\}^*\mid F_w\in S\}
+$$

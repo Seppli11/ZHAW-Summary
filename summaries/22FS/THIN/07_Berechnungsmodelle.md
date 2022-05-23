@@ -92,3 +92,7 @@ $$
 
 ### Loop-Interpreter
 
+Ein Loop-Interpreter ist eine Funktion $I:\N\times \N \rightarrow \N$, welche als Input den Code und Input eines Loop-Programmes nimmt und den Code mit dem Input ausführt und zurück gibt.  Für einen Loop-Interpreter gelten folgende Eigenschaften:
+
+* Es gibt genau ein totaler Loop-Interperter
+* Es kein Loop-berechenbare Loop-Interpreter. Es gibt also kein Loop-Programm, was Loop-Programme interpretieren kann

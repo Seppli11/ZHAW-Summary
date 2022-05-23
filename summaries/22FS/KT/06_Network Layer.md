@@ -166,3 +166,68 @@ Das ICMP Paket wird in einem IP-Paket verschachtelt (`Protocol=1` steht für den
   Dafür kann das Don't Fragment auf `1` gesetzt werden und versucht werden, wie hoch 
 * Traceroute
 * ping
+
+## IPv6
+
+IPv6 bnutzt 128 Bits, bzw. 16 Bytes und ermöglicht es $2^{128}$ Adressen zu generieren. IPv6 bringt zusätzlich noch mehr Vorteile:
+
+* Entlastung der Router
+* Quality of Service: Flow Labels
+* Verbessertes Routing: Routing Header
+* Verbesserte Sicherheitsmechanismen
+* Die MTU wird durch den Absender ermittelt und es gibt daher keine Fragmentierung, was den Router weiter entlastet
+* Ein Interface kann mehrere IPv6 Adressen haben
+
+Eine IPv6 Adresse wird Hexadezimal dargestellt: `2001:0620:0000:0004:0A00:20FF:FE9C:7E4A`. Dabei können Nullen zu begin von Zahlen weggelassen werden (`...:0620:...`=`...:620:...`). Aus dem ergibt sich `2001:620:0:4:A00:20FF:FE9C:7E4A`. Zusätzlich können lange Nullfolgen durch 2 Doppelpunkte ersetzt weden: `1023:0000:0000:0000:1736:a673:88a0:a620` = `1023::1736:a673:88a0:a620`. 
+
+Der Doppelpunkt darf nur einmal genutzt werden.
+
+### IPv6 Adressräume
+
+![image-20220523151746388](res/image-20220523151746388.png)
+
+Es **gibt** eine Loopback Adresse: `::1/28`
+
+### IPv6 Header
+
+Ein IPv6 Header ist 40 Bytes lang (ein IPv4 hat nur 20 Bytes)
+
+![image-20220523144249815](res/image-20220523144249815.png)
+
+#### Header Extension
+
+Im `Next Header` Feld kann angegeben, was der nächste Header oder Protokol ist. Dies reduziert die Grösse, da nur die nötigen Headers geschickt werden müssen. Ebenfalls gibt es für den Router weniger zu tun, da es weniger Felder zu verarbeiten gibt.
+
+![image-20220523145434044](res/image-20220523145434044.png)
+
+In der folgenden Tabele sind die Header-Extension Types und Protokol-Types für das `Next Header`-Feld im IPv6 Header
+
+![image-20220523145759184](res/image-20220523145759184.png)
+
+* **Hop-by-hop (typ=0)**
+  enthält Optionen, die von allen IPv6-Knoten auf der Strecke vom
+  Sender zum Empfänger beachtet werden müssen. Typisches Beispiel ist die Jumbogram
+  Option. Dieser Extension Header muss immer zuerst stehen.
+* **Routing Header (type = 43)** 
+  Wird vom Sender verwendet, um den Pfad zum Empfänger zu
+  bestimmen. Er enthält eine Liste von Routern, über die das betreffende IPv6 Paket geleitet
+  wird. Diese Option wurde als Sicherheitsrisiko erkannt und wird nur noch in modifizierter Form
+  für «Mobile IPv6» eingesetzt.
+* **Fragment Header (type = 44)**
+  Enthält Informationen für das Reassembly analog zu IP V4
+* **Authentication Header AH (type = 51) und Encapsulating Security Payload Header (Type =51)**
+  Enthalten Daten, welche die Vertraulichkeit eines IPv6 Pakets sicherstellen (RFC 4302).
+* **Destination Options (type = 60)**
+  Dieser Header enthält Optionen, welche nur vom Endgerät
+  beachtet werden müssen (im Gegensatz zu den Hop-by-Hop Options).
+
+Im folgenden Bild ist ein Beisiel für das `Next Header`-Feld:
+
+![image-20220523145857336](res/image-20220523145857336.png)
+
+### Neigbor Discovery Protcol (NDP)
+
+### ICMPv6
+
+### Autokonfigurieren
+
