@@ -234,6 +234,35 @@ toListOf (folded . name) cart -- the same as above
   Name "hello world" ^. to getName . to (fmap toUpper) -- will return "HELLO WORLD"
   (ShipCrew "Captain Tom" ["Franz", "Max"]) ^.. crewMembers . to (fmap toUpper) -- will return ["CAPTAIN TOM", "FRANZ", "MAX"]
   ```
+  
+* `backwards :: Fold s a -> Fold s a`
+  Reverses the elements of a fold
+
+  ```haskell
+  [1, 2, 3] ^.. backwards folded -- will return [3, 2, 1]
+  [(1, 2), (3, 4)] ^.. backwards (folded . both) -- will return [4, 3, 2, 1]
+  [(1, 2), (3, 4)] ^.. backwards folded . both -- will return [3, 4, 1, 2]
+  ```
+  
+* `filtered :: (Choice p, Applicative f) => (a -> Bool) -> Optic' p f a a`
+  Filters a fold (or other optics) and can simplify to `filtered :: (s -> Bool) -> Fold s s`
+
+  ```haskell
+  [1..10] ^.. folded . filtered even -- will return [2,4,6,8,10]
+  ```
+  
+* `filteredBy :: Fold s a -> IndexedTraversal' a s s`
+  An alternative to `filtered` which uses a fold as the predicate. The type signature above is simplified.
+
+* `only :: Eq a => a -> Prism' a ()` 
+  A helper fold operator which can simplify to `only :: Eq a => a -> Fold a ()`. It return `()` only if the input is equal to the given `a`
+
+  ```haskell
+  1 ^? only 1 -- will return Just ()
+  2 ^? only 1 -
+  ```
+
+  
 
 ### Actions
 
@@ -354,7 +383,21 @@ toListOf (folded . name) cart -- the same as above
   2
   ```
 
+* `foldOf :: Monoid a => Fold s a -> s -> a` / `foldMapOf :: Monoid r => Fold s a -> (a -> r) -> s -> r`
+  `foldOf` and `foldMapOf` are function which allows the use of Monoids with folds.
   
+* `foldByOf :: Fold s a -> (a -> a -> a) -> a -> s -> a` / `foldMapByOf :: Fold s a -> (r -> r -> r) -> r -> (a -> r) -> s -> r`
+  `foldByOf` and `foldMapByOf` are similar to `foldOf` and `foldMapOf`, but allow the callee to specifiy the append function and identity value.
+  
+  ```haskell
+  tvShows = [("How I Met Your Mother", "Josh Radnor"), ("How I Met Your Mother", "Alyson Hannigan"), ("Buffy the Vampire Slayer", "Alyson Hannigan")]
+  
+  foldMapByOf (folded . _2) (M.unionWith (+)) mempty (\n -> M.singleton n 1) tvShows
+  -- will return [("Alyson Hannigan",2),("Josh Radnor",1)]
+  ```
+  
+* `foldrOf :: Fold s a -> (a -> r -> r) -> r -> s -> r` / `foldlOf :: Fold s a -> (r -> a -> r) -> r -> s -> r`
+  `foldrOf` and `foldlOf` are functions which are like `foldOf` and `foldMapOf`, but the identity value and append function can be set by parameters. They are the equivalence of `foldr` and `foldl`.
 
 ### Concat existing `Fold`s
 
@@ -371,5 +414,36 @@ crewMembers = folding (\s -> s ^.. captain
 
 
 ## Traversable
+
+### Actions
+
+* `taking :: (Conjoined p, Applicative f) => Int -> Traversing p f s t a a -> Over p f s t a a` 
+  This method is the equivalent to `take` with traversables and foldables. 
+  ![image-20220529211806042](res/image-20220529211806042.png)
+
+* `dropping :: (Conjoined p, Applicative f) => Int -> Over p (Control.Lens.Internal.Indexed.Indexing f) s t a a  ->  ver p f s t a a`
+  This method is the foldable / traversable equivalent to `drop`
+
+  ```haskell
+  [1..] ^.. taking 5 folded -- will return [1, 2, 3, 4, 5]
+  [[1, 2, 3], [10, 20, 30], [100, 200, 300]] ^.. folded . taking 2 folded -- will return [1, 2, 10, 20, 100, 200]
+  ```
+
+  High-Order actions apply, like other actions, two an element of a fold, not to the fold itself. The following graphic shows the code `("Albus", "Dumbledore") ^.. both . taking 3 folded`
+
+  ![image-20220529213316390](res/image-20220529213316390.png)
+
+* `takingWhile :: (a -> Bool) -> Fold s a -> Fold s a`
+  The traversable/folding equivalent to `takeWhile`. It accepts a predicate and will return element as long as the predicate returns true
+
+* `droppingWhile :: (a -> Bool) -> Fold s a -> Fold s a`
+  The traversable/folding equivalent to `dropWhile`. It will "drop" elements from fold elements until predicate returns false
+
+  ```haskell
+  [1..]  ^.. takingWhile (< 5) folded -- will return [1, 2, 3, 4]
+  [1..10] ^.. droppingWhile (< 5) folded -- will return [5, 6, 7, 8, 9, 10]
+  ```
+
+  
 
 ## Each

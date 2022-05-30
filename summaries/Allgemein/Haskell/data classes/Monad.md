@@ -1,4 +1,0 @@
-# Monad
-
-## Monad-Transformers
-

@@ -1,6 +1,8 @@
 # Matrix
 
-[TOC]
+$$
+\DeclareMathOperator{\rg}{rg}
+$$
 
 Eine Matrix ist ein rechteckiges Zahlenfeld, wie z.B. diese 3x2 Matrix: $\begin{bmatrix}7 & 6 & 2\\2 & 3 & 3\end{bmatrix}$
 
@@ -129,9 +131,18 @@ Zwei Matrizen sind gleich, wenn alle Elemente der Matritzen gleich sind.
 
 ## Determinanten
 
-**TODO**
-
 ![image-20220412105845025](res/image-20220412105845025.png)
+
+Wenn die Determinanten einer grösseren Matrix als 3x3 Berechnet werden soll, kann ein Verfahren nach Laplace eingesetzt werden:
+
+1. Es wird eine feste Spalte oder Zeile gewählt
+
+2. Nun wird nach der folgenden Formel entwickelt:
+   $$
+   \text{Entwicklung nach i-ten Zeilen: }\det(A)=\sum^n_{j=1} (-1)^{i+j}\cdot a_{ij}\cdot\det(A_{ij})\\
+   \text{Entwicklung nach j-ten Spalte: }\det(A)=\sum^n_{i=1} (-1)^{i+j}\cdot a_{ij}\cdot\det(A_{ij})\\
+   $$
+   Dabei  ist $a_{ij}$, das Element an $i$-ter Zeile und $j$-ter Spalte und $A_{ij}$ die Matrix, bei welcher die $i$-te Zeile und $j$-Spalte weggelassen wurden
 
 ### Eigenschaften
 

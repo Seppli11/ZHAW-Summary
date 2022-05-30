@@ -21,4 +21,12 @@
 
   Laut den Folien ist das Spezielle Halteproblem, das Halteproblem und das leere Halteproblem semi-entscheidbar, weill H0 semi entscheidbar ist und nicht entscheidbar weil Hs nicht entscheidbar ist. 
 
+  * Nicht-Entscheidbar = Es ist nicht entscheidbar, könnte aber semi-entscheidbar sein
+  * Unentscheidbar = Es hält nie an
+  * In der Folien werden die Begriffe als Synonyme verwendet
   
+* "So kann auch komplement von M nicht nach (1) semi-entscheidbar sein"? 
+
+
+
+Wenn NP=P ist, dann könnten alle NP-Probeleme deterministisch in Polynomzeit gelöst werden.

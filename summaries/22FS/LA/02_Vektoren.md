@@ -1,5 +1,11 @@
 # Vektoren
 
+$$
+\DeclareMathOperator{\orth}{\bot}
+$$
+
+
+
 > **Vektor**
 > Ein Vektor wird durch seine Richtung und Betrag definiert (**Nicht aber der Ort**)
 > 
@@ -134,14 +140,11 @@ $$
 \varphi =cos^{-1}\left(\frac{\vec a \cdot \vec b}{|\vec a|\cdot |\vec b|}\right)
 $$
 
-| Skalarprodukt Resultat | Winkel |
-| ---------------------- | ------ |
-|                        |        |
-|                        |        |
-|                        |        |
+Wenn das Skalarprodukt $\vec a \cdot \vec b=0$ ist, dann ist der Winkel zwischen $\vec a$ und $\vec b$ $90°=\frac 2 \pi$
 
 ## Senkrechte Projektion
 
+![image-20220530111727969](res/image-20220530111727969.png)
 $$
 \vec b_a =\frac{\vec a \cdot \vec b}{|\vec a|^2}\cdot \vec a\\
 |\vec b_a|=\frac{|\vec a \cdot \vec b|}{|\vec a|}
@@ -172,9 +175,33 @@ Eine Gerade kann folgendermassen dargestellt werden: $\vec r(P)+\lambda\cdot \ve
 
 ### Abstand eines Punktes zu einer Gerade
 
-![image-20220329082708504](res/image-20220329082708504.png)
+Es gibt 3 Varianten den Abstand zwischen einem Punkt und einer Gerade zu bestimmen: In der folgenden Erklärung wird mit der Geraden $g: \pmatrix{1 \\ 13 \\ -5}+ \lambda \cdot \pmatrix{3 \\ 5 \\ -4}$ und dem Punkt $A=(3;-1;4)$ gearbeitet.
 
-**TODO**
+1. **Lösungsweg**
+   ![image-20220530134846519](res/image-20220530134846519.png)
+   1. Bestimme den Vektor $\vec r(B)$, abhängig von $\lambda$
+      $\vec r(B)=\pmatrix{1+3\lambda\\ 13 + 5\lambda \\ -5 -4\lambda}$
+   2. Bestimme den Vektor $\vec{BA}=\vec r(A) - \vec r(B)=\pmatrix{2 - 3\lambda \\ -14  -5\lambda \\ 9 + 4\lambda}$
+   3. Über das Skalarprodukt $\lambda$ bestimmen:
+      $\vec {BA}\orth \vec a \Leftrightarrow \vec {BA} \cdot \vec a = 0\\\pmatrix{2 - 3\lambda \\ -14  -5\lambda \\ 9 + 4\lambda} \cdot \pmatrix{3\\ -1 \\ 4}=-100-50\lambda=0 \rightarrow \lambda = 2$
+   4. Nun kann die Länge bestummen werden
+      $l=\vert\vec{BA}\vert=9$
+2. **Lösungsweg**
+   ![image-20220329082708504](res/image-20220329082708504.png)
+   1. $\vec{PA}$ bestimmen
+      $\vec{PA}=\pmatrix{3 -1 \\ -1 -13 \\ 5 - (-5)}=\pmatrix{2 \\ -14\\ 9}$
+   2. Fläche $F$ des Parallelogrammes bestimmen
+      $F=\vert\vec{PA}\times \vec a \vert=\left\vert \pmatrix{2 \\ -14 \\ 9}\times \pmatrix{3 \\ 5 \\ -4} \right\vert=\left\vert \pmatrix{11 \\ 35\\ 52}\right\vert=45 \sqrt 2$
+   3. Die Länge $l$ bestimmen
+      $F=\vert\vec{PA}\times \vec a \vert \\F = \vert \vec a \vert \cdot l \\ l=\frac{\vert \vec {PA} \times \vec a\vert}{\vert \vec a \vert}=\frac{45\sqrt 2}{5\sqrt 2}=9$
+3. **Lösungsweg**
+   ![image-20220530140906269](res/image-20220530140906269.png)
+   1. $\vec{PA}$ bestimmen
+      $\vec{PA}=\pmatrix{3 -1 \\ -1 -13 \\ 5 - (-5)}=\pmatrix{2 \\ -14\\ 9}$
+   2. $\vec{PB}$ mit einer Projektion bestimmen
+      $\vert \vec{PB}\vert=\frac{\vert \vec{PA} \cdot \vec a \vert}{\vert \vec a \vert}=2 \cdot \sqrt{50}$
+   3. $l$ mit Pytaghoras bestimmen
+      $l=\overline{AB}=\sqrt{\vert \vec{PA}\vert^2 - \vert\vec{PB}\vert^2}$
 
 ## Projektion von einem Vektor auf einen anderen
 

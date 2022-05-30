@@ -1,7 +1,5 @@
 # Vektorräume
 
-[TOC]
-
 
 ## Definition von Vektorräumen
 
