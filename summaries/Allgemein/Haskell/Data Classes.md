@@ -78,3 +78,7 @@ Here are some examples for monoids:
 
 ## Monad
 
+## Foldable
+
+## Traversable
+

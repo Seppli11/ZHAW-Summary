@@ -1,6 +1,14 @@
 # Optics
 
-[TOC]
+## Capabilities
+
+In the following table the capabilities of each optics is shown.
+
+|            | Lens   | Traversal | Fold |
+| ---------- | ------ | --------- | ---- |
+| Get        | Single | Many      | Many |
+| Set/Modify | Single | Many      | Nope |
+| Traverse   | Single | Many      | Nope |
 
 ## Operators
 
@@ -209,22 +217,6 @@ cart ^.. folded . name -- ["Black Shirt", "Water Bottle"]
 toListOf (folded . name) cart -- the same as above
 ```
 
-* `both: Bitraversable r => Traversal (r a a) (r b b) a b`
-  `both` can be simplified to `both: Bitraversable r => Fold (r a a) a` and creates a `Fold` for a tuple with the same types (`(String, Int)`  wouldn't be valid). But only the last two item of a tuple are actually traversed. 
-
-  ```haskell
-  ("hello", "wolrd") ^.. both -- will return  ["hello", "world"]
-  ("hi") ^.. both -- will return ["hi"]
-  ("hi", "hello", "world") ^.. both -- will return ["hello", "world"]
-  ```
-
-* `each :: Each s t a b => Traversal s t a b`
-  `each` can be simplified to `each :: Each s s a a => Fold s a`. It does almost the same thing as `both`, but over an arbitrary sized tuple. 
-
-  ```haskell
-  ("hi", "hello", "world") ^.. each -- will return ["hi", "hello", "world"]
-  ```
-  
 * `to :: (s -> a) -> Fold s a`
   Creates a fold which maps from the type `s` to the folded type `a`. This function maps 1-to-1. Because of this, it couldn't be used to extract values from `Maybe`. If a 1-to-many relationship is needed, `folding` can be used
 
@@ -262,7 +254,6 @@ toListOf (folded . name) cart -- the same as above
   2 ^? only 1 -
   ```
 
-  
 
 ### Actions
 
@@ -411,18 +402,59 @@ crewMembers = folding (\s -> s ^.. captain
 						  <> s ^.. conscripts . folded)
 ```
 
+## Traversal
 
+A traversal can, like a fold, get zero or more elements but also set zero or more elements. Because of this, lenses and folds are valid traversal but not all traversals are lenses and folds.
 
-## Traversable
+The type `Traversal s t a b ` has the following generics:
+
+* `s` - the structure before the action
+* `t` - the structure after the action
+* `a` - the focus before the action
+* `b` - the focus after the action
+
+Wenn the type of the focus is changed by a setting operation the operation has to convert all elements. An operation which only focuses on part of the traversal can't change the type of the focus.
+
+Like with lenses, there is also a simple traversal: `Traversal' s a`, where the generic mean:
+
+* `s` - the structure before and after the action
+* `a` - the focus before and after the action
 
 ### Actions
 
+When actions are used as a setter, then all values are changed, which would be returned with a getter. With these kind of action only part of the traversal can be updated. This also means that the focused type can't c
+
+```haskell
+[1, 2, 3, 4, 5] & taking 3 traversed *~ 10 -- will return [10, 20, 30, 4, 5]
+[1, 2, 3, 4, 5] & dropping 3 traversed *~ 10 -- will return [1, 2, 3, 40, 50]
+[1..5] & traversed . filtered even *~ 10 -- will return [1, 20, 3, 40, 5]
+```
+
+* `traversed :: Traversable f => IndexedTraversal Int (f a) (f b) a b`
+  Creates a `Traversal` which will focus on every element in the data structure. It is more powerfull than `folded`, but can be used with less types. 
+
+* `both: Bitraversable r => Traversal (r a a) (r b b) a b`
+  `both` can be simplified to `both: Bitraversable r => Fold (r a a) a` and creates a `Fold` for a tuple with the same types (`(String, Int)`  wouldn't be valid). But only the last two item of a tuple are actually traversed. 
+
+  ```haskell
+  ("hello", "wolrd") ^.. both -- will return  ["hello", "world"]
+  ("hi") ^.. both -- will return ["hi"]
+  ("hi", "hello", "world") ^.. both -- will return ["hello", "world"]
+  ```
+
+* `each :: Each s t a b => Traversal s t a b`
+  `each` can be simplified to `each :: Each s s a a => Fold s a`. It does almost the same thing as `both`, but over an arbitrary sized tuple. 
+
+  ```haskell
+  ("hi", "hello", "world") ^.. each -- will return ["hi", "hello", "world"]
+  ```
+
 * `taking :: (Conjoined p, Applicative f) => Int -> Traversing p f s t a a -> Over p f s t a a` 
-  This method is the equivalent to `take` with traversables and foldables. 
+  This method is the equivalent to `take` with traversals and folds. 
   ![image-20220529211806042](res/image-20220529211806042.png)
 
 * `dropping :: (Conjoined p, Applicative f) => Int -> Over p (Control.Lens.Internal.Indexed.Indexing f) s t a a  ->  ver p f s t a a`
-  This method is the foldable / traversable equivalent to `drop`
+  This method is the fold / traversal equivalent to `drop`
 
   ```haskell
   [1..] ^.. taking 5 folded -- will return [1, 2, 3, 4, 5]
@@ -434,16 +466,44 @@ crewMembers = folding (\s -> s ^.. captain
   ![image-20220529213316390](res/image-20220529213316390.png)
 
 * `takingWhile :: (a -> Bool) -> Fold s a -> Fold s a`
-  The traversable/folding equivalent to `takeWhile`. It accepts a predicate and will return element as long as the predicate returns true
+  The traversal/folding equivalent to `takeWhile`. It accepts a predicate and will return element as long as the predicate returns true
 
 * `droppingWhile :: (a -> Bool) -> Fold s a -> Fold s a`
-  The traversable/folding equivalent to `dropWhile`. It will "drop" elements from fold elements until predicate returns false
+  The traversal/folding equivalent to `dropWhile`. It will "drop" elements from fold elements until predicate returns false
 
   ```haskell
   [1..]  ^.. takingWhile (< 5) folded -- will return [1, 2, 3, 4]
   [1..10] ^.. droppingWhile (< 5) folded -- will return [5, 6, 7, 8, 9, 10]
   ```
+  
+* `worded :: Applicative f => IndexedLensLike' Int f String String`
+  Simplifies to `worded :: Traversal' String String` and will focus on each word in the string
+
+* `lined :: Applicative f => IndexedLensLike' Int f String String`
+  Simplifies to `lined :: Traversal' String String` and will focus on each line in the string
+
+  ```haskell
+  "Hello world" ^.. worded -- will return ["Hello", "world"]
+  "Hello\n How are you?" ^.. lined -- will return ["Hello"," How are you?"]
+  "Hello world" & worded %~ \s -> "*" ++ s ++ "*" -- will return "*Hello* *world*"
+  ```
 
   
+
+
+### Operators
+
+The operator `over` (aka. `%~`) and `set` (aka.`.~`), which are known from lenses, can also be used with traversals.
+
+```haskell
+("hello", "moin") & both %~ (++ "!") -- will return ("hello!", "moin!")
+over both (++ "!") ("hello", "moin")  -- will return ("hello!", "moin!")
+("hello", "moin") & both %~ length -- will return (5, 4)
+
+("hello", "moin") & both .~ "good morning" -- will return ("good morning", "good morning")
+set both "good morning" ("hello", "moin") -- will return ("good morning", "good morning")
+```
+
+
 
 ## Each
