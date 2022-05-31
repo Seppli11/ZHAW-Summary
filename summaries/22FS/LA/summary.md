@@ -9,9 +9,11 @@ tags:
 
 $$
 \newcommand{\len}[1]{\vert #1 \vert}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\span}{span}
+\DeclareMathOperator{\dim}{dim}
+\DeclareMathOperator{\im}{im}
 $$
-
-
 
 [TOC]
 
@@ -35,8 +37,6 @@ Das Resultat kann abgeschaut werden.
 <img src="res/image-20220530101118124.png" alt="image-20220530101118124" style="zoom:80%;" />
 
 ![image-20220530101033012](res/image-20220530101033012.png)
-
-**TODO**: Verbindung mit Quadratischen Matrizen/Vektorräume/...
 
 Eigenschaften, wenn $rg(A)=n$ gilt:
 
@@ -87,8 +87,7 @@ Eigenschaften die daraus folgen:
 <img src="res/image-20220315083724919.png" alt="image-20220315083724919" style="zoom:67%;" />
 
 ### Skalarprodukt
-
-![image-20220315101321792](res/image-20220315101321792.png)
+<img src="res/image-20220315101321792.png" alt="image-20220315101321792" style="zoom:50%; float: right;" /> 
 $$
 \vec a \cdot \vec b = \vert \vec a \vert \cdot \vert \vec b\vert \cdot \cos(\varphi)\\
 \vec a \cdot \vec b=a_1b_1+a_2b_2+a_3b_3\\
@@ -109,7 +108,6 @@ $$
 \vec b_a =\frac{\vec a \cdot \vec b}{|\vec a|^2}\cdot \vec a\\
 |\vec b_a|=\frac{|\vec a \cdot \vec b|}{|\vec a|}
 $$
-
 ### Vektorprodukt
 
 ![image-20220530111824151](res/image-20220530111824151.png)![image-20220530112143401](res/image-20220530112143401.png)
@@ -186,12 +184,12 @@ Folgende Gesetze gelten:
 
   * Koordinatendarstellung
     Es muss ein Faktor $p$ in folgendem System geben
-    $$
+$$
     a_1=a_2\cdot p\\
     b_1=b_2\cdot p\\
     c_1=c_2\cdot p\\
     d_1\neq d_2\cdot p
-    $$
+$$
     Alternativ: Die Normalvektoren beider Ebenen  müssen koolinear sein
 
 * **Identisch**
@@ -245,6 +243,22 @@ Die folgenden Rechenregeln funktioniert für gleichgrosse Matrizen.
   * $(A+B)^T=A^T+B^T=B^T+A^T$
   * $(A-B)^T=A^T-B^T=B^T-A^T$
 
+### Transponierte Matrix
+
+$$
+B= \begin{bmatrix}
+1 & 2 & 3\\
+3 & 4 & 5
+\end{bmatrix}\\
+B^T= \begin{bmatrix}
+1 & 3 \\
+2 & 4\\
+3 & 5
+\end{bmatrix}
+$$
+
+Es gilt folgendes Gesetzt: $(A\cdot B)^T=B^T\cdot A^T$ (Bemerke, dass sich die Reihenfolge von $A$ und $B$ sich ändert)
+
 ### Inverse Matrix
 
 Die inverse Matrix kann von einer Quadratischen-Matrix gebildet werden, bei welcher $\det(A)\neq 0$ gilt
@@ -288,7 +302,207 @@ Wenn:
 
 ## Vektorräume
 
+$$
++:V \times V \rightarrow V\\
+\cdot : \R \times V \rightarrow V
+$$
+
+Dabei müssen folgende Gesetze existieren:
+
+* Kommutativgesetz: $a + b = b + a$
+* Assoziativgesetzt: $a + (b + c)=(a + b) + c$
+* Es gibt ein neutrales Element $\vec 0$, für welches gilt $a + 0v = \vec a$ und $0v \in V$
+* Für jedes Element $a \in V$ muss es ein inverses Element $-a \in V$ geben, so dass $a + (-a) = 0v$ ergibt.
+* Assoziativgesetzt: $\lambda \cdot (\mu \cdot a) = (\lambda \cdot \mu) \cdot a$
+* Distributivgesetzt: $\lambda \cdot(a + b) = \lambda \cdot a + \lambda \cdot b$
+* Distirbutgesetzt: $(\lambda + \mu)\cdot a = \lambda \cdot a + \mu \cdot a$
+* Für jedes Element $a \in V$ gibt es ein neutrales Element $1\cdot a = a$,
+
+Allgemein bekannte Vektorräume:
+
+* $\R^n$ - Vektorraum von allen Vekotren mit $n$ reellen Komponente
+* $ \R^{m\times n}$ - Vektorraum von allen reelen $m\times n$-Matrizen
+* $\mathbb P_n[x]$ - Vektorraum der Polynome von Grad $\le n$
+
+### Unterräume
+
+* Für beliebige Element $a, b \in U$ ist auch $a+b\in U$
+* Für jeden Skalar $\lambda \in \R$ und jedes Element $a\in U$ ist auch $\lambda \cdot a\in U$
+* (Die neutralen Elemente der Addition und Skalarmultiplikation müssen ebenfalls in $U$ sein.)
+
+### Linearer Spann
+
+$$
+\span(\vec a_1, \vec a_2 , ..., \vec a_n)=\lambda_1\cdot \vec a_n1 + \lambda_2\cdot \vec a_2 + ... + \lambda_n \cdot \vec a_n
+$$
+
+Jenachdem, wie viele linear unabhängige Vektoren gegeben sind, wird ein anderes geometrisches Objekt gebildet:
+
+* Bei `1` Vektor, wird eine Ursprungs-Gerade gebildet
+* Bei `2` Vektoren, wird eine Ursprungs-Ebene
+* Bei `3` Vektoren, wird ein "Ursprungs-Körper" gebildet
+
+### Erzeugendensystem
+
+Eine Menge von Vektoren $\{\vec b_1, \vec b_2, ..., \vec b_N\}$, falls die Vektoren nicht komplanar und kolinear zueinander sind, bilden ein Erzeugendensystem von $V$: $V=\span(\vec b_1, \vec b_2, ..., \vec b_n)$
+
+Ein Erzeugendensystem hat folgende eigenschaften:
+$$
+\begin{align}
+& V=span(\vec b_1, \vec b_2, ..., \vec b_n)\\
+\Leftrightarrow \text{ } & B\cdot \vec x = \vec a \text { für jedes } \vec a \in \R^m\\
+\Leftrightarrow \text{ } & rg(B)=m
+\end{align}
+$$
+
+
+### Basis
+
+Eine Basis ist eine Menge von Vektoren, welche
+
+* ein Erzeugendensystem sind
+* linear unabhängig sind
+
+(Auf Deutsch: Es darf nur eine Möglichkeit geben, ein Vektor zu Bilden)
+
+![image-20220531150248088](res/image-20220531150248088.png)
+
+Wichtige Basen:
+
+* Für $\R^n$ : $\mathcal S=\{\vec e_1, \vec e_2, ..., \vec e_n\}$ - Standardbasis 
+* Für $\mathbb P_n[x]$ $\mathcal M=\{1, x, x^2, ..., x^n\}$ - Monombasis
+
+![image-20220428092334710](res/image-20220428092334710.png)
+
+### Dimension
+
+Die Anzahl Vektoren in der Basis eines Vektorraumes: $\dim(V)$
+
+Die Dimension von $\{\vec 0\}$ ist $0$
+
 ## Lineare Abbildung
 
-## Rest Klassen
+Eine Lineare Abbildung ist eine Funktion $f: V \to W$, welche folgende zwei Regeln einhält:
+$$
+f(x+y)=f(x)+f(y)\\
+f(\lambda \cdot x)=\lambda \cdot f(x)
+$$
 
+
+Eine lineare Abbildung kann auch als Matrix geschrieben werden. Um dies zu erreichen, gibt es zwei möglichkeiten:
+
+1. Die Einheitsvektoren in $f(x)$ einsetzen und aus den Resultaten eine Matrix bauen <img src="res/image-20220505083606449.png" alt="image-20220505083601516" style="zoom:50%;" />
+
+2. Zeile für Zeile durchgehen und die Matrixzeilen davon ableiten
+   $$
+   A\cdot\pmatrix{x \\ y \\ z} = \pmatrix{x\\ z - y \\ y - x \\ 2x - y} \Rightarrow A = \pmatrix{1 & 0 & 0 \\ 0 & -1 & 1 \\ -1 & 1 & 0 \\ 2 & -1 & 0}
+   $$
+
+### Basis-wechselnde Abbildung
+
+$_CA_B$ beschreibt die Lineare Abbildung $f: V_B \to W_C$ (Achtung Reihenfolge) und wird wie folgt gebraucht: $_CA_B\cdot \vec x_B=f(\vec x)$.
+
+Es kann wie folgt gebildet werden: ![image-20220531152205083](res/image-20220531152205083.png)
+
+Die Matrix $(_CA_B)^{-1}={}_BA_C$
+
+### Abbildung in der Ebene
+
+![image-20220516225353483](res/image-20220516225353483.png)
+
+#### Orthogonale Projektion auf eine allgemeine Gerade durch den Ursprung
+
+<img src="res/image-20220516225247782.png" alt="image-20220516225247782" style="zoom:67%; float: right" />
+Wenn auf eine Gerade projektiert werden soll, welche nicht die x-, y- oder z-Achse ist, muss folgende Formel verwendet werden. Dabei wird erwartet, dass die Gerade in der Kordinatendarstelung ($ax + by = 0$) normiert ist ($a^2 + b^2 = 1$).
+$$
+P=
+\begin{pmatrix}
+1 - a^2 & -ab\\
+-ab & 1-b^2
+\end{pmatrix}\\
+\text{Wobei gilt: }\\
+ax + by = 0\\
+a^2+ b^2 = 1
+$$
+
+#### Spiegelung an einer allgemeinen Gerade durch den Ursprung
+
+<img src="res/image-20220516225315069.png" alt="image-20220516225315069" style="zoom:80%; float: right" />Wenn alle Vektoren bei einer Gerade, welche durch den Ursprung geht, gespiegelt werden soll, kann folgende Formel benützt werden. Dabei muss aber die Gerade in der Koordinatendarstellung ($ax + by=0$) normiert ist ($a^2+b^2 = 1$).
+$$
+S=
+\begin{pmatrix}
+1 - 2a^2 & -2ab\\
+-2ab & 1 - 2b^2
+\end{pmatrix}\\
+\text{Wobei gilt: }\\
+ax + by = 0\\
+a^2+ b^2 = 1
+$$
+
+### Abbildung im Raum
+
+![image-20220531163850092](res/image-20220531163850092.png)
+
+![image-20220516225516519](res/image-20220516225516519.png)
+
+![image-20220531164012888](res/image-20220531164012888.png)
+
+### Kern und Bild
+
+$$
+\ker(A)=\{\vec x \in V \vert A\cdot \vec x = \vec 0\}\\
+\im(A)=\span(\vec a_1, \vec a_2, ..., \vec a_n)=\{\lambda_1 \vec a_1 + \lambda_2 \vec a_2 + ... + \lambda_n\vec a_n \vert \lambda_k \in \R\}
+$$
+
+Der Kern $\ker(A)$ besteht aus alle Vektoren $\vec x$, welche die Gleichung $A\cdot \vec x=\vec 0$ erfüllen
+
+Das Bild $\im(A)$ ist der Spalten der Vektoren von $A$
+
+Zusätzlich gilt für $\im(A)$ und $\ker(A)$:
+$$
+\dim(\ker(A)) + \dim(\im(A)) = \dim(A)\\
+\dim(\im(A)) = \rg(A)
+$$
+Um die Dimensionen zu bestimmen gibt es mehrere Möglichkeiten:
+
+1. Mit der Zeilenstuffenform von $A$ den Rang ablesen. Von diesem kann die Dimension von $\im(A)$ abgelesen werden und dank des Satzes von oben auch $\dim(\ker(A))$ bestimmen
+2. Da die Menge, welche von $\ker(A)$ zurück gegeben werden, auch ein Unterraum ist, kann eine Basis mit $A$ erstellt werden. Es müssen alle Vektoren $a_i$ gefunden werden, welche linear Unabhängig sind
+
+### Verknüpfung von Abbildungen
+
+$$
+g: V \to W \mapsto g(\vec x)=A \cdot \vec x\\
+f: U  \to W \mapsto f(\vec x)=B \cdot \vec x \\
+g(f(\vec x)) = (g \circ f)(\vec x)=B \cdot A \cdot \vec x
+$$
+
+# Rest Klassen
+
+In der Restklasse $[x]_n$ sind alle Zahlen $a$, welche durch $n$ geteilt den Rest $x$ ergeben
+
+| Formel                    | Erklärung                                                    |
+| ------------------------- | ------------------------------------------------------------ |
+| $\Z/n=\{[z]_n\|z\in \Z\}$ | Die Menge aller Restklasse                                   |
+| $\Z^*_{/n}$               | Das Primes Restklassenssytem, welches nur die Restklassen enthält, welche zu n teilerfremd sind. Alle Restklassen in diesem System können multipliziert werden (Siehe [Prime Restklassen](#prime-restklassen)) |
+| $[z]_n=\overline{z}$      | Die Restklasse, bzw. Äquivalenzklasse mit dem Teiler n und dem Vertreter $z$ |
+
+### Prime Restklassen
+
+Prime Restklassen sind die Restklassen, welche ein Inverseselement für die Multiplikation besitzen. Dies wird mit einem Stern geschrieben, wie hier zu sehen: $\Z_{/7}^{*}$ .
+
+> Beispiel:
+>
+> $\Z^*_{/7}=\{[1], [2], [3], [4], [5], [6]\}$
+>
+> $\Z^*_{/6}=\{[1], [5]\}$
+
+### Modulare Arithmethik
+
+für Multiplikation:
+
+* neutrales Element: $[1]_n$
+* inverses Element:
+  * Nur Zahlen, welche teilefrmed sind ($ggT(Zahl, N)=1$)
+  * Eine Zahl multipliziert mt ihrem inversen Element gibt $1$
+  * Kann mit dem Erweiterten Euklidischen Algorithmus berechnet werden:
+    $Zahlenbereich \cdot x + Zahl \cdot y=1$ $\Rightarrow y$ ist das multiplikative Inverse. (Zahl muss kleiner sein als Zahlenbereich, sonst muss gewechselt werden)
