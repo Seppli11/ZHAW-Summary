@@ -6,7 +6,7 @@
 
 ## Definition eines Endlichen Autommaten
 
-> **Eindlichen Automat**: $M=(Q, \Sigma, \delta, q_0, F)$
+> **Endlichen Automat**: $M=(Q, \Sigma, \delta, q_0, F)$
 >
 > * $Q$ : Alle Zustände des Automaten $Q=\{q_0, q_1, ...,q_n\}$
 > * $\Sigma$: Eingabealpabet

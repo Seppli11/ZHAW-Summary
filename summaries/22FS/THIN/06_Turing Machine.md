@@ -1,7 +1,5 @@
 # Turing Maschine
 
->![image-20220322130917520](res/image-20220322130917520.png)
->
 >Eine (determinischtische) Turing-Maschine (DTM) ist ein 7-Tupel: $M=(Q,\Sigma, \Gamma, \delta, \textvisiblespace, F)$
 >
 >* $Q$: die endliche Menge von Zustände

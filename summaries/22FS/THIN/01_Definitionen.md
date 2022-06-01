@@ -24,7 +24,7 @@ Beispiel:
 * $|abc|=3$
 * $|\varepsilon|=0$
 
-### Absolute Häuffigkeit
+### Absolute Häufigkeit
 
 > $|w|_x bezeichnet die absolute H$uffigkeit eines Symboles $x$ in einem Wort $w$
 
