@@ -13,7 +13,6 @@ tags:
 | $\varepsilon$                  | Das Leere Wort ($\vert \varepsilon\vert=0$)                  |
 | Sprache                        | Eine Menge von Wörtern ($L=\{10, 1100, ...\}$, in Prosa oder $L=\{1^n0^n\mid n\in \N\}$) |
 | $\emptyset$                    | Leere Sprache ($\emptyset \neq \{\varepsilon\}$)             |
-| $\vert abc \vert=3$            | Länge des Wortes                                             |
 | $\vert abca\vert_a=2$          | Häufigkeit von a                                             |
 | $(abc)^R$                      | Spiegelwort von $abc$                                        |
 | (echter) Präfix                | Der Start eines Wortes (echt = Präfix nicht gleich das Wort)  Kann auch $\varepsilon$ sein |
@@ -22,21 +21,19 @@ tags:
 | $\Sigma^2$                     | Alle Wörter des Alphabets $\Sigma$ mit der Länge 2           |
 | Kleenesche Hülle $\Sigma^*$    | Alle Wörter des Alphabets $\Sigma$ ($\Sigma^+=\Sigma^*\setminus\{\varepsilon\}$) |
 | Konkatination $x\circ y=xy$    | Zwei Wörter werden zusammen verketet                         |
-| Wortpotenzen $(ab)^3=ababab$   |                                                              |
+| Wortpotenzen                   | $(ab)^3=ababab$                                              |
 | Sprachen-Konkatenation         | $AB=\{uv\mid u \in A \text{ und } v \in B\}$                 |
 | Kleenesche Hülle einer Sprache | $A^*=\varepsilon \cup A \cup AA \cup AAA \cup ...$           |
 | Komplement einer Sprache       | $\overline L=\Sigma^*-L=\Sigma^*\setminus L$                 |
 
 ## Chomsky-Hirarchie
 
-![image-20220322130545131](res/image-20220322130545131.png)
+* Typ-0 - rekursive Aufzählbar und Turing-Maschinen
+* Typ-2 - Nicht-deterministische Kellerautomaten / Kontextfreie Gramatik
+* Typ-3 - RegEx / Endliche Automaten (DEA, NEA)
 
 ## Regex
 
-* $(0|1)$ - entweder 0 oder 1 (Manchmal wird dies auch als $(0+1)$ geschrieben)
-* $x^*$ - beliebig oft $x$, auch null mal
-* $x^+=xx^*$ - mindestens 1-mal $x$
-* $x?=(x|\epsilon)$ - $x$ ist optional
 * $\epsilon$ - eine leere Regular-Expression. Diese matcht nichts. Beschreibt $\{\varepsilon\}$
 * $[x_1, x_2, ...,x_k]=x_1|x_2|...|x_k$ 
 * $\oslash$ - eine leere Menge von Regular-Expressions
@@ -61,12 +58,10 @@ $$
 $$
 Die **Sprache** eines endlichen Automaten besteht aus allen Wörter, welche in einem Endzustand landen ohne verbleibenden Input.
 
-| Was                                                          | Beschreibung                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="res/image-20220301140455457.png" alt="image-20220301140455457" style="zoom: 50%;" /> | Der Startzustand                                             |
-| <img src="res/image-20220301140523138.png" alt="image-20220301140523138" style="zoom: 50%;" /> | Normaler Zustand                                             |
-| <img src="res/image-20220301140534949.png" alt="image-20220301140534949" style="zoom: 50%;" /> | Akzeptierter Endzustand                                      |
-| <img src="res/image-20220301140548641.png" alt="image-20220301140548641" style="zoom:50%;" /> | Übergangsfunktionen: Vom Zustand "0.50" kann zu "1.50" gelaufen werden |
+| Was                                                          | Beschreibung     |                                                              |                                                              |
+| ------------------------------------------------------------ | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="res/image-20220301140455457.png" alt="image-20220301140455457" style="zoom: 30%;" /> | Der Startzustand | <img src="res/image-20220301140534949.png" alt="image-20220301140534949" style="zoom: 30%;" /> | Akzeptierter Endzustand                                      |
+| <img src="res/image-20220301140523138.png" alt="image-20220301140523138" style="zoom: 30%;" /> | Normaler Zustand | <img src="res/image-20220301140548641.png" alt="image-20220301140548641" style="zoom:30%;" /> | Übergangsfunktionen: Vom Zustand "0.50" kann zu "1.50" gelaufen werden |
 
 ### Nicht Deterministische Automaten (NEA)
 
@@ -78,6 +73,7 @@ Um eine $\varepsilon$-NEA in eine NEA umzuwandeln, muss überlegt werden, was f�
 
 ### Teilmengenkonstruktion ($NEA \to DEA$)
 
+
 1. Die Zustände sind die Potenzmenge von $Q_N$ (Potenzmenge:  $\mathcal P(\{0, 1\})=\{\emptyset, \{0\}, \{1\}, \{0, 1\}\}$)
 2. Die potentielle Startzustand Kandidaten sind alle diese Teilmengen von $Q_N$, welche $q_0$ enthalten
 3. Akzeptierte Zustände sind alle Teilmengen, welche ein Element aus $F_N$ besitzen
@@ -86,7 +82,7 @@ Um eine $\varepsilon$-NEA in eine NEA umzuwandeln, muss überlegt werden, was f�
    Wenn eine Verbindung das leeres Wort nimmt, werden die Zustände, welche man vom leeren Wort Zustand erreichen kann, auch vom ursprünglichen Wort als erreichbar angesehen.
 5. Die noch nicht gestrichenen Resultaten können nun Namen verteilt werden (z.B A-Z)
 
-![image-20220301200210053](res/image-20220301200210053.png)
+<img src="res/image-20220301200210053.png" alt="image-20220301200210053" style="zoom:20%;" />
 
 ### DEA $\to$ RegEX
 
@@ -101,13 +97,9 @@ L_{q_2}&=\varepsilon\\
 \end{align}
 $$
 
-#### Arden'sches Lemma
+**Arden'sches Lemma**: $L=UL|V\Rightarrow L=U^*V$, dabei ist $L$ eine Spraceh und $U$ einen andren Ausdruch
 
-> $L=UL|V\Rightarrow L=U^*V$, dabei ist $L$ eine Spraceh und $U$ einen andren Ausdruch
-
-### Zustandsklassen
-
-> $[p]=\{w \in \Sigma^*\vert M \text{ endet nach Lesen des Input-Worts } w \text{ im Zustand } p\}$, dabei ist $M$ einen Automaten, $w$ ein eingabe Wort und $p$ ein Zustand (nicht unbedingt der Endzustand)
+**Zustandsklassen: ** $[p]=\{w \in \Sigma^*\vert M \text{ endet nach Lesen des Input-Worts } w \text{ im Zustand } p\}$, dabei ist $M$ einen Automaten, $w$ ein eingabe Wort und $p$ ein Zustand (nicht unbedingt der Endzustand)
 
 ### Untere Schranke für endliche Automaten
 
@@ -129,20 +121,12 @@ Es müssen nun die folgende Schritte gefolgt werden:
 >* $P$ eine endliche Menge von Produktionen in der Form $X \rightarrow \beta$ ist. Dabei ist der Kopf $X\in N$ und der Rumpf $\beta \in (N\cup\Sigma)^*$)  
 >* $A$ das Startsymbol ist und gilt $A\in N$
 >
->Geschrieben kann es folgendermassen:
 >$$
->G_1=(\{A\}, \{0, 1\}, P, A) \\\text{wobei gilt: }\\
+>G_1=(\{A\}, \{0, 1\}, P, A) \\
 >P=\{A\rightarrow0A1,A\rightarrow\varepsilon\}
 >$$
->Die Sprache $L(G)$ aus der Grammatik $G$ beinhaltet alle Wörter, die in $G$ aus dem Startsymbol $A$ ableitbar sind.
->$$
->L(G)=\{w\in\Sigma^* \vert A\overset{*}{\Rightarrow} w\}
->$$
 >Eine Kontextfreie Grammatik wird **mehrdeutig** genannt, wenn es für ein Wort mehrere Ableitungsbäume gibt.
->
->Eine Sprache ist kontextfrei, wenn ein Kellerautomaten dazu gebaut werden kann.
-
-<img src="res/image-20220315132416296.png" alt="image-20220315132416296" style="zoom:30%; float: right;" /> 
+>Eine Sprache ist **kontextfrei**, wenn ein Kellerautomaten dazu gebaut werden kann.
 
 * Mehrere Ableitungsschritte: $A\Rightarrow AA \Rightarrow (A)A \Rightarrow (A)(A)\Rightarrow()()$ 
 * Dies kann auch als: $A \overset*\Rightarrow w$ geschrieben werden. Dabei wird das Wort $w$ vom Symbol $A$ erzeugt/generiert.
@@ -151,6 +135,8 @@ Es müssen nun die folgende Schritte gefolgt werden:
 * **Linksseitig Ableiten**: Die am meisten linke Variable wird immer zuerst abgeleitet
 * **Rechtsseitig Ableiten**: Die am meisten rechte Variable wird immer zuerst abgeleitet
 * **eindeutige Gramatik**: Eine Gramatik, welche nur auf eine Art abgeleitet werden kann
+
+<img src="res/image-20220315132416296.png" alt="image-20220315132416296" style="zoom:30%;" />
 
 ## DEA zu kontextfreien Sprache
 
@@ -181,17 +167,15 @@ Es gibt eine DEA $M=(Q, \Sigma, \delta, q_0, F)$. Aus dieser kann eine kontextfr
 
 ### Nichtdeterministischen Kellerautomaten (NKA)
 
-> Eine NKA ist gleich wie eine KA, nur das die Übergangsfuntkion den Typ $\delta: Q\times (\Sigma \cup \varepsilon) \times \Gamma\rightarrow \mathcal P (Q\times\Gamma^*)$ hat. Der Rückgabetyp ist die Potenzmenge. Somit kann in der NKA ein Eingang mehrere Ausgänge haben.
->
-> Wie auch bei einer NEA kann nun im $\varepsilon$ (das leere Wort) für $\Sigma$ in der Übergangsfunktion. 
->
-> Nicht alle NKA können in eine KA umgewandlet werden. Auch gibt es kontextfreie Sprachen, welche nicht in eine KA umgewandlet können werden.
+Eine NKA ist gleich wie eine KA, nur das die Übergangsfuntkion den Typ $\delta: Q\times (\Sigma \cup \varepsilon) \times \Gamma\rightarrow \mathcal P (Q\times\Gamma^*)$ hat. Der Rückgabetyp ist die Potenzmenge. Somit kann in der NKA ein Eingang mehrere Ausgänge haben.
 
-### Berechnungsschritte
-<img src="res/image-20220326193612394.png" alt="image-20220326193612394" style="zoom:33%; float: right;" /> Die Berechnungssfunktion dazu wäre: $\delta(q, b, c)=(p, w)$
-Dabei befindet sich der Automaten im Zustand $q$, list das Symbol $b$ von der Eingabe und wird das Kellersymbol $c$ vom Stack lesen und $w$ zurück schreiben. Der nächste Zustand wird $p$ sein.
+Wie auch bei einer NEA kann nun im $\varepsilon$ (das leere Wort) für $\Sigma$ in der Übergangsfunktion. 
 
-### Berechnung
+Nicht alle NKA können in eine KA umgewandlet werden. Auch gibt es kontextfreie Sprachen, welche nicht in eine KA umgewandlet können werden.
+
+### Berechnungen und Berechnungsschritte
+<img src="res/image-20220326193612394.png" alt="image-20220326193612394" style="zoom:33%; float: right;" />Die Berechnungssfunktion dazu wäre: $\delta(q, b, c)=(p, w)$
+Dabei befindet sich der Automaten im Zustand $q$, list das Symbol $b$ von der Eingabe und wird das Kellersymbol $c$ vom Stack lesen und $w$ zurück schreiben. 
 
 Eine Berechnung besteht aus mehreren Berechnungsschritte und eine Start- und Endkonfiguration.
 
@@ -208,11 +192,9 @@ Dies kann auch als $(q_0, 0011, \$)\vdash^*(q2, \varepsilon, \$)$ geschrieben we
 > * $\Gamma$: Das Bandalphabet, dabei muss $\Sigma \subset \Gamma$
 > * $\textvisiblespace$: Das Leerzeichen, dabei muss $\textvisiblespace \in \Gamma$ und $\textvisiblespace \not \in \Sigma$
 >
-> Das Band hat einzelne Zelle, in welchen ein Zeichen von $\Gamma$ enhaltet...
->
 > Berechnungen werden folgendermassen dargestellt: $X_1,...X_{i-1}qX_iX_{i+1},...,X_n\vdash X_1,...X_{i-1}pX_iX_{i+1},...,X_n$
-> Der aktuelle Zustand ist in der Mitte ($q$ bzw. $p$). Abgekürzt wird es als $K_1\vdash^* K_n$ geschrieben
->
+>Der aktuelle Zustand ist in der Mitte ($q$ bzw. $p$). Abgekürzt wird es als $K_1\vdash^* K_n$ geschrieben
+> 
 > Eine Sprache, welche von einer TM akzeptiert wird, nennt sich **rekursiv aufzähltbar**
 
 <img src="res/image-20220322133915768.png" alt="image-20220322133915768" style="zoom:33%; float: right;" />Im folgenden Bild wird eine Übergangsfunktion einer Turing Maschine gezeigt: $\delta(q_1, X)=(q_2, Y, D)$, wobei $D\in\{L, R\}$
@@ -243,7 +225,107 @@ Dabei wird folgendes gespeichert: Die Übergangsfunktion $\delta(q_i, X_j)=(q_k,
 
 ## Berechnungsmodelle
 
+> **Intuitive berechenbare Funktion**: eine Funktion, welche algorithmisch (durch eine mechanisches Verfahren) berechnet werden kann. Jede intuitive berechenbare Funktion lässt sich mit einer TM berechnen.
+>
+> **Turing-berechenbare Funktionen**: Funktionen, welche von einer Turing-Maschinen berechnet werden können
+>
+> **Gandys These M**: Alles, was jemals mit einer (endlichen) Maschine/physikalischen Apparatur berechnet werden kann, ist bereits von einer Turing-Maschine berechenbar. Bis jetzt wurde noch kein Gegenbeispiel zu beiden Thesen gefunden worden.
+>
+> **Turing-Vollständigkeit**: Für jede Zahl $k \in \N$ und jede Funktion $f: \N^k \to \N$ gibt es eine Turing-Machine und While-Programm
+
+* Zuweisungen: `x = y + c` oder `x = y - c`  (wobei c eine Konstante ist!)
+* `x0` ist der Output; `x1`, `x2`, ... sind die Inputs/Variabeln
+* Alle Variabeln können natürliche Zahlen ($n \ge 0$) enthalten ($2-5=0$)
+* **Loop-Programme**
+  * `LOOP x DO ... END` Der Loop wird `x`-mall durchgeführt. Ändern von `x` hat kein Einfluss
+* **While-Programme** (auch ` LOOP` ist erlaubt)
+  * `While xi > 0 Do ... End` Die einzige erlaubte Bedingung ist `xi > 0`
+  * While-Programme terminieren nicht immer
+  * Jedes Loop-Pgramm ist auch ein WhileProgramm
+* **GOTO-Programme**: 
+  * Marker: (`M1:`, `M2:`, ...), `Goto Mk` , `If xi = c Then Goto Mr`, `Halt` (Haltet das Programm an)
+* **Primitiv rekursive Funktion** (nach dem Muster $f: \N^2 \to \N$)
+  * Konstante Funktion: $c^n_k: \N^n \to \N \mapsto c^n_k(x_1, ..., x_n)=k$
+  * Nachfolge Funktion: $\eta: \N \to \N \mapsto \eta(x)=x+1$
+  * Projektion ($1 \le k \le n$): $\pi^n_k: \N^n \to \N \mapsto \pi^n_k(x_1, ...,x_k,...,x_n)=x_k$
+  * Wenn $f$ und $g_i$ primitive rekursive Funktionen sind, dann ist $h(\vec x)=f(g_1(\vec x), ..., g_k(\vec x))$ auch eine primitive rekursive Funktion
+  * Primitive rekursive Funktionen = LOOP-Programme
+
+Ackermann (ist Turing-berechenbar, nicht Loop berechen, bzw. nicht primitive rekursive, ist total): 
+$$
+\begin{align}
+a(0, m)&= m + 1\\
+a(n + 1, 0) &= a(n, 1)\\
+a(n + 1, m + 1) &= a(n, a(n + 1, m))
+\end{align}
+$$
+
 ## Entscheidbarkeit
+
+> **Entscheidbar**: Es gibt eine Turing-Maschine, welche für alle akzeptierten (wenn ein `1` aufs Band geschrieben wird) und nicht akzeptierten Zustände (wenn ein `0` aufs Band geschrieben wird) endet
+>
+> **Semi-Entscheidbar**: Es gibt eine Turing-Maschine, welche für alle akzeptierten Zustände hält und für nicht akzeptierte Zustände nie hält.
+>
+> **Reduktion** Es gibt eine Funktion $F: \Sigma^* \to \Gamma^*$ für die Sprache $A \subset \Sigma^*$ und $B  \subset \Gamma^*$. Dies wird als $A \preceq B$ geschrieben
+
+Sätze:
+
+* Jede entscheidbare Sprache ist auch semi-entscheidbar
+* Wenn eine Sprache $A$ und ihr Komplement $\overline A$ semi-entscheidbar ist, sind $A$, wie auch $\overline A$ entscheidbar
+* Wenn $A$ entscheidbar ist, ist auch $\overline A$ entscheidbar
+* Wenn $A$ und $B$ (semi-)entscheidbar sind, ist auch $A \cup B$ und $A \cap B$ (semi-)entscheidbar
+* $A$ ist rekursive aufzählbar $\Leftrightarrow$ $A$ ist semi-entscheidbar $\Leftrightarrow$ $A$ ist der Werte und Definitionsbereich einer berechenbaren Funktion
+* $A\preceq B$ und $B \preceq C$, dann gilt auch $A \preceq C$
+* Ist $B$ (semi-)entscheidbar und $A \preceq B$, dann ist auch $A$ (semi-)entscheidbar
+
+> **allgemeine Halteproblem**: Gibt es eine TM $H$, welche entscheiden kann, ob ein Program mit einem Input anhält oder nicht immer weiter läuft.
+>
+> **leere Halteproblem**: Ob es eine TM $H_0$ gibt, welche entscheiden kann, ob ein Programm mit einem leeren Band anhält
+>
+> **spezielle Halteproblem**: Es wird eine TM $H_S$ erstellt, welche $H$ fragt, ob ein Program endet. Wenn ja, loopt $H_S$, wenn nein, beendet $H_S$. Wenn $H_S$ das als Input $(H_S, H_S)$ bekommt, ist unklar, ob $H_S$ anhält oder weiterläuft und daher kann es keine TM $H$ geben.
+>
+> Alle Halteprobleme sind semi-entscheidbar und nicht-entscheidbar.
+
+Konsequenzen von Satz von Rice: Unmöglich im Allgemeinen zu überprüfen, ob ein Program
+
+* eine bestimmte Spezifikation erfüllt
+* frei von “bugs” ist
+* bei jeder Eingabe terminiert
+* und ein anderes Program dieselbe Funktionalität haben
+
+Colatz: $n \text{ ist gerade} \Rightarrow n=\frac n 2 \text{ sonst } n=3n + 1$
+Alle positiven Inputs enden in $4 \to 2 \to 1  \to 4 \to 2 \to 1$
 
 ## Komplexitätstheorie
 
+* **Zeitkomplexität**: Laufzeit des besten Programms, welche ein Problem löst
+* **Platzkomplexität**: Speicherbedarf des bestens Programmes
+* **Beschreibungskomplexität**: Länge des kürzesten Programmes
+
+* Obereschranke: $f \in \mathcal O(g)\Leftrightarrow f(n) \le c \cdot g(n)$  wenn $n$ grösser als $n_0$ ist (Wobei $g$ und $f$ eine Funktion $\N \to \N$ ist und $c\in \N$ eine Konstante)
+* Untereschranke: $f \in \Omega(g)\Leftrightarrow f(n) \ge \frac 1 d \cdot g(n)$ wenn $n$ grösser als $n_0$ ist (Wobei $d \in \N$ eine Konstante ist)
+* $f\in \Theta(g) \Leftrightarrow f(n)\in \mathcal O(g(n))\wedge f(n)\in \Omega(g(n))$
+
+<img src="res/image-20220602121716673.png" alt="image-20220602121716673" style="zoom:50%;" />
+
+| Komplexität          | Beispiel                                                     |
+| -------------------- | ------------------------------------------------------------ |
+| $\mathcal O(1)$      | Konstanter Aufwand unabhängig vom Input                      |
+| $\mathcal O(n)$      | Linearer Aufwand: Ein For-Loop Abhängig von $n$              |
+| $\mathcal O(\log n)$ | Logarithmischer Aufwand: Binary-Search/ Mit jeder Iteration wird der Aufwand halbiert |
+| $\mathcal O(n^2)$    | Quadratischer Aufwand: Zwei verschachtelte For-Loops abhängig von $n$ |
+| $\mathcal O(2^n)$    | Exponentieller Aufwand: Mit jeder Iteration verdoppelt sich der Aufwand |
+
+### NP vs P
+
+* **Polynomzeit lösbar (P)**: Problem ist teil von $\mathcal O(n^c)$, wobei $c \ge 1$
+* **Nicht deterministische Polynomiell (NP)**: Alle Probleme entscheidbar von einer Nicht-deterministische Maschine in polynomzeit
+* **Polynomzeit-Verifizierer**: Eine TM, welche eine Lösung in polynomial zeit verifiziert
+* $P\neq NP$: Nicht alle Probleme, welche in polynomzeit verifizierbar sind, können in polynomzeit gelöst werden
+* **Clique**: Eine Menge von Knoten, bei welchen alle Knoten mit allen anderen Knoten (ausser sich selbst) verbunden sind
+* **NP-Schwer**: Ein Problem, welches sich auf alle NP-Probleme reduzieren lässt. Ein NP-Schweres Problem ist gleich schwer oder schwerer also das schwerste NP-Problem
+* **NP-Vollstädnig**: Ein NP-Vollständiges Problem ist NP-Schwer und ein NP-Problem
+* **polynomiell reduzierbar ($\preceq_p$)**: Eine Reduktion in polynomieller Zeit ($L_1 \preceq_p L_2$ heisst, dass $L_2$ mindestens so schwer wie $L_1$ ist )
+* Wenn $P_1$ NP-schwer, $P_2$ in NP enthalten ist und $P_1 \preceq_p P_2$ gibt, dann ist $P_2$ NP-vollständig
+* **SAT**: "erstes" NP-volständige Problem
+  Ob eine Formel in der KNF ($(x_1 \vee x_2) \wedge (x_3 \vee x_4) \wedge \neg x_5$)) erfüllbar ist

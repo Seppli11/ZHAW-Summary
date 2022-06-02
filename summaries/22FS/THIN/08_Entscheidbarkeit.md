@@ -20,9 +20,7 @@ Wenn $A$ und $B$ entscheidbar ist, dann ist auch $A\cup B$ und $A\cap B$ entsche
 
 ### Sätze
 
-* **Transitivität**:
-
-  Für beliebige Sprachen $A, B$ und $C$ und $A \preceq B$ und $B \preceq C$ gilt, dann gilt auch $A \preceq C$
+* **Transitivität**: Für beliebige Sprachen $A, B$ und $C$ und $A \preceq B$ und $B \preceq C$ gilt, dann gilt auch $A \preceq C$
 
 * Für beliebige Sprachen $A$ und $B$, wenn $B$ entscheidbar ist und $A \preceq B$ gilt, dann ist auch $A$ entscheidbar.
 

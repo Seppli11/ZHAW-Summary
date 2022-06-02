@@ -236,16 +236,6 @@ toListOf (folded . name) cart -- the same as above
   [(1, 2), (3, 4)] ^.. backwards folded . both -- will return [3, 4, 1, 2]
   ```
   
-* `filtered :: (Choice p, Applicative f) => (a -> Bool) -> Optic' p f a a`
-  Filters a fold (or other optics) and can simplify to `filtered :: (s -> Bool) -> Fold s s`
-
-  ```haskell
-  [1..10] ^.. folded . filtered even -- will return [2,4,6,8,10]
-  ```
-  
-* `filteredBy :: Fold s a -> IndexedTraversal' a s s`
-  An alternative to `filtered` which uses a fold as the predicate. The type signature above is simplified.
-
 * `only :: Eq a => a -> Prism' a ()` 
   A helper fold operator which can simplify to `only :: Eq a => a -> Fold a ()`. It return `()` only if the input is equal to the given `a`
 
@@ -449,6 +439,16 @@ When actions are used as a setter, then all values are changed, which would be r
   ("hi", "hello", "world") ^.. each -- will return ["hi", "hello", "world"]
   ```
 
+* `filtered :: (Choice p, Applicative f) => (a -> Bool) -> Optic' p f a a`
+  Filters a fold (or other optics) and can simplify to `filtered :: (s -> Bool) -> Fold s s`
+  
+  ```haskell
+  [1..10] ^.. folded . filtered even -- will return [2,4,6,8,10]
+  ```
+  
+* `filteredBy :: Fold s a -> IndexedTraversal' a s s`
+  An alternative to `filtered` which uses a fold as the predicate. The type signature above is simplified.on
+
 * `taking :: (Conjoined p, Applicative f) => Int -> Traversing p f s t a a -> Over p f s t a a` 
   This method is the equivalent to `take` with traversals and folds. 
   ![image-20220529211806042](res/image-20220529211806042.png)
@@ -486,6 +486,25 @@ When actions are used as a setter, then all values are changed, which would be r
   "Hello world" ^.. worded -- will return ["Hello", "world"]
   "Hello\n How are you?" ^.. lined -- will return ["Hello"," How are you?"]
   "Hello world" & worded %~ \s -> "*" ++ s ++ "*" -- will return "*Hello* *world*"
+  ```
+
+* `beside :: Traversal s t a b -> Traversal s' t' a b -> Traversal (s,s') (t,t') a b`
+
+  `beside` applies a the first traversal to the first element of the tuple and the second traversal to the second tuple element. 
+
+  ```haskell
+  ("hi", "moin") ^.. beside (to length) (to $ const 200) -- will return (2, 200)
+  ("hello", (2, "moin")) ^.. beside id _2 -- will return ("hello", "moin")
+   ("hello", (2, "moin")) & beside id _2 %~ (++ "!") -- will return ("hello!", (2, "moin!"))
+  ```
+
+* `element :: Traversable f => Int -> Traversal' (f a) a`
+  Focuses on the element with the given index
+
+  ```haskell
+  [0..4] ^? element 2 -- will return Just 2
+  [0..4] ^? element 20 -- will return Nothing
+  [0..4] & element 2 *~ 10 -- will return [0, 1, 20, 3, 4]
   ```
 
   

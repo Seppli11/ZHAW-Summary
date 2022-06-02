@@ -2,6 +2,15 @@
 
 ## Semi-Group
 
+```haskell
+class Semigroup a where
+	(<>) :: a -> a -> a
+```
+
+A semigroup is a data type which has a associative binary operation (like `+`). The operation of a semigroup should be associative (`(a <> b) <> c == a <> (b <> c)`).
+
+Every `Monoid` is a semigroup.
+
 ## Monoid
 
 >Haskall defines a monoid in the following way:
@@ -74,11 +83,32 @@ Here are some examples for monoids:
 
 ## Functor
 
+A `Functor` is a data type which can be mapped over.
+
+```haskell
+class Functor f where
+    fmap :: (a -> b) -> f a -> f b
+    (<$) :: a -> f b -> f a
+```
+
+`fmap` and `(<$)` are the same function but with diffrent argument ordering. They will map from `f a` to `f b`.
+
+### Laws
+
+A `Functor` should follow the following laws:
+
+* `fmap id = id`
+  Using the `id` function with `fmap` should return the unmodifies object
+* `fmap (f . g) == fmap f . fmap g`
+  It shouldn't matter if the mapping functions are composed together first and then mapped or the `fmap` are composed
+
 ## Applicative
 
 ## Monad
 
 ## Foldable
+
+
 
 ## Traversable
 
