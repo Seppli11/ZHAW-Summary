@@ -60,7 +60,7 @@ Ein Koaxialkabel besteht aus einem Leiter. Sie sind geeignet für hochfrequente 
 
 Bei paarsymmetrischen Kabeln wird zwischen geschirmten Kabeln (Shielded Twisted Pair/STP) und ungeschirmten Kabeln (Unshielded Twisted Pair/UTP) unterschieden. Geschirmte Kabel sind störsicherer, aber auch teurer, schwerer und steifer. 
 
-Das Namensschema von Twisted Pairs ist wie folgt: $xx/y\text{TP}$.
+Das Namensschema von Twisted Pairs ist wie folgt: $xx/y\text{TP}$ (Beispiel: U/UTP, S/UTP, ...)
 
 | Werte für $xx$ | Werte für $y$           | Erklärung                     |
 | -------------- | ----------------------- | ----------------------------- |
