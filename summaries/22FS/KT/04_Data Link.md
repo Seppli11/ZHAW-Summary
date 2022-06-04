@@ -108,7 +108,7 @@ Das prominentiste Beispiel der asynchronen Übertragung ist Ethernet, daher wird
 
 ### Preamble
 
-Die PreaWiesmble werden 7 Bytes, welche aus Abwechslungsweise `0` und `1` bestehen. Das 8 Byte hat die Form `10101011`.
+Die Preamble werden 7 Bytes, welche aus Abwechslungsweise `0` und `1` bestehen. Das 8 Byte hat die Form `10101011`.
 
 ### Bytes korrekt lesen
 

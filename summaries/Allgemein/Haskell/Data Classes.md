@@ -99,7 +99,7 @@ class Functor f where
     (<$) :: a -> f b -> f a
 ```
 
-`fmap` and `(<$)` are the same function but with diffrent argument ordering. They will map from `f a` to `f b`.
+`fmap` and `(<$)` are the same function but with diffrent argument ordering. They will map from `f a` to `f b`. `<$>` is a synonym of `fmap` but as a infix operator.
 
 ### Laws
 
@@ -112,7 +112,79 @@ A `Functor` should follow the following laws:
 
 ## Applicative
 
+```haskell
+class Applicative f where
+	{-# MINIMAL pure, ((<*>) | lift2A) #-}
+	pure :: a -> f a
+	(<*>) :: f (a -> b) -> f a -> f b
+	lift2A :: (a -> b -> c) -> f a -> f b -> f c
+```
+
+`Applicative`s are like `Functor` in that they apply a mapping function to a box value. With a `Applicative` the function is also a boxed value. This is useful to map functions with more than one argument to a boxed value. If `<$>` (aka `fmap`) is used to apply a value to a function with two parameters, you get the following: `(+) <$> Just 5 == Just (+5)`. This can be combined with `<*>` in the following way:
+
+```haskell
+(+) <$> Just 5 <*> Just 3 -- will return Just 8
+lift2A (+) (Just 5) (Just 3) -- will return Just 8
+```
+
+An `Applicative` also defines the function `pure` which boxes a value. 
+
+There are also some helper functions:
+
+* `(*>) :: f a -> f b -> f b`
+  Discard the first argument (but still "runs" it) and only return the value of the second applicative
+
+  ```haskell
+  Just 3 *> Just 5 -- will return Just 5
+  Nothing *> Just 5 -- will return Nothing
+  Just 3 *> Nothing -- will return Nothing
+  ```
+
+* `<* :: fa -> fb -> fa`
+  Discards the second argument (but still "runs" it) and only return the value of the first applicative
+
+  ```haskell
+  Just 3 <* Just 5 -- will return Just 3
+  Nothing <* Just 5 -- will return Nothing
+  Just 3 <* Nothing -- will return Nothing
+  ```
+
+* `liftA3 :: Applicative f => (a -> b -> c -> d) -> f a -> f b -> f c -> f d` 
+  Works the same as `liftA2` but accepts a function with three paramters.
+
 ## Monad
+
+```haskell
+class Applicative m => Monad m where
+	(>>=) :: forall a b. m a -> (a -> m b) -> m b
+	(>>) :: forall a b. m a -> m b -> m b 
+	return :: a -> m a
+```
+
+A `Monad` is similar to an `Applicative` in that it also allows a boxed value to be mapped. The difference is, that the mapping function of a `Monad` returns a boxed value as a `Monad` itself. This can be used to return for example a `Nothing` instance, if the operation failed, leading to short-circuiting.
+
+The `>>=` operator gets used to chain Monads together. The mapping function gets the boxed value of the input `Monad` as a parameter. But this isn't always wanted (like with `putStrLn` which returns `IO ()`). In those cases `>>` can be used. `return` is often a synonym to `pure` of `Applicative`
+
+```haskell
+half :: Int -> Maybe Int
+half x = if even x 
+			then Just (x `div` 2)
+			else Nothing
+
+Just 3 >>= half -- will return Nothing
+Just 4 >>= half -- will return Just 2
+Just 4 >>= half >>= half -- will return Just 1
+Just 4 >>= half >>= half >>= half -- will return Nothing
+
+putStrLn "hello" >>= (\_ -> putStrLn "world")
+putStrLn "hello" >> putStrLn "world"
+-- both print:
+-- hello
+-- world
+
+```
+
+
 
 ## Foldable
 
