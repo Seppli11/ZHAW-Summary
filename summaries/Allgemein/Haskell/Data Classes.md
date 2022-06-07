@@ -181,8 +181,9 @@ putStrLn "hello" >> putStrLn "world"
 -- both print:
 -- hello
 -- world
-
 ```
+
+## WriterTransformer
 
 
 
@@ -273,6 +274,10 @@ class (Functor t, Foldable t) => Traversable t where
 ```
 
 An instance of a `Traversable` alows a data structure to work easily with `Applicative`s and `Monad`s
+
+The `sequenceA` function takes a `Foldable`, which has `Applicative`s nested (like `[Just 1, Just 2, Nothing]`). `traverse` on the other hand takes a `Foldable` of elements and a mapping function, which will map the elements to `Applicative` resulting in a `Foldable` which has `Applicative` nested. 
+
+Example: `[1, 2, 3]` with the mapping function `Just` will result in `[Just 1, Just 2, Just 3]` which would be an valid input for `sequenceA`.
 
 Here are some useful methods, which can be used with a `Traversable` structure:
 

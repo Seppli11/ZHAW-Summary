@@ -410,6 +410,8 @@ Like with lenses, there is also a simple traversal: `Traversal' s a`, where the 
 * `s` - the structure before and after the action
 * `a` - the focus before and after the action
 
+
+
 ### Actions
 
 When actions are used as a setter, then all values are changed, which would be returned with a getter. With these kind of action only part of the traversal can be updated. This also means that the focused type can't c
@@ -507,7 +509,6 @@ When actions are used as a setter, then all values are changed, which would be r
   [0..4] & element 2 *~ 10 -- will return [0, 1, 20, 3, 4]
   ```
 
-  
 
 
 ### Operators
@@ -521,6 +522,16 @@ over both (++ "!") ("hello", "moin")  -- will return ("hello!", "moin!")
 
 ("hello", "moin") & both .~ "good morning" -- will return ("good morning", "good morning")
 set both "good morning" ("hello", "moin") -- will return ("good morning", "good morning")
+```
+
+Effects can be run on `Traversals`  with the method `traverseOf :: LensLike f s t a b -> (a -> f b) -> s -> f t` which can be spezialized to `traverseOf :: Traversal s t a b -> (a -> f b) -> s -> f`. `traverseOf` works like `traverse` but with `Traversable`s
+
+```haskell
+traverseOf both readMaybe ("1", "2") :: Maybe (Int, Int) -- will return (1, 2)
+traverseOf both readMaybe ("hello", "2") :: Maybe (Int, Int) -- will return Nothing
+
+traverseOf each readMaybe ["1", "2"] :: Maybe [Int] -- will return Just [1, 2]
+traverse readMaybe ["1", "2"] :: Maybe [Int] -- will return Just []
 ```
 
 
