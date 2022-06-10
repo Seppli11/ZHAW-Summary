@@ -117,7 +117,6 @@ Es müssen nun die folgende Schritte gefolgt werden:
 >Die Kontextfreie Grammatik $G$ ist durch das Tupel $(N, \Sigma, P, A)$ definiert, wobei
 >
 >* $N$ das Alphabet der Nichtterminale (Variabeln)ist , welche mit Produktionen in $P$ aufgelöst werden können
->* $\Sigma$ das Alphabet der Terminale ist
 >* $P$ eine endliche Menge von Produktionen in der Form $X \rightarrow \beta$ ist. Dabei ist der Kopf $X\in N$ und der Rumpf $\beta \in (N\cup\Sigma)^*$)  
 >* $A$ das Startsymbol ist und gilt $A\in N$
 >
@@ -151,16 +150,11 @@ Es gibt eine DEA $M=(Q, \Sigma, \delta, q_0, F)$. Aus dieser kann eine kontextfr
 
 >Ein deterministischer Keller Automaten (KA) wird als 7-Tupel dargestellt: $(Q, \Sigma, \Gamma, \delta, q_0, \$, F)$)
 >
->* $Q$ ist die endliche Menge von Zuständen
->* $\Sigma$ ist das Alphabet der Eingabe
 >* $\Gamma$ ist das Alphabet des Kellers (bzw. des Stacks)
 >* $\delta: Q\times (\Sigma \cup \varepsilon) \times \Gamma\rightarrow Q\times\Gamma^*$ ist die (partielle) Übergangsfunktion
->* $q_0$ ist der Startzustand
 >* $\$\in \Gamma$ ist ein ausgezeichnetes Symbol vom Alphabet des Stacks/Kellers
->* $F\subseteq Q$ ist die Menge der akzeptierten Zustände 
 >
->Zu dem gilt für die Übergangsfunktion $\delta$, wenn $\delta(q, b, x)$ definiert ist, darf $\delta(q, \varepsilon, x)$ nicht definiert sein. Das heisst, das leere Wort darf nur benutzt werden, wenn für eine Stackposition kein anderes Symbol definiert ist. Dies stellt sicher, dass der Automat deterministisch ist.
->
+>Zu dem gilt für die Übergangsfunktion $\delta$, wenn $\delta(q, b, x)$ definiert ist, darf $\delta(q, \varepsilon, x)$ nicht definiert sein. 
 >Zu begin der Ausführung ist im Strack $\$$, was ein leerer Stack darstellt.
 
 <img src="res/image-20220326193950829.png" alt="image-20220326193950829" style="zoom:30%;" />
@@ -186,16 +180,14 @@ Dies kann auch als $(q_0, 0011, \$)\vdash^*(q2, \varepsilon, \$)$ geschrieben we
 
 > Eine (determinischtische) Turing-Maschine (DTM) ist ein 7-Tupel: $M=(Q,\Sigma, \Gamma, \delta, \textvisiblespace, F)$
 >
-> * $Q$: die endliche Menge von Zustände
-> * $\Sigma$: das Eingabe Alphabet
 > * $\delta: Q\times \Gamma \rightarrow Q\times\Gamma\times D, D=\{L, R\}$: Die Übergangsfunktion, welche den nächsten Zustand, was geschrieben werden soll und ob das Band nach Links (L) oder nach rechts (R) geschoben werden soll
 > * $\Gamma$: Das Bandalphabet, dabei muss $\Sigma \subset \Gamma$
 > * $\textvisiblespace$: Das Leerzeichen, dabei muss $\textvisiblespace \in \Gamma$ und $\textvisiblespace \not \in \Sigma$
->
+> 
 > Berechnungen werden folgendermassen dargestellt: $X_1,...X_{i-1}qX_iX_{i+1},...,X_n\vdash X_1,...X_{i-1}pX_iX_{i+1},...,X_n$
 >Der aktuelle Zustand ist in der Mitte ($q$ bzw. $p$). Abgekürzt wird es als $K_1\vdash^* K_n$ geschrieben
 > 
-> Eine Sprache, welche von einer TM akzeptiert wird, nennt sich **rekursiv aufzähltbar**
+>Eine Sprache, welche von einer TM akzeptiert wird, nennt sich **rekursiv aufzähltbar**
 
 <img src="res/image-20220322133915768.png" alt="image-20220322133915768" style="zoom:33%; float: right;" />Im folgenden Bild wird eine Übergangsfunktion einer Turing Maschine gezeigt: $\delta(q_1, X)=(q_2, Y, D)$, wobei $D\in\{L, R\}$
 
@@ -268,8 +260,6 @@ $$
 >
 > **Reduktion** Es gibt eine Funktion $F: \Sigma^* \to \Gamma^*$ für die Sprache $A \subset \Sigma^*$ und $B  \subset \Gamma^*$. Dies wird als $A \preceq B$ geschrieben
 
-Sätze:
-
 * Jede entscheidbare Sprache ist auch semi-entscheidbar
 * Wenn eine Sprache $A$ und ihr Komplement $\overline A$ semi-entscheidbar ist, sind $A$, wie auch $\overline A$ entscheidbar
 * Wenn $A$ entscheidbar ist, ist auch $\overline A$ entscheidbar
@@ -329,3 +319,5 @@ Alle positiven Inputs enden in $4 \to 2 \to 1  \to 4 \to 2 \to 1$
 * Wenn $P_1$ NP-schwer, $P_2$ in NP enthalten ist und $P_1 \preceq_p P_2$ gibt, dann ist $P_2$ NP-vollständig
 * **SAT**: "erstes" NP-volständige Problem
   Ob eine Formel in der KNF ($(x_1 \vee x_2) \wedge (x_3 \vee x_4) \wedge \neg x_5$)) erfüllbar ist
+
+**TODO**: Lösung von SAT Problem

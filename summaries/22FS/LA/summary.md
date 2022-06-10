@@ -34,6 +34,10 @@ Das Resultat kann abgeschaut werden.
 
 ### Lösbarkeit von LGS
 
+$\rg(A)=\text{Anzahl Zeilen}-\text{Anzahl Nullzeilen}$ (in der Zeilenstuffen form)
+
+$n$ ist die Anzahl **Spalten** von $A$
+
 <img src="res/image-20220530101118124.png" alt="image-20220530101118124" style="zoom:80%;" />
 
 ![image-20220530101033012](res/image-20220530101033012.png)
