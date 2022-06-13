@@ -183,9 +183,29 @@ putStrLn "hello" >> putStrLn "world"
 -- world
 ```
 
-## WriterTransformer
+## Monad Transformer
 
+```haskell
+class (forall m. Monad m => Monad (t m)) => MonadTrans t where
+	lift :: Monad m => m a -> t m a
+```
 
+A monad transformer enhances a "base monad" `m` with some functionality. For example the `ExceptT` type enhances a monad with the `Either` monad allowing it to short-circuit in case of an error.
+
+The `lift` method can be used to access the base monad.
+
+```haskell
+addIfPositive :: Int -> ExceptT String (State Int) Int
+addIfPositive i = do
+  n <- lift get
+  if n >= 0
+    then lift (put $ n + 1) >> lift get
+    else throwE $ (show n) ++ " is negative"
+```
+
+In the example above `addIfPositive` will only add the given `Int` to the internal state if the internal state is positive else an error message is produced and the operation stops (aka. short-circuits). `lift get` is used to access the state in the do-Block.
+
+Monads are usually defined with their monad transformer. The `Except` monad for example is defined as `type Except e a = ExceptT e (Identity a)`
 
 ## Foldable
 

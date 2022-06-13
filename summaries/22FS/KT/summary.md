@@ -6,6 +6,23 @@ tags:
 ---
 # Summary
 
+**TODO**:
+
+* Protokoll Nummern in Layer 2 und 3
+* TCP: Sliding Window
+* CRC
+
+| Hex  | Dez  | Bin  |  Hex |  Dez |  Bin |
+| :--- | :--- | :--- | ---: | ---: | ---: |
+| 0    | 0    | 0    |    8 |    8 | 1000 |
+| 1    | 1    | 1    |    9 |    9 | 1001 |
+| 2    | 2    | 10   |    A |   10 | 1010 |
+| 3    | 3    | 11   |    B |   11 | 1011 |
+| 4    | 4    | 100  |    C |   12 | 1100 |
+| 5    | 5    | 101  |    D |   13 | 1101 |
+| 6    | 6    | 110  |    E |   14 | 1110 |
+| 7    | 7    | 111  |    F |   15 | 1111 |
+
 ![image-20220221213400813](res/image-20220221213400813.png)
 
 ![image-20220411144839594](res/image-20220411144839594.png)
@@ -277,7 +294,7 @@ Die ersten 3 Bytes ist die ID der Hersteller, die letzten 3 Bytes eine Laufnumme
   Die Preamble werden 7 Bytes, welche aus Abwechslungsweise `0` und `1` bestehen. Das 8 Byte (das SFD) hat die Form `10101011`
 
 * **Length/Type**
-  Wenn der Wert $\le 1500$ ist, stellt es die Anzahl von Bytes im `Data` Feld dar (ohne `PAD`). Sonst wird angegeben, was für ein höheres Protokoll im Datenfeld enthalten ist.
+  Wenn der Wert $\le 1500$ ist, stellt es die Anzahl von Bytes im `Data` Feld dar (ohne `PAD`). Sonst wird angegeben, was für ein höheres Protokoll im Datenfeld enthalten ist. (**TODO: Protokoll Nummern angeben**)
 
 * **Data/PAD**
   Die Daten (zwischen 0 - 1500 Bytes). Falls die Daten kleiner als 46 Bytes sind, wird dies mit PAD aufgefüllt
@@ -298,11 +315,12 @@ Die ersten 3 Bytes ist die ID der Hersteller, die letzten 3 Bytes eine Laufnumme
 
 Die folgenden privaten Netzwerke gibt es:
 
-| Klasse | Netzadresse                 | Subnetmaske   |
-| ------ | --------------------------- | ------------- |
-| A      | 10.0.0.0                    | 255.0.0.0     |
-| B      | 172.16.0.0 - 172.31.0.0     | 255.255.0.0   |
-| C      | 192.168.0.0 - 192.168.255.0 | 255.255.255.0 |
+| Klasse     | Netzadresse                   | Subnetmaske   |
+| ---------- | ----------------------------- | ------------- |
+| A          | 10.0.0.0                      | 255.0.0.0     |
+| B          | 172.16.0.0 - 172.31.0.0       | 255.255.0.0   |
+| C          | 192.168.0.0 - 192.168.255.0   | 255.255.255.0 |
+| APIPA-Netz | 169.254.1.0 - 169.254.244.255 | 255.255.0.0   |
 
 Anzahl addressierbare Hosts: $2^{(32 - subnet)} - 2$ (für "/24" $2^{(32-24)}-2=2^8-2=254$)
 
@@ -509,7 +527,7 @@ Die folgenden Probleme müssen von TCP gelöst werden:
 
 ### Verbindungsaufbau
 
-<img src="res/image-20220502144218884.png" alt="image-20220502144218884" style="zoom:33%;" />
+<img src="res/image-20220502144218884.png" alt="image-20220502144218884" style="zoom:70%;" />
 
 ### Datenaustausch
 
@@ -517,11 +535,11 @@ Eine Nachricht vom Sender müssen vom Client immer mit einem Paket, welches das 
 
 Die `Seq` Zahl der Antwort des Servers ist die `Ack` Zahl des Requests. Die `Ack` Zahl der Antwort des Servers ist die `Seq`-Zahl + die Anzahl empfangenen Bytes.
 
-<img src="res/image-20220502150630453.png" alt="image-20220502150630453" style="zoom:33%;" />
+<img src="res/image-20220502150630453.png" alt="image-20220502150630453" style="zoom:70%;" />
 
 ### Verbindungsabbau
 
-<img src="res/image-20220502145257869.png" alt="image-20220502145257869" style="zoom:33%;" />
+<img src="res/image-20220502145257869.png" alt="image-20220502145257869" style="zoom:80%;" />
 
 MSL=Maximum Segment Length
 
