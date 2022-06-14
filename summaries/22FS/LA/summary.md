@@ -75,7 +75,7 @@ Eigenschaften die daraus folgen:
 * $\Leftrightarrow$ die Inversematrix kann gebildet werden
 * $\Leftrightarrow$ Spalten sind linear unabhängig
 * $\Leftrightarrow$ Zeilen sind linear unabhängig
-* $\Leftrightarrow rg(A)=n$
+* $\Leftrightarrow rg(A)=n=\text{Anzahl Spalten}$
 * $\Leftrightarrow$ A ist regulär, bzw. invertierbar
 * $\Leftrightarrow A\cdot \vec x=\vec 0$ ist eindeutig lösbar   
 
@@ -177,15 +177,14 @@ Folgende Gesetze gelten:
     Drei Punkte auf der Ebene finden und daraus die Parameterdarstellung bilden
 
 * Normierte Koordinatendarstellung
-  Der Normalvektor $\vec n$ ist normiert (durch $\vert \vec n \vert$ geteilt)
+  Der Normalvektor $\vec n$ ist normiert (durch $\vert \vec n \vert$ geteilt) ($d$ muss auch durch $|\vec n |$ geteilt werden)
 
 ### Wie stehen zwei Ebene zueinander
 
 * **Parallel**: 
-
   * Parameterdarstellung
     Überprüfen, ob die Richtungsvektoren komplanar zu einander sind
-
+  
   * Koordinatendarstellung
     Es muss ein Faktor $p$ in folgendem System geben
 $$
@@ -270,6 +269,19 @@ $$
 \pmatrix{a & b\\ c & d}^{-1}=\frac 1 {ad-bc}\cdot \pmatrix{d & -b \\ -c & a}
 $$
 
+Für grössere Matrizen folgendes Gleichungssystem muss aufgelöst werden:
+$$
+\pmatrix{
+	a_{11} & a_{12} & a_{13} \\ 
+	a_{21} & a_{22} & a_{23} \\ 
+	a_{31} & a_{32} & a_{33}
+}^{-1} \Rightarrow 
+\left(\begin{array}{ccc|cr}
+	a_{11} & a_{12} & a_{13} & 1 & 0 & 0\\ 
+	a_{21} & a_{22} & a_{23} & 0 & 1 & 0\\ 
+	a_{31} & a_{32} & a_{33} & 0 & 0 & 1
+\end{array}\right )
+$$
 
 ### Determinante
 
@@ -295,14 +307,16 @@ Eigenschaften:
 * Einheitsmatrix haben den Determinanten $1$
 * Für nxn Matrix gilt: $\det(A\cdot B)=\det(A)\cdot \det(B)$
 * Für invertierbare Matrix gilt: $\det(A^{-1})=\frac 1 {\det(A)}$
+* Für $A^T$ gilt: $\det(A^T)=\det(A)$
 
 Wenn:
 
 * $\det(A)\neq 0$
 * $\Leftrightarrow$ Die Spalten und Zeilen sind linear unabhängig
-* $\Leftrightarrow \rg(A)=n$
+* $\Leftrightarrow \rg(A)=n=m$
 * $\Leftrightarrow A$ ist invertierbar
 * $\Leftrightarrow$ Das LGS $A\cdot \vec x = \vec c$ hat eine eindeutige Lösung 
+* $\Leftrightarrow $ Die Vektoren in $A$ sind eine Basis
 
 ## Vektorräume
 
@@ -355,7 +369,7 @@ $$
 \begin{align}
 & V=span(\vec b_1, \vec b_2, ..., \vec b_n)\\
 \Leftrightarrow \text{ } & B\cdot \vec x = \vec a \text { für jedes } \vec a \in \R^m\\
-\Leftrightarrow \text{ } & rg(B)=m
+\Leftrightarrow \text{ } & rg(B)=m = \text{Anzahl Zeilen}
 \end{align}
 $$
 
@@ -364,10 +378,12 @@ $$
 
 Eine Basis ist eine Menge von Vektoren, welche
 
-* ein Erzeugendensystem sind
-* linear unabhängig sind
+* ein Erzeugendensystem sind 
+* linear unabhängig sind 
 
-(Auf Deutsch: Es darf nur eine Möglichkeit geben, ein Vektor zu Bilden)
+(Auf Deutsch: Es darf nur eine Möglichkeit geben, jeden Vektor zu Bilden)
+
+Es kann auch überprüft werden, ob $\det(A)\neq 0$ ist (siehe Determinante)
 
 ![image-20220531150248088](res/image-20220531150248088.png)
 

@@ -106,8 +106,6 @@ private static record ScheduledTask(int id, long starttime) implements Runnable 
 }
 ```
 
-
-
 ####         Executor Service
 
 <img src="res/image-20220303102501193.png" alt="image-20220303102501193" style="zoom:45%; float: right;" />
@@ -181,6 +179,152 @@ The result of the task which completed first, is returned
 */
 ```
 
+### Share Data between Multiple Threads
+
+### Atomic
+
+Use the atomic data types, like `AtomicBoolean`, `AtomicInteger`, `AtomicLong`, `AtomicReference`, `AtomicIntegerArray`, `AtomicLongArray` or `AtomicReferenceArray`.
+
+```java
+private static class Account {
+    private final int id;
+    private AtomicInteger balance;
+    
+    public Account(int id, int initialAmount) {
+        this.id = id;
+        this.balance = new AtomicInteger(initialAmount);
+    }
+    
+    public int getId() { return id; }
+    
+    public int getBalance () {
+    	return balance.get();
+    }
+    
+    public void setBalance(int amount) {
+   		this.balance.set(amount);
+    }
+    
+    public void transferAmount (int amount) {
+    	this.balance.addAndGet(amount);
+    }
+}
+```
+
+### Synchronized
+
+```java
+class Account {
+    private int balance;
+   	public synchronized void transferAmount1(int amount) {
+        this.balance += amaount;
+    }
+    
+    public void transferAmount2(int amount) {
+        synchronized(this) {
+        	this.balance += amaount;
+        }
+    }
+    
+    public synchronized static staticLock1() {
+        //do stuff
+    }
+    public static staticLock1() {
+        synchronized(Amount.class) {
+            // do stuff
+        }
+    } 
+}
+```
+
+Never call an other synchronized method which uses a different object. This can cause a dead lock.
+
+### Monitor
+
+A Java object can be used as a locked. 
+
+```java
+class FooBar {
+	private Object monitor;
+    
+    public void test() {
+        synchronized(monitor) {
+            // waits for the monitor to be called with monitor.notify() or monitor.notifyAll()
+            monitor.wait();
+        }
+    }
+}
+```
+
+`Object.wait()` blocks until `Object.notify()` or `Object.notifyAll()` is invoked on the same monitor object. `notify()` only wakes up one waiting Thread while `notifyAll()` will wake up all waiting threads.
+
+**`wait()` releases the monitor object**. 
+
+### Types of Synchronization
+
+#### Mutual Exclusion
+
+Mutual Exclusion means that only only thread can access a shared resource at a time. This usually means, that a section of code needs to be locked (eg. with synchronize) until the thread is done with that code.
+
+#### Conditional Synchronization
+
+Conditional synchronization is needed when one thread waits for an event to happen in another thread. This is basicly the Producer-Consumer "Pattern". The order of events or operations is critical.
+
+#### Producer-Consumer
+
+The producer produces some data which can be consumed by the consumer. The consumer tries to access the resource. If it is already ready, then it can just continue. If not it will `wait()` for the producer to `notify()` its monitor after which it can access the resource.
+
+The producer thread might needs to throttle itself to avoid loosing results when no consumer can consume them.
+
+![image-20220331102006613](res/image-20220331102006613.png)
+
+Here is an example for a consumer-producer example: The `while` loop is necessary because when the thread calls `wait()` it releases the monitor the synchronize block and an other thread can enter the synchronize block and call `wait()`.
+
+![image-20220331102835014](res/image-20220331102835014.png)
+
+#### Synchronized Queue
+
+With a queue the problem of the consumer and producer can be abstracted into a separate class to make it less brittle. Implementing the following becomes trivial:
+
+* The producer fills the queue with data
+* The consumer retrieves the data from the queue if available
+* The consumer waits only if the queue is empty
+* The producer waits when the queue is full
+
+#### Locks and Condit
+
+### Problems of lack of Synchronization
+
+#### Lost Update
+
+A lost update happens when an write/update was overridden by another thread.
+
+![image-20220331101537674](res/image-20220331101537674.png)
+
+### Dead Locks
+
+**TODO: Definition**
+
+#### How to avoid Dead Locks
+
+Generally avoiding shared resources will avoid dead locks as well. This however isn't always possible.  **TODO**
+
+### Dining Philosophers
+
+There are 5 Philosophers. Each philosophers can either eat or think. For eating a philosopher needs two forks, but there are only 5 forks in total, so not everybody can eat at the same time.
+
+![image-20220331123022532](res/image-20220331123022532.png)
+
+A naive solution would first let the philosophers take the right and then the left fork. This would result in everybody holding a fork in the right hand and waiting for a fork to be available resulting in a **dead lock**.
+
+![image-20220331123407764](res/image-20220331123407764.png)
+
+To prevent this cyclic waiting condition the abstract can be change to always take and release two forks as one atomic action. The situation above should never happen.
+
+A second solution is to change the behavior of one philosopher to first take the left and then the right fork.
+
+![image-20220331124158382](res/image-20220331124158382.png)
+
 ## GUI
 
 ### Scene Graph
@@ -219,6 +363,33 @@ A scene Graph is a cycle free graph of nodes. It contains **one** root node.
 
 * **TilePane** <img src="res/image-20220613185505722.png" alt="image-20220613185505722" style="zoom:67%; float: right;" />
   Every Node gets the same amount of space in a grid. Like in a `FlowPane`, nodes are wrapped to the next line if the size of the pane is filled. Either a max tile size is set or the biggest child is used as a reference. Nodes are added with `getChildren().add(Node)`.
+
+### Menus
+
+The root is `MenuBar` which contains `Menu`s  (contain other Menus oder MenuItems) or `MenuItem`s (contains text and/or graphics), like `CheckMenuItem` or `RadioMenuItem`
+
+```java
+MenuBar menuBar = new MenuBar();
+Menu fileMenu = new Menu("File");
+menuBar.getMenus().add(fileMenu);
+
+MenuItem quitMenuItem = new MenuItem("Quit");
+fileMenu.getItems().add(quitMenuItem);
+Image quitImage = new Image(getClass().getClassLoader().getResourceAsStream("quit-icon.png"));
+quitMenuItem.setGraphic(new ImageView(quitImage));
+quitMenuItem.setAccelerator(KeyCombination.keyCombination("ESC"));
+quitItem.setOnAction(new EventHandler<ActionEvent>() {
+	public void handle(ActionEvent e) { Platform.exit(); }
+});
+// or as lambda expression
+quitMenuItem.setOnAction(e -> Platform.exit());
+
+CheckMenuItem bookMenu = new CheckMenuItem("Book");
+bookMenu.setSelected(true);
+fileMenu.getItems().add(bookMenu);
+```
+
+
 
 ### Events
 
