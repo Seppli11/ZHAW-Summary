@@ -21,6 +21,10 @@ Aus diesen Äquivalenzklassen können nun Testfälle abgeileit werden. Dabei kan
 
 ![image-20220120170501495](res/image-20220120170501495.png)
 
+## Definition of Testing
+
+> Testing is the process of executing a programm with the intent of finding errors.
+
 ## Principles of Testing
 
 1. Specification of Input and Output
@@ -36,7 +40,7 @@ Aus diesen Äquivalenzklassen können nun Testfälle abgeileit werden. Dabei kan
 
 ## Mock Testing
 
-Mock testing is used when a class with dependencies should be tested. The dependencies can be mocked that it implements the minimal of behaviour to function. This allows to only test the class and not its dependencies.
+Mock testing is used when a class with dependencies should be tested. The dependencies can be mocked that it implements the minimal of behaviour to function. This allows to only test the class under testing and not its dependencies.
 
 ### Different Mocking Types
 
@@ -46,7 +50,7 @@ There are different type of mock classes.
 
 #### Dummy
 
-Dummies are objects which are never used. The fill parameters so methods don't complain about null pointers.
+Dummies are objects which are never used. They fill parameter lists of methods, if those methods would throw NullPointerExceptions otherwise.
 
 #### Stubs
 
@@ -73,6 +77,8 @@ An `EmailDummy` would return `null` in `receiveMail()` because it is just a dumm
 Spies are similar to stubs, but record which members were invoked. This information can be checked in unit tests.
 
 #### Fakes
+
+A fake will implement a class similar to the production class but with shortcuts (e.g. an in-memory database)
 
 #### Mock
 
@@ -113,8 +119,6 @@ public class OrderInteractionTester extends MockObjectTestCase {
 }
 ```
 
-
-
 ## Blacking-Box vs White-Box Testing
 
 ![image-20220407105410138](res/image-20220407105410138.png)
@@ -124,4 +128,83 @@ In black-box testing (or state testing), only the public interface is known. No 
 In white-box testing (or behaviour testing) the inner working of the class is known and tested. Here, usually mocking can be used.
 
 ## Mockito
+
+### Create a Mock
+
+Either the method `mock(Class<?> clazz)` is used or the annotation `@Mock` for which `MockitoAnnotations.openMocks()` needs to be called in the setu
+
+```java
+void testHalf(@Mock Half mockedHalf2) {
+    Half mockedHalf = mock(Half.class);
+}
+```
+
+### Mock Behaviour
+
+To mock the **return value** of methods, the `when(<method>).thenReturn(<value1>).thenReturn(<value2>)` pattern can be used. When the returned value should have a bit more logic than a constant value, the `thenAnswer(Answer<T>)` method can be used (see example below).
+
+To mock an **exception throwing** method, the `doThrow(<exception>).when(<mockObj>).<method>(<args>)` pattern needs to be used. The method must support throwing the exception in case of an checked-exception.
+
+There are multiple **matchers** available, which can match an argument of a mocked method:
+
+* **Any-matchers**: `anyInt()`, `anyString()`, `any(Class<?> clazz)`, ...
+* **String-matchers**: `startsWith(String)`,  `endsWith(String)`, `contains(String)`, ...
+* **Object-matchers**: `isNull()`, `isNotNull()`, ...
+* **Compare-matchvers**: `eq(T obj)`, ...
+* **Custom-matchers**: `argThat()...`, `intThat(...)`, ...
+
+```java
+Person mock = mock(Person.class);
+
+// mock return values
+when(mock.getName()).thenReturn("Hans").thenReturn("Max");
+doReturn(10).doReturn(20).when(mock).getAge();
+when(mock.getMessage(anyString())).thenAnswer((InvocationOnMock invocation) -> "hello world");
+
+// mock exception throwing
+doThrow(new IllegalArgumentException()).when(mock).setAge(-1);
+
+```
+
+When an method isn't mocked, then a value is still returned based on the return value:
+
+* The return value is an **primitive**: The "zero"-primitive is returned
+* The return value is a **primitive wrapper class**: Then the "zero"-primitive of the wrapper class is returned
+* The return value is a **collection**: The return value is an empty collection
+* For the **toString()** method an description of the mock is returned
+* For `Comparable#compareTo(T other)` returns zero if the references are equal, else a non-zero value
+* **Else**: `null` is returned.
+
+### Verify Behaviour
+
+Mockito can verify that a method was invoked. For this, the pattern `verify(<mock>).<method>(<args>)` can be used. With an additional argument of verify, further conditions can be specified. With `verify(<mock>, never()).<method>(<args>)` can be checked that the method was never invoked. Other condition includes `never()`, `times(int)`, `atLeastOnce()`, `atLeast(int)`, `atMost(int)`, `timeout(int milliseconds)` (that the method is invoked in the given timeout). These conditions can be combined like `timeout(10).times(2)`
+
+Mockito can also verify the order in which methods were called. For this a `InOrder` object can be created with `inOrder(<mockObj>)`. On the `InOrder` object, the `verify(...)` method can be used.
+
+```java
+verify(mockedHalf).contractAtrium();
+verify(mockedHalf, times(2)).isAtrioventricularValveOpen();
+verify(mockedList, never()).add("ZHAW");
+
+InOrder inOrder = inOrder(singleMock);
+// Verify the order
+inOrder.verify(singleMock).add("second"); 
+inOrder.verify(singleMock).add("first");
+```
+
+### Spies
+
+A spy object is created based on a "real" object. All methods are delegated to this object, but the behaviour of methods can be selectively changed (similar with mocks) and it can verify than methods were called. It can be created with `spy(Object obj)` and can be used like a mock. Similar to `@Mock` the `@Spy` annotation can be used instead of `spy(...)` (`MockitoAnnotations.openMocks()` needs to be called in the setup method).
+
+```java
+List list = new LinkedList();
+// create a spy on the real object instance
+List spy = spy(list);
+// stub the size() method
+when(spy.size()).thenReturn(100);
+// add() is not stubbed. So it will use the real method
+spy.add("one"); spy.add("two");
+assertEquals("one", spy.get(0));
+assertEquals(100, spy.size());
+```
 

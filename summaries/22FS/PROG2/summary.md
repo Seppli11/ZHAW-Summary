@@ -67,8 +67,6 @@ public static void main (String[] args) {
 }
 ```
 
-
-
 ##### Lifecycle of a Thread
 
 ![image-20220331105956003](res/image-20220331105956003.png)
@@ -291,7 +289,66 @@ With a queue the problem of the consumer and producer can be abstracted into a s
 * The consumer waits only if the queue is empty
 * The producer waits when the queue is full
 
-#### Locks and Condit
+![image-20220617121235721](res/image-20220617121235721.png)
+
+#### Locks and Conditions
+
+A `Lock` is like a monitor object but instead of using `synchronize` the methods `lock()` and `unlock()` are used (in a try-finally-block). 
+
+Additionally `Conditions` can be created with `Lock.newCondition()`. A condition is connected to its lock and can only be interacted with when its lock is locked. A Condition has `await()`, `signal()` and `signallAll()`, which behaviour like `Object.wait()`, `Object.notify()` and `Object.notifyAll()`. The advantage of Conditions is, that each lock can have multiple conditions. 
+
+![image-20220617184024636](res/image-20220617184024636.png)
+
+```java
+public class ConditionalSyncQueue<E> {
+    private Lock mutex = new ReentrantLock();
+    private Condition notEmpty = mutex.newCondition();
+    private Condition notFull = mutex.newCondition();
+    private LinkedList<E> queue = new LinkedList<E>();
+    private int capacity = 5;
+    
+    public void add (E item) throws InterruptedException {
+        mutex.lock(); // enter critical section
+        try { // condition 1: queue not full
+            while(queue.size() >= capacity) {
+            	notFull.await();
+       		}
+        	queue.addLast(item);
+        	notEmpty.signal();
+        } finally {
+        	mutex.unlock(); // exit critical section
+        }
+    }
+    
+    public E remove() throws InterruptedException {
+        E item = null;
+        mutex.lock(); // enter critical section
+        try { // condition 2: queue not empty
+            while (queue.empty()) {
+            	notEmpty.await();
+            }
+            item = queue.removeFirst();
+            notFull.signal();
+        } finally {
+            mutex.unlock(); // exit critical section
+        }
+        return item;
+    }
+}
+```
+
+#### ReadWriteLocks
+
+A `ReadWriteLock` is like a `Lock` but it provides 2 `Lock` instances:
+
+* A write lock: When locked, neither locks are lockable anymore
+* A read lock: When locked, the write lock won't be lockable
+
+<img src="res/image-20220617191010612.png" alt="image-20220617191010612" style="zoom:67%;" />
+
+The `ReentrantReadWriteLock` has the methods `readLock()` and `writeLock()` which return the respective lock instance.
+
+This helps reduce the performance impact of synchronizing.
 
 ### Problems of lack of Synchronization
 
@@ -301,13 +358,34 @@ A lost update happens when an write/update was overridden by another thread.
 
 ![image-20220331101537674](res/image-20220331101537674.png)
 
-### Dead Locks
+### Deadlocks
 
-**TODO: Definition**
+A deadlock occurs when two threads wait for a resource, which is locked by the other thread. It can **only** occur when all of the following conditions are meth:
+
+1. **Mutual Exclusion**: Each resource is available only once
+2. **Hold and Wait Condition**: A thread which already blocks a resource, claims additional resources
+3. **No Preemption**: A blocked resource cannot be taken away by the OS
+4. **Cyclic waiting Conditions**: A chain of processes exists which are waiting for a resource, which is blocked by a successor in the chain
 
 #### How to avoid Dead Locks
 
-Generally avoiding shared resources will avoid dead locks as well. This however isn't always possible.  **TODO**
+Generally avoiding shared resources will avoid dead locks as well. This however isn't always possible.  In those cases, insure that a resource is always locked in the same order,
+
+```java
+public static void transfer(Account from, Account to, int amount) {
+    boolean isLower = from.getId() < to.getId();
+    Account lowerAccount = isLower ? from : to;
+    Account higherAccount = !isLower ? from : to;
+    synchronized( lowerAccount ) {
+        synchronized( higherAccount ) {
+            from.transferAmount(-amount);
+            to.transferAmount(amount);
+        }
+    }
+}
+```
+
+Another solution is to program a special case for one of the resource which will access the resources in the reverse direction (see Dining Philosophers)
 
 ### Dining Philosophers
 
@@ -487,3 +565,317 @@ prop.bindBidirectional(otherProp); // binds the two properties bidirectionally
 
 ```
 
+## Testing
+
+> Testing is the process of executing a programm with the intent of finding errors.
+
+### Principles of Testing
+
+1. Specification of Input and Output
+   For each test case the input and the expected output should be specified.
+2. Separation of Creation and Testing
+   The developer of the code shouldn't write the test for their code.
+3. Completeness of Tests
+   Code should always be tested for valid inputs and **invalid** tests. The natural tendency is to test only the valid inputs.
+4. Testing is an investement
+   Test cases are reused
+5. Error Cluster
+   If an error is found in a section of code,  the probability of more errors increases. Error-prone Sections should be well tested.
+
+### Mock Testing
+
+Mock testing is used when a class with dependencies should be tested. The dependencies can be mocked that it implements the minimal of behaviour to function. This allows to only test the class under testing and not its dependencies.
+
+### Different Mocking Types
+
+There are different type of mock classes.
+
+![image-20220407104550751](res/image-20220407104550751.png)
+
+#### Dummy
+
+Dummies are objects which are never used. They fill parameter lists of methods, if those methods would throw NullPointerExceptions otherwise.
+
+#### Stubs
+
+A stub is the minimal implementation of an interface. Void method usually don't do anything and methods with a return value will usually return a hard coded value.
+
+Here is an example.
+
+```java
+public class EmailStub implements EmailServer {
+    public void sendMail(String mailTextt) {
+        // do nothing
+    }
+    
+    public String receiveMail() {
+        return "Mail received"; // a hard coded value
+    }
+}
+```
+
+An `EmailDummy` would return `null` in `receiveMail()` because it is just a dummy.
+
+#### Spies
+
+Spies are similar to stubs, but record which members were invoked. This information can be checked in unit tests.
+
+#### Fakes
+
+A fake will implement a class similar to the production class but with shortcuts (e.g. an in-memory database)
+
+#### Mock
+
+A test double which implements the functions in away which we expect for the test. Depending on how they are implemented, they can function as a dummy, stub, spy or a fake.
+
+Mock testing is usually split in multiple phases: 
+
+1. Create: The mock object is created
+2. Specify: The expected behaviour is specified
+3. Use: The mock object is used in a normal unit test
+4. Verify behaviour: The mock object is verified
+
+```java
+public class OrderInteractionTester extends MockObjectTestCase {
+	private static String TALISKER = "Talisker";
+    public void testFillingRemovesInventoryIfInStock() {
+        // configuration
+        Order order = new Order(TALISKER, 50);
+        Mock warehouseMock = new Mock(Warehouse.class);
+        // expectations
+        warehouseMock
+            .expects(once())
+            .method("hasInventory")
+            .with(eq(TALISKER),eq(50))
+            .will(returnValue(true));
+        warehouseMock
+            .expects(once())
+            .method("remove")
+            .with(eq(TALISKER), eq(50))
+            .after("hasInventory");
+        //exercise
+        order.fill((Warehouse)warehouseMock.proxy());
+        //verify
+        warehouseMock.verify();
+        //verify expected behavior
+        assertTrue(order.isFilled()); //verify state
+    }
+}
+```
+
+### Blacking-Box vs White-Box Testing
+
+![image-20220407105410138](res/image-20220407105410138.png)
+
+In black-box testing (or state testing), only the public interface is known. No assumptions is done about the internal implementaiton. Usually stubbing can be used.
+
+In white-box testing (or behaviour testing) the inner working of the class is known and tested. Here, usually mocking can be used.
+
+### Mockito
+
+#### Create a Mock
+
+Either the method `mock(Class<?> clazz)` is used or the annotation `@Mock` for which `MockitoAnnotations.openMocks()` needs to be called in the setup method.
+
+```java
+void testHalf(@Mock Half mockedHalf2) {
+    Half mockedHalf = mock(Half.class);
+}
+```
+
+#### Mock Behaviour
+
+To mock the **return value** of methods, the `when(<method>).thenReturn(<value1>).thenReturn(<value2>)` pattern can be used. When the returned value should have a bit more logic than a constant value, the `thenAnswer(Answer<T>)` method can be used (see example below).
+
+To mock an **exception throwing** method, the `doThrow(<exception>).when(<mockObj>).<method>(<args>)` pattern needs to be used. The method must support throwing the exception in case of an checked-exception.
+
+There are multiple **matchers** available, which can match an argument of a mocked method:
+
+* **Any-matchers**: `anyInt()`, `anyString()`, `any(Class<?> clazz)`, ...
+* **String-matchers**: `startsWith(String)`,  `endsWith(String)`, `contains(String)`, ...
+* **Object-matchers**: `isNull()`, `isNotNull()`, ...
+* **Compare-matchvers**: `eq(T obj)`, ...
+* **Custom-matchers**: `argThat()...`, `intThat(...)`, ...
+
+```java
+Person mock = mock(Person.class);
+
+// mock return values
+when(mock.getName()).thenReturn("Hans").thenReturn("Max");
+doReturn(10).doReturn(20).when(mock).getAge();
+when(mock.getMessage(anyString())).thenAnswer((InvocationOnMock invocation) -> "hello world");
+
+// mock exception throwing
+doThrow(new IllegalArgumentException()).when(mock).setAge(-1);
+
+```
+
+When an method isn't mocked, then a value is still returned based on the return value:
+
+* The return value is an **primitive**: The "zero"-primitive is returned
+* The return value is a **primitive wrapper class**: Then the "zero"-primitive of the wrapper class is returned
+* The return value is a **collection**: The return value is an empty collection
+* For the **toString()** method an description of the mock is returned
+* For `Comparable#compareTo(T other)` returns zero if the references are equal, else a non-zero value
+* **Else**: `null` is returned.
+
+#### Verify Behaviour
+
+Mockito can verify that a method was invoked. For this, the pattern `verify(<mock>).<method>(<args>)` can be used. With an additional argument of verify, further conditions can be specified. With `verify(<mock>, never()).<method>(<args>)` can be checked that the method was never invoked. Other condition includes `never()`, `times(int)`, `atLeastOnce()`, `atLeast(int)`, `atMost(int)`, `timeout(int milliseconds)` (that the method is invoked in the given timeout). These conditions can be combined like `timeout(10).times(2)`
+
+Mockito can also verify the order in which methods were called. For this a `InOrder` object can be created with `inOrder(<mockObj>)`. On the `InOrder` object, the `verify(...)` method can be used.
+
+```java
+verify(mockedHalf).contractAtrium();
+verify(mockedHalf, times(2)).isAtrioventricularValveOpen();
+verify(mockedList, never()).add("ZHAW");
+
+InOrder inOrder = inOrder(singleMock);
+// Verify the order
+inOrder.verify(singleMock).add("second"); 
+inOrder.verify(singleMock).add("first");
+```
+
+#### Spies
+
+A spy object is created based on a "real" object. All methods are delegated to this object, but the behaviour of methods can be selectively changed (similar with mocks) and it can verify than methods were called. It can be created with `spy(Object obj)` and can be used like a mock. Similar to `@Mock` the `@Spy` annotation can be used instead of `spy(...)` (`MockitoAnnotations.openMocks()` needs to be called in the setup method).
+
+```java
+List list = new LinkedList();
+// create a spy on the real object instance
+List spy = spy(list);
+// stub the size() method
+when(spy.size()).thenReturn(100);
+// add() is not stubbed. So it will use the real method
+spy.add("one"); spy.add("two");
+assertEquals("one", spy.get(0));
+assertEquals(100, spy.size());
+```
+
+## IO
+
+### Serializing
+
+In order for an object to be serializable in needs to implement the marker interface `Serializable`.
+
+![image-20220421103413866](res/image-20220421103413866.png)
+
+Fields can be marked with transient (`private transient Date someDate;`) if they shouldn't be serialized. This can be usefull for serializing classes which contain unserializable classes (like dates, file descriptor, network sockets or db connections).
+
+```java
+Employee harry = new Employee("Dirty Harry", 50000, LocalDate.of(1967, 3, 11));
+Manager boss = new Manager("Walter Smith", 80000, LocalDate.of(1950, 12, 4)); // Manager is extending Employee
+boss.setAssistant(harry); 
+
+// Save (serialize) two objects to the file empolyee.dat
+try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("employee.dat"))) {
+    // objects are written in the given order to the file
+    out.writeObject(harry); // write object Dirty Harry
+    out.writeObject(boss); // write object Walter Smith
+    out.writeInt(12); // write value of primitive type int
+}
+// Load (deserialize) two objects from the file employee.dat
+try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("employee.dat"))) {
+    // number and order of reading the objects must match, also the type must be compatible (match or super class)
+    Employee e1 = (Employee) in.readObject(); // object for Dirty Harry
+    Employee e2 = (Employee) in.readObject(); // object for Walter Smith
+    // e2.getClass().getName() would return type Manager
+    int count = in.readInt(); // read primitive type int
+}
+```
+
+### IO Streams
+
+![image-20220617235345815](res/image-20220617235345815.png)
+
+![image-20220617235509074](res/image-20220617235509074.png)
+
+A byte stream can be converted to a char stream with `InputStreamReader` and `OutputStreamWriter` respectively.
+
+![image-20220617235925019](res/image-20220617235925019.png)
+
+`InputStream`  and `Readers` usually allow to skip a number of bytes/chars with `skip(long n)`. However, `OutputStream`s  and `Writer`s don't allow removing or inserting into a file, only appending (`FileOutputStream(File file, boolean append)`) or replacing is supported.
+
+### RandomAccessFile
+
+Allows reading from anywhere in the file, not just skipping bytes like an `InputStream`. This can be done with the `seek(long pos)` or the `skipBytes(long n)` methods.
+
+```java
+// create file and write some data into it
+File f = new File("randomaccessfile.txt");
+try (BufferedWriter bw = new BufferedWriter(new FileWriter(f,true))) {
+    for(int i=2; i<=10; i++) { 
+        if( i%2 == 0) { 
+            bw.write(Integer.toString(i)); bw.newLine(); 
+        } 
+    }
+}
+try (RandomAccessFile randomFile = new RandomAccessFile(f,"rw")) { // read-write mode
+    for(int i=1; i<=5; i++){
+        randomFile.seek(randomFile.length()); // set file pointer to end of file (EOF)
+        randomFile.writeBytes(Integer.toString(i)); // append "1","2","3","4","5" at EOF
+    }
+}
+try (RandomAccessFile randomFile = new RandomAccessFile(f, "r")) { // read-only mode
+    int i = (int) randomFile.length(); // get length of file in bytes
+    System.out.println("Length: " + i);
+    randomFile.seek(i-3); // set file pointer to EOF-3 bytes
+    for(int ct = 0; ct < 3; ct++){
+        byte b = randomFile.readByte(); // read byte(s)
+        System.out.println((char)b);
+    }
+}
+```
+
+### Charset
+
+An instance of `Charset` can be either obtained by `Charset.forName(<name>)`, `Charset.getDefaultCharset()` or `Charset.getAvailableCharsets()`. Alternatively `StandardCharsets.UTF_8` can be used.
+
+## Logger
+
+Each `Logger` instance has a list of `Handlers`. A `Handler` can be used by multiple `Loggers` and handles the storing of the logging messages (like writing it to a file, or displaying in the console). Both the `Logger` and the `Handler` have a Level. And each will only forward messages which have a level higher than their configured level. 
+
+The possible levels are: `SEVERE(1000)`, `WARNING(900)`, `INFO(800)`, `CONFIG(700)`, `FINE(500)`, `FINER(400)`, `FINEST(300)`.
+
+![image-20220618001539473](res/image-20220618001539473.png)
+
+The following properties file is an example logging configuration.
+
+```properties
+## configure handlers
+java.util.logging.ConsoleHandler.level = ALL
+## File handler configuration
+## see https://docs.oracle.com/en/java/javase/11/docs/api/java.logging/java/util/logging/FileHandler.html
+java.util.logging.FileHandler.level = ALL
+# %g = generation number, %u = unique number to resolve conflicts
+java.util.logging.FileHandler.pattern = log-%g-%u.log
+# use SimpleFormatter instead of default XMLFormatter
+java.util.logging.FileHandler.formatter = java.util.logging.SimpleFormatter
+java.util.logging.FileHandler.encoding = UTF-8
+# max log file size in byte before switching to next generation (=1kB); 0 = unlimited
+java.util.logging.FileHandler.limit = 1024
+# max number of generations (%g) before overwriting (5 -> 0..4)
+java.util.logging.FileHandler.count = 5
+java.util.logging.FileHandler.append = true
+## configure Formatter (see SimpleFormatter documentation)
+java.util.logging.SimpleFormatter.format = [%1$tc] %4$s: %5$s {%2$s}%6$s%n
+## configure default log level (for all loggers, if not overwritten below)
+.level = INFO
+## configure root logger ""
+handlers = java.util.logging.ConsoleHandler
+level = INFO
+## Application specific logger configuration
+# loggers starting with "ch.zhaw.prog2.io" -> write to console and file and do not forward to parent handlers
+ch.zhaw.prog2.io.level = FINE
+ch.zhaw.prog2.io.handlers = java.util.logging.FileHandler, java.util.logging.ConsoleHandler
+ch.zhaw.prog2.io.useParentHandlers = false
+# logger for class ch.zhaw.prog2.io.LogConfiguration
+ch.zhaw.prog2.io.LogConfiguration.level = FINEST
+```
+
+A log configuration can be loaded anytime and all already existing loggers will be updated.
+
+```java
+InputStream logConfig = this.getClass().getClassLoader().getResourceAsStream("log.properties");
+LogManager.getLogManager().readConfiguration(logConfig);
+```
