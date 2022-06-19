@@ -6,12 +6,6 @@ tags:
 ---
 # Summary
 
-**TODO**:
-
-* Protokoll Nummern in Layer 2 und 3
-* TCP: Sliding Window
-* CRC
-
 | Hex  | Dez  | Bin  |  Hex |  Dez |  Bin |
 | :--- | :--- | :--- | ---: | ---: | ---: |
 | 0    | 0    | 0    |    8 |    8 | 1000 |
@@ -32,6 +26,26 @@ tags:
 Das physikalische Medium, was die Geräte verbindet. Dies kann ausgetauscht werden und die anderen Schichten bleiben umbetroffen.
 
 <img src="res/image-20220228150817493.png" alt="image-20220228150817493" style="zoom:50%;" />
+
+### Formeln
+
+| Begriff                                     | Erklärung                                                    |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| Baud-Rate                                   | Anzahl Symbole pro Sekunde. Ein Symbol ist ein Zustand im Datenstrom |
+| Bitrate (Nyquist)                           | $f_s \le 2B$ Dabei ist$f_S$ die Baud-Rate und $B$ die Bandbreite des Kanals in Hz |
+| Frame-Rate $F$                              | $F=\frac B {(7+1+6+6+2+P+4+12)\cdot 8}=\frac B {38\cdot 8 + P\cdot 8}$ Die Anzahl Ethernet-Frames pro Sekunde (wobei $P$ die Payload-Bytes ist) |
+| Nutz Bitrate $N$                            | $N=F\cdot P=\frac{P\cdot 8 \cdot B}{38\cdot 8 + P \cdot 8}$ - Die Bitrate, welche für Daten nutzbar ist |
+| Delay von Store-Forwards Switch $t_{delay}$ | $t_{delay}=t_{frame}=\frac{Framesize}{Bitrate}$ - Wie lange das Senden eines Frames benötigt |
+| Transfer Delay $t_{transfer}$               | $t_{transfer}=\frac d {C_{wire}}$, wobei $d$ die Distanz ist und $C_{wire}$ Lichtgeschwindigkeit im Kabel ist. Wie lange die Daten im Transfer sind |
+| Zeichenrate                                 | $\frac{Bitrate}{Bits/Zeichen}$: Wieviel Zeichen pro Sekunde durch die Leitung passen |
+| Zustände                                    | $M=1+\frac A {\Delta V}$  wobei gilt: $A$ ist die max. Amplitude $\Delta V$ die Ungenauigkeit des Empfängers |
+| Max Bitrate (Hartley's Gesetzt)             | $R [bit/s] \le 2B [Hz] \cdot \log_2(M)$, wobei $R$ die max. Bitrate und $M$ die Anzahl Zustände ist |
+| Informationsgehalt (Bit)                    | $\log_2(M)$ Der Informationsgehalt eines Symboles ($M$ = Anzahl Symbole) |
+| Kanalkapazität ($C$)                        | $C=B\cdot \log_2\left(1+\frac S N\right)$, wobei $B$ die Kanal-Bandbreite in Hz ist, $S$ die Signalleistung und $N$ die Rauschleistung |
+| Nettobitrate                                | $Nettobitrate=Brutobitrate\cdot\frac{Nutzdaten}{Nutzdaten + Header}$ |
+| Hamming-Distanz                             | **TODO**                                                     |
+
+Beispiel: Mit AMI können 3 Werte pro Symbol übertragen werden. Informationsgehalt: $I_S=\log_2(3)=1.58 \left[\frac{Bit}{Symbol}\right]$ , da aber nur ein Bit pro Symbol übertragen wird, liegt die Effizienz bei $\frac 1 {1.58}=63\%$
 
 ### Physik - Ausbreitungsgeswindigkeit
 
@@ -106,7 +120,7 @@ Bei der **asynchroner serieln** Übertragung wird kein Clock-Signal übertragen.
 
 Der Sende rund Empfänger sind galvanisch getrennt. Dies schützt die Geräte, falls beim anderen ein Blitz einschlägt. Da hierbei oft mit Capacitors umgesetzt wird, sollte das Signal nicht immer bei `1` oder `0` sein, sonder möglicht oft wechseln.
 
-### Taktrückgewinnung
+### Codierungen
 
 Bei der **AMI-Codierung** wird ein `0` als `0V` encodiert und `1` abwechslungsweise als `U+` und `U-`
 
@@ -114,20 +128,20 @@ Bei der **HDB3** Codierung wird zusätzlich nach `000` eine `1` mit demselben Pe
 
  <img src="res/image-20220228213731609.png" alt="image-20220228213731609" style="zoom: 30%;" />
 
-### Bandbreite
+#### Manchester-Codierung (10Mbit/s)
 
-| Begriff                         | Erklärung                                                    |
-| ------------------------------- | ------------------------------------------------------------ |
-| Baud-Rate                       | Anzahl Symbole pro Sekunde. Ein Symbol ist ein Zustand im Datenstrom |
-| Bitrate (Nyquist)               | $f_s \le 2B$ Dabei ist$f_S$ die Baud-Rate und $B$ die Bandbreite des Kanals in Hz |
-| Zustände                        | $M=1+\frac A {\Delta V}$  wobei gilt: $A$ ist die max. Amplitude $\Delta V$ die Ungenauigkeit des Empfängers |
-| Max Bitrate (Hartley's Gesetzt) | $R [bit/s] \le 2B [Hz] \cdot \log_2(M)$, wobei $R$ die max. Bitrate ist |
-| Informationsgehalt (Bit)        | $\log_2(M)$ Der Informationsgehalt eines Symboles            |
-| Kanalkapazität ($C$)            | $C=B\cdot \log_2\left(1+\frac S N\right)$, wobei $B$ die Kanal-Bandbreite in Hz ist, $S$ die Signalleistung und $N$ die Rauschleistung |
-| Nettobitrate                    | $Nettobitrate=Brutobitrate\cdot\frac{Nutzdaten}{Nutzdaten + Header}$ |
-| Hamming-Distanz                 | **TODO**                                                     |
+In Ethernet wird die Manchester-Codierung zwischen 0V und -2V angewendet.
 
-Beispiel: Mit AMI können 3 Werte pro Symbol übertragen werden. Informationsgehalt: $I_S=\log_2(3)=1.58 \left[\frac{Bit}{Symbol}\right]$ , da aber nur ein Bit pro Symbol übertragen wird, liegt die Effizienz bei $\frac 1 {1.58}=63\%$
+* Eine steigene Flanke ist eine `1`
+* eine sinkende Flanke ist eine `0` 
+
+<img src="res/image-20220314144944190.png" alt="image-20220314144944190" style="zoom:50%;" />
+
+#### NRZI-Codierung (Non Return to Zero, Invert on Ones)
+
+Diese Codierung wird bei 100BASE-TX verwendet. Bei einer `0` bleibt der Pegel, bei einer `1` wechselt der Pegel.
+
+![image-20220618200807540](res/image-20220618200807540.png)
 
 ## Data Link Layer (Layer 2)
 
@@ -140,14 +154,14 @@ Aufgaben:
 * Adresseriung der Teilnehmer (wenn mehrere Teilnehmer im Netz sind)
 * Medium Zugriff (wenn meherere Teilnhemer das Medium teilen)
 
-### Framing
+### Framing - synchrone und asynchrone Übertragung
 
 * **asynchroner Übertragung**
   Es wird ein Frame (Anzahl Elemente; Datenblock mit $n$ Elementen; Fehlererkennung) gesendet und danach ist Ruhe, bis zum nächsten Frame
 * **synchroner Übertragung**
   Es wird kontinuierlich Frames gesendet, falls nötig auch leere. Es gibt ein Start- und End Flag (meist `01111110`). Es wird **bit-stuffing** verwendet, um zu verhindern, dass das Flag im Daten-Block vorkommt. Wenn 5x`1` gesendet wurde, wird eine `0` gesendet, welche vom Empfänger ignoriert wird
 
-#### Länge eines Frames
+### Länge eines Frames
 
 $Nettobitrate=Brutobitrate\cdot\frac{Nutzdaten}{Nutzdaten + Header}$
 
@@ -215,8 +229,10 @@ Der Empfänger kann den empfangenen Wert durch das Generatorpolynom teilen und m
 
 `(Bitrate in Mbit/s) (BASE|BROAD)-(Art/Medium Länge)`
 
-* 1000BASE-T = Ethernet mit Basisband-Kanalcodierung mit einer Bitrate von 1Gbit/s mit Twisted-Pairs
-* 10BASE5 = 10Mbit/s Basisband-Ethernet mit max 500m Segmentenlänge
+* 1000BASE-T = Ethernet mit Basisband-Kanalcodierung mit einer Bitrate von 1Gbit/s mit Twisted-Pairs (T)
+* 10BASE5 = 10Mbit/s Basisband-Ethernet mit max 500m (5) Segmentenlänge
+
+![image-20220618200020078](res/image-20220618200020078.png)
 
 ### Shared-Ethernet
 
@@ -225,6 +241,15 @@ Der Empfänger kann den empfangenen Wert durch das Generatorpolynom teilen und m
 Bevor ein Knoten sendet, wartet er, bis die Leitung frei ist. Während dem Senden wird der Pegel auf der Leitung kontroliert, um kollisisionen fest zu stellen.
 
 Wenn eine Kollision festgestellt wurde, wird ein Jamming Signal gesendet und ein zufälliges Vielfache von der Slot-Zeit $t_s$. Bei der 1. Kollision wird `0x` oder `1x` gewartet, bei jedem nächsten wird der Zeitbereich verdoppelt. Bis zu 16 Versuche, danach wird die Übertragung abgebrochen. Der andere Sender erkennt nur, dass ein Signal eine Kollision verursacht hat, wenn er während des Sendens ein Jamming Signal erhaltet.
+
+### Medium Access Control (MAC)
+
+* **Master/Slave-Verfahren**: (deterministisch) Der Master fragt zyklisch jeden Slave ab und der Slave antwortet mit den vorhanden Daten. So gibt es nie Kollisionen und das Verfahren ist deterministisch, aber der Master ist der single point of failure.
+* **Token Passing**:(deterministisch) Es wird ein Token von Node zu Node Peer-to-Peer gereicht. Ein Node darf nur senden, wenn er der Token hat. Da der Token verloreren gehen kann, muss es eine Möglichkeit geben, diesen zu regenerieren. 
+* **Zeitgesteuerter Zugriff**: (deterministisch) Jeder Node hat ein Sende-Slot. Mit diesem Verfahren kann eine hoche Auslastung des Netzes erreicht werden, allerdings muss jeder Node den "Fahrplan" und die genaue Zeit kennen.
+* **Carrier Sense Multiple Access (CSMA)** (undeterministisch): Jeder Knoten prüft zuerst ob der Bus frei ist und sendet, wann er will. 
+* **Carrier Sense Multiple Access / Collision Detection (CSMA/CD)** (undeterministisch): Zusätzlich werden Kollisionen festgestellt und danach nach einer zufälligen Zeit wieder versucht
+* **Carrier Sense Multiple Access with Collision Resolutino (CSMA/CR)** (undeterministisch): Es gibt ein dominateter Pegel (1 oder 0), welcher gewinnt bei Konflikten. Nur der Verlierer kann dies allerdings feststellen und bricht die Übertragung ab.
 
 ### Collision Domain
 
@@ -270,15 +295,6 @@ Zu begin preist jeder Switch sich selbst als Root-Switch an. Übernimmt aber ein
 
 Alle Bridges senden BPDU-Nachrichten all 2 Sekunden. Falls diese Ausbleiben, wird das Netzwerk neu konfiguriert.
 
-### Manchester-Codierung (10Mbit/s)
-
-In Ethernet wird die Manchester-Codierung zwischen 0V und -2V angewendet.
-
-* Eine steigene Flanke ist eine `1`
-* eine sinkende Flanke ist eine `0` 
-
-<img src="res/image-20220314144944190.png" alt="image-20220314144944190" style="zoom:50%;" />
-
 ### Mac-Adresse
 
 `04-0A-E0-13-14-26`
@@ -294,7 +310,7 @@ Die ersten 3 Bytes ist die ID der Hersteller, die letzten 3 Bytes eine Laufnumme
   Die Preamble werden 7 Bytes, welche aus Abwechslungsweise `0` und `1` bestehen. Das 8 Byte (das SFD) hat die Form `10101011`
 
 * **Length/Type**
-  Wenn der Wert $\le 1500$ ist, stellt es die Anzahl von Bytes im `Data` Feld dar (ohne `PAD`). Sonst wird angegeben, was für ein höheres Protokoll im Datenfeld enthalten ist. (**TODO: Protokoll Nummern angeben**)
+  Wenn der Wert $\le 1500$ ist, stellt es die Anzahl von Bytes im `Data` Feld dar (ohne `PAD`). Sonst wird angegeben, was für ein höheres Protokoll im Datenfeld enthalten ist. 0x8100 (=33024) ist der VLAN-Tag Typ
 
 * **Data/PAD**
   Die Daten (zwischen 0 - 1500 Bytes). Falls die Daten kleiner als 46 Bytes sind, wird dies mit PAD aufgefüllt
@@ -306,6 +322,12 @@ Die ersten 3 Bytes ist die ID der Hersteller, die letzten 3 Bytes eine Laufnumme
   minimaler zeitlichen Abstand zwischen zwei Frames
 
 ## Network Layer (Layer 3)
+
+Die **Aufgabe** des Layer 3 ist es die Kommunikation zwischen zwei Konten bereit zu stellen. Dies soll möglich sein, unabhängig von den Layern 1 und 2. Daher wird eine netzweite Adressierung (IP-Adressen) benötigt.
+
+Grob kann der Layer 2 in **verbindungsorientierte ** Dienste und **verbindungslose Dienste** unterteilt werden. Ein verbindungsorientierter Dienst muss zuerst eine Verbindung aufbauen und kann sich wie ein Schlauch vorgestellt werden. Alle Daten gehen durch diesen Schlauch. 
+
+Ein verbindungsloser Dienst funktioniert wie die Post.
 
 | Klassen | Adressbereich               | Anzahl Netze | Interfaces pro netz |
 | ------- | --------------------------- | ------------ | ------------------- |
@@ -458,6 +480,8 @@ Das Format ist gleich, wie bei Destination Unreachable (Type 3). Das **Code-Feld
 
 ## Transport Layer (Layer 4)
 
+Die Aufgabe des Layer 4 ist es eine effiziente Verbindung zwischen zwei Knoten für den Session Layer (Layer 5) zu bereit stellen.  Dabei soll die Qualität der Verbindung gewährgeleistet sein
+
 ### Adressierung
 
 Ein Port ist eine Zahl zwischen 1 und 65'536 und sind folgendermassen unterteilt:
@@ -544,6 +568,10 @@ Die `Seq` Zahl der Antwort des Servers ist die `Ack` Zahl des Requests. Die `Ack
 MSL=Maximum Segment Length
 
 Das Timeout am Ende ist nötig, falls das letzte `ACK b+m+1` nicht ankommt. In diesem Fall würde die Passive-Seite noch mals ein `FIN b+m` Paket senden.
+
+### Sliding Window
+
+<img src="res/image-20220619113607971.png" alt="image-20220619113607971" style="zoom:80%;" />
 
 ### Adaptive Elemente von TCP
 
