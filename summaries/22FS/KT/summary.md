@@ -33,7 +33,7 @@ Das physikalische Medium, was die Geräte verbindet. Dies kann ausgetauscht werd
 | ------------------------------------------- | ------------------------------------------------------------ |
 | Baud-Rate                                   | Anzahl Symbole pro Sekunde. Ein Symbol ist ein Zustand im Datenstrom |
 | Bitrate (Nyquist)                           | $f_s \le 2B$ Dabei ist$f_S$ die Baud-Rate und $B$ die Bandbreite des Kanals in Hz |
-| Frame-Rate $F$                              | $F=\frac B {(7+1+6+6+2+P+4+12)\cdot 8}=\frac B {38\cdot 8 + P\cdot 8}$ Die Anzahl Ethernet-Frames pro Sekunde (wobei $P$ die Payload-Bytes ist) |
+| Frame-Rate $F$                              | $F=\frac B {(7+1+6+6+2+P+4+12)\cdot 8}=\frac B {38\cdot 8 + P\cdot 8}$ Die Anzahl Ethernet-Frames pro Sekunde (wobei $P$ die Payload-Bytes ist) (min. Datenblock 46 Bytes) |
 | Nutz Bitrate $N$                            | $N=F\cdot P=\frac{P\cdot 8 \cdot B}{38\cdot 8 + P \cdot 8}$ - Die Bitrate, welche für Daten nutzbar ist |
 | Delay von Store-Forwards Switch $t_{delay}$ | $t_{delay}=t_{frame}=\frac{Framesize}{Bitrate}$ - Wie lange das Senden eines Frames benötigt |
 | Transfer Delay $t_{transfer}$               | $t_{transfer}=\frac d {C_{wire}}$, wobei $d$ die Distanz ist und $C_{wire}$ Lichtgeschwindigkeit im Kabel ist. Wie lange die Daten im Transfer sind |
@@ -102,9 +102,13 @@ Vorteile von Glassfasser:
 * Kleine Signaldämpfung und grosse Distanzen
 * Grosse Bandbreite und somit grosse Übertragunsraten
 
+Nachteil:
+
+* Dispersion (gewisse Photonen sind schneller und längsämer, was das Signal verzerrt.)
+
 **TODO**
 
-### Serial vs Parallel
+### (Asynchrone und synchrone) Serial vs Parallel
 
 Bei der **paralleln** Übertragung werden mehrere Signale aufsmal übertragen. Bei hohen Takten müssen alle Leitungen genau Lange sein und daher kommt es nur auf kurze Distanzen zum einsatz.
 
@@ -112,7 +116,7 @@ Bei serieln Verbindungen wird zuerst das LSB (= Least Significant Bit) übertrag
 
 Bei der **synchronen serieln** Übertragung wird ein Clock-Signal übertragen. Es werden daher keine Start- und Stop-Bits benötigt
 
-Bei der **asynchroner serieln** Übertragung wird kein Clock-Signal übertragen. Anstatt gibt es ein Start und Stop bit. Wenn der Empfänger das Start-Bit erhält. stellt er seine eigene Clock auf diese Zeit ein. Der Takt darf nicht mehr als die halbe Bitzeit T abweichen.
+Bei der **asynchroner serieln** Übertragung wird kein Clock-Signal übertragen. Anstatt gibt es ein Start und Stop bit. Wenn der Empfänger das Start-Bit erhält. stellt er seine eigene Clock auf diese Zeit ein. Der Takt darf nicht mehr als die halbe Bitzeit T abweichen ($\text{Frequenz Abweichung in Prozent}=\frac{0.5T}{9.5T}$). Die Clock startet nach dem Start-Flag
 
 <img src="res/image-20220226131651126.png" alt="image-20220226131651126" style="zoom:50%;" />
 
@@ -130,7 +134,7 @@ Bei der **HDB3** Codierung wird zusätzlich nach `000` eine `1` mit demselben Pe
 
 #### Manchester-Codierung (10Mbit/s)
 
-In Ethernet wird die Manchester-Codierung zwischen 0V und -2V angewendet.
+In Ethernet wird die Manchester-Codierung zwischen 0V und -2V angewendet und daher nicht gleichspannungsfrei.
 
 * Eine steigene Flanke ist eine `1`
 * eine sinkende Flanke ist eine `0` 
@@ -153,6 +157,8 @@ Aufgaben:
 * Flow-Controll (Fluss Steuerung)
 * Adresseriung der Teilnehmer (wenn mehrere Teilnehmer im Netz sind)
 * Medium Zugriff (wenn meherere Teilnhemer das Medium teilen)
+
+**In der Regel** wird immer zuerst das MSB und zu letzt das LSB versendet (als wenn auf dem Kabel `010011` gesendet wird, wird das Zeichen `110010` empfangen)
 
 ### Framing - synchrone und asynchrone Übertragung
 
@@ -249,7 +255,7 @@ Wenn eine Kollision festgestellt wurde, wird ein Jamming Signal gesendet und ein
 * **Zeitgesteuerter Zugriff**: (deterministisch) Jeder Node hat ein Sende-Slot. Mit diesem Verfahren kann eine hoche Auslastung des Netzes erreicht werden, allerdings muss jeder Node den "Fahrplan" und die genaue Zeit kennen.
 * **Carrier Sense Multiple Access (CSMA)** (undeterministisch): Jeder Knoten prüft zuerst ob der Bus frei ist und sendet, wann er will. 
 * **Carrier Sense Multiple Access / Collision Detection (CSMA/CD)** (undeterministisch): Zusätzlich werden Kollisionen festgestellt und danach nach einer zufälligen Zeit wieder versucht
-* **Carrier Sense Multiple Access with Collision Resolutino (CSMA/CR)** (undeterministisch): Es gibt ein dominateter Pegel (1 oder 0), welcher gewinnt bei Konflikten. Nur der Verlierer kann dies allerdings feststellen und bricht die Übertragung ab.
+* **Carrier Sense Multiple Access with Collision Resolution (CSMA/CR)** (undeterministisch): Es gibt ein dominateter Pegel (1 oder 0), welcher gewinnt bei Konflikten. Nur der Verlierer kann dies allerdings feststellen und bricht die Übertragung ab.
 
 ### Collision Domain
 
@@ -268,11 +274,13 @@ Wenn ein Repeater/Hub im Spiel ist, muss die Formel $t_{frame} > 2\left(\sum t_{
 
 Die **Broadcast-Domain** ist der Bereich im Netzwerk, in welcher ein Broadcast-Frame ankommt.
 
-### Hub vs Switch
+### Hub vs L-2 Switch (Bridge)
 
 Ein Hub ist ein "dummes" Gerät, welcher alle Informationen an alle Ports senden. Ein Switch liest die Layer 2 Headers and sendet das Paket nur an die nötigen Ports. Dadurch wird die Collision Domain unterbrochen. Dies wird auch Transparent Bridging genannt, da die Sender und Empfänger nichts davon wissen.
 
 Ein Switch merkt sich die Mac-Adressen der Sender und speichert diese mit dem Port in der Filtering Database ab. Dank dieser Datenbank, muss der Switch ein Paket nur an einen Port senden (ausser Broadcast-Frames). Nach einer gewissen Zeit wird ein Eintrag wieder gelöscht. (**Address Learning**)
+
+Ein Switch hat folgende Leistungsmerkmale: Filterrate, Transferrate, Grösse der MAC-Adresstabelle
 
 ### VLAN
 
@@ -307,10 +315,11 @@ Die ersten 3 Bytes ist die ID der Hersteller, die letzten 3 Bytes eine Laufnumme
 
 * <img src="res/image-20220321150851834.png" alt="image-20220321150851834" style="zoom:50%; float: right" />**Preamble** und **Start Frame Delimiter (SFD)**
 
-  Die Preamble werden 7 Bytes, welche aus Abwechslungsweise `0` und `1` bestehen. Das 8 Byte (das SFD) hat die Form `10101011`
+
+Die Preamble werden 7 Bytes, welche aus Abwechslungsweise `0` und `1` bestehen (`01010101` = $84_{10}=55_{16}$, `10101010`=$170_{10}=AA_{16}$). Das 8 Byte (das SFD) hat die Form `10101011` (=$171_{10}=AB_{16}$)
 
 * **Length/Type**
-  Wenn der Wert $\le 1500$ ist, stellt es die Anzahl von Bytes im `Data` Feld dar (ohne `PAD`). Sonst wird angegeben, was für ein höheres Protokoll im Datenfeld enthalten ist. 0x8100 (=33024) ist der VLAN-Tag Typ
+  Wenn der Wert $\le 1500_{10}=05DC_{16}$ ist, stellt es die Anzahl von Bytes im `Data` Feld dar (ohne `PAD`). Sonst wird angegeben, was für ein höheres Protokoll im Datenfeld enthalten ist. 0x8100 (=33024) ist der VLAN-Tag Typ. 0x0800 (=2048) ist IP.
 
 * **Data/PAD**
   Die Daten (zwischen 0 - 1500 Bytes). Falls die Daten kleiner als 46 Bytes sind, wird dies mit PAD aufgefüllt
@@ -620,7 +629,9 @@ Es gibt für den Slow-Start Algorithmus folgende Kritikpunkte
 
 ## UDP (User Datagram Protocol)
 
-UDP, wie auch TCP, ist ein Layer 4 Protokol und benützt Ports zur adressierung. Es ist aber nicht zuverlässig und erledigt nichts gegen Paket Verluste oder vertauschte Pakete.
+UDP, wie auch TCP, ist ein Layer 4 Protokol und benützt Ports zur adressierung. Es ist aber nicht zuverlässig und erledigt nichts gegen Paket Verluste oder vertauschte Pakete. Dafür kann ein Knoten sofort senden, da es keinen Verbindungsaufbau gibt, es gibt weniger Overhead und ist weniger rechnungsintensiv.
+
+Es kann, wie auch TCP, Daten anhand von einer Port-Nummer der richtigen Anwendung zuweissen (Demultiplexing) und umgekehrt (Multiplexing).
 
 ### Header
 
