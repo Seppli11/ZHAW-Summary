@@ -86,13 +86,14 @@ Das Namensschema von Twisted Pairs ist wie folgt: $xx/y\text{TP}$.
 
 ##### CAT-Kabel
 
-| Bezeichung | Frequenzberreich | Erklörung                                                    |
-| ---------- | ---------------- | ------------------------------------------------------------ |
-| CAT-1-4    | 0.4/4/16/20 MHz  | Für Telefone und Modemleitungen oder langsames LAN           |
-| CAT-5      | 100 MHz          | Weitverbreitet. Erlaubt eine max. Bitrate von 1000Mbit/s bis zu 100m |
-| CAT-6      | 250 MHz          | Wird meistens für Gigabit (1000 Mbit/s) benützt              |
-| CAT-7      | 600 MHz          | Geeigent für 10 Gigabit.  Es werden aber S/FTP Kabel benötigt |
-| CAT-8      | 2000 MHz         | Datenraten bis 40 Gigabit bis zu 30m                         |
+| Bezeichung | Frequenzberreich | Data Rate             | Erklärung                                                    |
+| ---------- | ---------------- | --------------------- | ------------------------------------------------------------ |
+| CAT-1-4    | 0.4/4/16/20 MHz  | 1 /  4 / 10 / 16 Mbps | Für Telefone und Modemleitungen oder langsames LAN           |
+| CAT-5      | 100 MHz          | 100 Mbps              | Weitverbreitet. Erlaubt eine max. Bitrate von 1000Mbit/s bis zu 100m |
+| CAT-5e     |                  | 1 Gbps                | Ethernet, Fastether, Gigabit Ethernet                        |
+| CAT-6      | 250 MHz          | 10 Gbps               | Wird meistens für Gigabit (1000 Mbit/s) benützt              |
+| CAT-7      | 600 MHz          | 10Gbps                | Geeigent für 10 Gigabit.  Es werden aber S/FTP Kabel benötigt |
+| CAT-8      | 2000 MHz         | 40 Gbps               | Datenraten bis 40 Gigabit bis zu 30m                         |
 
 ### Glassfasser
 
@@ -105,8 +106,15 @@ Vorteile von Glassfasser:
 Nachteil:
 
 * Dispersion (gewisse Photonen sind schneller und längsämer, was das Signal verzerrt.)
+* Delay Skew: Die Zeitabweichung, welche durch die verschiedene Laufzeiten zustande kommen
 
-**TODO**
+![image-20220620153513238](res/image-20220620153513238.png)
+
+* **Multimode Stufenfasern**: Das Kabel und Mantel ist klar abgegrenzt (ca. Delay Skew 50ns/km)
+* **Multimode Gradientenfasern**: Der Kern und Mantel haben einen Gradient (ca. Delay Skew 0.5 ns/km)
+* **Monomod**
+
+![image-20220620152700857](res/image-20220620152700857.png)
 
 ### (Asynchrone und synchrone) Serial vs Parallel
 
@@ -116,7 +124,7 @@ Bei serieln Verbindungen wird zuerst das LSB (= Least Significant Bit) übertrag
 
 Bei der **synchronen serieln** Übertragung wird ein Clock-Signal übertragen. Es werden daher keine Start- und Stop-Bits benötigt
 
-Bei der **asynchroner serieln** Übertragung wird kein Clock-Signal übertragen. Anstatt gibt es ein Start und Stop bit. Wenn der Empfänger das Start-Bit erhält. stellt er seine eigene Clock auf diese Zeit ein. Der Takt darf nicht mehr als die halbe Bitzeit T abweichen ($\text{Frequenz Abweichung in Prozent}=\frac{0.5T}{9.5T}$). Die Clock startet nach dem Start-Flag
+Bei der **asynchroner serieln** Übertragung wird kein Clock-Signal übertragen. Anstatt gibt es ein Start und Stop bit. Wenn der Empfänger das Start-Bit erhält. stellt er seine eigene Clock auf diese Zeit ein. Der Takt darf nicht mehr als die halbe Bitzeit T abweichen ($\text{Frequenz Abweichung in Prozent}=\frac{0.5T}{9.5T}$). Die Clock startet nach dem Start-Flag. (Zuerst wird das LSB und zuletzt das MSB verschickt)
 
 <img src="res/image-20220226131651126.png" alt="image-20220226131651126" style="zoom:50%;" />
 
@@ -160,6 +168,24 @@ Aufgaben:
 
 **In der Regel** wird immer zuerst das MSB und zu letzt das LSB versendet (als wenn auf dem Kabel `010011` gesendet wird, wird das Zeichen `110010` empfangen)
 
+### Ethernet Frame
+
+* <img src="res/image-20220321150851834.png" alt="image-20220321150851834" style="zoom:50%; float: right" />**Preamble** und **Start Frame Delimiter (SFD)**
+
+Die Preamble werden 7 Bytes, welche aus Abwechslungsweise `0` und `1` bestehen (`01010101` = $84_{10}=55_{16}$, `10101010`=$170_{10}=AA_{16}$). Das 8 Byte (das SFD) hat die Form `10101011` (=$171_{10}=AB_{16}$)
+
+* **Length/Type**
+  Wenn der Wert $\le 1500_{10}=05DC_{16}$ ist, stellt es die Anzahl von Bytes im `Data` Feld dar (ohne `PAD`). Sonst wird angegeben, was für ein höheres Protokoll im Datenfeld enthalten ist. 0x8100 (=33024) ist der VLAN-Tag Typ. 0x0800 (=2048) ist IP.
+
+* **Data/PAD**
+  Die Daten (zwischen 0 - 1500 Bytes). Falls die Daten kleiner als 46 Bytes sind, wird dies mit PAD aufgefüllt
+
+* **Frame Check Sequence**
+  CRC32 Checksume
+
+* **Interframe Gap**
+  minimaler zeitlichen Abstand zwischen zwei Frames
+
 ### Framing - synchrone und asynchrone Übertragung
 
 * **asynchroner Übertragung**
@@ -184,7 +210,14 @@ $$
 $$
 Dabei ist $N$ die Länge des Frames, $H$ die Länge des Headers und $p_e$ die Bitfehlerwahrscienlichkeit.
 
-## Fehlererkennung
+### Flusskontrolle
+
+* **Start-Stop-Meldungen**: Wenn der Empängerbuffer voll läuft wird eine Stop-Meldung verschickt. Wenn der Buffer leer wird, wird eine Start-Meldung verschickt
+* **Stop-and-Wait**: Jede Meldung wird quitiert. Wenn der Buffer voll läuft, wird die Quitierung erst später gesendet.
+
+<img src="res/image-20220620154825017.png" alt="image-20220620154825017" style="zoom: 67%;" /> <img src="res/image-20220620154812560.png" alt="image-20220620154812560" style="zoom:67%;" />
+
+### Fehlererkennung
 
 * Backward Error Correction: Fehler kann erkennt werden und die Daten neuangefordert werden
 * Forward Error Correction: Die Fehler können erkennt und zu einem gewissen Punkt korrigiert werden
@@ -195,7 +228,7 @@ Dabei ist $N$ die Länge des Frames, $H$ die Länge des Headers und $p_e$ die Bi
   Das Hamming-Gewicht ist gleich die Hamming Distanz $d_{min}$
 * Erkennbare Fehler: $d_{min}-1$ und korrigierbare Fehler: $\frac{d_{min}-1}2$
 
-## Fehlerkorrigierende Codes
+### Fehlerkorrigierende Codes
 
 $\frac {d_{min}-1}2$ korrigierbar
 <img src="res/image-20220111173947962.png" alt="image-20220111173947962" style="zoom:30%; float: right" /><img src="../../21HS/INCO/summaries/res/image-20220111174032911.png" alt="image-20220111174032911" style="zoom: 33%;" />
@@ -212,7 +245,7 @@ Das Datenpolynom wird um die Anzahl Stellen des Generatorpolynoms verschoben und
 
 Der Empfänger kann den empfangenen Wert durch das Generatorpolynom teilen und muss `0` erhalten.Flusssteuerung
 
-## LAN
+### LAN
 
 | Art       | Erklärung                                                    |
 | --------- | ------------------------------------------------------------ |
@@ -231,14 +264,28 @@ Der Empfänger kann den empfangenen Wert durch das Generatorpolynom teilen und m
 | Sterntopologie  | Alle Knoten hängen an einem Hub/Switch                       |
 | Baumtopologie   | Entsteht, wenn die Sterntopologie hirarchisch kombiniert wird |
 
+### RJ-45
+
+Der Stecker beseitzt 4 Adernpaar, bzw. 8 Adern. <img src="res/image-20220620163820259.png" alt="image-20220620163820259" style="zoom:50%;" />
+
 ### IEEE Namensgebung
 
 `(Bitrate in Mbit/s) (BASE|BROAD)-(Art/Medium Länge)`
 
 * 1000BASE-T = Ethernet mit Basisband-Kanalcodierung mit einer Bitrate von 1Gbit/s mit Twisted-Pairs (T)
-* 10BASE5 = 10Mbit/s Basisband-Ethernet mit max 500m (5) Segmentenlänge
+* 10BASE5 = 10Mbit/s Basisband-Ethernet mit max 500m (5) Segmentenlänge und bis zu 100 Knoten. Es braucht ein dickes Kabel als Shared-Medium
+* 10BASE2 = Thin-Wire-Ethernet, was eine flexiblere und billigere Alternative zu 10BASE5 ist. Der BNC-T "Stecker" wurde benutzt.
+* 100BASE-XX: 100 MBit/s Standardt
+  * 100BASE-TX: 2 Paar UTP Cat 5 mit max Segmentlänge 100m
+  * 100BASE-FX: 2 MMF (62.5 $\mu$m) mit 2000m Segmentlänge
+  * 100BASE-T4/2: 4 Paar UTP Cat. 3 mit 100m Segmentlänge
 
-![image-20220618200020078](res/image-20220618200020078.png)
+
+![image-20220620163719860](res/image-20220620163719860.png)
+
+### Fast-Ethernet vs 10Mbit/s
+
+Es wird das selbe Frame-Format und Fehlererkennung benützt wie für 10MBit/s. Die Kollisiondomain ist 10 mal kleiner, da die Geschwindikgeit 10 mal grösser ist.
 
 ### Shared-Ethernet
 
@@ -310,25 +357,6 @@ Alle Bridges senden BPDU-Nachrichten all 2 Sekunden. Falls diese Ausbleiben, wir
 Im ersten Byte (oben `04`) `0000 00xy`, ist $x$, ob es eine Group Adress (`1`) oder individual Address (`0`) ist und $y$, ob es eine Locally administered Address (`1`) oder Universally adinistered address (`0`) ist.
 
 Die ersten 3 Bytes ist die ID der Hersteller, die letzten 3 Bytes eine Laufnummer (`aa-aa-aa-bb-bb-bb`, a ist die ID des Herstellers, b die Laufnummer)
-
-### Ethernet Frame
-
-* <img src="res/image-20220321150851834.png" alt="image-20220321150851834" style="zoom:50%; float: right" />**Preamble** und **Start Frame Delimiter (SFD)**
-
-
-Die Preamble werden 7 Bytes, welche aus Abwechslungsweise `0` und `1` bestehen (`01010101` = $84_{10}=55_{16}$, `10101010`=$170_{10}=AA_{16}$). Das 8 Byte (das SFD) hat die Form `10101011` (=$171_{10}=AB_{16}$)
-
-* **Length/Type**
-  Wenn der Wert $\le 1500_{10}=05DC_{16}$ ist, stellt es die Anzahl von Bytes im `Data` Feld dar (ohne `PAD`). Sonst wird angegeben, was für ein höheres Protokoll im Datenfeld enthalten ist. 0x8100 (=33024) ist der VLAN-Tag Typ. 0x0800 (=2048) ist IP.
-
-* **Data/PAD**
-  Die Daten (zwischen 0 - 1500 Bytes). Falls die Daten kleiner als 46 Bytes sind, wird dies mit PAD aufgefüllt
-
-* **Frame Check Sequence**
-  CRC32 Checksume
-
-* **Interframe Gap**
-  minimaler zeitlichen Abstand zwischen zwei Frames
 
 ## Network Layer (Layer 3)
 
