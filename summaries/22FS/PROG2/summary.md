@@ -297,6 +297,8 @@ A `Lock` is like a monitor object but instead of using `synchronize` the methods
 
 Additionally `Conditions` can be created with `Lock.newCondition()`. A condition is connected to its lock and can only be interacted with when its lock is locked. A Condition has `await()`, `signal()` and `signallAll()`, which behaviour like `Object.wait()`, `Object.notify()` and `Object.notifyAll()`. The advantage of Conditions is, that each lock can have multiple conditions. 
 
+With `ReentrantLock.hasWaiters(Condition)` can be checked, if a thread currently waits for a condition.
+
 ![image-20220617184024636](res/image-20220617184024636.png)
 
 ```java
