@@ -567,6 +567,10 @@ prop.bindBidirectional(otherProp); // binds the two properties bidirectionally
 
 ```
 
+### Initialize
+
+The method `initialize()` can be annotated with `@FXML` and will be called when the controller is initialized.
+
 ## Testing
 
 > Testing is the process of executing a programm with the intent of finding errors.
