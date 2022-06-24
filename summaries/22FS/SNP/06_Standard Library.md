@@ -1,6 +1,12 @@
 # Standard Library
 
-## `printf`/`sprintf` (man 3 printf)
+## stdio.h
+
+### `perror`
+
+`void perror(char *s)` druckt den letzten Fehler mit der angegebenen Nachricht aus.
+
+### `printf`/`sprintf` (man 3 printf)
 
 `printf(char *format, args...)` formatiert die `args` anhand von dem `format`. Es gibt 3 relevante Methoden:
 
@@ -28,7 +34,7 @@ Folgende Conversions sind gängig:
 | char         | c      | gibt ein char aus. Precission und 0-padding sind nicht unterstützt | `%2c`= "  d"                                  |
 | char*        | s      | gibt ein string aus                                          | `%s` = "Hello world"                          |
 
-## `scanf`
+### `scanf`
 
 `scanf(char *format, ...)` liest ein Format vom stdin. Es gibt auch `fscanf(FILE *stream, char *format, ...)`, was von einem File scannt und `sscanf(char *str, char *format, ...)`, was von einem String scannet.
 
@@ -44,3 +50,11 @@ Das Format ist wie bei `printf` mit einigen Änderungen.
 ## `int getchar()`
 
 Blockiert, bis der Nutzer eine Zeile in die Konsole eingegeben hat. Danach wird jeweils ein Zeichen von diesem Buffer gelesen und zurück gegeben. Wenn stdin geschlossen wird, wird `EOF` zurück gegeben.
+
+## String-Library
+
+* `int strlen(char *str)`
+  Die Länge des Strings (ohne `\0`)
+* `int strcmp(char *s1, char *s2)`
+* `char* strcpy(char *dest, char *src)`
+* **TODO: split?**
