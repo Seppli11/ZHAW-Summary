@@ -55,6 +55,49 @@ Blockiert, bis der Nutzer eine Zeile in die Konsole eingegeben hat. Danach wird 
 
 * `int strlen(char *str)`
   Die Länge des Strings (ohne `\0`)
+  
 * `int strcmp(char *s1, char *s2)`
+
 * `char* strcpy(char *dest, char *src)`
-* **TODO: split?**
+  Achtung: dest muss genug gross für src sein
+
+* `car *strcat(char *s1, char *s2)`
+  Achtung: s1 muss genug gross, für s1 + s2 sein
+
+* `char *strdup(char *s)`
+  Dupliziert `s` in einer neuen `char*`, welcher mit `free(...)` freigegeben werden muss
+
+* `char* strsep(char **stringp, char* dellim)`
+  Findet den ersten Token und gibt ein Pointer auf diesem Zurück. In `*stringp` wird der delim mit `\0` überschrieben und `**stringp` wird geupdated, dass es auf den delim zeigt.
+
+  ```c
+  #include <string.h>
+  #include <stdio.h>
+  #include <stdlib.h>
+  
+  int main(void) {
+      char *s1 = strdup("1, 2, 3, hi");
+      char *token;
+      while ((token = strsep(&src, ",")) != NULL) {
+          printf("token: %s\n", token);
+      }
+      free(s1);
+  }
+  ```
+
+* `char *strtok(char *s, char *delim)`
+  Es wird nach `delim` in `s` gesucht. Wenn gefunden, wird `delim` durch `\0` ersetzt und es wird ein Pointer auf den gefundenen Token zurück gegeben. Es wird ein interner statischer Buffer verwendet. Daher wird bei folge Aufrufe `NULL` als `s` verwendet.
+
+  ```c
+  #include <string.h>
+  #include <stdio.h>
+  #include <stdlib.h>
+  
+  int main(void) {
+      char *s1 = strdup("1, 2, 3, hi");
+      for (char *token = strtok(s1, ","); token != NULL; token = strtok(NULL, ",")) {
+          printf("token: %s\n", token);
+      }
+      free(s1);
+  }
+  ```
