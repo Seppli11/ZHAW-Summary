@@ -1,0 +1,3912 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Sebastian Zumbrunn">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+    
+    
+      
+        <title>OS - Seppli's Summaries</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#os" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Seppli&#39;s Summaries" class="md-header__button md-logo" aria-label="Seppli's Summaries" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Seppli's Summaries
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Seppli&#39;s Summaries" class="md-nav__button md-logo" aria-label="Seppli's Summaries" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Seppli's Summaries
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          21HS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="21HS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          21HS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          AN1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/01_funktionen.html" class="md-nav__link">
+        Summenzeichen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/02_polynome.html" class="md-nav__link">
+        Polynome Division
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/03_Ableiten.html" class="md-nav__link">
+        Ableiten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4" type="checkbox" id="__nav_2_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_4">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/summaries/summary_2022_01_26.html" class="md-nav__link">
+        AN Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          COM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="COM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          COM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/01_Kernthemen-Austausch.html" class="md-nav__link">
+        01 Kernthemen Austausch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/02_Suchstrategien.html" class="md-nav__link">
+        Suchbegriffe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/03_Publikationstypen.html" class="md-nav__link">
+        Monografie (eigenständiges Buch)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/04_Wissenschaftilichen%20Text.html" class="md-nav__link">
+        04 Wissenschaftilichen Text
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/05_pitch.html" class="md-nav__link">
+        CCC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/06_handout.html" class="md-nav__link">
+        Kriterien
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_7" type="checkbox" id="__nav_2_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7">
+          Presentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Presentation" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Presentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/Presentation/Pitch%20v2.html" class="md-nav__link">
+        Pitch v2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/Presentation/Pitch.html" class="md-nav__link">
+        Pitch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          DB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DB" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          DB
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/00_Pr%C3%BCfung.html" class="md-nav__link">
+        00 Prüfung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/01_Begriffe.html" class="md-nav__link">
+        Begriffe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/02_Grundoperation.html" class="md-nav__link">
+        02 Grundoperation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/03_Entity%20Relationship%20Diagram.html" class="md-nav__link">
+        ER-Diagram
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/04_SQL.html" class="md-nav__link">
+        SQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/05_Integrit%C3%A4tsregeln.html" class="md-nav__link">
+        Integritätsregeln
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_7" type="checkbox" id="__nav_2_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_7">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/summaries/summary-2022-01-25.html" class="md-nav__link">
+        DB Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          DM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          DM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/01_Aussaglogik.html" class="md-nav__link">
+        01 Aussaglogik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/02_Semantik.html" class="md-nav__link">
+        02 Semantik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/03_Mengen.html" class="md-nav__link">
+        Mengen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/04_Nat%C3%BCrliche%20Zahlen.html" class="md-nav__link">
+        Natürliche Zahlen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/05_Ganz%20Zahlen.html" class="md-nav__link">
+        Ganz Zahlen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_6" type="checkbox" id="__nav_2_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4_6">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/Summaries/01_summary_2021-11-23.html" class="md-nav__link">
+        Summary - 2021-11-23
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/Summaries/01_summary_2022_01_17.html" class="md-nav__link">
+        01 summary 2022 01 17
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          GED
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GED" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          GED
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1" type="checkbox" id="__nav_2_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_1">
+          Elektronik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Elektronik" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Elektronik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Elektronik/Maschen%20und%20Knotensatz.html" class="md-nav__link">
+        Knotenregel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" type="checkbox" id="__nav_2_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_2">
+          Physik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Physik" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Physik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/00_Formeln.html" class="md-nav__link">
+        Formeln
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/01_ch%C3%BCgelif%C3%BCsik.html" class="md-nav__link">
+        Chügeli Füsik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/02_Elektrotechnik.html" class="md-nav__link">
+        Elektrotechnik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/03_Elektromagnetismus.html" class="md-nav__link">
+        Elektromagnetismus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/04_Thermische_Strahlung.html" class="md-nav__link">
+        Termische Strahlung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/05_Signale.html" class="md-nav__link">
+        Signale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/all-ged-summaries.html" class="md-nav__link">
+        All ged summaries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/include.html" class="md-nav__link">
+        Include
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          INCO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="INCO" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          INCO
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/00_Infos.html" class="md-nav__link">
+        Infos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/2_Sequenzelle%20Bauteile.html" class="md-nav__link">
+        2 Sequenzelle Bauteile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/3_Zahlensysteme.html" class="md-nav__link">
+        Zahlensysteme
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/4_Informationstheorie.html" class="md-nav__link">
+        Was ist Information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/5_JEPG.html" class="md-nav__link">
+        5 JEPG
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/6_Audio.html" class="md-nav__link">
+        Audio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/7_Kanalkodierung.html" class="md-nav__link">
+        Kanalkodierung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/8_Matrix.html" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/9_Faltungscode.html" class="md-nav__link">
+        9 Faltungscode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_10" type="checkbox" id="__nav_2_6_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6_10">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_6_10">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/summaries/summary_2022-01-20.html" class="md-nav__link">
+        INCO Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          PM1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PM1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          PM1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Beschlussprotokoll.html" class="md-nav__link">
+        Beschlussprotokoll
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Feedback.html" class="md-nav__link">
+        Feedback
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Projekt%203%20-%20Siedler%20von%20Catan.html" class="md-nav__link">
+        Projekt 3 - Siedler von Catan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Retrospektive.html" class="md-nav__link">
+        Retrospektive
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          22FS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="22FS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          22FS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          AN2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AN2/summary_2022_06_20.html" class="md-nav__link">
+        AN2 Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Communication2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Communication2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Communication2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Communication2/01_Presentation.html" class="md-nav__link">
+        Presentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Communication2/Presentation_Script.html" class="md-nav__link">
+        Presentation Script
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          KT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="KT" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          KT
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/00_Glossar.html" class="md-nav__link">
+        Glossar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/01_OSI-Modell.html" class="md-nav__link">
+        OSI-Modell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/02_Serielle-%C3%9Cbertragung.html" class="md-nav__link">
+        02 Serielle Übertragung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/03_%C3%9Cbertragunsmedien.html" class="md-nav__link">
+        Übertragungsmedien (Layer 1)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/04_Data%20Link.html" class="md-nav__link">
+        Data Link Layer (Layer 2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/05_LAN.html" class="md-nav__link">
+        LAN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/06_Network%20Layer.html" class="md-nav__link">
+        Network Layer (Layer 3)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/07_Transport%20Layer.html" class="md-nav__link">
+        Transport Layer (Layer 4)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/08_Application_Layer.html" class="md-nav__link">
+        Application Layer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/summary.html" class="md-nav__link">
+        KT Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          LA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="LA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          LA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/01_Lineare%20Gleichungssysteme.html" class="md-nav__link">
+        Lineare Gleichungssystem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/02_Vektoren.html" class="md-nav__link">
+        Vektoren
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/03_Matrix.html" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/05_Vektorr%C3%A4ume.html" class="md-nav__link">
+        Vektorräume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/06_Lineare%20Abbildung.html" class="md-nav__link">
+        Lineare Abbildung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/summary.html" class="md-nav__link">
+        LA Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          PM2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PM2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          PM2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PM2/Massnahmen.html" class="md-nav__link">
+        Massnahmen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PM2/Pitch.html" class="md-nav__link">
+        Pitch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PM2/Projektskizze.html" class="md-nav__link">
+        Projektskizze
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          PROG2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PROG2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          PROG2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG2/-1_Stuff.html" class="md-nav__link">
+        Stuff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG2/00_Gradle.html" class="md-nav__link">
+        Gradle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG2/01_Concurrency.html" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG2/summary.html" class="md-nav__link">
+        PROG2 Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          SNP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SNP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          SNP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_C.html" class="md-nav__link">
+        C-Sprache
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_Preprocessor%20und%20Compiler.html" class="md-nav__link">
+        Preprocessor und Compiler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_Make.html" class="md-nav__link">
+        Make
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_Unit%20Tests.html" class="md-nav__link">
+        Unit Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="05_OS.html" class="md-nav__link md-nav__link--active">
+        OS
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    Memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-entlastung" class="md-nav__link">
+    CPU-Entlastung
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modi" class="md-nav__link">
+    Modi
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schichten" class="md-nav__link">
+    Schichten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-startup" class="md-nav__link">
+    Linux Startup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prozess" class="md-nav__link">
+    Prozess
+  </a>
+  
+    <nav class="md-nav" aria-label="Prozess">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prozess-erstellen-fork" class="md-nav__link">
+    Prozess erstellen (fork())
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exec-in-neuen-prozessen" class="md-nav__link">
+    exec() in neuen Prozessen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-waitpid-syswaith" class="md-nav__link">
+    wait() /waitpid() (sys/wait.h)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threading" class="md-nav__link">
+    Threading
+  </a>
+  
+    <nav class="md-nav" aria-label="Threading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#begriffe" class="md-nav__link">
+    Begriffe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volatile" class="md-nav__link">
+    volatile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pthread_create" class="md-nav__link">
+    pthread_create(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pthread_detach" class="md-nav__link">
+    pthread_detach(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pthread_exit" class="md-nav__link">
+    pthread_exit(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pthread_join" class="md-nav__link">
+    pthread_join(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    IO
+  </a>
+  
+    <nav class="md-nav" aria-label="IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inode" class="md-nav__link">
+    INode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder" class="md-nav__link">
+    Folder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardlinks-vs-softlink" class="md-nav__link">
+    Hardlinks vs Softlink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spezielle-files" class="md-nav__link">
+    Spezielle Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    FILE*
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffereing-in-streams" class="md-nav__link">
+    Buffereing in Streams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-io-beispiel" class="md-nav__link">
+    File IO Beispiel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutex-pthreadh" class="md-nav__link">
+    Mutex (pthread.h)
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutex (pthread.h)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-mutex" class="md-nav__link">
+    Beispiel Mutex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-rekursiver-mutex" class="md-nav__link">
+    Beispiel Rekursiver Mutex
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sempaphors" class="md-nav__link">
+    Sempaphors
+  </a>
+  
+    <nav class="md-nav" aria-label="Sempaphors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beispiel" class="md-nav__link">
+    Beispiel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#barriere" class="md-nav__link">
+    Barriere
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signale" class="md-nav__link">
+    Signale
+  </a>
+  
+    <nav class="md-nav" aria-label="Signale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-sa_siginfo" class="md-nav__link">
+    Beispiel SA_SIGINFO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipes" class="md-nav__link">
+    Pipes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-queue" class="md-nav__link">
+    Message Queue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sockets" class="md-nav__link">
+    Sockets
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06_Standard%20Library.html" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="summary_jonas.html" class="md-nav__link">
+        SNP Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          THIN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="THIN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          THIN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/00_Fragen.html" class="md-nav__link">
+        Fragen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/01_Definitionen.html" class="md-nav__link">
+        Definitionen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/02_RegEx.html" class="md-nav__link">
+        RegEx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/03_Endliche%20%20Automaten.html" class="md-nav__link">
+        Endliche Automaten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/04_Kontextfreie%20Gramatik.html" class="md-nav__link">
+        Kontextfreie Grammatik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/05_Keller%20Automaten.html" class="md-nav__link">
+        Keller Automaten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/06_Turing%20Machine.html" class="md-nav__link">
+        Turing Maschine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/07_Berechnungsmodelle.html" class="md-nav__link">
+        Berechnungsmodelle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/08_Entscheidbarkeit.html" class="md-nav__link">
+        Entschheidbarkeit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/09_Komplexit%C3%A4tstheorie.html" class="md-nav__link">
+        Komplexitätstheorie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/summary%20%28copy%29.html" class="md-nav__link">
+        THIN Summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/summary.html" class="md-nav__link">
+        THIN Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Allgemein
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Allgemein" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Allgemein
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          AN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/AN/Itegrie-Ableiten-Tabelle.html" class="md-nav__link">
+        Itegrie Ableiten Tabelle
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Haskell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Haskell" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Haskell
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/Haskell/Data%20Classes.html" class="md-nav__link">
+        Data Classes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/Haskell/Optics.html" class="md-nav__link">
+        Optics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="IP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/IP/IP.html" class="md-nav__link">
+        IP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Musik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Musik" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Musik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/Musik/Tonleitern.html" class="md-nav__link">
+        Tonleitern
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          PROG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PROG" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          PROG
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/2_OOP_Takeaways.html" class="md-nav__link">
+        OOP Takeaways
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/3_Patterns.html" class="md-nav__link">
+        Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/4_Testing.html" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/5_Threads.html" class="md-nav__link">
+        Threads
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/6_IO.html" class="md-nav__link">
+        IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/7_Streams.html" class="md-nav__link">
+        Streams
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    Memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-entlastung" class="md-nav__link">
+    CPU-Entlastung
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modi" class="md-nav__link">
+    Modi
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schichten" class="md-nav__link">
+    Schichten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-startup" class="md-nav__link">
+    Linux Startup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prozess" class="md-nav__link">
+    Prozess
+  </a>
+  
+    <nav class="md-nav" aria-label="Prozess">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prozess-erstellen-fork" class="md-nav__link">
+    Prozess erstellen (fork())
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exec-in-neuen-prozessen" class="md-nav__link">
+    exec() in neuen Prozessen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-waitpid-syswaith" class="md-nav__link">
+    wait() /waitpid() (sys/wait.h)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threading" class="md-nav__link">
+    Threading
+  </a>
+  
+    <nav class="md-nav" aria-label="Threading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#begriffe" class="md-nav__link">
+    Begriffe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volatile" class="md-nav__link">
+    volatile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pthread_create" class="md-nav__link">
+    pthread_create(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pthread_detach" class="md-nav__link">
+    pthread_detach(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pthread_exit" class="md-nav__link">
+    pthread_exit(...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pthread_join" class="md-nav__link">
+    pthread_join(...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    IO
+  </a>
+  
+    <nav class="md-nav" aria-label="IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inode" class="md-nav__link">
+    INode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder" class="md-nav__link">
+    Folder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardlinks-vs-softlink" class="md-nav__link">
+    Hardlinks vs Softlink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spezielle-files" class="md-nav__link">
+    Spezielle Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    FILE*
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffereing-in-streams" class="md-nav__link">
+    Buffereing in Streams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-io-beispiel" class="md-nav__link">
+    File IO Beispiel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutex-pthreadh" class="md-nav__link">
+    Mutex (pthread.h)
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutex (pthread.h)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-mutex" class="md-nav__link">
+    Beispiel Mutex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-rekursiver-mutex" class="md-nav__link">
+    Beispiel Rekursiver Mutex
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sempaphors" class="md-nav__link">
+    Sempaphors
+  </a>
+  
+    <nav class="md-nav" aria-label="Sempaphors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beispiel" class="md-nav__link">
+    Beispiel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#barriere" class="md-nav__link">
+    Barriere
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signale" class="md-nav__link">
+    Signale
+  </a>
+  
+    <nav class="md-nav" aria-label="Signale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-sa_siginfo" class="md-nav__link">
+    Beispiel SA_SIGINFO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipes" class="md-nav__link">
+    Pipes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-queue" class="md-nav__link">
+    Message Queue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sockets" class="md-nav__link">
+    Sockets
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="os">OS</h1>
+<h2 id="hardware">Hardware</h2>
+<p><img alt="image-20220406081608144" src="res/image-20220406081608144.png" /></p>
+<h3 id="cpu">CPU</h3>
+<p>Die CPU führt die Befehle aus und ist Chef des System-Bus. Über den Bus kann die CPU auf den Speicher oder IO zugreifen.</p>
+<p>Im <code>PC</code> Register (Program Counter) steht, wo in Memory die nächste Maschineninstruktion steht. In <code>IR</code>-Register ( Instruction Register) steht die aktuell ausgeführte Instruktion.</p>
+<p><code>ALU</code> steht für Arithmentic-Logic-Unit, welches mit Integers rechnet. </p>
+<h3 id="memory">Memory</h3>
+<p>Die Memory wird über den System-Bus angesprochen.</p>
+<h3 id="cpu-entlastung">CPU-Entlastung</h3>
+<ul>
+<li>Ablaufbeschleunigung in der CPU</li>
+<li>Cache:beschleunigter Zugriff auf zwischengespeicherte Daten</li>
+<li>
+<p>Pipeline:beschleunigte Ausführung durch gestaffelte Verarbeitung</p>
+</li>
+<li>
+<p>Arbeitsentlastung der CPU</p>
+</li>
+<li>IC: Interrupt Controller vermitteln von Interrupts</li>
+<li>DMA: Direct Memory AccessDaten kopieren ohne CPU Interaktion</li>
+<li>FPU: Floating-Point UnitRecheneinheit für Gleitkommazahlen</li>
+<li>DSP: Digital Signal Processorspezielle Daten-Recheneinheit</li>
+<li>GPU: Graphics Processing Unit spezielle Graphik-Recheneinheit</li>
+<li>MPU: Memory Protection Unit
+    Überwachung von Adresszugriffen</li>
+</ul>
+<h3 id="modi">Modi</h3>
+<p>Im Supervisor/Kernel-Mode läuft der Kernel. So bald ein Program auf Funktionalität des Kernels zu greifen möchte, muss ein Sys-Call aufgerufen werden, welcher der Modi wechselt.</p>
+<h2 id="schichten">Schichten</h2>
+<p><img alt="image-20220406081550827" src="res/image-20220406081550827.png" /></p>
+<h2 id="linux-startup">Linux Startup</h2>
+<p><img alt="image-20220406091808599" src="res/image-20220406091808599.png" /></p>
+<h2 id="prozess">Prozess</h2>
+<p>Der Header <code>unistd.h</code> muss inkludiert werden.</p>
+<h3 id="prozess-erstellen-fork">Prozess erstellen (<code>fork()</code>)</h3>
+<p>Mit <code>pid_t fork()</code> kann ein neuen Prozess erstellt werden, welche eine <strong>Kopie</strong> des aktuellen Prozess ist. Von diesem Punkt ab laufen zwei Threads den gleichen Code. Im aktuellen Prozess gibt <code>fork()</code> die PID des neuen Prozess zurück, im neuen Prozess wird <code>0</code> zurück gegeben.</p>
+<p>Falls der Return Value kleiner als <code>0</code> ist, trat ein Fehler auf.</p>
+<p>Es werden alle File Deskriptoren, Semaphoren, Signal Actions vererbt.</p>
+<h3 id="exec-in-neuen-prozessen"><code>exec()</code> in neuen Prozessen</h3>
+<p><code>execX()</code> Funktionen ersetzt den Code in einem Thread. Dies kann zusammen mit <code>fork()</code> benützt werden, um ein Programm in einem neuen Thread zu starten.</p>
+<ul>
+<li><code>int execv(char *pathname, char *argv[])</code>
+  Führt das Programm bei <code>pathname</code> mit den angegebenen Argumenten aus. Der aktuelle Code wird <strong>ersetzt</strong></li>
+<li><code>int system( char *command)</code>
+  Ist eine Helper-Method, welche mit <code>fork()</code> und <code>execv()</code> ein neues Programm ausführt und wartet bis das Programm fertig ist. Der Return Value des Programmes wird zurückgegeben. Der angegebene Befehl wird mit <code>/bin/sh</code> ausgeführt.</li>
+<li><code>FILE *popen(char *command, char *type)</code> und <code>int pclose(FILE *stream )</code>
+  Funktioniert wie <code>system()</code>. Es wird der Befehl <code>command</code> in <code>/bin/sh</code> ausgeführt und ein File-Stream zurück gegeben, von welchem mit <code>fgets(char *s, int size, FILE *stream)</code> zugegriffen werden kann.
+  Der <code>type</code> muss <code>r</code> für zum Lesen und <code>w</code> für zum Schreiben enthalten</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/wait.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kt">pid_t</span><span class="w"> </span><span class="n">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="n">wait</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="c1">// using system(...)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">exit_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ls -la&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;child exited with %d</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">exit_code</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="c1">// using popen(...)</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">popen</span><span class="p">(</span><span class="s">&quot;ls -la&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span><span class="w"></span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">fgets</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="n">stream</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="n">exit_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pclose</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;child exited with %d</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">exit_code</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="c1">// using execv(...)</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-la&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">execv</span><span class="p">(</span><span class="s">&quot;/usr/bin/ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;execv&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;This will never be executed</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="wait-waitpid-syswaith"><code>wait()</code> /<code>waitpid()</code> (sys/wait.h)</h3>
+<p>Nach dem ein Prozess beendet wurde, gibt es ihn noch als Zombie-Prozess bis der Parent-Prozess <code>pid_t wait(int *wstatus)</code> oder <code>pid_t waitpid(pid_t pid, int *wstatus, int options)</code> aufgerufen hat und den Status so abgeholt hat.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">pid_t</span><span class="w"> </span><span class="n">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">if</span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">wstatus</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">pid_t</span><span class="w"> </span><span class="n">wpid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">waitpid</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">wstatus</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">wpid</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;waitpid&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;process %d exited with status %d (%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">wstatus</span><span class="p">),</span><span class="w"> </span><span class="n">wstatus</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">wstatus</span><span class="p">);</span><span class="w"> </span><span class="c1">// will do the same as waitpid() but with a random child-process</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="threading">Threading</h2>
+<h3 id="begriffe">Begriffe</h3>
+<ul>
+<li><strong>Race Condition</strong>: </li>
+<li><strong>Dead Lock</strong>: Zwei Threads warten auf eine Resource, welche vom anderen Thread "gelockt" wurde
+  <img alt="image-20220504092940295" src="res/image-20220504092940295.png" /></li>
+<li><strong>Live Lock</strong>: Zwei Threads haben eine Resource frei gegeben und warten darauf, dass sie der andere Thread lockt</li>
+<li><strong>Critical Section</strong>: Ein Stück code, in welchem nur ein Thread gleichzeitig läuft</li>
+<li><strong>Starvation</strong>: ein blockierter Task kommt nie an die Reihe, da andere Tasks sich vordrängen. Dies sollte vom OS behoben werden.</li>
+</ul>
+<h3 id="volatile"><code>volatile</code></h3>
+<p>Das Volatile-Keyword zwingt dem Compiler nicht zu optimieren. Somit wird wirklich ausgeführt, was in C geschrieben wurde. Ansonsten kann der Compiler Schreib-Aufrufe verschieben oder Resultate cachen. Dies ist nützlich bei Multi-Threading, da eine Variable von mehreren Threads geändert werden kann und das Cachen problematisch sein könnte.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// erstellt ein neuen volatile int</span>
+</code></pre></div>
+<h3 id="pthread_create"><code>pthread_create(...)</code></h3>
+<p>Mit <code>int pthread_create(pthread_t *thread, pthread_attr_t *attr, void *(*start_routine)(void *), void *arg)</code> kann einen neuen Thread gestartet werden.</p>
+<p>Wenn ein neuen Thread erstellt wird, muss entweder <code>pthread_detach()</code> oder <code>pthread_join()</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">worker</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;worker: hi</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">pthread_t</span><span class="w"> </span><span class="kr">thread</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="kr">thread</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">worker</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">pthread_join</span><span class="p">(</span><span class="o">&amp;</span><span class="kr">thread</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">msg</span><span class="p">);</span><span class="w"> </span><span class="c1">// pthread_join(...) wants void** as the msg</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Thread sent %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="pthread_detach"><code>pthread_detach(...)</code></h3>
+<p><code>int pthread_detach(pthread_t thread)</code> markiert ein Thread als detached und wenn ein solchen Thread sich beendet, werden die System-Resourcen automatisch freigegeben.</p>
+<h3 id="pthread_exit"><code>pthread_exit(...)</code></h3>
+<p><code>void pthread_exit(void *retval)</code> beendet den akutellen Thread mit dem mit gegebenen Wert. Dieser kann mit <code>int pthread_join(...)</code> abgerufen werden. Processor-Shared-Resources, wie File-Deskriptoren, werden nicht freigegeben.</p>
+<h3 id="pthread_join"><code>pthread_join(...)</code></h3>
+<p><code>int pthread_join(pthread_t thread, void** retval)</code> wartet bis der angegebene Thread sich beendet. Der "Exit-Status" wird in den <code>retval</code> Pointer gespeichert. Die System-Resourcen des Threads werden nach dem <code>int</code></p>
+<p><code>pthread_join(...)</code> zurückkehrt, frei gegeben.</p>
+<h2 id="io">IO</h2>
+<h3 id="inode">INode</h3>
+<p>Die Repräsentation von einem File. Es werden Daten, wie der letzte Zugriffzeitpunkt, Besitzer, Länge, physikalischer Ort auf dem Datenträger gespeichert. <strong>Aber nicht der Name der Datei.</strong></p>
+<h3 id="folder">Folder</h3>
+<p>Ein einem Ordner hats Name-INode Paare. Diese geben den INodes einen Name.</p>
+<h3 id="hardlinks-vs-softlink">Hardlinks vs Softlink</h3>
+<p>Ein Softlink funktioniert auf dem Filesystem und sagt dem Kernel, das dieses File bei diesem Pfad gefunden wird.</p>
+<p>Ein Hardlink ist ein "Link" auf ein INode. Es kann mehrere Namen für ein INode geben. Der INode ist erst gelöscht, wenn es keinen Namen dafür mehr gibt.</p>
+<h3 id="spezielle-files">Spezielle Files</h3>
+<ul>
+<li>Character Devices</li>
+<li>Block Devices</li>
+<li>Named Pipes</li>
+<li>Sockets</li>
+</ul>
+<h3 id="file"><code>FILE*</code></h3>
+<p>Ein File Deskriptor, welcher auf ein File zeigt.</p>
+<p>Folgende Funktionen sind relevant zu <code>FILE*</code>. Für viele Funktionen muss der Header <code>unistd.h</code> inkludiert werden.</p>
+<p><img alt="image-20220420091904033" src="res/image-20220420091904033.png" /></p>
+<p>Die folgenden Operationen sind die wichtigsten:</p>
+<ul>
+<li><code>FILE* fopen(char *pathname, char* mode)</code>
+  Öffnet ein File zum schrieben. Falls das File nicht geöffnet werden konnte, wird <code>NULL</code> zurück gegeben. Wenn für <code>mode</code> folgendes angegeben wird:</li>
+<li><code>`r</code> : File nur zum lesen geöffnet</li>
+<li><code>r+</code> :  File wird zum lesen und schreiben geöffnet</li>
+<li><code>w</code> :  File wird zum lesen geöffnet. Das File wird erstellt oder überschrieben</li>
+<li><code>w+</code>: Wie <code>r+</code>, aber das File wird erstellt oder überschrieben</li>
+<li><code>a</code>: File wird zum schreiben am Ende der Datei geöffnet. Das File wird erstellt, falls es nicht existiert</li>
+<li><code>a+</code>:  File wird zum lesen und schreiben vom Ende der Datei geöffnet. Falls das Datei nicht existiert, wird es erstellt</li>
+<li><code>int fclose(FILE *stream)</code>
+  Flushed und schliesst den angegeben File-Handler. Wenn erfolgreich, <code>0</code> wird zurück geben</li>
+<li><code>int fprintf(FILE *stream, char* format, ...)</code>
+  Wie <code>fprint(...)</code> aber schreibt auf den angegeben File-Handler. Die Funktion gibt die Anzahl gedruckte Zeichen aus oder einen negative Zahl, wenn ein Fehler aufgetreten ist</li>
+<li><code>int fgetc(FILE *stream)</code>
+  Liest von <code>stream</code> ein char und gibt in zurück. <code>EOF</code> wird  beim File-Ende zurück gebenen. Bei einem Fehler wird einen negativen Wert zurück gegeben</li>
+<li><code>char* fgets(char *s, int size, FILE *stream)</code>
+  Liest eine Zeile oder bis zum Ende des Streams und schreibt diesen in <code>s</code>. Es wird maximal <code>size-1</code>-Anzahl chars gelesen (<code>-1</code> wegen <code>\0</code>)</li>
+<li><code>int sscanf(FILE *stream, char *format, ...)</code>
+  Wie <code>scanf(...)</code>, aber liest von einem angegeben <code>stream</code></li>
+<li><code>int fputc(int c, FILE *stream)</code>
+  Cast <code>c</code> zu einem unsigned char und schreibt diesen in den Stream. Als Rückgabe-Wert wird <code>c</code> zurück gegeben, oder <code>EOF</code> im Fehlerfall.</li>
+<li><code>int fputs(char *s, FILE *stream)</code>
+  Schreibt ein String (ohne <code>\0</code>) in den Stream. Wenn ein Error aufgetreten ist, wird <code>EOF</code> zurück geben, sonst eine positive Zahl.</li>
+</ul>
+<p>Nach jedem IO Aufruf sollte überprüft werden, ob die Operation erfolgreich war: </p>
+<p><img alt="image-20220420092355756" src="res/image-20220420092355756.png" /></p>
+<h3 id="buffereing-in-streams">Buffereing in Streams</h3>
+<ul>
+<li><strong>unbuffered</strong>: Die daten werden sofort weiter geleitet.</li>
+<li><strong>fully-buffered</strong>: Wenn der Buffer voll ist, wird der Buffer geleert</li>
+<li><strong>line-buffered</strong>:
+  Wenn das Ende der Zeile erreicht wird oder der Buffer voll ist, wird der Buffer geleert</li>
+</ul>
+<p><code>stdin</code> und <code>stdout</code> sind normallerweisse fully-buffered, <strong>wenn sie nicht mit einem interaktiven Device verbunden sind</strong>. <code>stderr</code> ist unbuffere</p>
+<h3 id="file-io-beispiel">File IO Beispiel</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">test_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;./test&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">200</span><span class="p">];</span><span class="w"></span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">buffer_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buffer_pntr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">();</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;q&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">buffer_pntr</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">buffer_size</span><span class="p">;</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="o">*</span><span class="p">(</span><span class="n">buffer_pntr</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="n">input</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="n">buffer</span><span class="p">[</span><span class="n">buffer_size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="n">fprintf</span><span class="p">(</span><span class="n">test_file</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="n">fclose</span><span class="p">(</span><span class="n">test_file</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="n">test_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;./test&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">fgets</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">buffer_size</span><span class="p">,</span><span class="w"> </span><span class="n">test_file</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;buffer: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="n">fclose</span><span class="p">(</span><span class="n">test_file</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="mutex-pthreadh">Mutex (pthread.h)</h2>
+<p>In einer Critical Section ist nur ein Thread gleichzeitig am laufen</p>
+<p><img alt="image-20220504082949476" src="res/image-20220504082949476.png" /></p>
+<p>Mit <code>int pthread_mutex_init(pthread_mutex *mutex, NULL)</code> kann ein <code>p_thread_mutex</code> Objekt initialisiert werden. Mit <code>int pthread_mutex_lock(pthread_mutex *mutex)</code> kann der Mutex gelockt werden und mit  <code>int pthread_mutex_unlock(pthread_mutex *mutex)</code> </p>
+<p>Um Attribute für einen Mutex zu ändern, wird der Typ <code>pthread_mutexattr_t</code> genuzt, welcher mit <code>int pthread_mutexattr_init(pthread_mutexattr_t *mutexattr)</code> initialisiert und mit <code>int pthread_mutexattr_settype(pthread_mutex *mutex, int flag)</code>. Ein mögliches Flag ist <code>PTHREAD_MUTEX_RECURSIVE</code>, welches bewirkt, dass wenn ein Mutex bereits im Thread a gelockt wurde und Thread a nochmals versucht zu locken, wird nichts getan (sonst gäbe es ein Deadlock).</p>
+<h3 id="beispiel-mutex">Beispiel Mutex</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdbool.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="cp">#define ERROR(M)  ...</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">static</span><span class="w"> </span><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">mutex</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">static</span><span class="w"> </span><span class="k">volatile</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">running</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">static</span><span class="w"> </span><span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">worker</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">running</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;lock worker&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;current value: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;unlock worker&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">printer</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">    </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;/dev/urandom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rb&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">random</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;fopen&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">running</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fread</span><span class="p">(</span><span class="o">&amp;</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">input</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">random</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;read&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;lock&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">        </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;unlock&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">    </span><span class="n">fclose</span><span class="p">(</span><span class="n">random</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">    </span><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">    </span><span class="n">pthread_t</span><span class="w"> </span><span class="n">worker_thread</span><span class="p">,</span><span class="w"> </span><span class="n">printer_thread</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">worker_thread</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">worker</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;worker thread&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">printer_thread</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">printer</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;printer thread&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;q&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">    </span><span class="n">running</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_join</span><span class="p">(</span><span class="n">worker_thread</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;join&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_join</span><span class="p">(</span><span class="n">printer_thread</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;join&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="beispiel-rekursiver-mutex">Beispiel Rekursiver Mutex</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="cp">#define ERROR(M) ..</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="cp">#define N 1000</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">mutex</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="kt">void</span><span class="w"> </span><span class="nf">calc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">step</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;lock&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">step</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;unlock&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">count</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w">     </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;lock&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">        </span><span class="n">calc</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;unlock&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">    </span><span class="n">pthread_mutexattr_t</span><span class="w"> </span><span class="n">mutex_attr</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_mutexattr_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex_attr</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;init mutexattr&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_mutexattr_settype</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex_attr</span><span class="p">,</span><span class="w"> </span><span class="n">PTHREAD_MUTEX_RECURSIVE</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="w">        </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;set recursive type&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mutex_attr</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;init mutex&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">    </span><span class="n">pthread_t</span><span class="w"> </span><span class="n">th_inc</span><span class="p">,</span><span class="w"> </span><span class="n">th_dec</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">inc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">th_inc</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">inc</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;create inc thread&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">th_dec</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">dec</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;create dec thread&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_join</span><span class="p">(</span><span class="n">th_inc</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;inc thread join&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_join</span><span class="p">(</span><span class="n">th_dec</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;dec thread join&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;value: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="sempaphors">Sempaphors</h2>
+<p>Es wird den Include <code>#include &lt;semaphor.h&gt;</code>  (und <code>#include &lt;fcntl.h&gt;</code> für O_CREAT) benötigt. Semaphors können für Prozesse, wie auch für Threads verwendet werden.</p>
+<p>Eine Semaphor benützt ein Counter. Wenn der Counter 0 ist, warten Prozesse, welche <code>int sem_wait(...)</code> aufrufen. Wenn der Counter höher ist, wird der Counter um <code>1</code> dekrementiert und den Prozess durchgelassen. <code>int sem_post(...)</code> erhöht den Counter um <code>1</code>, was bedeutet, dass ein Prozess mehr durch kann.</p>
+<p>Semaphors benützen die Struktur <code>sem_t</code>. Für eine In-Memory Sempahor kann <code>int sem_init(sem_t *sem, int pshared, unsigned int value)</code>  benützt weden. Bei einer Named-Semaphor muss <code>sem_t *sem_open(char *name, int oflags, mode_t mode, unsigned int value)</code> aufgerufen werden, welches eine neue Semaphor zurück gibt. Als <code>oflag</code> kann <code>O_CREAT</code> (ohne E am ende) (in fcntl.h definiert) benützt werden und bewirkt, dass die Sempahore erstellt wird, wenn sie noch nicht existiert. <code>mode_t</code> ist ein Otal-File Mode (wie <code>0700</code>).</p>
+<p><code>int sem_wait(sem_t *sem)</code> wartet darauf, dass der Counter höher ist als <code>0</code>. Wenn ja, wird er um eins dekrementiert und durchgelassen, sonst wird blockiert.</p>
+<p><code>int sem_post(sem_t *sem)</code> erhöht den Counter um eins. Falls ein Prozess bereits <code>int sem_wait(...)</code> aufgerufen hat, wird dieser druchgelassen, bzw. der nächste Prozess wird direkt durchgelassen.</p>
+<p>In-Memory Semaphors werden mit <code>int sem_destroy(sem_t *sem)</code> geschlossen. Named Semaphors werden mit <code>int sem_close(sem_t *sem)</code> geschlossen. Mit <code>int sem_unlink(sem_t *sem)</code> wird die Semaphor gelöscht, sobald alle Prozesse <code>sem_close(...)</code> darauf aufgerufen haben.</p>
+<h3 id="beispiel">Beispiel</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;semaphore.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/stat.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdbool.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="c1">// creates a unnamed in memory semaphore</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="n">sem_t</span><span class="w"> </span><span class="n">unamed_sem</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="c1">//false means that the semaphore should be used for thread-communication</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="c1">// 0 is the initial value</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">sem_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">unamed_sem</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;Couldn&#39;t init unnamed semaphore&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="c1">// creates a named semaphore which can be opend by multiple processes</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="n">sem_unlink</span><span class="p">(</span><span class="s">&quot;/name&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">    </span><span class="c1">// 0 is the initial value</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">    </span><span class="n">sem_t</span><span class="w"> </span><span class="o">*</span><span class="n">named_sem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sem_open</span><span class="p">(</span><span class="s">&quot;/name&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">O_CREAT</span><span class="p">,</span><span class="w"> </span><span class="mo">0700</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">named_sem</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;Couldn&#39;t init named semaphore&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">    </span><span class="n">sem_unlink</span><span class="p">(</span><span class="s">&quot;/name&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Im folgenden Beispiel wurde Sudo-Code geschrieben.</p>
+<p><img alt="image-20220504093231336" src="res/image-20220504093231336.png" /></p>
+<h2 id="barriere">Barriere</h2>
+<p>Eine Barriere blockiert mehrere Tasks. Eine Barriere lässt bloss alle Tasks durch, wenn genügend Tasks da sind. Im Vergleich zu dem Sempaphors: </p>
+<ul>
+<li>Semaphoren: der Busfahrer lässt solange Passagiere in den Bus, bis er voll ist</li>
+<li>Barriere: der Busfahrer wartet bis die gesamte Klasse da ist und lässt sie erst dann
+  in den Bus einsteigen</li>
+</ul>
+<h2 id="signale">Signale</h2>
+<p>Ein Prozess kann einem anderen Prozess Signale mithilfe von <code>kill(pid, signal_code)</code>. Der empfangende Prozess kann entweder sich beenden, das Signal ignorieren oder ein Handler ausführen, wenn dieser Code empfangen wird. Das Verhalten von <code>SIGKILL</code> und <code>SIGSTOP</code> kann nicht verändert werden und beendet immer den Prozess.</p>
+<p>Ein Prozess kann mit <code>pause()</code> warten, bis ein Signal empfangen wurde.</p>
+<p>Mit <code>sigaction(int sig, struct sigaction *act, struct sigaction *oact)</code> kann das Verhalten beim Empfangen eines Signal geändert werden. Der int <code>sig</code> ist die Nummer des Signales,  <code>act</code> ist die neue Action und in <code>oact</code> kann ein <code>sigaction</code> Variable angegeben werden, in welche die alte Action geschrieben wird. Die <code>sigaction</code> kann folgendermassen benützt werden: <img alt="image-20220427083850072" src="res/image-20220427083850072.png" /></p>
+<p>Der Typ von <code>sigaction.sa_handler</code> hat den Typ <code>void(*) (int)</code>, was ein Pointer auf eine Funktion, wie <code>void test(int a)</code>  ist. Diese kann entweder eine eigene Funktion sein, oder <code>SIG_DFL</code> für den Default und <code>SIG_IGN</code> zum ignorieren, angegeben werden.</p>
+<p><code>raise(int sig)</code> sendet das Signal zum eigenen Prozess.</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Erklärung</th>
+<th>Default Aktion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SININT</code></td>
+<td>Interrupt-Signal von der Tastatur (CTRL-C)</td>
+<td>Term</td>
+</tr>
+<tr>
+<td><code>SIGQUIT</code></td>
+<td>Quit-Signal von der Tastatur (CTRL-)</td>
+<td>Core</td>
+</tr>
+<tr>
+<td><code>SIGABRT</code></td>
+<td>Abort-Signal via abort() oder assert()</td>
+<td>Core</td>
+</tr>
+<tr>
+<td><code>SIGKILL</code></td>
+<td>Kill-Signal (unveränderbar)</td>
+<td>Term</td>
+</tr>
+<tr>
+<td><code>SIGSEGV</code></td>
+<td>Unzulässiger Speicherzugriff</td>
+<td>Core</td>
+</tr>
+<tr>
+<td><code>SIGALRM</code></td>
+<td>Timer-Signal durch alarm() ausgelöst</td>
+<td>Term</td>
+</tr>
+<tr>
+<td><code>SIGTERM</code></td>
+<td>Terminierungs-Signal</td>
+<td>Term</td>
+</tr>
+<tr>
+<td><code>SIGSTOP</code></td>
+<td>Stoppt den Prozess (oder ignoriert falls gestoppt) (unveränderbar)</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td><code>SIGCONT</code></td>
+<td>Reaktiviert den Prozess (oder ignoriert falls am Laufen)</td>
+<td>Cont</td>
+</tr>
+</tbody>
+</table>
+<p>Dabei steht:</p>
+<ul>
+<li><code>Ter</code> für das terminieren der Prozesse</li>
+<li><code>Core</code> für das terminieren der Prozesse und ein Code-Dump zu produzieren</li>
+<li><code>Ignored</code> für das ignorieren des Signales</li>
+<li><code>Stop/Cont</code> für das stoppen und reaktivieren des Prozesses (oder ignorieren, falls nicht anwendbar)</li>
+</ul>
+<h3 id="beispiel-sa_siginfo">Beispiel <code>SA_SIGINFO</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;signal.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/wait.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">handler</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">sig</span><span class="p">,</span><span class="w"> </span><span class="kt">siginfo_t</span><span class="w"> </span><span class="o">*</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;caught (%d): source=%d, this=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sig</span><span class="p">,</span><span class="w"> </span><span class="n">info</span><span class="o">-&gt;</span><span class="n">si_pid</span><span class="p">,</span><span class="w"> </span><span class="n">getpid</span><span class="p">());</span><span class="w"></span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="n">raise</span><span class="p">(</span><span class="n">SIGTERM</span><span class="p">);</span><span class="w"> </span><span class="c1">// = kill(getpid(), SIGTERM)</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="kt">pid_t</span><span class="w"> </span><span class="n">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">        </span><span class="k">struct</span><span class="w"> </span><span class="nc">sigaction</span><span class="w"> </span><span class="n">sa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">        </span><span class="n">sa</span><span class="p">.</span><span class="n">sa_flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SA_SIGINFO</span><span class="p">;</span><span class="w"> </span><span class="c1">// use extended handler</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">        </span><span class="n">sa</span><span class="p">.</span><span class="n">sa_sigaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">handler</span><span class="p">;</span><span class="w"> </span><span class="c1">// set handler</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">        </span><span class="c1">// sigfillset specifies that all signals should be ignored while the handler(...) is running</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sigfillset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sa</span><span class="p">.</span><span class="n">sa_mask</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;sigfillset&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sigaction</span><span class="p">(</span><span class="n">SIGUSR1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sa</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;sigaction&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pause</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;pause()&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// pause process</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">        </span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kill</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="n">SIGUSR1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;kill&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="pipes">Pipes</h2>
+<p><code>int pipe(int filedes[2])</code> erstellt eine unbenannte Pipe mit zwei Filedeskriptoren, welche in das angegebene Array geschrieben wird. Auf diese können mit <code>write()</code> und <code>read()</code> geschrieben und gelesen weden. <code>pipe(...)</code> gibt <code>0</code> zurück, wenn kein Fehler aufgetreten ist.</p>
+<p>Eine Pipe geht nur in eine Richtung und daher muss  eine der beiden Deskriptoren von je einem Prozess kreuzweise mit <code>close(int filedesriptor)</code> geschlossen werden, dass die Pipe nutzbar ist. Mit <code>write(int filedes, void *buffer, size_t size)</code></p>
+<p><img alt="image-20220427084813765" src="res/image-20220427084813765.png" /></p>
+<p>Eine Pipe kann auch  Non-Blocking genutzt werden. Dies kann folgendermassen gesetzt werden: <img alt="image-20220427090244655" src="res/image-20220427090244655.png" /></p>
+<p>Nun kann folgendermassen davon gelesen werden: <img alt="image-20220427090306736" src="res/image-20220427090306736.png" /></p>
+<p>Mit <code>int mkfifo(char* pathname, mode_t mode)</code> wird eine Named-Pipe erstellt. Die Funktion gibt <code>0</code> zurück, wenn kein Fehler aufgetreten ist. Die beiden Prozesse können vom File bei <code>pathname</code> lesen oder schrieben. </p>
+<h2 id="message-queue">Message Queue</h2>
+<p>Ist eine Queue, welche Strings zwischen Prozessen austauschen kann. Das Programm muss mit dem <code>-lrt</code> Flag kompiliert werden. </p>
+<p>Mit <code>mqd_t mq_open(char* qname, int flag, int mode, struct mq_attribute *attr)</code>  kann eine neue Queue geöffnet werden. Der QName muss mit einem Slash beginnen und existieren in einem Virtuellen Filesystem <code>/dev/mqueue</code>. Queues können auch Non-Blocking geöffnet werden.</p>
+<p>Mit <code>int mq_close(mqd_t queue)</code> teilt dem Kernel mit, dass der Zugriff auf die Queue abgeschlossen ist. </p>
+<p>Mit <code>int mq_unlink(char* name)</code> kann die Queue gelöscht werden. Sie kann danach nicht mehr geöffnet werden und wird gelöscht, wenn jeder Prozess, welcher ein File-Deskriptor offen hat, diesen mit <code>mq_close(...)</code> geschlossen hat.</p>
+<p><img alt="image-20220427091731004" src="res/image-20220427091731004.png" /></p>
+<h2 id="sockets">Sockets</h2>
+<p><img alt="image-20220427092823642" src="res/image-20220427092823642.png" /></p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2022-06-27
+    
+  </small>
+</div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="04_Unit%20Tests.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Unit Tests" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Unit Tests
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="06_Standard%20Library.html" class="md-footer__link md-footer__link--next" aria-label="Next: Standard Library" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Standard Library
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

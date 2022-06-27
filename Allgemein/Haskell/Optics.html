@@ -1,0 +1,3642 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Sebastian Zumbrunn">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+    
+    
+      
+        <title>Optics - Seppli's Summaries</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#optics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Seppli&#39;s Summaries" class="md-header__button md-logo" aria-label="Seppli's Summaries" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Seppli's Summaries
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Optics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Seppli&#39;s Summaries" class="md-nav__button md-logo" aria-label="Seppli's Summaries" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Seppli's Summaries
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          21HS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="21HS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          21HS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          AN1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/01_funktionen.html" class="md-nav__link">
+        Summenzeichen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/02_polynome.html" class="md-nav__link">
+        Polynome Division
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/03_Ableiten.html" class="md-nav__link">
+        Ableiten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4" type="checkbox" id="__nav_2_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_4">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/summaries/summary_2022_01_26.html" class="md-nav__link">
+        AN Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          COM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="COM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          COM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/01_Kernthemen-Austausch.html" class="md-nav__link">
+        01 Kernthemen Austausch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/02_Suchstrategien.html" class="md-nav__link">
+        Suchbegriffe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/03_Publikationstypen.html" class="md-nav__link">
+        Monografie (eigenständiges Buch)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/04_Wissenschaftilichen%20Text.html" class="md-nav__link">
+        04 Wissenschaftilichen Text
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/05_pitch.html" class="md-nav__link">
+        CCC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/06_handout.html" class="md-nav__link">
+        Kriterien
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_7" type="checkbox" id="__nav_2_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7">
+          Presentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Presentation" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Presentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/Presentation/Pitch%20v2.html" class="md-nav__link">
+        Pitch v2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/Presentation/Pitch.html" class="md-nav__link">
+        Pitch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          DB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DB" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          DB
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/00_Pr%C3%BCfung.html" class="md-nav__link">
+        00 Prüfung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/01_Begriffe.html" class="md-nav__link">
+        Begriffe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/02_Grundoperation.html" class="md-nav__link">
+        02 Grundoperation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/03_Entity%20Relationship%20Diagram.html" class="md-nav__link">
+        ER-Diagram
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/04_SQL.html" class="md-nav__link">
+        SQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/05_Integrit%C3%A4tsregeln.html" class="md-nav__link">
+        Integritätsregeln
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_7" type="checkbox" id="__nav_2_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_7">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/summaries/summary-2022-01-25.html" class="md-nav__link">
+        DB Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          DM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          DM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/01_Aussaglogik.html" class="md-nav__link">
+        01 Aussaglogik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/02_Semantik.html" class="md-nav__link">
+        02 Semantik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/03_Mengen.html" class="md-nav__link">
+        Mengen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/04_Nat%C3%BCrliche%20Zahlen.html" class="md-nav__link">
+        Natürliche Zahlen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/05_Ganz%20Zahlen.html" class="md-nav__link">
+        Ganz Zahlen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_6" type="checkbox" id="__nav_2_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4_6">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/Summaries/01_summary_2021-11-23.html" class="md-nav__link">
+        Summary - 2021-11-23
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/Summaries/01_summary_2022_01_17.html" class="md-nav__link">
+        01 summary 2022 01 17
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          GED
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GED" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          GED
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1" type="checkbox" id="__nav_2_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_1">
+          Elektronik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Elektronik" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Elektronik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Elektronik/Maschen%20und%20Knotensatz.html" class="md-nav__link">
+        Knotenregel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" type="checkbox" id="__nav_2_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_2">
+          Physik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Physik" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Physik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/00_Formeln.html" class="md-nav__link">
+        Formeln
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/01_ch%C3%BCgelif%C3%BCsik.html" class="md-nav__link">
+        Chügeli Füsik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/02_Elektrotechnik.html" class="md-nav__link">
+        Elektrotechnik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/03_Elektromagnetismus.html" class="md-nav__link">
+        Elektromagnetismus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/04_Thermische_Strahlung.html" class="md-nav__link">
+        Termische Strahlung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/05_Signale.html" class="md-nav__link">
+        Signale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/all-ged-summaries.html" class="md-nav__link">
+        All ged summaries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/include.html" class="md-nav__link">
+        Include
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          INCO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="INCO" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          INCO
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/00_Infos.html" class="md-nav__link">
+        Infos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/2_Sequenzelle%20Bauteile.html" class="md-nav__link">
+        2 Sequenzelle Bauteile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/3_Zahlensysteme.html" class="md-nav__link">
+        Zahlensysteme
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/4_Informationstheorie.html" class="md-nav__link">
+        Was ist Information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/5_JEPG.html" class="md-nav__link">
+        5 JEPG
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/6_Audio.html" class="md-nav__link">
+        Audio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/7_Kanalkodierung.html" class="md-nav__link">
+        Kanalkodierung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/8_Matrix.html" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/9_Faltungscode.html" class="md-nav__link">
+        9 Faltungscode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_10" type="checkbox" id="__nav_2_6_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6_10">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_6_10">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/summaries/summary_2022-01-20.html" class="md-nav__link">
+        INCO Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          PM1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PM1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          PM1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Beschlussprotokoll.html" class="md-nav__link">
+        Beschlussprotokoll
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Feedback.html" class="md-nav__link">
+        Feedback
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Projekt%203%20-%20Siedler%20von%20Catan.html" class="md-nav__link">
+        Projekt 3 - Siedler von Catan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Retrospektive.html" class="md-nav__link">
+        Retrospektive
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          22FS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="22FS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          22FS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          AN2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/AN2/summary_2022_06_20.html" class="md-nav__link">
+        AN2 Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Communication2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Communication2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Communication2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/Communication2/01_Presentation.html" class="md-nav__link">
+        Presentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/Communication2/Presentation_Script.html" class="md-nav__link">
+        Presentation Script
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          KT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="KT" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          KT
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/00_Glossar.html" class="md-nav__link">
+        Glossar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/01_OSI-Modell.html" class="md-nav__link">
+        OSI-Modell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/02_Serielle-%C3%9Cbertragung.html" class="md-nav__link">
+        02 Serielle Übertragung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/03_%C3%9Cbertragunsmedien.html" class="md-nav__link">
+        Übertragungsmedien (Layer 1)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/04_Data%20Link.html" class="md-nav__link">
+        Data Link Layer (Layer 2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/05_LAN.html" class="md-nav__link">
+        LAN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/06_Network%20Layer.html" class="md-nav__link">
+        Network Layer (Layer 3)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/07_Transport%20Layer.html" class="md-nav__link">
+        Transport Layer (Layer 4)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/08_Application_Layer.html" class="md-nav__link">
+        Application Layer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/summary.html" class="md-nav__link">
+        KT Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          LA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="LA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          LA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/01_Lineare%20Gleichungssysteme.html" class="md-nav__link">
+        Lineare Gleichungssystem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/02_Vektoren.html" class="md-nav__link">
+        Vektoren
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/03_Matrix.html" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/05_Vektorr%C3%A4ume.html" class="md-nav__link">
+        Vektorräume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/06_Lineare%20Abbildung.html" class="md-nav__link">
+        Lineare Abbildung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/summary.html" class="md-nav__link">
+        LA Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          PM2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PM2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          PM2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PM2/Massnahmen.html" class="md-nav__link">
+        Massnahmen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PM2/Pitch.html" class="md-nav__link">
+        Pitch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PM2/Projektskizze.html" class="md-nav__link">
+        Projektskizze
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          PROG2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PROG2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          PROG2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/-1_Stuff.html" class="md-nav__link">
+        Stuff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/00_Gradle.html" class="md-nav__link">
+        Gradle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/01_Concurrency.html" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/summary.html" class="md-nav__link">
+        PROG2 Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          SNP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SNP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          SNP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/01_C.html" class="md-nav__link">
+        C-Sprache
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/02_Preprocessor%20und%20Compiler.html" class="md-nav__link">
+        Preprocessor und Compiler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/03_Make.html" class="md-nav__link">
+        Make
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/04_Unit%20Tests.html" class="md-nav__link">
+        Unit Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/05_OS.html" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/06_Standard%20Library.html" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/summary_jonas.html" class="md-nav__link">
+        SNP Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          THIN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="THIN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          THIN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/00_Fragen.html" class="md-nav__link">
+        Fragen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/01_Definitionen.html" class="md-nav__link">
+        Definitionen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/02_RegEx.html" class="md-nav__link">
+        RegEx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/03_Endliche%20%20Automaten.html" class="md-nav__link">
+        Endliche Automaten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/04_Kontextfreie%20Gramatik.html" class="md-nav__link">
+        Kontextfreie Grammatik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/05_Keller%20Automaten.html" class="md-nav__link">
+        Keller Automaten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/06_Turing%20Machine.html" class="md-nav__link">
+        Turing Maschine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/07_Berechnungsmodelle.html" class="md-nav__link">
+        Berechnungsmodelle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/08_Entscheidbarkeit.html" class="md-nav__link">
+        Entschheidbarkeit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/09_Komplexit%C3%A4tstheorie.html" class="md-nav__link">
+        Komplexitätstheorie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/summary%20%28copy%29.html" class="md-nav__link">
+        THIN Summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/summary.html" class="md-nav__link">
+        THIN Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Allgemein
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Allgemein" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Allgemein
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          AN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AN/Itegrie-Ableiten-Tabelle.html" class="md-nav__link">
+        Itegrie Ableiten Tabelle
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Haskell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Haskell" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Haskell
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Data%20Classes.html" class="md-nav__link">
+        Data Classes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Optics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Optics.html" class="md-nav__link md-nav__link--active">
+        Optics
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#capabilities" class="md-nav__link">
+    Capabilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lenses" class="md-nav__link">
+    Lenses
+  </a>
+  
+    <nav class="md-nav" aria-label="Lenses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lens-laws" class="md-nav__link">
+    Lens Laws
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-fields" class="md-nav__link">
+    Virtual Fields
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenses-operators" class="md-nav__link">
+    Lenses &amp; Operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composing-lenses" class="md-nav__link">
+    Composing Lenses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folds" class="md-nav__link">
+    Folds
+  </a>
+  
+    <nav class="md-nav" aria-label="Folds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operators_1" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions" class="md-nav__link">
+    Actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concat-existing-folds" class="md-nav__link">
+    Concat existing Folds
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traversal" class="md-nav__link">
+    Traversal
+  </a>
+  
+    <nav class="md-nav" aria-label="Traversal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actions_1" class="md-nav__link">
+    Actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operators_2" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#each" class="md-nav__link">
+    Each
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="IP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IP/IP.html" class="md-nav__link">
+        IP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Musik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Musik" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Musik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Musik/Tonleitern.html" class="md-nav__link">
+        Tonleitern
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          PROG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PROG" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          PROG
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG/2_OOP_Takeaways.html" class="md-nav__link">
+        OOP Takeaways
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG/3_Patterns.html" class="md-nav__link">
+        Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG/4_Testing.html" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG/5_Threads.html" class="md-nav__link">
+        Threads
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG/6_IO.html" class="md-nav__link">
+        IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG/7_Streams.html" class="md-nav__link">
+        Streams
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#capabilities" class="md-nav__link">
+    Capabilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lenses" class="md-nav__link">
+    Lenses
+  </a>
+  
+    <nav class="md-nav" aria-label="Lenses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lens-laws" class="md-nav__link">
+    Lens Laws
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-fields" class="md-nav__link">
+    Virtual Fields
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenses-operators" class="md-nav__link">
+    Lenses &amp; Operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composing-lenses" class="md-nav__link">
+    Composing Lenses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folds" class="md-nav__link">
+    Folds
+  </a>
+  
+    <nav class="md-nav" aria-label="Folds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operators_1" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions" class="md-nav__link">
+    Actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concat-existing-folds" class="md-nav__link">
+    Concat existing Folds
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traversal" class="md-nav__link">
+    Traversal
+  </a>
+  
+    <nav class="md-nav" aria-label="Traversal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actions_1" class="md-nav__link">
+    Actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operators_2" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#each" class="md-nav__link">
+    Each
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="optics">Optics</h1>
+<h2 id="capabilities">Capabilities</h2>
+<p>In the following table the capabilities of each optics is shown.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Lens</th>
+<th>Traversal</th>
+<th>Fold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get</td>
+<td>Single</td>
+<td>Many</td>
+<td>Many</td>
+</tr>
+<tr>
+<td>Set/Modify</td>
+<td>Single</td>
+<td>Many</td>
+<td>Nope</td>
+</tr>
+<tr>
+<td>Traverse</td>
+<td>Single</td>
+<td>Many</td>
+<td>Nope</td>
+</tr>
+</tbody>
+</table>
+<h2 id="operators">Operators</h2>
+<p>There is a general patterns applied to most operators in the Optics library. This means that the name of an operator can usually be guessed.</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Explenation</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^</code></td>
+<td>Denotes that the action <strong>views/gets</strong> something</td>
+<td><code>^.</code></td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>Denotes the absence of any other modifiers</td>
+<td><code>^.</code></td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Denotes an actinon which <strong>modifies</strong> using a function</td>
+<td><code>%~</code></td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>Denotes that this action <strong>updates/sets</strong> something</td>
+<td><code>%~</code>, <code>.~</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>A prefix for update/set actions, which will return the altered value as well as the whole structure</td>
+<td><code>&lt;+~</code></td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>A prefix for update/set action, which will return the old value</td>
+<td><code>&lt;&lt;+~</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="lenses">Lenses</h2>
+<p>A lens abstracts the getter and setter into one value. A lens can focus a single type and always returns a type (so a lens can't return <code>a</code> from <code>Either a b</code>, because the type could also be <code>b</code>).</p>
+<p>Their are two types of lenses:</p>
+<ul>
+<li>Simple lens: <code>Lens' s a</code>, where <code>s</code> is the structure and <code>a</code> is the focus type. 
+  This lens always returns the same type as it gets and it can be created with <code>makeLenses</code></li>
+<li>Polymorphic Lens: <code>Lens s t a b</code>, where <code>s</code> is the input structure, <code>t</code> the output structure, <code>a</code> the input focus and <code>b</code> the output focus.
+  This type of lenses can change the types of the structure and focus.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">data</span><span class="w"> </span><span class="kt">Settings</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Settings</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">        </span><span class="n">_path</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="n">_object</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">derving</span><span class="w"> </span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nf">path</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Lens&#39;</span><span class="w"> </span><span class="kt">Settings</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nf">path</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">lens</span><span class="w"> </span><span class="n">getter</span><span class="w"> </span><span class="n">setter</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="kr">where</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="n">getter</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Settings</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">String</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="n">getter</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">_path</span><span class="w"></span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="n">setter</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Settings</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Settings</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="n">setter</span><span class="w"> </span><span class="n">oldSettings</span><span class="w"> </span><span class="n">newPath</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">oldSettings</span><span class="p">{</span><span class="w"> </span><span class="n">_path</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">newPath</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nf">object</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Lens</span><span class="w"> </span><span class="p">(</span><span class="kt">Settings</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">Settings</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"></span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nf">object</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">lens</span><span class="w"> </span><span class="n">getter</span><span class="w"> </span><span class="n">setter</span><span class="w"></span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="kr">where</span><span class="w"></span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="n">getter</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Settings</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="n">getter</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">_object</span><span class="w"></span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="n">setter</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Settings</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Settings</span><span class="w"> </span><span class="n">b</span><span class="w"></span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="n">setter</span><span class="w"> </span><span class="n">oldSettings</span><span class="w"> </span><span class="n">newObj</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">oldSettings</span><span class="p">{</span><span class="w"> </span><span class="n">_object</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">newObj</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="lens-laws">Lens Laws</h3>
+<ol>
+<li>You get back what you set (set-get)
+   When you set something, you always get the same thing back</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nf">view</span><span class="w"> </span><span class="n">myLens</span><span class="w"> </span><span class="p">(</span><span class="n">set</span><span class="w"> </span><span class="n">myLens</span><span class="w"> </span><span class="n">newValue</span><span class="w"> </span><span class="n">structure</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">newValue</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>Setting back what you got doesn't do anything (get-set)
+   When you set what <code>view</code> returned to you, than nothing changes</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">set</span><span class="w"> </span><span class="n">myLens</span><span class="w"> </span><span class="p">(</span><span class="n">view</span><span class="w"> </span><span class="n">myLens</span><span class="w"> </span><span class="n">structure</span><span class="p">)</span><span class="w"> </span><span class="n">structure</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">structure</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>Setting twice is the same as setting once (set-set)
+   Setting multiple times the same value does always do the same thing</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">set</span><span class="w"> </span><span class="n">myLens</span><span class="w"> </span><span class="n">diffrentValue</span><span class="w"> </span><span class="p">(</span><span class="n">set</span><span class="w"> </span><span class="n">myLens</span><span class="w"> </span><span class="n">diffrentValue</span><span class="w"> </span><span class="n">structure</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">myLens</span><span class="w"> </span><span class="n">diffrentValue</span><span class="w"> </span><span class="n">structure</span><span class="w"></span>
+</code></pre></div>
+<h3 id="virtual-fields">Virtual Fields</h3>
+<p>Lenses can be used to provide an abstraction layer above the actual data structure. Virtual Fields can be created by writing custom lens getters and setter. The getter and setter can apply a function to convert the field. </p>
+<p>This can also be done later, when the underlying data structure changes but the public API shouldn't change.</p>
+<h3 id="lenses-operators">Lenses &amp; Operators</h3>
+<p>The following operators can be used with lenses:</p>
+<ul>
+<li><code>view :: Lens' s a -&gt; s -&gt; a</code>
+  Returns the value which the given lens focuses on</li>
+<li><code>set :: Lens s t a b -&gt; b -&gt; s -&gt; t</code> or <code>set :: Lens' s a -&gt; a -&gt; s -&gt; s</code>
+  Sets the value of the focus of a lens</li>
+<li><code>over :: Lens s t a b -&gt; (a -&gt; b) -&gt; s -&gt; t</code> or <code>over :: Lens' s a -&gt; (a -&gt; a) -&gt; s -&gt; s</code>
+  Fetches the focused value, applies the given function and then uses set t set the focused value</li>
+</ul>
+<p>There are infix operator which are synonyms to the operators above:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Action</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^.</code></td>
+<td>flipped view</td>
+<td><code>s -&gt; Lens' s a -&gt; a</code></td>
+</tr>
+<tr>
+<td><code>.~</code></td>
+<td>set</td>
+<td><code>Lens s t a b -&gt; b -&gt; s -&gt; t</code></td>
+</tr>
+<tr>
+<td><code>%~</code></td>
+<td>over</td>
+<td><code>Lens s t a b -&gt; (a -&gt; b) -&gt; s -&gt; t</code></td>
+</tr>
+</tbody>
+</table>
+<p>Some common lenses are :</p>
+<ul>
+<li><code>_1 :: Lens (a, other) (b, other) a b</code>
+  Sets the focus on the first element of a tuple</li>
+<li><code>_2 :: Lens (other, a) (other, b) a b</code>
+  Sets the focus on the second element of a tuple</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">data</span><span class="w"> </span><span class="kt">Payload</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Payload</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">_weightKilos</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="n">_cargo</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">String</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="kr">deriving</span><span class="w"> </span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nf">makeLenses</span><span class="w"> </span><span class="kt">&#39;&#39;Payload</span><span class="w"></span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="kr">data</span><span class="w"> </span><span class="kt">Ship</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Ship</span><span class="w"> </span><span class="p">{</span><span class="n">_payload</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Payload</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="kr">deriving</span><span class="w"> </span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nf">makeLenses</span><span class="w"> </span><span class="kt">&#39;&#39;Ship</span><span class="w"></span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="nf">serenity</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Ship</span><span class="w"></span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nf">serenity</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Ship</span><span class="w"> </span><span class="p">(</span><span class="kt">Payload</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="s">&quot;Livestock&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1">-- get</span><span class="w"></span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">cargo</span><span class="w"> </span><span class="n">serenity</span><span class="w"></span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="c1">-- &gt; &quot;Livestock&quot;</span><span class="w"></span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">serenity</span><span class="w"> </span><span class="o">^.</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">cargo</span><span class="w"> </span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="c1">-- &gt; &quot;Livestock&quot;</span><span class="w"></span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="c1">-- set</span><span class="w"></span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="p">(</span><span class="n">payload</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">cargo</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;Medicine&quot;</span><span class="w"> </span><span class="n">serenity</span><span class="w"></span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">serenity</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">cargo</span><span class="w"> </span><span class="o">.~</span><span class="w"> </span><span class="s">&quot;Medicine&quot;</span><span class="w"></span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">serenity</span><span class="w"> </span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="o">&amp;</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">cargo</span><span class="w"> </span><span class="o">.~</span><span class="w"> </span><span class="s">&quot;Chocolate&quot;</span><span class="w"></span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">        </span><span class="o">&amp;</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">weightKilos</span><span class="w"> </span><span class="o">.~</span><span class="w"> </span><span class="mi">2310</span><span class="w"></span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="c1">-- over</span><span class="w"></span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">serenity</span><span class="w"> </span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">        </span><span class="o">&amp;</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">weightKilos</span><span class="w"> </span><span class="o">.%</span><span class="w"> </span><span class="n">subtract</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">        </span><span class="o">&amp;</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">cargo</span><span class="w"> </span><span class="o">.~</span><span class="w"> </span><span class="s">&quot;Chocolate&quot;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="composing-lenses">Composing Lenses</h3>
+<p>Lenses compose very easily.  Imagin each lens being a domino which can be fitted together if the types match. From the expression below, we'll get <code>address :: Lens' Person StreetAddress</code>. The <code>Address</code> type is "hidden" in the composition. <img alt="image-20220429235216484" src="res/image-20220429235216484.png" /></p>
+<p>At the the right end of a domino line, we can use an action to do something, like modifying the focused value. <img alt="image-20220429235453171" src="res/image-20220429235453171.png" /></p>
+<p>Here an actual Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">wave</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Wool</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Sweater</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nf">weave</span><span class="w"> </span><span class="kt">Wool</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Sweater</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nf">gameState</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="p">(</span><span class="kt">Player</span><span class="p">,</span><span class="w"> </span><span class="kt">Item</span><span class="w"> </span><span class="kt">Wool</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nf">gameState</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">(</span><span class="kt">Player</span><span class="w"> </span><span class="kt">Item</span><span class="w"> </span><span class="kt">Wool</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1">-- crafts a sweater</span><span class="w"></span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nf">gameState&#39;</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="p">(</span><span class="kt">Player</span><span class="p">,</span><span class="w"> </span><span class="kt">Item</span><span class="w"> </span><span class="kt">Sweater</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nf">gameState&#39;</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="p">(</span><span class="n">_2</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">material</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">weave</span><span class="w"> </span><span class="n">gameState</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="folds">Folds</h2>
+<p>A fold is like a query and can:</p>
+<ul>
+<li>focus on multiple things</li>
+<li>can only get, not set data</li>
+</ul>
+<p>A fold has the data type <code>Fold s a</code>, where the <code>s</code> is the structure on which the query runs and <code>a</code> is the return value. A fold returns zero or more from <code>a</code></p>
+<p>A fold, like a lens, doesn't contain data. It is an "operation" which knows how to extract zero or more elements from an type.</p>
+<p>We can create a custom <code>Fold</code> with the function <code>folding :: Foldable f =&gt; (s -&gt; f a) -&gt; Fold s a</code>, which takes as an argument a function which transforms the type <code>s</code> into a folding type <code>a</code>. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">data</span><span class="w"> </span><span class="kt">ShipCrew</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">ShipCrew</span><span class="w"> </span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">_captain</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">_conscripts</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="p">[</span><span class="kt">String</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kr">deriving</span><span class="w"> </span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nf">makeLenses</span><span class="w"> </span><span class="kt">&#39;&#39;ShipCrew</span><span class="w"></span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nf">collectCrewMembers</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">ShipCrew</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="p">[</span><span class="kt">String</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nf">collectCrewMembers</span><span class="w"> </span><span class="n">crew</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">(</span><span class="n">_captain</span><span class="w"> </span><span class="n">crew</span><span class="p">)</span><span class="w"> </span><span class="kt">:</span><span class="w"> </span><span class="n">_conscripts</span><span class="w"> </span><span class="n">crew</span><span class="w"></span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nf">crewMembers</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Fold</span><span class="w"> </span><span class="kt">ShipCrew</span><span class="w"> </span><span class="kt">String</span><span class="w"></span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="nf">crewMembers</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">folding</span><span class="w"> </span><span class="n">collectCrewMembers</span><span class="w"></span>
+</code></pre></div>
+<h3 id="operators_1">Operators</h3>
+<ul>
+<li><code>folded : Foldable f =&gt; Fold (f a)</code>
+  With <code>folded</code> an instance of <code>Foldable</code> like a list can be converted into a <code>Fold</code>. </li>
+</ul>
+<p>A lens can be used to focus in on an element of a fold. This works because every lens has a getter to focus on one element exactly. This fits into the definition of a fold which needs to focus on zero or more elements.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">data</span><span class="w"> </span><span class="kt">CartItem</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="kt">CartItem</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">_name</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">String</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">             </span><span class="p">,</span><span class="w"> </span><span class="n">_count</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Int</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nf">makeLenses</span><span class="w"> </span><span class="kt">&#39;&#39;CarItem</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nf">cart</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="p">[</span><span class="kt">CartItem</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nf">cart</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">[</span><span class="kt">CartItem</span><span class="w"> </span><span class="s">&quot;Black Shirt&quot;</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="kt">CarItem</span><span class="w"> </span><span class="s">&quot;Water Bottle&quot;</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">-- get a list of all items</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="nf">cart</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="c1">-- will return [CartItem &quot;Black Shirt&quot; 3, CarItem &quot;Water Bottle&quot; 2]</span><span class="w"></span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="nf">toListOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="n">cart</span><span class="w"> </span><span class="c1">-- the same as above</span><span class="w"></span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="nf">cart</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="c1">-- [&quot;Black Shirt&quot;, &quot;Water Bottle&quot;]</span><span class="w"></span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="nf">toListOf</span><span class="w"> </span><span class="p">(</span><span class="n">folded</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="n">cart</span><span class="w"> </span><span class="c1">-- the same as above</span><span class="w"></span>
+</code></pre></div></p>
+<ul>
+<li><code>to :: (s -&gt; a) -&gt; Fold s a</code>
+  Creates a fold which maps from the type <code>s</code> to the folded type <code>a</code>. This function maps 1-to-1. Because of this, it couldn't be used to extract values from <code>Maybe</code>. If a 1-to-many relationship is needed, <code>folding</code> can be used</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">newtype</span><span class="w"> </span><span class="kt">Name</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Name</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">getName</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">deriving</span><span class="w"> </span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kt">Name</span><span class="w"> </span><span class="s">&quot;Hi&quot;</span><span class="w"> </span><span class="o">^.</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">getName</span><span class="w"> </span><span class="c1">-- will return &quot;Hi&quot;</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kt">Name</span><span class="w"> </span><span class="s">&quot;hello world&quot;</span><span class="w"> </span><span class="o">^.</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">getName</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="p">(</span><span class="n">fmap</span><span class="w"> </span><span class="n">toUpper</span><span class="p">)</span><span class="w"> </span><span class="c1">-- will return &quot;HELLO WORLD&quot;</span><span class="w"></span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">(</span><span class="kt">ShipCrew</span><span class="w"> </span><span class="s">&quot;Captain Tom&quot;</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;Franz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Max&quot;</span><span class="p">])</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">crewMembers</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="p">(</span><span class="n">fmap</span><span class="w"> </span><span class="n">toUpper</span><span class="p">)</span><span class="w"> </span><span class="c1">-- will return [&quot;CAPTAIN TOM&quot;, &quot;FRANZ&quot;, &quot;MAX&quot;]</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>backwards :: Fold s a -&gt; Fold s a</code>
+  Reverses the elements of a fold</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">backwards</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="c1">-- will return [3, 2, 1]</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)]</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">backwards</span><span class="w"> </span><span class="p">(</span><span class="n">folded</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">both</span><span class="p">)</span><span class="w"> </span><span class="c1">-- will return [4, 3, 2, 1]</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)]</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">backwards</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="c1">-- will return [3, 4, 1, 2]</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>only :: Eq a =&gt; a -&gt; Prism' a ()</code> 
+  A helper fold operator which can simplify to <code>only :: Eq a =&gt; a -&gt; Fold a ()</code>. It return <code>()</code> only if the input is equal to the given <code>a</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="mi">1</span><span class="w"> </span><span class="o">^?</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">-- will return Just ()</span><span class="w"></span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="mi">2</span><span class="w"> </span><span class="o">^?</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"></span>
+</code></pre></div>
+<h3 id="actions">Actions</h3>
+<ul>
+<li>
+<p><code>toListOf :: Fold s a -&gt; s -&gt; [a]</code>/<code>(^..) :: s -&gt; Fold s a -&gt; [a]</code>
+  To use a fold on data the function <code>toListOf</code> can be used. This will take a <code>Fold</code> and a <code>Foldable</code> structure and extracts <code>[a]</code> out of it. A synonym is <code>(^..) :: s -&gt; Fold s a -&gt; [a]</code></p>
+</li>
+<li>
+<p><code>elemOf :: Eq a =&gt; Fold s a -&gt; a -&gt; s -&gt; Bool</code>
+  Checks if the given <code>a</code> is in the <code>Fold</code></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nf">elemOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return True</span><span class="w"></span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nf">elemOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="mi">99</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return False</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>anyOf :: Fold s a -&gt; (a -&gt; Bool) -&gt; s -&gt; Bool</code>
+  Checks if the predicates returns true for at least one element</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nf">anyOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="n">even</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return True</span><span class="w"></span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nf">anyOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">(</span><span class="o">&gt;</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return False</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>allOf :: Fold s a -&gt; (a -&gt; Bool) -&gt; s -&gt; Bool</code>
+  Check if the predicates returns true for all elements</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nf">allOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="n">even</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return False</span><span class="w"></span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nf">allOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return True</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>findOf :: Fold s a -&gt; (a -&gt; Bool) -&gt; s -&gt; Maybe a</code>
+  Tries to find an element for which the predicate returns true</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nf">findOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="n">even</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return Just 2</span><span class="w"></span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nf">findOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">(</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return Nothing</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>has :: Fold s a -&gt; s -&gt; Bool</code>
+  Checks if there is at least one element</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nf">has</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="kt">[]</span><span class="w"> </span><span class="c1">-- will return False</span><span class="w"></span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nf">has</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return True</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>hasn't :: Fold s a -&gt; s -&gt; Bool</code>
+  Checks if there are no elements</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nf">hasn&#39;t</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="kt">[]</span><span class="w"> </span><span class="c1">-- will return True</span><span class="w"></span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nf">hasn&#39;t</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return False</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>lengthOf :: Fold s a -&gt; s -&gt; Int</code>
+  Returns how many elements there are</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nf">lengthOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return 4</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>sumOf :: Num n =&gt; Fold s n -&gt; s -&gt; n</code> / <code>productOf :: Num n =&gt; Fold s n -&gt; s -&gt; n</code>
+  Calculates the sum/product of all elements</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nf">sumfOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return 10</span><span class="w"></span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nf">productOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return 24</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>firstOf :: Fold s a -&gt; s -&gt; Maybe a</code> / <code>preview :: Fold s a -&gt; s -&gt; Maybe a</code> / <code>( ^?) :: s -&gt; Fold s a -&gt; Maybe a</code> / <code>lastOf :: Fold s a -&gt; s -&gt; Maybe a</code> 
+  <code>firstOf</code>, <code>preview</code> and <code>(^?)</code> return the first element; <code>lastOf</code> returns the last element</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nf">firstOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="kt">[]</span><span class="w"> </span><span class="c1">-- will return Nothing</span><span class="w"></span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nf">firstOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return Just 1</span><span class="w"></span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nf">preview</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return Just 1</span><span class="w"></span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">^?</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="c1">-- will return Just 1</span><span class="w"></span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nf">lastOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return Just 4</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>minimumOf :: Ord a =&gt; Fold s a -&gt; s -&gt; Maybe a</code> / <code>maximumOf :: Ord a =&gt; Fold s a -&gt; s -&gt; Maybe a</code>
+  Returns the minimum or maximum of the elements</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nf">minimumOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return Just 1</span><span class="w"></span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nf">maximumOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return Just 4</span><span class="w"></span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nf">minimumOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="kt">[]</span><span class="w"> </span><span class="c1">-- will return Nothing</span><span class="w"></span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nf">maximumOf</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="kt">[]</span><span class="w"> </span><span class="c1">-- will return Nothing</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>maximumByOf :: Fold s a -&gt; (a -&gt; a -&gt; Ordering) -&gt; s -&gt; Maybe a</code> / <code>minimumOf :: Fold s a -&gt; (a -&gt; a -&gt; Ordering) -&gt; s -&gt; Maybe a</code>
+  These function return the "largest" or "smallest" element determinted by the function <code>(a -&gt; a -&gt; Ordering)</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">data</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">_name</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">_age</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Int</span><span class="p">}</span><span class="w"> </span><span class="kr">deriving</span><span class="w"> </span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nf">maximumByOf</span><span class="w"> </span><span class="p">(</span><span class="n">folded</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">comparing</span><span class="w"> </span><span class="n">_age</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="kt">Person</span><span class="w"> </span><span class="s">&quot;Seb&quot;</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="s">&quot;Marie&quot;</span><span class="w"> </span><span class="mi">33</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return Person &quot;Marie&quot; 33</span><span class="w"></span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nf">minimumByOf</span><span class="w"> </span><span class="p">(</span><span class="n">folded</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">comparing</span><span class="w"> </span><span class="n">_age</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="kt">Person</span><span class="w"> </span><span class="s">&quot;Seb&quot;</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="s">&quot;Marie&quot;</span><span class="w"> </span><span class="mi">33</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return Person &quot;Seb&quot; 22</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>traverseOf_ :: Functor f =&gt; Fold s a -&gt; (a -&gt; f r) -&gt; s -&gt; f ()</code> / <code>forOf_ :: Functor f =&gt; Fold s a -&gt; s -&gt; (a -&gt; f r) -&gt; f ()</code>
+  <code>traverseOf_</code> and <code>forOf_</code> are used to execute side effects with elements and are the optic equivalents of <code>traverse_</code> and <code>for_</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">data</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="p">{</span><span class="n">_name</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">_age</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Int</span><span class="p">}</span><span class="w"> </span><span class="kr">deriving</span><span class="w"> </span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nf">persons</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">[</span><span class="kt">Person</span><span class="w"> </span><span class="s">&quot;Seb&quot;</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="s">&quot;Ann&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="nf">showPerson</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">String</span><span class="w"></span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="nf">showPerson</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">_name</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">show</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="nf">traverseOf_</span><span class="w"> </span><span class="p">(</span><span class="n">folded</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">showPerson</span><span class="p">)</span><span class="w"> </span><span class="n">putStrLn</span><span class="w"> </span><span class="n">persons</span><span class="w"> </span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="c1">-- will return:</span><span class="w"></span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="c1">-- Seb: 22</span><span class="w"></span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="c1">-- Ann: 34</span><span class="w"></span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="c1">-- example from Optics By Example / page </span><span class="w"></span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="kr">import</span><span class="w"> </span><span class="nn">Control.Monad.State</span><span class="w"></span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">execState</span><span class="w"> </span><span class="p">(</span><span class="n">traverseOf_</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="p">(</span><span class="n">modify</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">const</span><span class="w"> </span><span class="p">(</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="n">tvShows</span><span class="p">)</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="mi">2</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>
+<p><code>foldOf :: Monoid a =&gt; Fold s a -&gt; s -&gt; a</code> / <code>foldMapOf :: Monoid r =&gt; Fold s a -&gt; (a -&gt; r) -&gt; s -&gt; r</code>
+  <code>foldOf</code> and <code>foldMapOf</code> are function which allows the use of Monoids with folds.</p>
+</li>
+<li>
+<p><code>foldByOf :: Fold s a -&gt; (a -&gt; a -&gt; a) -&gt; a -&gt; s -&gt; a</code> / <code>foldMapByOf :: Fold s a -&gt; (r -&gt; r -&gt; r) -&gt; r -&gt; (a -&gt; r) -&gt; s -&gt; r</code>
+  <code>foldByOf</code> and <code>foldMapByOf</code> are similar to <code>foldOf</code> and <code>foldMapOf</code>, but allow the callee to specifiy the append function and identity value.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nf">tvShows</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="p">[(</span><span class="s">&quot;How I Met Your Mother&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Josh Radnor&quot;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;How I Met Your Mother&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Alyson Hannigan&quot;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Buffy the Vampire Slayer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Alyson Hannigan&quot;</span><span class="p">)]</span><span class="w"></span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nf">foldMapByOf</span><span class="w"> </span><span class="p">(</span><span class="n">folded</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">_2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">M</span><span class="o">.</span><span class="n">unionWith</span><span class="w"> </span><span class="p">(</span><span class="o">+</span><span class="p">))</span><span class="w"> </span><span class="n">mempty</span><span class="w"> </span><span class="p">(</span><span class="nf">\</span><span class="n">n</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">M</span><span class="o">.</span><span class="n">singleton</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">tvShows</span><span class="w"></span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="c1">-- will return [(&quot;Alyson Hannigan&quot;,2),(&quot;Josh Radnor&quot;,1)]</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>foldrOf :: Fold s a -&gt; (a -&gt; r -&gt; r) -&gt; r -&gt; s -&gt; r</code> / <code>foldlOf :: Fold s a -&gt; (r -&gt; a -&gt; r) -&gt; r -&gt; s -&gt; r</code>
+  <code>foldrOf</code> and <code>foldlOf</code> are functions which are like <code>foldOf</code> and <code>foldMapOf</code>, but the identity value and append function can be set by parameters. They are the equivalence of <code>foldr</code> and <code>foldl</code>.</li>
+</ul>
+<h3 id="concat-existing-folds">Concat existing <code>Fold</code>s</h3>
+<p>Already existing folds (and lenses) can be combined to one big <code>Fold</code> if the types match. </p>
+<p>Here's an alternative implementation of <code>crewMembers</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nf">crewMembers</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Fold</span><span class="w"> </span><span class="kt">ShipCrew</span><span class="w"> </span><span class="kt">String</span><span class="w"></span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nf">crewMembers</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">folding</span><span class="w"> </span><span class="p">(</span><span class="nf">\</span><span class="n">s</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">captain</span><span class="w"></span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">                          </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">conscripts</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">folded</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<h2 id="traversal">Traversal</h2>
+<p>A traversal can, like a fold, get zero or more elements but also set zero or more elements. Because of this, lenses and folds are valid traversal but not all traversals are lenses and folds.</p>
+<p>The type <code>Traversal s t a b</code> has the following generics:</p>
+<ul>
+<li><code>s</code> - the structure before the action</li>
+<li><code>t</code> - the structure after the action</li>
+<li><code>a</code> - the focus before the action</li>
+<li><code>b</code> - the focus after the action</li>
+</ul>
+<p>Wenn the type of the focus is changed by a setting operation the operation has to convert all elements. An operation which only focuses on part of the traversal can't change the type of the focus.</p>
+<p>Like with lenses, there is also a simple traversal: <code>Traversal' s a</code>, where the generic mean:</p>
+<ul>
+<li><code>s</code> - the structure before and after the action</li>
+<li><code>a</code> - the focus before and after the action</li>
+</ul>
+<h3 id="actions_1">Actions</h3>
+<p>When actions are used as a setter, then all values are changed, which would be returned with a getter. With these kind of action only part of the traversal can be updated. This also means that the focused type can't c</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">taking</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">traversed</span><span class="w"> </span><span class="o">*~</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="c1">-- will return [10, 20, 30, 4, 5]</span><span class="w"></span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">dropping</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">traversed</span><span class="w"> </span><span class="o">*~</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="c1">-- will return [1, 2, 3, 40, 50]</span><span class="w"></span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">traversed</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">filtered</span><span class="w"> </span><span class="n">even</span><span class="w"> </span><span class="o">*~</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="c1">-- will return [1, 20, 3, 40, 5]</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>
+<p><code>traversed :: Traversable f =&gt; IndexedTraversal Int (f a) (f b) a b</code>
+  Creates a <code>Traversal</code> which will focus on every element in the data structure. It is more powerfull than <code>folded</code>, but can be used with less types. </p>
+</li>
+<li>
+<p><code>both: Bitraversable r =&gt; Traversal (r a a) (r b b) a b</code>
+  <code>both</code> can be simplified to <code>both: Bitraversable r =&gt; Fold (r a a) a</code> and creates a <code>Fold</code> for a tuple with the same types (<code>(String, Int)</code>  wouldn't be valid). But only the last two item of a tuple are actually traversed. </p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wolrd&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="c1">-- will return  [&quot;hello&quot;, &quot;world&quot;]</span><span class="w"></span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="c1">-- will return [&quot;hi&quot;]</span><span class="w"></span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="c1">-- will return [&quot;hello&quot;, &quot;world&quot;]</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>each :: Each s t a b =&gt; Traversal s t a b</code>
+  <code>each</code> can be simplified to <code>each :: Each s s a a =&gt; Fold s a</code>. It does almost the same thing as <code>both</code>, but over an arbitrary sized tuple. </li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="c1">-- will return [&quot;hi&quot;, &quot;hello&quot;, &quot;world&quot;]</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>filtered :: (Choice p, Applicative f) =&gt; (a -&gt; Bool) -&gt; Optic' p f a a</code>
+  Filters a fold (or other optics) and can simplify to <code>filtered :: (s -&gt; Bool) -&gt; Fold s s</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">filtered</span><span class="w"> </span><span class="n">even</span><span class="w"> </span><span class="c1">-- will return [2,4,6,8,10]</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>
+<p><code>filteredBy :: Fold s a -&gt; IndexedTraversal' a s s</code>
+  An alternative to <code>filtered</code> which uses a fold as the predicate. The type signature above is simplified.on</p>
+</li>
+<li>
+<p><code>taking :: (Conjoined p, Applicative f) =&gt; Int -&gt; Traversing p f s t a a -&gt; Over p f s t a a</code> 
+  This method is the equivalent to <code>take</code> with traversals and folds. 
+  <img alt="image-20220529211806042" src="res/image-20220529211806042.png" /></p>
+</li>
+<li>
+<p><code>dropping :: (Conjoined p, Applicative f) =&gt; Int -&gt; Over p (Control.Lens.Internal.Indexed.Indexing f) s t a a  -&gt;  ver p f s t a a</code>
+  This method is the fold / traversal equivalent to <code>drop</code></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">]</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">taking</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="c1">-- will return [1, 2, 3, 4, 5]</span><span class="w"></span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">]]</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="n">taking</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="c1">-- will return [1, 2, 10, 20, 100, 200]</span><span class="w"></span>
+</code></pre></div>
+<p>High-Order actions apply, like other actions, two an element of a fold, not to the fold itself. The following graphic shows the code <code>("Albus", "Dumbledore") ^.. both . taking 3 folded</code></p>
+<p><img alt="image-20220529213316390" src="res/image-20220529213316390.png" /></p>
+<ul>
+<li>
+<p><code>takingWhile :: (a -&gt; Bool) -&gt; Fold s a -&gt; Fold s a</code>
+  The traversal/folding equivalent to <code>takeWhile</code>. It accepts a predicate and will return element as long as the predicate returns true</p>
+</li>
+<li>
+<p><code>droppingWhile :: (a -&gt; Bool) -&gt; Fold s a -&gt; Fold s a</code>
+  The traversal/folding equivalent to <code>dropWhile</code>. It will "drop" elements from fold elements until predicate returns false</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">]</span><span class="w">  </span><span class="o">^..</span><span class="w"> </span><span class="n">takingWhile</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="c1">-- will return [1, 2, 3, 4]</span><span class="w"></span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">droppingWhile</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="n">folded</span><span class="w"> </span><span class="c1">-- will return [5, 6, 7, 8, 9, 10]</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>
+<p><code>worded :: Applicative f =&gt; IndexedLensLike' Int f String String</code>
+  Simplifies to <code>worded :: Traversal' String String</code> and will focus on each word in the string</p>
+</li>
+<li>
+<p><code>lined :: Applicative f =&gt; IndexedLensLike' Int f String String</code>
+  Simplifies to <code>lined :: Traversal' String String</code> and will focus on each line in the string</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="s">&quot;Hello world&quot;</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">worded</span><span class="w"> </span><span class="c1">-- will return [&quot;Hello&quot;, &quot;world&quot;]</span><span class="w"></span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="s">&quot;Hello</span><span class="se">\n</span><span class="s"> How are you?&quot;</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">lined</span><span class="w"> </span><span class="c1">-- will return [&quot;Hello&quot;,&quot; How are you?&quot;]</span><span class="w"></span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="s">&quot;Hello world&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">worded</span><span class="w"> </span><span class="o">%~</span><span class="w"> </span><span class="nf">\</span><span class="n">s</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="w"> </span><span class="c1">-- will return &quot;*Hello* *world*&quot;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>beside :: Traversal s t a b -&gt; Traversal s' t' a b -&gt; Traversal (s,s') (t,t') a b</code></li>
+</ul>
+<p><code>beside</code> applies a the first traversal to the first element of the tuple and the second traversal to the second tuple element. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;moin&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">beside</span><span class="w"> </span><span class="p">(</span><span class="n">to</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">to</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">const</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span><span class="w"> </span><span class="c1">-- will return (2, 200)</span><span class="w"></span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;moin&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">^..</span><span class="w"> </span><span class="n">beside</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="n">_2</span><span class="w"> </span><span class="c1">-- will return (&quot;hello&quot;, &quot;moin&quot;)</span><span class="w"></span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w"> </span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;moin&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">beside</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="n">_2</span><span class="w"> </span><span class="o">%~</span><span class="w"> </span><span class="p">(</span><span class="o">++</span><span class="w"> </span><span class="s">&quot;!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- will return (&quot;hello!&quot;, (2, &quot;moin!&quot;))</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li><code>element :: Traversable f =&gt; Int -&gt; Traversal' (f a) a</code>
+  Focuses on the element with the given index</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">^?</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="c1">-- will return Just 2</span><span class="w"></span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">^?</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="c1">-- will return Nothing</span><span class="w"></span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*~</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="c1">-- will return [0, 1, 20, 3, 4]</span><span class="w"></span>
+</code></pre></div>
+<h3 id="operators_2">Operators</h3>
+<p>The operator <code>over</code> (aka. <code>%~</code>) and <code>set</code> (aka.<code>.~</code>), which are known from lenses, can also be used with traversals.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;moin&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="o">%~</span><span class="w"> </span><span class="p">(</span><span class="o">++</span><span class="w"> </span><span class="s">&quot;!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- will return (&quot;hello!&quot;, &quot;moin!&quot;)</span><span class="w"></span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nf">over</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="p">(</span><span class="o">++</span><span class="w"> </span><span class="s">&quot;!&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;moin&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">-- will return (&quot;hello!&quot;, &quot;moin!&quot;)</span><span class="w"></span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;moin&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="o">%~</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="c1">-- will return (5, 4)</span><span class="w"></span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;moin&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="o">.~</span><span class="w"> </span><span class="s">&quot;good morning&quot;</span><span class="w"> </span><span class="c1">-- will return (&quot;good morning&quot;, &quot;good morning&quot;)</span><span class="w"></span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="nf">set</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="s">&quot;good morning&quot;</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;moin&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- will return (&quot;good morning&quot;, &quot;good morning&quot;)</span><span class="w"></span>
+</code></pre></div>
+<p>Effects can be run on <code>Traversals</code>  with the method <code>traverseOf :: LensLike f s t a b -&gt; (a -&gt; f b) -&gt; s -&gt; f t</code> which can be spezialized to <code>traverseOf :: Traversal s t a b -&gt; (a -&gt; f b) -&gt; s -&gt; f</code>. <code>traverseOf</code> works like <code>traverse</code> but with <code>Traversable</code>s</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nf">traverseOf</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="n">readMaybe</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">)</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Maybe</span><span class="w"> </span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="c1">-- will return (1, 2)</span><span class="w"></span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="nf">traverseOf</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="n">readMaybe</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">)</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Maybe</span><span class="w"> </span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="c1">-- will return Nothing</span><span class="w"></span>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="nf">traverseOf</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">readMaybe</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">]</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Maybe</span><span class="w"> </span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return Just [1, 2]</span><span class="w"></span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="nf">traverse</span><span class="w"> </span><span class="n">readMaybe</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">]</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Maybe</span><span class="w"> </span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="w"> </span><span class="c1">-- will return Just []</span><span class="w"></span>
+</code></pre></div>
+<h2 id="each">Each</h2>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2022-06-27
+    
+  </small>
+</div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="Data%20Classes.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data Classes" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Data Classes
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../IP/IP.html" class="md-footer__link md-footer__link--next" aria-label="Next: IP" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              IP
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

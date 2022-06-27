@@ -1,0 +1,3281 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Sebastian Zumbrunn">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+    
+    
+      
+        <title>Testing - Seppli's Summaries</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#testing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Seppli&#39;s Summaries" class="md-header__button md-logo" aria-label="Seppli's Summaries" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Seppli's Summaries
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Testing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Seppli&#39;s Summaries" class="md-nav__button md-logo" aria-label="Seppli's Summaries" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Seppli's Summaries
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          21HS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="21HS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          21HS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          AN1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/01_funktionen.html" class="md-nav__link">
+        Summenzeichen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/02_polynome.html" class="md-nav__link">
+        Polynome Division
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/03_Ableiten.html" class="md-nav__link">
+        Ableiten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4" type="checkbox" id="__nav_2_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_4">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/summaries/summary_2022_01_26.html" class="md-nav__link">
+        AN Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          COM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="COM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          COM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/01_Kernthemen-Austausch.html" class="md-nav__link">
+        01 Kernthemen Austausch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/02_Suchstrategien.html" class="md-nav__link">
+        Suchbegriffe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/03_Publikationstypen.html" class="md-nav__link">
+        Monografie (eigenständiges Buch)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/04_Wissenschaftilichen%20Text.html" class="md-nav__link">
+        04 Wissenschaftilichen Text
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/05_pitch.html" class="md-nav__link">
+        CCC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/06_handout.html" class="md-nav__link">
+        Kriterien
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_7" type="checkbox" id="__nav_2_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7">
+          Presentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Presentation" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Presentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/Presentation/Pitch%20v2.html" class="md-nav__link">
+        Pitch v2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/Presentation/Pitch.html" class="md-nav__link">
+        Pitch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          DB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DB" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          DB
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/00_Pr%C3%BCfung.html" class="md-nav__link">
+        00 Prüfung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/01_Begriffe.html" class="md-nav__link">
+        Begriffe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/02_Grundoperation.html" class="md-nav__link">
+        02 Grundoperation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/03_Entity%20Relationship%20Diagram.html" class="md-nav__link">
+        ER-Diagram
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/04_SQL.html" class="md-nav__link">
+        SQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/05_Integrit%C3%A4tsregeln.html" class="md-nav__link">
+        Integritätsregeln
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_7" type="checkbox" id="__nav_2_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_7">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/summaries/summary-2022-01-25.html" class="md-nav__link">
+        DB Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          DM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          DM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/01_Aussaglogik.html" class="md-nav__link">
+        01 Aussaglogik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/02_Semantik.html" class="md-nav__link">
+        02 Semantik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/03_Mengen.html" class="md-nav__link">
+        Mengen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/04_Nat%C3%BCrliche%20Zahlen.html" class="md-nav__link">
+        Natürliche Zahlen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/05_Ganz%20Zahlen.html" class="md-nav__link">
+        Ganz Zahlen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_6" type="checkbox" id="__nav_2_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4_6">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/Summaries/01_summary_2021-11-23.html" class="md-nav__link">
+        Summary - 2021-11-23
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/Summaries/01_summary_2022_01_17.html" class="md-nav__link">
+        01 summary 2022 01 17
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          GED
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GED" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          GED
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1" type="checkbox" id="__nav_2_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_1">
+          Elektronik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Elektronik" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Elektronik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Elektronik/Maschen%20und%20Knotensatz.html" class="md-nav__link">
+        Knotenregel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" type="checkbox" id="__nav_2_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_2">
+          Physik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Physik" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Physik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/00_Formeln.html" class="md-nav__link">
+        Formeln
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/01_ch%C3%BCgelif%C3%BCsik.html" class="md-nav__link">
+        Chügeli Füsik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/02_Elektrotechnik.html" class="md-nav__link">
+        Elektrotechnik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/03_Elektromagnetismus.html" class="md-nav__link">
+        Elektromagnetismus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/04_Thermische_Strahlung.html" class="md-nav__link">
+        Termische Strahlung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/05_Signale.html" class="md-nav__link">
+        Signale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/all-ged-summaries.html" class="md-nav__link">
+        All ged summaries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/include.html" class="md-nav__link">
+        Include
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          INCO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="INCO" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          INCO
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/00_Infos.html" class="md-nav__link">
+        Infos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/2_Sequenzelle%20Bauteile.html" class="md-nav__link">
+        2 Sequenzelle Bauteile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/3_Zahlensysteme.html" class="md-nav__link">
+        Zahlensysteme
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/4_Informationstheorie.html" class="md-nav__link">
+        Was ist Information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/5_JEPG.html" class="md-nav__link">
+        5 JEPG
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/6_Audio.html" class="md-nav__link">
+        Audio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/7_Kanalkodierung.html" class="md-nav__link">
+        Kanalkodierung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/8_Matrix.html" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/9_Faltungscode.html" class="md-nav__link">
+        9 Faltungscode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_10" type="checkbox" id="__nav_2_6_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6_10">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_6_10">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/summaries/summary_2022-01-20.html" class="md-nav__link">
+        INCO Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          PM1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PM1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          PM1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Beschlussprotokoll.html" class="md-nav__link">
+        Beschlussprotokoll
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Feedback.html" class="md-nav__link">
+        Feedback
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Projekt%203%20-%20Siedler%20von%20Catan.html" class="md-nav__link">
+        Projekt 3 - Siedler von Catan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Retrospektive.html" class="md-nav__link">
+        Retrospektive
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          22FS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="22FS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          22FS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          AN2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/AN2/summary_2022_06_20.html" class="md-nav__link">
+        AN2 Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Communication2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Communication2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Communication2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/Communication2/01_Presentation.html" class="md-nav__link">
+        Presentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/Communication2/Presentation_Script.html" class="md-nav__link">
+        Presentation Script
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          KT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="KT" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          KT
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/00_Glossar.html" class="md-nav__link">
+        Glossar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/01_OSI-Modell.html" class="md-nav__link">
+        OSI-Modell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/02_Serielle-%C3%9Cbertragung.html" class="md-nav__link">
+        02 Serielle Übertragung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/03_%C3%9Cbertragunsmedien.html" class="md-nav__link">
+        Übertragungsmedien (Layer 1)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/04_Data%20Link.html" class="md-nav__link">
+        Data Link Layer (Layer 2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/05_LAN.html" class="md-nav__link">
+        LAN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/06_Network%20Layer.html" class="md-nav__link">
+        Network Layer (Layer 3)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/07_Transport%20Layer.html" class="md-nav__link">
+        Transport Layer (Layer 4)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/08_Application_Layer.html" class="md-nav__link">
+        Application Layer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/summary.html" class="md-nav__link">
+        KT Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          LA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="LA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          LA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/01_Lineare%20Gleichungssysteme.html" class="md-nav__link">
+        Lineare Gleichungssystem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/02_Vektoren.html" class="md-nav__link">
+        Vektoren
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/03_Matrix.html" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/05_Vektorr%C3%A4ume.html" class="md-nav__link">
+        Vektorräume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/06_Lineare%20Abbildung.html" class="md-nav__link">
+        Lineare Abbildung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/summary.html" class="md-nav__link">
+        LA Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          PM2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PM2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          PM2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PM2/Massnahmen.html" class="md-nav__link">
+        Massnahmen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PM2/Pitch.html" class="md-nav__link">
+        Pitch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PM2/Projektskizze.html" class="md-nav__link">
+        Projektskizze
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          PROG2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PROG2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          PROG2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/-1_Stuff.html" class="md-nav__link">
+        Stuff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/00_Gradle.html" class="md-nav__link">
+        Gradle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/01_Concurrency.html" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/summary.html" class="md-nav__link">
+        PROG2 Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          SNP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SNP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          SNP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/01_C.html" class="md-nav__link">
+        C-Sprache
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/02_Preprocessor%20und%20Compiler.html" class="md-nav__link">
+        Preprocessor und Compiler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/03_Make.html" class="md-nav__link">
+        Make
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/04_Unit%20Tests.html" class="md-nav__link">
+        Unit Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/05_OS.html" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/06_Standard%20Library.html" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/summary_jonas.html" class="md-nav__link">
+        SNP Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          THIN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="THIN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          THIN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/00_Fragen.html" class="md-nav__link">
+        Fragen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/01_Definitionen.html" class="md-nav__link">
+        Definitionen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/02_RegEx.html" class="md-nav__link">
+        RegEx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/03_Endliche%20%20Automaten.html" class="md-nav__link">
+        Endliche Automaten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/04_Kontextfreie%20Gramatik.html" class="md-nav__link">
+        Kontextfreie Grammatik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/05_Keller%20Automaten.html" class="md-nav__link">
+        Keller Automaten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/06_Turing%20Machine.html" class="md-nav__link">
+        Turing Maschine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/07_Berechnungsmodelle.html" class="md-nav__link">
+        Berechnungsmodelle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/08_Entscheidbarkeit.html" class="md-nav__link">
+        Entschheidbarkeit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/09_Komplexit%C3%A4tstheorie.html" class="md-nav__link">
+        Komplexitätstheorie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/summary%20%28copy%29.html" class="md-nav__link">
+        THIN Summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/summary.html" class="md-nav__link">
+        THIN Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Allgemein
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Allgemein" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Allgemein
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          AN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AN/Itegrie-Ableiten-Tabelle.html" class="md-nav__link">
+        Itegrie Ableiten Tabelle
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Haskell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Haskell" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Haskell
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Haskell/Data%20Classes.html" class="md-nav__link">
+        Data Classes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Haskell/Optics.html" class="md-nav__link">
+        Optics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="IP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IP/IP.html" class="md-nav__link">
+        IP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Musik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Musik" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Musik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Musik/Tonleitern.html" class="md-nav__link">
+        Tonleitern
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          PROG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PROG" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          PROG
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2_OOP_Takeaways.html" class="md-nav__link">
+        OOP Takeaways
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3_Patterns.html" class="md-nav__link">
+        Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Testing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="4_Testing.html" class="md-nav__link md-nav__link--active">
+        Testing
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aquivalenzklassen" class="md-nav__link">
+    Äquivalenzklassen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-regeln" class="md-nav__link">
+    FIRST-Regeln
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition-of-testing" class="md-nav__link">
+    Definition of Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principles-of-testing" class="md-nav__link">
+    Principles of Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mock-testing" class="md-nav__link">
+    Mock Testing
+  </a>
+  
+    <nav class="md-nav" aria-label="Mock Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#different-mocking-types" class="md-nav__link">
+    Different Mocking Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Different Mocking Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dummy" class="md-nav__link">
+    Dummy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stubs" class="md-nav__link">
+    Stubs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spies" class="md-nav__link">
+    Spies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakes" class="md-nav__link">
+    Fakes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mock" class="md-nav__link">
+    Mock
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blacking-box-vs-white-box-testing" class="md-nav__link">
+    Blacking-Box vs White-Box Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mockito" class="md-nav__link">
+    Mockito
+  </a>
+  
+    <nav class="md-nav" aria-label="Mockito">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-mock" class="md-nav__link">
+    Create a Mock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mock-behaviour" class="md-nav__link">
+    Mock Behaviour
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-behaviour" class="md-nav__link">
+    Verify Behaviour
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spies_1" class="md-nav__link">
+    Spies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5_Threads.html" class="md-nav__link">
+        Threads
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6_IO.html" class="md-nav__link">
+        IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7_Streams.html" class="md-nav__link">
+        Streams
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aquivalenzklassen" class="md-nav__link">
+    Äquivalenzklassen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-regeln" class="md-nav__link">
+    FIRST-Regeln
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition-of-testing" class="md-nav__link">
+    Definition of Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principles-of-testing" class="md-nav__link">
+    Principles of Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mock-testing" class="md-nav__link">
+    Mock Testing
+  </a>
+  
+    <nav class="md-nav" aria-label="Mock Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#different-mocking-types" class="md-nav__link">
+    Different Mocking Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Different Mocking Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dummy" class="md-nav__link">
+    Dummy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stubs" class="md-nav__link">
+    Stubs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spies" class="md-nav__link">
+    Spies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakes" class="md-nav__link">
+    Fakes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mock" class="md-nav__link">
+    Mock
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blacking-box-vs-white-box-testing" class="md-nav__link">
+    Blacking-Box vs White-Box Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mockito" class="md-nav__link">
+    Mockito
+  </a>
+  
+    <nav class="md-nav" aria-label="Mockito">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-mock" class="md-nav__link">
+    Create a Mock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mock-behaviour" class="md-nav__link">
+    Mock Behaviour
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-behaviour" class="md-nav__link">
+    Verify Behaviour
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spies_1" class="md-nav__link">
+    Spies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="testing">Testing</h1>
+<h2 id="aquivalenzklassen">Äquivalenzklassen</h2>
+<p>In einer Äquivalenzklassen sind alle möglichen Eingabewerte, welche vom Programm gleich verarbeitet werden.</p>
+<p>Dabei gibt es <strong>gültige</strong> Äquivalenzklassen, welche Werte beinhalten, welche vom Programm verarbeitet werden sollen und es gibt <strong>Ungültige</strong> Äquivalenzklassen, welche vom Programm erkannt und korrekt behandelt werden sollen (Exception, Return-Value, ...)</p>
+<p>Regeln, wenn Äquivalenzklassen gebildet werden:</p>
+<ul>
+<li>Wenn gültige Eingabewerte ein zusammenhängender Wertebereich bilden, so muss eine gültige Äquivalenzklasse und zwei ungültige Äquivalenzklassen gebildet werden</li>
+<li>Wenn Eingabewerte eine Bedinung erfüllen müssen (mit dem Buchstaben ' A' starten), dann muss eine gültige und eine ungültige Äquivalenzklasse gebildet werden.</li>
+</ul>
+<p>Aus diesen Äquivalenzklassen können nun Testfälle abgeileit werden. Dabei kann folgendes beachtet werden:</p>
+<ul>
+<li>Ein Testfall darf mehrere gültige Äquivalenzklassen abdecken</li>
+<li>Ein Testfall für ungültige Äquivalenzklassen sollte nur einen ungültigen Wert enhalten</li>
+<li><strong>Grenzwerte</strong> sollten berücksichtigt werden</li>
+</ul>
+<h2 id="first-regeln">FIRST-Regeln</h2>
+<p><img alt="image-20220120170501495" src="res/image-20220120170501495.png" /></p>
+<h2 id="definition-of-testing">Definition of Testing</h2>
+<blockquote>
+<p>Testing is the process of executing a programm with the intent of finding errors.</p>
+</blockquote>
+<h2 id="principles-of-testing">Principles of Testing</h2>
+<ol>
+<li>Specification of Input and Output
+   For each test case the input and the expected output should be specified.</li>
+<li>Separation of Creation and Testing
+   The developer of the code shouldn't write the test for their code.</li>
+<li>Completeness of Tests
+   Code should always be tested for valid inputs and <strong>invalid</strong> tests. The natural tendency is to test only the valid inputs.</li>
+<li>Testing is an investement
+   Test cases are reused</li>
+<li>Error Cluster
+   If an error is found in a section of code,  the probability of more errors increases. Error-prone Sections should be well tested.</li>
+</ol>
+<h2 id="mock-testing">Mock Testing</h2>
+<p>Mock testing is used when a class with dependencies should be tested. The dependencies can be mocked that it implements the minimal of behaviour to function. This allows to only test the class under testing and not its dependencies.</p>
+<h3 id="different-mocking-types">Different Mocking Types</h3>
+<p>There are different type of mock classes.</p>
+<p><img alt="image-20220407104550751" src="res/image-20220407104550751.png" /></p>
+<h4 id="dummy">Dummy</h4>
+<p>Dummies are objects which are never used. They fill parameter lists of methods, if those methods would throw NullPointerExceptions otherwise.</p>
+<h4 id="stubs">Stubs</h4>
+<p>A stub is the minimal implementation of an interface. Void method usually don't do anything and methods with a return value will usually return a hard coded value.</p>
+<p>Here is an example.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EmailStub</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">EmailServer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendMail</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mailTextt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="c1">// do nothing</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">receiveMail</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Mail received&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// a hard coded value</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>An <code>EmailDummy</code> would return <code>null</code> in <code>receiveMail()</code> because it is just a dummy.</p>
+<h4 id="spies">Spies</h4>
+<p>Spies are similar to stubs, but record which members were invoked. This information can be checked in unit tests.</p>
+<h4 id="fakes">Fakes</h4>
+<p>A fake will implement a class similar to the production class but with shortcuts (e.g. an in-memory database)</p>
+<h4 id="mock">Mock</h4>
+<p>A test double which implements the functions in away which we expect for the test. Depending on how they are implemented, they can function as a dummy, stub, spy or a fake.</p>
+<p>Mock testing is usually split in multiple phases: </p>
+<ol>
+<li>Create: The mock object is created</li>
+<li>Specify: The expected behaviour is specified</li>
+<li>Use: The mock object is used in a normal unit test</li>
+<li>Verify behaviour: The mock object is verified</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OrderInteractionTester</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">MockObjectTestCase</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">TALISKER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Talisker&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testFillingRemovesInventoryIfInStock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="c1">// configuration</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="n">Order</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Order</span><span class="p">(</span><span class="n">TALISKER</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="n">Mock</span><span class="w"> </span><span class="n">warehouseMock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Mock</span><span class="p">(</span><span class="n">Warehouse</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="c1">// expectations</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="n">warehouseMock</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="p">.</span><span class="na">expects</span><span class="p">(</span><span class="n">once</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">            </span><span class="p">.</span><span class="na">method</span><span class="p">(</span><span class="s">&quot;hasInventory&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="p">.</span><span class="na">with</span><span class="p">(</span><span class="n">eq</span><span class="p">(</span><span class="n">TALISKER</span><span class="p">),</span><span class="n">eq</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span><span class="w"></span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="p">.</span><span class="na">will</span><span class="p">(</span><span class="n">returnValue</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="n">warehouseMock</span><span class="w"></span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="p">.</span><span class="na">expects</span><span class="p">(</span><span class="n">once</span><span class="p">())</span><span class="w"></span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">            </span><span class="p">.</span><span class="na">method</span><span class="p">(</span><span class="s">&quot;remove&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">            </span><span class="p">.</span><span class="na">with</span><span class="p">(</span><span class="n">eq</span><span class="p">(</span><span class="n">TALISKER</span><span class="p">),</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span><span class="w"></span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="p">.</span><span class="na">after</span><span class="p">(</span><span class="s">&quot;hasInventory&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="c1">//exercise</span><span class="w"></span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="n">order</span><span class="p">.</span><span class="na">fill</span><span class="p">((</span><span class="n">Warehouse</span><span class="p">)</span><span class="n">warehouseMock</span><span class="p">.</span><span class="na">proxy</span><span class="p">());</span><span class="w"></span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="c1">//verify</span><span class="w"></span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">        </span><span class="n">warehouseMock</span><span class="p">.</span><span class="na">verify</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">        </span><span class="c1">//verify expected behavior</span><span class="w"></span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span><span class="n">assertTrue</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="na">isFilled</span><span class="p">());</span><span class="w"> </span><span class="c1">//verify state</span><span class="w"></span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="blacking-box-vs-white-box-testing">Blacking-Box vs White-Box Testing</h2>
+<p><img alt="image-20220407105410138" src="res/image-20220407105410138.png" /></p>
+<p>In black-box testing (or state testing), only the public interface is known. No assumptions is done about the internal implementaiton. Usually stubbing can be used.</p>
+<p>In white-box testing (or behaviour testing) the inner working of the class is known and tested. Here, usually mocking can be used.</p>
+<h2 id="mockito">Mockito</h2>
+<h3 id="create-a-mock">Create a Mock</h3>
+<p>Either the method <code>mock(Class&lt;?&gt; clazz)</code> is used or the annotation <code>@Mock</code> for which <code>MockitoAnnotations.openMocks()</code> needs to be called in the setu</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">testHalf</span><span class="p">(</span><span class="nd">@Mock</span><span class="w"> </span><span class="n">Half</span><span class="w"> </span><span class="n">mockedHalf2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">Half</span><span class="w"> </span><span class="n">mockedHalf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock</span><span class="p">(</span><span class="n">Half</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="mock-behaviour">Mock Behaviour</h3>
+<p>To mock the <strong>return value</strong> of methods, the <code>when(&lt;method&gt;).thenReturn(&lt;value1&gt;).thenReturn(&lt;value2&gt;)</code> pattern can be used. When the returned value should have a bit more logic than a constant value, the <code>thenAnswer(Answer&lt;T&gt;)</code> method can be used (see example below).</p>
+<p>To mock an <strong>exception throwing</strong> method, the <code>doThrow(&lt;exception&gt;).when(&lt;mockObj&gt;).&lt;method&gt;(&lt;args&gt;)</code> pattern needs to be used. The method must support throwing the exception in case of an checked-exception.</p>
+<p>There are multiple <strong>matchers</strong> available, which can match an argument of a mocked method:</p>
+<ul>
+<li><strong>Any-matchers</strong>: <code>anyInt()</code>, <code>anyString()</code>, <code>any(Class&lt;?&gt; clazz)</code>, ...</li>
+<li><strong>String-matchers</strong>: <code>startsWith(String)</code>,  <code>endsWith(String)</code>, <code>contains(String)</code>, ...</li>
+<li><strong>Object-matchers</strong>: <code>isNull()</code>, <code>isNotNull()</code>, ...</li>
+<li><strong>Compare-matchvers</strong>: <code>eq(T obj)</code>, ...</li>
+<li><strong>Custom-matchers</strong>: <code>argThat()...</code>, <code>intThat(...)</code>, ...</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Person</span><span class="w"> </span><span class="n">mock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock</span><span class="p">(</span><span class="n">Person</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// mock return values</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">when</span><span class="p">(</span><span class="n">mock</span><span class="p">.</span><span class="na">getName</span><span class="p">()).</span><span class="na">thenReturn</span><span class="p">(</span><span class="s">&quot;Hans&quot;</span><span class="p">).</span><span class="na">thenReturn</span><span class="p">(</span><span class="s">&quot;Max&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">doReturn</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="na">doReturn</span><span class="p">(</span><span class="mi">20</span><span class="p">).</span><span class="na">when</span><span class="p">(</span><span class="n">mock</span><span class="p">).</span><span class="na">getAge</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">when</span><span class="p">(</span><span class="n">mock</span><span class="p">.</span><span class="na">getMessage</span><span class="p">(</span><span class="n">anyString</span><span class="p">())).</span><span class="na">thenAnswer</span><span class="p">((</span><span class="n">InvocationOnMock</span><span class="w"> </span><span class="n">invocation</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;hello world&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1">// mock exception throwing</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">doThrow</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">()).</span><span class="na">when</span><span class="p">(</span><span class="n">mock</span><span class="p">).</span><span class="na">setAge</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>When an method isn't mocked, then a value is still returned based on the return value:</p>
+<ul>
+<li>The return value is an <strong>primitive</strong>: The "zero"-primitive is returned</li>
+<li>The return value is a <strong>primitive wrapper class</strong>: Then the "zero"-primitive of the wrapper class is returned</li>
+<li>The return value is a <strong>collection</strong>: The return value is an empty collection</li>
+<li>For the <strong>toString()</strong> method an description of the mock is returned</li>
+<li>For <code>Comparable#compareTo(T other)</code> returns zero if the references are equal, else a non-zero value</li>
+<li><strong>Else</strong>: <code>null</code> is returned.</li>
+</ul>
+<h3 id="verify-behaviour">Verify Behaviour</h3>
+<p>Mockito can verify that a method was invoked. For this, the pattern <code>verify(&lt;mock&gt;).&lt;method&gt;(&lt;args&gt;)</code> can be used. With an additional argument of verify, further conditions can be specified. With <code>verify(&lt;mock&gt;, never()).&lt;method&gt;(&lt;args&gt;)</code> can be checked that the method was never invoked. Other condition includes <code>never()</code>, <code>times(int)</code>, <code>atLeastOnce()</code>, <code>atLeast(int)</code>, <code>atMost(int)</code>, <code>timeout(int milliseconds)</code> (that the method is invoked in the given timeout). These conditions can be combined like <code>timeout(10).times(2)</code></p>
+<p>Mockito can also verify the order in which methods were called. For this a <code>InOrder</code> object can be created with <code>inOrder(&lt;mockObj&gt;)</code>. On the <code>InOrder</code> object, the <code>verify(...)</code> method can be used.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">verify</span><span class="p">(</span><span class="n">mockedHalf</span><span class="p">).</span><span class="na">contractAtrium</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">verify</span><span class="p">(</span><span class="n">mockedHalf</span><span class="p">,</span><span class="w"> </span><span class="n">times</span><span class="p">(</span><span class="mi">2</span><span class="p">)).</span><span class="na">isAtrioventricularValveOpen</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">verify</span><span class="p">(</span><span class="n">mockedList</span><span class="p">,</span><span class="w"> </span><span class="n">never</span><span class="p">()).</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;ZHAW&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">InOrder</span><span class="w"> </span><span class="n">inOrder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inOrder</span><span class="p">(</span><span class="n">singleMock</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1">// Verify the order</span><span class="w"></span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">inOrder</span><span class="p">.</span><span class="na">verify</span><span class="p">(</span><span class="n">singleMock</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;second&quot;</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">inOrder</span><span class="p">.</span><span class="na">verify</span><span class="p">(</span><span class="n">singleMock</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;first&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="spies_1">Spies</h3>
+<p>A spy object is created based on a "real" object. All methods are delegated to this object, but the behaviour of methods can be selectively changed (similar with mocks) and it can verify than methods were called. It can be created with <code>spy(Object obj)</code> and can be used like a mock. Similar to <code>@Mock</code> the <code>@Spy</code> annotation can be used instead of <code>spy(...)</code> (<code>MockitoAnnotations.openMocks()</code> needs to be called in the setup method).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">List</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">// create a spy on the real object instance</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">List</span><span class="w"> </span><span class="n">spy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spy</span><span class="p">(</span><span class="n">list</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">// stub the size() method</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">when</span><span class="p">(</span><span class="n">spy</span><span class="p">.</span><span class="na">size</span><span class="p">()).</span><span class="na">thenReturn</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1">// add() is not stubbed. So it will use the real method</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">spy</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">spy</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;two&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">assertEquals</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">spy</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">assertEquals</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">spy</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="w"></span>
+</code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2022-06-27
+    
+  </small>
+</div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="3_Patterns.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Patterns" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Patterns
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="5_Threads.html" class="md-footer__link md-footer__link--next" aria-label="Next: Threads" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Threads
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

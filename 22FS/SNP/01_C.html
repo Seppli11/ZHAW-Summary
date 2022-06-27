@@ -1,0 +1,3834 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Sebastian Zumbrunn">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+    
+    
+      
+        <title>C-Sprache - Seppli's Summaries</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c-sprache" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Seppli&#39;s Summaries" class="md-header__button md-logo" aria-label="Seppli's Summaries" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Seppli's Summaries
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C-Sprache
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Seppli&#39;s Summaries" class="md-nav__button md-logo" aria-label="Seppli's Summaries" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Seppli's Summaries
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          21HS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="21HS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          21HS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          AN1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/01_funktionen.html" class="md-nav__link">
+        Summenzeichen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/02_polynome.html" class="md-nav__link">
+        Polynome Division
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/03_Ableiten.html" class="md-nav__link">
+        Ableiten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4" type="checkbox" id="__nav_2_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_4">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/AN1/summaries/summary_2022_01_26.html" class="md-nav__link">
+        AN Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          COM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="COM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          COM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/01_Kernthemen-Austausch.html" class="md-nav__link">
+        01 Kernthemen Austausch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/02_Suchstrategien.html" class="md-nav__link">
+        Suchbegriffe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/03_Publikationstypen.html" class="md-nav__link">
+        Monografie (eigenständiges Buch)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/04_Wissenschaftilichen%20Text.html" class="md-nav__link">
+        04 Wissenschaftilichen Text
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/05_pitch.html" class="md-nav__link">
+        CCC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/06_handout.html" class="md-nav__link">
+        Kriterien
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_7" type="checkbox" id="__nav_2_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7">
+          Presentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Presentation" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Presentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/Presentation/Pitch%20v2.html" class="md-nav__link">
+        Pitch v2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/COM/Presentation/Pitch.html" class="md-nav__link">
+        Pitch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          DB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DB" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          DB
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/00_Pr%C3%BCfung.html" class="md-nav__link">
+        00 Prüfung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/01_Begriffe.html" class="md-nav__link">
+        Begriffe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/02_Grundoperation.html" class="md-nav__link">
+        02 Grundoperation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/03_Entity%20Relationship%20Diagram.html" class="md-nav__link">
+        ER-Diagram
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/04_SQL.html" class="md-nav__link">
+        SQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/05_Integrit%C3%A4tsregeln.html" class="md-nav__link">
+        Integritätsregeln
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_7" type="checkbox" id="__nav_2_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_7">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DB/summaries/summary-2022-01-25.html" class="md-nav__link">
+        DB Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          DM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          DM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/01_Aussaglogik.html" class="md-nav__link">
+        01 Aussaglogik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/02_Semantik.html" class="md-nav__link">
+        02 Semantik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/03_Mengen.html" class="md-nav__link">
+        Mengen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/04_Nat%C3%BCrliche%20Zahlen.html" class="md-nav__link">
+        Natürliche Zahlen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/05_Ganz%20Zahlen.html" class="md-nav__link">
+        Ganz Zahlen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_6" type="checkbox" id="__nav_2_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4_6">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/Summaries/01_summary_2021-11-23.html" class="md-nav__link">
+        Summary - 2021-11-23
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/DM/Summaries/01_summary_2022_01_17.html" class="md-nav__link">
+        01 summary 2022 01 17
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          GED
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GED" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          GED
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1" type="checkbox" id="__nav_2_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_1">
+          Elektronik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Elektronik" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Elektronik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Elektronik/Maschen%20und%20Knotensatz.html" class="md-nav__link">
+        Knotenregel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" type="checkbox" id="__nav_2_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_2">
+          Physik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Physik" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Physik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/00_Formeln.html" class="md-nav__link">
+        Formeln
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/01_ch%C3%BCgelif%C3%BCsik.html" class="md-nav__link">
+        Chügeli Füsik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/02_Elektrotechnik.html" class="md-nav__link">
+        Elektrotechnik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/03_Elektromagnetismus.html" class="md-nav__link">
+        Elektromagnetismus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/04_Thermische_Strahlung.html" class="md-nav__link">
+        Termische Strahlung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/05_Signale.html" class="md-nav__link">
+        Signale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/all-ged-summaries.html" class="md-nav__link">
+        All ged summaries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/GED/Physik/include.html" class="md-nav__link">
+        Include
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          INCO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="INCO" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          INCO
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/00_Infos.html" class="md-nav__link">
+        Infos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/2_Sequenzelle%20Bauteile.html" class="md-nav__link">
+        2 Sequenzelle Bauteile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/3_Zahlensysteme.html" class="md-nav__link">
+        Zahlensysteme
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/4_Informationstheorie.html" class="md-nav__link">
+        Was ist Information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/5_JEPG.html" class="md-nav__link">
+        5 JEPG
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/6_Audio.html" class="md-nav__link">
+        Audio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/7_Kanalkodierung.html" class="md-nav__link">
+        Kanalkodierung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/8_Matrix.html" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/9_Faltungscode.html" class="md-nav__link">
+        9 Faltungscode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_10" type="checkbox" id="__nav_2_6_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6_10">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_6_10">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/INCO/summaries/summary_2022-01-20.html" class="md-nav__link">
+        INCO Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          PM1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PM1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          PM1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Beschlussprotokoll.html" class="md-nav__link">
+        Beschlussprotokoll
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Feedback.html" class="md-nav__link">
+        Feedback
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Projekt%203%20-%20Siedler%20von%20Catan.html" class="md-nav__link">
+        Projekt 3 - Siedler von Catan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21HS/PM1/Retrospektive.html" class="md-nav__link">
+        Retrospektive
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          22FS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="22FS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          22FS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          AN2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AN2/summary_2022_06_20.html" class="md-nav__link">
+        AN2 Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Communication2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Communication2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Communication2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Communication2/01_Presentation.html" class="md-nav__link">
+        Presentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Communication2/Presentation_Script.html" class="md-nav__link">
+        Presentation Script
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          KT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="KT" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          KT
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/00_Glossar.html" class="md-nav__link">
+        Glossar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/01_OSI-Modell.html" class="md-nav__link">
+        OSI-Modell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/02_Serielle-%C3%9Cbertragung.html" class="md-nav__link">
+        02 Serielle Übertragung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/03_%C3%9Cbertragunsmedien.html" class="md-nav__link">
+        Übertragungsmedien (Layer 1)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/04_Data%20Link.html" class="md-nav__link">
+        Data Link Layer (Layer 2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/05_LAN.html" class="md-nav__link">
+        LAN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/06_Network%20Layer.html" class="md-nav__link">
+        Network Layer (Layer 3)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/07_Transport%20Layer.html" class="md-nav__link">
+        Transport Layer (Layer 4)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/08_Application_Layer.html" class="md-nav__link">
+        Application Layer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KT/summary.html" class="md-nav__link">
+        KT Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          LA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="LA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          LA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/01_Lineare%20Gleichungssysteme.html" class="md-nav__link">
+        Lineare Gleichungssystem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/02_Vektoren.html" class="md-nav__link">
+        Vektoren
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/03_Matrix.html" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/05_Vektorr%C3%A4ume.html" class="md-nav__link">
+        Vektorräume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/06_Lineare%20Abbildung.html" class="md-nav__link">
+        Lineare Abbildung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LA/summary.html" class="md-nav__link">
+        LA Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          PM2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PM2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          PM2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PM2/Massnahmen.html" class="md-nav__link">
+        Massnahmen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PM2/Pitch.html" class="md-nav__link">
+        Pitch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PM2/Projektskizze.html" class="md-nav__link">
+        Projektskizze
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          PROG2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PROG2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          PROG2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG2/-1_Stuff.html" class="md-nav__link">
+        Stuff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG2/00_Gradle.html" class="md-nav__link">
+        Gradle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG2/01_Concurrency.html" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PROG2/summary.html" class="md-nav__link">
+        PROG2 Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          SNP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SNP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          SNP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          C-Sprache
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="01_C.html" class="md-nav__link md-nav__link--active">
+        C-Sprache
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#typen" class="md-nav__link">
+    Typen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preprocessor" class="md-nav__link">
+    Preprocessor
+  </a>
+  
+    <nav class="md-nav" aria-label="Preprocessor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define" class="md-nav__link">
+    #define
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main" class="md-nav__link">
+    Main
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitionen" class="md-nav__link">
+    Definitionen
+  </a>
+  
+    <nav class="md-nav" aria-label="Definitionen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-variable" class="md-nav__link">
+    static-Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-variabeln" class="md-nav__link">
+    Register-Variabeln
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extern-variabeln" class="md-nav__link">
+    Extern-Variabeln
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-variabeln" class="md-nav__link">
+    Auto-Variabeln
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konstante" class="md-nav__link">
+    Konstante
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typ-alias" class="md-nav__link">
+    Typ-Alias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    Enum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funktionen-als-variable" class="md-nav__link">
+    Funktionen als Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lange-tricks-bei-arrays" class="md-nav__link">
+    Länge Tricks bei Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays-vergleichen" class="md-nav__link">
+    Arrays vergleichen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mehrdimensionale-arrays" class="md-nav__link">
+    Mehrdimensionale Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    Strings
+  </a>
+  
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gross-kleinbuchstaben" class="md-nav__link">
+    Gross-/Kleinbuchstaben
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointers" class="md-nav__link">
+    Pointers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presedenz-von" class="md-nav__link">
+    Presedenz von *
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-pointers" class="md-nav__link">
+    Void-Pointers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-pointer" class="md-nav__link">
+    NULL-Pointer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speicher-allozieren" class="md-nav__link">
+    Speicher allozieren
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methoden" class="md-nav__link">
+    Methoden
+  </a>
+  
+    <nav class="md-nav" aria-label="Methoden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funktions-parameter" class="md-nav__link">
+    Funktions-Parameter
+  </a>
+  
+    <nav class="md-nav" aria-label="Funktions-Parameter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#const-parameter" class="md-nav__link">
+    const-Parameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-parameter" class="md-nav__link">
+    Array Parameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-anzahl-parameter" class="md-nav__link">
+    Variable Anzahl Parameter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruckgabe" class="md-nav__link">
+    Rückgabe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fehler" class="md-nav__link">
+    Fehler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sichererers-programmieren" class="md-nav__link">
+    Sichererers Programmieren
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-files" class="md-nav__link">
+    Header Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binar-operatoren" class="md-nav__link">
+    Binär Operatoren
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipps" class="md-nav__link">
+    Tipps
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variablen-tauschen" class="md-nav__link">
+    Variablen tauschen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_Preprocessor%20und%20Compiler.html" class="md-nav__link">
+        Preprocessor und Compiler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_Make.html" class="md-nav__link">
+        Make
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_Unit%20Tests.html" class="md-nav__link">
+        Unit Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05_OS.html" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06_Standard%20Library.html" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="summary_jonas.html" class="md-nav__link">
+        SNP Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          THIN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="THIN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          THIN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/00_Fragen.html" class="md-nav__link">
+        Fragen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/01_Definitionen.html" class="md-nav__link">
+        Definitionen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/02_RegEx.html" class="md-nav__link">
+        RegEx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/03_Endliche%20%20Automaten.html" class="md-nav__link">
+        Endliche Automaten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/04_Kontextfreie%20Gramatik.html" class="md-nav__link">
+        Kontextfreie Grammatik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/05_Keller%20Automaten.html" class="md-nav__link">
+        Keller Automaten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/06_Turing%20Machine.html" class="md-nav__link">
+        Turing Maschine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/07_Berechnungsmodelle.html" class="md-nav__link">
+        Berechnungsmodelle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/08_Entscheidbarkeit.html" class="md-nav__link">
+        Entschheidbarkeit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/09_Komplexit%C3%A4tstheorie.html" class="md-nav__link">
+        Komplexitätstheorie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/summary%20%28copy%29.html" class="md-nav__link">
+        THIN Summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../THIN/summary.html" class="md-nav__link">
+        THIN Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Allgemein
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Allgemein" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Allgemein
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          AN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/AN/Itegrie-Ableiten-Tabelle.html" class="md-nav__link">
+        Itegrie Ableiten Tabelle
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Haskell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Haskell" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Haskell
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/Haskell/Data%20Classes.html" class="md-nav__link">
+        Data Classes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/Haskell/Optics.html" class="md-nav__link">
+        Optics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="IP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/IP/IP.html" class="md-nav__link">
+        IP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Musik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Musik" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Musik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/Musik/Tonleitern.html" class="md-nav__link">
+        Tonleitern
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          PROG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PROG" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          PROG
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/2_OOP_Takeaways.html" class="md-nav__link">
+        OOP Takeaways
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/3_Patterns.html" class="md-nav__link">
+        Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/4_Testing.html" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/5_Threads.html" class="md-nav__link">
+        Threads
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/6_IO.html" class="md-nav__link">
+        IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/7_Streams.html" class="md-nav__link">
+        Streams
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#typen" class="md-nav__link">
+    Typen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preprocessor" class="md-nav__link">
+    Preprocessor
+  </a>
+  
+    <nav class="md-nav" aria-label="Preprocessor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define" class="md-nav__link">
+    #define
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main" class="md-nav__link">
+    Main
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitionen" class="md-nav__link">
+    Definitionen
+  </a>
+  
+    <nav class="md-nav" aria-label="Definitionen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-variable" class="md-nav__link">
+    static-Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-variabeln" class="md-nav__link">
+    Register-Variabeln
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extern-variabeln" class="md-nav__link">
+    Extern-Variabeln
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-variabeln" class="md-nav__link">
+    Auto-Variabeln
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konstante" class="md-nav__link">
+    Konstante
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typ-alias" class="md-nav__link">
+    Typ-Alias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    Enum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funktionen-als-variable" class="md-nav__link">
+    Funktionen als Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lange-tricks-bei-arrays" class="md-nav__link">
+    Länge Tricks bei Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays-vergleichen" class="md-nav__link">
+    Arrays vergleichen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mehrdimensionale-arrays" class="md-nav__link">
+    Mehrdimensionale Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    Strings
+  </a>
+  
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gross-kleinbuchstaben" class="md-nav__link">
+    Gross-/Kleinbuchstaben
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointers" class="md-nav__link">
+    Pointers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presedenz-von" class="md-nav__link">
+    Presedenz von *
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#void-pointers" class="md-nav__link">
+    Void-Pointers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-pointer" class="md-nav__link">
+    NULL-Pointer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speicher-allozieren" class="md-nav__link">
+    Speicher allozieren
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methoden" class="md-nav__link">
+    Methoden
+  </a>
+  
+    <nav class="md-nav" aria-label="Methoden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funktions-parameter" class="md-nav__link">
+    Funktions-Parameter
+  </a>
+  
+    <nav class="md-nav" aria-label="Funktions-Parameter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#const-parameter" class="md-nav__link">
+    const-Parameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-parameter" class="md-nav__link">
+    Array Parameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-anzahl-parameter" class="md-nav__link">
+    Variable Anzahl Parameter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruckgabe" class="md-nav__link">
+    Rückgabe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fehler" class="md-nav__link">
+    Fehler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sichererers-programmieren" class="md-nav__link">
+    Sichererers Programmieren
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-files" class="md-nav__link">
+    Header Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binar-operatoren" class="md-nav__link">
+    Binär Operatoren
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipps" class="md-nav__link">
+    Tipps
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variablen-tauschen" class="md-nav__link">
+    Variablen tauschen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="c-sprache">C-Sprache</h1>
+<h2 id="typen">Typen</h2>
+<table>
+<thead>
+<tr>
+<th>Typ</th>
+<th>Bytes</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>1 Byte</td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td>4 Bytes</td>
+<td></td>
+</tr>
+<tr>
+<td>float</td>
+<td>4 Bytes</td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td>8 Bytes</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Typ</th>
+<th>Std-Typ</th>
+<th>Bytes</th>
+<th>Wertebereich</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>int8_t</td>
+<td>1-Byte/8-Bits</td>
+<td>-128 bis 127</td>
+</tr>
+<tr>
+<td>unsigned char</td>
+<td>uint8_t</td>
+<td>1-Byte/8-Bits</td>
+<td>0 bis 255</td>
+</tr>
+<tr>
+<td>short</td>
+<td>int16_t</td>
+<td>2-Bytes/16-Bits</td>
+<td>-32'768 bis 32'767</td>
+</tr>
+<tr>
+<td>unsigned short</td>
+<td>uint16_t</td>
+<td>2-Bytes/16-Bits</td>
+<td>0 bis 65'535</td>
+</tr>
+<tr>
+<td>int</td>
+<td>int32_t</td>
+<td>4-Bytes/32-Bits</td>
+<td><span class="arithmatex">\(-2^{31}\)</span> bis <span class="arithmatex">\(2^{31}-1\)</span></td>
+</tr>
+<tr>
+<td>unsigned int</td>
+<td>uint32_t</td>
+<td>4-Bytes/32-Bits</td>
+<td><span class="arithmatex">\(0\)</span> bis <span class="arithmatex">\(2^{32}-1\)</span></td>
+</tr>
+<tr>
+<td>long</td>
+<td>int64_t</td>
+<td>8-Bytes/64-Bits</td>
+<td><span class="arithmatex">\(-2^{63}\)</span> bis <span class="arithmatex">\(2^{63}-1\)</span></td>
+</tr>
+<tr>
+<td>unsigned long</td>
+<td>uint64_t</td>
+<td>8-Bytes/64-Bits</td>
+<td><span class="arithmatex">\(0\)</span> bis <span class="arithmatex">\(2^{64}-1\)</span></td>
+</tr>
+<tr>
+<td>long double</td>
+<td></td>
+<td>10-Bytes/80-Bits</td>
+<td><span class="arithmatex">\(-1.2\cdot 10^{4932}\)</span> bis <span class="arithmatex">\(1.2\cdot 10^{4932}\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Eine Dezimalzahl im Code wird als <code>signed int</code> interpretiert</li>
+<li>eine oktal und hexadezimal Zahl werden als <code>unsigned int</code> interpretiert</li>
+<li>Wenn eine Zahl zu gross für einen <code>int</code> ist, wird sie als <code>long</code> abgespeichert</li>
+<li>mit <code>L</code>  oder <code>l</code> nach einer Zahl als <code>long</code> interpretiert</li>
+<li>mit <code>LL</code> oder <code>ll</code> wird eine Zahl als <code>long long</code> interpretiert</li>
+<li>wird <code>U</code> oder <code>u</code> wird eine Zahl als <code>unsigned int</code> interpretiert</li>
+</ul>
+<h2 id="preprocessor">Preprocessor</h2>
+<h3 id="define"><code>#define</code></h3>
+<p>Mit <code>#define</code> wird eine Variable definiert, welche während der Kompilierzeit ersetzt werden.</p>
+<p>Der Syntax ist der folgende: <code>#define NAME &lt;value&gt;</code></p>
+<p>Ein Macro darf zusätzlich auch Parameter enthalten. Diese Parameter haben <strong>keinen</strong> Typ, wie z.B. <code>#define circleArea(R) (3.1415*(R)*(R))</code></p>
+<h2 id="main">Main</h2>
+<p>Die Main-Methode in C hat eine der folgenden formen:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<h2 id="definitionen">Definitionen</h2>
+<h3 id="static-variable">static-Variable</h3>
+<p>Eine static variable ist nur Sichtbar im definierten C File. Zusätzlich dazu wird die Variable im Daten-Header in der Memory gespeichert. </p>
+<p>Wenn eine statische Variable in einer Methode definiert wird, behaltet sie über mehrere Aufrufe ihren Wert.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">maxValue</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="n">maxValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">maxValue</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>In diesem Beispiel behaltet <code>maxValue</code> den Wert, auch wenn max mehrmals aufgerufen wird. Der Initialwert wird nur einmal gesetzt.</p>
+<h3 id="register-variabeln">Register-Variabeln</h3>
+<p>Der Compiler versucht die Variable in einem Register zu speichert. Dies wird heute nicht mehr verwendet, da der Compiler dies selbst sehr gut optimieren kann.</p>
+<h3 id="extern-variabeln">Extern-Variabeln</h3>
+<p>Der Compiler geht davon aus, dass die Variable in einem anderen File definiert ist.</p>
+<h3 id="auto-variabeln">Auto-Variabeln</h3>
+<p>Die Variable wird auf dem Stack gespeichert. Dies wird heute nicht mehr verwendet, da der Compiler dies selbst optimieren kann.</p>
+<h3 id="konstante">Konstante</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// ein konstanter Pointer zu einer int-Variable</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">i1</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// ein Pointer zu einer konstanter int-Variable</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// ein konstanter Pointer zu einer konstanter int-Variable</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">i3</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">// Ausnahme bei typedef Pointers</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">typdef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">int_pntr</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">// ein konstanter Pointer zu einer variablen int-Variable</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">const</span><span class="w"> </span><span class="n">int_pntr</span><span class="w"> </span><span class="n">i4</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1">// das selbe, wie oben</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">int_pntr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">i5</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="typ-alias">Typ-Alias</h3>
+<h3 id="enum">Enum</h3>
+<p>Mit <code>enum week {Monday, Tuesday, Wendsday};</code> kann ein neues Enum erstellt werden. Wenn das Enum ohne Typedef erstellt wurde, kann es mit <code>enum week</code> verwendet werden (<code>enum week weekday_name;</code>). Wenn man dafür zu schreibfaul ist, kann mit <code>typeder enum week {Monday, Tuesday, Wendsday} week_t;</code> ein Typalias <code>week_t</code> erstellt werden, welcher anstatt <code>enum week</code> verwendet werden kann.</p>
+<h3 id="funktionen-als-variable">Funktionen als Variable</h3>
+<p>Die Funktion <code>void logger(char * msg)</code> kann in der Variable mit der Definition <code>void (*out)(char *)</code>. Sobald zwei Klammern in der Definition einer Variablen stehen, geht es meistens um eine Funktion.</p>
+<p>Die Zuweissung kann mit <code>out = &amp;logger</code> oder auch <code>out = logger</code> zu gewiessen weden. Dabei machen die beiden Zuweissungen dasselbe. Der Compiler ist beim zweiten schlau genug, die Adresse der Funktion zu speichern.</p>
+<p><code>(*out)("Hello")</code> oder <code>out("Hello")</code> machen beide dasselbe: Sie rufen die Funktion in <code>out</code> aus. Der Compiler automatisch dereferenziert das zweite Beispiel.`</p>
+<p>Mit <code>typedef void (*logger_fp_t)(char*)</code> kann ein Typalias für eine Funktion erstellt werden. Danach kann <code>logger_fp_t</code> als Typ verwendet werden (<code>logger_fp_t  logger_fun = logger</code>).</p>
+<h3 id="arrays">Arrays</h3>
+<p>Ein Array ist ein Datenblock im Speicher, welcher kontinuierlich ist. Der Variabelnnamen eines Arrays (ohne Klammern), ist ein Pointer und kann zu einem Pointer zu gewissen werden: <code>int arr[4]; int* arrPointer = arr;</code></p>
+<p>Ein Array kann folgendermassen erstellt werden;</p>
+<ul>
+<li><code>int data[100]</code> - das Array wird alloziert, aber nicht initialisiert</li>
+<li><code>int data[100] = {1}</code> - das Array wird alloziert, das erste Element wird <code>1</code> und der Rest auf <code>0</code> (nur <code>int data[] = {}</code> ist ein Compilerfehler)</li>
+<li><code>int data[] = {1, 2}</code> - Ein neues Array mit der Länge 2 und den Elementen <code>1</code> und <code>2</code></li>
+</ul>
+<p>Mit <code>data[7]</code> kann auf den 7. Wert zu gegriffen werden. Es gibt C typischerweisse kein Check, ob das Array genügend gross ist.</p>
+<p>Ein Konstantes Array (<code>const int data[100]</code>) kann nicht modifiziert wird. Dies wird vom Compiler überprüft.</p>
+<p>Wenn ein Array als Parameter übergeben wird, wird der Pointer zum Startwert übergeben. Auf der Funktionsseite würde man es folgendermassen schreiben:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">arrayParamter</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="c1">// do stuff with data</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>In der Funktion weiss man nicht, wie lange das Array ist (<code>sizeof(data)</code> gibt die Grösse des Pointers des Arrays, wenn es als Parameter übergeben wird).</p>
+<h4 id="lange-tricks-bei-arrays">Länge Tricks bei Arrays</h4>
+<ul>
+<li>
+<p>Wenn das Array im selben Block alloziert wurde, kann <code>sizeof(data)/sizeof(data[0])</code> die Grösse errechnet werden</p>
+</li>
+<li>
+<p>Die Länge wird als Parameter ebenfalls mitgegeben 
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">arrayParameter</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">arrayParameter</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Es gibt ein Sentry Wert (wie <code>\0</code> bei Strings/char Arrays)</p>
+</li>
+</ul>
+<h3 id="arrays-vergleichen">Arrays vergleichen</h3>
+<p>Mit <code>a == b</code> , wenn <code>a</code> und <code>b</code> ein Arrays ist, vergleicht die <strong>Start-Adressen</strong> des Arrays, nicht die Elemente selbst. Für "normale" Arrays gibt es keine standardt Methode, welche der Inhalt von Arrays vergleicht. Für String gibt es <code>int strcomp(char *s1, char *s2)</code>, welche <code>0</code> zurück gibt, wenn die Strings gleich sind, <code>-1</code>, wenn s1 kleiner ist als s2 und <code>1</code>, wenn s1 grösser als s2 ist.</p>
+<h3 id="mehrdimensionale-arrays">Mehrdimensionale Arrays</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">}};</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="c1">// gibt 5 zurück</span>
+</code></pre></div>
+<p>In C können Mehrdimensionale Arrays erstellt. Diese können "normal" darauf zugegrifen werden.</p>
+<h3 id="strings">Strings</h3>
+<p>Strings in C sind Char-Arrays, welche am Ende ein <code>\0</code> haben. Dabei können ASCI-Zeichen (nicht UTF-8) in einem String stehen.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">hello1</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello, world&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Array mit 13 Zeichen</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">hello2</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello, world&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Array mit 13 Zeichen</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">char</span><span class="w"> </span><span class="n">hello3</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello, world&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Array mit 14 Zeichen. Am ende hat es zwei \0</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kt">char</span><span class="w"> </span><span class="n">hello4</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello, world&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Array mit 12 Zeichen, aber das \0 fehlt am ende</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kt">char</span><span class="w"> </span><span class="n">hello5</span><span class="p">[</span><span class="mi">13</span><span class="p">];</span><span class="w"> </span><span class="c1">// Array mit 13 Zeichen. Wird nicht initialisiert</span>
+</code></pre></div>
+<p>Wenn das <code>\0</code> am ende eines Strings fehlt, werden die String-Funktionen einfach weiter lesen, bis ein <code>\0</code> im Speicher gefunden wird. Meistens führt dies zu einem Crash.</p>
+<ul>
+<li>mit <code>strncpy()</code> und <code>strncat()</code> können mit String</li>
+</ul>
+<p>String-Literale wird in Read-Only Teil des Programmes gespeichert und kann daher <strong>nicht modifiziert</strong> werden. Ein String-Literal kann dazu benützt werden, ein char-Array zu erstellen, welches geändert werden kann.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str_literal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">str_literal</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;H&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// undefined behaviour. str_literal points to read-only memory</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kt">char</span><span class="p">[]</span><span class="w"> </span><span class="n">str_arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// copies the string_literal to the array</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">str_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;H&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// works</span>
+</code></pre></div>
+<p><img alt="Die Besten ascii Tabelle – Beste Ideen und Inspirationen" src="res/eDE5ODI2.jpeg" /></p>
+<h4 id="gross-kleinbuchstaben">Gross-/Kleinbuchstaben</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="sc">&#39;a&#39;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="sc">&#39;_&#39;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 0b0110 0001 &amp; 0b0101 1111 = 0b0100 0001</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="sc">&#39;A&#39;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="sc">&#39;_&#39;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="sc">&#39;A&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 0b0100 0001 | 0b0010 0000 = 0b0110 0001</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="sc">&#39;a&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="pointers">Pointers</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"> </span><span class="c1">// da data[] bereits ein Pointer ist, kann er direkt zugewissen werden</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">pointer</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// geht zur nächsten Addresse 4 Bytes weiter, da ein int 4 bytes lang ist</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">pointer</span><span class="p">;</span><span class="w"> </span><span class="c1">// mit *&lt;pointerVar&gt; wird der Pointer dereferenziert</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">pointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">intVar</span><span class="p">;</span><span class="w"> </span><span class="c1">// setzt die Adresse von intVar zu dem Pointer</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="o">*</span><span class="n">pointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intVar</span><span class="p">;</span><span class="w"> </span><span class="c1">// setzt die Adresse von intVar zu dem Pointer</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="kt">double</span><span class="w"> </span><span class="o">**</span><span class="n">pointerZuPointer</span><span class="p">;</span><span class="w"> </span><span class="c1">// ein Meehrdimensionalen Pointer</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">pointer</span><span class="p">,</span><span class="w"> </span><span class="n">notPointer</span><span class="p">;</span><span class="w"> </span><span class="c1">// erstellt ein Double-Pointer und ein Double-Variable</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="kt">int</span><span class="w"> </span><span class="n">i2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataPointer</span><span class="o">-&gt;</span><span class="n">nr</span><span class="p">;</span><span class="w"> </span><span class="c1">// dereferenziert den Pointer zu einem Struct und gibt nr zurück</span>
+</code></pre></div>
+<p>Ein Pointer kann mit <code>int* data</code> erstellt werden.</p>
+<p>Ein Pointer ist eine Adresse, mit welcher gerechnet werden kann. Um den Wert eines Pointers zu bekommen, muss er dereferenziert werden. Dies kann mit <code>*data</code>  bewerkstelligt werden.</p>
+<p>Wenn man die Adresse einer Variable bekommen möchte, kann man diese mit <code>&amp;variable</code> bekommen und z.B. einem Pointer zu weisen. </p>
+<p>Ein Pointer kann man eine Adresse zu weissen (<code>pointer = &amp;variable</code>), ebenfalls kann ein dereferenzierten Pointer zu gewissen werden (<code>*pointer = variable</code>). Beides funktioniert und bewerkstelligt dasselbe.</p>
+<p><code>double *d1[20]</code> ist ein Array von 20 Double-Pointers, hingegen <code>double (*d2)[20]</code> ist ein Pointer auf ein Array von Double-Elementen.</p>
+<h3 id="presedenz-von">Presedenz von *</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">d1</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span><span class="w"> </span><span class="c1">// ein Array von 20 Pointern auf Doubles</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kt">double</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">d2</span><span class="p">)[</span><span class="mi">20</span><span class="p">];</span><span class="w"> </span><span class="c1">// ein Pointer auf ein Array von 20 Double Elemente</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">data</span><span class="w"> </span><span class="p">{</span><span class="kt">int</span><span class="w"> </span><span class="n">nr</span><span class="p">;}</span><span class="w"></span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">struct</span><span class="w"> </span><span class="nc">data</span><span class="w"> </span><span class="o">*</span><span class="n">dataPointer</span><span class="p">,</span><span class="w"> </span><span class="n">dataObj</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="o">*</span><span class="n">dataPointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataObj</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">i1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">dataPointer</span><span class="p">).</span><span class="n">nr</span><span class="p">;</span><span class="w"> </span><span class="c1">// *dataPointer.nr würde dataPointer.nr dereferenzieren</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="kt">int</span><span class="w"> </span><span class="n">i2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataPointer</span><span class="o">-&gt;</span><span class="n">nr</span><span class="p">;</span><span class="w"> </span><span class="c1">// macht dasselbe, wie oben</span>
+</code></pre></div>
+<h3 id="void-pointers">Void-Pointers</h3>
+<p>Pointers haben immer einen Daten-Typ. Die einzige Ausnahme ist der void-pointer</p>
+<h3 id="null-pointer">NULL-Pointer</h3>
+<p>Der Pointer <code>NULL</code> (von <code>stdio.h</code>) ist ein Alias für die Adresse für <code>0</code> und heisst, dass der Pointer auf nichts zeigt. Er soll zur Dokumentation </p>
+<h3 id="speicher-allozieren">Speicher allozieren</h3>
+<p>Wenn ein neues Objekt erzeugt wird (z.B. ein <code>int</code>, aber auch ein <code>struct</code> oder ein <code>array</code>), dann wird dies auf dem Stack gespeichert. Mit Methoden, wie <code>malloc(size_t)</code> können aber auch Daten auf dem Heap gespeichert werden.</p>
+<p><img alt="image-20220323081212308" src="res/image-20220323081212308.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Methode</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void* malloc(size_t size)</code></td>
+<td>Alloziert speicher auf dem Heap</td>
+</tr>
+<tr>
+<td><code>void* calloc(size_t nsize, size_t size)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>void* realloc(void *ptr, size_t size)</code></td>
+<td>Setzt die Grösse des gegebenen Pointers auf die gegebene Grösse</td>
+</tr>
+<tr>
+<td><code>void free(void *ptr)</code></td>
+<td>Gibt allozierten Speicher an der gegebenen Adresse wieder frei</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methoden">Methoden</h2>
+<h3 id="funktions-parameter">Funktions-Parameter</h3>
+<p>Standardmässig werden alle Parameter <em>by value</em> übergeben. Falls dies nicht gewollt ist, müssen Pointers verwendet werden.</p>
+<h4 id="const-parameter">const-Parameter</h4>
+<p><code>void write_int(const int a)</code> bewirkt, dass <code>a</code> nicht in der Methode verändert werden kann.</p>
+<p>Es ist natürlich erlaubt einen konstanten Pointer zu definieren (<code>void write_char(const char *s)</code>). Dabei kann der Pointer selbst (<code>a = NULL</code>), wie auch der Wert des Pointers (<code>*a=5</code>) nicht mehr geändert werden. Die konstante Variable darf nicht im linken Teil einer Zuweisung stehen.</p>
+<h4 id="array-parameter">Array Parameter</h4>
+<p><code>void write_array(int* a)</code> ist dasselbe, wie <code>void write_array(int a[])</code>. In beiden Fällen weiss die aufgerufene Methode nicht,  wie gross das Array <code>a</code> ist. </p>
+<p>Auch bei Arrays können mit const ausgestatet werden (<code>void array_method(const int a[])</code>)</p>
+<p>Bei Mehrdimensionalen Arrays müssen alle Dimensionen, ausser die erste, angegeben werden: <code>void print_matrx(double matrix[][3])</code> oder <code>print_matrix(double (*matrix)[3])</code>.</p>
+<h4 id="variable-anzahl-parameter">Variable Anzahl Parameter</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdarg.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">average</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">anzahl</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="kt">va_list</span><span class="w"> </span><span class="n">args</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">summe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="n">va_start</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="n">anzahl</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="c1">// beginnt bei 1, da das 0. Argument `anzahl` ist</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">anzahl</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="n">summe</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">va_arg</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="n">va_end</span><span class="p">(</span><span class="n">args</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">summe</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">anzahl</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Damit eine Funktion eine Variable Anzahl von Parameter benützten kann, muss <code>stdarg.h</code> inkludiert sein. Auf die Argumente kann mit der Struktur <code>va_list</code> zugegriffen werden. Diese Struktur muss mit <code>va_start(va_list args, int numberOfArgs)</code> initialisiert werden und mit <code>va_end(va_list args)</code> gelöscht werden. Der eigentliche Wert kann mit <code>va_arg(va_list args, type)</code> zugegriffen werden.</p>
+<h3 id="ruckgabe">Rückgabe</h3>
+<p>Wenn ein Pointer zurück gegeben wird, muss die Variable auf dem Heap gespeichert sein. </p>
+<p>Folgendes Beispiel würde nicht funktionieren</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="nf">create_array</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"></span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">arr</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="fehler">Fehler</h2>
+<ul>
+<li>Stack-Overflow: Auf dem Stack hat es nicht mehr genügend platz</li>
+<li>Buffer-Overflow: Wenn ein Buffer (z.B. ein Array) über die Grenze überschrieben werden</li>
+</ul>
+<h2 id="sichererers-programmieren">Sichererers Programmieren</h2>
+<ul>
+<li><code>fgets()</code> anstatt <code>gets()</code></li>
+<li><code>strncpy()</code> und <code>strncat()</code> anstatt <code>strcpy()</code> und <code>strcat()</code></li>
+<li>Bei <code>malloc()</code> immer überprüfen, ob der Speicher wirklich alloziert wurde</li>
+</ul>
+<h2 id="header-files">Header Files</h2>
+<p>In einem Header File stehen Funktions-Deklarationen (ohne Code), Structs, Enums, <code>#define</code> und weitere Definitionen. Diese können in einem <code>*.c</code> File includiert werden und der Compiler weiss, dass es diese Funktionen und Daten-Typen gibt.</p>
+<p>Ein Headerfile sollte noch folgendes Boiler-Template haben:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#ifndef DEF_H</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="cp">#define DEF_H</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">sub</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="cp">#endif</span>
+</code></pre></div>
+<p>Dies verhindert, dass das Headerfile zwei mal etwas definiert.</p>
+<h2 id="binar-operatoren">Binär Operatoren</h2>
+<table>
+<thead>
+<tr>
+<th>Op</th>
+<th>Erklärung</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;</td>
+<td>und</td>
+<td><code>0101 &amp; 0100 = 0100</code></td>
+</tr>
+<tr>
+<td>|</td>
+<td>oder</td>
+<td><code>0101 &amp; 0010 = 0111</code></td>
+</tr>
+<tr>
+<td>^</td>
+<td>xor</td>
+<td><code>0101 ^ 0100 = 0001</code></td>
+</tr>
+<tr>
+<td>~</td>
+<td>invert</td>
+<td><code>~0101 = 1010</code></td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>right shift</td>
+<td><code>0100 &gt;&gt; 2 = 0001</code></td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>left shift</td>
+<td><code>0001 &lt;&lt; 2 = 0100</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tipps">Tipps</h2>
+<h3 id="variablen-tauschen">Variablen tauschen</h3>
+<p>Um zwei Variablen zu tauschen, kann drei mal geXORed werden:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">//0010</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="c1">//0100</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="c1">//0110</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="c1">//0010</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="c1">//0100</span>
+</code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2022-06-27
+    
+  </small>
+</div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../PROG2/summary.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: PROG2 Summary" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              PROG2 Summary
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="02_Preprocessor%20und%20Compiler.html" class="md-footer__link md-footer__link--next" aria-label="Next: Preprocessor und Compiler" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Preprocessor und Compiler
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

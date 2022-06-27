@@ -1,0 +1,3375 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Sebastian Zumbrunn">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+    
+    
+      
+        <title>01 Aussaglogik - Seppli's Summaries</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aussaglogik" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Seppli&#39;s Summaries" class="md-header__button md-logo" aria-label="Seppli's Summaries" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Seppli's Summaries
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              01 Aussaglogik
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Seppli&#39;s Summaries" class="md-nav__button md-logo" aria-label="Seppli's Summaries" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Seppli's Summaries
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          21HS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="21HS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          21HS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          AN1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AN1/01_funktionen.html" class="md-nav__link">
+        Summenzeichen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AN1/02_polynome.html" class="md-nav__link">
+        Polynome Division
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AN1/03_Ableiten.html" class="md-nav__link">
+        Ableiten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_4" type="checkbox" id="__nav_2_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_4">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AN1/summaries/summary_2022_01_26.html" class="md-nav__link">
+        AN Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          COM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="COM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          COM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COM/01_Kernthemen-Austausch.html" class="md-nav__link">
+        01 Kernthemen Austausch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COM/02_Suchstrategien.html" class="md-nav__link">
+        Suchbegriffe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COM/03_Publikationstypen.html" class="md-nav__link">
+        Monografie (eigenständiges Buch)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COM/04_Wissenschaftilichen%20Text.html" class="md-nav__link">
+        04 Wissenschaftilichen Text
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COM/05_pitch.html" class="md-nav__link">
+        CCC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COM/06_handout.html" class="md-nav__link">
+        Kriterien
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_7" type="checkbox" id="__nav_2_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_7">
+          Presentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Presentation" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Presentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COM/Presentation/Pitch%20v2.html" class="md-nav__link">
+        Pitch v2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COM/Presentation/Pitch.html" class="md-nav__link">
+        Pitch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          DB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DB" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          DB
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DB/00_Pr%C3%BCfung.html" class="md-nav__link">
+        00 Prüfung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DB/01_Begriffe.html" class="md-nav__link">
+        Begriffe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DB/02_Grundoperation.html" class="md-nav__link">
+        02 Grundoperation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DB/03_Entity%20Relationship%20Diagram.html" class="md-nav__link">
+        ER-Diagram
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DB/04_SQL.html" class="md-nav__link">
+        SQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DB/05_Integrit%C3%A4tsregeln.html" class="md-nav__link">
+        Integritätsregeln
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_7" type="checkbox" id="__nav_2_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_7">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DB/summaries/summary-2022-01-25.html" class="md-nav__link">
+        DB Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          DM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          DM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="01_Aussaglogik.html" class="md-nav__link md-nav__link--active">
+        01 Aussaglogik
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_Semantik.html" class="md-nav__link">
+        02 Semantik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_Mengen.html" class="md-nav__link">
+        Mengen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_Nat%C3%BCrliche%20Zahlen.html" class="md-nav__link">
+        Natürliche Zahlen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05_Ganz%20Zahlen.html" class="md-nav__link">
+        Ganz Zahlen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_6" type="checkbox" id="__nav_2_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4_6">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Summaries/01_summary_2021-11-23.html" class="md-nav__link">
+        Summary - 2021-11-23
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Summaries/01_summary_2022_01_17.html" class="md-nav__link">
+        01 summary 2022 01 17
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          GED
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GED" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          GED
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_1" type="checkbox" id="__nav_2_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_1">
+          Elektronik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Elektronik" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Elektronik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GED/Elektronik/Maschen%20und%20Knotensatz.html" class="md-nav__link">
+        Knotenregel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5_2" type="checkbox" id="__nav_2_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5_2">
+          Physik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Physik" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Physik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GED/Physik/00_Formeln.html" class="md-nav__link">
+        Formeln
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GED/Physik/01_ch%C3%BCgelif%C3%BCsik.html" class="md-nav__link">
+        Chügeli Füsik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GED/Physik/02_Elektrotechnik.html" class="md-nav__link">
+        Elektrotechnik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GED/Physik/03_Elektromagnetismus.html" class="md-nav__link">
+        Elektromagnetismus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GED/Physik/04_Thermische_Strahlung.html" class="md-nav__link">
+        Termische Strahlung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GED/Physik/05_Signale.html" class="md-nav__link">
+        Signale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GED/Physik/all-ged-summaries.html" class="md-nav__link">
+        All ged summaries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GED/Physik/include.html" class="md-nav__link">
+        Include
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          INCO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="INCO" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          INCO
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INCO/00_Infos.html" class="md-nav__link">
+        Infos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INCO/2_Sequenzelle%20Bauteile.html" class="md-nav__link">
+        2 Sequenzelle Bauteile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INCO/3_Zahlensysteme.html" class="md-nav__link">
+        Zahlensysteme
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INCO/4_Informationstheorie.html" class="md-nav__link">
+        Was ist Information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INCO/5_JEPG.html" class="md-nav__link">
+        5 JEPG
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INCO/6_Audio.html" class="md-nav__link">
+        Audio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INCO/7_Kanalkodierung.html" class="md-nav__link">
+        Kanalkodierung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INCO/8_Matrix.html" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INCO/9_Faltungscode.html" class="md-nav__link">
+        9 Faltungscode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_10" type="checkbox" id="__nav_2_6_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6_10">
+          Summaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Summaries" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_6_10">
+          <span class="md-nav__icon md-icon"></span>
+          Summaries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INCO/summaries/summary_2022-01-20.html" class="md-nav__link">
+        INCO Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          PM1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PM1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          PM1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PM1/Beschlussprotokoll.html" class="md-nav__link">
+        Beschlussprotokoll
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PM1/Feedback.html" class="md-nav__link">
+        Feedback
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PM1/Projekt%203%20-%20Siedler%20von%20Catan.html" class="md-nav__link">
+        Projekt 3 - Siedler von Catan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PM1/Retrospektive.html" class="md-nav__link">
+        Retrospektive
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          22FS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="22FS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          22FS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          AN2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/AN2/summary_2022_06_20.html" class="md-nav__link">
+        AN2 Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Communication2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Communication2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Communication2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/Communication2/01_Presentation.html" class="md-nav__link">
+        Presentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/Communication2/Presentation_Script.html" class="md-nav__link">
+        Presentation Script
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          KT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="KT" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          KT
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/00_Glossar.html" class="md-nav__link">
+        Glossar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/01_OSI-Modell.html" class="md-nav__link">
+        OSI-Modell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/02_Serielle-%C3%9Cbertragung.html" class="md-nav__link">
+        02 Serielle Übertragung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/03_%C3%9Cbertragunsmedien.html" class="md-nav__link">
+        Übertragungsmedien (Layer 1)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/04_Data%20Link.html" class="md-nav__link">
+        Data Link Layer (Layer 2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/05_LAN.html" class="md-nav__link">
+        LAN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/06_Network%20Layer.html" class="md-nav__link">
+        Network Layer (Layer 3)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/07_Transport%20Layer.html" class="md-nav__link">
+        Transport Layer (Layer 4)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/08_Application_Layer.html" class="md-nav__link">
+        Application Layer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/KT/summary.html" class="md-nav__link">
+        KT Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          LA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="LA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          LA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/01_Lineare%20Gleichungssysteme.html" class="md-nav__link">
+        Lineare Gleichungssystem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/02_Vektoren.html" class="md-nav__link">
+        Vektoren
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/03_Matrix.html" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/05_Vektorr%C3%A4ume.html" class="md-nav__link">
+        Vektorräume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/06_Lineare%20Abbildung.html" class="md-nav__link">
+        Lineare Abbildung
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/LA/summary.html" class="md-nav__link">
+        LA Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          PM2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PM2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          PM2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PM2/Massnahmen.html" class="md-nav__link">
+        Massnahmen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PM2/Pitch.html" class="md-nav__link">
+        Pitch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PM2/Projektskizze.html" class="md-nav__link">
+        Projektskizze
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          PROG2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PROG2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          PROG2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/-1_Stuff.html" class="md-nav__link">
+        Stuff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/00_Gradle.html" class="md-nav__link">
+        Gradle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/01_Concurrency.html" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/PROG2/summary.html" class="md-nav__link">
+        PROG2 Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          SNP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SNP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          SNP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/01_C.html" class="md-nav__link">
+        C-Sprache
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/02_Preprocessor%20und%20Compiler.html" class="md-nav__link">
+        Preprocessor und Compiler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/03_Make.html" class="md-nav__link">
+        Make
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/04_Unit%20Tests.html" class="md-nav__link">
+        Unit Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/05_OS.html" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/06_Standard%20Library.html" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/SNP/summary_jonas.html" class="md-nav__link">
+        SNP Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          THIN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="THIN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          THIN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/00_Fragen.html" class="md-nav__link">
+        Fragen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/01_Definitionen.html" class="md-nav__link">
+        Definitionen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/02_RegEx.html" class="md-nav__link">
+        RegEx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/03_Endliche%20%20Automaten.html" class="md-nav__link">
+        Endliche Automaten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/04_Kontextfreie%20Gramatik.html" class="md-nav__link">
+        Kontextfreie Grammatik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/05_Keller%20Automaten.html" class="md-nav__link">
+        Keller Automaten
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/06_Turing%20Machine.html" class="md-nav__link">
+        Turing Maschine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/07_Berechnungsmodelle.html" class="md-nav__link">
+        Berechnungsmodelle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/08_Entscheidbarkeit.html" class="md-nav__link">
+        Entschheidbarkeit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/09_Komplexit%C3%A4tstheorie.html" class="md-nav__link">
+        Komplexitätstheorie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/summary%20%28copy%29.html" class="md-nav__link">
+        THIN Summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../22FS/THIN/summary.html" class="md-nav__link">
+        THIN Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Allgemein
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Allgemein" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Allgemein
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          AN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          AN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/AN/Itegrie-Ableiten-Tabelle.html" class="md-nav__link">
+        Itegrie Ableiten Tabelle
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Haskell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Haskell" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Haskell
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/Haskell/Data%20Classes.html" class="md-nav__link">
+        Data Classes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/Haskell/Optics.html" class="md-nav__link">
+        Optics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="IP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/IP/IP.html" class="md-nav__link">
+        IP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Musik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Musik" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Musik
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/Musik/Tonleitern.html" class="md-nav__link">
+        Tonleitern
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          PROG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PROG" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          PROG
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/2_OOP_Takeaways.html" class="md-nav__link">
+        OOP Takeaways
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/3_Patterns.html" class="md-nav__link">
+        Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/4_Testing.html" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/5_Threads.html" class="md-nav__link">
+        Threads
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/6_IO.html" class="md-nav__link">
+        IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Allgemein/PROG/7_Streams.html" class="md-nav__link">
+        Streams
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<!-- LTeX: language=de-CH -->
+
+<h1 id="aussaglogik">Aussaglogik</h1>
+<ul>
+<li>Sprachliche Sätze sind nicht eindeutig!</li>
+</ul>
+<p>T (<span class="arithmatex">\(\top\)</span>) = Tautologie = immer wahr
+W (<span class="arithmatex">\(\bot\)</span>)= Wiederspruch = immer falsch</p>
+<h1 id="was-ist-eine-aussage">Was ist eine Aussage</h1>
+<ul>
+<li>
+<p>Ein Satz, welchem ein "wahr" oder "falsch" Wert zugeordnet werden kann</p>
+</li>
+<li>
+<p>Darf nicht abhängig von einer freien Variable sein </p>
+</li>
+<li>
+<p>zB. x &gt; 0 ist keine Aussage, da abhängig von x </p>
+</li>
+<li>
+<p>"alle x, wenn man sie durch 2 teilt, sind gerade", ist eine Aussage, da alle x eingesetzt werden können</p>
+</li>
+<li>
+<p>Ein Prädikat wird zu einer Aussage, wenn man die freie Variable bindet (zB. "A(2)")</p>
+</li>
+<li>
+<p>Eine Aussage ist ein 0-stelliges Prädikat</p>
+</li>
+</ul>
+<h1 id="pradikat">Prädikat</h1>
+<ul>
+<li>A(x): einstelliges Prädikat (zB: A(x):="x&lt;3")</li>
+<li>A(x, y): zweistelliges Prädikat (zB. A(x, y):= "x &lt; y")</li>
+<li>Bsp:</li>
+<li>P(p) := "p is teine Primzahl"</li>
+<li>Q(x, y) := "wenn x &lt; y, dann gilt x² + 14x - 15 = 0" </li>
+</ul>
+<h1 id="junktoren">Junktoren</h1>
+<p>Verknüpfen Aussagen, um so komplexere Junkoren zu kreieren.</p>
+<p>Definitionen: </p>
+<ul>
+<li>Elementaraussagen: Eine Aussage, die nicht weiter Zerlegt werden kann.</li>
+<li>Zusamengesetzte Aussagen: Aussagen, die aus Elementaraussagen bestehen, die durch Junktoren verknpüft werden</li>
+</ul>
+<p>Bsp:</p>
+<ul>
+<li>A := "78 ist keine Primzahl" (Elementaraussage)</li>
+<li>B := "15 ist keine Primzahl" (Elementaraussage)</li>
+<li>C := "78 ist keine Primzahl <strong>und</strong> 15 ist keine Primzahl" (Zusammengesetzte Aussage)</li>
+</ul>
+<p>0: falsch = W (Wiederspruch)<br>
+1: wahr = T (Tautologie)</p>
+<h2 id="negation">Negation</h2>
+<p>Negation: <span class="arithmatex">\(\neg A\)</span></p>
+<p>Bsp:</p>
+<ul>
+<li>A:= "Hans studiert an der ZHAW"</li>
+<li>\neg A:= ("Hans studiert nicht an der ZHAW") = "Es trifft nicht zu, dass Hans an der ZHAW studiert."</li>
+</ul>
+<p><span class="arithmatex">\(\neg\)</span> -&gt; "Es trifft nicht zu"</p>
+<h2 id="konjunktion-und">Konjunktion (und)</h2>
+<p>\wedge -&gt; <span class="arithmatex">\(\wedge\)</span></p>
+<p>Beispiel:</p>
+<ul>
+<li>A := "6 ist durch 2 teilbar" -&gt; wahr</li>
+<li>B := "8 ist durch 5 teilbar" -&gt; falsch</li>
+<li><span class="arithmatex">\(A \wedge B\)</span>: "6 ist durch 2 teilbar <strong>und</strong> 8 ist durch 5 teilbar" -&gt; falsch</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th><span class="arithmatex">\(A \wedge B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="disjunktion-oder">Disjunktion (oder)</h2>
+<p>\vee -&gt; <span class="arithmatex">\(\vee\)</span></p>
+<p>Beispiel:</p>
+<ul>
+<li>A := "9 ist durch 3 teilbar" -&gt; wahr</li>
+<li>B := "9 ist eine Quadratzahl" -&gt; wahr</li>
+<li><span class="arithmatex">\(A \vee \neg B\)</span> = "9 ist durch 3 teilbar oder 9 ist keine Quadratzahl" -&gt;wahr</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th><span class="arithmatex">\(A \vee B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="implikation-wenn-dann">Implikation (wenn..., dann...)</h2>
+<p>\Rightarrow -&gt; <span class="arithmatex">\(\Rightarrow\)</span></p>
+<p>Bsp:</p>
+<ul>
+<li>A := "Es regnet"</li>
+<li>B := "Die Wiese ist nass"</li>
+<li><span class="arithmatex">\(A \Rightarrow B\)</span> := Wenn es regnet, dann ist die wiese nass"</li>
+<li>"Alle Fische leben im Ozean" =&gt; "Haie leben im Ozean" = wahr</li>
+<li>"Alle Fische leben im Ozean" =&gt; "Forellen leben im Ozean" = wahr</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th><span class="arithmatex">\(A \Rightarrow B\)</span></th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Da A, die Bedinungen falsch ist, kann B falsch sein.</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>Da A falsch ist, kann B aber auch wahr sein.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>Wenn A wahr ist, muss B auch wahr sein</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Wenn A wahr ist, muss B auch wahr sein</td>
+</tr>
+</tbody>
+</table>
+<h2 id="aquivalenz-leftrightarrow">Äquivalenz (<span class="arithmatex">\(\Leftrightarrow\)</span>)</h2>
+<p>Zwei Aussagen sind äquivalenz, wenn gilt:
+<span class="arithmatex">\(A \Rightarrow B \wedge B \Rightarrow A\)</span></p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th><span class="arithmatex">\(A \Leftrightarrow B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Bsp:</p>
+<ul>
+<li>A(x) := "<span class="arithmatex">\(x^2=4\)</span>"</li>
+<li>B(x) := "x=2"</li>
+<li>in <span class="arithmatex">\(\mathbb Z: B(x) \Rightarrow A(x)\)</span> -&gt; wahr</li>
+<li>in <span class="arithmatex">\(\mathbb N: B(x) \Rightarrow A(x)\)</span> -&gt; wahr</li>
+<li>in <span class="arithmatex">\(\mathbb N: A(x) \Rightarrow B(x)\)</span> -&gt; wahr</li>
+<li>in <span class="arithmatex">\(\mathbb N: A(x) \Leftrightarrow B(x)\)</span>  -&gt; wahr</li>
+</ul>
+<h2 id="reihenfolge">Reihenfolge</h2>
+<p>Reihenfolge der Bildung <span class="arithmatex">\(\neg\)</span>, <span class="arithmatex">\(\wedge\)</span>, <span class="arithmatex">\(\vee\)</span>, <span class="arithmatex">\(\Rightarrow\)</span>, <span class="arithmatex">\(\Leftrightarrow\)</span></p>
+<p>Bsp:</p>
+<ul>
+<li><span class="arithmatex">\(((A \vee (B \wedge C)) \Rightarrow D)\)</span></li>
+<li><span class="arithmatex">\((\neg A) \Rightarrow (C \vee ((\neg B) \wedge D))\)</span></li>
+</ul>
+<h2 id="junktoren-regeln">Junktoren Regeln</h2>
+<p>Mit den folgenden Regeln, kann man Äquivalente-Aussagen umformen</p>
+<ul>
+<li>Doppel Negation: <span class="arithmatex">\(\neg \neg A \Leftrightarrow A\)</span></li>
+<li>Kummutativtät</li>
+<li><span class="arithmatex">\(A \wedge B \Leftrightarrow B \wedge A\)</span></li>
+<li><span class="arithmatex">\(A \vee B \Leftrightarrow B \vee A\)</span></li>
+<li>Assoziativität: </li>
+<li><span class="arithmatex">\((A \wedge B) \wedge C \Leftrightarrow A \wedge (B \wedge C)\)</span></li>
+<li><span class="arithmatex">\((A \vee B) \vee C \Leftrightarrow A \vee (B \vee C)\)</span></li>
+<li>Distributivität: </li>
+<li><span class="arithmatex">\(A \wedge (B \vee C) \Leftrightarrow (A \wedge B) \vee (A \wedge C)\)</span></li>
+<li><span class="arithmatex">\(A \vee (B \wedge C) \Leftrightarrow (A \vee B) \wedge (A \vee C)\)</span></li>
+<li><span class="arithmatex">\((A \wedge B) \vee (C \wedge D) \Leftrightarrow ((A \wedge B) \vee C) \wedge ((A \wedge B) \vee D) \Leftrightarrow (A \vee C) \wedge (B \vee C) \wedge (A \vee D) \wedge (B \vee D)\)</span></li>
+<li>als vergleich: <span class="arithmatex">\(A \cdot (B + C) = A \cdot B + A \cdot C\)</span></li>
+<li>Regeln von de Morgan:</li>
+<li><span class="arithmatex">\(\neg(A\vee B) \Leftrightarrow \neg A \wedge \neg B\)</span></li>
+<li><span class="arithmatex">\(\neg(A\wedge B) \Leftrightarrow \neg A \vee \neg B\)</span></li>
+<li>Implikation:</li>
+<li><span class="arithmatex">\(A \Rightarrow B \Leftrightarrow \neg A \vee B\)</span></li>
+<li>Kontraposition</li>
+<li><span class="arithmatex">\(A \Rightarrow B \Leftrightarrow \neg B \Rightarrow \neg A\)</span></li>
+<li>Äquivalenz</li>
+<li><span class="arithmatex">\((A \Leftrightarrow B) \Leftrightarrow (A \Rightarrow B) \wedge (B \Rightarrow A) \Leftrightarrow (\neg A \vee B) \wedge (\neg B \vee A)\)</span></li>
+<li>Indepotenz:</li>
+<li><span class="arithmatex">\(A \vee A \Leftrightarrow A\)</span></li>
+<li><span class="arithmatex">\(A \wedge A \Leftrightarrow A\)</span></li>
+<li>ausgeschlossene Dritte:</li>
+<li><span class="arithmatex">\(A \vee \neg A \Leftrightarrow T\)</span></li>
+<li><span class="arithmatex">\(A \wedge \neg A \Leftrightarrow W\)</span></li>
+<li>Identität:</li>
+<li><span class="arithmatex">\(A \vee T \Leftrightarrow T\)</span></li>
+<li><span class="arithmatex">\(A \wedge T \Leftrightarrow A\)</span></li>
+<li><span class="arithmatex">\(A \vee F \Leftrightarrow A\)</span></li>
+<li><span class="arithmatex">\(A \wedge F \Leftrightarrow F\)</span></li>
+</ul>
+<p>Beweiss, dass <span class="arithmatex">\((A \Rightarrow B) \Leftrightarrow (\neg B \Leftrightarrow \neg A)\)</span>  ist</p>
+<ul>
+<li><span class="arithmatex">\(A \Rightarrow B\)</span></li>
+<li><span class="arithmatex">\(\Leftrightarrow \neg A \vee B\)</span></li>
+<li><span class="arithmatex">\(\Leftrightarrow \neg \neg (\neg A \vee B)\)</span></li>
+<li><span class="arithmatex">\(\Leftrightarrow \neg (\neg \neg A \wedge \neg B)\)</span></li>
+<li><span class="arithmatex">\(\Leftrightarrow \neg (A \wedge \neg B)\)</span></li>
+<li><span class="arithmatex">\(\Leftrightarrow \neg A \vee \neg \neg B\)</span></li>
+<li><span class="arithmatex">\(\Leftrightarrow \neg \neg B \vee \neg A\)</span></li>
+<li><span class="arithmatex">\(\Leftrightarrow \neg (\neg B) \vee (\neg A)\)</span></li>
+<li><span class="arithmatex">\(\Leftrightarrow \neg B \Leftrightarrow \neg A\)</span></li>
+</ul>
+<p>Bsp:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(A \Rightarrow B\)</span> -&gt; Wenn es regnet, ist die Wiese nass</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\neg B \Rightarrow \neg A\)</span> -&gt; Wenn die Wiese nicht nass ist, regnet es nicht</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\neg (A \Rightarrow B)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\neg (A \Rightarrow B)\)</span> </p>
+</li>
+<li>
+<p><span class="arithmatex">\(\neg (\neg A \vee B)\)</span> </p>
+</li>
+<li>
+<p><span class="arithmatex">\(\neg \neg A \wedge \neg B\)</span> </p>
+</li>
+<li>
+<p><span class="arithmatex">\(A \wedge \neg B\)</span> </p>
+</li>
+</ul>
+<p>Implikations-Wahrheitstabelle:</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th><span class="arithmatex">\(A \Rightarrow B\)</span></th>
+<th><span class="arithmatex">\(\neg A \vee B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h1 id="quantore">Quantore</h1>
+<p>Motivation: Übergang von Prädikat zu Aussage zu formulieren</p>
+<ul>
+<li>
+<p>P(X) := "x ist eine natürliche Zahl" =&gt; Prädikat</p>
+</li>
+<li>
+<p>P(5) := "5 ist eine natürliche Zahl" =&gt; Aussage (wahr)</p>
+</li>
+<li>
+<p>"Es gibt mindestens eine <span class="arithmatex">\(x \in \mathbb{Z}\)</span>, so dass P(x) gilt" =&gt; Aussage</p>
+</li>
+<li>
+<p>"Für alle <span class="arithmatex">\(x \in \mathbb{Z}\)</span> gillt P(x)" =&gt; Aussage</p>
+</li>
+</ul>
+<h2 id="liste-von-quantoren">Liste von Quantoren</h2>
+<table>
+<thead>
+<tr>
+<th>Zeichen</th>
+<th>Name</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\forall\)</span></td>
+<td>Allquantor</td>
+<td>Für alle</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\exists\)</span></td>
+<td>Existenzquantor</td>
+<td>"für mindestens ein"</td>
+</tr>
+</tbody>
+</table>
+<p>Beispiele</p>
+<table>
+<thead>
+<tr>
+<th>Beispiel</th>
+<th>gesprochen</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\forall x A(x)\)</span></td>
+<td>Für alle x gilt A(x)</td>
+<td>Alle x in dem Prädikat, werden auf alle Zahlen gebunden</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\forall x \in M A(x)\)</span></td>
+<td>Für alle x aus M gillt A(x)</td>
+<td>Alle x in dem Prädikat, werden auf alle Werte von M gebunden</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\exists x A(x)\)</span></td>
+<td>Es gibt (mind.) ein x mit A(x)</td>
+<td>Es gibt mindestens eine Zahl, bei welcher A(x) zutrifft</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\exists x \in M A(x)\)</span></td>
+<td>Es gibt (mind.) ein x aus M miz A(x)</td>
+<td>Es gibt mindestes einen Wert von M, bei welcher A(x) zutrifft</td>
+</tr>
+</tbody>
+</table>
+<p>Jeder Quantor bindet eine Variable</p>
+<p>Umformungen:</p>
+<ul>
+<li><span class="arithmatex">\(\forall x \in I B(x) \Leftrightarrow \forall x (x \in I \Rightarrow B(x))\)</span></li>
+<li>Klammern</li>
+<li>Quantoren binden stärker als Junktoren</li>
+<li><span class="arithmatex">\(\forall x \in \mathbb M B(x) \wedge C(x) \Leftrightarrow (\forall x \in \mathbb M B(x)) \wedge C(x)\)</span></li>
+<li>Abkürzungen</li>
+<li><span class="arithmatex">\(\forall x \in \mathbb M (\forall y \in \mathbb M A(x, y)) \Leftrightarrow \forall x,y \in \mathbb M A(x, y)\)</span></li>
+<li><span class="arithmatex">\(\exists x \in \mathbb M (\exists y \in \mathbb M A(x, y)) \Leftrightarrow \forall x,y \in \mathbb M A(x, y)\)</span></li>
+<li>Falls die Menge aus dem Kontext klar ist, können wir schreiben:<ul>
+<li><span class="arithmatex">\(\forall x A(x)\)</span> (ohne <span class="arithmatex">\(\in \mathbb M\)</span>)</li>
+<li><span class="arithmatex">\(\exists x A(x)\)</span> (ohne <span class="arithmatex">\(\in \mathbb M\)</span>)</li>
+</ul>
+</li>
+<li>Negation:</li>
+<li><span class="arithmatex">\(\neg \exists x \in M A(x) \Leftrightarrow \forall x \in M \neg A(x)\)</span></li>
+<li><span class="arithmatex">\(\neg \forall x \in M A(x) \Leftrightarrow \exists x \in M \neg A(x)\)</span></li>
+<li><span class="arithmatex">\(\forall x A(x) \Leftrightarrow \neg \exist x \neg A(x)\)</span></li>
+<li>Distributiv-Gesetzt</li>
+<li><strong>Keine Distributiv-Gesetzt mit Quantoren und Junktoren</strong></li>
+<li>Beispiel<ul>
+<li>A(x) := "x ist eine gerade natürliche Zahl"</li>
+<li>B(x) := "x ist eine ungerade natürliche Zahl"</li>
+<li><span class="arithmatex">\(\forall x A(x) \vee B(x) \Leftrightarrow W \nLeftrightarrow \forall x (A(x) \vee B(x)) \Leftrightarrow T\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(\exists x (A(x) \wedge B(x)) \nLeftrightarrow \exists x A(x) \wedge \exists x B(x)\)</span></li>
+<li><span class="arithmatex">\(\exists x (A(x) \vee B(x)) \nLeftrightarrow \exists x A(x) \vee \exists x B(x)\)</span></li>
+<li>Reihenfolge von Quantoren:</li>
+<li><span class="arithmatex">\(P(x, y) := x + y = 17\)</span></li>
+<li><span class="arithmatex">\(\forall x \in \mathbb Z (\exists x \in \mathbb Z P(x, y)) : wahr\)</span></li>
+<li><span class="arithmatex">\(\exists x \in \mathbb Z (\forall x \in \mathbb Z P(x, y)): falsc h\)</span></li>
+</ul>
+<p>Beispiel:</p>
+<ul>
+<li>A(x, y) := "x &lt; y" -&gt; 2-stelliges Prädikat, frei: x, y</li>
+<li><span class="arithmatex">\(\forall x \in \mathbb{R} A(x, y)\)</span> : 1-stelliges Prädikat, frei: x</li>
+</ul>
+<h2 id="ubungungen-quantoren">Übungungen Quantoren</h2>
+<p>2)<br></p>
+<ul>
+<li>a) <span class="arithmatex">\(\exists x P(x) \wedge \forall y,z (P(y) \wedge P(z) \Rightarrow y = z)\)</span></li>
+<li>b) <span class="arithmatex">\(\exists y,z (P(y) \wedge P(z) \wedge y \neq z)\)</span></li>
+<li>c) <span class="arithmatex">\(\neg (\exists x,y (P(x) \wedge P(y) \wedge x \neq y)) -&gt; negation von b)\)</span></li>
+<li>d) <span class="arithmatex">\(\forall x, y (P(x) \wedge P(y) \Rightarrow Q(x, y))\)</span></li>
+<li>e) <span class="arithmatex">\(\neg(\exists x Q(x, x)) \Leftrightarrow \forall x (\neg Q(x, x))\)</span></li>
+<li><span class="arithmatex">\(\neg(\forall x Q(x, x))\)</span> -&gt; das wäre: "nicht alle x sind Q(x, x)", aber eines x, bei welchem Q(x, x) stimmt, wäre ok</li>
+</ul>
+<p>3)<br></p>
+<ul>
+<li>a) Alle Prüfungen sind einfach <span class="arithmatex">\(\Leftrightarrow \forall x \in P E(x)\)</span></li>
+<li>b) Eine Prüfung ist einfach <span class="arithmatex">\(\Leftrightarrow \exists x \in P E(x)\)</span></li>
+<li>c) Keine Prüfung ist einfach <span class="arithmatex">\(\Leftrightarrow \neg \exists x \in P E(x)\)</span></li>
+<li>d) Alle Prüfungen sind einfach <span class="arithmatex">\(\Leftrightarrow \forall x \in P (\neg E(x))\)</span></li>
+<li>e) Nur eine Prüfung ist einfach <span class="arithmatex">\(\Leftrightarrow (\exist x \in P E(x)) \wedge \forall y,z \in P (E(y) \wedge E(z))\)</span></li>
+<li>f) Nur eine Prüfung ist nicht einfach <span class="arithmatex">\(\Leftrightarrow (\exist x \in P \neg E(x)) \wedge \forall y,z \in P (\neg E(y) \wedge \neg E(z))\)</span></li>
+<li>g) Nicht alle Prüfung sind einfach <span class="arithmatex">\(\Leftrightarrow \neg \forall x \in P E(x)\)</span></li>
+<li>h) Eine Prüfung ist nicht einfach <span class="arithmatex">\(\Leftrightarrow \exists x \in P \neg E(x)\)</span></li>
+<li>g) und h) sind äquivalent</li>
+</ul>
+<h1 id="beweisstechnik">Beweisstechnik</h1>
+<ul>
+<li><span class="arithmatex">\(\forall\)</span> : </li>
+<li>wahr: für alle Elemente aus der Grundmenge<ul>
+<li>Verallgemeinern mit Variablen</li>
+</ul>
+</li>
+<li>falsch: Ein Element, bei dem es nicht funktioniert</li>
+<li><span class="arithmatex">\(\exists\)</span></li>
+<li>wahr: Ein Element finden, bei dem es stimmt</li>
+<li>falsch: Alle Elemente aus der Grundmenge allgemein zeigen, dass das Prädikat nicht gilt</li>
+</ul>
+<h2 id="direkten-beweis">Direkten Beweis</h2>
+<ul>
+<li>Implikation</li>
+<li>zu zeigen<ul>
+<li><span class="arithmatex">\(\forall x,y \in \mathbb N (\text{x ist gerade} \wedge \text{y ist gerade} \Rightarrow x\cdot y \text{ ist gerade})\)</span></li>
+<li><span class="arithmatex">\(\Leftrightarrow \forall x,y \in \mathbb N \exists n_x,n_y,n_z \in \mathbb N (x = 2 \cdot n_x \wedge y = 2\cdot n_y \Rightarrow x\cdot y = 2\cdot n_z)\)</span></li>
+</ul>
+</li>
+<li>Beweise:<ul>
+<li>A: wahr <span class="arithmatex">\((x=2n_x \wedge y=2n_y) = T \text{  } n_x,n_y \in \mathbb N\)</span></li>
+<li>B: wahr <span class="arithmatex">\((x\cdot y = 2n_z) = T\)</span></li>
+<li><span class="arithmatex">\(A \Rightarrow B: x \cdot y = 2n_x \cdot 2n_y = 2(2n_xn_y) = 2n_z\)</span></li>
+</ul>
+</li>
+</ul>
+<h2 id="beweis-durch-widerspruch">Beweis durch Widerspruch</h2>
+<p>Anstatt zu zeigen, dass die Aussage A immer wahr ist, wird bewiessen, dass A niemals falsch ist.</p>
+<ul>
+<li>zu beweisen:</li>
+<li><span class="arithmatex">\(A:= \text{"Es gibt keine grösste natürliche zahl"} = \neg \exists n \in \mathbb N G(n)\)</span></li>
+<li><span class="arithmatex">\(G(x) := \text{"x ist grösste Zahl"}\)</span></li>
+<li><span class="arithmatex">\(\neg A := \text{"Es gibt mindestens eine grösste natürliche Zahl"} = \exists n \in \mathbb N G(n)\)</span></li>
+<li>Beweis:</li>
+<li>Annahme: n ist grösste natürliche Zahl</li>
+<li>Jedoch für jede natürliche Zahl n, existiert n + 1</li>
+<li>Daher ist n+1 &gt; n und n ist nicht die grösste Zahl</li>
+<li><span class="arithmatex">\(\Rightarrow \neg A = W \Rightarrow A = T\)</span></li>
+</ul>
+<h2 id="beweis-durch-gegen-beispiel">Beweis durch (Gegen-) Beispiel</h2>
+<ul>
+<li>zu beweisen</li>
+<li>"Nicht jede natürliche Zahl ist eine Quadratzahl"</li>
+<li><span class="arithmatex">\(A:= \neg\forall n \in \mathbb N Q(n)\Leftrightarrow \exists n \in \mathbb N \neg Q(n)\)</span></li>
+<li><span class="arithmatex">\(Q(x)=\text{x ist Quadradzahl} )\)</span></li>
+<li>Beweis:</li>
+<li><span class="arithmatex">\(n = 7\)</span>, denn <span class="arithmatex">\(f(x)=x^2\)</span> mit <span class="arithmatex">\(f(x) \in \mathbb N\)</span></li>
+<li>in diesem Fall würde 7 niemals als Funktionswert für f(x) herausgekommen, da <span class="arithmatex">\(2\cdot 2 &lt; 7 &lt; 3 \cdot 3\)</span></li>
+<li><span class="arithmatex">\(\Rightarrow\)</span> 7 ist keine Quadratzahl</li>
+<li><span class="arithmatex">\(\Rightarrow\)</span> A ist wahr</li>
+</ul>
+<h2 id="beweis-durch-kontraposition">Beweis durch Kontraposition</h2>
+<p>Es gillt die Aussage von der Form <span class="arithmatex">\(A \Rightarrow B \Leftrightarrow \neg B \Rightarrow \neg A\)</span></p>
+<p>Beispiel:</p>
+<ul>
+<li>zu beweisen:</li>
+<li><span class="arithmatex">\(\forall n \in \mathbb N ((n^2 + 1 = 1) \Rightarrow (n = 0))\)</span></li>
+<li>anstatt dies, beweissen wir</li>
+<li><span class="arithmatex">\(\Leftrightarrow \forall n \in \mathbb N (\neg (n = 0) \Rightarrow \neg(n^2 + 1 = 1))\)</span></li>
+<li><span class="arithmatex">\(\Leftrightarrow \forall n \in \mathbb N (n \neq 0 \Rightarrow n^2 + 1 \neq 1))\)</span></li>
+<li>Beweis:</li>
+<li>Wenn <span class="arithmatex">\(n \neq 0 \Rightarrow n^2\neq 0 \Rightarrow n^2 + m \neq m\)</span> </li>
+<li>Für <span class="arithmatex">\(m=1 \Rightarrow n^2 + 1 \neq 1\)</span> </li>
+<li><span class="arithmatex">\(\Rightarrow \forall n \in \mathbb N ((n \neq 0) \Rightarrow (n^2 + 1 \neq 1)) : T\)</span></li>
+</ul>
+<h2 id="aquivalenz">Äquivalenz</h2>
+<p>Um eine Äquivalenz zu beweissen muss <span class="arithmatex">\(A \Rightarrow B \wedge B \Rightarrow A\)</span></p>
+<p>Beispiel:</p>
+<ul>
+<li><span class="arithmatex">\(B \Rightarrow A: \forall n \in \mathbb N ((n = 0) \Rightarrow (n^2+1=1))\)</span></li>
+<li><span class="arithmatex">\(n=0\)</span>  (wenn n=0 wahr ist, dann muss auch die nächste Linie wahr sein)</li>
+<li><span class="arithmatex">\(n^2+1=0^2 + 1 = 1\)</span> (was sie ist)</li>
+<li>und da <span class="arithmatex">\(A \Rightarrow B\)</span> und <span class="arithmatex">\(B \Rightarrow A\)</span> wahr waren, ist auch <span class="arithmatex">\(A \Leftrightarrow B\)</span> wahr</li>
+</ul>
+<p>Biespiel #2:</p>
+<ul>
+<li>zu zeigen:</li>
+<li><span class="arithmatex">\(\forall n \in \mathbb N \exists k,j \in \mathbb N ((n = 2k) \Leftrightarrow n^2=2j)\)</span></li>
+<li>bzw. <span class="arithmatex">\(\forall n \in \mathbb N \exists k,j \in N (n = 2k \Rightarrow n^2 = j2) \wedge (n^2 = 2j \Rightarrow n = 2k)\)</span></li>
+<li>Beweis:</li>
+<li><span class="arithmatex">\(A(n) \Rightarrow B(n)\)</span></li>
+<li>n = 2k : wahr</li>
+<li><span class="arithmatex">\(n^2=(2k)^2\)</span></li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2022-06-27
+    
+  </small>
+</div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../DB/summaries/summary-2022-01-25.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: DB Summary" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              DB Summary
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="02_Semantik.html" class="md-footer__link md-footer__link--next" aria-label="Next: 02 Semantik" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              02 Semantik
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
