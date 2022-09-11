@@ -410,8 +410,6 @@ Like with lenses, there is also a simple traversal: `Traversal' s a`, where the 
 * `s` - the structure before and after the action
 * `a` - the focus before and after the action
 
-
-
 ### Actions
 
 When actions are used as a setter, then all values are changed, which would be returned with a getter. With these kind of action only part of the traversal can be updated. This also means that the focused type can't c
@@ -508,8 +506,6 @@ When actions are used as a setter, then all values are changed, which would be r
   [0..4] ^? element 20 -- will return Nothing
   [0..4] & element 2 *~ 10 -- will return [0, 1, 20, 3, 4]
   ```
-
-
 
 ### Operators
 
