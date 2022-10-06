@@ -46,12 +46,15 @@ Wenn $\tilde x=rd(x)$ gilt, wobei $rd(x)$ die Zahl $x$ rundet, dann ist der höc
 
 Als Beispiel mit der Basis $B=10$, eine siebenstellige Mantisse $n=7$ und $x=180.1234567=0.1801234567\cdot 10^3$: $\vert rd(x)-\tilde x\vert \le 0.\underbrace{0000000}_{n=7}5\cdot 10^3=0.5\cdot 10^{3-7}=0.5\cdot10^{-4}$
 
-## Maschinengenauigkeit
+## Maschinengenauigkeit (max. relativer Fehler)
 
-Die Maschinengenauigkeit ist der maximale relative Fehler, der beim Runden entstehen kann.
+Die Maschinengenauigkeit ist der maximale **relative** Fehler, der beim Runden entstehen kann.
 $$
 eps = \frac B 2\cdot B^{-n}=\frac 1 2 \cdot B^{1-n}
 $$
+
+$eps$ kann auch definiert werden, als die kleinste Zahl bei der $1+eps>1$ noch gilt
+
 
 
 ## IEC / IEEE Gleitkommazahlen

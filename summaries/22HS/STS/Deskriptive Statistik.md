@@ -25,7 +25,7 @@ Aus der Grundgesamtheit $\Omega$ können mit einer Stichprobe $n$ Objekte $\omeg
 
 Die absolute Häufigkeit $h_i$, ist wie oft ein Wert vorgekommen ist. Die Summe aller $h_i$ ergibt die Anzahl Werte $n$. Die relative Häufigkeit $f_i=\frac{h_i}{n}$, ist, was der Prozent-Anteil eines Wertes ist. Die Summe aller $f_i$ ergibt $1$
 
-## Kumulative absolute und relative Häufigkeit
+## Kumulative absolute und relative Häufigkeit (CDF) bei nicht-klassierten Daten
 
 Die kumulative absolute Häufigkeit $H(x)$, ist definiert als alle Werte von $h_i$ bis und mit $x$. Es kann auch als $H(x)=\sum_{a_i \lt x}h_i$.
 
@@ -33,7 +33,7 @@ Die kumulative absolute Häufigkeit $H(x)$, ist definiert als alle Werte von $h_
 
 Die kumulative Häufigkeiten zwischen zwei Werte. Zum Beispiel der Anteil von Familien, welche 2 - 4 Flüge pro Jahr kaufen: $F(4) - F(2)$ 
 
-## Beispiel
+### Beispiel
 
 | Anzahl Flugreisen $a_i$               | 1              | 2               | 3               | 4               | 5              | Total |
 | ------------------------------------- | -------------- | --------------- | --------------- | --------------- | -------------- | ----- |
@@ -43,6 +43,42 @@ Die kumulative Häufigkeiten zwischen zwei Werte. Zum Beispiel der Anteil von Fa
 | Kumulative relative Häufigkeit $F(x)$ | $\frac 9{30}$  | $\frac{17}{30}$ | $\frac{22}{30}$ | $\frac{29}{30}$ | $1$            |       |
 
 ![image-20220929083751744](res/image-20220929083751744.png)
+
+
+
+## PMF und PDF bei klassierten Daten
+
+Die relative Häufigkeit (PMF) bei klassierten Daten ist für die ganze Klasse definiert.
+
+![image-20221006084249371](res/image-20221006084249371.png)
+
+Wenn nun aber die PMF als Balkendiagramm dargestellt werden würde, würden Klassengrössen die Darstellung verzerren. Dies liegt daran, dass eine grössere Klasse mehr Platz in Anspruch nimmt, da der Balken breiter ist. Dafür gibt es die **PDF**.
+$$
+PDF(x) = \frac{f_x}{Klassengrösse}=\frac{h_x}{n\cdot Klassengrösse}
+$$
+
+Nun folgt ein Beispiel für PDFs.
+
+| $c_i$     | $[4; 6[$              | $[6:8[$               | $[8:12[$              |
+| --------- | --------------------- | --------------------- | --------------------- |
+| $h_i$     | 1                     | 7                     | 2                     |
+| $f_i$     | $\frac 1 {10}$        | $\frac{7}{10}$        | $\frac{2}{10}$        |
+| PDF $f$   | $\frac{1}{10\cdot 2}$ | $\frac{7}{10\cdot 2}$ | $\frac{2}{10\cdot 4}$ |
+| CDF $F_i$ | $\frac{1}{10}$        | $\frac{8}{10}$        | $\frac{10}{10}=1$     |
+
+## Relative Häufigkeit (CDF) bei klassierten Daten
+
+Wenn die CDF für klassierte Daten gebaut wird, werden die CDF-Werte der Klassengrenzen berechnet, wie bei nicht klassierten Daten. Danach wird eine Linie zwischen den CDF-Werte der Klassengrenzen gezogen.
+
+![image-20221006083247554](res/image-20221006083247554.png)
+
+Die Steigung der Linie ist die $PDF$.
+
+Wenn nun mathematisch ein spezifischen CDF Wert berechnet werden soll, kann dies folgendermassen getan werden:
+$$
+F(x)=\frac{F(b)-F(a)}{b-a}\cdot (x-a)+F(a)=PMF(x)\cdot(x - a)+F(a)\\
+\text{wobei } a \text{ und } b \text{ die underte, bzw. obere Klassengrenzen sind}
+$$
 
 ## Kenngrösse
 
@@ -120,3 +156,114 @@ Für die meisten Verteilungen kann dabei festgehalten werden:
 ![image-20221001094338150](res/image-20221001094338150.png)
 
 Ebenfalls kann eine Verteilung uimodal, bimodal oder multimodal sein. 
+
+## Darstellungsarten bei multivariaten Daten
+
+Jenach, welcher Typ die Merkmale haben, welche verglichen werden sollen, können verschiedene Darstellungsarten verwendet werden.
+
+| Merkmale 1  | Merkmal 2   | Darstellungsart              |
+| ----------- | ----------- | ---------------------------- |
+| Kategoriell | Kategoriell | Tabelarisch, Mosaikplot      |
+| Kategoriell | Metrisch    | Tabelarisch, Boxplot-Diagram |
+| Metrisch    | Metrisch    | Scatterplot                  |
+
+### Tabelarisch
+
+Wenn zwei kategorielle Merkmale verglichen werden, kann es mit einer Tabelle dargestellt werden:
+
+| Zivielstand/Kaufkraft | tief | mittel | Hoch |
+| --------------------- | ---- | ------ | ---- |
+| Ledig                 | 978  | 1884   | 1748 |
+| Partnerschaft         | 475  | 1044   | 1452 |
+| Verheiratet           | 781  | 1870   | 2550 |
+
+Dabei sagt eine "Cell" in der Tabelle, wie viele Leute welchen Zivielstand und Kaufkraft gleichzeitig haben.
+
+Dies kann auch mit einem kategoriellen und einem metrischen Merkmal benützt werden.
+
+|        | Mittelwert | Standardtabweichung |
+| ------ | ---------- | ------------------- |
+| tief   | 2055.353   | 738.223             |
+| mittel | 5049.234   | 1577.482            |
+| hoch   | 12053.706  | 3715.074            |
+
+Dabei sagt eine "Cell" in der Tabelle z.B. was die durschnittliche Einkaufsbetrag ist, bei Personen mit tiefer Kaufkraft.
+
+### Mosaikplot
+
+Kann nur bei zwei kategoriellen Merkmalen verwendet werden.
+
+![image-20221006181654641](res/image-20221006181654641.png)
+
+### Boxplot
+
+Dies kann verwendet werden, wenn ein Merkmal kategoriell ist und das zweite metrisch ist.
+
+![image-20221006181750707](res/image-20221006181750707.png)
+
+(Das rechte Diagram ist ein Stripplot)
+
+### Scatterplot
+
+Scatterplots oder Streudiagramme sind nütztlich, wenn zwei metrische Merkmale visualisiert werden sollen.
+
+![image-20221006181849645](res/image-20221006181849645.png)
+
+Ein Risikio bei Scatterplots ist das Overplotten, was passiert, wenn es viele Datenpunkte in einem Bereich hat. Im folgenden Scatterplot hat es vermutlich mehr Punkte als ausgemacht werden können. Um dies zu erkennen, können weitere Kenngrössen analysiert werden.
+
+![image-20221006182001847](res/image-20221006182001847.png)
+
+Aus einem Scatterplot kann die Form, Richtung und Stärke gelesen werden.
+
+#### Form
+
+Die Form ist, wie die Punkte angeordnet sind. Es kann z.B. einen linearen Zusammenhang zwischen den Merkmalen bestehen. Oder die Pünkte können eine gekrümmte Kurve oder andere beliebige Form bildet.
+
+#### Richtung
+
+Die Richtung kann entweder einen positiven oder negativen Zusammenhang sein. Wenn es Positiv ist, dann sind die beiden Merkmale proportional zueinander (Je grösser A, desto grösser ist B). Wenn es Negativ ist, dann sind die beiden Merkmale umgekehrt proportional zueinander (Je grösser A, desto kleiner B).
+
+#### Stärke
+
+Die Stärke sagt aus, wie viel oder wenig Streung vorliegt. Wenn die Stärke klein ist, dann besteht ein starker Zusammenhang.
+
+![image-20221006185143532](res/image-20221006185143532.png)
+
+## Paerson-Korrelationskoeffizient
+
+Mit folgenden Formeln kann der Korrelationskoeffizient $r_{xy}$ ausgerechnet werden. Dabei ist $\tilde S_{x}$ die Standardtabweichung und $\tilde S_{xy}$ die Kovarianz.
+$$
+r_{xy}=\frac{\tilde S_{xy}}{\tilde S_x \cdot \tilde S_y}\\
+\tilde S_{xy}=\frac 1 n\sum^n_{i=1}(x_i-\overline x)(y_i-\overline y)=\overline{xy}-\overline x \cdot \overline y\\
+\tilde S_x=\sqrt{\frac 1 n\sum^n_{i=0}(x_i-\overline x)^2}=\sqrt{\overline{x^2}-(\overline x)^2}\\
+\tilde S_y=\sqrt{\frac 1 n\sum^n_{i=0}(y_i-\overline y)^2}=\sqrt{\overline{y^2}-(\overline y)^2}\\
+$$
+Wenn der **korrigierte** Korrelationskoeffizient $r_{xy,korr}$ benötigt wird, können folgende Formeln benützt werden:
+$$
+r_{xy,korr}=\frac{\tilde S_{xy,korr}}{\tilde S_{x,korr} \cdot \tilde S_{y,korr}}\\
+\tilde S_{xy,korr}=\frac 1 {n -1}\cdot \tilde S_{xy}\\
+\tilde S_{x,korr}=\sqrt{\frac n {n - 1}\tilde S_x^2}\\
+\tilde S_{y,korr}=\sqrt{\frac n {n - 1}\tilde S_y^2}\\
+$$
+Der Korrelationskoeffizient sagt aus wie fest* zwei Merkmale korrelieren und ob sie proportional oder umgekehrt proportional sind.
+
+Wenn der Koeffizient gegen $1$ oder $-1$ geht, dann korrelieren die zwei Merkmale, wenn der Koeffizient gegen 0 tendiert, dann korrelieren die zwei Merkmale nicht oder nicht linear.
+
+Wenn der Koeffizient positiv ist, dann sind die Faktoren proportional, wenn der Koeffizient negativ ist, dann sind die Merkmale umgekehrt-proportional.
+
+![image-20221006190322939](res/image-20221006190322939.png)
+
+Ein Problem des Korrelationskoeffizient nach Paerson ist, dass er nur Korrelationen erkennen kann, welche linear sind. Falls die Kurve eine andere Form, als eine Gerade hat, dann wird der Koeffizient gegen $0$ gehen, obwohl die Merkmale korrelileren.
+
+Ein weiteres Problem ist, dass der Paerson-Korrelationsfaktor nicht robust ist, und bei Ausreissern fehlerhaft eine Korrelation oder fehlerhaft keine Korrelation anzeigen.
+
+### Beispiele
+
+| Diagramme                                                   | Korrelations-koeffizient                      | Bemerkung                                                    |
+| ----------------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------ |
+| ![image-20221006191100893](res/image-20221006191100893.png) | $r_{xy}=0.988$                                | Die beiden Merkmale korrelieren proportional                 |
+| ![image-20221006191113718](res/image-20221006191113718.png) | $r_{xy}=0.174$                                | Die beiden Merkmale korrelieren **nicht**                    |
+| ![image-20221006191143249](res/image-20221006191143249.png) | $r_{xy}=-0.976$                               | Die beiden Merkmale korrelieren umgekehrt proportional       |
+| ![image-20221006191346725](res/image-20221006191346725.png) | $r_{xy, mit}=0.909$<br />$r_{xy, ohne}=0.597$ | Die beiden Merkmale sind proportional, wenn der <br />Ausreisser mitgerechnet wird ($r_{xy, mit}$), hingegen, wenn der Ausreisser nicht mit gerechnet wird, dann sinkt $r_{xy}$ |
+|                                                             |                                               |                                                              |
+
