@@ -1,5 +1,11 @@
 # Deskriptive Statistik
 
+$$
+\DeclareMathOperator{\rg}{rg}
+$$
+
+
+
 ## Begriffe
 
 **TODO**
@@ -253,7 +259,7 @@ Wenn der Koeffizient positiv ist, dann sind die Faktoren proportional, wenn der 
 
 ![image-20221006190322939](res/image-20221006190322939.png)
 
-Ein Problem des Korrelationskoeffizient nach Paerson ist, dass er nur Korrelationen erkennen kann, welche linear sind. Falls die Kurve eine andere Form, als eine Gerade hat, dann wird der Koeffizient gegen $0$ gehen, obwohl die Merkmale korrelileren.
+**Achtung:** Problem des Korrelationskoeffizient nach Paerson ist, dass er nur Korrelationen erkennen kann, welche linear sind. Falls die Kurve eine andere Form, als eine Gerade hat, dann wird der Koeffizient gegen $0$ gehen, obwohl die Merkmale korrelileren.
 
 Ein weiteres Problem ist, dass der Paerson-Korrelationsfaktor nicht robust ist, und bei Ausreissern fehlerhaft eine Korrelation oder fehlerhaft keine Korrelation anzeigen.
 
@@ -265,5 +271,38 @@ Ein weiteres Problem ist, dass der Paerson-Korrelationsfaktor nicht robust ist, 
 | ![image-20221006191113718](res/image-20221006191113718.png) | $r_{xy}=0.174$                                | Die beiden Merkmale korrelieren **nicht**                    |
 | ![image-20221006191143249](res/image-20221006191143249.png) | $r_{xy}=-0.976$                               | Die beiden Merkmale korrelieren umgekehrt proportional       |
 | ![image-20221006191346725](res/image-20221006191346725.png) | $r_{xy, mit}=0.909$<br />$r_{xy, ohne}=0.597$ | Die beiden Merkmale sind proportional, wenn der <br />Ausreisser mitgerechnet wird ($r_{xy, mit}$), hingegen, wenn der Ausreisser nicht mit gerechnet wird, dann sinkt $r_{xy}$ |
-|                                                             |                                               |                                                              |
 
+## Spearman-Rangkorrelationskoeffizient
+
+$$
+r_{Sp}=\frac{\sum^n_{i=1}(\rg(x_i) - \overline{\rg(x)})\cdot(\rg(y_i)-\overline{\rg(y)})}
+{\sqrt{\sum^n_{i=1}(\rg(x_i) - \overline{\rg(x)})^2} \cdot \sqrt{\sum^n_{i=1}(\rg(y_i) - \overline{\rg(y)})^2}}
+$$
+
+Dabei ist $\rg(x_i)$ Der Rang von $x_i$ und kann als $\rg(x_i)=1+Anzahl(j \vert x_j < x_i) + \frac 1 2 Anzahl(j | x_j = x_i, i \neq j)$. In Deutsch: 1 + die Anzahl von Elementen $x_j$, welche kleiner als $x_i$ sind + die halbe Anzahl von Elementen, welche gleich sind, wie $x_i$.
+
+Hier ist ein Beispiel: 
+
+![image-20221018164404100](res/image-20221018164404100.png)
+
+Daraus ergibt sich folgendes:
+$$
+\sqrt{\sum^n_{i=1}(\rg(x_i) - \overline{\rg(x)})^2} = \sqrt{\sum^n_{i=1}(\rg(y_i) - \overline{\rg(y)})^2}\\
+\sqrt{\sum^n_{i=1}(\rg(x_i) - \overline{\rg(x)})^2} =\sqrt{2.5^2+(-0.5)^2 + 1.5^2 + (-2.5)^2+0.5^2+(-1.5)^2}=\sqrt{17}\\
+\sum^n_{i=1}(\rg(x_i)-\overline{\rg(x)})(\rg(y_i)- \overline{\rg(y)})\\= 2.5 \cdot 2.5 + (-0.5)\cdot (-1.5) + 1.5 \cdot 1.5 + (-2.5)\cdot (-0.5) + 0.5 \cdot 0.5 + (-1.5)\cdot (-2.5)=14.5\\
+
+r_{Sp}=\frac{\sum^n_{i=1}(\rg(x_i) - \overline{\rg(x)})\cdot(\rg(y_i)-\overline{\rg(y)})}
+{\sqrt{\sum^n_{i=1}(\rg(x_i) - \overline{\rg(x)})^2} \cdot \sqrt{\sum^n_{i=1}(\rg(y_i) - \overline{\rg(y)})^2}} = \frac{14.5}{\sqrt{17.5}\cdot\sqrt{17.5}}\approx 0.83
+$$
+
+### Verbundene Ränge
+
+Wenn die x- oder y-Elemente doppelte Elemente enhalten (z.B. zwei `4`), dann wird von verbundenen Rängen gesprochen. Dabei wird der Durchschnitt der Ränge berechnet
+
+![image-20221018165421100](res/image-20221018165421100.png)
+
+In diesem Fall wäre der Rang von $x_3$ und $x_4$ `3` oder `4`, daher wird der Durschschnitt als Ranggenommen und wird somit $\rg(x_3)=\rg(x_4)=3.5$
+
+![image-20221018165534915](res/image-20221018165534915.png)
+
+Das gilt auch, wenn mehr als zwei gleiche Werte existieren. In diesem Fall kann der Rang von $x_3$, $x_4$ und $x_5$ `3`, `4`, oder `5` sein. Daher wird der Rang zum Durchschnitt von 3, 4, 5. $\rg(x_3)=\rg(x_4)=\rg(x_5)=4$

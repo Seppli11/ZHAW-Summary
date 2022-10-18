@@ -15,7 +15,7 @@ Die Rekursionstiefe ist, wie viele Stackframes es maximal gibt.
 
 Um die Ordnung von einem rekursiven Algorithmen auszurechnen, kann $T_{n}$ definiert werden und für jeden Aufruf $T_{n - 1}$ einsetzen. Danach einige $T_n$ auflösen und den Trend sehen.
 
-### Zeitkomplexität für Fibonacci
+### Zeitkomplexität für Türme von Hanoi
 
 ```java
 void hanoi (int n, char from, char to, char help) {

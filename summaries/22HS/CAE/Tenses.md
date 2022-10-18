@@ -40,6 +40,7 @@
 * An action which started in the past and continues up to the present 
 * A recently completed action
 * Am action in the past which has a connection to the present
+* An experience you had in the past but doesn't have to be recent
 
 ### Present Perfect Continuous
 
