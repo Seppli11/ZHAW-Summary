@@ -4,8 +4,6 @@ $$
 \DeclareMathOperator{\rg}{rg}
 $$
 
-
-
 ## Begriffe
 
 **TODO**
