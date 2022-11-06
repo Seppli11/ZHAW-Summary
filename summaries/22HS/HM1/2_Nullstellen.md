@@ -73,3 +73,9 @@ Oder auf Deutsch: Wenn es einen Vorzeichenwechsel zwischen $[x_n-\varepsilon; x_
 
 ![image-20221019090047529](res/image-20221019090047529.png)
 
+## Gaus-Algorithmus
+
+Siehe `22FS/LA/01_Lineare Gleichungssysteme.md`
+
+### Fehlerfortpflanzung und Pivotisierung
+

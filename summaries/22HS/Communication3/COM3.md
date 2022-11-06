@@ -27,15 +27,18 @@ Eine Zusammenfassung soll im **Präsens** sein und keine Nacherzählung (keine I
 ### Aufbau
 
 1) Ausgangslage, Thema, die Angabe des Ziels bzw. der
-  untersuchten Fragestellung des Basistexts, Textsorte
+    untersuchten Fragestellung des Basistexts, Textsorte
 2) eine Angabe der genannten Methode(n) zur Beantwortung der
-  Fragestellung
+    Fragestellung
 3) die Verdeutlichung der Resultate
 4) eine Diskussion (Einordnung) der Ergebnisse, ggf. einen
-  abschliessenden Satz zur Anwendung
+    abschliessenden Satz zur Anwendung
 
 ### Aufbau in COM3
 
 ![image-20220928123144570](res/image-20220928123144570.png)
 
 Affiliation ist ZHAW
+
+## Argument
+
