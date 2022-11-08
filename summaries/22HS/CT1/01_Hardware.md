@@ -100,3 +100,9 @@ Adressen werden aligniert. **Half-Words** werden auf gerade Adressen aligniert. 
 ## Object-File
 
 ![image-20220928111738744](res/image-20220928111738744.png)
+
+1111 + 1 = 0000 C=1 O=0
+
+0111 + 1 = 1000 C = 0 O = 1
+
+1000 - 1 = 0111 C = 0 O =1

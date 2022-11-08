@@ -141,6 +141,8 @@ Signal words: already, just never, not yet, once, until that day
 
 ## Future
 
+In the case the an action was scheduled, a sentence can be formed with the present continuous or the going to (I'm having a party. $\a$ I'm going to have a party.)
+
 ### Will-Future
 
 > It will rain later. (A prediction made by the speaker)
@@ -150,6 +152,7 @@ Signal words: already, just never, not yet, once, until that day
 > If I study, I will pass the exams
 
 * A prediction about the future
+* When saying somthing about the future, which is almost certain
 * When a decision was spontaneously made at the time of speaking
 * The main clause in the type 1 if-clause
 
