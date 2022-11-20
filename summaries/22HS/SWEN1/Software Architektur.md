@@ -23,3 +23,15 @@ Zwischen den Modulen gibt es eine schwache Kopplung. Innerhalb eines Moduls gibt
 ## Paketdiagramme
 
 * Tier, Layer und Partion
+
+## GRASP
+
+* Information Expert
+* Creator
+* Controller
+* Low Coupling
+* High Cohesion
+* Polymorphism
+* Pure Fabrication
+* Indirection
+* Protected Variations

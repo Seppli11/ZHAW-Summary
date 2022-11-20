@@ -6,7 +6,9 @@ Jede Klasse besteht aus einer sichtbarer Schnittstelle und eine von Aussen, unsi
 
 ## Big-O Notation
 
+## Invarianten
 
+**TODO**
 
 ## Algorithmus
 
@@ -35,6 +37,8 @@ Ein Stack wird oft für das Parsen von z.B. Klammern oder XML-Tags verwendet. Eb
 
 ## List
 
+In ADS ist mit einer Liste **immer** eine linked list.
+
 ### Methoden
 
 * `void add (T obj)`
@@ -43,6 +47,14 @@ Ein Stack wird oft für das Parsen von z.B. Klammern oder XML-Tags verwendet. Eb
 * `T remove(int pos)`
 * `int size()`
 * `boolean isEmpy()`
+
+### In Liste Suchen
+
+**TODO**
+
+### Zwei Listen vergleichen
+
+**TODO**
 
 ## Queue
 

@@ -1,5 +1,7 @@
 # Domänemodellierung
 
+![image-20221120204743423](res/image-20221120204743423.png)
+
 ## Anleitung
 
 1. Konzept identifizieren
@@ -22,6 +24,10 @@ Folgende Antipattern sollten vermieden werden:
 Folgendes ist im Domänenmodell erlaubt:
 
 ![image-20221010090728332](res/image-20221010090728332.png)
+
+## Aggregation und Komposition
+
+![image-20221120204851575](res/image-20221120204851575.png)
 
 ## Zustände
 

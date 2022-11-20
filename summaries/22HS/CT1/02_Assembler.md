@@ -1,5 +1,7 @@
 # Assembler
 
+Arm is **little endian**, meaning that the MSB comes first, the LSB comes last.
+
 ## Basic Structure
 
 ```assembly
