@@ -40,5 +40,23 @@ Eine Zusammenfassung soll im **Präsens** sein und keine Nacherzählung (keine I
 
 Affiliation ist ZHAW
 
-## Argument
+## Argumentation
 
+### LWN 2
+
+- 20 min / 4-5 people
+- speak freely, but notes are allowed (A5 sheet)
+- The lecturer might send a message to a participant with instructions which needs to be incomperated
+- Harvard Principles need to be incorporated 
+- Don't use every argument at the same time. The participants should stick to the current topic
+- CEO should welcome everybody and state the aim of the meeting
+- Participants should be introduced with their role that the prof knows who does what
+
+Preperation:
+
+* What is your own position?
+* What is your bottom line?
+* Where are you prepared to compromise?
+  * What is the minimal goal?
+  * What is the maximal goal?
+* Review the Harvard Principles
