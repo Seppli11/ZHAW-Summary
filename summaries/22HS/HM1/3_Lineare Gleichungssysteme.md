@@ -116,5 +116,12 @@ Für Jacobi-Verfahren ist $B$ und $c$ folgendermassen definiert: $x^{(k+1)}=-\un
 
 Für das Gaus-Seidel-Verfahren ist $B$ und $c$ definiert als: $x^{(k+1)}=\underbrace{-(D+L)^{-1}R}_B\cdot x^{(k)}+\underbrace{(D+L)^{-1}}_c \cdot b$
 
+### Diagonaldominanz
+
+Eine Matrix wird als Diagonaldominanz bezeichnet, wenn entweder
+
+* für alli $i=1,...,n$: $|a_{ii}|> \sum^n_{j=1, j\neq i}|a_{ij}|$
+* für alli $j=1,...,n$: $|a_{jj}|> \sum^n_{i=1, i\neq j}|a_{ij}|$
+
 ## Abschätzung
 

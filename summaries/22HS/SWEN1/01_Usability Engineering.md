@@ -12,17 +12,25 @@ Eine gute Usability hat eine Software, wenn sie effiektiv, effizient und mit ein
 
 Wenn von User Experience (UX) die Rede ist, wird gemeint, wie sich die Applikation anfühlt (Usability + Desirability). Wenn die Customer Experience gemeint ist, wird vom Gesammteindruck der App, der marke und der Firma gesprochen (Usability + UX + Brand Experience).
 
-Es gibt **sieben Anforderungsbereiche** der Usability. Jenach Applikation sind nicht alle wichtig oder treffen gar nicht zu.
+Es gibt **sieben Anforderungsbereiche** der Usability (laut DIN EN ISO 9241-110). Je nach Applikation sind nicht alle wichtig oder treffen gar nicht zu.
 
 1. Aufgabenangemessenheit
    Eine Aufgabe soll nur so viele Schritte benötigen, wie minimal nötig. Ebenfalls soll nur Informationen angezeigt werden, welche für die aktuelle Aufgabe relevant ist (z.B. Hilfe). 
    Jede Eingabe sollte nur einmal getätigt werden und Eingabefelder sollen Standartwerte oder/und Liste von vordefinierten Werte habe (z.B. Länder). Zudem sollen ableitbare Eingaben vorgeschlagen werden.
 2. Lernförderlichkeit
+   Die Software soll Informationen über Konzepte und Regeln anbieten, wenn der Nutzer dies wünscht. Dies kann beispielsweise über Tool-Tipps oder Hilfssystem bewerkstelligt werden.
 3. Individualisierbarkeit
+   Die Applikationen soll sich dem Benutzer anpassen. Dies kann getan werden über Tipps, Tool-Tips, Wizards oder auch Tastaturkürzel für Experten.
+   
 4. Erwartungskonformität
+   Die Applikation soll strickt interne Regeln anwenden. Die Konsistenz von der Terminologie, Reihenfolgen von Knöpfen und Informationsdarstellung sind wichtig und helfen dem Nutzer.
 5. Selbstbeschreibungsfähigkeit
-6. Steuerbarkeit
+   Der Benutzer soll ausreichend informiert werden, wo er ist, was er tun soll und kann, wie er dies zu tun hat (z.B. Formate) und was das System macht.
+   Dabei können Dinge wie Labels und Fehlermeldung hilfreich sein.
+6. Steuerbarkeit/Kontrolle
+   Der Benutzer soll das Tempo und Dialogfluss steuern können. Ebenfalls soll der Benutzer zwischen verschiedenen Inputsmodalitäten (Maus, Tastatur, Touch, ...) wechseln können. Darstellungsformate (Miles vs Kilometer) sollen einstellbar sein.
 7. Fehlertoleranz
+   Die Applikation soll dem Nutzer klar mitteilen, welche Werte als Input erwartet werded. Benutzeraktionen sollen zudem vor Aktionen überprüft werden. Bei Korrekturen und Fehlermeldungen dürfen **nie** Daten verloren gehen.
 
 ## User-Centered Design
 

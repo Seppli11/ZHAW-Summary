@@ -29,6 +29,8 @@ Aus der Grundgesamtheit $\Omega$ können mit einer Stichprobe $n$ Objekte $\omeg
 
 Die absolute Häufigkeit $h_i$, ist wie oft ein Wert vorgekommen ist. Die Summe aller $h_i$ ergibt die Anzahl Werte $n$. Die relative Häufigkeit $f_i=\frac{h_i}{n}$, ist, was der Prozent-Anteil eines Wertes ist. Die Summe aller $f_i$ ergibt $1$
 
+Die relative Häuffigkeit bei nicht klassierten Daten nennts isch PMF.
+
 ## Kumulative absolute und relative Häufigkeit (CDF) bei nicht-klassierten Daten
 
 Die kumulative absolute Häufigkeit $H(x)$, ist definiert als alle Werte von $h_i$ bis und mit $x$. Es kann auch als $H(x)=\sum_{a_i \lt x}h_i$.
@@ -39,12 +41,12 @@ Die kumulative Häufigkeiten zwischen zwei Werte. Zum Beispiel der Anteil von Fa
 
 ### Beispiel
 
-| Anzahl Flugreisen $a_i$               | 1              | 2               | 3               | 4               | 5              | Total |
-| ------------------------------------- | -------------- | --------------- | --------------- | --------------- | -------------- | ----- |
-| Absolute Häufigkeit $h_i$             | $9$            | $8$             | $5$             | $7$             | $1$            | $30$  |
-| Relative Häufigkeit $f_i$             | $\frac 9 {30}$ | $\frac{8}{30}$  | $\frac{5}{30}$  | $\frac{7}{30}$  | $\frac 1 {30}$ | $1$   |
-| Kumulative absolute Häufigkeit $H(x)$ | $9$            | $17$            | $22$            | $29$            | $30$           |       |
-| Kumulative relative Häufigkeit $F(x)$ | $\frac 9{30}$  | $\frac{17}{30}$ | $\frac{22}{30}$ | $\frac{29}{30}$ | $1$            |       |
+| Anzahl Flugreisen $a_i$                     | 1              | 2               | 3               | 4               | 5              | Total |
+| ------------------------------------------- | -------------- | --------------- | --------------- | --------------- | -------------- | ----- |
+| Absolute Häufigkeit $h_i$                   | $9$            | $8$             | $5$             | $7$             | $1$            | $30$  |
+| Relative Häufigkeit $f_i$ (PMF)             | $\frac 9 {30}$ | $\frac{8}{30}$  | $\frac{5}{30}$  | $\frac{7}{30}$  | $\frac 1 {30}$ | $1$   |
+| Kumulative absolute Häufigkeit $H(x)$       | $9$            | $17$            | $22$            | $29$            | $30$           |       |
+| Kumulative relative Häufigkeit $F(x)$ (CDF) | $\frac 9{30}$  | $\frac{17}{30}$ | $\frac{22}{30}$ | $\frac{29}{30}$ | $1$            |       |
 
 ![image-20220929083751744](res/image-20220929083751744.png)
 
@@ -112,6 +114,12 @@ $$
 Ebenfalls $R_{0.5}$ ist der Median, $R_{0.25}$, $R_{0.5}$ und $R_{0.75}$ werden auch Quartile genannt
 
 Der Abstand zwischen dem -3. und 1. Quartile nennt sich auch Interquartilenabstand (IQR)
+
+Wenn die Daten kategorisiert sind kann das Quantil auch über den CDF ausgerechnet werden. Dafür kann folgende Formel verwendet werden: 
+$$
+R_q=\frac{b - a}{F(b) - F(a)}\cdot (q - F(a)) + a
+$$
+
 
 ### Modus
 

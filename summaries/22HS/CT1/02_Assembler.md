@@ -103,3 +103,26 @@ jump_table		DCD		case_0
 				DCD		case_3_5
 ```
 
+## Interrupts
+
+When code wants to react to some event on the system (like a button that's being pressed) then there are two ways to implement this. Either the code can constantly poll the state, checking over and over again if the event occurred. This, however, is inefficient and results in a lot of busy waiting, but it is simple, implicitly synchronised and deterministic.
+
+### System Exceptions and Interrupts
+
+Another solutions are interrupts: Arm processor differentiate between system exceptions and interrupts. System exceptions are errors created by events from the CPU (like a fault or the restart of the processor). Interrupts are created by events from peripherals or by a library.
+
+The following system exceptions exists. The interrupts from 0 until 239 are defined and are located after the `SYSTICK` system exception. (eg. `IRQ14` has the exception number `30` at the address  `120=0x78`)
+
+![image-20221207111424641](res/02_Assembler/image-20221207111424641.png)
+
+### Interrupt Table
+
+In the interrupt table is written where the processor has to jump if an interrupt or a system exception occurred. The interrupt table starts at the address `0x00`, but there is no system exception 0. This is because at the address `0x00` the initial stack pointer is written. This results in when the CPU starts, it first initialise the stack with the initial stack pointer and then calls the reset handler which *coincidentally* is at the next address.
+
+### Execution of an Interrupt or System Exception
+
+![image-20221207113538455](res/02_Assembler/image-20221207113538455.png)
+
+<img src="res/02_Assembler/image-20221207111004691.png" alt="image-20221207111004691" style="zoom:80%;" />
+
+The cpu checks when calling `BX LR` if the magic value `EXC_RETURN=0xFFFF'FFF9` is found in the `LR` register. If this is the case, then the previously saved registers are restored from the stack.

@@ -148,33 +148,82 @@ img.addEventListener("load", () => {
 
 There are a lot more you can do with a `canvas` tag, like `quadraticCurveTo`, `bezierCurveTo`, `arc`, text, `scale`, `translate`, `rotate` and a stack infrastructure with `save` and `restore`.
 
-## Local Storage and Session Storage
+## Form
 
-With `localStorage` and `sessionStorage`, data can be stored on the browser.
+```html
+<form method="post" action="/form1">
+    <label for="nameid">Name: </label>
+    <input type="text" id="nameid">
+    <label for="ageid">Age: </label>
+    <input type="text" id="ageid" name="age">
+    <input type="submit" value="Send">
+</form>
 
-```javascript
-let user = {name: "Hans", highscore: 234}
-localStorage.setItem("user", JSON.stringify(user))
-console.log(localStorage.getItem("user"))
+<form>
+    <label>Name: <input type="text"></label>
+    <label>Age: <input type="text"></label>
+    <input type="submit" value="Send">
+    <button disabled>disabled button</button>
+</form>
 ```
 
-## History
+The `form`s above define a form in HTML. Both define the same form but the first one uses `for` to specify which `label` belongs to which `input`-element. In the second example this done by nesting the `input`-element in the `label`-element.
 
-## Web Workers
+When the `submit`-button has been pressed then the form will be sent to the server except if `preventDefault()` is called on the `submit`-event.
 
-With web workers, JavaScript can run code in a separate thread. However, the web worker has to communicate with the frontend code over events to avoid locking.
+Form elements can be disabled by adding a `disabled` attribute to the form-tag.
 
-```js
-// squareworker.js
-addEventListener("message", event => {
-	postMessage(event.data * event.data)
+The following attributes are useful to know:
+
+* attribute `method`: if the form should be sent with a `post` request or a `get` request(like `/form1?nameid=...&age=...`). But with `get` request the data is limited as it needs to be sent over the address line (often limited to 1000 chars)
+  <img src="res/image-20221124090133791.png" alt="image-20221124090133791" style="zoom: 50%;" />
+* attribute `action`: To where the form result should be sent 
+* attribute `name`: The name of form elements. If present it is used to name the parameter else the `id` is used in the get or post request
+
+| Form     | Example                                                      | Screenshot                                                  |
+| -------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
+| text     | `<input type="text">`                                        | ![image-20221124084838823](res/image-20221124084838823.png) |
+| password | `<input type="password">`                                    | ![image-20221124084829830](res/image-20221124084829830.png) |
+| date     | `<input type="date">`                                        |                                                             |
+| number   | `<input type="number">`                                      |                                                             |
+| email    | `<input type="email">`                                       |                                                             |
+| range    | `<input type="range">`                                       |                                                             |
+| search   | `<input type="search">`                                      |                                                             |
+| color    | `<input type="color">`                                       |                                                             |
+| textarea | `<textarea></textarea>`                                      | ![image-20221124084850603](res/image-20221124084850603.png) |
+| radio    | `<input type="radio" checked>`                               | ![image-20221124084945847](res/image-20221124084945847.png) |
+| checkbox | `<input type="checkbox" checked>`                            | ![image-20221124084939603](res/image-20221124084939603.png) |
+| select   | `<select><option value="1">one</option></select>`            | ![image-20221124084912645](res/image-20221124084912645.png) |
+| fieldset | `<fieldset><legend>description</legend>...form...</fieldset>` | ![image-20221124084924241](res/image-20221124084924241.png) |
+| file     | `<input type="file" multiple>`                               |                                                             |
+
+### Focus
+
+With `document.activeElement` JS can retrieve the currently active focus. To focus (or blur) programaticly use the `focus()` and `blur()` methods on the DOMElement
+
+### Events
+
+* `change`: If a form element actually changed
+* `input`: Input in a text field
+* `keydown`, `keypress`, `keyup`: Key presses on an active form-tag
+* `submit`: When the `submit`-input-tag has been pressed
+
+### Read files
+
+```html
+<input type="file" multiple>
+<script>
+let input = document.querySelector("input")
+input.addEventListener("change", () => {
+    for (let file of Array.from(input.files)) {
+        let reader = new FileReader()
+        reader.addEventListener("load", () => {
+        	console.log("File", file.name, "starts with",
+        	reader.result.slice(0, 20))
+        })
+        reader.readAsText(file)
+    }
 })
-// main script
-let squareWorker = new Worker("code/squareworker.js")
-squareWorker.addEventListener("message", event => {
-	console.log("The worker responded:", event.data)
-})
-squareWorker.postMessage(10)
-squareWorker.postMessage(24)
+</script>
 ```
 
