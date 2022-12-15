@@ -126,3 +126,61 @@ In the interrupt table is written where the processor has to jump if an interrup
 <img src="res/02_Assembler/image-20221207111004691.png" alt="image-20221207111004691" style="zoom:80%;" />
 
 The cpu checks when calling `BX LR` if the magic value `EXC_RETURN=0xFFFF'FFF9` is found in the `LR` register. If this is the case, then the previously saved registers are restored from the stack.
+
+The following image shows a interrupt vector table.
+
+![image-20221214102220698](res/02_Assembler/image-20221214102220698.png)
+
+The `startup_ctboard.s` initialises  this interrupt vector table and sets default handler (marked with `[WEAK]` to tell the linker only use the default handler if no other definition exists).
+
+The following is a diagram showing the states of the interrupt handler. 
+
+![image-20221214103618718](res/02_Assembler/image-20221214103618718.png)
+
+* Inactive: Exception is not active and not pending
+* Pending: Exception occurred and is waiting to be handled by the CPU
+* Active: Exception is being handled and has not finished yet
+* Active and Pending: An exception is being handled by the CPU and another exception occurred and is waiting to be handled.
+
+To model all possible states, two bits are necessary, one for if an interrupt is pending and one if the interrupt is active.
+
+The following diagram shows the two bits and an interrupt request bit.
+When the `IRQn` goes to high and interrupt occured then the Interrupt Controller sets `IPn` to high. As soon as the CPU has finished the context switch, `IAn` will be set to hight by the `CPU` and the interrupt controller will set `IPn` to high. The `IRQn` needs to be reset by the interrupt handler.
+
+![image-20221214103940465](res/02_Assembler/image-20221214103940465.png) 
+
+If the interrupt handler doesn't reset the `IRQn` then the interrupt controller will think that another interrupt is pending and the CPU is caught in an infinite loop.
+
+![image-20221214111958833](res/02_Assembler/image-20221214111958833.png)
+
+### Activate and Deactivate Interrupts
+
+`PRIMASK` is a Bit, which when set to `0` , all interrupts are disabled. The bit can be set with `CPSID` and unset `CPSIE`.
+
+### Priority Levels
+
+Each exception has a priority level. A lower priority level translates to a higher priority (`-1` has a higher priority than `10`)
+
+To set the priority a 4-bit value (on the Cortext-M0 a 2-bit value) can be written to an address between `0xE000'E400` and `0xE000'E4EC`.  Only interrupts can be prioritised manually, system exceptions already have predefined priorities.
+
+![image-20221214111214752](res/02_Assembler/image-20221214111214752.png)
+
+![image-20221214111630876](res/02_Assembler/image-20221214111630876.png)
+
+In the diagram above, a situation where either `ISR0` or `ISR2` has been prioritised. If `ISR2` is prioritised then `ISR0` is paused (but its active bit is still set) and `ISR2` is run.
+
+Below is a more complete diagram. It assumes the following priorities: `RQ0` `PL0` = `0x2`, `IRQ1` `PL1` = `0x3` and `IRQ2` `PL2` = `0x1`
+
+![image-20221214111823104](res/02_Assembler/image-20221214111823104.png)
+
+### Interrupts in C
+
+There is a library for C to allow the user to know have to use registers directly but rather just call functions.
+
+![image-20221214112124345](res/02_Assembler/image-20221214112124345.png)
+
+### Data Consistency
+
+![image-20221214112320948](res/02_Assembler/image-20221214112320948.png)
+
+To fix this issue, the two `write_byte(...)` calls should be wrapped in `__disable_irq()` and `__enable_irq()`.

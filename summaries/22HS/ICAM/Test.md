@@ -23,3 +23,6 @@ In the **emic** perspective, you explain something based on your context and how
 In the **etic** perspective, you compare different view points of a thing.
 
 Both perspective are tools to prevent you from repeating cultural mishaps. 
+
+
+

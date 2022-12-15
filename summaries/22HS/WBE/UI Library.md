@@ -74,3 +74,124 @@ class CustomProgressBar extends HTMLElement {
 customElements.define('custom-progress-bar', CustomProgressBar);
 ```
 
+## SJDON/SUIWEB
+
+The following is an example of SJDON:
+
+```js
+const element =
+	["div", {style: "background:salmon"},
+		["h1", "Hello World"],
+		["h2", {style: "text-align:right"}, "from SuiWeb"] ]
+/*
+Equivalent of:
+<div style="background: salmon">
+	<h1>Hello World</h1>
+	<h2 style="text-align: right">from SuiWeb</h2>
+</div>
+*/
+```
+
+<img src="res/UI Library/image-20221215081632769.png" alt="image-20221215081632769" style="zoom:70%;" />
+
+### States
+
+With states, a component can access and set a state. A state is initialised with `useState(initialValue)` which returns two values in an array. `stateVar` is a variable to access the current value (**not** a function) and `setStateVar` is a function to update the state and rerender the component. In SUIWEB the `setState(setFun)` function takes a function which is called by the `setState()` function.
+
+```js
+const [stateVar, setStateVar] = useState(initialValue)
+```
+
+The following is an example simulating a slow network speed:
+
+```js
+const App = () => {
+    let initialState = {
+        heading: "Awesome SuiWeb (Busy)",
+        content: "Loading...",
+    }
+    let [state, setState] = useState("state", 1, initialState)
+    let [timer, setTimer] = useState("timer", 1, null)
+    
+    const startTimer = () => setTimeout(() => {
+        setState(() => ({
+            heading: 'Awesome SuiWeb',
+            content: 'Done!',
+        }))
+    }, 3000)
+    if (!timer) setTimer(startTimer, false)
+	const { heading, content } = state
+    return (
+        ["main",
+            ["h1", heading],
+            ["p", content] ]
+	)
+}
+```
+
+The following example shows a basic counter component which increments every second:
+
+```js
+const Counter = (props) => {
+    let [count, setCount] = useState("mycounter", props.key, props.count)
+    let [timer, setTimer] = useState("mytimer", props.key, null)
+        if (timer) clearTimeout(timer)
+        setTimer(() => setTimeout(()=>setCount(n => n+1), 1000), false)
+        return (
+            ["p",
+                {style: "font-size:2em", onclick: () => setCount(n => n + 1)},
+                "Count ", count ]
+        )
+	}
+}
+
+const App = (props) =>
+    ["div",
+        [Counter, {count: 1, key: 1}],
+        [Counter, {count: 4, key: 2}],
+        [Counter, {count: 7, key: 3}] ]
+```
+
+### Controlled Input
+
+In the following example a textfield is created and on each key typed the states are updated. This setup can be used to for example only allow numbers or other restrictions. Because of this, it is called controlled input.
+
+If a state is of an input field is only updated when certain condition is met then it is vital to also set the old state if the condition is not met, otherwise no rerender is triggered and input field has the wrong type which the user typed still in it.
+
+```js
+const App = ({init}) => {
+    let [text, setText] = useState("myTextInput", 1, init)
+    let [otherText, setOtherText] = useState("myOther Text", 1, "")
+    
+    const updateValue = e => {
+        const value = e.target.value
+        const reg = /^\d+\.?\d*$/
+        // !in both cases a rerender is triggered!
+        if(reg.text(value)) setText(() => value) 
+    	else setText(old => old)
+    }
+    const updateOtherValue = e => {
+        // do validation here
+    	setOtherText(() => e.target.value)
+    }
+    
+    return (
+        ["div", {style: "background: lightblue"},
+            ["h1", "Controlled Input Elements"],
+            ["input", {oninput: updateValue, value: text}],
+            ["p", "Your input: ", text ],
+            ["textarea", {oninput: updateOtherValue}, otherText],
+            ["p", "Your input: ", otherText ] ] )
+}
+
+const element = [App, {init: "Name"}]
+```
+
+### Container Component
+
+A container component wraps another component and provides the data. This ensures that the wrapped component is only concerned with the UI and not fetching and managing date. Instead the container component does this and the concerns are separated and, additionally, the UI component is more reusable.
+
+### Effect Hook
+
+### Splitting Applications into Components
+
