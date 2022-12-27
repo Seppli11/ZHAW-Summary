@@ -67,3 +67,13 @@ $$
 
 ## Eigenwerte
 
+## Numerische Berechnung von Eigenwerte und Eigenvektoren
+
+Es gilt, wenn zwei Matrizen $A, B \in \R^2$ zueinander ähnlich sind, dann gilt das $A$ und $B$ die selben Eigenwerte inkl. deren albgebraischen Vielfachen.
+
+### Ähnliche Matrix
+
+### Diagonalisierbare Matrix
+
+## Spektralradius (und Spektralnorm)
+

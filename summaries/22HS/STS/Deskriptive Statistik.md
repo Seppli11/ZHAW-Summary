@@ -93,8 +93,8 @@ $$
 Der Median ist die Zahl in der "Mitte".
 $$
 \begin{cases}
-\frac 1 2 (x_{[\frac n 2]}+x_{[\frac {n + 1} 2]}) & n \text{ gerade}\\
-x_{[\frac n 2]} & n \text{ ungerade}
+\frac 1 2 (x_{[\frac n 2]}+x_{[\frac {n} 2 + 1]}) & n \text{ gerade}\\
+x_{[\frac {n+1} 2]} & n \text{ ungerade}
 \end{cases}
 $$
 
@@ -125,13 +125,15 @@ $$
 
 Der Modus $x_{mod}$ ist der Wert mit der höchsten absoluten Häufigkeit.
 
-### Durchschnitt
+### Durchschnitt / Mittelwert
 
 $$
 \overline x = \frac 1 n \sum^n_{i=1}x_i = \frac 1 n \sum^m_{i=1}h_i\cdot a_i=\sum^m_{i=1}f_i\cdot a_i
 $$
 
-### Varianz und Standardabweichu g
+Bei klassierten Daten wird die Klassenmitte für die Berechnung des Durchschnitts verwendet.
+
+### Varianz und Standardabweichung
 
 $$
 s^2 = \frac 1 n \sum^n_{i=1}(x_i - \overline x)^2=\frac 1 n \left (\sum^n_{i=1}x_i^2 \right)- \overline x ^2\\

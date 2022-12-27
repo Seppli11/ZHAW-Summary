@@ -10,6 +10,8 @@ Der **Boss-Test** besagt, falls dein Boss dich frag, was du den ganzen Tag gemac
 
 Der **Elementary Business Process Test** (EBP-Test) besagt, dass ein Use Case eine Aufgabe, die von einer Person und einem Ort zu einer bestimmten Zeit ausgeführt wird, als Reaktion auf einen Business Event.
 
+**Wichtig bei Use-Cases:** Das Ping-Pong zwischen den Akteure und dem System gut herausarbeiten. 
+
 ## Use-Case finden
 
 1. Systemgrenzen definieren
@@ -22,7 +24,7 @@ Der **Elementary Business Process Test** (EBP-Test) besagt, dass ein Use Case ei
 
 Im folgenden Diagramm sieht man wie `<<extends>>` und `<<include>>` verwendet wird. Mit `<<include>>` werden Prozesse eingebunden, welche selbst keine vollen Use-Case sind und sind **nicht** mit einem Akteur verbunden. Der Prozess ist dann im Use-Case enthalten (z.B. Process Sale enhält Handle TWINT Payment). Ein Use-Case kann mit `<<extends>>` verbunden werden, wenn ein Use-Case erweitert wird (z.B. erweitert den Use-Case "Process Sale with Voucher" den Use-Case "Process Sale"). Ein erweiterten Use-Case kann eine Verbindung mit einem Akteur haben.
 
-Akteure können mit![image-20221120201728582](res/image-20221120201728582.png) generalisiert werden (z.B. Junior Cashier *is-a* Cashier)
+Akteure können mit<img src="res/image-20221120201728582.png" alt="image-20221120201728582" style="zoom:40%;" /> generalisiert werden (z.B. Junior Cashier *is-a* Cashier)
 
 ![image-20221120201109445](res/image-20221120201109445.png)
 
@@ -50,13 +52,11 @@ Ein Casual Use-Case wird ebenfalls zu Beginn der Analyse verwendet und enthält 
 
   Aktiv formulieren (ev. Objekt + Verb)
   
-
 * Umfang (Scope)
   Beschreibung des zu entwickelnde System
 
 * Ebene (Level)
   
-
 * Primärakteur (Primary Actor)
   Die Primärakteure und wer den Use-Case initiert
 
@@ -77,7 +77,6 @@ Ein Casual Use-Case wird ebenfalls zu Beginn der Analyse verwendet und enthält 
 
   Alternative Erfolgs- und Misserfolgsszenarien
   
-
 * Spezielle Anforderungen (Special
   Requirements)
 
