@@ -24,7 +24,7 @@ tags:
 | Varianz                                             | $s^2 = \frac 1 n \sum^n_{i=1}(x_i - \overline x)^2 \\ = \frac 1 n \left (\sum^n_{i=1}x_i^2 \right)- \overline x ^2$ | $s^2=\sum^n_{i=1}(M_i-\overline x)^2\cdot f_i$               |
 | Korrigierte Varianz                                 | $s_{korr}^2=\frac 1 {n-11}\sum^n_{i=1}(x_i - \overline x)^2 \\ = \frac n {n - 1}s^2$ | $s_{korr}^2= \frac n {n - 1}s^2$                             |
 | (korrigierte) Standardabweichung $s$                | $s=\sqrt{s^2}$                                               | *gleich*                                                     |
-| Kovarianz                                           | $s_{xy}=\frac 1 n \sum^n_{i=1}(x_i-\overline x)\cdot (y_i- \overline y)$ |                                                              |
+| Kovarianz                                           | $s_{xy}=\frac 1 n \sum^n_{i=1}(x_i-\overline x)\cdot (y_i- \overline y)\\= \left(\frac 1 n \sum^n_{i=1}x_iy_i\right)-\overline x \cdot \overline y$ | -                                                            |
 
 ### Quantile / Boxplot
 
@@ -57,6 +57,7 @@ Der Pearon-Korrelationskoeffizient ist **nicht** robust und kann von Ausreisser 
 ## Spearman-Rangkorrelationskoeffizient
 
 $$
+\DeclareMathOperator{\rg}{rg}
 r_{Sp}=\frac{\sum^n_{i=1}(\rg(x_i) - \overline{\rg(x)})\cdot(\rg(y_i)-\overline{\rg(y)})}
 {\sqrt{\sum^n_{i=1}(\rg(x_i) - \overline{\rg(x)})^2} \cdot \sqrt{\sum^n_{i=1}(\rg(y_i) - \overline{\rg(y)})^2}}\\
 \rg(x_i)=1+Anzahl(j \vert x_j < x_i) + \frac 1 2 Anzahl(j | x_j = x_i, i \neq j)
@@ -217,3 +218,126 @@ $$
 Für eine Binomialverteilung wenn $n$ gegen unendlich geht und $\lambda=np$ konstant ist, dann kann eine Binomialverteilung mit einer Poissonverteilung approximiert werden: $B(n, p)\xrightarrow{n\to \infty \text{ und } \lambda=np \text{ konstant}} Poi(\lambda)$
 
 Ebenfalls wenn $n \gtrsim 50$ und $p\lesssim 0.1$, dann kann eine Binomialverteilung mit einer Poissonverteilung approximiert werden: $B(n, p)\approx Poi(n\cdot p)$
+
+### Gauss'sche Verteilung ($X\sim N(\mu, \sigma)$ / $X\sim N(0, 1)$)
+
+$$
+\begin{align}
+\text{PDF: }\varphi_{\mu,\sigma}(x)&=\frac{1}{\sqrt{2\pi}\cdot\sigma}\cdot e^{-\frac1 2\cdot (\frac{x-\mu}{\sigma})^2}\\
+\text{CDF: }\phi_{\mu, \sigma}(x)&=\int^x_{-\infty}\varphi_{\mu, \sigma}(t)\mathrm dt0
+=\frac 1 {\sqrt{2\pi}\cdot \sigma}\cdot \int^x_{-\infty}e^{-\frac 1 2(\frac{t-\mu}{\sigma})^2}\mathrm dt
+\end{align}
+$$
+
+Wenn $\mu=0$ und $\sigma = 1$ ist, dann wird von einer Standardnormalverteilung gesprochen und wird einfach als $\varphi(x)$ bezeichnet:
+$$
+\varphi(x)=\frac 1 {\sqrt{2\pi}}\cdot e^{-\frac 1 2 x^2}
+$$
+Um eine "normale" Gauss'sche Verteilung zu standardisieren, wird anstatt der Zufallsvariable $X$ folgende Definition $U=\frac{X-\mu} \sigma$ verwendet.
+
+Der Erwartungswert $\mu$ und Standardabweichung $\sigma$ sind Parameter.
+
+Eine Normalverteilung hat folgende Eigenschaften:
+
+* Ist Symetrisch bei der Geraden $x=\mu$
+* Hat Wendepunkte bei $\mu-\sigma$ und $\mu + \sigma$
+* Ist normiert (totale Fläche unter der Kurve = 1)
+* Je grösser $\sigma$, desto breiter und niedriger wird die Glockenkurve
+* Eine Änderung von $\mu$ verschiebt die Kurve in der x-Richtung
+* $P(a \le X \le b) = P(a < X < b) = \phi_{\mu, \sigma}(b)-\phi_{\mu, \sigma}(a)$
+* $P(\vert X - \mu \vert \le \varepsilon)=P(\mu - \varepsilon \le X \le \mu + \varepsilon)=2\cdot \phi_{\mu, \sigma}(\mu + \varepsilon) - 1= 1 - 2\cdot \phi_{\mu,\sigma}(\mu - \varepsilon)$
+
+<img src="res/STS Summary/image-20221229100719628.png" alt="image-20221229100719628" style="zoom:13%" />
+
+Für die Verteilung $N(\mu, \sigma)$, liegen
+
+* ca. 68% der Werte zwischen $\mu-\sigma$ und $\mu + \sigma$
+* ca. 95% der Werte zwischen $\mu-2\sigma$ und $\mu + 2\sigma$
+* ca 99.7% der Wete zwischen $\mu-3\sigma$ und $\mu + 3\sigma$
+
+<img src="res/STS Summary/image-20221229110242775.png" alt="image-20221229110242775" style="zoom:15%;" />
+
+#### Approximationen
+
+| Was                 | Bedingung | Approximation                                                |
+| ------------------- | --------- | ------------------------------------------------------------ |
+| $X\sim B(n, p)$     | $npq>9$   | $P(a\le X \le b)=\sum^b_{x=a}P(X=x)\approx \phi_{\mu, \sigma}(b+\frac 1 2)-\phi_{\mu,\sigma}(a-\frac 1 2)$ |
+| $X\sim P(\lambda))$ | $x > 9$   | $P(a \le X \le b)=\sum^b_{x=a}P(X=x)\approx \phi_{\mu, \sigma}(b+\frac 1 2)-\phi_{\mu,\sigma}(a-\frac 1 2)$ |
+|                     |           |                                                              |
+
+### Zentraler Grenzwertsatz
+
+Wenn mehrere stochastische unabhängige Zufallsvariabeln den selben Erwartungswert $\mu$ und dieselbe Varianz $\sigma ^2$ haben, dann gilt für die Summe $S_n=\sum^n_{i=1}X_i$ der Zufallsvariabeln folgendes:
+
+* $E(S_n)=n\mu$
+* $V(S_n)=n\sigma^2$
+
+Zusätzlich gilt, dass die Vertielungsfunktion $F_n(u)$ der standartisierten Zufallsvariable
+$$
+U_n=\frac{(X_1 + X_2 +...+X_n)-n\mu}{\sqrt n \cdot \sigma}=\frac{\overline X - \mu}{\frac \sigma {\sqrt{n}}}\\
+\overline X = \frac {S_n} n
+$$
+für $n\to\infty$ gegen die Verteilungsfunktion $\phi(u)$ der Standardnormalverteilung konvergiert.
+
+Es kann ebenfalls gesagt werden, dass das arithmetische Mittel $\overline X_n$ von $n$ identisch verteilen, unabhänigen Zufallsvariablen näherungsweise $N(\mu, \frac \sigma {\sqrt n})$ verteilt ist.
+
+## Regression
+
+Das Ziel einer Regresinos-Gerade $g=m\cdot x + d$ ist es den Residuen (oder Fehler) $\sum^n_{i=1} (y_i-g(x_i))^2$ zu minimieren. 
+$$
+m=\frac{S_{xy}}{S_x^2}{}\\
+d=\overline y - m\overline x\\
+S_\epsilon^2=\S_y^2-\frac{S_{xy}^2}{S_x^2}
+$$
+$S_{xy}$ ist die kovarianz, $S_x^2$ ist die (nicht korrigierte)  Varianz, $S_\epsilon^2$ ist die Residualvarianz
+
+### Bestimmtheitsmass
+
+$$
+\begin{align}
+S_y^2&=S_\epsilon^2 + S_{\hat y}^2\\
+R^2&=\frac{S_{\hat y}^2}{S_y^2}\\
+R^2&=\frac{S_{xy}^2}{S_x^2\cdot S_y^2}=r_{xy}^2 \\
+&=\text{Pearson-Korrelationskoeffizient}
+\end{align}
+$$
+
+Das Bestimmheitsmass ist zwischen 0 und 1. 0 heisst dass die Gerate nicht passt. 1 heisst, dass die Gerade perfekt passt. Wenn $R^2=0.75$ ist, bedeut dies, dass 75% der gesammten Varianz durch die Regressionsgerade erklärt wird und 25% ist zufalls bedingt.
+
+![image-20221229123936996](res/STS Summary/image-20221229123936996.png)
+
+### Linearisieren
+
+Eine nicht lineare Funktion kann linearisiert werden. Danach ist sie linear und kann durch eine Regressions-Gerade angenähert werden.
+
+![image-20221229124035207](res/STS Summary/image-20221229124035207.png)
+
+### Matrizen
+
+Gegeben sind $n$ Gleichungen und es sind $k$ Regressionsparameter $x_1$, $x_2$, ..., $x_k$ gesucht.
+
+![image-20221229124953312](res/STS Summary/image-20221229124953312.png)
+
+Die Lösung für $\vec x$ ist: $\vec x=(A^TA)^{-1}X^T\vec y$
+
+## Schliessende Statistik
+
+$\Theta=g(X_1, X_2, ..., X_n)$ ist eine Funktion, welche von $n$ Stichprobenvariabeln die Grundgesammtheit schätzen kann. Ein Schätzwert wird als $\hat \theta$ bezeichnet. $\theta$ (ohne Dach) ist der eigentliche, unbekannte Wert/Parameter.
+
+![image-20221229144629387](res/STS Summary/image-20221229144629387.png)
+
+$\overline X$ und $S^2$ sind erwartungstreu ($E(\Theta)=\theta$) und konsistent. $S$ ist konsitent ($E(\Theta)\to \theta$ und $V(\Theta)\to 0$ für $n\to \infty$) aber nicht erwartungstreu. 
+
+Eine Schätzfunktion $\Theta_1$ ist effizienter als $\Theta_2$ wenn gilt $V(\Theta_1) < V(\Theta_2)$
+
+![image-20221229145640726](res/STS Summary/image-20221229145640726.png)
+
+### Vertrauensintervalle
+
+Es werden zwei Stichprobenfunktionen $\Theta_u$ und $\Theta_o$ bestummen, welche den wen wahren Wert $\theta$ mit einer vorgegebener Wahrscheinlichkeit von $\gamma$ einschliesst.
+$$
+P(\Theta_u \le \theta \le \Theta_o)=\gamma
+$$
+Wenn konkrete Werte in $\Theta_u$ und $\Theta_o$ eingesetzt werden, dann wird das Intervall $[c_u; c_o]$ gebildet. $\gamma$ heisst das Vertrauensniveau (oder statistische Sicherheit) und $\alpha = 1 - \gamma$ ist die Irrtumwahrscheinlichkeit.
+
+![image-20221229150717439](res/STS Summary/image-20221229150717439.png)
