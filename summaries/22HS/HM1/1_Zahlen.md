@@ -19,6 +19,8 @@ $$
 M=\{x \in \R \vert x=\pm0.m_1m_2m_3...m_n\cdot B^{\pm e_1e_e...e_m}\}
 $$
 
+Eine Zahl wird **machinendarstellbar** genannt, wenn $m_1\neq 0$ ist
+
 ## Minimum und Maximum
 
 $$
@@ -61,6 +63,10 @@ $$
 An dieser Formel kann das Problem der Auslöschung beobachtet werden: Wenn von $x$ eine ähliche Zahl $c$ subrahiert wird, dann wird $K$ sehr gross. 
 
 Oder allgemeiner formuliert, wird von einer Zahl eine zweite ähnliche grosse Zahl subtrahiert, wird der relative Fehler sehr hoch. Dies kann zum Teil durch geschicktes Umformen vermieden werden. Meist entstehen aber andere Auslöschungs-Zentren.
+
+### Fehlerfortpflanzungs-Tabelle
+
+
 
 ## Maschinengenauigkeit (max. relativer Fehler)
 

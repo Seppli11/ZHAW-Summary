@@ -13,14 +13,21 @@ Damit die Fixpunktiteration zum Resultat konvergiert, muss für die Ableitung $F
 
 Es gilt folgendes für $F: [a, b] \to [a, b]$ und die Konstante $\alpha \in ]0, 1[$
 $$
-|F(x) - F(y)|\le \alpha\cdot |x - y|\\
+|F(x) - F(y)|\le \alpha\cdot |x - y| \text{ wobei gilt: } x, y\in [a, b]\\
 \text{oder}\\
 \frac{|F(x)-F(y)|}{|x - y|} \le \alpha
 $$
 In Deutsch heisst dies, dass die Differenz $F(x) - F(y)$ nie grösser als $x-y$ sein darf, oder dass die Steigung nicht grösser als $1$ darf sein.
 
+Wenn dies gegeben ist, 
+
+* hat $F$ genau einen Fixpunkt $\overline x$ in $[a, b]$
+* konvergiert die Fixpunktiteration $x_{n+1}=F(x_n)$ gegen $\overline x$ für alle Startwerte $x_0\in [a, b]$
+* Die a-priori und a-posteriori Abschätzungen gelten
+
 $\alpha$ kann auch als die grösstmögliche Steigung definiert werden:
 $$
+\alpha \in ]0, 1[\\
 \alpha =\max_{x_0\in[a, b]} |F'(x_0)|
 $$
 
@@ -61,7 +68,7 @@ $$
 
 
 
-Das $c$ ist eine Konstante (wie bei Big-O).  $|x_{n+1}-\overline x|$ ist der absoluten Fehler von $x_{n+1}$. Wenn $q=1$ ist, dann konvergiert es linear. Bei $q=2$, quadratisch, und so weiter.
+Das $c \in ]0, \infty[$ ist eine Konstante (wie bei Big-O).  $|x_{n+1}-\overline x|$ ist der absoluten Fehler von $x_{n+1}$. Wenn $q=1$ ist, dann konvergiert es linear (meist wird dabei auch noch $c < 1$ verlangt). Bei $q=2$, quadratisch, und so weiter.
 
 ## Fehlerabschätzung
 
@@ -73,9 +80,15 @@ Oder auf Deutsch: Wenn es einen Vorzeichenwechsel zwischen $[x_n-\varepsilon; x_
 
 ![image-20221019090047529](res/image-20221019090047529.png)
 
-## Gaus-Algorithmus
+### a-priori und a-posteriori Abschätzung
 
-Siehe `22FS/LA/01_Lineare Gleichungssysteme.md`
+Mit der a-priori Abschätzung kann der maximale absolute Fehler nach $n$ Iterationen von den ersten zwei Iterationen $x_0$ und $x_1$ geschätzt werden:
+$$
+|x_n-\overline x|\le \frac{\alpha^n}{1-\alpha}\cdot |x_1 - x_0|
+$$
+Mit der a-posteriori Abschätzung kann der maximale absoluten Fehler nach $n$  Iterationen von der $n$-ten und $n-1$-te Iteration abschätzen:
+$$
+|x_n-\overline x|\le \frac \alpha {1- \alpha}\cdot|x_n - x_{n-1}|
+$$
 
-### Fehlerfortpflanzung und Pivotisierung
 
