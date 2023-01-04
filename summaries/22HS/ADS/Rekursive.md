@@ -29,7 +29,7 @@ void hanoi (int n, char from, char to, char help) {
 
 
 $$
-
+T_n=T_{n-1}+T_{n-1}=(T_{n-2}+T_{n-2})+(T_{n-2}+T_{n-2})\Rightarrow O(2^n)
 $$
 
 
