@@ -10,3 +10,4 @@ tags:
 ## Fragen
 
 * Wie rechnet man die Darstellung in einer beliebiger Basis von einer Zahl aus?
+  * Nicht Prüfungsrelevant

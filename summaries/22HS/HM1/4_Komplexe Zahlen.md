@@ -67,9 +67,79 @@ $$
 
 ## Eigenwerte
 
+Für eine Matrix $A \in R^{n\times n}$ nennt sich $\lambda \in \C$ Eigenwert und den Vektor $x\in \C^n\setminus \{0\}$ Eigenvektor, wenn folgendes gilt:
+$$
+\begin{align}
+A\vec x &= \lambda \vec x \\
+\Rightarrow A\vec x - \lambda \vec x &= 0 \\
+\Rightarrow (A-\lambda I_n)\vec x &= 0
+\end{align}
+$$
+Wenn $A$ bekannt ist und $\lambda$ und $\vec x$ ausgerechnet werden soll, kann mithilfe dem charakteristischem Polynom berechnet werden.
+
+Die Eigenwerte von $A^{-1}$ sind die Kehrwerte $\frac 1 {\lambda_i}$ .
+
+### Spektrum
+
+Das Spektrum $\sigma(A)$ ist die Menge aller Eigenwerte von der Matrix $A$.
+
+### Spur und Determinante
+
+Die Spur und Determinante von $A$ (nicht $A-\lambda I_n$) kann mit den Eigenwerten ausgerechnet werden.
+$$
+\DeclareMathOperator{\tr}{tr}
+\begin{align}
+\det(A)&=\lambda_1\cdot \lambda_2 \cdot \cdot \cdot \lambda_n\\
+\tr(A)&=a_11 + a_22 + ... + a_nn = \lambda_1 + \lambda_2 + ... + \lambda_n
+\end{align}
+$$
+
+
+### Charakteristisches Polynom
+
+$$
+p: \lambda \mapsto \det(A-\lambda I_n)
+$$
+
+Das charakteristische Polynom ist definiert das Polynom zum berechnen der Determinante von $A-\lambda I_n$.  Um $\lambda$ auszurechnen, kann das charakteristische Polynom mit $0$ gleichgesetzt werden. Das Polynom ist vom Grad $n$ und hat somit auch $n$ Lösungen.
+
+Wenn $A-\lambda I_n$ eine Diagonalmatrix, obere Dreiecksmatrix oder untere Dreiecksmatrix ist, dann gilt:
+$$
+\det(A-\lambda I_n)=(a_{11}-\lambda)(a_{22}-\lambda)...(a_{nn}-\lambda)
+$$
+
+#### Determinante
+
+Für $A\in \R^{2\times 2}$ gilt:
+$$
+\det(A)= a_{11}\cdot a_{22}- a_{12}\cdot a_{21}
+$$
+Für $A \in R^{3\times 3}$ gilt:
+$$
+\det(A)=b_{11} (b_{22}b_{33} - b_{23}b_{32})-b_{12}(b_{21}b_{33}-b_{23}b_{31}) + b_{13}(b_{21}b_{32} - b_{22}b_{31})
+$$
+
+### Konditionierung
+
+Da, wenn die Eigenwerte mit dem charakteristischen Polynom ausgerechnet werden, ein schlecht konditioniertes Problem entsteht, sollten in der Praxis nie Eigenwerte für $A$ mit $n>3$ mit dem charakteristischen Polynom und dessen Nullstellen berechnet werden.
+
+## Eigenvektoren & Eigenraum
+
+Die Eigenvektoren können ausgerechnet werden, in dem die Eigenwerte $\lambda$ in die Matrix $A-\lambda I_n$ eingesetzt werden. Es gibt für eine Matrix $A\in R^{n\times n}$ ein Gleichungssystem mit $n-\rg(A-\lambda I_n) \DeclareMathOperator{\rg}{rg}$ freien Parametern.
+
+## Vielfachheit
+
+Die **geometrische** Vielfachheit ist definiert als die Dimension des Eigenraums von $\lambda$. Sie gibt die Anzahl der linearen unabhängigen Eigenvektoren zum Eigenwert an und kann mit $n - \rg(A-\lambda I_n)$ berechnet werden
+
+Die **algebraische** Vielfachheit ist die Multiplizität eines Eigenwertes, bzw. wie oft ein Eigenwert auf taucht. 
+
+Die geometrische Vielfachheit ist immer gleich oder kleiner als die algebraische Vielfachheit. Dies heisst, dass wenn ein Eigenwert $\lambda$ $k$-fach auftritt und somit eine algebraische Vielfachkeit $k$ hat, dann gehören mindestens ein und höchstens $k$ linear unabhängige Eigenvektoren zu $\lambda$.
+
+Wenn alle $n$ Eigenwerte verschieden sind, so gehört zu jedem Eigenwert $\lambda$ genau ein linear unabhängiger Eigenvektor, welcher bis einen Faktor eindeutig bestimmbar ist.
+
 ## Numerische Berechnung von Eigenwerte und Eigenvektoren
 
-Es gilt, wenn zwei Matrizen $A, B \in \R^2$ zueinander ähnlich sind, dann gilt das $A$ und $B$ die selben Eigenwerte inkl. deren albgebraischen Vielfachen.
+Es gilt, wenn zwei Matrizen $A, B \in \R^2$ zueinander ähnlich sind, dann gilt das $A$ und $B$ die selben Eigenwerte inkl. deren algebraischen Vielfachen.
 
 ### Ähnliche Matrix
 
@@ -77,3 +147,4 @@ Es gilt, wenn zwei Matrizen $A, B \in \R^2$ zueinander ähnlich sind, dann gilt 
 
 ## Spektralradius (und Spektralnorm)
 
+## Mises-Iteration

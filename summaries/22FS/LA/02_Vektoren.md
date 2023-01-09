@@ -339,8 +339,8 @@ $$
 Diese zwei Gleichungen können in folgendes Gleichungssystem umgewandlet werden:
 $$
 \begin{align}
-x-2y+2z&=1\\
-2x-3y-z&=-2
+x-2y+2z& =1\\
+2x-3y-z& =-2
 \end{align}
 $$
 Daraus kann mit dem Gaus nach $x$, $y$ und $z$ gelöst werden:

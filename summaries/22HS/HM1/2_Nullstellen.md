@@ -11,13 +11,15 @@ Damit die Fixpunktiteration zum Resultat konvergiert, muss für die Ableitung $F
 
 ### Banachscher Fixpunktsatz
 
+**TODO: Voraussetzungen repetieren**
+
 Es gilt folgendes für $F: [a, b] \to [a, b]$ und die Konstante $\alpha \in ]0, 1[$
 $$
 |F(x) - F(y)|\le \alpha\cdot |x - y| \text{ wobei gilt: } x, y\in [a, b]\\
 \text{oder}\\
 \frac{|F(x)-F(y)|}{|x - y|} \le \alpha
 $$
-In Deutsch heisst dies, dass die Differenz $F(x) - F(y)$ nie grösser als $x-y$ sein darf, oder dass die Steigung nicht grösser als $1$ darf sein.
+In Deutsch heisst dies, dass die Differenz $F(x) - F(y)$ nie grösser als $x-y$ sein darf, oder dass die Steigung nicht grösser als $1$ darf sein und muss grösser als 0 sein.
 
 Wenn dies gegeben ist, 
 
@@ -90,5 +92,4 @@ Mit der a-posteriori Abschätzung kann der maximale absoluten Fehler nach $n$  I
 $$
 |x_n-\overline x|\le \frac \alpha {1- \alpha}\cdot|x_n - x_{n-1}|
 $$
-
 

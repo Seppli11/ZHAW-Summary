@@ -257,7 +257,7 @@ Es gibt mehrere Normen für Vektoren, welche diese Definition erfüllt:
 Ebenfalls gibt es mehrere Normen für Matrixen:
 
 * Erste-Norm, Spaltensummennorm: $||A||_1=\max_{j=1, ..., n}\sum^n_{i=1}|a_{ij}|$
-* Zweite-Norm: Spektralnorm: $||A||_2=\sqrt {(p(A^TA))}$
+* Zweite-Norm: Spektralnorm: $||A||_2=\sqrt {(\rho(A^TA))}$
 * $\infty$-Norm: Zeilensummennorm: $||A||_\infty=\max_{i=1,..n}\sum^n_{j=1} |a_{ij}|$
 
 ## Fehlerrechnungen
