@@ -141,10 +141,52 @@ Wenn alle $n$ Eigenwerte verschieden sind, so gehört zu jedem Eigenwert $\lambd
 
 Es gilt, wenn zwei Matrizen $A, B \in \R^2$ zueinander ähnlich sind, dann gilt das $A$ und $B$ die selben Eigenwerte inkl. deren algebraischen Vielfachen.
 
-### Ähnliche Matrix
+### Ähnliche & Diagonalisierbare Matrix
 
-### Diagonalisierbare Matrix
+Eine Matrix $A\in R^{n\times n}$ ist **ähnlich** zu der Matrix $B\in R^{n\times n}$, wenn eine reguläre Matrix $T$ existiert, mit welcher gilt:  
+$$
+B=T^{-1}AT
+$$
+Ein Spezialfall davon ist, wenn $B$ eine Diagonalmatrix ist. Dann ist $A$ **diagonalisierbar**.
+
+Wenn zwei Matrizen ähnlich zueinander sind, dann gilt:
+
+* Sie haben dieselbe Eigenwerte, inkl. deren algebraischen Vielfachheiten (und auch dem charakteristischen Polynom)
+* Ist $\vec x$ ein Eigenvektor zum Eigenwert $\lambda$ von $B$, dann ist $T\vec x$ ein Eigenvektor zum Eigenwert $\lambda$ von $A$
+* Wenn $A$ diagonalisierbar ist, dann sind die Diagonalelemente von $B$ die Eigenwerte von $A$ und die linear unabhängige Eigenvektoren von $A$ stehen in den Spalten von $T$
 
 ## Spektralradius (und Spektralnorm)
 
-## Mises-Iteration
+$$
+\rho(A)=\max\{ |\lambda| \mid \lambda \text{ ist ein Eigenwert von } A\in \R^{n\times n} \}
+$$
+
+Der Spektralradius von der Matrix $A$ ist definiert als der höchste Eigenwert von $A$.
+
+## QR-Verfahren
+
+Das QR-Verfahren ist ein iterativen Algorithmus, mit welchem mithilfe der QR-Zerlerung eine obere Dreiecksmatrix $B$ gefunden wird, welch ähnlich zu $A$ ist und somit die selben Eigenwerte wie $A$ besetitzt.
+
+Zu Beginn ist $A\in \R^{n\times n}=A_0$  und $P_0 \in R^{n\times n}=I_n$. Dann wird für $i=0, 1, 2, ...$ folgende Schritte durchgeführt.
+$$
+\begin{align}
+A_i&:=Q_i\cdot R_i\\
+A_{i+1}&:=R_i\cdot Q_i \\
+P_{i+1}&:= P_i \cdot Q_i
+\end{align}
+$$
+Die Matrix $A_i$ konvergiert für $i\to \infty$ gegen eine Matrix $A_\infty$, bei welcher die Diagonale nur einzelne Elemente oder $2\times 2$-Blöcke aufweist. Die Eigenwerte sind die einzelnen Elemente und die Eigenwerte der $2\times 2$-Blöcke.
+
+Die $2\times 2$-Blöcke bilden sich, wenn das algebraische Vielfache eines $\lambda$ grösser als $1$ ist. Umgekehrt gilt, wenn alle Eigenwerte betragsmässig verschieden sind (also $\forall i,j \in \N |\lambda_i|\neq |\lambda_j|\wedge i\neq j$), dann gibt es keine $2\times 2$-Blöcke.
+
+Falls $A$ symetrisch ist ($A^T=A$) und $\forall i,j \in \N |\lambda_i|\neq |\lambda_j|\wedge i\neq j$ gilt, dann konvergiert die Folge der Matrizen $P_k=Q_0\cdot Q_1\cdot \cdot \cdot Q_k$ gegen eine orthogonale Matrix ($Q^T=Q^{-1}$), deren Spalten die Eigenvektoren von $A$ bilden.
+
+## von-Mises-Iteration (Power Method)
+
+Für die von-Mises-Iteration muss ein $A\in R^{n \times n}$ diagonalisierbar sein und ein Startvektor $v_0\in \C^n$ mit der Länge $1$ definiert sein. 
+$$
+\begin{align}
+v_{k+1}&=\frac{Av_k}{||Av_k||_2}\\
+\lambda_{k+1}&=\frac{v_k^TAv_k}{v_k^Tv_k}
+\end{align}
+$$
