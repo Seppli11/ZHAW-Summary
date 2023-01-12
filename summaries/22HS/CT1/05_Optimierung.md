@@ -3,12 +3,27 @@
 ## Architekturen
 
 * von Neumann Architecture
+  This architecture shares the same system bus between the processor, memory and I/O. Additionally, the same memory holds the program and data.
+  ![image-20230111115110752](res/05_Optimierung/image-20230111115110752.png)
 * Harvard Architecture
+  In this architecture the processor has a separate bus to connect to the memory holding the program. The data memory and I/O are connected through another bus.
+  ![image-20230111115233919](res/05_Optimierung/image-20230111115233919.png)
+
+Because of the separate buses the Harvard architecture can be faster, but also more complex and more expensive.
 
 ## Instruction Set Architecture
 
-* RISC
-* CISC 
+* RISC (Reduced Instruction Set Computer)
+  In RISC only data in register can be processed
+* CISC (Complex Instruction Set Computer)
+  One operand may be a memory location. Reducing the amount of instruction needed for a program, but increasing the number of instruction the CPU needs to be able to execute.
+  Often CISC have variable instructions which puts an additional burden on the CPU.
+
+The simplicity of RISC results in simpler and faster instruction decoding. Compilers can also be more effective optimized because the instructions are more limited and more generic. Pipelining also becomes simpler and shorter.
+
+On the other hand, CISC needs less memory for complex instructions and short programms can be faster with less memory access.
+
+![image-20230111115700879](res/05_Optimierung/image-20230111115700879.png)
 
 ## Pipelining
 
@@ -42,3 +57,10 @@ But not each instruction takes only one cycle, like `LDR` or instruction changin
 ### Branching
 
 ![image-20221221111235464](res/05_Optimierung/image-20221221111235464.png)
+
+### Reducing Stalls
+
+* Reduce the number of conditionals by e.g. fuse loops together
+* Branch prediction stores the last decision and assumes that the next will be the same and preload those
+* Instruction prefetching fetches instructions before they are used to use the system bus better and enable out of order execution
+

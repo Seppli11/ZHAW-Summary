@@ -73,6 +73,8 @@ Es gibt mehrere Arten von Instructions:
   * Function calls
 * Weiteres Instruktionen
 
+![image-20230110165201836](res/01_Hardware/image-20230110165201836.png)
+
 ## Program Execution
 
 ![image-20220928105334607](res/image-20220928105334607.png)
@@ -80,6 +82,9 @@ Es gibt mehrere Arten von Instructions:
 ## Memory Map
 
 ![image-20220928110619923](res/image-20220928110619923.png)
+
+* Flash is non-volatile memory
+* CCM RAM stands for Core Coupled Memory and is very fast
 
 ## C Integer Typen
 
@@ -92,6 +97,8 @@ Die folgenden Typen sollen in C verwendet werden, da "normale" Typen, wie `int l
 Bei **Little Endian** ist das Least-Significant-Byte (LSB) an der tiefereren Adresse. ST ARM benützt dieses Format.
 
 Bei **Big Endian** ist das Most-Significant-Byte (MSB) an der tiefsten Adresse.
+
+Im folgenden Beispiel steht die Zahl `0xA1B2'C3D4`.
 
 ![image-20220928111402114](res/image-20220928111402114.png)
 

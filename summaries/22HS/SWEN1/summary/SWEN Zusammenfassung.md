@@ -1,8 +1,8 @@
 ---
-title: "STS Summary"
+title: "SWEN1 Summary"
 tags:
 - summary
-- STS
+- SWEN1
 ---
 
 # SWEN1 Zusammenfassung
@@ -331,7 +331,7 @@ Je weiter oben, desto anwendungs-spezifischer, je weiter unten, desto algeimeine
 
 ![GRASP](res/SWEN Zusammenfassung/GRASP.svg)
 
-## ## Implementierung
+## Implementierung
 
 * Code-Driven Development: Zuerst die Klasse implementieren
 * TDD: Test-Driven Development: Zuerst Tests für Klassen/Komponenten schreiben, dann den Code entwickeln

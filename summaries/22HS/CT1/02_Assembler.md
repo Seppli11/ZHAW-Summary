@@ -28,7 +28,7 @@ stack_mem		SPACE	0x00000400 ; 0x0000'0400
 
 ## Data Types
 
-There are bytes (`DCB` = 1 byte), halfwords (`DCW` = 2 bytes) and words (`DCD` = 4 bytes). They are layed out with LSB first (little endian)
+There are bytes (`DCB` = 1 byte), halfwords (`DCW` = 2 bytes) and words (`DCD` = 4 bytes). They are layed out with LSB in the lowest address (little endian)
 
 For example, `0x1A2B'3C4D` is stored as ![image-20221108220326500](res/image-20221108220326500.png)
 
@@ -47,6 +47,82 @@ var4	DCD		0xA3B4C5D6
 The code above produces the following memory map:
 
 ![image-20221108220730026](res/image-20221108220730026.png)
+
+## Assembler Instructions
+
+### `EQU`
+
+`EQU` creates a constant like `#define` does in C.
+
+```assembly
+MY_CONST	EQU	0x12 ; creates a constant named MY_CONST with the value 0x12
+```
+
+### `LDR`
+
+`LDR` can be used to load data from memory. There are multiple forms how `LDR` can be used:
+
+* `LDR R5, mylita`
+  The value at the label `mylita` is loaded. The instruction is translated to `LDR R5, [PC, #...]`  where the offset cannot be too large
+* `LDR R5, =0x2000`
+  This will allocate 4 bytes of space for `0x2000` in the literal pool and translate the instruction to `LDR R5, [PC, #...]`
+* `LDR R5, =CONST_A`
+  `CONST_A` is defined by a `EQU` statement and will be replaced while compiling resulting in `LDR R5, =0x2000`
+* `LDR R5, =mylita`
+  This will allocate 4 bytes of space for the **address** of `mylita` in the literal pool and translate the instruction to `LDR R5, [PC, #...]`
+
+The offset can be between `0` and `0x7C` 
+
+There are also `LDRSB` for loading and extending signed bytes and `LDRSH` for loading and extending half words.
+
+The same instruction (except for extending signed integers) also exists for storing data.
+
+### Airthmetic
+
+![image-20230111145656777](res/02_Assembler/image-20230111145656777.png)
+
+The carry bit has to meanings depending if adding or subtracting numbers:
+
+* Adding: $C=1$ means an overflow (with unsigned integers)
+* Subtraction: $C=0$ means an underflow (with unsigned integers)
+
+When dealing with signed integers then the number only overflowed when $V=1$.
+
+### Multi-Word Arithmetic
+
+If 32bit integers are too small then the `ADCS` and `SBCS` instruction can help to do multi-word arithmetic.
+
+The following will add   `R1R2R3 + R4R5R6`:
+
+```assembly
+ADDS	R1, R1, R4
+ADDC	R2, R2, R5
+ADDC	R3, R3, R6
+```
+
+![image-20230111144853477](res/02_Assembler/image-20230111144853477.png)
+
+The `ADCS Rdn, Rm` instruction can be translated to $Rdn=Rdn + Rm + C$
+
+The same is possible for subtractions:
+
+```assembly
+SUBS	R1, R1, R4
+SBCS	R2, R2, R5
+SBCS	R3, R3, R6
+```
+
+![image-20230111144949605](res/02_Assembler/image-20230111144949605.png)
+
+The `SBCS Rdn, Rm` can be translated to $Rdn = Rdn - Rm - \mathrm {not}(C)=Rdn + \mathrm{not}(Rm) + C$
+
+### Multiplication
+
+Only unsigned integer multiplication is supported on the Cortex-M0.
+
+### Branches
+
+![image-20230111162718001](res/02_Assembler/image-20230111162718001.png)
 
 ## Structures
 
