@@ -1,5 +1,37 @@
 # 	DOM
 
+The DOM is a tree structure. Every node has a `nodeType` attribute.
+
+| Node Type | Constant            | Explaination  |
+| --------- | ------------------- | ------------- |
+| 1         | `Node.ELEMENT_NODE` | "normal" tags |
+| 3         | `Node.TEXT_NODE`    | Text nodes    |
+| 8         | `Node.COMMENT_NODE` | Comment nodes |
+
+The children of a node can be retrieved by either `node.childNodes` which returns a `NodeList` or by `node.children` which returns an `HTMLCollection`. The `HTMLCollection` only contains element nodes.
+
+## Find Elements
+
+```js
+let aboutus = document.getElementById("aboutus")
+let aboutlinks = aboutus.getElementsByTagName("a")
+let aboutimportant = aboutus.getElementsByClassName("important")
+let navlinks = document.querySelectorAll("nav a")
+```
+
+## Modifiy the DOM
+
+The DOM can be modified with the methods `parent.appendChild(node)`, `sibbling.insertBefore(node)` and `node.remove()` (removes itself).
+
+To create a new node, methods like `document.createElement(type)`, `document.createAttribute(name)`, `element.setAttributeNode(attributeObj)` are useful.
+
+
+
+```js
+```
+
+
+
 ## Event Handling
 
 An event handler can be registered with any DOM element.

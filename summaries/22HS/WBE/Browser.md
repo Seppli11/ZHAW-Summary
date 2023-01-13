@@ -1,5 +1,18 @@
 # Browser
 
+```html
+<html>
+    <head>
+        <link rel="stylesheet" href="mystyle.css">
+    </head>
+    <body>
+        <script type="module" src="code/date.js"></script> 
+    </body>
+</html>
+
+
+```
+
 ## Ajax
 
 The following code uses the old low-level ajax api. 
