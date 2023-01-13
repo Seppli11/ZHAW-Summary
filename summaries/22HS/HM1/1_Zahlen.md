@@ -21,9 +21,7 @@ $$
 
 Eine Zahl wird **machinendarstellbar** genannt, wenn $m_1\neq 0$ ist
 
-Die Anzahl Zahlen kann mit $2\cdot B^{n-1}\cdot B^e+1$, wenn der Exponent und Mantis ein Vorzeichen hat. Falls die Mantis kein Vorzeichen hat, gibt es: $B^{n-1}\cdot B^e + 1$.
-
-
+Die Anzahl Zahlen kann mit $2\cdot B^{n-1}\cdot (2\cdot B^e-1)+1$, wenn der Exponent und Mantis ein Vorzeichen hat. Falls die Mantis kein Vorzeichen hat, gibt es: $B^{n-1}\cdot (2\cdot B^e-1)+1$. Wenn der Exponent auch kein Vorzeichen hat, dann wird daraus $B^{n-1}\cdot B^e+1$.
 
 ## Minimum und Maximum
 
