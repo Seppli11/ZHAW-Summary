@@ -52,11 +52,11 @@ Als Beispiel mit der Basis $B=10$, eine siebenstellige Mantisse $n=7$ und $x=180
 
 ## Konditionierung: Fortpflanzung von Fehler
 
-Der absolute Fehler von einer Operation $f(x)$  kann als $|f'(x)|\cdot |\tilde x - x|$ angenähert werden. Beim relativen Fehler gilt $\frac{|f'(x)|\cdot|x|}{f(x)}\cdot \frac{|\tilde x - x|}{|x|}$ 
+Der absolute Fehler von einer Operation $f(x)$  kann als $|f'(x)|\cdot |\tilde x - x|$ angenähert werden. Beim relativen Fehler gilt $\frac{|f'(x)|\cdot|x|}{|f(x)|}\cdot \frac{|\tilde x - x|}{|x|}$ 
 
-Den Faktor $K:= \frac{|f'(x)|\cdot|x|}{f(x)}$ nennt sich Konditionszahl und sagt aus, um wie viel sich der **relativen Fehler** von $x$ bei einer Funktionsauswertung von $f(x)$ verändert. Dabei wird zwischen **gut konditionierten Problemen**, bei welchen die Konditionszahl klein ist, und **schlecht konditionierten Problemen,** bei welchen die Konditionszahl gross ist, unterschieden.
+Den Faktor $K:= \frac{|f'(x)|\cdot|x|}{|f(x)|}$ nennt sich Konditionszahl und sagt aus, um wie viel sich der **relativen Fehler** von $x$ bei einer Funktionsauswertung von $f(x)$ verändert. Dabei wird zwischen **gut konditionierten Problemen**, bei welchen die Konditionszahl klein ist, und **schlecht konditionierten Problemen,** bei welchen die Konditionszahl gross ist, unterschieden.
 
-### Fehlerfortpflanzung bei Summation
+### Fehlerfortpflanzung bei SummationK:= \frac{|f'(x)|\cdot|x|}{f(x)}
 
 Für $f(x)=x+c$, gilt $f'(x)=1$ und folgendes für $K$:
 $$

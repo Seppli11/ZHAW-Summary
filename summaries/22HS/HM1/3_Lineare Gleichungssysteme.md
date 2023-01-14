@@ -108,7 +108,7 @@ L=\begin{pmatrix}
 $$
 
 
-Um nun nach $x$ aufzulösen wird folgendes gerechnet:
+U m nun nach $x$ aufzulösen wird folgendes gerechnet:
 
 1. Das Gleichungssystem $Ly=b$ wird durch Vorwärtseinsetzen nach $y$ aufgelöst.
 2. Im Gleichungssystem $Rx=y$ wird nun $y$ eingesetzt und mit Vorwärtseinsetzten nach $x$ gelöst.
@@ -331,6 +331,8 @@ Für Jacobi-Verfahren ist $B$ und $c$ folgendermassen definiert: $x^{(k+1)}=-\un
 
 Für das Gaus-Seidel-Verfahren ist $B$ und $c$ definiert als: $x^{(k+1)}=\underbrace{-(D+L)^{-1}R}_B\cdot x^{(k)}+\underbrace{(D+L)^{-1}}_c \cdot b$
 
+$\overline x$ ist ebenfalls anziehend, wenn $\rho(B)<1$ ist ($\rho(B)$ ist der Spektralradius von $B$).
+
 ### Diagonaldominanz
 
 Eine Matrix wird als Diagonaldominanz bezeichnet, wenn entweder
@@ -340,3 +342,4 @@ Eine Matrix wird als Diagonaldominanz bezeichnet, wenn entweder
 
 ## Abschätzung
 
+**TODO**

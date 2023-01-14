@@ -11,8 +11,6 @@ Damit die Fixpunktiteration zum Resultat konvergiert, muss für die Ableitung $F
 
 ### Banachscher Fixpunktsatz
 
-**TODO: Voraussetzungen repetieren**
-
 Es gilt folgendes für $F: [a, b] \to [a, b]$ und die Konstante $\alpha \in ]0, 1[$
 $$
 |F(x) - F(y)|\le \alpha\cdot |x - y| \text{ wobei gilt: } x, y\in [a, b]\\
@@ -20,6 +18,10 @@ $$
 \frac{|F(x)-F(y)|}{|x - y|} \le \alpha
 $$
 In Deutsch heisst dies, dass die Differenz $F(x) - F(y)$ nie grösser als $x-y$ sein darf, oder dass die Steigung nicht grösser als $1$ darf sein und muss grösser als 0 sein.
+
+Mathematischer: $F$ muss Lipschitz-stetig (selbst-abbildend) und kontraktiv sein. Zum argumentieren, dass es selbst abbildend ist, $F(x)$ muss monoton steigend sein (darf nie sinken) und $F(a)$ und $F(b)$ müssen zwischen $a$ und $b$ sein.
+
+Zum argumentieren, dass es kontraktiv ist, muss $F(x)$ 
 
 Wenn dies gegeben ist, 
 
@@ -86,7 +88,8 @@ Oder auf Deutsch: Wenn es einen Vorzeichenwechsel zwischen $[x_n-\varepsilon; x_
 
 Mit der a-priori Abschätzung kann der maximale absolute Fehler nach $n$ Iterationen von den ersten zwei Iterationen $x_0$ und $x_1$ geschätzt werden:
 $$
-|x_n-\overline x|\le \frac{\alpha^n}{1-\alpha}\cdot |x_1 - x_0|
+|x_n-\overline x|\le \frac{\alpha^n}{1-\alpha}\cdot |x_1 - x_0|\\
+n=\log_\alpha\left ( \frac{|x_n - \overline x|\cdot (1-\alpha)}{|x_1 - x_0|}\right )
 $$
 Mit der a-posteriori Abschätzung kann der maximale absoluten Fehler nach $n$  Iterationen von der $n$-ten und $n-1$-te Iteration abschätzen:
 $$
