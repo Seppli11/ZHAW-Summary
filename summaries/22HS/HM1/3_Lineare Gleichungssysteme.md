@@ -332,6 +332,20 @@ Für Jacobi-Verfahren ist $B$ und $c$ folgendermassen definiert: $x^{(k+1)}=-\un
 Für das Gaus-Seidel-Verfahren ist $B$ und $c$ definiert als: $x^{(k+1)}=\underbrace{-(D+L)^{-1}R}_B\cdot x^{(k)}+\underbrace{(D+L)^{-1}}_c \cdot b$
 
 $\overline x$ ist ebenfalls anziehend, wenn $\rho(B)<1$ ist ($\rho(B)$ ist der Spektralradius von $B$).
+### Abschätzung
+
+$$
+\begin{align}
+\text{a-priori Abschätzung: }& ||x{(n)}-\tilde x|| \le \frac{||B||^n}{1-||B||}\cdot || x^{(1)}-x^{0}||\\
+\text{a-posteriori Abschätzung: }& ||x{(n)}-\tilde x|| \le \frac{||B||}{1-||B||}\cdot || x^{(n)}-x^{n-1}||
+\end{align}
+$$
+
+$$
+n=\log_\alpha\left ( \frac{|x_n - \overline x|\cdot (1-\alpha)}{|x_1 - x_0|}\right )
+$$
+
+
 
 ### Diagonaldominanz
 
@@ -340,6 +354,5 @@ Eine Matrix wird als Diagonaldominanz bezeichnet, wenn entweder
 * für alli $i=1,...,n$: $|a_{ii}|> \sum^n_{j=1, j\neq i}|a_{ij}|$
 * für alli $j=1,...,n$: $|a_{jj}|> \sum^n_{i=1, i\neq j}|a_{ij}|$
 
-## Abschätzung
 
-**TODO**
+
