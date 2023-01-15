@@ -64,7 +64,7 @@ Der absolute Fehler von einer Operation $f(x)$  kann als $|f'(x)|\cdot |\tilde x
 
 Den Faktor $K:= \frac{|f'(x)|\cdot|x|}{|f(x)|}$ nennt sich Konditionszahl und sagt aus, um wie viel sich der **relativen Fehler** von $x$ bei einer Funktionsauswertung von $f(x)$ verändert. Dabei wird zwischen **gut konditionierten Problemen**, bei welchen die Konditionszahl klein ist, und **schlecht konditionierten Problemen,** bei welchen die Konditionszahl gross ist, unterschieden.
 $$
-K:= \frac{|f'(x)|\cdot|x|}{f(x)}
+K:= \frac{|f'(x)|\cdot|x|}{|f(x)|}
 $$
 
 ### Fehlerfortpflanzung bei Summation
