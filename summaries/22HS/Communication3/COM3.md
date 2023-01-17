@@ -40,6 +40,10 @@ Eine Zusammenfassung soll im **Präsens** sein und keine Nacherzählung (keine I
 
 Affiliation ist ZHAW
 
+## Linking Words
+
+![image-20230116211440277](res/COM3/image-20230116211440277.png)
+
 ## Argumentation
 
 ### LWN 2

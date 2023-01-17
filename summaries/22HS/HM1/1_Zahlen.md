@@ -48,7 +48,7 @@ Der **absolute Fehler** bei einer Rundung von $x$ zu der Näherung $\tilde x$ is
 
 Wenn $\tilde x=rd(x)$ gilt, wobei $rd(x)$ die Zahl $x$ rundet, dann ist der höchste absolute Fehler: $\vert rd(x)-x\vert \le 0.\underbrace{00...00}_{n}\frac B 2\cdot B^e=\frac B 2\cdot B^{e-n-1}$
 
-Als Beispiel mit der Basis $B=10$, eine siebenstellige Mantisse $n=7$ und $x=180.1234567=0.1801234567\cdot 10^3$: $\vert rd(x)-\tilde x\vert \le 0.\underbrace{0000000}_{n=7}5\cdot 10^3=0.5\cdot 10^{3-7}=0.5\cdot10^{-4}$
+Als Beispiel mit der Basis $B=10$, eine siebenstellige Mantisse $n=7$ und $x=180.1234567=0.1801234567\cdot 10^3$: $\vert rd(x)- x\vert \le 0.\underbrace{0000000}_{n=7}5\cdot 10^3=0.5\cdot 10^{3-7}=0.5\cdot10^{-4}$
 
 ## Konditionierung: Fortpflanzung von Fehler
 
@@ -56,7 +56,7 @@ Der absolute Fehler von einer Operation $f(x)$  kann als $|f'(x)|\cdot |\tilde x
 
 Den Faktor $K:= \frac{|f'(x)|\cdot|x|}{|f(x)|}$ nennt sich Konditionszahl und sagt aus, um wie viel sich der **relativen Fehler** von $x$ bei einer Funktionsauswertung von $f(x)$ verändert. Dabei wird zwischen **gut konditionierten Problemen**, bei welchen die Konditionszahl klein ist, und **schlecht konditionierten Problemen,** bei welchen die Konditionszahl gross ist, unterschieden.
 $$
-K:= \frac{|f'(x)|\cdot|x|}{f(x)}
+K:= \frac{|f'(x)|\cdot|x|}{|f(x)|}
 $$
 
 ### Fehlerfortpflanzung bei Summation

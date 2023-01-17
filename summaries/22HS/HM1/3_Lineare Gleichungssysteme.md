@@ -342,10 +342,8 @@ $$
 $$
 
 $$
-n=\log_\alpha\left ( \frac{|x_n - \overline x|\cdot (1-\alpha)}{|x_1 - x_0|}\right )
+n=\log_{||B||}\left ( \frac{||x_n - x||\cdot (1-||B||)}{||x_1 - x_0||}\right )
 $$
-
-
 
 ### Diagonaldominanz
 

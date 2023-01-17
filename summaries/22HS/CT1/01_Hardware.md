@@ -1,5 +1,7 @@
 # Hardware
 
+![image-20230117111125509](res/01_Hardware/image-20230117111125509.png)
+
 ## von Neumann Architeccture
 
 ![image-20220921110127297](res/image-20220921110127297.png)

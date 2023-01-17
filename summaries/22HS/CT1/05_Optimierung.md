@@ -1,5 +1,16 @@
 # Optimierung
 
+$$
+\begin{align}
+InstructionDelay&=ReadInstruction+DecodeInstruction+ExecuteInstruction\\
+MaxStageDelay&=\max \{ReadInstruction, DecodeInstruction, ExecuteInstruction\}\\
+IPSdWithPipelinging&=\frac 1{InstructionDelay}\\
+IPSWithoutPipelinging &= \frac 1 {MaxStageDelay}
+\end{align}
+$$
+
+*(IPS = Instructions per Seconds)*
+
 ## Architekturen
 
 * von Neumann Architecture
