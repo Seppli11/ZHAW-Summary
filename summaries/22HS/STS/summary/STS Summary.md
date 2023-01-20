@@ -23,8 +23,21 @@ tags:
 | Stichprobenmittelwert $\overline x$                 | $\overline x=\frac 1 n\sum^n_{i=1}x_i$                       | $\overline x=\sum^n_{i=1}M_i\cdot f_i$                       |
 | Varianz                                             | $s^2 = \frac 1 n \sum^n_{i=1}(x_i - \overline x)^2 \\ = \frac 1 n \left (\sum^n_{i=1}x_i^2 \right)- \overline x ^2$ | $s^2=\sum^n_{i=1}(M_i-\overline x)^2\cdot f_i$               |
 | Korrigierte Varianz                                 | $s_{korr}^2=\frac 1 {n-1}\sum^n_{i=1}(x_i - \overline x)^2 \\ = \frac n {n - 1}s^2$ | $s_{korr}^2= \frac n {n - 1}s^2$                             |
-| (korrigierte) Standardabweichung $s$                | $s_{korr}=\sqrt{s_{korr}^2}$                                               | *gleich*                                                     |
+| (korrigierte) Standardabweichung $s$                | $s_{korr}=\sqrt{s_{korr}^2}$                                 | *gleich*                                                     |
 | Kovarianz                                           | $s_{xy}=\frac 1 n \sum^n_{i=1}(x_i-\overline x)\cdot (y_i- \overline y)\\= \left(\frac 1 n \sum^n_{i=1}x_iy_i\right)-\overline x \cdot \overline y$ | -                                                            |
+
+### Taschenrechner Befehle
+
+| Funktion                                 | TR-Befehl                             |
+| ---------------------------------------- | ------------------------------------- |
+| `stat-menu`                              | `shift` + `1` (`STAT`)                |
+| Varianz für `x`                          | `stat-menu` - `5: s-var` - `3: xσn`   |
+| Varianz für `y`                          | `stat-menu` - `5: s-var` - `6: yσn`   |
+| Korrigierte Varianz für `x`              | `stat-menu` - `5: s-var` - `4: xσn-1` |
+| Korrigierte Varianz für `y`              | `stat-menu` - `5: s-var` - `7: xσn-1` |
+| Durchschnitt für `x`                     | `stat-menu` - `5: s-var` - `2: x `    |
+| Durchschnitt für `y`                     | `stat-menu` - `5: s-var` - `5: y `    |
+| Pearson-Korrelationskoeffizient $r_{xy}$ | `stat-menu` - `7: Reg` - `3: r`       |
 
 ### Quantile / Boxplot
 
@@ -99,9 +112,7 @@ $$
 \text{Wahrscheinlichkeitsmass: } P: 2^\Omega \to [0, 1], P(M)=\sum_{\omega \in M} \rho(\omega)
 $$
 
-Der Wahrscheinlichkeitsraum $(\Omega, P)$ wird Laplace-Raum genannt, wenn alle Ereignisse gleichwahrscheinlich sind.
-
-**TODO:  geometrische Reihe**
+Der Wahrscheinlichkeitsraum $(\Omega, P)$ wird Laplace-Raum genannt, wenn alle Ereignisse gleich wahrscheinlich sind.
 
 * $P(X=x)=f(x)$
 * $P(X \le x)=F(x)$
