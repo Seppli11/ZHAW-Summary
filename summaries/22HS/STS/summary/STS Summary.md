@@ -23,7 +23,7 @@ tags:
 | Stichprobenmittelwert $\overline x$                 | $\overline x=\frac 1 n\sum^n_{i=1}x_i$                       | $\overline x=\sum^n_{i=1}M_i\cdot f_i$                       |
 | Varianz                                             | $s^2 = \frac 1 n \sum^n_{i=1}(x_i - \overline x)^2 \\ = \frac 1 n \left (\sum^n_{i=1}x_i^2 \right)- \overline x ^2$ | $s^2=\sum^n_{i=1}(M_i-\overline x)^2\cdot f_i$               |
 | Korrigierte Varianz                                 | $s_{korr}^2=\frac 1 {n-1}\sum^n_{i=1}(x_i - \overline x)^2 \\ = \frac n {n - 1}s^2$ | $s_{korr}^2= \frac n {n - 1}s^2$                             |
-| (korrigierte) Standardabweichung $s$                | $s=\sqrt{s_{korr}^2}$                                               | *gleich*                                                     |
+| (korrigierte) Standardabweichung $s$                | $s_{korr}=\sqrt{s_{korr}^2}$                                               | *gleich*                                                     |
 | Kovarianz                                           | $s_{xy}=\frac 1 n \sum^n_{i=1}(x_i-\overline x)\cdot (y_i- \overline y)\\= \left(\frac 1 n \sum^n_{i=1}x_iy_i\right)-\overline x \cdot \overline y$ | -                                                            |
 
 ### Quantile / Boxplot
