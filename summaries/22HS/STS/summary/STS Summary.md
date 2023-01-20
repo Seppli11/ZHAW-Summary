@@ -166,6 +166,7 @@ Um zu überprüfen ob $n$ Ereignisse unabhänig sind, braucht es $2^n - n -1$ Gl
 Es gibt eine Urne mit $N$ Objekte, von welchen $M$ einer bestimmten Sorte angehöhren ($N- M$ gehöhren zu anderen Sorten). Zufällig wird eine Stichprobe von $n$ Objekten aus der Urne genommen. Wichtig ist, dass **nicht Zurückgelegt wird**.
 
 Die Zufallsvariable $X$ beschriebt die Anzahl von Objekten von der Sorte $M$. Es gilt $X \sim H(N, M, n)$
+
 $$
 P(X=x)=\frac{\begin{pmatrix}M\\x\end{pmatrix}\cdot \begin{pmatrix}N - M\\n - x\end{pmatrix}}
 {\begin{pmatrix}N\\n\end{pmatrix}}\\
@@ -182,6 +183,7 @@ $$
 ### Bernoulliverteilung
 
 Ein Bernoulli-Expermient, ist ein Zufallsexperiment, inwelchem es nur zwei Möglichkeiten gibt.
+
 $$
 \begin{align}
 P(X=1)&=p\\
@@ -202,6 +204,7 @@ $$
 Wenn ein Bernoulliexperiment $n$-mal wiederholt wird und die Wahrscheinlichkeit für $P(X=1)=p$ ist und $q=1-p$. Die Wiederholungen **müssen** stochastisch unabhängig sein. 
 
 Es gilt $X\sim B(n, p)$
+
 $$
 P(X=x)=\begin{pmatrix}n\\x\end{pmatrix}\cdot p^x\cdot q^{n-x}
 $$
@@ -219,6 +222,7 @@ Wenn gilt $n \lesssim \frac N {20}$, dann kann die eine hypergeometrische Vertei
 ### Poissonverteilung ($X\sim P(\lambda)$)
 
 Die Poissonverteilung kann als stochastisches Modell benutzt werden, wenn es um die Wahrscheinlichkeit für das Eintreten einer bestimmten Anzahl gleichartiger Ereignisse geht, welche in einem gegebenen Bereich $\lambda$ (unabhängigi voneiner) beliebig oft auftreten können.
+
 $$
 P(X=x)=\frac{\lambda^x}{x!}\cdot e^{-\lambda}
 $$
@@ -246,6 +250,7 @@ $$
 $$
 
 Wenn $\mu=0$ und $\sigma = 1$ ist, dann wird von einer Standardnormalverteilung gesprochen und wird einfach als $\varphi(x)$ bezeichnet:
+
 $$
 \varphi(x)=\frac 1 {\sqrt{2\pi}}\cdot e^{-\frac 1 2 x^2}
 $$
@@ -289,6 +294,7 @@ Wenn mehrere stochastische unabhängige Zufallsvariabeln den selben Erwartungswe
 * $V(S_n)=n\sigma^2$
 
 Zusätzlich gilt, dass die Vertielungsfunktion $F_n(u)$ der standartisierten Zufallsvariable
+
 $$
 U_n=\frac{(X_1 + X_2 +...+X_n)-n\mu}{\sqrt n \cdot \sigma}=\frac{\overline X - \mu}{\frac \sigma {\sqrt{n}}}\\
 \overline X = \frac {S_n} n
@@ -300,6 +306,7 @@ Es kann ebenfalls gesagt werden, dass das arithmetische Mittel $\overline X_n$ v
 ## Regression
 
 Das Ziel einer Regresinos-Gerade $g=m\cdot x + d$ ist es den Residuen (oder Fehler) $\sum^n_{i=1} (y_i-g(x_i))^2$ zu minimieren. 
+
 $$
 m=\frac{S_{xy}}{S_x^2}{}\\
 d=\overline y - m\overline x\\
@@ -351,6 +358,7 @@ Eine Schätzfunktion $\Theta_1$ ist effizienter als $\Theta_2$ wenn gilt $V(\The
 ### Vertrauensintervalle
 
 Es werden zwei Stichprobenfunktionen $\Theta_u$ und $\Theta_o$ bestummen, welche den wen wahren Wert $\theta$ mit einer vorgegebener Wahrscheinlichkeit von $\gamma$ einschliesst.
+
 $$
 P(\Theta_u \le \theta \le \Theta_o)=\gamma
 $$
