@@ -284,7 +284,6 @@ Für die Verteilung $N(\mu, \sigma)$, liegen
 | ------------------- | --------- | ------------------------------------------------------------ |
 | $X\sim B(n, p)$     | $npq>9$   | $P(a\le X \le b)=\sum^b_{x=a}P(X=x)\approx \phi_{\mu, \sigma}(b+\frac 1 2)-\phi_{\mu,\sigma}(a-\frac 1 2)$ |
 | $X\sim P(\lambda))$ | $x > 9$   | $P(a \le X \le b)=\sum^b_{x=a}P(X=x)\approx \phi_{\mu, \sigma}(b+\frac 1 2)-\phi_{\mu,\sigma}(a-\frac 1 2)$ |
-|                     |           |                                                              |
 
 ### Zentraler Grenzwertsatz
 
@@ -362,6 +361,7 @@ Es werden zwei Stichprobenfunktionen $\Theta_u$ und $\Theta_o$ bestummen, welche
 $$
 P(\Theta_u \le \theta \le \Theta_o)=\gamma
 $$
+
 Wenn konkrete Werte in $\Theta_u$ und $\Theta_o$ eingesetzt werden, dann wird das Intervall $[c_u; c_o]$ gebildet. $\gamma$ heisst das Vertrauensniveau (oder statistische Sicherheit) und $\alpha = 1 - \gamma$ ist die Irrtumwahrscheinlichkeit.
 
 ![image-20221229150717439](res/STS Summary/image-20221229150717439.png)
