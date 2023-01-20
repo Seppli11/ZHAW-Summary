@@ -38,6 +38,11 @@ x_{[\lceil n\cdot q\rceil]} & n\cdot q \text{ keine ganze Zahl}
 R_q=\frac{b - a}{F(b) - F(a)}\cdot (q - F(a)) + a
 $$
 
+> ***Note:***  
+> Für $a$ als die untere und $b$ als die obere Grenze der Klasse, welche das Quantil beinhaltet.
+>
+> Die Klasse, welche das Quantil beinhaltet, ist die erste Klasse, dessen _CDF_ $q$ überschreitet.
+
 <img src="res/STS Summary/image-20221227175055023.png" alt="image-20221227175055023" style="zoom:50%;" />
 
 ## Pearson-Korrelationskoeffizient
