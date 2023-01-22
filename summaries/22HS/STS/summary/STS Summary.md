@@ -13,11 +13,11 @@ tags:
 
 | Funktion                                            | Nicht Klassiert                                              | Klassiert                                                    |
 | --------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| absolute Häuffigkeit $h(x)$                         |                                                              |                                                              |
-| relative Häuffikeit (PMF) $f(x)$ / $g(x)$           | $f(x)=\frac{h(x)}n$                                          | $g(x)=f_i$                                                   |
+| absolute Häufigkeit $h(x)$                          |                                                              |                                                              |
+| relative Häufikeit (PMF) $f(x)$ / $g(x)$            | $f(x)=\frac{h(x)}n$                                          | $g(x)=f_i$                                                   |
 | Dichtefunktion $f(x)$ ($b_i=$ Klassengrösse ) (PDF) | -                                                            | $f(x)=\frac{g(x)}{b_i}$                                      |
-| kummulative absolute Häuffigkeit $H(x)$             | $H(x)=\sum_{a_i \lt x}h_i$                                   | -                                                            |
-| kummulative relative Häuffigkeit (CDF) $F(x)$       | $F(x)=\sum_{a_i}f_i=\frac{H(x)}{n}$                          | $F(x)=\int^x_{-\infty}f(y)\mathrm d y$, $F(x)=F(a_i)+\frac{x-a_i}{a_{i+1}-a_i}\cdot (F(a_{i+1})-F(a_i))$ |
+| kummulative absolute Häufigkeit $H(x)$              | $H(x)=\sum_{a_i \lt x}h_i$                                   | -                                                            |
+| kummulative relative Häufigkeit (CDF) $F(x)$        | $F(x)=\sum_{a_i}f_i=\frac{H(x)}{n}$                          | $F(x)=\int^x_{-\infty}f(y)\mathrm d y$, $F(x)=F(a_i)+\frac{x-a_i}{a_{i+1}-a_i}\cdot (F(a_{i+1})-F(a_i))$ |
 | Modus $x_{mod}$                                     | Höchste absolute Häufigkeit                                  | *gleich*                                                     |
 | Klassenmitte $M_i$                                  | -                                                            | $M_i=\frac{a_{i+1}-a_i}{2}$                                  |
 | Stichprobenmittelwert $\overline x$                 | $\overline x=\frac 1 n\sum^n_{i=1}x_i$                       | $\overline x=\sum^n_{i=1}M_i\cdot f_i$                       |
@@ -87,7 +87,7 @@ Deutsch: 1 + die Anzahl von Elementen $x_j$, welche kleiner als $x_i$ sind + die
 
 Wenn es doppelte x- oder y-Elemente gibt, dann wird von verbundenen Rängen gesprochen, wobei der Durchschnitt der Ränge berechnet wird.
 
-Der Spearman-Rangkorrelationskoeffizient misst, ob die Daten eine Korrelation mit einer strengen monotoner funktion haben (eine Funktion, welche immer steigt oder fällt)
+Der Spearman-Rangkorrelationskoeffizient misst, ob die Daten eine Korrelation mit einer strengen monotonen Funktion haben (eine Funktion, welche immer steigt oder fällt)
 
 **TODO: Multivarianten Daten darstellen**
 
