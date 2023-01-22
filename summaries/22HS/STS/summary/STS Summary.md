@@ -329,7 +329,7 @@ $$
 
 Das Bestimmheitsmass ist zwischen 0 und 1 und gibt an, wieviel Prozent der Varianz durch $R^2$ erklärt wird. 0 heisst dass die Gerade nicht passt. 1 heisst, dass die Gerade perfekt passt. Wenn $R^2=0.75$ ist, bedeutet dies, dass 75% der gesamten Varianz durch die Regressionsgerade erklärt wird und 25% ist zufallsbedingt.
 
-![image-20221229123936996](res/STS Summary/image-20221229123936996.png)
+<img src="res/STS Summary/image-20221229123936996.png" alt="image-20221229123936996" style="zoom: 80%;" />
 
 ### Linearisieren
 
