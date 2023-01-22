@@ -115,11 +115,6 @@ $$
 $$
 
 Der Wahrscheinlichkeitsraum $(\Omega, P)$ wird Laplace-Raum genannt, wenn alle Ereignisse gleich wahrscheinlich sind.
-<<<<<<< Updated upstream
-=======
-
-**TODO:  geometrische Reihe**
->>>>>>> Stashed changes
 
 * $P(X=x)=f(x)$
 * $P(X \le x)=F(x)$
@@ -189,12 +184,8 @@ $$
 
 ### Bernoulliverteilung
 
-<<<<<<< Updated upstream
 Ein Bernoulli-Expermient, ist ein Zufallsexperiment, inwelchem es nur zwei Möglichkeiten gibt.
 
-=======
-Ein Bernoulli-Expermient, ist ein Zufallsexperiment, in welchem es nur zwei Möglichkeiten gibt.
->>>>>>> Stashed changes
 $$
 \begin{align}
 P(X=1)&=p\\
@@ -231,13 +222,9 @@ $$
 Wenn gilt $n \lesssim \frac N {20}$, dann kann die eine hypergeometrische Verteilung mit einer Binomialverteilung angenähert werden: $H(N, M, n)\approx B(n, \frac M N)$
 
 ### Poissonverteilung ($X\sim P(\lambda)$)
-
-<<<<<<< Updated upstream
-Die Poissonverteilung kann als stochastisches Modell benutzt werden, wenn es um die Wahrscheinlichkeit für das Eintreten einer bestimmten Anzahl gleichartiger Ereignisse geht, welche in einem gegebenen Bereich $\lambda$ (unabhängigi voneiner) beliebig oft auftreten können.
-
-=======
+$
 Die Poissonverteilung kann als stochastisches Modell benutzt werden, wenn es um die Wahrscheinlichkeit für das Eintreten einer bestimmten Anzahl gleichartiger Ereignisse geht, welche in einem gegebenen Bereich $\lambda$ (unabhängig voneinander) beliebig oft auftreten können.
->>>>>>> Stashed changes
+
 $$
 P(X=x)=\frac{\lambda^x}{x!}\cdot e^{-\lambda}
 $$
