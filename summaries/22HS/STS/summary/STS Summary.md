@@ -28,16 +28,17 @@ tags:
 
 ### Taschenrechner Befehle
 
-| Funktion                                 | TR-Befehl                             |
-| ---------------------------------------- | ------------------------------------- |
-| `stat-menu`                              | `shift` + `1` (`STAT`)                |
-| Varianz für `x`                          | `stat-menu` - `5: s-var` - `3: xσn`   |
-| Varianz für `y`                          | `stat-menu` - `5: s-var` - `6: yσn`   |
-| Korrigierte Varianz für `x`              | `stat-menu` - `5: s-var` - `4: xσn-1` |
-| Korrigierte Varianz für `y`              | `stat-menu` - `5: s-var` - `7: xσn-1` |
-| Durchschnitt für `x`                     | `stat-menu` - `5: s-var` - `2: x `    |
-| Durchschnitt für `y`                     | `stat-menu` - `5: s-var` - `5: y `    |
-| Pearson-Korrelationskoeffizient $r_{xy}$ | `stat-menu` - `7: Reg` - `3: r`       |
+| Funktion                                 | TR-Befehl                                                    |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| `stat-menu`                              | `shift` + `1` (`STAT`)                                       |
+| Varianz für `x`                          | `stat-menu` - `5: s-var` - `3: xσn`                          |
+| Varianz für `y`                          | `stat-menu` - `5: s-var` - `6: yσn`                          |
+| Korrigierte Varianz für `x`              | `stat-menu` - `5: s-var` - `4: xσn-1`                        |
+| Korrigierte Varianz für `y`              | `stat-menu` - `5: s-var` - `7: xσn-1`                        |
+| Durchschnitt für `x`                     | `stat-menu` - `5: s-var` - `2: x `                           |
+| Durchschnitt für `y`                     | `stat-menu` - `5: s-var` - `5: y `                           |
+| Pearson-Korrelationskoeffizient $r_{xy}$ | `stat-menu` - `7: Reg` - `3: r`                              |
+| Regressions-Gerade $B * x + A$           | `stat-menu` - `7: Reg` - `1: A`, `stat-menu` - `7: Reg` - `2` |
 
 ### Quantile / Boxplot
 
