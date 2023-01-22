@@ -72,7 +72,7 @@ $$
 | $r_{xy}\approx -1$ | Negatiber Linearer Zusammenhang                              |
 | $r_{xy}\approx 0$  | Punkte sind gleichmässig um den Schwerpunkt $(\overline x, \overline y)$ verteilt |
 
-Der Pearon-Korrelationskoeffizient ist **nicht** robust und kann von Ausreisser stark beeinflusst werden.
+Der Pearon-Korrelationskoeffizient ist **nicht** robust und kann durch Ausreisser stark beeinflusst werden.
 
 ## Spearman-Rangkorrelationskoeffizient
 
@@ -83,20 +83,20 @@ r_{Sp}=\frac{\sum^n_{i=1}(\rg(x_i) - \overline{\rg(x)})\cdot(\rg(y_i)-\overline{
 \rg(x_i)=1+Anzahl(j \vert x_j < x_i) + \frac 1 2 Anzahl(j | x_j = x_i, i \neq j)  
 $$
 
-Deutsch: 1 + die Anzahl von Elementen $x_j$, welche kleiner als $x_i$ sind + die halbe Anzahl von Elementen, welche gleich sind, wie $x_i$.
+Deutsch: $1$ $+$ die Anzahl von Elementen $x_j$, welche kleiner als $x_i$ sind $+$ die halbe Anzahl von Elementen, welche gleich sind, wie $x_i$.
 
-Wenn es doppelte x- oder y-Elemente gibt, dann wird von verbundenen Rängen gesprochen, wobei der Durchschnitt der Ränge berechnet wird.
+Wenn es doppelte $x$- oder $y$-Elemente gibt, dann wird von verbundenen Rängen gesprochen, wobei der Durchschnitt der Ränge berechnet wird.
 
 Der Spearman-Rangkorrelationskoeffizient misst, ob die Daten eine Korrelation mit einer strengen monotonen Funktion haben (eine Funktion, welche immer steigt oder fällt)
 
-**TODO: Multivarianten Daten darstellen**
+**TODO: Multivariate Daten darstellen**
 
 ## Kombinatorik
 
 Binomialkoeffizient: $\begin{pmatrix}n \\k \end{pmatrix}=\frac{n!}{(n-k)!\cdot k!}$
-Wieviel Möglichkeiten gibt es $k$ Objekte von $n$ Objekten auszuwählen
+Wieviele Möglichkeiten gibt es $k$ Objekte von $n$ Objekten auszuwählen?
 
-$n$ sind die Anzahl Optionen, $k$ wie oft gezogen wird
+$n$ sind die Anzahl Optionen, $k$ wieviele gewählt werden.
 
 ![image-20221228103228852](res/STS Summary/image-20221228103228852.png)
 
@@ -104,8 +104,8 @@ Kombination mit Wiederholung: $k$ Objekte aus $n$ möglchen Sorten/Töpfen
 
 Beispiele:
 
-* Anzahl Möglichenkeiten für eine Personengruppe mit 20 potentiellen Personen: $2^{20}-1$
-  Jede Person ist entweder in der Gruppe oder nicht und $-1$ wegen der Leeren-Menge
+* Anzahl Möglichkeiten für eine beliebig grosse Gruppe mit 20 potenziellen Personen: $2^{20}-1$
+  Jede Person ist entweder in der Gruppe oder nicht und $-1$ wegen der Leeren Gruppe
 
 ## Wahrscheinlichkeit
 
@@ -115,6 +115,11 @@ $$
 $$
 
 Der Wahrscheinlichkeitsraum $(\Omega, P)$ wird Laplace-Raum genannt, wenn alle Ereignisse gleich wahrscheinlich sind.
+<<<<<<< Updated upstream
+=======
+
+**TODO:  geometrische Reihe**
+>>>>>>> Stashed changes
 
 * $P(X=x)=f(x)$
 * $P(X \le x)=F(x)$
@@ -165,7 +170,7 @@ Um zu überprüfen ob $n$ Ereignisse unabhänig sind, braucht es $2^n - n -1$ Gl
 
 ### Hypergeometrische Verteilung ($X \sim H(N, M, n)$)
 
-Es gibt eine Urne mit $N$ Objekte, von welchen $M$ einer bestimmten Sorte angehöhren ($N- M$ gehöhren zu anderen Sorten). Zufällig wird eine Stichprobe von $n$ Objekten aus der Urne genommen. Wichtig ist, dass **nicht Zurückgelegt wird**.
+Es gibt eine Urne mit $N$ Objekte, von welchen $M$ einer bestimmten Sorte angehöhren ($N- M$ gehöhren zu anderen Sorten). Zufällig wird eine Stichprobe von $n$ Objekten aus der Urne genommen. Wichtig ist, dass sie **nicht Zurückgelegt werden**.
 
 Die Zufallsvariable $X$ beschriebt die Anzahl von Objekten von der Sorte $M$. Es gilt $X \sim H(N, M, n)$
 
@@ -184,8 +189,12 @@ $$
 
 ### Bernoulliverteilung
 
+<<<<<<< Updated upstream
 Ein Bernoulli-Expermient, ist ein Zufallsexperiment, inwelchem es nur zwei Möglichkeiten gibt.
 
+=======
+Ein Bernoulli-Expermient, ist ein Zufallsexperiment, in welchem es nur zwei Möglichkeiten gibt.
+>>>>>>> Stashed changes
 $$
 \begin{align}
 P(X=1)&=p\\
@@ -223,8 +232,12 @@ Wenn gilt $n \lesssim \frac N {20}$, dann kann die eine hypergeometrische Vertei
 
 ### Poissonverteilung ($X\sim P(\lambda)$)
 
+<<<<<<< Updated upstream
 Die Poissonverteilung kann als stochastisches Modell benutzt werden, wenn es um die Wahrscheinlichkeit für das Eintreten einer bestimmten Anzahl gleichartiger Ereignisse geht, welche in einem gegebenen Bereich $\lambda$ (unabhängigi voneiner) beliebig oft auftreten können.
 
+=======
+Die Poissonverteilung kann als stochastisches Modell benutzt werden, wenn es um die Wahrscheinlichkeit für das Eintreten einer bestimmten Anzahl gleichartiger Ereignisse geht, welche in einem gegebenen Bereich $\lambda$ (unabhängig voneinander) beliebig oft auftreten können.
+>>>>>>> Stashed changes
 $$
 P(X=x)=\frac{\lambda^x}{x!}\cdot e^{-\lambda}
 $$
@@ -237,7 +250,7 @@ $$
 \end{align}
 $$
 
-Für eine Binomialverteilung wenn $n$ gegen unendlich geht und $\lambda=np$ konstant ist, dann kann eine Binomialverteilung mit einer Poissonverteilung approximiert werden: $B(n, p)\xrightarrow{n\to \infty \text{ und } \lambda=np \text{ konstant}} Poi(\lambda)$
+Für eine Binomialverteilung, wenn $n$ gegen unendlich geht und $\lambda=n \cdot p$ konstant ist, dann kann eine Binomialverteilung mit einer Poissonverteilung approximiert werden: $B(n, p)\xrightarrow{n\to \infty \text{ und } \lambda=np \text{ konstant}} Poi(\lambda)$
 
 Ebenfalls wenn $n \gtrsim 50$ und $p\lesssim 0.1$, dann kann eine Binomialverteilung mit einer Poissonverteilung approximiert werden: $B(n, p)\approx Poi(n\cdot p)$
 
@@ -289,7 +302,7 @@ Für die Verteilung $N(\mu, \sigma)$, liegen
 
 ### Zentraler Grenzwertsatz
 
-Wenn mehrere stochastische unabhängige Zufallsvariabeln den selben Erwartungswert $\mu$ und dieselbe Varianz $\sigma ^2$ haben, dann gilt für die Summe $S_n=\sum^n_{i=1}X_i$ der Zufallsvariabeln folgendes:
+Wenn mehrere stochastisch unabhängige Zufallsvariabeln denselben Erwartungswert $\mu$ und dieselbe Varianz $\sigma ^2$ haben, dann gilt für die Summe $S_n=\sum^n_{i=1}X_i$ der Zufallsvariabeln folgendes:
 
 * $E(S_n)=n\mu$
 * $V(S_n)=n\sigma^2$
@@ -302,18 +315,19 @@ U_n=\frac{(X_1 + X_2 +...+X_n)-n\mu}{\sqrt n \cdot \sigma}=\frac{\overline X - \
 $$
 für $n\to\infty$ gegen die Verteilungsfunktion $\phi(u)$ der Standardnormalverteilung konvergiert.
 
-Es kann ebenfalls gesagt werden, dass das arithmetische Mittel $\overline X_n$ von $n$ identisch verteilen, unabhänigen Zufallsvariablen näherungsweise $N(\mu, \frac \sigma {\sqrt n})$ verteilt ist.
+Es kann ebenfalls gesagt werden, dass das arithmetische Mittel $\overline X_n$ von $n$ identisch verteilten, unabhänigen Zufallsvariablen näherungsweise $N(\mu, \frac \sigma {\sqrt n})$ verteilt ist.
 
 ## Regression
 
-Das Ziel einer Regresions-Gerade $g=m\cdot x + d$ ist es den Residuen (oder Fehler) $\sum^n_{i=1} (y_i-g(x_i))^2$ zu minimieren. 
+Das Ziel einer Regressions-Gerade $g=m\cdot x + d$ ist es, den Residuen (oder Fehler) $\sum^n_{i=1} (y_i-g(x_i))^2$ zu minimieren. 
 
 $$
 m=\frac{S_{xy}}{S_x^2}{}\\
 d=\overline y - m\overline x\\
 S_\epsilon^2=S_y^2-\frac{S_{xy}^2}{S_x^2}
 $$
-$S_{xy}$ ist die kovarianz, $S_x^2$ ist die (nicht korrigierte) Varianz, $S_\epsilon^2$ ist die Residualvarianz
+
+$S_{xy}$ ist die Kovarianz, $S_x^2$ ist die (nicht korrigierte) Varianz, $S_\epsilon^2$ ist die Residualvarianz
 
 ### Bestimmtheitsmass
 
@@ -326,7 +340,7 @@ R^2&=\frac{S_{xy}^2}{S_x^2\cdot S_y^2}=r_{xy}^2 \\
 \end{align}
 $$
 
-Das Bestimmheitsmass ist zwischen 0 und 1 und gibt an wie viel Prozent der Varianz durch $R^2$ erklärt wird. 0 heisst dass die Gerade nicht passt. 1 heisst, dass die Gerade perfekt passt. Wenn $R^2=0.75$ ist, bedeutet dies, dass 75% der gesammten Varianz durch die Regressionsgerade erklärt wird und 25% ist zufalls bedingt.
+Das Bestimmheitsmass ist zwischen 0 und 1 und gibt an, wieviel Prozent der Varianz durch $R^2$ erklärt wird. 0 heisst dass die Gerade nicht passt. 1 heisst, dass die Gerade perfekt passt. Wenn $R^2=0.75$ ist, bedeutet dies, dass 75% der gesamten Varianz durch die Regressionsgerade erklärt wird und 25% ist zufallsbedingt.
 
 ![image-20221229123936996](res/STS Summary/image-20221229123936996.png)
 
@@ -358,7 +372,7 @@ Eine Schätzfunktion $\Theta_1$ ist effizienter als $\Theta_2$ wenn gilt $V(\The
 
 ### Vertrauensintervalle
 
-Es werden zwei Stichprobenfunktionen $\Theta_u$ und $\Theta_o$ bestimmt, welche den wahren Wert $\theta$ mit einer vorgegebener Wahrscheinlichkeit von $\gamma$ einschliesst.
+Es werden zwei Stichprobenfunktionen $\Theta_u$ und $\Theta_o$ bestimmt, welche den wahren Wert $\theta$ mit einer vorgegebenen Wahrscheinlichkeit von $\gamma$ einschliesst.
 
 $$
 P(\Theta_u \le \theta \le \Theta_o)=\gamma
