@@ -30,7 +30,7 @@ Akteure können mit<img src="res/image-20221120201728582.png" alt="image-2022112
 
 ## Brief Use-Case
 
-Ein Brief Use-Case wird meistens zu Beginn erstellt. In ein Brief Use-Case kommt folgendes enhalten werden:
+Ein Brief Use-Case wird meistens zu Beginn erstellt und ist in Prosa. In ein Brief Use-Case kommt folgendes enhalten werden:
 
 * Nur Erfolgsszenario
 * Trigger des Use-Case
@@ -77,15 +77,13 @@ Ein Casual Use-Case wird ebenfalls zu Beginn der Analyse verwendet und enthält 
 
   Alternative Erfolgs- und Misserfolgsszenarien
   
-* Spezielle Anforderungen (Special
-  Requirements)
-
+* Spezielle Anforderungen (Special Requirements)
+  
 * Liste der Technik und Datavariationen
   (Technology and Data Variations)
 
-* Häufigkeit des Auftretens (Frequency of
-  Occurance
-
+* Häufigkeit des Auftretens (Frequency of Occurance
+  
 * Verschiedenes (Miscellaneous)
 
 ## Systemsequenzdiagram
