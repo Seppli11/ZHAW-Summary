@@ -28,16 +28,17 @@ tags:
 
 ### Taschenrechner Befehle
 
-| Funktion                                 | TR-Befehl                             |
-| ---------------------------------------- | ------------------------------------- |
-| `stat-menu`                              | `shift` + `1` (`STAT`)                |
-| Varianz für `x`                          | `stat-menu` - `5: s-var` - `3: xσn`   |
-| Varianz für `y`                          | `stat-menu` - `5: s-var` - `6: yσn`   |
-| Korrigierte Varianz für `x`              | `stat-menu` - `5: s-var` - `4: xσn-1` |
-| Korrigierte Varianz für `y`              | `stat-menu` - `5: s-var` - `7: xσn-1` |
-| Durchschnitt für `x`                     | `stat-menu` - `5: s-var` - `2: x `    |
-| Durchschnitt für `y`                     | `stat-menu` - `5: s-var` - `5: y `    |
-| Pearson-Korrelationskoeffizient $r_{xy}$ | `stat-menu` - `7: Reg` - `3: r`       |
+| Funktion                                 | TR-Befehl                                                    |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| `stat-menu`                              | `shift` + `1` (`STAT`)                                       |
+| Varianz für `x`                          | `stat-menu` - `5: s-var` - `3: xσn`                          |
+| Varianz für `y`                          | `stat-menu` - `5: s-var` - `6: yσn`                          |
+| Korrigierte Varianz für `x`              | `stat-menu` - `5: s-var` - `4: xσn-1`                        |
+| Korrigierte Varianz für `y`              | `stat-menu` - `5: s-var` - `7: xσn-1`                        |
+| Durchschnitt für `x`                     | `stat-menu` - `5: s-var` - `2: x `                           |
+| Durchschnitt für `y`                     | `stat-menu` - `5: s-var` - `5: y `                           |
+| Pearson-Korrelationskoeffizient $r_{xy}$ | `stat-menu` - `7: Reg` - `3: r`                              |
+| Regressions-Gerade $B * x + A$           | `stat-menu` - `7: Reg` - `1: A`, `stat-menu` - `7: Reg` - `2` |
 
 ### Quantile / Boxplot
 
@@ -222,7 +223,7 @@ $$
 Wenn gilt $n \lesssim \frac N {20}$, dann kann die eine hypergeometrische Verteilung mit einer Binomialverteilung angenähert werden: $H(N, M, n)\approx B(n, \frac M N)$
 
 ### Poissonverteilung ($X\sim P(\lambda)$)
-$
+
 Die Poissonverteilung kann als stochastisches Modell benutzt werden, wenn es um die Wahrscheinlichkeit für das Eintreten einer bestimmten Anzahl gleichartiger Ereignisse geht, welche in einem gegebenen Bereich $\lambda$ (unabhängig voneinander) beliebig oft auftreten können.
 
 $$
@@ -329,7 +330,7 @@ $$
 
 Das Bestimmheitsmass ist zwischen 0 und 1 und gibt an, wieviel Prozent der Varianz durch $R^2$ erklärt wird. 0 heisst dass die Gerade nicht passt. 1 heisst, dass die Gerade perfekt passt. Wenn $R^2=0.75$ ist, bedeutet dies, dass 75% der gesamten Varianz durch die Regressionsgerade erklärt wird und 25% ist zufallsbedingt.
 
-![image-20221229123936996](res/STS Summary/image-20221229123936996.png)
+<img src="res/STS Summary/image-20221229123936996.png" alt="image-20221229123936996" style="zoom: 80%;" />
 
 ### Linearisieren
 
