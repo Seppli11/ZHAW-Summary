@@ -222,7 +222,7 @@ $$
 Wenn gilt $n \lesssim \frac N {20}$, dann kann die eine hypergeometrische Verteilung mit einer Binomialverteilung angenähert werden: $H(N, M, n)\approx B(n, \frac M N)$
 
 ### Poissonverteilung ($X\sim P(\lambda)$)
-$
+
 Die Poissonverteilung kann als stochastisches Modell benutzt werden, wenn es um die Wahrscheinlichkeit für das Eintreten einer bestimmten Anzahl gleichartiger Ereignisse geht, welche in einem gegebenen Bereich $\lambda$ (unabhängig voneinander) beliebig oft auftreten können.
 
 $$
