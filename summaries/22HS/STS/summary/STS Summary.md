@@ -58,10 +58,12 @@ $$
 
 <img src="res/STS Summary/image-20221227175055023.png" alt="image-20221227175055023" style="zoom:50%;" />
 
+$IQR=Q_3-Q_1$
+
 ## Pearson-Korrelationskoeffizient
 
 $$
-r_{xy}=\frac{S_{xy}}{S_x\cdot S_y}
+r_{xy}=\frac{S_{xy}}{S_x\cdot S_y}=\frac{\overline{xy}-(\overline x \cdot \overline y)}{\sqrt{\overline{x^2}-\overline x^2}\cdot \sqrt{\overline {y^2}-\overline y ^2}}
 $$
 
 |                    |                                                              |
@@ -78,7 +80,7 @@ $$
 \DeclareMathOperator{\rg}{rg}
 r_{Sp}=\frac{\sum^n_{i=1}(\rg(x_i) - \overline{\rg(x)})\cdot(\rg(y_i)-\overline{\rg(y)})}
 {\sqrt{\sum^n_{i=1}(\rg(x_i) - \overline{\rg(x)})^2} \cdot \sqrt{\sum^n_{i=1}(\rg(y_i) - \overline{\rg(y)})^2}}\\
-\rg(x_i)=1+Anzahl(j \vert x_j < x_i) + \frac 1 2 Anzahl(j | x_j = x_i, i \neq j)
+\rg(x_i)=1+Anzahl(j \vert x_j < x_i) + \frac 1 2 Anzahl(j | x_j = x_i, i \neq j)  
 $$
 
 Deutsch: 1 + die Anzahl von Elementen $x_j$, welche kleiner als $x_i$ sind + die halbe Anzahl von Elementen, welche gleich sind, wie $x_i$.
@@ -304,14 +306,14 @@ Es kann ebenfalls gesagt werden, dass das arithmetische Mittel $\overline X_n$ v
 
 ## Regression
 
-Das Ziel einer Regresinos-Gerade $g=m\cdot x + d$ ist es den Residuen (oder Fehler) $\sum^n_{i=1} (y_i-g(x_i))^2$ zu minimieren. 
+Das Ziel einer Regresions-Gerade $g=m\cdot x + d$ ist es den Residuen (oder Fehler) $\sum^n_{i=1} (y_i-g(x_i))^2$ zu minimieren. 
 
 $$
 m=\frac{S_{xy}}{S_x^2}{}\\
 d=\overline y - m\overline x\\
-S_\epsilon^2=\S_y^2-\frac{S_{xy}^2}{S_x^2}
+S_\epsilon^2=S_y^2-\frac{S_{xy}^2}{S_x^2}
 $$
-$S_{xy}$ ist die kovarianz, $S_x^2$ ist die (nicht korrigierte)  Varianz, $S_\epsilon^2$ ist die Residualvarianz
+$S_{xy}$ ist die kovarianz, $S_x^2$ ist die (nicht korrigierte) Varianz, $S_\epsilon^2$ ist die Residualvarianz
 
 ### Bestimmtheitsmass
 
@@ -320,11 +322,11 @@ $$
 S_y^2&=S_\epsilon^2 + S_{\hat y}^2\\
 R^2&=\frac{S_{\hat y}^2}{S_y^2}\\
 R^2&=\frac{S_{xy}^2}{S_x^2\cdot S_y^2}=r_{xy}^2 \\
-&=\text{Pearson-Korrelationskoeffizient}
+\sqrt R=\sqrt{r_{xy}}&=\text{Pearson-Korrelationskoeffizient}
 \end{align}
 $$
 
-Das Bestimmheitsmass ist zwischen 0 und 1. 0 heisst dass die Gerate nicht passt. 1 heisst, dass die Gerade perfekt passt. Wenn $R^2=0.75$ ist, bedeut dies, dass 75% der gesammten Varianz durch die Regressionsgerade erklärt wird und 25% ist zufalls bedingt.
+Das Bestimmheitsmass ist zwischen 0 und 1 und gibt an wie viel Prozent der Varianz durch $R^2$ erklärt wird. 0 heisst dass die Gerade nicht passt. 1 heisst, dass die Gerade perfekt passt. Wenn $R^2=0.75$ ist, bedeutet dies, dass 75% der gesammten Varianz durch die Regressionsgerade erklärt wird und 25% ist zufalls bedingt.
 
 ![image-20221229123936996](res/STS Summary/image-20221229123936996.png)
 
@@ -356,7 +358,7 @@ Eine Schätzfunktion $\Theta_1$ ist effizienter als $\Theta_2$ wenn gilt $V(\The
 
 ### Vertrauensintervalle
 
-Es werden zwei Stichprobenfunktionen $\Theta_u$ und $\Theta_o$ bestummen, welche den wen wahren Wert $\theta$ mit einer vorgegebener Wahrscheinlichkeit von $\gamma$ einschliesst.
+Es werden zwei Stichprobenfunktionen $\Theta_u$ und $\Theta_o$ bestimmt, welche den wahren Wert $\theta$ mit einer vorgegebener Wahrscheinlichkeit von $\gamma$ einschliesst.
 
 $$
 P(\Theta_u \le \theta \le \Theta_o)=\gamma
@@ -365,3 +367,12 @@ $$
 Wenn konkrete Werte in $\Theta_u$ und $\Theta_o$ eingesetzt werden, dann wird das Intervall $[c_u; c_o]$ gebildet. $\gamma$ heisst das Vertrauensniveau (oder statistische Sicherheit) und $\alpha = 1 - \gamma$ ist die Irrtumwahrscheinlichkeit.
 
 ![image-20221229150717439](res/STS Summary/image-20221229150717439.png)
+
+In der folgenden Tabelle sind die mathematischen Zeichen von oben erklärt:
+
+| Zeichen           | Bedeutung                |
+| ----------------- | ------------------------ |
+| $\mu$             | Durchschnitt / Mittel    |
+| $\sigma$, $S$     | Standardabweichung       |
+| $\sigma^2$, $S^2$ | Varianz                  |
+| $p$, $q$          | Wahrscheinlichkeits-Wert |
