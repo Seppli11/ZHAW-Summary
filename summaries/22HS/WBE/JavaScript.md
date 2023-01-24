@@ -29,6 +29,8 @@ for(let key in myArray) {
 for (let entry of myArray) {
 	doSomethingWith(entry)
 }
+
+myArray.forEach((entry, key, array) => doSomethingWith(entry))
 ```
 
 Methods of interest:
@@ -142,26 +144,38 @@ console.log(e17.salary) 	/* → 7000 */
 
 `const id = setImmediate(() => ...)` works like `setTimeout(fun, timeoutInMillis)` or `setInterval(fun, intervalInMillis)`
 
-Promises and tasks in the `nextTickQueue` (in the middle) are processed after each phase (in node since version 11). The `nextTickQueue` is processed before promises.
+Promises and tasks in the `nextTickQueue` (in the middle) are processed between phases (in node since version 11). The `nextTickQueue` is processed before promises.
 
 ```js
 Promise.resolve().then(() => console.log('promise resolved'))
 setImmediate(() => console.log('set immediate'))
 process.nextTick(() => console.log('next tick'))
 setTimeout(() => console.log('set timeout'), 0)
-// next tick
-// promise resolved
-// set timeout
-// set immediate
+
+setTimeout(() => {
+  console.log("start timeout")
+  process.nextTick(() => console.log("in nextTick() in setTieout()"))
+  console.log("end timeout")
+}, 0)
+//next tick
+//promise resolved
+//set timeout
+//start timeout
+//end timeout
+//in nextTick() in setTieout()
+//set immediate
 ```
 
 ## `Promise`
+
+The function given to the `Promise` constructor is executed synchronously. Only the first `resolve(...)`, `reject(...)` or `throw ...` has an effect on future stages.
 
 ```js
 const promise = new Prommise((resolve, reject) => {
 	throw Error('fail')
 	resolve()
 });
+
 promise
     .then (() => console.log('step1')) // is skipped because of `throw Error('fail')`
     .then (() => { throw Error('fail') }) // skipped
@@ -170,7 +184,6 @@ promise
     .then (() => console.log('step3')) // will be printed
     .catch(() => console.log('catch2')) // skippped
     .then (() => console.log('step4')) // printed
-
 /*
 printed:
 catch1

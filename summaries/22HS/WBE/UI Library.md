@@ -57,6 +57,8 @@ class CustomProgressBar extends HTMLElement {
   }
 
   static get observedAttributes() { return ['value']; }
+  
+  // is called by the browser if attributes are added, removed or modified
   attributeChangedCallback(name, oldValue, newValue, namespaceURI) {
       if (name === 'value') {
           const newPercentage = newValue === null ? 0 : parseInt(newValue);
@@ -96,10 +98,10 @@ Equivalent of:
 
 ### States
 
-With states, a component can access and set a state. A state is initialised with `useState(initialValue)` which returns two values in an array. `stateVar` is a variable to access the current value (**not** a function) and `setStateVar` is a function to update the state and rerender the component. In SUIWEB the `setState(setFun)` function takes a function which is called by the `setState()` function.
+With states, a component can access and set a state. A state is initialised with `useState(stateName, key, initialValue)` which returns two values in an array.  `stateVar` is a variable to access the current value (**not** a function) and `setStateVar` is a function to update the state and rerender the component. In SUIWEB the `setState(setFun, update)` function takes a function which is called by the `setState()` function. If the `update` parameter is false then no rerending is done.
 
 ```js
-const [stateVar, setStateVar] = useState(initialValue)
+const [stateVar, setStateVar] = useState(stateName, key, initialValue)
 ```
 
 The following is an example simulating a slow network speed:
@@ -110,9 +112,11 @@ const App = () => {
         heading: "Awesome SuiWeb (Busy)",
         content: "Loading...",
     }
+    // stateName = "name", key = 1, the inititial state is {heading: ...}
     let [state, setState] = useState("state", 1, initialState)
     let [timer, setTimer] = useState("timer", 1, null)
     
+    // setTimeout returns an timeout id, which is set as the state of timer
     const startTimer = () => setTimeout(() => {
         setState(() => ({
             heading: 'Awesome SuiWeb',
@@ -135,14 +139,13 @@ The following example shows a basic counter component which increments every sec
 const Counter = (props) => {
     let [count, setCount] = useState("mycounter", props.key, props.count)
     let [timer, setTimer] = useState("mytimer", props.key, null)
-        if (timer) clearTimeout(timer)
-        setTimer(() => setTimeout(()=>setCount(n => n+1), 1000), false)
-        return (
-            ["p",
-                {style: "font-size:2em", onclick: () => setCount(n => n + 1)},
-                "Count ", count ]
-        )
-	}
+    if (timer) clearTimeout(timer)
+    setTimer(() => setTimeout(() => setCount(n => n+1), 1000), false)
+    return (
+        ["p",
+         {style: "font-size:2em", onclick: () => setCount(n => n + 1)},
+         "Count ", count ]
+    )
 }
 
 const App = (props) =>
@@ -174,6 +177,7 @@ const App = ({init}) => {
         // do validation here
     	setOtherText(() => e.target.value)
     }
+    useEffect(() =>     document.querySelector("h1").text = "hdfa")
     
     return (
         ["div", {style: "background: lightblue"},
@@ -193,5 +197,84 @@ A container component wraps another component and provides the data. This ensure
 
 ### Effect Hook
 
+Effect hooks are executed after the componente has been rendered. Effect hooks can be used to execute side effects, like manipulating the DOM.
+
+```js
+const MyContainer = () => {
+    // after the component has been rendered, set h1 to "hello"
+    useEffect(() => {
+        document.getElementById("test").text = "hello"
+    })
+    return (
+    	["h1", {id: "test"}], "moin")
+}
+```
+
 ### Splitting Applications into Components
 
+The state of the application (or part of the application) should be concentrated in one top component. All children and children of children receive the current state via property and update the state with listeners.
+
+In the following example the `App` component "owns" the state and passes it down to its components, like `AddArticle` and `ArticleList`. The `AddArticle` list will inform the `App` about adding an article with the listener `onClickAdd`.
+
+The title and summary textbox in the `AddArticle` component are controlled inputs with states in the `App` component.
+
+```js
+const App = () => {
+    let initialState = {
+        articles: [
+            {
+                id: cuid(),
+                title: 'Article 1',
+                summary: 'Article 1 Summary',
+                display: 'none',
+            },
+            ...
+        ],
+        title: '',
+        summary: '',
+    }
+    let [state, setState] = useState("state", 1, initialState)
+    const onChangeTitle = e => setState((s) => ({...s, title: e.target.value}))
+    const onChangeSummary = e => { ... }
+    const onClickAdd = e => { ... }
+    const onClickRemove = (id) => {
+        let articles = state.articles.filter(a => a.id != id)
+        setState((s) => ({...s, articles}))
+    }
+    const onClickToggle = (id) => { ... }
+    
+    return (
+        ["section",
+            [ AddArticle , {
+                name: "Articles",
+                title: state.title,
+                summary: state.summary,
+                onChangeTitle,
+                onChangeSummary,
+                onClickAdd,
+            }],
+            [ ArticleList , {
+                articles: state.articles,
+                onClickToggle,
+                onClickRemove,
+            }] ]
+        )
+}
+    
+const AddArticle = ({name, title, summary, onChangeTitle, onChangeSummary, onClickAdd}) => {
+    return (
+        ["section",
+            ["h1", name],
+         	// controlled input
+            ["input", { placeholder: "Title", value: title,
+            	oninput: onChangeTitle }],
+         	// controlled input
+            ["input", { placeholder: "Summary", value: summary,
+            	oninput: onChangeSummary }],
+            ["button", { onclick: onClickAdd }, "Add"] ]
+	)
+}
+```
+
+The code above produces the following web page:
+<img src="res/UI Library/image-20230124143402168.png" alt="image-20230124143402168" style="zoom:67%;" /><img src="res/UI Library/image-20230124143903455.png" alt="image-20230124143903455" style="zoom:50%;" />

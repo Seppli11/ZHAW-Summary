@@ -124,8 +124,6 @@ app.use('/user/:id', function (req, res, next) {
 })
 ```
 
-
-
 ## Cookies
 
 Designed as a stateless protocol to store data on the browser. It can be set with the `Set-Cookie` header and can be read from JS (except if `HttpOnly` is set) with `document.cookie`. The client will send the cookie back with the `Cookie` Header.

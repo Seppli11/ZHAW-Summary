@@ -21,7 +21,7 @@ let navlinks = document.querySelectorAll("nav a")
 
 ## Modifiy the DOM
 
-The DOM can be modified with the methods `parent.appendChild(node)`, `sibbling.insertBefore(node)` and `node.remove()` (removes itself).
+The DOM can be modified with the methods `parent.appendChild(node)`, `parent.insertBefore(node, sibling)` and `node.remove()` (removes itself).
 
 To create a new node, methods like `document.createElement(type)`, `document.createAttribute(name)`, `element.setAttributeNode(attributeObj)` are useful.
 
@@ -77,7 +77,6 @@ The event objects contains multiple properties which can be usefull:
 | --------- | --------------- | --------------------------------------------------- |
 | general   | `target`        | The element which caused the event                  |
 | general   | `currentTarget` | The element on which the listener was registered on |
-|           |                 |                                                     |
 
 ### Event Bubbling
 
@@ -91,7 +90,7 @@ document.querySelector("button").addEventListener("mousedown", event => {
 	console.log("Handler for button.")
 	if (event.button == 2) event.stopPropagation()
 }
-                                                  
+                                              
                                                  document.querySelector("a").addEventListener("click", event => { 
 	console.log("Handler for a link.")
 	event.preventDefault() // prevents the link from working
@@ -136,6 +135,8 @@ circle.setAttribute("fill", "cyan")
 
 ## Canvas
 
+**TODO: insert better examples**
+
 With a canvas, JavaScript can render graphics.
 
 ```html
@@ -154,6 +155,8 @@ With canvas, there are turtle-like graphics:
 
 ```javascript
 let cx = document.querySelector("canvas").getContext("2d")
+cx.strokeStyle = "blue" // sets the outline to blue
+cx.fillStyle = "red" // sets the color of the object to red
 cx.beginPath()
 cx.moveTo(50, 10)
 cx.lineTo(10, 70)
@@ -179,6 +182,8 @@ img.addEventListener("load", () => {
 ![image-20221117091020006](res/image-20221117091020006.png)
 
 There are a lot more you can do with a `canvas` tag, like `quadraticCurveTo`, `bezierCurveTo`, `arc`, text, `scale`, `translate`, `rotate` and a stack infrastructure with `save` and `restore`.
+
+The coordinate system of a canvas starts in the top left corner at `(0/0)`
 
 ## Form
 

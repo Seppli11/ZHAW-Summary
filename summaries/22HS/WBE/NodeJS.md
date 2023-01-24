@@ -70,8 +70,6 @@ spyOn(dictionary, "hello").and.returnValue("bonjour")
 spyOn(dictionary, "hello").and.callFake(fakeHello)
 ```
 
-
-
 ## File-API
 
 The file API contains a submodule `promise` which contains the same methods but they return a promise. To import the promise variants, use `const fs = require("fs").promises`.
