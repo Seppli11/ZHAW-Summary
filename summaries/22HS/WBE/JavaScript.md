@@ -1,5 +1,11 @@
 # JavaScript
 
+## Numbers
+
+All numbers are 64 bit floating point numbers (following the IEEE 754 standard). As this includes all 32 bit integers, those can be stored exactly.
+
+Additionally, there are the special "numbers" `Infinity`, `-Infinity` and `NaN`.
+
 ## Strings
 
 Strings in JavaScripts are a sequence of 16-bit Unicode characters. In `"..."` and `'...'` strings, the backslash (`\`) is as an escape sequence. In template strings (`` `...` ``) strings a `\` is rendered. Additionally, string interpolation can be done with `` `...${var}...` ``.
@@ -16,6 +22,8 @@ With `"name" in obj` the program can check if the property `name` is in the obje
 
 With `delete obj.key` can the `key` property be deleted.
 
+The syntax `obj?.name` is approximately equivalent to `obj && obj.name` and will return the value of `name` or undefined if `obj` is null/undefined.
+
 Methods of interest:
 
 * `Object.keys(obj)`
@@ -30,8 +38,12 @@ Methods of interest:
 ## Arrays
 
 ```js
+// The for-in loop should not be used for arrays.
+// It doesn't guarantee the order and inherited properties are also enumerated
 for(let key in myArray) {
-    doSomethingWith(myArray[key])
+	if(myArray.hasOwnProperty(key)) {
+    	doSomethingWith(myArray[key])
+    }
 }
 
 for (let entry of myArray) {
@@ -53,6 +65,8 @@ Methods of interest:
   Removes the element at index `0` and returns it
 * `arr.unshift(element1, element2, ...)`
   Adds the given elements at the beginning of the array
+
+![image-20230124221624580](res/JavaScript/image-20230124221624580.png)
 
 ## Reference and Value Data Types
 

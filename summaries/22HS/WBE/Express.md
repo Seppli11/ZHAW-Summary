@@ -1,5 +1,7 @@
 # Express
 
+![image-20230124220628966](res/Express/image-20230124220628966.png)
+
 ## HTTP Request Methods
 
 * `GET`: Retrieve resource
@@ -42,8 +44,6 @@ let requestStream = request({
 )
 requestStream.end()
 ```
-
-
 
 ## Post and Get Requests
 
