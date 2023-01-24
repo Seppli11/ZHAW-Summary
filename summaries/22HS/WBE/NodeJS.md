@@ -44,7 +44,7 @@ describe("when song has been paused", function() {
     it("should be possible to resume", function() {
     	player.resume()
     	expect(player.isPlaying).toBeTruthy()
-    	expect(player.currentlyPlayingSong) .toEqual (song)
+    	expect(player.currentlyPlayingSong).toEqual (song)
     })
 })
 ```
