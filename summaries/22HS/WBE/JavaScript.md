@@ -4,11 +4,17 @@
 
 Strings in JavaScripts are a sequence of 16-bit Unicode characters. In `"..."` and `'...'` strings, the backslash (`\`) is as an escape sequence. In template strings (`` `...` ``) strings a `\` is rendered. Additionally, string interpolation can be done with `` `...${var}...` ``.
 
+## BigInt
+
+With `BigInt(3)` or `3n`, a big integer is created. Big ints cannot be added, subtracted, multiplied or diveded by types other than other big ints. One exception is concating with strings, which still works.
+
 ## Objects
 
 `delete obj.name`  deletes the `name` property of the object `obj`.
 
-With `"name" in obj` the program can check if the property `name` is in the object `obj`. `in` checks the object itself, as well as the prototype chain.
+With `"name" in obj` the program can check if the property `name` is in the object `obj`. `in` checks the object itself, as well as the prototype chain. 
+
+With `delete obj.key` can the `key` property be deleted.
 
 Methods of interest:
 
@@ -18,6 +24,8 @@ Methods of interest:
   Returns the values of an object
 * `Object.assign(obj, ...otherObjects)`
   Returns `obj` but with the properties of the `otherObjects`.
+* `Object.create(prototype)`
+  Returns a new object with the given prototype.
 
 ## Arrays
 
@@ -39,6 +47,12 @@ Methods of interest:
   Checks if the given `obj` is an array.
 * `arr.length`
   Returns the number of keys with a number key. Other properties are ignored
+* `arr.push(element)`
+  Adds an element at the end
+* `firstEl = arr.shift()`
+  Removes the element at index `0` and returns it
+* `arr.unshift(element1, element2, ...)`
+  Adds the given elements at the beginning of the array
 
 ## Reference and Value Data Types
 

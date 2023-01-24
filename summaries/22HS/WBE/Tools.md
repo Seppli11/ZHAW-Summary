@@ -23,5 +23,5 @@ All other values are truthy.
 | String           | `typeof "test"`      | `"string"`    |
 | Symbol           | `typeof `            | `"symbol"`    |
 | Function         | `typeof console.log` | `"function"`  |
-| Any other object | ...                  | `"object"`    |
+| Any other object | `...`                | `"object"`    |
 
