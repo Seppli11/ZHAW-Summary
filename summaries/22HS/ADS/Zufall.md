@@ -16,7 +16,7 @@ double random() {
 Ein Las-Vegas-Algorithmus liefert nie ein falschen Wert und der Zufall bestimmt nur die Richtung des Alogirthmus.
 
 * Beim Quicksort wird das Pivot-Element zufällig bestimmt
-* Beim Königign-Problem
+* Beim Königin-Problem
 
 ## Monte-Carlo-Algorithmen
 
