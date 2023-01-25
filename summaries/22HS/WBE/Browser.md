@@ -59,10 +59,18 @@ With `localStorage` and `sessionStorage`, data can be stored on the browser.
 ```javascript
 let user = {name: "Hans", highscore: 234}
 localStorage.setItem("user", JSON.stringify(user))
+localStorage.msg = "Hello World"
 console.log(localStorage.getItem("user"))
 ```
 
 ## History
+
+```js
+hsitory.length // the amount of history entries
+history.back() // goes back
+history.pushState(state, unused, url)
+history.replaceState(stateObj, unused, url)
+```
 
 ## Web Workers
 
