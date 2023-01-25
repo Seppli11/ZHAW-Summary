@@ -32,9 +32,15 @@ Beispiele:
 
 <img src="res/ADS/image-20220602121716673.png" alt="image-20220602121716673"  />
 
-## Invarianten
+## Invarianten, Vor- und Nachbedingungen
 
-**TODO**
+**Invariante** sind Aussagen, welche über die Ausführung hinweg korrekt bleiben.
+
+<img src="res/ADS/image-20230125220537116.png" alt="image-20230125220537116" style="zoom:85%;" />
+
+**Vorbedingungen** ist eine Aussage, welche vor dem Ausführen einer Programmsequenz gilt. **Nachbedingungen** sind Aussagen, welche nach dem Ausführen einer Programmsequenz gilt.
+
+<img src="res/ADS/image-20230125220724075.png" alt="image-20230125220724075" style="zoom:80%;" />
 
 ## Algorithmus
 
