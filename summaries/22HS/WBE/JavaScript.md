@@ -10,6 +10,8 @@ Additionally, there are the special "numbers" `Infinity`, `-Infinity` and `NaN`.
 
 Strings in JavaScripts are a sequence of 16-bit Unicode characters. In `"..."` and `'...'` strings, the backslash (`\`) is as an escape sequence. In template strings (`` `...` ``) strings a `\` is rendered. Additionally, string interpolation can be done with `` `...${var}...` ``.
 
+Emojis can be made up of multiple 16-bit Unicode-characters. `str.charAt(pos)` will return only one character of those two. `str.codePointAt(pos)` will return the whole emoji UTF-character. `"🤦".length` will return 2 because it is made up of two 16-bit Unicode characters.
+
 ## BigInt
 
 With `BigInt(3)` or `3n`, a big integer is created. Big ints cannot be added, subtracted, multiplied or diveded by types other than other big ints. One exception is concating with strings, which still works.
