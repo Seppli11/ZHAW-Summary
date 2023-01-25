@@ -107,11 +107,78 @@ Der Graph wird mit der Breitesuche durchsucht. Bei jedem Knoten wird hingeschrie
 
 ## Dijkstra
 
+Der Dijkstra-Algorithmus funktioniert wie eine Breitensuche, aber es wird eine Priority-Queue verwendet, in welcher alle noch nicht besuchten Nodes stehen. Diese Queue wird sortiert nach der Strecke um zum Node vom Start zu gelangen.
+
 ## Greedy Algorithmen
+
+
 
 ## Topologisches Sortieren
 
+Bei einem gerichteten, unzyklischen Graphen gibt es eine topologische Sortierung. Diese ist die Reihenfolge von den Knoten, dass alle Abhängigkeiten eines Knoten zuerst bearbeitet werden.
+
+![image-20230125172414844](res/Graph/image-20230125172414844.png)
+
+In diesen Graph kommt `A` immer zuerst, da es für jeden Knoten benötigt wird, danach könnte `D` oder `B` kommen. `C` kann noch nicht kommen, da `D` noch nicht bearbeitet wurde.
+
+Es gäbe folgende topologische Sortierungen:
+
+* A B D C E F
+* A D C E B F
+* A D B C E F
+* A D C B E F
+* A D C E B F
+
+Der folgende Code druckt eine mögliche topologische Sortierung von einem Graphen aus.
+
+```java
+public void printTopologicalSorting(Graph graph) {
+    while(!graph.isEmpty())
+        for(Node node : graph) {
+            if(node.incomming == 0) {
+                System.out.println(node.name);
+                for(Node nextNode : node.outgoingNodes) {
+                    nextNode.incomming--;
+                }
+                graph.removeNode(node);
+            }
+        }
+    }
+}
+```
+
 ## Maximaler Fluss
 
-## Traveling Salesman
+<img src="res/Graph/image-20230125175750677.png" alt="image-20230125175750677" style="zoom:50%;" />
 
+Um den maximalen Fluss durch ein Graphen zu finden kann folgender Algorithmus verwendet werden:
+
+Es werden drei Graphen geführt:
+
+1. Ein Graph mit den orginalen Fluss-Daten
+   <img src="res/Graph/image-20230125175852969.png" alt="image-20230125175852969" style="zoom:50%;" />
+2. Ein Graph mit den provisorischen Fluss-Daten
+   <img src="res/Graph/image-20230125175918189.png" alt="image-20230125175918189" style="zoom:50%;" />
+3. Ein Graphen mit den verbleibenden Fluss-Daten (auch Residualgraph gennant)
+   <img src="res/Graph/image-20230125175938843.png" alt="image-20230125175938843" style="zoom:50%;" />
+
+Bei jeder Iteration werden im provisorischen Graphen die provisorischen Fluss-Daten eingeschrieben und die Differenz zwischen dem Original und dem provisorischen Graphen in den Residualgraphen übertragen.
+
+![image-20230125180102122](res/Graph/image-20230125180102122.png)
+
+![image-20230125180223500](res/Graph/image-20230125180223500.png)
+
+## Traveling Salesman Problem
+
+<img src="res/Graph/image-20230125180318431.png" alt="image-20230125180318431" style="zoom: 50%;" />
+
+Finde den kürzesten Pfad, der jede Stadt genau einmal besuchen wird. Dieses Problem hat die Big-O-Notation $O(n!)$. Um das Problem in nützlicher Zeit zu lösen müssen heuristische Algorithmen eingesetzt werden.
+
+Ein möglichen Algorithmus ist der folgenden:
+
+1. Die Kanten werden nach ihren Kosten sortiert
+2. Die "billigste" Kante wird ausgewählt unter der Bedinungen:
+   1. dass keine Zyklen entstehen dürfen
+   2. dass kein Knoten mit mehr als zwei Kanten verbunden sein darf
+
+Diesen Algorithmus führt zu einer Laufzeit von $O(n^2\log(n^2))$

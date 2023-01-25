@@ -170,9 +170,46 @@ static public void test(Set<Integer> rucksack, int k, double aktW, double aktV) 
 
 ## Zielfunktion
 
-## A-Star Funktion
+Wenn etwas in einem Baum gesucht werden soll, dann kann eine Zielfunktion $f(v)\to s$ definiert werde, welche einen Knoten $v$ nimmt und ein Score $s\in\mathbb N$ zurück gibt. Um nun den Wert im Baum zu finden, geht der Algorithmus einfach den höchsten Scores nach. So ist die Zeitkomplexität $O(\log n)$. Solche Funktionen gibt es aber selten. 
 
-## Minmax-Algorithmus
+Anstelle von $f(x)$ kann aber eine upper-bound Funktion $b(x)$ definiert werden, für welche gilt $\forall x f(x)\le b(x)$.
+
+Nun wird dem höchsten $b(x)$ Wert gefolgt und dabei wird den Score auf den korrekten Wert korrigiert. Dies wiederholt man nun bis es keine bessere Alternative mehr gibt. 
+
+![image-20230125201038120](res/Backtracking/image-20230125201038120.png)
+
+Falls es beim Wiederholen einen Ast gibt, für welcher die obere Schranke $b(x)$ kleiner ist, als der korrigierte Wert, kann der Ast "abgeschnitten" werden. Dies wird auch Pruning genannt.
+
+<img src="res/Backtracking/image-20230125201350033.png" alt="image-20230125201350033" style="zoom:50%;" />
+
+### A-Star Funktion
+
+![image-20230125201708408](res/Backtracking/image-20230125201708408.png)
+
+Der A-Star Algorithmus kann der kürzeste Weg zwischen zwei Punkte finden. Dabei ist dieser Algorithmus eine mögliche Implementation für das Zielfunktion-Verfahren. 
+
+Die Funktion $b(x)$ ist dabei eine Lower-Bound Funktion, welche den geschätzen Weg zwischen zwei Punkte zurück gibt. Eine mögliche Implementation benützt die Luftlinie.
+
+Der Algorithmus startet beim Endknoten, welcher zu Beginn der Ausführung der aktuelle Knoten ist.
+
+1. Es werden alle nicht untersuchte Nachbarn des aktuellen Knoten untersucht. Für jeden Knoten wird den Schätzwert $Luftlinie(Nachbar, Start)+Strecke(Aktuell, Nachbar)+Strecke(Aktuell, Ende)$ gerechnet und falls der tiefer ist als der aktuelle Schätzwert des Nachbars wird er gespeichert als neuer Schätzwert.
+2. Es wird nun den Nachbar als den aktuellen Knoten ausgewählt, mit der tiefsten geschätzten gesamt Strecke.
+3. Nun wird dies wiederholt bis der aktuelle Knoten den Endknoten ist.
+4. Es werden alle Strecken gestrichen (Pruning), welche eine höhere geschätzte Strecke haben, als die letzt gefundene.
+5. Es wird 1. wiederholt und bis alle Möglichkeiten gestrichen wurden.
+
+#### Beispiel
+
+1. Der aktuelle Knoten ist Winterthur. Alle, nicht untersuchte, Nachbarknoten werden untersucht. In diesem Fall gibt es nur Zürich. In Blau steht $154km + 25km + 0km=179km$
+   <img src="res/Backtracking/image-20230125205029618.png" alt="image-20230125205029618" style="zoom:50%;" />
+2. Der aktuelle Knoten ist Zürich. Für alle nicht untersuchten Knoten wird die Rechung $Luftlinie(Nachbar, Start)+Strecke(Aktuell, Nachbar)+Strecke(Aktuell, Ende)$ durchgeführt. Als Beispiel gilt für Chur: $25km+121km+104km=250km$. Der tiefste Knoten ist Luzern und wird als nächster aktuelle Knoten ausgewählt.
+   <img src="res/Backtracking/image-20230125205238004.png" alt="image-20230125205238004" style="zoom:50%;" />
+3. Der aktuelle Knoten ist Luzern. Es werden alle Nachbarn von Luzern untersucht. Kein Schätzwert, ausser den von Lugano, wird angepasst, da alle bereits existierende Schätzwerte kleiner sind (z.B. Churs neuer Schätzwert wäre: $25km+54km+146km+104km=329km > 250km$). Alle Knoten nicht besuchten Knoten, welche einen höheren Schätzwert als $285km$ haben, werden entfernt (Pruning).
+   <img src="res/Backtracking/image-20230125205444736.png" alt="image-20230125205444736" style="zoom:50%;" />
+4. Der aktuelle Knoten ist Chur. Der einzige nicht besuchten Konten ist Lugano. Die Strecke über Chur ist $25km+121km+152km=298km$ was grösser als $285km$ ist.
+5. Die Suche ist abegschlossen da keine nicht entfernte Knoten verbleiben.
+
+### Minmax-Algorithmus
 
 ```java
 Tiefensuche durch den Spielbaum (erstellt den Baum)
@@ -185,10 +222,38 @@ Für alle inneren Knoten von unten nach oben:
 Wähle an der Wurzel den Zug der den höchsten b(v) verspricht.
 ```
 
-Oder mit java 
+Oder mit Java 
 
 ```java
+public static int minimax(position, depth, maximizingPlayer) {
+    if(depth == 0 || gameOver()) { 
+        return b(position); 
+    }
+    if(maximizingPlayer) {
+        int maxEval = Integer.MIN_VALUE;
+        for(var child : position) { // alle möglichen Züge
+            maxEval = max(maxEval, minimax(child, depth – 1, false));
+        }
+        return maxEval;
+    }
+    else {
+        int minEval = Integer.MAX_VALUE;
+        for(var child : position) { // alle möglichen Züge
+            minEval = min(minEval, minimax(child, depth – 1, true);
+		}
+		return minEval;
+    }
+}
 ```
 
-## Horizont Problem
+#### Alpha-Beta-Pruning
 
+Mit dem Alpha-Beta-Pruning kann der Minmax optimiert werden. Beim Alpha-Pruning werden Äste entfernt, welche für Schwarz keine Option mehr sind, da es eine bessere gibt. Beta-Pruning entfernt Äste, welche Weiss nicht mehr wählen würde, da es eine bessere Option gibt.
+
+![image-20230125211644989](res/Backtracking/image-20230125211644989.png)
+
+### Horizont-Problem
+
+Das Horizont-Problem beschreibt, dass wenn ein Algorithmus, welcher $n$ Schritte rechnet, ev. nach $n+1$ Schritte die Lösung findet. Als Metapher: Gleich hinter dem Horizont könnte die Lösung liegen.
+
+Eine mögliche Lösung um das Problem zu dämpfen ist, dass die ausgewählte Lösungsrichtung  (und nur diese) noch einige Schritte weiter berechnet wird.

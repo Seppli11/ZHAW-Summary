@@ -59,8 +59,8 @@ Collections.sort(list, chCol)
 
 > Sei S = ((k0, e0), ... , (kn-1, en-1)) eine Sequenz von Elementen:
 > Ein Sortieralgorithmus heisst stabil (stable), wenn für zwei beliebige Elemente
-> (ki, ei) und (kj, ej) mit gleichem Schlüssel ki = kj und i < j (d.h. Element i kommt vor
-> Element j), i < j auch noch nach dem Sortieren gilt (Element i kommt immer noch
+> ($k_i$, $e_i$) und ($k_j$, $e_j$) mit gleichem Schlüssel $k_i=k_J$ und $i<j$ (d.h. Element $i$ kommt vor
+> Element $j$), $i < j$ auch noch nach dem Sortieren gilt (Element i kommt immer noch
 > vor Element j).
 
 Oder: Wenn eine bereits sortierte Liste (z.B. eine Personenliste nach Departemen). Wenn diese nun nach Alter sortiert wird, werden die Sortierung in der einzelnen Klassen erhalten bleiben, wenn der Algorithmus stabil ist.

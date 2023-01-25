@@ -121,7 +121,7 @@ private TreeNode<T> insertAt(TreeNode<T> node, T x) {
 2. Knoten löschen
    1. Fall: der Knoten hat keine Kindern: Knoten einfach löschen
    2. Fall: der Konten hat genau einen Teilbaum: Knoten löschen und Referenz neu setzen
-   3. Fall: der Knoten hat zwei Teilbäume: Es muss ein Ersatz-Knoten gefunden werden. Dafür muss der grösste Wert des linken Baums oder der grösste Wert des rechtem Baum 
+   3. Fall: der Knoten hat zwei Teilbäume: Es muss ein Ersatz-Knoten gefunden werden. Dafür muss der grösste Wert des linken Baums oder der kleinste Wert des rechtem Baum 
 
 ```java
 private TreeNode<T> removeAt(TreeNode<T> node, T x) {
