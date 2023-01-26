@@ -6,7 +6,7 @@ Jede Klasse besteht aus einer sichtbarer Schnittstelle und eine von Aussen, unsi
 
 ## Big-O Notation
 
-Es existiert ein $n_0\in \N$ und ein $c\in N$, so dass für alle $n\ge n_o$ gilt: $f(n) \le c\cdot g(n)$.
+Es existiert ein $n_0\in \N$ und ein $c\in \N$, so dass für alle $n\ge n_o$ gilt: $f(n) \le c\cdot g(n)$.
 
 Es gibt einige spezielle Rechenregel zu der Big-O Notation:
 

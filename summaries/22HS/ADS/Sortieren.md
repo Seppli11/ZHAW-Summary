@@ -51,8 +51,6 @@ Collator deCol = Collator.getInstance(Locale.GERMAN);
 Collections.sort(list, chCol)
 ```
 
-
-
 ![image-20221129102627971](res/image-20221129102627971.png)
 
 ## Stabilität
@@ -286,7 +284,7 @@ Wenn ein Sortierungs-Algorithmus Elemente untereinander verlgeicht, dann ist die
 
 * Für primitive Arrays (`Arrays.sort(int[] a)`) wird einen Dual-Pivot-Sort verwendet, welcher nicht stabil ist. Dies ist aber für primitive Typen nicht relevant. $O(n\cdot \log(n))$
 * Für Objekte () wird ein iterativen Merge-Sort. $O(n\cdot \log(n))$
-* Für Objekte `parallelSort()`
+* Für Objekte `parallelSort()` wird das Fork/Join-Framework zum parallelen Sortieren von Unterarrays benüt
 
 ## Amdahl's Law
 

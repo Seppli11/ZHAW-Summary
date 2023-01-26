@@ -11,14 +11,14 @@ double random() {
 }
 ```
 
-## Las-Vegas-Algorithmen
+## Las-Vegas-Algorithmen (Local Search)
 
 Ein Las-Vegas-Algorithmus liefert nie ein falschen Wert und der Zufall bestimmt nur die Richtung des Alogirthmus.
 
 * Beim Quicksort wird das Pivot-Element zufällig bestimmt
 * Beim Königin-Problem
 
-## Monte-Carlo-Algorithmen
+## Monte-Carlo-Algorithmen (Random Sampling)
 
 Beim Monte-Carlo-Algorithmus steuert der Zufall das Resultat:
 
@@ -51,7 +51,7 @@ Im folgenden Bild sind die weiteren Schritte visualisiert.
 1. Start mit einer (zufälligen) Initial-Konfiguration
 2. Wiederholtes Durchsuchen der Nachbarschaft und Auswahl eines Kandidaten
 3. Evaluiere die Kostenfunktion (oder Fitnessfunktion) und akzeptiere den
-    Kandidaten, wenn er «besser» ist; wenn nicht, wähle einen anderen Nachbarn
+    Kandidaten, wenn er «besser» ist; wenn nicht, kann der neue Kandidat immer noch zu einer von der Temperatur-abhängigen Chance angenommen werden. Sonst wähle einen anderen Nachbarn.
 4. Stoppe, wenn die Qualität ausreichend hoch ist, wenn keine Verbesserung
     gefunden werden kann oder nach einer festgelegten Zei
 
@@ -74,3 +74,4 @@ Ein Problem kann sein, dass es bei der Fittnessfunktion es lokale Maximume und M
 3. Wenn die Kandidatentour besser ist, als die neue Tour akzeptieren
 4. Wenn die Kandidaten-Tour schlechter ist, Tour mit einer gewissen Wahrscheinlichkeit trotzdem akzeptieren. Die Wahrscheinlichkeit, eine minderwertige Tour zu akzeptieren, hängt davon ab, wie viel länger der Kandidat ist, und von der «Temperatur des Glühprozesses». Eine höhere Temperatur macht es wahrscheinlicher, eine minderwertige Tour zu akzeptieren
 5. Zurück zu Schritt 2 um die Glühtemperatur bei jeder Iteration zu senken. Wenn die Temperatur tief genug wird und somit ein (lokales) Minimum gefunden wurde, wird der Loop gestoppt.
+

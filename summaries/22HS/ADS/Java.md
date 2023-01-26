@@ -17,7 +17,7 @@ Beim Referencing Counting wird gezählt, wie viel Referenzen es auf ein Objekt g
 ```java
 class ... {
     void addRef() {
-        referenceCount++
+        referenceCount++;
     }
 
     int release() {
