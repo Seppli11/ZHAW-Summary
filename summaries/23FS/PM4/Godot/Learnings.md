@@ -8,7 +8,7 @@ In the following paragraphs, learnings from examining other games are documented
 For global states, like which levels are completed, autoloaded nodes can be used. 
 In `Project > Project Settings > AutoLoad` scripts which inherit from `Node` can be chosen. 
 
-![](Pasted%20image%2020230224212839.png)
+![](./res/Pasted%20image%2020230224212839.png)
 
 These scripts are loaded by Godot when starting the game and are available during while the game is running.
 
