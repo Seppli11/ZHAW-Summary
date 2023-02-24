@@ -1,0 +1,12 @@
+{
+  "serverUrl": "https://api.languagetoolplus.com",
+  "urlMode": "premium",
+  "glassBg": false,
+  "shouldAutoCheck": true,
+  "pickyMode": true,
+  "username": "sebastian.zumbrunn@pm.me",
+  "apikey": "pit-w2JuODDMIHa1",
+  "staticLanguage": "auto",
+  "englishVeriety": "en-GB",
+  "germanVeriety": "de-CH"
+}

@@ -1,0 +1,10 @@
+{
+  "spellcheck": false,
+  "vimMode": true,
+  "attachmentFolderPath": "./res",
+  "spellcheckDictionary": [
+    "Godot"
+  ],
+  "newLinkFormat": "relative",
+  "alwaysUpdateLinks": true
+}
