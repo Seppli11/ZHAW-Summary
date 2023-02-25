@@ -37,3 +37,17 @@ This can be archived with the built into Godot's dependency injection. Firstly, 
 *[Doc Reference](https://docs.godotengine.org/en/stable/classes/class_tween.html)*
 
 A `Tween` instance can interpolate a property of an object between two values.
+
+## Create new Node Instance
+If programmatically new node instances are created, then it can be helpful to provide a static method. This method functions similarly to a constructor, adding the node to the scene tree and initializing variables if necessary.
+
+```c#
+public static Chest CreateChest(Vector2 pos, itemSpawner: ItemSpawner) {
+	var chest = GD.Load<PackedScene>("res://scenes/chest.tscn").Instance();
+	chest.Teleport(x, y);
+	chest.ItemSpawner = itemSpawner;
+	chest.AddToGroup("characters");
+	GD.Print("Spawned chest");
+	return chest;
+}
+```
