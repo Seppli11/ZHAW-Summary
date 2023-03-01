@@ -56,6 +56,22 @@ In dieser Matrix ist in einer Reihe alle möglichen partiellen Ableitungen für 
 
 Eine Approximation für $y=f(x)$ kann mit $f(x)\approx f(x_0) + f'(x-x_0)$.
 
-Dasselbe kann auch für eine multivariante Funktion mithilfe der Jacobi-Matrix getan werden: $g(\vec x)=f(\vec {x_0}) + Df(\vec {x_0})\cdot (\vec x-\vec {x_0})$
+Dasselbe kann auch für eine multivariante Funktion mithilfe der Jacobi-Matrix getan werden: $g(\vec x)=f(\vec {x_0}) + Df(\vec {x_0})\cdot (\vec x-\vec {x_0})$ 
+
+($Df(\vec x)$ ist die Jacobi-Matrix)
 
 Nach dem Linearisieren wird ein nichtlineare Funktion lineare und kann mit bekannten Verfahren gelöst werde
+
+## Newton-Verfahre
+
+$$
+\vec x_{n+1}=\vec x_n-(Df(\vec x_n))^{-1}\cdot f(\vec x_n)
+$$
+
+Um nicht die Jacobi-Matrix invertieren zu müssen, kann folgender Trick angewendet werden:
+$$
+\vec \delta_n :=-(Df(\vec x_n))^{-1}\cdot f(\vec x_n)\\
+\text{Dies kann in folgendes Umgewandlet werden:}\\
+Df(\vec x_n)\cdot \vec\delta x_n = -f(\vec x_n)
+$$
+Die Gleichung $Df(\vec x_n)\cdot \vec\delta x_n = -f(\vec x_n)$ ist ein lineares Gleichungssystem, welches relativ einfach gelöst werden kann. Danach kann $\vec \delta _n$ anstelle von $-(Df(\vec x_n))^{-1}\cdot f(\vec x_n)$ verwendet werden: $\vec x_{n+1}=\vec x_n+\vec \delta_n$

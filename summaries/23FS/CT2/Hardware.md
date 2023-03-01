@@ -24,6 +24,8 @@ The slave is allowed to read and write data from and to the data lines on the fo
 
 The following diagram shows an example read and write operation.
 
+Note: The signals, like `NE`, or `NOE`, fall on the falling edge of the clock and rise on the rising edge of the clock.
+
 ![image-20230222111543185](res/Hardware/image-20230222111543185.png)
 
 *(This <img src="res/Hardware/image-20230222112033421.png" alt="image-20230222112033421" style="zoom:50%;" /> symbol stands for all the data lines)*
@@ -32,13 +34,59 @@ To also support the half-word and byte version of `LDR` and `STR`, there are fou
 
 ![image-20230222113114925](res/Hardware/image-20230222113114925.png)
 
-The system bus has one clock which provides the clock signal on the bus with the control signals.
+### Example Slave
+
+*Notes: The Flip-Flops write the `D` to the `Q` output, if `E` is set and `CLK` is a rising edges.*
+
+`OE cycle counter` and `WE cycle counter` count the number of rising edges in the clock and output `1` after counting four.
+
+The second row of inverters are tri-state inverters. If `read_enable` is cleared than the output is floating.
+
+![image-20230301101809188](res/Hardware/image-20230301101809188.png)
+
+The address decoding can be built by cleverly combining inverters and a big and-gate:
+
+![image-20230301103445538](res/Hardware/image-20230301103445538.png)
+
+The address decoder can be categorised in two categories:
+![image-20230301103649298](res/Hardware/image-20230301103649298.png)
+
+![image-20230301103712547](res/Hardware/image-20230301103712547.png)
+
+### Slow Slaves
+
+The CPU reads the data lines after 4 `T`s. To still be able to integrate slower slaves, there two possibilities:
+
+* **Introduce additional wait states**
+  Configure the CPU to generate wait state. The CPU will read the data later
+* **Slaves informs the CPU when ready**
+  The slave has a ready signal which it sets when its ready. As soon as the CPU receive this signal, it will read the data. This variant is not supported on the CT-Board.
+
+![image-20230301110930183](res/Hardware/image-20230301110930183.png)
+
+### Control and Status Bits
+
+![image-20230301102852122](res/Hardware/image-20230301102852122.png)
+
+A status bit is written by the slave and cannot be written by the CPU. The CPU can use these status to monitor the slave.
+
+Control bits are written by the CPU but control the slave (like turning on and off a LED). Control bits can also be read by CPU.
+
+### Synchronous vs Asynchronous
+
+The system bus is a synchronouse bus and has one clock which provides the clock signal on the bus with the control signals.
 
 ![image-20230222104055217](res/Hardware/image-20230222104055217.png)
 
 All devices on the system bus are connected with a tri-state inverter
 
+An asynchronous bus is a bust where every device has its own clock. 
+
+![image-20230301100446158](res/Hardware/image-20230301100446158.png) 
+
 ### Driver: Tri-State Inverter
+
+![image-20230301102234763](res/Hardware/image-20230301102234763.png)
 
 A tri-state-inverter has one input and an enable line. When the enable line is set, then the inverter functions normally. If the enable line is cleared, then the tri-state inverter is not set or floating.
 
