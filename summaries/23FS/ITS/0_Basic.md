@@ -29,6 +29,10 @@ The following counter meassures can be used:
 | Mallory    | Manipulates messages (man-in-the-middle) | intercept, delete, modify, replay messages  |
 | Trent      | Help Alice and Bob (trusted thirt-party) | send, receive messages, perform computation |
 
+When using secret-key cryptography then the open channel is secured by a key $k$ .
+
+![image-20230306102354630](res/0_Basic/image-20230306102354630.png)
+
 ## Goals of Cryptography
 
 ## Math Terms
