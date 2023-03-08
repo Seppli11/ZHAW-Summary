@@ -75,3 +75,36 @@ $$
 Df(\vec x_n)\cdot \vec\delta x_n = -f(\vec x_n)
 $$
 Die Gleichung $Df(\vec x_n)\cdot \vec\delta x_n = -f(\vec x_n)$ ist ein lineares Gleichungssystem, welches relativ einfach gelöst werden kann. Danach kann $\vec \delta _n$ anstelle von $-(Df(\vec x_n))^{-1}\cdot f(\vec x_n)$ verwendet werden: $\vec x_{n+1}=\vec x_n+\vec \delta_n$
+
+Das Newton-Verfahren konvergiert quadratisch für nah genug an einer Nullstelle $\overline x$ liegende Startwerte, wenn $Df(\overline x)$ regulär und $f$ dreimal stetig differenzierbar ist.
+
+> Für eine Nichtreguläre Matrix A gilt $\det(A)\ne 0$
+
+Mögliche Abbruchskriterien sind:
+
+* $n > n_{max}$
+* $||\vec x_{n+1}-\vec x_n||\le ||\vec x_{n+1}||\cdot \varepsilon$
+* $||\vec x_{n+1}-\vec x_n||\le \varepsilon$
+* $||f(\vec x_{n+1})||\le \varepsilon$$
+
+## Vereinfachtes Newton-Verfahren
+
+Beim regulären Newton-Verfahren muss bei jeden Iterationsschritt die Jacobi-Matrix $Df(\vec x)$ neuberechnen. Beim vereinfachten Newton-Verfahren wird $Df(\vec x)$ nur für den Startvektor berechnet.
+$$
+\vec x_{n+1}=\vec x_n-(Df(\vec x_0))^{-1}\cdot f(\vec x_n)\\
+Df(\vec x_0)\cdot \vec\delta x_n = -f(\vec x_n)
+$$
+Wegen dieser Vereinfachung kovergiert das Verfahren nur noch linear gegen die Nullstelle, wenn $Df(\overline x)$ nicht regulär ist.
+
+## Gedämptes Newton-Verfahren
+
+Wenn $Df(\vec x_n)$ schlecht konvergiert, dann kann nicht generell erwartet werden, dass $\vec x_{n+1}=\vec x_n + \vec \delta_n$ nicht gilt.
+
+<img src="res/Nichtlineare Gleichungssysteme/image-20230308084225606.png" alt="image-20230308084225606" style="zoom:67%;" />
+
+Für das gedämpfte Newton-Verfahren werden folgende Schritte angewendet:
+
+1. Berechne $\delta_n$ mit $Df(\vec x_n)\delta_n=-f(\vec x_n)$ ausgerechnet
+2. Finde das minimale $k\in \{0, 1, ...\}$ für das gilt: $||f(\vec x_n + \frac{\vec \delta_n}{2^k})||_2 < ||f(\vec x_n)||_2$
+3. Wenn kein $k$ gefunden wird, soll mit $k=0$ weiter gerechnet werden
+4. Nun soll die Iterationsgleichung $\vec x_{n+1}=\vec x_n + \frac{\vec \delta_n}{2^k}$ verwendet werden
