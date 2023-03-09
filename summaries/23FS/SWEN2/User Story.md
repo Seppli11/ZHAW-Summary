@@ -42,7 +42,7 @@ The acceptance tests are the subset of the condition of satisfactions which can 
 
 * **User Story**
 * **Theme**
-  A collection of user story
+  A collection of user story, like "Multiplier". These can be initially used to create user stories by first listing themes and then generating the user stories.
 * **Epic**
   A large user story
 
@@ -57,3 +57,6 @@ Importantly, all members of the team, the customer, user and other affected peop
 Large user stories should be sub-divided into smaller user stories.
 
 ![image-20230309084652979](res/User Story/image-20230309084652979.png)
+
+## Estimation
+
