@@ -15,6 +15,8 @@ This cost function is also called the **squared error function**.
 
 Cost functions can be plotted as a contour graph. In the example below, the marked spot on the contour plot corresponds with the plot of $h_\theta(x)$.
 
+The cost function is always convex.
+
 ![image-20230308214140045](res/Linear Regression/image-20230308214140045.png)
 
 ## Gradient Descent
@@ -52,7 +54,7 @@ $$
 =\frac{1}{m}\sum^m_{i=1}(h_\theta(x_i)-y_i)\cdot x_i
 \end{align}
 $$
- 
+
 
 These partial derivations can be plugged in the algorithm of gradient descent.
 

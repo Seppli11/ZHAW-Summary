@@ -21,3 +21,9 @@ $$
 ![image-20230302152339285](res/Kinematik/image-20230302152339285.png)
 
 Die `x`, `y` und `z` Koordinaten sind unabhängig von einander. Dies bedeutet auch, dass ein Problem auf ein 1D-Problem herunterbrechen
+
+### 
+
+$F_t(t)=qE_{x0}\sin(\omega t)$ 
+
+Dabei ist $q$ die Ladung in Coulam und $E_0$ ein elektrisches Feld in $\frac V m$ (volt pro meter)

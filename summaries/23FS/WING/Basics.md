@@ -30,6 +30,15 @@ Folgende Analysen fliessen in eine Unternehmensstrategie ein.
 
 Für das Analysieren gibt es mehrere Möglichkeiten, wie dies gewerkstellt werden kann: SWAT-Analyse, PESTLE-Analyse und das Fünf Kräfte Modell von Porter.
 
+##### Kernkompetenzen
+
+Kern-Kompetenzen sind dauerhafte Wettbewerbsvorteile sind 
+
+* wertvoll
+* selten
+* nicht oder nur schwer imitierbar
+* nicht substituierbar
+
 ##### SWAT Analayse
 
 In der SWAT-Analyse wird zwischen der Innen- und Aussenwelt unterschieden.![image-20230303123309514](res/Basics/image-20230303123309514.png)
@@ -42,6 +51,27 @@ Die SWOT Akronyme können gekreuzt werden. Was daraus folgt sind aber noch keine
 
 ![image-20230303125231921](res/Basics/image-20230303125231921.png)
 
+Nach dem Stärken, Schwächen Chancen und Gefahren gefunden wurde, werden diese, wie in der Matrix oben beschrieben, gemischt (z.B. Preisgünstig und Wetter/steigender Wohlstand => Potenzielle Strategie: Marketing).
+
+Als Beispiel für dies für Easy-Jet:
+
+* Stärken:
+  * Direkt Flüge
+  * Preisgünstig
+* Schwächen
+  * Nicht Interkontinental
+  * Nur zu gewissen Zeiten an bestimmten Flughafen
+* Chancen
+  * Durch die Skallierbarkeit ist EasyJet flexibel bei hochem Passagier aufkommen
+  * Wetter an anderen Orten (aus der Sicht der Schweiz) besser
+  * Trend zu Wochenend-Städtereise
+  * Steigender Wohlstand
+* Gefahren
+  * Verteuerung der Treibstoffkosten
+  * Restriktionen von Klima
+  * Höhere Flughafentaxen
+  * Neue Billig-Airlines
+
 ##### PESTLE-Analyse
 
 Mit der PESTLE-Analyse wird der Einfluss von sechs externen Umwelt-Faktoren eines Unternehmen untersucht:
@@ -49,11 +79,12 @@ Mit der PESTLE-Analyse wird der Einfluss von sechs externen Umwelt-Faktoren eine
 * Political
 * Economical
 * Social
-  Alters-Pyramide
+  Alters-Pyramide/Trends, wie Vegan, ...
 * Technological
-  Like ChatGPT
-* Environment
+  ChatGPT
+* Environment/Ökologisch
 * Legal
+  Neue Gesetze
 
 ##### Fünf Kräfte Modell von Porter
 
@@ -61,9 +92,49 @@ Das Fünf Kräfte Modell ist eine Alternative zur PESTLE-Analyse.
 
 ![image-20230303130035163](res/Basics/image-20230303130035163.png)
 
+Das fünf Kräfte Modell gibt Auskunft darüber, wie attraktiv ein Markt zum einsteigen ist, bzw. ob den Markt verlassen werden soll.
+
+* **Potenzielle Konkurenten**
+  Wie gross ist die Bedrohung von neuen Konkurenten? Mögliche Überlegungen wären: Wie gross ist die Eintrittshürde?
+* **Kunden**
+  Wie verhandlungsstark ist der Kunde? Wie stark kann der Kunde das Produkt selbst, wie auch den Preis beeinflussen? 
+* **Lieferanten**
+  Wie verhandlungsstark sind die Lieferanten? Gibt es alternative Lieferanten?
+* **Ersatzprodukt**
+  Gibt es Ersatzprodukte, welche ein Produkt/Dienstleistung ersetzten können?
+* **Branchen Wettbewerb**
+  Wie umkämpft ist die Branche bereits? 
+
+Beispiel für Easyjet:
+
+* Rivalität mit bestehenden Konkurrenten: Ryanair, Aer Lingus, ... sind alles auch billig Fluggesellschaft
+* Verhandlungsmacht der Kunden: Der Kund verfügt über eine kleine Macht, da sie nicht viel des Umsatz von EasyJet ausmachen
+* Verhandlungsmacht der Lieferant: Es gibt zwei Flugzeughersteller
+* Potenzielle neue Konkurrenten: Keine neue Flugzeuggesellschaften sind zurzeit in Sicht
+* Ersatzprodukte: Schnellzüge, Langstrecken-Büsse
+
 #### Unternehmensbild
 
+![image-20230310111717694](res/Basics/image-20230310111717694.png)
+
+Beispiel von EasyJet:
+
+Unser wichtigstes Ziel ist, unsere Kunden sicher von ihrem Abflugs- zu ihrem Bestimmungsort zu bringen und unsere Flugdienste mit einem ausgezeichneten Preis-Leistungs-Verhältnis anzubieten. Wir konzentrieren uns auf konsequente und zuverlässige Produkte und Preise für zahlreiche Routen in Europa und sprechen dabei sowohl die Märkte für Ferien- als auch für Geschäftsreisende an. In diesem Sinne möchten wir unsere Mitarbeiter fördern und mit unseren Lieferanten nachhaltige Beziehungen aufbauen. An vier Kernprinzipien erkennen Sie unsere Werte:
+
+* Sicherheit – Unsere höchste Priorität, keine Kompromisse
+* Teamarbeit – Gemeinsam erreichen wir unser Ziel schneller
+* Pionierarbeit – Neue Wege und Chancen finden
+* Leidenschaft – Wir streben danach, die Besten zu werden
+
 #### Unternehmensstrategie
+
+<img src="res/Basics/image-20230310112415003.png" alt="image-20230310112415003" style="zoom:50%;" />
+
+Die Unternehmensstrategie formt sich aus der Unternehmensanalyse, dem Leitbild und der Umweltanalyse.
+
+Beispiel für EasyJet:
+
+![image-20230310112459909](res/Basics/image-20230310112459909.png)
 
 ### Planung
 
