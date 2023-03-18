@@ -44,6 +44,8 @@ When starting, UEFI starts a architecture-independent virtual machine which exec
 4. Creates the system services (system calls, IPC, signals, ...)
 5. Spawns a (user) interface 
 
+The root process has the pid `1`.
+
 ### RAMDISK
 
 A ramdisk contains additional drivers and files required to bootstrap the kernel. This is the solution for the chicken-and-egg problem, when having to load the driver of a disk from that disk.
