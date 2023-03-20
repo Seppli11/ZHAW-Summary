@@ -55,8 +55,24 @@ $$
 \end{align}
 $$
 
-
 These partial derivations can be plugged in the algorithm of gradient descent.
+
+## Gradient Descent Mode
+
+![image-20230320120954284](res/Linear Regression/image-20230320120954284.png)
+
+There are multiple "modes" how the gradient descent can function:
+
+* Batch Gradient Descent
+  Every sample is used to calculate the incline
+
+* Mini-Batch Gradient Descent
+
+  $n$ samples are used to calculate the incline
+
+* Stochastic Gradient Descent
+
+  One sample is used to calculate the incline
 
 ## Multivariate Linear Regression
 
