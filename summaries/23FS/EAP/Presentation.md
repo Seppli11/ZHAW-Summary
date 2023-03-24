@@ -114,7 +114,7 @@ There is currently no algorithm for truth. The only current existing alternative
 
 * Large language models, like ChatGPT, can generate millions of authentic looking messages in a very little time. This can make it easier to create fake accounts that look real and are nearly indistinguishable from "real" accounts, even for real humans
   * Virtual, generated influencers are already a thing (https://www.theverge.com/23475447/digital-creators-avatars-diigitals-social-media-podcast-vergecast)
-* 
+* How does this affect minors
 
 ## QA Section
 
