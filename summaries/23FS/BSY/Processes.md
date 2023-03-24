@@ -111,3 +111,124 @@ Kernel threads are used with a thread pool of the kernel. This pool is dynamical
 ## Top
 
 ![image-20230317125014058](res/Processes/image-20230317125014058.png)
+
+## Scheduling
+
+The schedulers needs to schedules on different events:
+
+* When a new process has been created
+* When a process exists
+* When a process is blocked on I/O
+* Regularly on a timer
+
+There are different types of schedulers:
+
+* A uni-process
+  There is no need for a scheduler as there is only one task
+* Multi-processing
+* Multi-tasking
+
+There are different scheduling types:
+
+* First-in-First-out
+  The first task is executed to completed (without preemption). This can lead to infinite loops. One possible objective could be to favour the earlier
+  <img src="res/Processes/image-20230324084425366.png" alt="image-20230324084425366" style="zoom:67%;" />
+
+* **Round-Robin**
+  Each tasks gets a slice of time and is then preemptively stopped. The objective is fairness
+  <img src="res/Processes/image-20230324084407420.png" alt="image-20230324084407420" style="zoom:50%;" />
+  One edge case is, when a task is added, if the new task is run or if the previous order is continued. The implemention needs to decide whether the scheduler favours newly arriving tasks or older tasks
+
+* Multi-Level
+
+  If tasks have priorities, tasks are put in the queue for the specific priority. The scheduler will first run all the blue tasks, then the green tasks, and then the yellow tasks. However, this can lead to low priority tasks starving![image-20230324085627172](res/Processes/image-20230324085627172.png)
+
+* Heuristic
+  <img src="res/Processes/image-20230324090302333.png" alt="image-20230324090302333" style="zoom:67%;" />
+
+* Fair Share Scheduling
+
+  A virtual clock is calculate running for each task. The scheduler ensures that on average the run-time given to each task is equal
+  ![image-20230324090025260](res/Processes/image-20230324090025260.png)
+
+![image-20230324082553427](res/Processes/image-20230324082553427.png)
+
+If a process is requesting a resource (like a file for the hard drive), the os will put the process into the `Blocked Queue`, where until the requested resource is available, it will stay.
+
+### Policy
+
+Different schedulers have different policies to reach their objective.
+
+All schedulers have:
+
+* Fairness
+* Policy enforcement
+* Balance
+
+Batch systems usually have the following:
+
+* TODO
+
+Interactive systems usually have the following:
+
+* TODO
+
+Real-time systems usually have the following:
+
+* TODO 
+
+### Metrics
+
+<img src="res/Processes/image-20230324083326345.png" alt="image-20230324083326345" style="zoom:67%;" />
+
+Tasks have an arrival time, a start time and an execution time. The turnaround time is equal to `wait time + execution time`.
+
+### Real-Time Schedulers
+
+A real-time schedulers can ensure that deadlines are met. There is a distinguished between hard deadline, which have to absolutely be met, and soft deadline, where there is some wiggle room.
+
+#### Rate-Monotonic
+
+![image-20230324091014037](res/Processes/image-20230324091014037.png)
+
+A rate monotonic scheduler gives the highest priority to the task with the highest repetition rate. 
+
+In the formula, $C_i$ is the run time of a task, $T_i$ is the period and $U$ is the utilisation. (The first column in the note is $C_i$ instead of $T_{ie}$)
+
+If the utilisation is above $69%$ the scheduler can meet all deadlines. Above this, some tasks might miss their deadlines.  This means that this is rather expensive, as $~30\%$ is unused.
+
+#### Earliest Deadline First
+
+![image-20230324091609039](res/Processes/image-20230324091609039.png)
+
+The task with the earliest deadline is dealt first 
+
+### Linux
+
+Linux maintains a single execution queue and can use different tasks with different schedulers.
+
+#### Nice
+
+The nice value ranges between `-20` and `19` and tells the scheduler how willing a task is to surrender cpu time to other tasks. This, however, isn't a hard priority and the scheduler can override the nice value at any time. It is only a suggestion.
+
+The nice value does **not** affect the real time scheduler.
+
+![image-20230324092632648](res/Processes/image-20230324092632648.png)
+
+### `SCHED_DEADLINE` (Real-Time)
+
+`SCHED_DEADLINE` has the highest priority and tasks executed with this schedulers are not allowed to fork. Tasks can yield the remaining time with a syscall.
+
+### `SCHED_FIFO` (Real Time)
+
+There is a queue for each priority (conceptually 198 queues). If a task enters a higher priority queue than the current running task, then the running task is preempted.
+
+Tasks with `SCHED_FIFO` will run to completion, unless 
+
+* preempted by a higher priorty real-time thread
+* blocked by I/O call
+* yields the cpu time with `sched_yield`
+
+#### `SCHED_RR`
+
+The round-robin scheduler has multiple queues for each priority.

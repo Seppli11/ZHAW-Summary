@@ -27,3 +27,4 @@ Die `x`, `y` und `z` Koordinaten sind unabhängig von einander. Dies bedeutet au
 $F_t(t)=qE_{x0}\sin(\omega t)$ 
 
 Dabei ist $q$ die Ladung in Coulam und $E_0$ ein elektrisches Feld in $\frac V m$ (volt pro meter)
+

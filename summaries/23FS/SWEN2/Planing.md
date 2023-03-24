@@ -42,3 +42,15 @@ The chart above shows how user stories are added to a sprint. Importantly, the t
 The burndown chart represents the story points left in the current sprint.
 
 ![image-20230309093222882](res/Planing/image-20230309093222882.png)
+
+## Prioritising
+
+When prioritising user stories, different metrics can be used:
+
+* The financial value of having a feature
+* The cost of developing and supporting a new feature
+  This is more or less equal to the story points
+* The amount of knowledge gained by developing the feature
+* The amount of risk removed by developing a feature
+
+![image-20230323092820818](res/Planing/image-20230323092820818.png)

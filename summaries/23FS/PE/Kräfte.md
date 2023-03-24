@@ -16,12 +16,23 @@ Albert Einstein, in der allgemeinen Relativität Theorie, hat bewiesen, dass die
 ## Lineare Federkraft
 
 $$
-\vec F = -k \vec x
+\vec F = -k \vec x\\
+\vec a = \frac{\vec F}{m}=-\frac{k}{m}x
 $$
 
 Die Kraft einer linearen Feder hängt nur von der Federkonstante $k$ ($[k]=\frac N m$) und der Auslenkung $\vec x$ ab.
 
 ![image-20230316152533432](res/Kräfte/image-20230316152533432.png)
+
+### Differenzialgleichung
+
+$$
+-\frac k m x(t)=\frac{d^2x(t)}{dt^2}\\
+ \text{Wenn } x(t)=x_0\cos(\omega t) \\
+ -\frac k m x_0 \cos(\omega t)=-x_0\omega^2\cos(\omega t)\\
+ \frac k m = \omega^2\\
+ \omega = \sqrt{\frac k m}
+$$
 
 
 
