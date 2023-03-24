@@ -150,6 +150,9 @@ There are different scheduling types:
 
   A virtual clock is calculate running for each task. The scheduler ensures that on average the run-time given to each task is equal
   ![image-20230324090025260](res/Processes/image-20230324090025260.png)
+  
+  This scheduler is used in linux and ensures that all process received the same amount of processing time.
+  ![image-20230324125731568](res/Processes/image-20230324125731568.png)
 
 ![image-20230324082553427](res/Processes/image-20230324082553427.png)
 
@@ -193,7 +196,7 @@ A real-time schedulers can ensure that deadlines are met. There is a distinguish
 
 A rate monotonic scheduler gives the highest priority to the task with the highest repetition rate. 
 
-In the formula, $C_i$ is the run time of a task, $T_i$ is the period and $U$ is the utilisation. (The first column in the note is $C_i$ instead of $T_{ie}$)
+In the formula, $C_i$ is the run time of a task, $T_i$ is the period after which it should scheduled again and $U$ is the utilisation. (The first column in the note is $C_i$ instead of $T_{ie}$)
 
 If the utilisation is above $69%$ the scheduler can meet all deadlines. Above this, some tasks might miss their deadlines.  This means that this is rather expensive, as $~30\%$ is unused.
 
@@ -207,6 +210,20 @@ The task with the earliest deadline is dealt first
 
 Linux maintains a single execution queue and can use different tasks with different schedulers.
 
+The priority is:
+
+1. Real-Time Schedulers
+2. Normal Schedulers
+   1. `SCHED_OTHER`
+   2. `SCHED_BATCH`
+   3. `SCHED_IDLE`
+
+#### Multicore System
+
+The scheduler on a multicore system wants to run a process on the same core each time for caching reasons. Moving processes between.
+
+With the `/proc/sys/kernel/rt_runtime` parameter, one can tell the kernel, how much time it should spend on real time tasks and non-real-time tasks.
+
 #### Nice
 
 The nice value ranges between `-20` and `19` and tells the scheduler how willing a task is to surrender cpu time to other tasks. This, however, isn't a hard priority and the scheduler can override the nice value at any time. It is only a suggestion.
@@ -215,11 +232,11 @@ The nice value does **not** affect the real time scheduler.
 
 ![image-20230324092632648](res/Processes/image-20230324092632648.png)
 
-### `SCHED_DEADLINE` (Real-Time)
+#### `SCHED_DEADLINE` (Real-Time)
 
 `SCHED_DEADLINE` has the highest priority and tasks executed with this schedulers are not allowed to fork. Tasks can yield the remaining time with a syscall.
 
-### `SCHED_FIFO` (Real Time)
+#### `SCHED_FIFO` (Real Time)
 
 There is a queue for each priority (conceptually 198 queues). If a task enters a higher priority queue than the current running task, then the running task is preempted.
 
@@ -232,3 +249,15 @@ Tasks with `SCHED_FIFO` will run to completion, unless
 #### `SCHED_RR`
 
 The round-robin scheduler has multiple queues for each priority.
+
+#### `SCHED_OTHER` (Fair Share Scheduling)
+
+The complete fair scheduler
+
+#### `SCHED_BATCH`
+
+Can be used for batch processes. These are processes that do some steps without interaction (e.g end of the month salary calculations).
+
+#### `SCHED_IDLE`
+
+This scheduler runs tasks if no other productive tasks are running. 

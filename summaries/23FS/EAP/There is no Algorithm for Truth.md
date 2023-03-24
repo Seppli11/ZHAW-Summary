@@ -16,6 +16,12 @@ At least in case of TV documentaries, radio talk shows or newspaper columnist, t
 
 If you want more proof that para social relationships are working, look no further than ads on social media. The reason why company spend big bugs on product-integrations and shout outs is because they work. People trust their beloved creators, even if the creator declares the sponsor.
 
+Another issue arising from the authority of presenters, youtubers and streamers is, when they ask for money. On platforms, like patreons, creators have the ability to monetise viewers. They, essentially, are selling friendship.
+
+These two sentences are directly from a Patreon on how to gain more paying subscribers.
+
+But this, like parasocial relationships themselves, is nothing new. Actors in the 80s had phone lines where fans could pay to send their idol a message.
+
 I do want to mention, that there are of course individuals who source all their content diligently. Channel like Tom Scott, Vertasium and many more do awesome work in the science communication field.
 
 ## The AI Revolution
@@ -24,7 +30,15 @@ One way users and also
 
 ## Conclusion
 
-To conclude
+In conclusion, we first talk talked about algorithms. How they are a black box trained with data. This data, however, can easily contain subtle biases. And as those algorithms drive recommendation algorithms, the ramifications can be nasty.
+
+A second problem is that if misinformation is spread, the corrections are rarely seen by as many people as the original information. 
+
+Secondly, we discussed the basic spectrum of moderation. Every social media company needs to decide where their algorithms lays on the spectrum of speech. Ranging from, everything which is legal is allowed, the Nazi Bar, to only opinions a group agrees up on is allowed, the Echo Chamber.
+
+Lastly, Para-social relationships are a powerful and sometimes dangerous tool. It can be leveraged to educate people on topics they otherwise might not have learned. But it is also used to sell viewers products and pay for "friendships".
+
+Currently, there is no algorithm which tells the truth. **TODO**
 
 ## Discussion Questions
 
