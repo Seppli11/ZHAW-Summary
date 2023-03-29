@@ -149,3 +149,7 @@ $$
 
 ## Ausgleichunsrechnung
 
+Es wird eine Funktion gesucht, in der Form:
+$$
+f(x)=\lambda_1f_1(x)+... + \lambda_mf_m(x)
+$$
