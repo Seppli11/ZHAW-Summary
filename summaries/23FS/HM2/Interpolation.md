@@ -147,9 +147,69 @@ A \cdot \begin{pmatrix}c_1 \\ c_2 \end{pmatrix}
 \end{pmatrix}
 $$
 
-## Ausgleichunsrechnung
+## Lineare Ausgleichunsrechnung
 
 Es wird eine Funktion gesucht, in der Form:
 $$
 f(x)=\lambda_1f_1(x)+... + \lambda_mf_m(x)
 $$
+Ein mögliches Beispiel wäre: $f(x)=\lambda_1 \cdot \underbrace{1}_{f_1(x)} + \lambda_2\cdot \underbrace x_{f_2(x)} + \lambda_3 \cdot \underbrace{x^2}_{f_3(x)}$
+
+Um nun die $\lambda$s zu finden, damit $f(x)$ Datenpunkte nachgeht, muss der Fehler $E(f)$ zu den Datenpunkten minimieren:
+
+
+$$
+E(f)=w\cdot||y_f-(x)||_2^2 = \sum^n_{i=1}w_i\cdot (y_i - f(x_i))^2
+$$
+*Mit $w$ kann ein Punkt stärker oder schwächer gewichtet werden*
+
+Um dies zu minimieren, wird die Ableitung von $E(f)=0$ gesetzt:
+
+<img src="res/Interpolation/image-20230329082250264.png" alt="image-20230329082250264" style="zoom:80%;" />
+
+Aus dem folgt:
+
+<img src="res/Interpolation/image-20230329082408422.png" alt="image-20230329082408422" style="zoom:80%;" />
+
+![image-20230329082423982](res/Interpolation/image-20230329082423982.png)
+
+Dies funktioniert allerdings nur für eine Gerade. Die selbe Methode kann aber auch für höhere Polynomen verwendet werden:
+$$
+E(f)=||\vec y-f(\vec x)||_2^2=\sum^n_{i=1}(y_i-f(x_i))^2 = \sum^n_{i=1}\left(y_i - \sum^m_{j=1}\lambda_jf_j(x_i)\right)^2=||\vec y-A\lambda||_2^2
+$$
+Mit folgender Matrix $A$:
+ <img src="res/Interpolation/image-20230329083027959.png" alt="image-20230329083027959" style="zoom:80%;" />
+
+Die Gleichung $E(f)=0$ hat nur im Spezialfall eine Lösung, wenn $m=n$ und wenn die Funktion $f$ durch alle Punkte geht.
+
+### Normalgleichungen
+
+Um $E(f)$ zu minimieren muss die erste Ableitung von $E'(f)=0$ sein. Daher muss $E(f)$ nach jedem $\lambda$ abgeleitet werden:
+$$
+\frac{\part E(f)(\lambda_1, ..., \lambda_m)}{\part \lambda_j}=0 , j=0,...,m
+$$
+Dies nennt sich eine Normalgleichung und lässt sich als $A^TA\lambda=A^Ty$. 
+
+*$A$ ist oft schlecht konditioniert und die Lösung sollte daher mit dem QR-Verfahren gelöst werden.* 
+
+### Linearisieren
+
+Falls eine $f$ Funktion auf den ersten Blick nicht linear erscheint, kann sie eventuell linearisiert werden.
+
+Z.B. die Funktion $ae^{bx}$ kann mit $\log_e$ linearisiert werden.
+
+<img src="res/Interpolation/image-20230329090740918.png" alt="image-20230329090740918" style="zoom:67%;" />
+
+<img src="res/Interpolation/image-20230329090804044.png" alt="image-20230329090804044" style="zoom:67%;" />
+
+## Nicht-Lineare Ausgleichsrechnung
+
+$$
+f(\lambda_1, \lambda_2, ..., \lambda_m, x)=...
+$$
+
+Das allgemeine Ausgleichsproblem besteht darin folgendes $E$ zu minimieren:
+
+<img src="res/Interpolation/image-20230329091149655.png" alt="image-20230329091149655" style="zoom:80%;" />
+
+Die Ableitung von $E$ wird auf $E'(f)=0$ gesetzt. Dafür kann das Gauss-Newton-Verfa
