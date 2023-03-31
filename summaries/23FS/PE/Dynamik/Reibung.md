@@ -19,6 +19,21 @@ Das Vorzeichen ist wichtig zu beachten. Es zeigt immer in die entgegengesetzte R
 
 <img src="res/Reibung/image-20230323151339684.png" alt="image-20230323151339684" style="zoom:50%;" />
 
+### Beispiel: Bei welchem Winkel?
+
+Um den Winkel zu finden, bei dem eine Masse anfängt sich zu bewegen, kann $F_{Haft}=F_g$ gleich geseetzt werden:
+$$
+\begin{align}
+F_{Haft}&=\mu\cdot m \cdot g \cdot \cos(\alpha)\\
+F_g&=m\cdot g \cdot \sin(\alpha)\\
+F_{Haft}&=F_g \\
+\mu \cdot m \cdot g \cos(\alpha)&=m \cdot g \cdot \sin(\alpha)\\
+\mu \cdot \cos(\alpha) &= \sin(\alpha)\\
+\alpha &= \frac{\sin(\alpha)}{\cos(\alpha)}\\
+	   &= \tan^{-1}(\mu)
+\end{align}
+$$
+
 ## Viskose Reibung
 
 <img src="res/Reibung/image-20230323151735315.png" alt="image-20230323151735315" style="zoom:50%;" />

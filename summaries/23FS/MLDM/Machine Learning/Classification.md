@@ -89,3 +89,33 @@ $$
 ### Gradient Descent with Logistic Regression
 
 ![image-20230327121353427](res/Classification/image-20230327121353427.png)
+
+## Support Vector Machine (SVM)
+
+A SVM categorises data points by drawing a hyperplane.  A hyperplane is a line in 2d or a plane in 3d.
+
+<img src="res/Classification/image-20230329203505240.png" alt="image-20230329203505240" style="zoom:80%;" />
+
+The goal of the SVM is to maximise for the margin between points:
+
+<img src="res/Classification/image-20230329203552130.png" alt="image-20230329203552130" style="zoom:50%;" />
+
+There are situations where not all points can be cleanly devided. In this case, the SVM can be configured to disregard some amount of outliers with a penalty.
+
+<img src="res/Classification/image-20230329203847200.png" alt="image-20230329203847200" style="zoom:80%;" />
+
+The parameter $C$ controls what the penalty of missclassification is. A large $C$ would result in almost no miss-classified points and a small $C$ would result in a large amount of miss-classified points.
+
+![image-20230329204026931](res/Classification/image-20230329204026931.png)
+
+The following explains all the variables associated with SVM:
+
+![image-20230329203943887](res/Classification/image-20230329203943887.png)
+
+### Kernel Trick
+
+Sometimes data can't be separated by a hyperplane. In those cases an additional dimension can be added with a mapping function (e.g. $z = x^2 + y^2$).
+
+![image-20230329204352060](res/Classification/image-20230329204352060.png)
+
+![image-20230329204421432](res/Classification/image-20230329204421432.png)
