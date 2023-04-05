@@ -212,4 +212,61 @@ Das allgemeine Ausgleichsproblem besteht darin folgendes $E$ zu minimieren:
 
 <img src="res/Interpolation/image-20230329091149655.png" alt="image-20230329091149655" style="zoom:80%;" />
 
-Die Ableitung von $E$ wird auf $E'(f)=0$ gesetzt. Dafür kann das Gauss-Newton-Verfa
+Die Ableitung von $E$ wird auf $E'(f)=0$ gesetzt. Dafür kann das Gauss-Newton-Verfahren.
+
+## Gauss-Newton-Verfahren
+
+Das Quadratmittelproblem ist es einen Vektor $x\in\R^m$ zu finden, welcher die Fehlerfunktional $E: \R^m \to \R:=||g(x)||_2^2$ minimiert. $E$ gehört zur Funktion $g: \R^m \to \R^n$
+
+$g$ wird nun definiert als $g(\lambda):=y-f(\lambda)$.
+
+Um nun für eine nicht lineare Funktionen $f$ eine Lösung zu finden, muss $f$ linearisiert werden:
+$$
+\begin{align}
+g(\lambda)&\approx g(\lambda_0)+Dg(\lambda_0)\cdot(\lambda - \lambda_0)\\
+\\
+Df(x)&=\begin{pmatrix}
+\frac{\partial f_1}{\partial x_1}(\vec x) & \frac{\partial f_1}{\partial x_2}(\vec x) & ... & \frac{\partial f_1}{\partial x_n}(\vec x) \\
+
+\frac{\partial f_2}{\partial x_1}(\vec x) & \frac{\partial f_2}{\partial x_2}(\vec x) & ... & \frac{\partial f_2}{\partial x_n}(\vec x) \\
+
+... & ... & ... & ... \\
+\frac{\partial f_m}{\partial x_1}(\vec x) & \frac{\partial f_m}{\partial x_2}(\vec x) & ... & \frac{\partial f_m}{\partial x_n}(\vec x) \\
+\end{pmatrix}
+\end{align}
+$$
+$E$ kann nun folgendermassen definiert werden:
+$$
+\tilde E(\lambda) = ||\underbrace{g(\lambda_k)}_{\tilde y} + \underbrace{Dg(\lambda_k)}_{-\tilde A} \cdot \underbrace{(\lambda-\lambda_k)}_\delta||_2^2
+$$
+Wobei $k=0,1,...$ ist.  
+
+Dies kann nun wie eine lineare Gleichung gelöst werden:
+$$
+Dg(\lambda_k)^TDg(\lambda_k)\delta_k=-Dg(\lambda_k)^T\cdot g(\lambda_k)
+$$
+Oder mit dem QR-Verfahren:
+$$
+Dg(\lambda_k)=Q_kR_k\\
+R_k\lambda_k=-Q_k^Tg(\lambda_k)
+$$
+Für jedes $k$ wird nun $\tilde E$ minimiert, bzw. die obere Gleichung aufgelöst. 
+
+Das nächste $\lambda$ kann wie folgt ausgerechnet wird:
+$$
+\lambda_{k+1}=\lambda_k+\delta_k
+$$
+
+## Gedämpftes Gauss-Newton-Verfahren
+
+Das gedämpte Gauss-Netwon-Verfahren funktioniert gleich, wie das "normale" Verfahren, nur das $\delta_k$ verkleinert wird.
+
+Um das $\delta_k$ für die nächste Iteration zu finden, soll folgende für folgende Formel das minimale $p\in{0, 1, ..., p_{max}}$ gefunden werden
+$$
+||g\left(\lambda_k+\frac{\delta_k}{2^p}\right)||_2^2 < ||g(\lambda_k)||_2^2
+$$
+$\lambda_{k+1}$ wird nun folgendermassen berechnet:
+$$
+\lambda_{k+1}=\lambda_k+\frac{\delta_k}{2^p}
+$$
+Falls kein minimales $p$ gefunden werden kan, wird mit $p=0$ gerechnet.
