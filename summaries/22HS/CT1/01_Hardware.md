@@ -1,4 +1,4 @@
-# Hardware
+# 2Hardware
 
 ![image-20230117111125509](res/01_Hardware/image-20230117111125509.png)
 

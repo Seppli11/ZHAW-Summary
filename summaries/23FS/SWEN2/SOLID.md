@@ -53,3 +53,20 @@ One possible downside of this "pattern" is that it promotes duplication to some 
 * Mention that this pattern exists on the functions and class level, the component level (Common Closure Principle) and the architectural level (Axis of Change)
 
   
+
+## O - Open Close Principle
+
+> Software entities should be open for extension but closed for modification
+
+This means, functions should be easily be added to existing code, but existing code shouldn't be altered. To do this, while writing code, ask your self, can more functionality be added to this code.
+
+Advantages:
+
+* Maintainability
+  Easier to add code 
+* Flexibility
+* Scaleability
+
+## D - Dependency Inversion Principle
+
+> 

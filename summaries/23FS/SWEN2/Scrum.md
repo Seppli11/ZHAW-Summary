@@ -10,6 +10,41 @@ Scrum is efficient between 5-9 people. Less then there is no communication probl
 
 Scrum teams should be cross-functional, meaning that people with different jobs should work together (developers, UX designers, testers, ...).
 
+## Definition of Done (DoD)
+
+The definition of done is written by the whole team. It can be adjusted (making it more or less rigreous) in the sprint retrospective.
+
+The problems when no definition of done is that thechinical debt accumulates exponentially. This can make progress an illusion and shipping date can get unpredictable. Since the velocity isn't acccurate anymore, teams will over-commit the amount of work.
+
+A typicall definition of done looks like this:
+
+1. Unit tests pass and coverage met standard (85% or above)
+2. Sufficient negative unit tests were written (more negative
+than positive)
+3. Code is reviewed (or Pair programmed)
+4. Coding standards are met
+5. Continuous integration implemented (automated build,
+deployment and testing)
+6. Code is refactored (to support the new functionality)
+7. User acceptance tests pass (test case requirements)
+8. Non-functional tests pass (scalability, reliability, security, etc.)
+9. Necessary documentation is completed
+
+## Definition of Ready for a User Story
+
+The definition of ready for a user story gives a checklist for a user story.
+
+A typical definition of ready for a user story looks like this:
+1. User Story defined
+2. User Story Acceptance Criteria defined
+3. User Story dependencies identified
+4. User Story sized by Delivery Team
+5. Scrum Team accepts User Experience artefacts
+6. Performance criteria identified, where appropriate
+7. Person who will accept the User Story is identified
+8. Team has a good idea what it will mean to Demo the
+User Story
+
 ## Roles
 
 ### Product Owner
@@ -51,11 +86,27 @@ In scrum, there are chickens and pigs. Pigs are commited, while chickens are not
 
 ## Scrum Events
 
+In the following table, the **maximum** time each event can take.
+
+<img src="res/Scrum/image-20230406082136686.png" alt="image-20230406082136686" style="zoom:50%;" />
+
 ### Sprint Review
+
+In the sprint review the full scrum team is present in addition to the stakeholders. The team can show the work they did in the previous sprint.
+
+<img src="res/Scrum/image-20230406081007088.png" alt="image-20230406081007088" style="zoom:50%;" />
+
+### Checkliste
+
+**TODO add checklist**
 
 ### Sprint Retrospective
 
-In the retrospective, the team reflects on what was working and what not. It typically takes 15-30 minutes and should be done after evvery sprint with the whole team.
+In the retrospective, the team reflects what was working and what not. It typically takes 15-30 minutes and should be done after evvery sprint with the whole team. It is an opertunity to reflect on the internal processes.
+
+In comparison to the sprint reviews, where the focus is technical, the focus in the sprint retrospective is on the process (e.g. are the necessary skills their, how is the relationship to the customer, ...).
+
+<img src="res/Scrum/image-20230406081950401.png" alt="image-20230406081950401" style="zoom:50%;" />
 
 ### Daily Scrum
 

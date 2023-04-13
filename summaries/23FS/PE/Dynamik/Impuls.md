@@ -8,8 +8,6 @@ $$
 
 Der Gesamtimpuls eines Systems bleibt immer erhalten, insofern keine äusseren Kräfte einwirken.
 
-
-
 ## Stossexperiment
 
 ![image-20230330143432574](res/Impuls/image-20230330143432574.png)
