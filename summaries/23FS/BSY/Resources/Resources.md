@@ -67,3 +67,4 @@ Usually, an lower limit can be configured to guarantee an amount of resource and
 The following steps is an example to deny the access to the device `/dev/null`. `echo 0 > sys/fs/cgroup/devices/group0/tasks` will deny access for the current process, in this case the current shell.
 
 ![image-20230331091525890](res/Resources/image-20230331091525890.png)
+

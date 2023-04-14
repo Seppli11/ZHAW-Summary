@@ -66,3 +66,9 @@ Geldfluss aus Betriebstätigkeit kommt von der Erfolgsrechnung. Geldfluss aus In
 ## Wichtige Kennzahlen
 
 ![image-20230331113319052](res/Basics/image-20230331113319052.png)
+
+## Leverage Effect
+
+![image-20230414101805360](res/Basics/image-20230414101805360.png)
+
+*Fremdkaptial können Kredite sein, welche Zins kosten*
