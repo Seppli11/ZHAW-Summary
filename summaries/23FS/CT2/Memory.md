@@ -72,7 +72,13 @@ The following configuring options exist:
 
 ![image-20230412112409890](res/Memory/image-20230412112409890.png)
 
-## SRAM
+## Static Random Access Memory (SRAM)
+
+SRAM has the following advantages and disadvantages:
+
+* All accesses take roughly the same time, independent of what was previously read/written or the location
+* No refreshs are needed
+* Memory is volatile
 
 ![image-20230412110804532](res/Memory/image-20230412110804532.png)
 
@@ -81,3 +87,39 @@ The following configuring options exist:
 *(X=don't care, L=low, H=high)*
 
 The control lines are active-low, meaning that `L=enabled` and `H=disabled`
+
+The following shows the internal of SRAM:
+
+![image-20230419101259401](res/Memory/image-20230419101259401.png)
+
+SRAM uses a stable circuit which "self-confirms". This can be easily be archived by chaining two inverters.
+
+<img src="res/Memory/image-20230419101355479.png" alt="image-20230419101355479" style="zoom: 50%;" />
+
+To override such a circuit, one has to apply a high voltage current (a `1` to one side and a `0` to the other side). Because of the high voltage, this will overpower the inverters and overwrite their value.
+
+The following steps explain how to write and read an SRAM cell.
+
+![image-20230419101920324](res/Memory/image-20230419101920324.png)
+
+## Synchronous Dynamic Random Access Memory (SDRAM)
+
+SDRAM uses a capacitor as a battery to store the individual bits. However, capacitor loos their charge over time and thus the RAM controller needs to periodically read and immediately write the value back to recharge the capacitor.
+
+<img src="res/Memory/image-20230419102611607.png" alt="image-20230419102611607" style="zoom: 67%;" />  <img src="res/Memory/image-20230419102812677.png" alt="image-20230419102812677" style="zoom:67%;" />
+
+The following diagram shows the layout of a SDRAM chip.
+
+![image-20230419103024045](res/Memory/image-20230419103024045.png)
+
+Compared to SRAM, SDRAM has a lot wider storage matrix. This makes the refreshing faster, but also more complicated.
+
+To access a byte in SDRAM, the FMC/CPU first selects the row address (`RAS`) and then the column address (`CAS`). For the first byte, the SDRAM needs a lot of cycle, but further bytes in the same row are really fast as the row is already "loaded".
+
+This makes this storage technology not appropriate for direct CPU access. To still be able to use DRAM, the CPU has caches which are a lot faster and more predictable.
+
+![image-20230419103354148](res/Memory/image-20230419103354148.png)
+
+Comparison:
+
+![image-20230419103715269](res/Memory/image-20230419103715269.png)
