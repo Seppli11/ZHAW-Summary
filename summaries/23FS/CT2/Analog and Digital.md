@@ -25,6 +25,7 @@ Characteristics of ADC:
 * **Offset Error**
   An ADC might be offseted resuling in an offset error
   <img src="res/Analog and Digital/image-20230405104250649.png" alt="image-20230405104250649" style="zoom:50%;" />
+  *(Offset Error is -1.5LSB in the diagram above)*
 * **Gain Error**
   <img src="res/Analog and Digital/image-20230405104419411.png" alt="image-20230405104419411" style="zoom:50%;" />
 * **Full-Scale Error**

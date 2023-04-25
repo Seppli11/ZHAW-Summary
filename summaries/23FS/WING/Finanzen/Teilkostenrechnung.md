@@ -22,6 +22,8 @@
 
 <img src="res/Teilkostenrechnung/image-20230414112729731.png" alt="image-20230414112729731" style="zoom:80%;" />
 
+*(DB = Deckungs Betrag, Marge=%-Betrag des Nettoerlöses)*
+
 <img src="res/Teilkostenrechnung/image-20230414112812844.png" alt="image-20230414112812844" style="zoom:67%;" /><img src="res/Teilkostenrechnung/image-20230414112822117.png" alt="image-20230414112822117" style="zoom:67%;" />
 
 <img src="res/Teilkostenrechnung/image-20230414112935975.png" alt="image-20230414112935975" style="zoom:50%;" />
@@ -31,3 +33,5 @@ Da dies nicht geht, soll nun ausgerechnet werden, wie teuer der Kurs sein muss, 
 <img src="res/Teilkostenrechnung/image-20230414112847688.png" alt="image-20230414112847688" style="zoom:67%;" /><img src="res/Teilkostenrechnung/image-20230414113028977.png" alt="image-20230414113028977" style="zoom:67%;" />
 
 <img src="res/Teilkostenrechnung/image-20230414113021166.png" alt="image-20230414113021166" style="zoom:50%;" />
+
+## 

@@ -73,3 +73,5 @@ It works similarly when the CPU receives data.
   * **OVR** (Overrun): If the CPU doesn't read data fast enough and a new byte already arrived, then the data register is overwritten and the `OVR` bit is set.
   * **TXE** (TX-Buffer empty): The CPU had wrote some data to the TX-Buffer which was sent out
   * **RXNE** (RX-Buffer not empty): Data was received and the CPU can access it
+
+![image-20230424163536295](res/SPI/image-20230424163536295.png)

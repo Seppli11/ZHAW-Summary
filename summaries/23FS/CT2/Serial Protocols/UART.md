@@ -46,3 +46,9 @@ To futher improve the reliability, two cables per line can be used. In one cable
 ![image-20230322103642712](res/UART/image-20230322103642712-1679477804306-1.png)
 
 ![image-20230322112004005](res/UART/image-20230322112004005.png)
+
+## RS-485
+
+This protocol is based on UART, but adds diferential signal encoding. This enables it to carry a signal up to 100m.
+
+![image-20230424170955277](res/UART/image-20230424170955277.png)
