@@ -114,3 +114,35 @@ Because a software needs to conform to interfaces of its environment, the interf
 Because software is easily changed, many changes are made. 
 
 Software is invisible in itself. There is no geometric representation of software. To still be able to visualise it, one creates views into it, with diagrams and text.
+
+## Layering
+
+![image-20230427092250637](res/Software Architecture/image-20230427092250637.png)
+
+Importantly, **tiers are not layers**. Tiers are where software is running (e.g. a DB-Server, application server, client, ...). These are not layers. Multiple layers can run on one tier and one layer can run on multiple tiers.
+
+## Distribution of Work
+
+* Distributed Presentation: Distributed presentation hides the locality of each client, while the server presents all clients centrally (for example, on one screen)
+* Remote Presentation: Remote presentation means that one client handles all presentation tasks, while the application and data are managed by the server
+* Distributed Function: Distributed Function implements a division of labor at the functional level between client and server (Cooperative Processing)
+* Remote Data: The server keeps all data in one place, no data is stored on the clients
+* Distributed Data: The data is distributed on different servers, the client accesses different servers at the same time
+
+## Architectural Style
+
+![image-20230427094948029](res/Software Architecture/image-20230427094948029.png)
+
+* Independent Components: Independently executing elements that interact with each other via messages
+* Call-and-Return: Defined by a fixed communication mechanism between calling and called element
+* Virtual Machine: Allows the realization of portable and interpretable systems
+* Data Flow: How data flows
+* Data Centered: Central task is access and update of data of a repository
+
+## The three Patterns
+
+![image-20230427100537631](res/Software Architecture/image-20230427100537631.png)
+
+*  The Transaction Script Pattern organizes and divides the business logic into individual procedures so that each procedure covers a single request from the Presentation Layer.
+* The Domain Model Pattern describes an object model of the problem domain that includes behavior and data.
+* The Table Module Pattern describes a single instance (singleton) that encapsulates the business logic for all rows in a database table or view.

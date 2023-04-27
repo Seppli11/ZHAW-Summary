@@ -28,6 +28,7 @@ Characteristics of ADC:
   *(Offset Error is -1.5LSB in the diagram above)*
 * **Gain Error**
   <img src="res/Analog and Digital/image-20230405104419411.png" alt="image-20230405104419411" style="zoom:50%;" />
+  How well the digital slope matches the actual signal. This can be expressed in LSB or a percentage of the full-scale range (%FSR)
 * **Full-Scale Error**
   The full-scale-error is defined als `offset error` + `gain error` and is the total error without the quantisiation error.
 
@@ -56,6 +57,8 @@ SAR-ADCs are a lot cheaper, as it uses a cheap DAC. For each additionall bit of 
 ![image-20230405111205853](res/Analog and Digital/image-20230405111205853.png)
 
 `SQR1/2/3` specifies **TODO**.
+
+![image-20230425230417305](res/Analog and Digital/image-20230425230417305.png)
 
 When the ADC is done then the `EOC` signal is set in the status register. There is also an EOC interrupt available.
 
