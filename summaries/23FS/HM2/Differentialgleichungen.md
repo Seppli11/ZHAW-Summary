@@ -79,3 +79,71 @@ $$
 Beim modifizierten Verfahren wird zuerst die Steigung bei $(x_i, y_i)$ und bei $(x_{i+1}, y_{i+1})$ berechnet. Danach wird der nächste Punkt mit dem Mittel zwischen den beiden Steigungen den nächsten Punkt berechnet.
 
 ![image-20230503090603593](res/Differentialgleichungen/image-20230503090603593.png)
+
+## Fehler
+
+Der **lokaler** Fehler ist definiert als:
+$$
+\varphi(x_i, h) := y(x_{i+1}) - y_{i+1}
+$$
+Wenn der lokaler Fehler folgendermassen schreiben kann, dann hat es  die **Konsistenzordnung** $p$:
+$$
+\varphi(x_i, h)\le C\cdot h^{p+1}
+$$
+Ebenfalls gibt es ein **globalen** Fehler, welcher definiert ist als:
+$$
+y(x_n)-y_n
+$$
+Wenn der globalen Fehler folgendermassen schreiben kann, dann hat es folgende **Konvergenzordnung** $p$:
+$$
+|y(x_n)-y_n| \le C\cdot h^p
+$$
+Wie auch an den Formeln von der Konsistenzordnung und Konvergenzordnung zu sehen ist, hängt dieser Fehler von der Schrittweite $h$ ab.
+
+![image-20230510084336497](res/Differentialgleichungen/image-20230510084336497.png)
+
+Es ist interesant ein Verfahren mit der Konvergenzordnung $p\ge 1$ und $h<1$, da dann $C\cdot h^p$ gegen $0$ strebt.
+
+Für das Eulerverfahren gilt folgenden lokalen Fehler:
+$$
+\begin{align}
+\varphi(x_n, h)=\frac{h^2}{2}y''(z) &&\text{, wobei } z \in [x_n, x_n+h]
+\end{align}
+$$
+Das Mittelpunkt und modifizierte Eulerverfahren haben eine Konsistenz- und Konvergenzordnung $p=2$.
+
+
+
+In der folgenden Abbildung ist der lokale Fehler für diverse Verfahren auf einem log-log Plot:
+
+![image-20230510085347512](res/Differentialgleichungen/image-20230510085347512.png)
+
+## Runge-Kutta Verfahren
+
+![image-20230510085957439](res/Differentialgleichungen/image-20230510085957439.png)
+
+Im Runge-Kutta-Verfahren wird zuerst die Steigung $k_1$ bei $x_i$ berechnet, dann $k_2$ in der Mitte zwischen $x_i$ und $x_{i+1}$, $k_3$ ist ebenfalls beim Mittelpunkt, aber mit der Steigung $k_2$. Zuletzt wird $k_4$ am Punkt $x_{i+1}$ berechnet.
+
+![image-20230510090129174](res/Differentialgleichungen/image-20230510090129174.png)
+
+Die Konsistenz- und Konvergenzordnung von Runge-Kutta ist $p=4$.
+
+## Allgemeines s-stufiges Runge-Kutta-Verfahren
+
+Das allgemeine s-stufige Runge-Kutta-Verfahren:
+$$
+\begin{align}
+k_n&=f\left(x_i + c_nh, y+h \sum^{n-1}_{m=1}a_{nm}k_m\right) && \text{für } n=1,...,s\\
+y_{i+1}&=y_i+h\sum^s_{n=1}b_nk_n
+\end{align}
+$$
+Dabei ist $s\in \N$ die Stufenzahl und $a_{nm}$, $b_n$ und $c_n$ sind Konstante.
+
+* Euler-Verfahren: $s=1$
+  <img src="res/Differentialgleichungen/image-20230510092351343.png" alt="image-20230510092351343" style="zoom:50%;" />
+* Mittelpunkt-Verfahren: $s=2$
+  <img src="res/Differentialgleichungen/image-20230510092335324.png" alt="image-20230510092335324" style="zoom:50%;" />
+* Modifiziertes Euler-Verfahren: $s=2$
+  <img src="res/Differentialgleichungen/image-20230510092322500.png" alt="image-20230510092322500" style="zoom:50%;" />
+* Klassisches Runge-Kutcd dfta Verfahren: $s=4$
+  <img src="res/Differentialgleichungen/image-20230510092311986.png" alt="image-20230510092311986" style="zoom:50%;" />

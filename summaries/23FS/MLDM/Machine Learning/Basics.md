@@ -4,7 +4,7 @@
 
 ## Unsupervised Machine Learning: Clustering
 
-Clustering describes the process of grouping objects in sets where grouped objects are more similar (in some sense) then objects in other groups.
+Clustering describes the process of grouping objects in sets where grouped objects are more similar (in some sense) then objects in other groups. Importantly, an unsupervised machine learning algorithm doesn't get the expected result, just the inputs, like with clustering or dimensonality reduction.
 
 ## Supervised Machine Learning
 

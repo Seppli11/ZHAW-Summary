@@ -31,7 +31,7 @@ Oder in Worten: den Impuls bleibt erhalten. Körper 1 gibt den Impuls weiter an 
 
 ![image-20230330145304174](res/Impuls/image-20230330145304174.png)
 
-Der Gesamtimpuls des gesamten Systems ist $$
+Der Gesamtimpuls des gesamten Systems ist $V_{Spt}=\frac{m_1 \vec v_2 + m_2 + }{}$
 
 Aus diem geht er **TODO**
 $$

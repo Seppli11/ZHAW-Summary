@@ -11,3 +11,9 @@ In the following diagram is shown how a IP packet is wrapped in an ESP IPSec pac
 If the following IPSec packets are received.. **TODO**
 
 ![image-20230424112616666](res/IPSec/image-20230424112616666.png)
+
+## Tunnel Mode
+
+![image-20230508102222625](res/IPSec/image-20230508102222625.png)
+
+IPsec can be used in a tunnel mode, where the whole IP-Packet is packaged in the IPsec packet. This allows IPsec to be used as a VPN-protocol
