@@ -50,3 +50,27 @@ Zielkonflikt Mitarbeiterentwicklung: Ausbildungs-Investition vs. Mitarbeiterabga
 * Allgemein: Handelbar, Macht MA für andere Firmen attraktiv, Bringt MA weiter
 * Wer bezahlt die Weiterbildung? Firma (eher bei spezifisch) oder Arbeitnehmer (eher wenn allgemein)? Investition in spezifisches oder allgemeines Humankapital? Attraktivität Arbeitgeber? Image Arbeitgeber?
 * Was bedeutet die Weiterbildung für den Lohn und die Karriereentwicklung (Beförderungen, Stellenwechsel)?
+
+## Personalhonorierung
+
+<img src="res/Personalmanagement/image-20230512100143310.png" alt="image-20230512100143310" style="zoom:50%;" />
+
+<img src="res/Personalmanagement/image-20230512100208218.png" alt="image-20230512100208218" style="zoom:67%;" />
+
+## Personalfreistellung
+
+Die meisten Massnahmen lassen sich auf eine oder mehrere der folgenden Hauptursachen zurückführen:
+
+* Absatz- und Produktionsrückgang als Folge der gesamtwirtschaftlichen Entwicklung
+* Strukturelle Veränderungen
+* Saisonal bedingte Beschäftigungsschwankungen
+* Betriebsstillegungen, Betriebsvernichtung, natürliches Betriebsende
+* Standortverlegung
+* Reorganisation
+* Mechanisierung und Automation
+
+### Arbeitszeugnisse
+
+Im Arbeitszeugnis sollten die wichtigsten Tätigkeiten enthalten, wie auch das Verhalten. Wichtig kann auch sein, was **nicht** im Zeugnis
+
+Ein Zwischenzeugnis kann verlangt werden bei Vorgesetzter wechsel oder nach einiger Zeit (z.B. nach 5 Jahren).
