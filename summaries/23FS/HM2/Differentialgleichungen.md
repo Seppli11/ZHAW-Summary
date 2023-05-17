@@ -147,3 +147,58 @@ Dabei ist $s\in \N$ die Stufenzahl und $a_{nm}$, $b_n$ und $c_n$ sind Konstante.
   <img src="res/Differentialgleichungen/image-20230510092322500.png" alt="image-20230510092322500" style="zoom:50%;" />
 * Klassisches Runge-Kutcd dfta Verfahren: $s=4$
   <img src="res/Differentialgleichungen/image-20230510092311986.png" alt="image-20230510092311986" style="zoom:50%;" />
+
+## Differentialgleichung-System
+
+Um ein Differentialgleichung-System zu lösen, kann $y(x)$ als vektorwertige Funktion geschrieben werden.
+
+Das Euler-Verfahren kann folgendermassen für Vektoren angepasst werden:
+$$
+x_{i+1}=x_i + h\\
+\vec y_{i+1}=\vec y_i + \vec f(x_i, y_i)\cdot h
+$$
+Oben ist es mit dem klassischen Eulerverfahren beschrieben. Dies kann aber mit allen Eulerverfahren gelöst werden.
+
+### Beispiel
+
+Das folgende Beispiel kommt aus dem nächsten Unterkapitel "Differentialgleichung k-ter Ordnung zu DGL-System".
+$$
+\begin{align}
+z_1'&=z_2\\
+z_2'&=z_3\\
+z_3'&=10e^{−x} − 5z_3 − 8z_2 − 6z_3
+\end{align}
+$$
+Zu dem gelten folgende Anfangswerte:
+$$
+\vec z(0)=\begin{pmatrix}2 \\ 0 \\ 0\end{pmatrix}
+$$
+Nun kommen die Iterationen:
+
+<img src="res/Differentialgleichungen/image-20230517084704543.png" alt="image-20230517084704543" style="zoom:67%;" /><img src="res/Differentialgleichungen/image-20230517084728657.png" alt="image-20230517084728657" style="zoom:67%;" />
+
+### Differentialgleichung k-ter Ordnung zu DGL-System
+
+Um eine Differentialgleichung mit Ableitungen höher als erster Ableitungen zu lösen gibt es einen Trick:
+$$
+y'''+5y''+ 8y' + 6y = 10e^{-x}
+$$
+
+1. Nachh der höchsten Ableitung umformen: 
+   $y''' = 10e^{−x} − 5y'' − 8y' − 6y$
+
+2. Alle Ableitungen von $y$ tiefer als die höchste Ableitungen durch $z_i$ ersetzen:
+   $z_1=y, z_2=y', z_3=y''$
+
+3. Und in der Gleichung einsetzen
+   $y''' = 10e^{−x} − 5y'' − 8y' − 6y\Rightarrow z_3'=y''' = 10e^{−x} − 5z_3 − 8z_2 − 6z_3$
+
+4. Es sind nun drei Gleichungen: 
+   $z_1'=y'=z_2$
+   $z_2'=y''=z_3$
+   $z_3' = 10e^{−x} − 5z_3 − 8z_2 − 6z_3$
+
+5. In diesem Fall können sie auch Vektoriel geschrieben werden:
+   $\begin{pmatrix}z_2 \\ z_3 \\ 10e^{−x} − 5z_3 − 8z_2 − 6z_3 \end{pmatrix}=\begin{pmatrix}z_1' \\ z_2' \\ z_3'\end{pmatrix}$
+
+   Mit der Start-Bedingungen: $\vec z(0)=\begin{pmatrix}0 \\ 0 \\ 0\end{pmatrix}$
