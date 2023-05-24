@@ -12,6 +12,13 @@ In the following example, the prescaler is set to `4` and the timer is configure
 
 > Importantly, the UIF flag has to be reset in the interrupt service routine. Otherwise, the CPU will invoke the interrupt immediately afterwards.![image-20230329102950128](res/Timer/image-20230329102950128.png)
 
+The frequency can be calculated with:
+$$
+f_{end}=\frac{f_{initial}}{PreScaler \cdot (f_{ARR})}\\
+f_{ARR}=\frac 1 {ARR + 1}\\
+$$
+
+
 ## STM32F4xx
 
 The `TIM2` and `TIM5` are 32-bit timers and the `TIM3` and `TIM4` are 16-bit timers. Both timer types can count up or down and can have a prescaler between 0 and 65536.
@@ -58,3 +65,7 @@ Depending on the PWM mode and if the counter counts up or down, CCR needs to be 
 
 ![image-20230329111742342](res/Timer/image-20230329111742342.png)
 
+**TODO:  Calculate ARR and CCR from specifiction**
+$$
+
+$$

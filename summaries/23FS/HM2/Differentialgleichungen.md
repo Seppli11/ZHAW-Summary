@@ -198,7 +198,13 @@ $$
    $z_2'=y''=z_3$
    $z_3' = 10e^{−x} − 5z_3 − 8z_2 − 6z_3$
 
-5. In diesem Fall können sie auch Vektoriel geschrieben werden:
+5. In diesem Fall können sie auch vektoriel geschrieben werden:
    $\begin{pmatrix}z_2 \\ z_3 \\ 10e^{−x} − 5z_3 − 8z_2 − 6z_3 \end{pmatrix}=\begin{pmatrix}z_1' \\ z_2' \\ z_3'\end{pmatrix}$
 
    Mit der Start-Bedingungen: $\vec z(0)=\begin{pmatrix}0 \\ 0 \\ 0\end{pmatrix}$
+   
+## Stabilität
+
+Wie stabil eine Lösung einer DGL ist hängt von dem benutzten Verfahren, der Schrittbreite und dem spezifischen Anfangsproblem ab.
+
+<img src="res/Differentialgleichungen/image-20230524081602961.png" alt="image-20230524081602961" style="zoom:80%;" />

@@ -2,8 +2,6 @@
 
 ![image-20230322105232773](res/I²C/image-20230322105232773.png)
 
-In I²C, all 
-
 ## Start and Stop
 
 The master initiates a transaction with a falling edge on `SDA` while the clock signal `SCL` is high. The transaction is ended with a rising edge on the data line `SDA` when the clock `SCL` is high.

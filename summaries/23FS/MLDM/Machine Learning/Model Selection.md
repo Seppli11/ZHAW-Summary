@@ -34,7 +34,7 @@ With k-fold cross-validation, we split the training set in to multiple approxima
 
 <img src="res/Model Selection/image-20230327132843101.png" alt="image-20230327132843101" style="zoom:67%;" />
 
-k-fold cross-validation is only used for hyperparameter tuning by optimising for the best k-fold cross-validation score. With those found hyperparameter, one can train the model and determine the best parameters.
+k-fold -validation is only used for hyperparameter tuning by optimising for the best k-fold cross-validation score. With those found hyperparameter, one can train the model and determine the best parameters.
 
 This  is also called leave-one-out cross-validation (LOOCV) if we have $n$ samples and use $n$ folds. This results in $1$ test sample and $n-1$ training samples for each fold.
 
@@ -50,5 +50,6 @@ Examples:
 
 * The model is too simple to detect the patterns of the data. The model should be made more complex
   <img src="res/Model Selection/image-20230327133447947.png" alt="image-20230327133447947" style="zoom:67%;" />
-* With this example, there is likely a high variance, overfitting is happening and the mode should be simplified.
+* With this example, there is likely a high variance, overfitting is happening and the mode should be simplified. This is also called regularisation.
   <img src="res/Model Selection/image-20230327133551584.png" alt="image-20230327133551584" style="zoom: 67%;" />
+

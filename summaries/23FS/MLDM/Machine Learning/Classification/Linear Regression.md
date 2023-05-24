@@ -2,8 +2,10 @@
 
 A linear function, adjusted to a set of results, can be used to predict the result of other input values. The function takes the following form:
 $$
-h_\theta(x)=\theta_0+\theta_1\cdot x
+h_\theta(x)=\theta_0+\theta_1\cdot x_1+\theta_2\cdot x_2+...+\theta_n \cdot x_n
 $$
+
+**TODO**: Other models like logistic regression model.
 
 ## Cost Function
 

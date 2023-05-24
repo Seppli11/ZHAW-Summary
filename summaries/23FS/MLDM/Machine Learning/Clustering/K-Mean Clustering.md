@@ -4,6 +4,8 @@
 
 The K-Mean algorithm can be used to create clusters from a set of data points.
 
+A assumption that the k-mean algorithm makes is that the clusters are roughly spherical (not for example not donut-shaped)
+
 The following pseudo-code implements the k-mean algorithm:
 
 ```java
@@ -31,6 +33,7 @@ As the stop criteria, multiple implementation can be used:
 * Stop when only a small amount of data points are reassigned
 * Stop after a fixed number of iteration
 * Stop after a certain time for the entire computation
+* Stop after a low sum of squared error (This doesn't necessarily mean that the centroids converged)
 
 Because the k-mean algorithm uses chance, the result can very depending on the initial position of the centroids. To elevate this, the algorithm is run multiple times and the best result is used. To calculate the best, the quadratic distance to the closest centroid can be calculated for each data point and then summed up. 
 

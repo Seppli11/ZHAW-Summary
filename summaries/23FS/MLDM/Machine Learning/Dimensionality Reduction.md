@@ -97,3 +97,4 @@ From each loading data point can a ling though the origin point be drawn. If a s
 
 For example, the data point 21 in the left upper hand corner is far away from the origin on the "oil-loading-line" and thus is far away from the average of oil. On the other hand, the score data point 33 is on the "oil-loading-line" close to the origin point and thus is close to the average.
 
+## t-Distributed Stochastic Neighbor Embedding

@@ -25,7 +25,7 @@ To make UART more reliable, the number of stop bits can configured to `1`, `1.5`
 In UART there is parity-bit before the stop bit(s).
 
 * none
-  No parity bit will be sent
+  No parity bit will be sent and is missing entirely
 * Mark
   The parity bit will always be `1`
 * Space
@@ -52,3 +52,20 @@ To futher improve the reliability, two cables per line can be used. In one cable
 This protocol is based on UART, but adds diferential signal encoding. This enables it to carry a signal up to 100m.
 
 ![image-20230424170955277](res/UART/image-20230424170955277.png)
+
+## Calculations
+
+UART Overhead:
+$$
+SentData = 1 + DataBits + ParityBits + StopBits\\
+Overhead = \frac{DataBits}{1 + ParityBits + StopBits}
+$$
+
+
+The following is an example:
+
+![Screenshot from 2023-05-24 10-15-29](res/UART/Screenshot from 2023-05-24 10-15-29.png)
+
+![image-20230524101833476](res/UART/image-20230524101833476.png)
+
+The solution is $\frac 3 8\cdot 100\%$ 
