@@ -23,7 +23,7 @@ If the block size is $n$ bytes, and the final block consists of $k \le n$ data b
 
 DES was published by the National Institute of Standards and Technology (NIST) which is controlled by the NSA. This leads to the public not totally trusting as the NSA might had meddled with.
 
-Today, DES is totally insecure because the key size of 56 is too small. Apart from this, the cipher is secure and the NSA probably didn't interfere with the design. 
+Today, DES is totally insecure because the key size of **56** is too small. Apart from this, the cipher is secure and the NSA probably didn't interfere with the design. 
 
 Until today, brute force attack is still the best way to attack DES.
 
@@ -32,6 +32,8 @@ Until today, brute force attack is still the best way to attack DES.
 One idea to increase the work factor was to encrypt a text twice with a different key.
 
 A possible know-plain-text attack
+
+![image-20230529104955607](res/1_Block Ciphers/image-20230529104955607.png)
 
 ## Tripple DES
 
@@ -51,7 +53,7 @@ There was
 
 ![image-20230306112723441](res/1_Block Ciphers/image-20230306112723441.png)
 
-### ECB (Electronic Code-Block) Mode
+### ECB (Electronic Code-Book) Mode
 
 ![image-20230306111238029](res/1_Block Ciphers/image-20230306111238029.png)
 
@@ -61,6 +63,10 @@ A problem with ECB is that when $P_1$ and $P_2$ is the same, then $C_1$ and $C_2
 
 ![image-20230306111508924](res/1_Block Ciphers/image-20230306111508924.png)
 
+When ECB is used, then individual blocks can be substituted to other blocks from the same data:
+
+![image-20230529105753764](res/1_Block Ciphers/image-20230529105753764.png)
+
 ### Cipher Block Chaining (CBC) Mode
 
 ![image-20230306111548816](res/1_Block Ciphers/image-20230306111548816.png)
@@ -69,3 +75,12 @@ When using CBC, the result of an encryption is used in the next encryption. This
 
 However, if the initialisation vector is reused then the first blocks of two plain text will have the same problem as with ECB.
 
+The IV does not need to be kept secret but needs to be different for every transmission.
+
+A possible modification attack to CBC is the following:
+
+![image-20230529111142594](res/1_Block Ciphers/image-20230529111142594.png)
+
+Now all what Mike has to do is choose $M$ in a way that $P_{17} \oplus M$ equals to the desired result:
+
+![image-20230529111228414](res/1_Block Ciphers/image-20230529111228414.png)

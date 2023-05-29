@@ -137,3 +137,4 @@ To store passwords, Argon2d and Argon2id should be used
 
 ### Computational effort to crack a Password
 
+![image-20230529151455725](res/4_Integrity and Authentication.md/image-20230529151455725.png)

@@ -25,18 +25,24 @@ The root certificates are prepacked with the browser or the OS. If there is a br
    4. The issuer signature $S$
 6. Alice pays the CA and the CA sends the certificate to Alice
 
-## Veryfing a certificate
+## Verifying a certificate
 
 To very the signature of a certificate, one needs to have the public key of the certificate authority (CA). However, this certificate needs to be verified as well.
 
 1. Bob connects to www.alice.com
-2. The server sends the certificate chain to Bob (except the root certificate)
-3. Chain has certs $C[1], ..., C[n]$
-4. Check that $C[1].name = www.alice.com$
-5. for i = 1 to $n-1$
+2. The server sends the certificate chain to Bob (except the root certificate). The chain has the certs $C[1], ..., C[n]$, where $C[1]$ is Alice's certificate.
+3. Check that $C[1].name = www.alice.com$
+4. for i = 1 to $n-1$
    1. Check that $C[i].issuer = C[i+1].subject$
    2. Check that $C[i].signature$ can be verified with $C[i+1].publicKey$
-6. **TODO**
+   3. Check that $C[i]$ is currently valid
+5. Locate the root certificate $R$ with $C[n].issuer = R.subject$. If no root certificate can be found, fail
+6. Verify $C[n].signature$ with $R.publicKey$
+7. Verify $R.signature$ with $R.publicKey$ (since $R$ is a self-signed root certificate)
+
+The following graphic also shows the flow of information when verifying a certificate:
+
+![image-20230529225321001](res/5_Certificates/image-20230529225321001.png)
 
 ## What can go wrong?
 
@@ -44,20 +50,27 @@ To very the signature of a certificate, one needs to have the public key of the 
 
 ## X.509
 
+X.509 relies on ASN.1, the 1988 version of JSON.
+
 ![image-20230327103833333](res/5_Certificates/image-20230327103833333.png)
 
 The yellow part is signed with the green part.
 
 ![image-20230327104215924](res/5_Certificates/image-20230327104215924.png)
 
+Notes:
+
+* Names are specified with attributes to disambiguate different subjects: `CN=Janet,O=International Business Machines Corporation,OU=Accounting,C=Switzerland`
+* This is similar to MAC-then-encrypt 
+
 ### Types
 
 * TLS certificate
-  * Domain Validation
-    Only validates the domain, but not who operates it
-  * Organization Validation
+  * Domain Validation (DV)
+    Only validates the domain, but not who operates it. This is essentially what Let's Encrypt does.
+  * Organization Validation (OV)
     Verifies the data of the organization
-  * Extended Validation
+  * Extended Validation (EV)
     Verifies additional things about the domain.
 * Code signing certificate
   Confirms authenticity of software or files
@@ -68,6 +81,8 @@ The yellow part is signed with the green part.
 ## Certificate Transparency
 
 ![image-20230327105448960](res/5_Certificates/image-20230327105448960.png)
+
+The logs of certificate are append only, cryptographically assured and publicly auditable. Monitors monitor all logs and report any suspicious certificates. User agent only accepts certificates registered in the logs.
 
 ## Certification Revocation
 
@@ -122,14 +137,21 @@ Issues of this are:
 * There is a validity period of a OCSP response
 * If no valid OCSP response is cached, the server won't include one. If the client can't reach the OCSP endpoint it will default to a soft fail.
 
-There is a third alternative, OCSP must-stable, in which the certificate is rejected if no stable is included (hard fail). This reintroduces the DOS problem of OCSP (without stable).
+There is a third alternative, OCSP must-stable, in which the certificate is rejected if no stable is included (hard fail). This reintroduces the DOS problem of OCSP (without stable). The `must-stable` flag is included in the sent certificate.
 
 With **Browser-Summarized CRLs**, where browser vendors download CRLs centrally and compress this with a bloom filter. The browser vendor push regular updates (every 6h) to the client.
 
 ### Root Certificate Revocation
 
-To revoke a root certificate, every library and application, which bundles root certificates, need to be updated.
+To revoke a root certificate, every library and application, which bundles root certificates, need to be updated. All certificates, issued by a revoked root certificate, need to be revoked as well.
 
+## Let's Encrypt
 
+The following shows how Let's Encrypt verifies the domain owner ship. This is done, by generating a key pair. One value is kept on the server accessible the other is sent to Let's Encrypt.
 
-##  
+![image-20230529225551800](res/5_Certificates/image-20230529225551800.png)
+
+Let's Encrypt uses both browser-summarized CRLs and OCSP.
+
+![image-20230529225530353](res/5_Certificates/image-20230529225530353.png)
+

@@ -33,13 +33,15 @@ The problem is to find $k$, when given $a\in G$ and a generator $g\in G$, for $a
 
 For $(Zn, +)$ with Euclid's extended algorithm, $k$ can be found in $O(\log n)$, but for $(Zp*, \times)$ no fast algorithm is known and can be solved in $O((\log n)^k)$
 
+Essentially, the problem comes down to the following formula: $g^n\mod a = x$. Calculating $n$ if $x$, $g$ and $a$ is known can only be done with brute force and as such this is a one-way function.
+
 ![image-20230313105211364](res/3_Public Key Cryptography/image-20230313105211364.png)
 
 ## Diffie-Hellman
 
 ![image-20230313105806040](res/3_Public Key Cryptography/image-20230313105806040.png)
 
-Alice and Bob agree on cyclic group $G$ with a difficult-to-solve DLP and a generator $g$ for $G$. $g$ and $G$ are not secrets and this ca[n be done in public.
+Alice and Bob agree on cyclic group $G$ with a difficult-to-solve DLP and a generator $g$ for $G$. $g$ and $G$ are not secrets and this can be done in public.
 
 1. Alice and Bob choose as their private keys a random number $a$ and $b$ with $1 < a,b < |G|$
 2. Alice sends her public key $A=[a]g$
@@ -74,6 +76,7 @@ IES works if the receiver isn't online.
 Let $F$ be a set with the operations $\times$ and $+$, so that
 
 * $(F, +)$ is a commutative group
-* $(F\cap\{0\}, \times)$ is a commutative group
+* $(F\setminus\{0\}, \times)$ is a commutative group
 * $\times$ distributes over +: $a\times (a+b)=a\times b + a \times c$
 
+For right choice of curve, recommend 256-bit-size field for 128-bit work factor.

@@ -88,3 +88,6 @@ Es wird auf den Kapitaleinsatz 5x den summierten Zins aus der Rentenbarwertfakto
 
 <img src="res/Investitionsrechnung/image-20230512111622345.png" alt="image-20230512111622345" style="zoom:67%;" />
 
+## Kapitalwertmethode
+
+**TODO**
