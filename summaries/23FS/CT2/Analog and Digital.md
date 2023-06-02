@@ -14,7 +14,7 @@ $V_{REF}$ is never reached, only $V_{FSR}$, which is **Full Scale Ranger**. It i
 
 $V_{REF+}$ is the max. voltage for $V_{in+}$ and $V_{in-}$
 
-Because analog signals are often differential, the ADC needs two inputs. If there is only one (single ended), $V_{in-}$ can be seet to GND and $V_{in+}$ can be used as the actuall input.
+Because analog signals are often differential, the ADC needs two inputs. If there is only one (single ended), $V_{in-}$ can be seet to GND and $V_{in+}$ can be used as the actual input.
 
 Characteristics of ADC:
 
@@ -22,8 +22,9 @@ Characteristics of ADC:
   The time needed when the analog signal is sampled to when the digital signal is available
 * **Quantization Error**
   Because an ADC quantises the ADC might have an quantisation error up to $\pm 1 LSB$
+  <img src="res/Analog and Digital/image-20230602154813237.png" alt="image-20230602154813237" style="zoom:67%;" />
 * **Offset Error**
-  An ADC might be offseted resuling in an offset error
+  An ADC might be offset resulting in an offset error
   <img src="res/Analog and Digital/image-20230405104250649.png" alt="image-20230405104250649" style="zoom:50%;" />
   *(Offset Error is -1.5LSB in the diagram above)*
 * **Gain Error**
@@ -49,6 +50,8 @@ A SAR-ADC does a binary search to find the digital value of $V_{in}$. To do this
 The `Sample/Hold` block reads $V_{in}$ and holds it for a specified time. This is needed since the input against, which the state machines tests against, shouldn't change. Additionally, it also decouples the SAR-ADC from the input resulting the input not being loaded.
 
 <img src="res/Analog and Digital/image-20230405103042117.png" alt="image-20230405103042117" style="zoom:67%;" />
+
+The algorithm sets each bit to `1`, starting with the `MSB`. It then generates this voltage and compares it to the $V_{in}$. If it is larger, the algorithm keeps the `1`, otherwise a `0` is written. 
 
 SAR-ADCs are a lot cheaper, as it uses a cheap DAC. For each additionall bit of resolution an additional clock cycle is needed for the SAR-ADC.
 

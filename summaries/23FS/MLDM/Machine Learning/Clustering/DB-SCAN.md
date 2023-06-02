@@ -1,25 +1,26 @@
 ### DB-SCAN
 
+![image-20230601110055127](res/DB-SCAN/image-20230601110055127.png)
+
 DB-SCAN categorizes each point as:
 
 * **Core Point**
   A point with at least $minPts$ within the distance $\varepsilon$ from itself
 
 * **Border Point**
-
   A point with at least one core point within the distance $\varepsilon$ of itself
-
+  
 * **Noise Point**
   A point which is neither a core point or border point
 
 The algorithm does the following steps:
 
-1. Select an unprocessed data point $P$ and retreive all points within $\varepsilon$
-2. If the amount of points found is grater or equal to $minPts$, then
+1. Select an unprocessed data point $P$ and retrieve all points within $\varepsilon$
+2. Mark $P$ as processed
+3. If the amount of points found is greater or equal to $minPts$, then
    1. then mark as core point
-   2. 
-
-
+   1. Mark all non-core points within $\varepsilon$ as border points (and may override noise) and assign them to the cluster of $P$
+4. Else, if there are no core point or not $minPts$ within $\varepsilon$ mark it as noise
 
 * A smaller $\varepsilon$ leads to more points marked as noise
 * A smaller $minPts$ leads to more clusters 

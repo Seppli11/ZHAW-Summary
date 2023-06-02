@@ -22,7 +22,7 @@ If we have multiple samples (like the cost of an apartment depends on the size, 
 
 Regressions can be meassured 
 
-**TODO**
+
 
 ## Underfit and Overfit
 

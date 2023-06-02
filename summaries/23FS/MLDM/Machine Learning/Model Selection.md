@@ -30,13 +30,15 @@ If we want to also tune hyperparameters of a model, we need an independent valid
 
 ![image-20230327131934228](res/Model Selection/image-20230327131934228.png)
 
-With k-fold cross-validation, we split the training set in to multiple approximately equally sized subsets. We then go through all subsets and use it as a test set and the reset as the training set. Afterwards we have $n$ subsets of metrics (and also parameters). The values of the metrics are summed up and are the k-fold cross-validation score.
+With k-fold cross-validation, we split the training set in to multiple approximately equally sized subsets. We then go through all subsets and use it as a test set and the rest as the training set. Afterwards we have $n$ subsets of metrics (and also parameters). The values of the metrics are summed up and are the k-fold cross-validation score.
 
 <img src="res/Model Selection/image-20230327132843101.png" alt="image-20230327132843101" style="zoom:67%;" />
 
-k-fold -validation is only used for hyperparameter tuning by optimising for the best k-fold cross-validation score. With those found hyperparameter, one can train the model and determine the best parameters.
+k-fold-validation is only used for hyperparameter tuning by optimising for the best k-fold cross-validation score. With those found hyperparameter, one can train the model and determine the best parameters.
 
 This  is also called leave-one-out cross-validation (LOOCV) if we have $n$ samples and use $n$ folds. This results in $1$ test sample and $n-1$ training samples for each fold.
+
+After the k-fold-validation the entire training set can be used to train the mod
 
 ## Learning Curves
 

@@ -1,4 +1,4 @@
-# Layer 2
+# Layer 2 - Data Link
 
 ## Extensible Authentication Protocol (EAP)
 

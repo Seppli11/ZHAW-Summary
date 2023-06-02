@@ -29,11 +29,13 @@ To calculate the distance, the Pythagorean theorem can be used.
 
 As the stop criteria, multiple implementation can be used:
 
-* Stop when the coordinates of the centroids change very little
-* Stop when only a small amount of data points are reassigned
-* Stop after a fixed number of iteration
-* Stop after a certain time for the entire computation
+* Stop when the coordinates of the centroids change very little (converges)
+* Stop when only a small amount of data points are reassigned (converges) 
+* Stop after a fixed number of iteration (doesn't necessary converges)
+* Stop after a certain time for the entire computation (doesn't necessary converges)
 * Stop after a low sum of squared error (This doesn't necessarily mean that the centroids converged)
+
+Given enough iteration, k-means always converges to a result. However, this result may not be the optimum.
 
 Because the k-mean algorithm uses chance, the result can very depending on the initial position of the centroids. To elevate this, the algorithm is run multiple times and the best result is used. To calculate the best, the quadratic distance to the closest centroid can be calculated for each data point and then summed up. 
 

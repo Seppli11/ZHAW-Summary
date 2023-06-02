@@ -53,7 +53,7 @@ $$
 \frac 1 2 ||w||^2 + C \sum^m_{i=1}\xi_i\\
 y_i(w^Tx_i+b)\ge 1 - \xi_i
 $$
-$\xi$ expresses how much a sample is missclassified. If $\xi \in [0;\infty[$, then the sample is in the margin or on the wrong side, if $\xi\le 0$, then the sample is on the correct side.
+$\xi$ expresses how much a sample is missclassified. If $\xi \in ]1;\infty[$, then the sample is on the wrong side and missclassified. If $\xi \in ]0; 1]$, then the sample is in the margin and is a margin  If $\xi = 0$, then the sample is on the correct side.
 
 ## Kernel Trick
 

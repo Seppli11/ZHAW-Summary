@@ -34,6 +34,14 @@ To also support the half-word and byte version of `LDR` and `STR`, there are fou
 
 ![image-20230222113114925](res/Hardware/image-20230222113114925.png)
 
+Wait states are used when the CPU talks to a slower slave. The first read has 3 wait states inserted, while the second read has no wait states. 
+
+![image-20230602102418412](res/Hardware/image-20230602102418412.png)
+
+Another option for a slave with variable timing or very long wait states is, that the CPU generates wait states until the slave pulls up a ready line. After that the CPU knows that the slave is ready.
+
+![image-20230602102732251](res/Hardware/image-20230602102732251.png)
+
 ### Example Slave
 
 *Notes: The Flip-Flops write the `D` to the `Q` output, if `E` is set and `CLK` is a rising edges.*
@@ -97,3 +105,5 @@ A CMOS Inverter is build in the following way: A n-type conducts if the gate is 
 This can be extended to allow an additional enable state to disable the inverter:
 
 ![image-20230222105833457](res/Hardware/image-20230222105833457.png)
+
+![image-20230602095815608](res/Hardware/image-20230602095815608.png)

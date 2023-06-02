@@ -28,7 +28,7 @@ An example table would look like
 
 <img src="res/Classification/image-20230327122907445.png" alt="image-20230327122907445" style="zoom:50%;" />
 
-One cannot optimise for all metrics, as some of them are exclusive:
+One cannot optimise for all metrics, the true positive rate and true negative rate cannot both be high.
 
 <img src="res/Classification/image-20230327123736813.png" alt="image-20230327123736813" style="zoom:67%;" />
 
@@ -36,7 +36,7 @@ One cannot optimise for all metrics, as some of them are exclusive:
 
 <img src="res/Classification/image-20230327124042806.png" alt="image-20230327124042806" style="zoom:80%;" />
 
-A ROC Curvve has the recall on the y-axis and the false positive rate on the x-axis. A random classifier would be a linear plot.
+A ROC Curve has the recall on the y-axis and the false positive rate on the x-axis. A random classifier would be a linear plot.
 
 ### Precision-Recall Curve (PR-Curve)
 
@@ -58,9 +58,9 @@ The formula for $F1_{macro}$ is wrong above:
 
 * $F1_{macro}=\frac 1 {class_{num}}\sum_{class} F1_{class}$
 * $F1_{micro=}\frac{2}{1/Recall_{micro}+1/Precision_{micro}}$
-  But this corresponds to the accuracy and, because of this, it is rarely used.
+  But this corresponds to the accuracy and, because of this, it is rarely used
 
-The micro variants are used to see if there are general problems that affect all classes. The macro variants can be used to check if there are problems if individual classes, as this score is more affected by outliers.
+The micro variants are used to see if there are general problems that affect all classes. The macro variants can be used to check if there are problems with individual classes, as this score is more affected by outliers.
 
 ## Logistic Regression
 
@@ -90,3 +90,8 @@ $$
 
 ![image-20230327121353427](res/Classification/image-20230327121353427.png)
 
+## Multi-class Classification
+
+One approach is to do **one-vs-all**, where 
+
+<img src="res/Classification/image-20230601142110411.png" alt="image-20230601142110411" style="zoom:50%;" />

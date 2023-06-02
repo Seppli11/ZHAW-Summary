@@ -27,6 +27,8 @@ The `TIM2` and `TIM5` are 32-bit timers and the `TIM3` and `TIM4` are 16-bit tim
 
 To enable the timers, the respective control bits need to be enabled in the `reset and clock control` (RCC) registry.
 
+The following shows the RCC registry configuration:
+
 ![image-20230329103429237](res/Timer/image-20230329103429237.png)
 
 ![image-20230329103441039](res/Timer/image-20230329103441039.png)
@@ -34,9 +36,11 @@ To enable the timers, the respective control bits need to be enabled in the `res
 * `DIR`: Tells the timer if it should count up or down
 * `UIE`: Enables the interrupt from the timer
 
-In C, the structures `TIMx` can be used to configure it (e.g. `TIM2->ARR = 3200 -1;`).
+In C, the structures `TIMx` can be used to configure it (e.g. `TIM2->ARR = 3200 - 1;`).
 
 The `TIMx_ARR` (`TMx->ARR`) is the `ARR` flag, the `TIMx_CNT` (`TIMx->CNT`) is the counter variable and the `TIMx_PSC` (`TIMx->PSC`) is the prescaler.
+
+When the center-aligned mode is enabled, the timer counts from `0` up to `ARR-1`, and then from `ARR` to `1`. This leads to the counter register having the following values: `[0, 1, 2, 3, 4, 3, 2, 1, ...]` for `ARR=4`.
 
 ## Input Capture
 
@@ -45,6 +49,8 @@ The `TIMx_ARR` (`TMx->ARR`) is the `ARR` flag, the `TIMx_CNT` (`TIMx->CNT`) is t
 If a value should be measured from an input source at an exact time, the timer can be configured to automatically read a value from the input source and store it. If the input were to be captured from the interrupt, then the program might miss the signal because the CPU ran higher prioritised interrupt.
 
 After the `CCR` captured a value it needs to be re-enabled before the next value is written into the `CCR` register.
+
+
 
 ## Pulse Width Modulation (`PWM`)
 

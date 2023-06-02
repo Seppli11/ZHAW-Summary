@@ -8,6 +8,8 @@ The diagram below shows an example implementation of a transmitter and receiver 
 
 ![image-20230322101813273](res/UART/image-20230322101813273.png)
 
+The clocks need to be close enough that the max deviation is $\pm 0.5 bits$
+
 ## Timing
 
 UART starts with a start bit to synchronise the clocks. After the receiver reads the start bit, it waits for $1.5T$ before reading data. This is to ensure that the receiver reads in the middle of the clock signal.

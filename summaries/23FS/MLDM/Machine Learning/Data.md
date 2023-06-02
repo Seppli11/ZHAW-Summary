@@ -94,9 +94,34 @@ As data will rarely be in the correct format and quality needed for analysis, th
 
 ### Feature Scaling
 
+Feature scaling is used to get all data in the same number range since many algorithm perform poorly with different number ranges (e.g. person height between 1.5 and 2.2m, and wheight between 65kg and 80kg)
+
+![image-20230601100535048](res/Data/image-20230601100535048.png)
+
 #### Min-Max Normalisation
+
+This will transform all data points between `0` and `1`
+$$
+x'=\frac{x - \min(x)}{\max(x) - \min(x)}
+$$
+
+
+![image-20230601100040613](res/Data/image-20230601100040613.png)
 
 #### Standardisation
 
+This will transform the data to be distributed around `0` 
+$$
+x'=\frac{x-\mu(X)}{\sigma}
+$$
+$\sigma$=Standard Diviation ($\sigma^2$=Varianz)
+
+$\mu$=Average
+
+![image-20230601100424562](res/Data/image-20230601100424562.png)
+
 #### Logarithm
 
+Apply the natural logarithm to the data
+
+![image-20230601100510700](res/Data/image-20230601100510700.png)

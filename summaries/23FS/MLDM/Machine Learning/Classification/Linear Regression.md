@@ -7,6 +7,15 @@ $$
 
 **TODO**: Other models like logistic regression model.
 
+## Assumption of Linear Regression
+
+The following assumptions are made for the input and output of a linear regression:
+
+* **Linearity**: the input and output correlat linearly
+* **Independence:** the outcome of one sample does not affect the outcome of a different sample
+* **Normality:** Errors should be normally distributed (large deviations from the mean should be more unlikely)
+* **Equality of Variance:** Error distribution should be the same for all input values
+
 ## Cost Function
 
 To find a fitting function $h_\theta$, we want to minimise $\frac{1}{2m}\sum^m_{i=0}(h_\theta(x_i)-y_i)^2$ (halve of the average of the summed error squared). More formally, this is named a cost function:
@@ -70,11 +79,13 @@ There are multiple "modes" how the gradient descent can function:
 
 * Mini-Batch Gradient Descent
 
-  $n$ samples are used to calculate the incline
+  $n$ random samples are used to calculate the incline
 
 * Stochastic Gradient Descent
 
-  One sample is used to calculate the incline
+  One random sample is used to calculate the incline
+
+![image-20230601132527761](res/Linear Regression/image-20230601132527761.png)
 
 ## Multivariate Linear Regression
 
@@ -104,8 +115,24 @@ $$
 & \hspace{2em} \theta_j := \theta_j-\alpha \frac{\partial}{\partial \theta_0}J(\theta_0, \theta_1)
 =\theta_j-\alpha \frac{1}{m}(h_\theta(x^{(i)}) - y^{(i)})\cdot x_j^{(i)}\\
 &\hspace{2em}\text{for } j \in \{0, 1, ..., n+1\}\\
-&\hspace{2em} \text{(simultaneously update } \theta_j \text{)}
+&\hspace{2em} \text{(simultaneously update } \theta_j \text{)}\\
 
 &\text{\}} \\
 \end{flalign}
 $$
+
+## Learning Rate
+
+$\alpha$ is the learning rate. If it is too low, the steps are very small. If they are high, gradient descent jumps around.
+
+![image-20230601132717255](res/Linear Regression/image-20230601132717255.png)
+
+## Evaluation Metrics for Linear Regression
+
+$R^2$ is the percentage of samples which can be explained by the regression.
+
+![image-20230601133647826](res/Linear Regression/image-20230601133647826.png)
+
+![image-20230601133707123](res/Linear Regression/image-20230601133707123.png)
+
+![image-20230601133852091](res/Linear Regression/image-20230601133852091.png)

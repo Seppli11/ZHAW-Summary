@@ -35,7 +35,9 @@ The clock signal of the master is inverted. This was done to help with the inher
 
 For the CPU the Rx-Buffer and Tx-Buffer are at the same address.
 
-## Flags
+## Flags/Interrupts
+
+The following flags generate interrupts
 
 * **TXE**: TX-Buffer empty
   The CPU had wrote some data to the TX-Buffer which was sent out
@@ -58,6 +60,10 @@ In the following diagram, the internal communication in the CPU, when transmitti
 It works similarly when the CPU receives data.
 
 ![image-20230315112251930](res/SPI/image-20230315112251930.png)
+
+The following flow can be used to simultaneously read and write from a SPI device. Alternatively interrupts, which are generated when `TXE` and `RXNE` change to `1`, can be used.
+
+![image-20230602113950828](res/SPI/image-20230602113950828.png) 
 
 ## Implementation on the STM32F4xxx
 
