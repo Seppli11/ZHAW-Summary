@@ -59,7 +59,7 @@ SAR-ADCs are a lot cheaper, as it uses a cheap DAC. For each additionall bit of 
 
 ![image-20230405111205853](res/Analog and Digital/image-20230405111205853.png)
 
-`SQR1/2/3` specifies **TODO**.
+`SQR1/2/3` specifies the sequence of channels.
 
 ![image-20230425230417305](res/Analog and Digital/image-20230425230417305.png)
 
@@ -71,7 +71,7 @@ In single channel mode, the ADC only samples one signal.
 
 The sampling rate depends on the internal sampling rate and the conversion time: $T_{total}=T_{sample} + T_{conv}$
 
-$T_{sample}$ can be between 3 and 480 cycles and is set in `ADC_SMPR1` and `ADC_SMPR2`. `T_{conv}` depends on the resolution:
+$T_{sample}$ can be between 3 and 480 cycles and is set in `ADC_SMPR1` and `ADC_SMPR2`. $T_{conv}$ depends on the resolution and has a one-to-one relea:
 
 * 12 bits 12 ADCCLK cycles
 * 10 bits 10 ADCCLK cycles
@@ -79,6 +79,12 @@ $T_{sample}$ can be between 3 and 480 cycles and is set in `ADC_SMPR1` and `ADC_
 * 6 bits 6 ADCCLK cycles
 
 The sampling rate is $f=\frac 1 {T_{total}}$
+
+The max sample rate is: 
+$$
+f_{max}=\frac{f_{ADC}}{PreScaler \cdot T_{total}}
+$$
+
 
 There is also a watch dog available, which can check a specific chanel for a high and log threashold and interrupts the CPU if the signal trips the watch dog.
 
@@ -93,6 +99,10 @@ There is also a watch dog available, which can check a specific chanel for a hig
 `L` specifies the number of chanels to sample. `0` => 1 chanel, `1` => 2 chanels, ...
 
 <img src="res/Analog and Digital/image-20230405112503797.png" alt="image-20230405112503797" style="zoom:60%;" />
+
+The following is a diagram of the timing of an ADC:
+
+![image-20230602160343563](res/Analog and Digital/image-20230602160343563.png)
 
 ## Digital to Analog Converter (DAC)
 

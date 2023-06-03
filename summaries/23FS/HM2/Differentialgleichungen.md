@@ -139,13 +139,15 @@ y_{i+1}&=y_i+h\sum^s_{n=1}b_nk_n
 $$
 Dabei ist $s\in \N$ die Stufenzahl und $a_{nm}$, $b_n$ und $c_n$ sind Konstante.
 
+<img src="res/Differentialgleichungen/image-20230603103941187.png" alt="image-20230603103941187" style="zoom:67%;" />
+
 * Euler-Verfahren: $s=1$
   <img src="res/Differentialgleichungen/image-20230510092351343.png" alt="image-20230510092351343" style="zoom:50%;" />
 * Mittelpunkt-Verfahren: $s=2$
   <img src="res/Differentialgleichungen/image-20230510092335324.png" alt="image-20230510092335324" style="zoom:50%;" />
 * Modifiziertes Euler-Verfahren: $s=2$
   <img src="res/Differentialgleichungen/image-20230510092322500.png" alt="image-20230510092322500" style="zoom:50%;" />
-* Klassisches Runge-Kutcd dfta Verfahren: $s=4$
+* Klassisches Runge-Kutta Verfahren: $s=4$
   <img src="res/Differentialgleichungen/image-20230510092311986.png" alt="image-20230510092311986" style="zoom:50%;" />
 
 ## Differentialgleichung-System
@@ -194,12 +196,12 @@ $$
    $y''' = 10e^{−x} − 5y'' − 8y' − 6y\Rightarrow z_3'=y''' = 10e^{−x} − 5z_3 − 8z_2 − 6z_3$
 
 4. Es sind nun drei Gleichungen: 
-   $z_1'=y'=z_2$
-   $z_2'=y''=z_3$
-   $z_3' = 10e^{−x} − 5z_3 − 8z_2 − 6z_3$
+   $z_1'=y'=z_2$  
+   $z_2'=y''=z_3$  
+   $z_3' = 10e^{−x} − 5z_3 − 8z_2 − 6z_3$  
 
 5. In diesem Fall können sie auch vektoriel geschrieben werden:
-   $\begin{pmatrix}z_2 \\ z_3 \\ 10e^{−x} − 5z_3 − 8z_2 − 6z_3 \end{pmatrix}=\begin{pmatrix}z_1' \\ z_2' \\ z_3'\end{pmatrix}$
+   $\begin{pmatrix}z_2 \\ z_3 \\ 10e^{−x} − 5z_3 − 8z_2 − 6z_3 \end{pmatrix}=\begin{pmatrix}z_1' \\ z_2' \\ z_3'\end{pmatrix}$  
 
    Mit der Start-Bedingungen: $\vec z(0)=\begin{pmatrix}0 \\ 0 \\ 0\end{pmatrix}$
    
