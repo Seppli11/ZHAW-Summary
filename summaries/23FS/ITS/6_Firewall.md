@@ -141,11 +141,13 @@ chain http-traffic { # non-base-chain
 }
 ```
 
-Chains must be wrapped in a table directive. Tables have a packet family for which they are used. `ip` = IPv4, `ip6` = IPv6 and `inet` = IPv4 and IPv6
+### Tables
+
+Chains must be wrapped in a **table** directive. Tables have a packet family for which they are used. `ip` = IPv4, `ip6` = IPv6 and `inet` = IPv4 and IPv6
 
 ```bash
 #!/usr/sbin/nft -f
-flush ruleset # clean all tables and chains
+flush ruleset # clear all tables and chains
 
 # inet = ipv4 and ipv6
 table inet myinput {
@@ -160,7 +162,9 @@ table inet myinput {
 }
 ```
 
-By using the `#!/usr/sbin/nft -f` , this can be executed as a shell script.
+By using the `#!/usr/sbin/nft -f` , this can be executed as a shell script. All changes will be done in an atomic fashion.
+
+### Variables
 
 These scripts can also use variables:
 

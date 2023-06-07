@@ -1,5 +1,7 @@
 # Memory
 
+![image-20230607100242760](res/Memory/image-20230607100242760.png)
+
 ## Memory Cell
 
 One memory cell is a transistor which can pull down the bit line, if "set". This means a transistor is by default `1`, and only if programmed can become a `1`.
