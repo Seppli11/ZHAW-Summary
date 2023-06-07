@@ -10,8 +10,10 @@ The L1-cache can be split into data and instruction cache which would represent 
 
 * Spacial Locality
   If one byte is read, it is probable that the next few bytes will read as well
+  This is archived by having a cache which works in blocks.
 * Temporal Locality
   If one byte is read, it will probably be read again
+  This is automatically archived by a cache.
 
 ```c
 for(int i = 0; i < 10000; i++) {

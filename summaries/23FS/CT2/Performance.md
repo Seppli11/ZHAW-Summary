@@ -25,14 +25,16 @@ A ISR needs to be short, not just short on average, since if the ISR takes longe
 To implement this, the following can be done:
 
 * Move tasks with relaxed time-constraints to the main loop
-* Make ISR available for oan other time-ciritical taks
+* Make ISR available for an other time-ciritical taks
 * Feed the interrupt into a queue and dequeue in the main process.
 
 ## Interrupt Latency
 
 <img src="res/Performance/image-20230517103654702.png" alt="image-20230517103654702" style="zoom:80%;" />
 
-$t_{latency}$ is the time needed to start executing the first instruction of the ISR. This can be relevant where guaranteed service time required (e.g. audio/video steaming).
+$t_{latency}$ is the time needed to start executing the first "usful" instruction of the ISR. This can be relevant where guaranteed service time required (e.g. audio/video steaming).
+
+The $t_{latency}$ can be influenced by hardware (pipelining, different execution time per instruction) or software code, like saving additional registers, higher prioritised interrupts, ...
 
 While reducing this can be difficult, there are some tricks to improve it:
 

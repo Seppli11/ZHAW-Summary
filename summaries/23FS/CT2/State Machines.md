@@ -31,3 +31,28 @@ The following is an example of a state machine for a traffic light:
 ## Event Queue
 
 ![image-20230510111747883](res/State Machines/image-20230510111747883.png)
+
+## State Machine in C
+
+A state machine can be implemented with the following flow diagram:
+
+<img src="res/State Machines/image-20230607132903213.png" alt="image-20230607132903213" style="zoom:67%;" />
+
+The following c code implements this:
+
+```c
+int main(void) {
+    event_t event;
+    fsm_init();
+    while (1) {
+        event = get_event();
+        if (event != NO_SWITCH) {
+        	fsm_handle_event(event);
+        }
+    }
+}
+```
+
+`fsm_handle_event(event)` follows the following flow. **Important**: Do **not** forget **BREAK** in switch statements!!!!!
+
+<img src="res/State Machines/image-20230607133355924.png" alt="image-20230607133355924" style="zoom:40%;" />

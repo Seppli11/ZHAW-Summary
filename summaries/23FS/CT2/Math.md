@@ -17,3 +17,23 @@ $$
 \end{flalign}
 $$
 
+## Cache
+
+$$
+Access Time=HitTime + MissRate\cdot MissPenality
+$$
+
+$$
+\begin{align}
+HitRate &= \frac{NrOfHits}{NrOfAccess}\\
+MissRate &= \frac{NrOfMiss}{NrOfAccess}=1 - HitRate\\
+\end{align}
+$$
+
+## Performance
+
+$$
+impact=f_{int}\cdot t_{ISR}\cdot 100\%
+$$
+
+<img src="res/Math/image-20230607134344555.png" alt="image-20230607134344555" style="zoom:80%;" />
