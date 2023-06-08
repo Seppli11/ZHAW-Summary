@@ -23,3 +23,7 @@ For logistic regresion: This can't be the derivation of the $J(\theta)$ given in
 What is a landmark? (SVM/p.29)
 
 After one vs rest or one vs one, what to do with the different hyper plane? Merge them all toghether by drawing them on the same plot? (SVM/p.37,p38)
+
+**Do we have to produce python code?**
+
+What is a soft-max regression (Neural Network/p.14)

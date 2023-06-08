@@ -117,7 +117,7 @@ device management, ...).
 * Subvolume
   In BtrFS a subvolume works just like a directory, but has its own file tree, which can be mounted separately.
 * Extend
-  A mapping fro a logical area in a file, to a contiguous phyical area on disk
+  A mapping from a logical area in a file, to a contiguous phyical area on disk
 * Physical and logical chunks
   BtrFS splits each device into physical chunks which are logically grouped. This allows a logical chunk to contain physical chunks from different disks.
 

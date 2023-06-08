@@ -23,4 +23,4 @@
   * How can two free blocks exist? 
   * Can both blocks free and blocks in use be `1`?
 * Can Logical Groups contain both logical and physical volumes? What are volume groups?
-* What exactly are extends?
+* What exactly are extends? And why are they needed?

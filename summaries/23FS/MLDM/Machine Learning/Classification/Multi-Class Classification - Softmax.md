@@ -9,3 +9,5 @@ For this, there is a linear combination of the input $x$ and weights for each cl
 One drawback of softmax is, that is still can only create linear decision bounderies.
 
 ![image-20230508125657859](res/Multi-Class Classification - Softmax/image-20230508125657859.png)
+
+![image-20230608110912761](res/Multi-Class Classification - Softmax/image-20230608110912761.png)

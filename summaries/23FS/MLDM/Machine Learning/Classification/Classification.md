@@ -86,6 +86,8 @@ $$
 Cost(h_\theta(x), y) = -y_i\log (h_\theta(x_i))-(1-y_i)\cdot \log(1-y_i)\log(1-h_\theta(x_i))
 $$
 
+This formula is also called log-likelihood.
+
 ### Gradient Descent with Logistic Regression
 
 ![image-20230327121353427](res/Classification/image-20230327121353427.png)

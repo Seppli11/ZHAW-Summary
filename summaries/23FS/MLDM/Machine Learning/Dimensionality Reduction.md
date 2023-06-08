@@ -5,6 +5,8 @@ Some primitive methods of reducing the dimensions are:
 * Remove features with too many missing values
 * Remove features with a low or zero variance
 * Remove features with high correlations
+* Backward Feature Elimination
+* Apply principle component analysis or tSNE
 
 ## Principle Component Analysis (PCA)
 
@@ -67,7 +69,7 @@ To find the best value for $k$ for PCA, the following method can be used.
 
 ![image-20230424125742014](res/Dimensionality Reduction/image-20230424125742014.png)
 
-A loading plot, plots the values of the $W$ matrix. Each entry in the matrix shows the correlation between the variable and the component. The value is between $-1$ and $1$, where $0$ means no correlation and $-1$ and $1$ means a very strong correlation (the sign can be ignored).
+A "loading plot" plots the values of the $W$ matrix. Each entry in the matrix shows the correlation between the variable and the component. The value is between $-1$ and $1$, where $0$ means no correlation and $-1$ and $1$ means a very strong correlation (the sign can be ignored).
 
 In the plot, we can see that Hardness has almost no correlation with the 1st component, since it is close to $0$ on the X-axis, while having more correlation on the 2nd component, as it is near $1$ on the Y-axis.
 

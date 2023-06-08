@@ -1,6 +1,15 @@
 # Neural Network
 
+![image-20230608125149987](res/Neural Network/image-20230608125149987.png)
+$$
+NrOfWheights=layerSize^k\\
+NrOfPaths=
+$$
+Where $layerSize$ is the number of nodes per layer and $k$ the number of layers.
+
 ## Feed-Forward Neural Network
+
+In a feed-forward neural network, all layers all fully-connected (every node is connected to every node of the next layer), but have no connection with in the same layer. Thus the information can only flow forward.
 
 ![image-20230508130141655](res/Neural Network/image-20230508130141655.png)
 
@@ -43,7 +52,7 @@ $$
 
 ### Vanishing Gradient Problem
 
-One problem with back progagation is that with large model and .
+One problem with back progagation is that with large model and the sigmoid function is that all partial derivations are between $-1$ and $1$. This leads to the partial derivation getting smaller and smaller, thus the model learns very slowly. ReLu solves this to a degree, since the partial derivation can either be $0$ or $1$.
 
 ## Optimizing
 
@@ -53,7 +62,9 @@ The following techniques are ways to optimise a model and prevent it from overfi
 
 ###### ![image-20230515131438170](res/Neural Network/image-20230515131438170.png)
 
-When doing dropout, during training some nodes are not updated. This should cause other neurons to learn the same behaviour and make the model overall more stable. Typical dropout rates are between 20% and 50%.
+When doing dropout, during training (during testing all nodes are used) some nodes are not updated. This should cause other neurons to learn the same behaviour and make the model overall more stable. Typical dropout rates are between 20% and 50%. 
+
+From experience, larger networks with dropout perform better then small networks without dropout.
 
 ### Early Stopping
 
@@ -74,6 +85,10 @@ To generate more training data, one can generate them artificially by:
 * modify existing training samples
 
 This should cause the model to become more roust and stable.
+
+This can also work for text:
+
+![image-20230608130846167](res/Neural Network/image-20230608130846167.png)
 
 ### In Case of Bad Performance
 
@@ -102,3 +117,25 @@ If a model doesn't predict to a satisfactory degree, one should analyse the lear
 ![image-20230515133003220](res/Neural Network/image-20230515133003220.png)
 
 The main idea is to cut a function into small pieces and use two neurons to approximate these steps. The left diagram shows two neurons approximating a step function.
+
+## Keras
+
+<img src="res/Neural Network/image-20230608122909449.png" alt="image-20230608122909449" style="zoom:80%;" />
+
+```python
+model = Sequential()
+model.add(Dense(5, input_shape=(72,)))
+model.add(Activation('relu'))
+model.add(Dense(7, input_shape=(5,)))
+model.add(Activation('relu'))
+model.add(Dense(2, input_shape=(7,)))
+model.compile(optimizer='sgd', loss='mse')
+
+# Data:
+X = np.random.random((100, 72))
+y = np.random.random((100, 2))
+
+# Train:
+model.fit(X, y, epochs=1, batch_size=10)
+```
+
