@@ -26,6 +26,8 @@ Bei der dynamischen Methode wird geschaut, wann auf dem Zeitstrahl ein Geldfluss
 
 Variable Kosten sind Abhängig von wie viel produziert/gearbeitet wird (z.B. Lohnkosten). Fixkosten sind nicht abhängig von wie viel produziert wird (z.B. Mietkosten).
 
+Kalkulatorische Abschreibungen sind die $\frac{Anschaffungskosten}{Nutzungsdauer}$. Der kalkulatorischen Zins scheint $\frac{Anschafungskosten \cdot ZinsSatz}{2}$ zu sein.
+
 ### Gewinnvergleichsmethode
 
 Bei der Gewinnvergleichsmethode wird zusätzlich zu den Kosten auch den Erlös benötigt, welcher durch die Maschine generiert wurde. 
@@ -51,6 +53,8 @@ Die Rentabilität sagt aus, wie viel des eingesetzten Kapital pro Jahr wieder ei
 ![image-20230512111043691](res/Investitionsrechnung/image-20230512111043691.png)
 
 Beide Cashflows müssen dasselbe ergeben. Daher kann gewählt werden, welcher Cashflow benützt wird.
+
+Bei dieser Rechnung ist der Kapitaleinsatz nicht durch $2$ geteilt.
 
 ### Kapitalwertmethode
 

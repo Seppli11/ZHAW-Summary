@@ -14,7 +14,7 @@ Die Finanzbuchhaltung analysiert ein Betrieb als ganzes, während die Betriebsbu
 
 ## Bilanz
 
-Die Billanz ist eine Bestandsaufnahme eines Unternehmen und stellt das vorhandene Vermögen und die Schulden an einem Stichtag dar. Die Bilanz wird als Steuerdokument verwendet.
+Die Bilanz ist eine Bestandsaufnahme eines Unternehmen und stellt das vorhandene Vermögen und die Schulden an einem Stichtag dar. Die Bilanz wird als Steuerdokument verwendet.
 
 <img src="res/Basics/image-20230331101535408.png" alt="image-20230331101535408" style="zoom:67%;" />
 

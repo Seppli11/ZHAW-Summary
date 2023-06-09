@@ -19,7 +19,7 @@
 * Page Table Entry: Do both the locked bit and protected/read-only bit prevent the block from being swapped? (Mem/p.14)
 * Where and when is are the following list written? Are these on the fs itself and are updated by the fs?![image-20230605160718414](res/Test/image-20230605160718414.png)
   * In the same graphics, aren't these bit maps? 
-  * How are free blocks found? Are there lists of free bl
+  * How are free blocks found? Are there lists of free blocks?
   * How can two free blocks exist? 
   * Can both blocks free and blocks in use be `1`?
 * Can Logical Groups contain both logical and physical volumes? What are volume groups?

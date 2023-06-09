@@ -88,6 +88,8 @@ Einstandspreis sind die Kosten, damit ein Produkt in der Firma steht (Produktpre
 
 Bei X-Güter ist ein kontinuierlicher Materialfluss möglich. Bei den Y- und Z-Güter gibt es Bedarfsschwankungen, welche durch Lagerbestände aufgefangen werden müssen.
 
+<img src="res/Materialwirtschaft/image-20230609143248705.png" alt="image-20230609143248705" style="zoom:67%;" />
+
 ## Lagerfunktionen
 
 ![image-20230428113232885](res/Materialwirtschaft/image-20230428113232885.png)![image-20230428113239918](res/Materialwirtschaft/image-20230428113239918.png)

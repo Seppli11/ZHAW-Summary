@@ -16,6 +16,8 @@ Hilfskostenstellen werden verteilt auf Hauptkostenstellen, welche wiederum auf d
 
 ![image-20230414103022060](res/Kostenrechnung/image-20230414103022060.png)
 
+*(FiBu Finanz Buchhaltung, BeBu: Betriebsbuchhaltung)*
+
 Beispiel 2:
 
 ![image-20230414110636347](res/Kostenrechnung/image-20230414110636347.png)

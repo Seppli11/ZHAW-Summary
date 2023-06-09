@@ -74,6 +74,8 @@ Als Beispiel für dies für Easy-Jet:
 
 ##### PESTLE-Analyse
 
+<img src="res/Basics/image-20230609104947174.png" alt="image-20230609104947174" style="zoom:70%;" />
+
 Mit der PESTLE-Analyse wird der Einfluss von sechs externen Umwelt-Faktoren eines Unternehmen untersucht:
 
 * Political
@@ -85,6 +87,10 @@ Mit der PESTLE-Analyse wird der Einfluss von sechs externen Umwelt-Faktoren eine
 * Environment/Ökologisch
 * Legal
   Neue Gesetze
+
+Das folgende ist ein Beispiel für die PESTLE-Analyse für eine One Wheel Firma.
+
+![image-20230609213157802](res/Basics/image-20230609213157802.png)
 
 ##### Fünf Kräfte Modell von Porter
 
@@ -154,3 +160,14 @@ In der folgenden Abbildung sind Beispiele von Firmen:
 ![image-20230303131931294](res/Basics/image-20230303131931294.png)
 
 ![image-20230303132153903](res/Basics/image-20230303132153903.png)
+
+Im folgenden Beispiel wird die vier Produkt-Markt-Strategie nach Ansoff für eine Bungalow-Vermietungs Firma entwickelt:
+
+Beschreiben Sie 3 mögliche Wachstumsstrategien basierend auf Ansoff (Wachstumsstrategien) für die Firma Chill Out Time:
+
+* **Produktentwicklung**:
+  Bungalow weiterentwickeln. Bspw. Familienbungalows oder Themenbungalows einführen, bspw. Karibikbungalow, Orientalbungalow. Oder neben den Bungalows auch kleine Boote oder Baumhäuser zum Übernachten vermieten.
+* **Diversifikation**: 
+  Neben den Bungalows könnte die Chill Out Time AG auch noch weitere Produkte oder Services Anbieten, bspw. Tauch oder Surfkurse, oder geführte Exkursionen auf Costa Rica. Oder eigene Produkte produzieren, bspw. Kokosnusswasser. 
+* **Marktentwicklung**: 
+  Vermarktung der Bungalows in neuen Märkten, bspw. Fokus auf asiatisch Länder (Japan oder Südkorea, ev. auch China). So werden neue Kundengruppen aus neuen Märkten gewonnen.

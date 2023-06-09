@@ -36,7 +36,7 @@ Auf den Einstandswert/Einstandspreis sind die innerbetriebliche Kosten, wie Löh
 
 <img src="res/Kalkulation/image-20230421111928289.png" alt="image-20230421111928289" style="zoom:67%;" />
 
-Nun kann denn Profit pro Produkt ausgerechnet werden:
+Nun kann denn Profit pro Produkt in einer Verkaufskalkulation ausgerechnet werden:
 
 <img src="res/Kalkulation/image-20230421112257683.png" alt="image-20230421112257683" style="zoom:67%;" />
 
