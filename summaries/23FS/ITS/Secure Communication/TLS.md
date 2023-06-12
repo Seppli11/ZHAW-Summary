@@ -25,7 +25,7 @@ TLS defines multiple "protocols" for different purposes. Each of those protocols
 
 ![image-20230424102542942](res/TLS/image-20230424102542942.png)
 
-The payload can be a handshake package, an alert package or a change cipher spec. 
+The payload can be a handshake package, an alert package or a change cipher spec. TLS 1.3 says it is actually TLS 1.2 to prevent old firewalls to block it. The version field is ignored when using TLS 1.3
 
 ## TLS Handshake
 
@@ -116,15 +116,19 @@ Everything is fine... connection established
 
 ![image-20230424105358173](res/TLS/image-20230424105358173.png)
 
-The tag functions as a signature which ensures that nobody tampered with the data (by e.g. removing some bytes blindly). Both the server and client count each fragment and the counter is an input for the calculation of the tag. This mitigates replay attacks.
+The tag functions as a signature which ensures that no body tampered with the data (by e.g. removing some bytes blindly). Both the server and client count each fragment and the counter (or a sequence number) is an input for the calculation of the tag. The counter itself is not sent. However, the counter is not needed to reorder packages since TCP guarantees that. This mitigates replay attacks.
 
 The fragmentation on TLS level is needed as the client needs the tag to ensure the body is actually valid. This ensures that the client gets the data in a timely fashioned.
 
 ## TLS Tear Down
 
-**TODO**
+To tear down a TLS connection a participant first has to send a `close_notification` alert which prompts the other side to shutdown the connection. If a participant recievecs a TCP `FIN` package before the `close_notification`, the TLS connection was ended uncleanly. 
 
-## Security Analysis
+![image-20230612111641161](res/TLS/image-20230612111641161.png)
+
+This is done to prevent truncation attacks, where the attacker injects a TCP `FIN` package to prevent the server or client to send all information. For example a footer on a web page.
+
+## $Security Analysis
 
 ## DTLS
 

@@ -1,6 +1,8 @@
 # Integrity and Authentication
 ![image-20230320100622257](res/4_Integrity and Authentication.md/image-20230320100622257.png)
 
+In this chapter, errors during transit aren't important and are usually already handled by the hardware. These hash functions are used to prevent malicious modifications of messages.
+
 ## Cryptographic Hash Function
 
 A cryptographic hash function maps a variable-length input bits to a fixed-size output string. Typically, the output size is `128`, `160`, `256` or `512` (today only `256` bits and upwards should be used).
@@ -9,8 +11,8 @@ Important properties are:
 
 * The hash can be efficiently computed
 * The mapping should be pseudo-random. No connection between the message and its hash should exist. Usually, this means one bit in the input should change half of the output bits.
-* Given a hash, I should be practically impossible to find a message that produces the hash (preimage resistance).
-* It should be practically impossible to find two messages that map to one hash (collision resistance).
+* Given a hash, I should be practically impossible to find a message that produces the hash (**preimage resistance**).
+* It should be practically impossible to find two messages that map to one hash (**collision resistance**).
 
 If an algorithm fulfils all of these properties, a hash can be used as a stand-in for a message.
 

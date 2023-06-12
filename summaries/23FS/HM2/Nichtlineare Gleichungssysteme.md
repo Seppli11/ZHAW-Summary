@@ -64,6 +64,8 @@ Nach dem Linearisieren wird ein nichtlineare Funktion lineare und kann mit bekan
 
 ## Newton-Verfahre
 
+>  Das Newton-Verfahren erwartet, dass $f(\vec x_n)=\vec 0$ gilt.
+
 $$
 \vec x_{n+1}=\vec x_n-(Df(\vec x_n))^{-1}\cdot f(\vec x_n)
 $$

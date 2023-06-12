@@ -104,7 +104,7 @@ Dies sind aber "nur" 10 Gleichungen, nicht die benötigten 12. Daher gibt es noc
 * natürliche kubische Splinefunktion
   $S_0''(x_0)=0, S_2(x_3)''=0$
 * peridodische kubische Splinefunktion
-  $S_0'(x0)=S_2'(x_3), S_0''(x0)=S_2''(x_3)$$
+  $S_0'(x0)=S_2'(x_3), S_0''(x0)=S_2''(x_3)$
 * kubische Spliefunktion (mit not-a-knot Bedinungen)
   $S_0'''(x_1)=S_1'''(x_1), S_1'''(x_2)=S_2'''(x_2)$
 
@@ -225,13 +225,13 @@ $$
 \begin{align}
 g(\lambda)&\approx g(\lambda_0)+Dg(\lambda_0)\cdot(\lambda - \lambda_0)\\
 \\
-Df(x)&=\begin{pmatrix}
-\frac{\partial f_1}{\partial x_1}(\vec x) & \frac{\partial f_1}{\partial x_2}(\vec x) & ... & \frac{\partial f_1}{\partial x_n}(\vec x) \\
+Dg(x)&=\begin{pmatrix}
+\frac{\partial g_1}{\partial x_1}(\vec x) & \frac{\partial g_1}{\partial x_2}(\vec x) & ... & \frac{\partial g_1}{\partial x_n}(\vec x) \\
 
-\frac{\partial f_2}{\partial x_1}(\vec x) & \frac{\partial f_2}{\partial x_2}(\vec x) & ... & \frac{\partial f_2}{\partial x_n}(\vec x) \\
+\frac{\partial g_2}{\partial x_1}(\vec x) & \frac{\partial g_2}{\partial x_2}(\vec x) & ... & \frac{\partial g_2}{\partial x_n}(\vec x) \\
 
 ... & ... & ... & ... \\
-\frac{\partial f_m}{\partial x_1}(\vec x) & \frac{\partial f_m}{\partial x_2}(\vec x) & ... & \frac{\partial f_m}{\partial x_n}(\vec x) \\
+\frac{\partial g_m}{\partial x_1}(\vec x) & \frac{\partial g_m}{\partial x_2}(\vec x) & ... & \frac{\partial g_m}{\partial x_n}(\vec x) \\
 \end{pmatrix}
 \end{align}
 $$
@@ -269,4 +269,4 @@ $\lambda_{k+1}$ wird nun folgendermassen berechnet:
 $$
 \lambda_{k+1}=\lambda_k+\frac{\delta_k}{2^p}
 $$
-Falls kein minimales $p$ gefunden werden kan, wird mit $p=0$ gerechnet.
+Falls kein minimales $p$ gefunden werden kann, wird mit $p=0$ gerechnet.

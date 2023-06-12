@@ -41,8 +41,6 @@ When using secret-key cryptography then the open channel is secured by a key $k$
 * Freshness:  Ensure that the received message from Alice is not a reply attack
 * Non-repudiation: Alice and Bob cannot deny they received a message (in this case they are the attackers)
 
-
-
 ## Math Terms
 
 ![image-20230220110859299](res/0_Basic/image-20230220110859299.png)
