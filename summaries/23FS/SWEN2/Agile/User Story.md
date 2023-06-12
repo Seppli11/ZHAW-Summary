@@ -13,6 +13,8 @@ User stories are **not**:
 * They do not need to include all details
 * Too many details give the false impression of completeness. It is still necessary to talk to the customer
 
+Additional information can be supplemented in small sub-stories.
+
 ## The three Cs
 
 * **C**ard
@@ -27,6 +29,12 @@ User stories are **not**:
 Non functional requirements can be formulated as special user stories if they can be worked on and then are done. If this isn't possible, then it can be written to the definition of done.
 
 "The server needs to answer in 10ms" would be written in the definition of done as it is a never-ending story. On the other hand, "The webpage needs to be ported to a different server" could be formulated as a user story.
+
+## Spike
+
+A spike or a knowledge-acquisition stories is a user story with the goal of generating knowledge for the developers. It is usually limited to a max time (timeboxed)
+
+> As a developer I want to prototype two alternatives for the new filtering engine so that I know which is a better long-term choice.
 
 ## Condition of Satisfaction
 

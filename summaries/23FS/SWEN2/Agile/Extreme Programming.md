@@ -8,7 +8,7 @@ In a traditional waterfall model, the resources, scope and time are fixed by a c
 
 ![image-20230302082051182](res/Extreme Programming/image-20230302082051182.png)
 
- In agile development, the quality, time and resources are fixed, but the scope can be managed. Scrum does this by letting the customer choose the next features.
+In agile development, the quality, time and resources are fixed, but the scope can be managed. Scrum does this by letting the customer choose the next features.
 
 ![image-20230302082253139](res/Extreme Programming/image-20230302082253139.png)
 
@@ -40,9 +40,11 @@ In a traditional waterfall model, change at a late stage is viewed as expensive.
 
 ### Small releases
 
+<img src="res/Extreme Programming/image-20230612140438502.png" alt="image-20230612140438502" style="zoom:67%;" />
+
 ### Metaphor
 
-At the beginning of the project a project vision is written...
+At the beginning of the project a project vision is written so everybody has the same understanding of the project and its scope. This applies to technical and non-technical people.
 
 ### Simple Design
 
@@ -65,13 +67,19 @@ A development cycle exists of:
 * Implement the changes
 * Refactor
 
+### Refactoring
+
+When implementing a feature, one should always ask themself if the code and architecture can be improved. Tests provide a safety-net which allows changes to be done without fearing bugs and crashes.
+
 ### Pair Programming
 
-XP dictates that all production code is written by two people looking at one screen. However, this is rarely being done in practice. It can be a useful technique to write the tricky parts of a software.
+XP dictates that all production code is written by two people looking at one screen. However, this is rarely being done in practice. It can be a useful technique to write the tricky parts of a software. 
+
+The pairs should change frequently.
 
 ### Collective Ownership
 
-
+Everybody takes responsible for the whole system. While not everybody can be an export in every system, everybody should know the basics.
 
 ### Continuous Integration
 
@@ -90,4 +98,12 @@ This hasn't materialised in practice, as the customer also has a job to do.
 ### Coding Standards
 
 Collective ownership + constant refactoring means that coding practices must be unified in the team.
+
+### Primary Practicies
+
+<img src="res/Extreme Programming/image-20230612141506041.png" alt="image-20230612141506041" style="zoom:50%;" />
+
+### Corollary (=logische/folgende) Practices
+
+<img src="res/Extreme Programming/image-20230612141523438.png" alt="image-20230612141523438" style="zoom:50%;" />
 

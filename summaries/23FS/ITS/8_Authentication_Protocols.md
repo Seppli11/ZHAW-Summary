@@ -35,6 +35,8 @@ Another, still popular approach, is mobile TAN (mTAN), where a message via SMS i
 
 The user logins are stored and managed by one centralised server. 
 
+Direct user authentication would be if the user directly logged in in the server without the server asking a RADIUS server (or similar).
+
 ### Windows NT LAN Manager (NTLM)
 
 ![image-20230515111022627](res/8_Authentication_Protocols/image-20230515111022627.png)

@@ -18,6 +18,12 @@ When estimating, as the amount of effort increases the accuracy doesn't necessar
 
 Also, an estimate is a range (eg. between 2 and 5 days), not an exact number and not a commitment.
 
+The user stories should be estimated by the team without the product owner. The teams should be aware of that the estimates are crude.
+
+<img src="res/Planing/image-20230612151726268.png" alt="image-20230612151726268" style="zoom:60%;" />
+
+A team should re-estimate a user story when its relative size has changed.
+
 ## Planning Poker
 
 In planing poker, everybody gets cards with the possible story points. The available cards can either be the Fibonacci numbers or $2^n$ (1, 2, 4, 8, ...), but not continuous numbers (1, 2, 3, 4). Additionally, 0 should not be a valid number, as ten tasks with 0 will probably take longer then $10\cdot 0=0$.

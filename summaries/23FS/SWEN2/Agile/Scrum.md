@@ -1,5 +1,7 @@
 # Scrum
 
+![image-20230612131223543](res/Scrum/image-20230612131223543.png)
+
 ![image-20230323081718916](res/Scrum/image-20230323081718916.png)
 
 
@@ -47,13 +49,21 @@ User Story
 
 ## Roles
 
+### Developer
+
+The developers develop the software...
+
+They are responseable for the commiting to a sprint and upholding this commitment, as well sticking to the definition of done.
+
 ### Product Owner
 
-The product owner  defines the features of the product.
+The product owner  defines the features of the product and priotize them. Additionally, the product owner defines when a release with what content will be released.
+
+A product owner also accepts and rejects work done by the developers.
 
 ### Scrum Master
 
-The scrum master ensures that the value of scrum are up hold.
+The scrum master ensures that the values of scrum are upheld.
 
 A scrum master does the following:
 
@@ -92,7 +102,9 @@ In the following table, the **maximum** time each event can take.
 
 ### Sprint Review
 
-In the sprint review the full scrum team is present in addition to the stakeholders. The team can show the work they did in the previous sprint.
+In the sprint review the full scrum team is present in addition to the stakeholders. The team can show the work they did in the previous sprint by usually showing a demo.
+
+Informally, there is a max of 2 hours of prep-time, no slides are allowed and every stakeholder is allowed.
 
 <img src="res/Scrum/image-20230406081007088.png" alt="image-20230406081007088" style="zoom:50%;" />
 
