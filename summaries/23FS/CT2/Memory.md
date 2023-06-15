@@ -30,9 +30,13 @@ Memory cells are organised in a grid:
 
 ![image-20230412103212965](res/Memory/image-20230412103212965.png)
 
+![image-20230614154817798](res/Memory/image-20230614154817798.png)
+
 ## RAM
 
 ### Static Random Access Memory (SRAM)
+
+*(Has an asynchronous interface/without a clock)*
 
 SRAM has the following advantages and disadvantages:
 

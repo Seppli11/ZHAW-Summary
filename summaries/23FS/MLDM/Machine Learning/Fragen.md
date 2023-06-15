@@ -4,7 +4,7 @@ How are values sorted when binning? E.g. when binning a sinus curve, boundary bi
 
 
 
-In the following description of DB-SCAN what does 4. do? Isn't point 3 missing a repeat or an further condition at point 2. (Clustering/p.34)
+In the following description of DB-SCAN what does 4. do? Isn't point 3 missing a repeat or an further condition at point 2. (Clustering/p.34) https://educlust.dbvis.de/#
 
 ![image-20230601105151038](res/Fragen/image-20230601105151038.png)
 
@@ -12,7 +12,7 @@ Are none of these correct? (linear regresion/p.40)
 
 ![image-20230601124133202](res/Fragen/image-20230601124133202.png)
 
-For linear regression: How can gradient descent with multi variant data be solved with matrices? ()
+For linear regression: How can gradient descent with multi variant data be solved with matrices? (linear regression/p.26)
 
 For linear regression: Does the mini-batch gradient descent $n$ ***random*** samples or always the same $n$ samples?
 

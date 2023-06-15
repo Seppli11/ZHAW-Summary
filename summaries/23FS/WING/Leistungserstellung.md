@@ -74,5 +74,11 @@ Vorteile und Nachteile für Rückwärtsterminierung:
 
 ## Kennzahlen
 
-![image-20230519113258198](res/Leistungserstellung/image-20230519113258198.png)
+$$
+Rentabilität=\frac{Ertrag-Aufwand}{Kapitaleinsatz}=\frac{Gewinn}{Kapitaleinsatz}\\
+Produktivität=\frac{Ausbringungsmenge}{Faktoreinsatzmenge}\\
+Wirtschaftlichkeit = \frac{Ertrag}{Aufwand}\\
+Fehlerquote = \frac{FehlerhafteProdukte}{TotalHergestellteProdukte}
+$$
 
+Die Ausbringungsmenge ist die während der Produktion produzierten Produkte, während die Faktoreinsatzmenge eingesetzte und verbrauchte Materialien sind (ev. auch Stunden).

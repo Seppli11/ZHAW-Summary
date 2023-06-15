@@ -39,9 +39,9 @@ Kern-Kompetenzen sind dauerhafte Wettbewerbsvorteile sind
 * nicht oder nur schwer imitierbar
 * nicht substituierbar
 
-##### SWAT Analayse
+##### SWOT Analayse
 
-In der SWAT-Analyse wird zwischen der Innen- und Aussenwelt unterschieden.![image-20230303123309514](res/Basics/image-20230303123309514.png)
+In der SWOT-Analyse wird zwischen der Innen- und Aussenwelt unterschieden.![image-20230303123309514](res/Basics/image-20230303123309514.png)
 
 ![image-20230303123410176](res/Basics/image-20230303123410176.png)
 
@@ -143,6 +143,8 @@ Beispiel für EasyJet:
 ![image-20230310112459909](res/Basics/image-20230310112459909.png)
 
 ### Planung
+
+<img src="res/Basics/image-20230614212859262.png" alt="image-20230614212859262" style="zoom:50%;" />
 
 #### 4-Branchenwettbewerbsstrategien nach Porter
 

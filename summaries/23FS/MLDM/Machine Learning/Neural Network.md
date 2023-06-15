@@ -33,7 +33,9 @@ Depending on the problem a different output layer is used.
 
 *(Softmax ensures that the results of the output nodes are percentages)*
 
-### Cost-Funcction
+Instead of softmax one-vs-all can also be used. 
+
+### Cost-Fuction
 
 ![image-20230508133345814](res/Neural Network/image-20230508133345814.png)
 

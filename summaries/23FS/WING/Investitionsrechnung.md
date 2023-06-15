@@ -12,7 +12,7 @@ Es gibt drei Kategorien von Investitionen: Sachvermögen, Finanzanlagen und imma
 
 ![image-20230512103705025](res/Investitionsrechnung/image-20230512103705025.png)
 
-## Investitionsreechungs-Methoden
+## Investitionsrechnungs-Methoden
 
 ![image-20230512104322014](res/Investitionsrechnung/image-20230512104322014.png)
 
@@ -77,7 +77,7 @@ Der Liquidationserlös ist der Erlös, welcher beim Verkaufen der Maschine gener
 
 ![image-20230512112715271](res/Investitionsrechnung/image-20230512112715271.png)
 
-Da der Liquidationserlös erst in $x$ Jahren ist, muss der Liquidationserlös mit dem Zinses-Zins aus der Tabelle nach 5 Jahren gerechnet werden.
+Da der Liquidationserlös erst in $x$ Jahren ist, muss der Liquidationserlös mit dem Zinses-Zins aus der Tabelle nach 5 Jahren gerechnet werden (aus der **nicht**-summierten Tabelle).
 
 Es gibt zwei Hilfstabellen, welche miteinander verbunden sind. 
 
@@ -100,7 +100,3 @@ Es wird auf den Kapitaleinsatz 5x den summierten Zins aus der Rentenbarwertfakto
 <img src="res/Investitionsrechnung/image-20230512111545874.png" alt="image-20230512111545874" style="zoom:60%;" />
 
 <img src="res/Investitionsrechnung/image-20230512111622345.png" alt="image-20230512111622345" style="zoom:67%;" />
-
-## Kapitalwertmethode
-
-**TODO**

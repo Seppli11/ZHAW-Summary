@@ -24,6 +24,8 @@ If the master wants to check if there is a slave with a given address, then the 
 
 ## Data
 
+*The **MSB is sent first**, meaning that the Data doesn't need to be flipped (other than with UART)*
+
 While transmitting data, `SDA` only changes while the clock `SCL` is low. When the clock signal is high, `SDA` does not change, except when sending the start and stop condition.
 
 When a byte is complete, then the slave pulls the line down. If nobody acknowledges the transaction, then no slave will pull down the line and will stay up.

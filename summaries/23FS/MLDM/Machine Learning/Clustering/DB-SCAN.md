@@ -25,6 +25,8 @@ The algorithm does the following steps:
 * A smaller $\varepsilon$ leads to more points marked as noise
 * A smaller $minPts$ leads to more clusters 
 
+<img src="res/DB-SCAN/image-20230614092527959.png" alt="image-20230614092527959" style="zoom:120%;" />
+
 The runtime complexity is $O(m \cdot \log m)\approx O(m^2)$.
 
 * Advantages
@@ -33,3 +35,5 @@ The runtime complexity is $O(m \cdot \log m)\approx O(m^2)$.
   * Is able to detect noise
 * Disadvantages
   * Cannot cluster data sets well large differences in densities as the $\varepsilon$ and $minPts$ would have to change for each densitiy reagion. (An improved version, which addresses this issue, is named OPTICS)
+
+An visualisation can be viewed at https://educlust.dbvis.de/#

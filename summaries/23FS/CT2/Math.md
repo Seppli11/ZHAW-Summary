@@ -37,3 +37,20 @@ impact=f_{int}\cdot t_{ISR}\cdot 100\%
 $$
 
 <img src="res/Math/image-20230607134344555.png" alt="image-20230607134344555" style="zoom:80%;" />
+
+## C Code
+
+```c
+// read from address
+uint8_t a = *((volatile uint8_t*) (0x61000007));
+
+// or
+#define A_REG (*((volatile uint8_t*) (0x61000007)))
+uint8_t a2 = A_REG;
+
+// set a specific bit (in this case the 16th bit starting at zero)
+volatile uint16_t* reg = 0x61000010;
+reg &= ~(1 << 16);
+reg |= 1<<16;
+```
+

@@ -121,6 +121,17 @@ $$
 \end{flalign}
 $$
 
+## Gradient Descent with Matrices
+
+Gradient descent can also be implemented with matrices. For this, the derivation can be calculated with the following:
+$$
+\frac{\part J(\vec \theta)}{\part \vec \theta}=-2X^T\vec y + 2X^TX\vec \theta
+$$
+Then $\vec \theta$ can be updated with the following:
+$$
+\vec \theta_{i+1} = \vec \theta_{i} - \alpha\frac{\part J(\vec \theta_i)}{\part \vec \theta_i}
+$$
+
 ## Learning Rate
 
 $\alpha$ is the learning rate. If it is too low, the steps are very small. If they are high, gradient descent jumps around.

@@ -18,6 +18,12 @@ UART starts with a start bit to synchronise the clocks. After the receiver reads
 
 Both clocks needs to in sync enough to stay synchronous for 10 bits by not drifting more than $\pm0.5$bit.
 
+The diagram above shows the value $0b0100'1011$, meaning that the LSB is sent first.
+
+This means, when 8 data bits are sent, the clock can shift $\pm 0.5$ over $8.5$ bits.
+
+<img src="res/UART/image-20230614131422938.png" alt="image-20230614131422938" style="zoom:67%;" />
+
 ## Stop Bits
 
 To make UART more reliable, the number of stop bits can configured to `1`, `1.5` or `2`. This helps the receiver to parse the start bit. However, even more non-data is sent, reducing the data-throughput even more.
