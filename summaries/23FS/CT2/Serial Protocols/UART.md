@@ -40,8 +40,10 @@ In UART there is parity-bit before the stop bit(s).
   The parity bit will always be `0`
 * Even
   If there is an even number of `1` (incl. the parity bit), then a `1` is sent, otherwise `0`
+  (Without the parity bit, if there are an even number of `1` a `0` is sent)
 * Odd
   If there is an odd number of `1` (incl. the parity bit), then a `1` is sent, otherwise `0`
+  (Without the parity bit, if there are an odd number of `1` a `0` is sent)
 
 ## Differential Transmission
 
