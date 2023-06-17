@@ -83,6 +83,8 @@ Examples:
 * With this example, there is likely a high variance, overfitting is happening and the mode should be simplified. This is also called regularisation.
   <img src="res/Model Selection/image-20230327133551584.png" alt="image-20230327133551584" style="zoom: 67%;" />
 
+*(In this example the cross-validation score can be used as a proxy for the test score)*
+
 ## Precision vs Recall
 
 This graph shows the trade of between precision and recall.

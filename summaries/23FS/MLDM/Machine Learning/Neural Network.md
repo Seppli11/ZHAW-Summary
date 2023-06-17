@@ -3,7 +3,7 @@
 ![image-20230608125149987](res/Neural Network/image-20230608125149987.png)
 $$
 NrOfWheights=layerSize^k\\
-NrOfPaths=
+NrOfPaths=layerSize_1 \cdot layerSize_2 + layerSize_2 \cdot layerSize_3 + ...
 $$
 Where $layerSize$ is the number of nodes per layer and $k$ the number of layers.
 
@@ -128,10 +128,15 @@ The main idea is to cut a function into small pieces and use two neurons to appr
 model = Sequential()
 model.add(Dense(5, input_shape=(72,)))
 model.add(Activation('relu'))
-model.add(Dense(7, input_shape=(5,)))
-model.add(Activation('relu'))
-model.add(Dense(2, input_shape=(7,)))
+model.add(Dense(7, activation="relu"))
+# Dropout disables random nodes
+model.add(Dropout(rate=.2)) 
+model.add(Dense(2))
+
+# for numerical models
 model.compile(optimizer='sgd', loss='mse')
+# for categorical models
+model.compile(loss="categorical_crossentropy", optimizer="sgd")
 
 # Data:
 X = np.random.random((100, 72))
