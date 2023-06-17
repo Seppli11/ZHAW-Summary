@@ -72,11 +72,11 @@ Als Beispiel für dies für Easy-Jet:
   * Höhere Flughafentaxen
   * Neue Billig-Airlines
 
-##### PESTLE-Analyse
+##### PESTEL-Analyse
 
 <img src="res/Basics/image-20230609104947174.png" alt="image-20230609104947174" style="zoom:70%;" />
 
-Mit der PESTLE-Analyse wird der Einfluss von sechs externen Umwelt-Faktoren eines Unternehmen untersucht:
+Mit der PESTEL-Analyse wird der Einfluss von sechs externen Umwelt-Faktoren eines Unternehmen untersucht:
 
 * Political
 * Economical
@@ -88,7 +88,7 @@ Mit der PESTLE-Analyse wird der Einfluss von sechs externen Umwelt-Faktoren eine
 * Legal
   Neue Gesetze
 
-Das folgende ist ein Beispiel für die PESTLE-Analyse für eine One Wheel Firma.
+Das folgende ist ein Beispiel für die PESTEL-Analyse für eine One Wheel Firma.
 
 ![image-20230609213157802](res/Basics/image-20230609213157802.png)
 

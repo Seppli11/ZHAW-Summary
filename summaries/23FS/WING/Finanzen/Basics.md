@@ -53,7 +53,7 @@ Folgendes ist ein Beispiel für eine Erfolgsrechnung:
 
 <img src="res/Basics/image-20230331112144767.png" alt="image-20230331112144767" style="zoom:50%;" />
 
-## Geldflussrechnung
+## Geldflussrechnung (Cashflow)
 
 <img src="res/Basics/image-20230331112421322.png" alt="image-20230331112421322" style="zoom:67%;" />
 

@@ -26,7 +26,7 @@ Bei der dynamischen Methode wird geschaut, wann auf dem Zeitstrahl ein Geldfluss
 
 Variable Kosten sind Abhängig von wie viel produziert/gearbeitet wird (z.B. Lohnkosten). Fixkosten sind nicht abhängig von wie viel produziert wird (z.B. Mietkosten).
 
-Kalkulatorische Abschreibungen sind die $\frac{Anschaffungskosten-Liquidationserloes}{Nutzungsdauer}$. Der kalkulatorischen Zins scheint $\frac{(Anschafungskosten + Liquidationserloes) \cdot ZinsSatz}{2}$ zu sein.
+​	Kalkulatorische Abschreibungen sind die $\frac{Anschaffungskosten-Liquidationserloes}{Nutzungsdauer}$. Der kalkulatorischen Zins scheint $\frac{(Anschafungskosten + Liquidationserloes) \cdot ZinsSatz}{2}$ zu sein.
 
 ### Gewinnvergleichsmethode
 
