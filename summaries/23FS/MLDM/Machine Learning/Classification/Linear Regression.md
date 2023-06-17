@@ -1,11 +1,15 @@
 # Linear Regression
 
 A linear function, adjusted to a set of results, can be used to predict the result of other input values. The function takes the following form:
+
+
 $$
 h_\theta(x)=\theta_0+\theta_1\cdot x_1+\theta_2\cdot x_2+...+\theta_n \cdot x_n
 $$
 
-Logistic regression can be found at [Classification](Classification.md#Logistic Regression)
+
+
+Logistic regression can be found at [Classification](Classification.md#Logistic Regression) in the chapter Logistic Regression.
 
 ## Assumption of Linear Regression
 
@@ -18,7 +22,7 @@ The following assumptions are made for the input and output of a linear regressi
 
 ## Cost Function
 
-To find a fitting function $h_\theta$, we want to minimise $\frac{1}{2m}\sum^m_{i=0}(h_\theta(x_i)-y_i)^2$ (halve of the average of the summed error squared). More formally, this is named a cost function:
+To find a fitting function $h_\theta$, we want to minimise $\frac{1}{2m}\sum^m_{i=0}(h_\theta(x_i)-y_i)^2$ (halve of the average of the summed error squared). More formally, this is named a cost function: 
 $$
 J(\theta_0, \theta_1)=\frac 1 {2m}\sum^m_{i=0}(h_\theta(x_i)-y_i)^2
 $$
@@ -53,7 +57,7 @@ The code above can easily be extended to support as many variables as needed.
 
 ## Cost Function and Gradient Descent
 
-To use the gradient descent algorithm to find the local minimum of the cost function $J$, the partial derivation of $J$ for $\theta_0$ and $\theta_1$ is needed. Luckily, these are straight forward:
+To use the gradient descent algorithm to find the local minimum of the cost function $J$, the partial derivation of $J$ for $\theta_0$ and $\theta_1$ is needed. Luckily, these are straight forward: 
 $$
 \begin{align}
 \frac{\partial}{\partial \theta_0}J(\theta_0, \theta_1
@@ -89,13 +93,13 @@ There are multiple "modes" how the gradient descent can function:
 
 ## Multivariate Linear Regression
 
-If there are more than one feature, the hypotheses has to be adjusted to reflect this:
+If there are more than one feature, the hypotheses has to be adjusted to reflect this: 
 $$
 h_\theta(\vec x)=\theta_0x_0 + \theta_1x_1 + \theta_2x_2 + ... + \theta_nx_n
 $$
 $x_0$ is always defined as $1$. This simplifies $h_\theta(\vec x)$ as all terms are the "same".
 
-This can also be written with vectors:
+This can also be written with vectors: 
 $$
 \vec x = \begin{pmatrix}
 x_0 \\ x_1 \\ x_2 \\ ... \\ x_n
@@ -108,7 +112,7 @@ x_0 \\ x_1 \\ x_2 \\ ... \\ x_n
 h_\theta(\vec x)=\theta_0x_0 + \theta_1x_1 + \theta_2x_2 + ... + \theta_nx_n 
 = \vec\theta^T \cdot \vec x
 $$
-The vectors $\vec x$ and $\vec \theta$ have the size $n+1$, where $n$ is the number of features.
+The vectors $\vec x$ and $\vec \theta$ have the size $n+1$, where $n$ is the number of features. 
 $$
 \begin{flalign}
 &\text{repeate} \text{ until convergence \{} &&  \\
@@ -123,11 +127,11 @@ $$
 
 ## Gradient Descent with Matrices
 
-Gradient descent can also be implemented with matrices. For this, the derivation can be calculated with the following:
+Gradient descent can also be implemented with matrices. For this, the derivation can be calculated with the following: 
 $$
 \frac{\part J(\vec \theta)}{\part \vec \theta}=-2X^T\vec y + 2X^TX\vec \theta
 $$
-Then $\vec \theta$ can be updated with the following:
+Then $\vec \theta$ can be updated with the following: 
 $$
 \vec \theta_{i+1} = \vec \theta_{i} - \alpha\frac{\part J(\vec \theta_i)}{\part \vec \theta_i}
 $$
