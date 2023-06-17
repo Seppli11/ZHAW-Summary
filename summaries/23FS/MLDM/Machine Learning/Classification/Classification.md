@@ -72,6 +72,14 @@ The logistic function is defined as:
 $$
 g(z)=\frac 1 {1+e^{-z}}
 $$
+
+
+```python
+def logistic(g): return 1/(1+exp(-g))
+```
+
+
+
 In this formula, $h(\theta)$ can be plugged in ($g(h(\theta))$) and used as a new theses. The cost function needs to be adjusted to:
 $$
 Cost(h_\theta(x), y)=

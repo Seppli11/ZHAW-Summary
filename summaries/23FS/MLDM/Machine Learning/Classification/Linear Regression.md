@@ -5,7 +5,7 @@ $$
 h_\theta(x)=\theta_0+\theta_1\cdot x_1+\theta_2\cdot x_2+...+\theta_n \cdot x_n
 $$
 
-**TODO**: Other models like logistic regression model.
+Logistic regression can be found at [Classification](Classification.md#Logistic Regression)
 
 ## Assumption of Linear Regression
 
