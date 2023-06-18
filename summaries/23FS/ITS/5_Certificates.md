@@ -86,7 +86,11 @@ The logs of certificate are append only, cryptographically assured and publicly 
 
 ## Certification Revocation
 
-If the private key of a certificate is stolen, it needs to be revoke. However, the subject can't change their own certificate. Instead it needs to be marked as revoked. CA has a list of all revoked certificate (the Certificate Revocation List - CRL) and the browser needs to check if a certificate is on this list.
+If the private key of a certificate is stolen, it needs to be revoke. However, the subject can't change their own certificate. Instead it needs to be marked as revoked. 
+
+### Certificate Revocation List (CRL)
+
+CA has a list of all revoked certificate (the Certificate Revocation List - CRL) and the browser needs to check if a certificate is on this list.
 
 ![image-20230327110207540](res/5_Certificates/image-20230327110207540.png)
 
@@ -109,6 +113,8 @@ However, the CRL is downloaded with HTTP, not **HTTPS**
   download
 * Due to these limitations, support for CRL downloading is getting smaller, CAs not provide them
   anymore, many programs no longer use them
+
+### Online Certification Status Protocol (OCSP)
 
 Alternatively there is the Online Certification Status Protocol (OCSP). Every certificate comes with an URL where the browser can check if the certificate is still valid. This is done over HTTP, but the answer is signed with the private key of the CA and can be trusted.
 
@@ -137,7 +143,7 @@ Issues of this are:
 * There is a validity period of a OCSP response
 * If no valid OCSP response is cached, the server won't include one. If the client can't reach the OCSP endpoint it will default to a soft fail.
 
-There is a third alternative, OCSP must-stable, in which the certificate is rejected if no stable is included (hard fail). This reintroduces the DOS problem of OCSP (without stable). The `must-stable` flag is included in the sent certificate.
+There is a third alternative, OCSP must-staple, in which the certificate is rejected if no stable is included (hard fail). This reintroduces the DOS problem of OCSP (without stable). The `must-staple` flag is included in the sent certificate.
 
 With **Browser-Summarized CRLs**, where browser vendors download CRLs centrally and compress this with a bloom filter. The browser vendor push regular updates (every 6h) to the client.
 

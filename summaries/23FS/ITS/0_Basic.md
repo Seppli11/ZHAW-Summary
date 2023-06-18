@@ -57,6 +57,12 @@ Kerckhoff's principal says, that the security of a cipher must only relay on the
 
 This factor describes how many keys one has to try on average before they guess the right one. This depends on the distribution of the keys and assumes that the right key can be detected. If every key is equally likely then the work factor is maximised. Additionally, when choosing a key it is vital to choose randomly so every key is equally likely.
 
+The general formula is 
+$$
+WF(X)=\sum^n_{k=1}x_k\cdot P(x_k)
+$$
+where $x_k$ is a possible character in the password and $P(x_k)$ is the probability that $x_k$ 
+
 ## Perfect Secrecy/Information-Theoretically Secure
 
 > The probability that a plaintext produced a given ciphertext c under key k is independent of c and k.
@@ -89,3 +95,26 @@ It has the following properties:
 * The key length is equal to the plain text length
 * Has perfect secrecy (, since every result is equally likely)
 * Key must not be reused and would lead to catastrophic loss of security since $p_1 \oplus k = c_1$ and $p_2 \oplus k = c_2$. From this the following is valid $c_1 \oplus c_2 = p_1 \oplus p_2$.
+
+## Man-in-the-Middle (MitM)
+
+To do a man in the middle attack, one needs to setup arp poisening or arp spoofing.
+
+## `Strict-Transport-Security` Header
+
+This header enforces that a webpage can, from now on, only be reached via https. However, this only applies after the first connection to the webpage.
+
+## `Public-­Key-­Pins` Header
+
+The `Public-Key-Pins` header instructs the browser to only allow a connection to a server where the hash of the public key matches one of the listed hashes.
+
+```
+Public-Key-Pins:
+"pin-sha256="8MfHQC9XAUF/XBmQ/mZ8S/XEc5aSYzOlj0EHTj870+s=";
+pin-sha256="tpFbv65QoYvcWNVl7gAEd1FAWWn/pjL8Fo2+f1pTrC8=";
+pin-sha256="WKbBsAclTiyDM7EEJ5yUmrWmp9DxWM/hG+D+wcCLA24=";
+pin-sha256="nxpEakAMgSw92zksspA8LdZyrdW/MGGr70VfcIT7DBU=";
+max-age=31536000; includeSubDomains"
+```
+
+However, this can be problematic if the certificate was stolen or lost. In this case the server administrator need to create a new certificate. The browser won't connect to the server since the new certificate isn't listed in the `Public-Key-Pings` header.

@@ -51,6 +51,10 @@ When starting the computer, the user enters the domain, username and password. T
 
 ![image-20230515112127440](res/8_Authentication_Protocols/image-20230515112127440.png)
 
+The following shows how the client creates a response to the challenge 
+
+![image-20230618161113458](res/8_Authentication_Protocols/image-20230618161113458.png)
+
 ### Kerberos
 
 In kerberos, each participant is called a principal. Each principal shares a common seccret with a centralised server, the key distribution centre (KDC) (this is the equivalent to the domain controller).
