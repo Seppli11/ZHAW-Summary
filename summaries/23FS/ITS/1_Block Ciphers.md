@@ -47,7 +47,16 @@ The 112 come from the application of the attack above, but the hash map size gro
 
 ## AES (Advanced Encryption Standard)
 
-There was
+AES was developed as a successor to DES with the following requirements:
+
+* AES shall be publicly defined
+* AES shall be a secret key (symmetric) block cipher
+* AES shall be implementable efficiently in both hardware and software
+* AES shall have a block size of n = 128 bits
+* AES shall have flexible key sizes of k = 128, 192, and 256 bits
+* AES shall be freely available (no patents like IDEA etc.)
+
+The the key sizes are 128, 192 and 256, while the standard is 128 bit. The block size is 128 bits long.
 
 ## Block Cipher Mode
 

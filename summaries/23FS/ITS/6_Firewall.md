@@ -73,6 +73,8 @@ A rule has a classification part and an action part. The classification says to 
 Here are some examples for rules:
 
 ```bash
+ip saddr 8.8.8.8 accept # the source address = 8.8.8.8
+
 ip daddr 8.8.8.8 drop # daddr = destination address
 
 ip daddr 8.8.8.8 counter drop # counts all packets to 8.8.8.8 and then drops it
@@ -104,6 +106,28 @@ icmpv6 type { nd-neighbor-solicit, nd-neighbor-advert, nd-router-solicit, nd-rou
 # combine multiple conditions. The order matters
 ip saddr 10.0.0.0/8 tcp dport ssh accept
 # (saddr 10.0.0.0/8) (tcp dport ssh) 
+```
+
+The followings are conditions:
+
+```bash
+iifname $ifc accept # accept if input interface name = $ifc
+oifname $ofc accept # accept if output interface name = $ofc
+
+ip saddr 8.8.8.8 accept # the source address = 8.8.8.8
+ip daddr 8.8.8.8 accept # the destination address = 8.8.8.8
+
+nexthdr tcp accept # next header (=nexthdr) carries tcp
+nexthdr tcp != accept # next header (=nexthdr) has to not carry tcp
+
+ip6 accept # accept all ipv6 packets
+
+icmp type echo-request accept # accept ping request
+icmp type echo-responde accept # accept ping response
+
+tcp dport { http, https, 30 } accept # accept tcp ports to http, https and port 30
+
+limit rate 10/second accept # rate limit
 ```
 
 ### Chains
@@ -150,7 +174,7 @@ Chains must be wrapped in a **table** directive. Tables have a packet family for
 flush ruleset # clear all tables and chains
 
 # inet = ipv4 and ipv6
-table inet myinput {
+table inet mytable {
     chain tcp-traffic {
         type filter hook input priority 0; policy drop;
         tcp dport { https, http } jump http-traffic

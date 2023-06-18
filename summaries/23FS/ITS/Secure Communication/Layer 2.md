@@ -77,7 +77,7 @@ If pre-shared keys (PKS) is used, then following diagram describes the flow:
 
 #### Temporary Key Integrity Protection (TKIP)
 
-TKIP uses a MAC to protect against the integrity vulnerabilities of WEP. 
+TKIP uses a MAC (message authentic) to protect against the integrity vulnerabilities of WEP. 
 
 TKIP has the following weaknesses:
 
@@ -95,3 +95,8 @@ Because of these weaknesses TKIP shouldn't be used today as it is insecure.
 In the packet, there are headers, a packet number (PN) to prevent replay attacks and the actual payload. $PL(x)$ is based on $PN$ and a block counter $x$ and is unique p
 
 This also protects the header from modification, which is important to protect against attacker redirecting packets to them self. 
+
+### WPA2 (IEEE 802.11i)
+
+Is the second iteration of WPA.
+

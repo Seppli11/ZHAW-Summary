@@ -88,4 +88,4 @@ It has the following properties:
 
 * The key length is equal to the plain text length
 * Has perfect secrecy (, since every result is equally likely)
-* Key must not be reused and would lead to catastrophic loss of security
+* Key must not be reused and would lead to catastrophic loss of security since $p_1 \oplus k = c_1$ and $p_2 \oplus k = c_2$. From this the following is valid $c_1 \oplus c_2 = p_1 \oplus p_2$.
