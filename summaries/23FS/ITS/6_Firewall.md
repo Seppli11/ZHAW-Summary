@@ -73,7 +73,7 @@ A rule has a classification part and an action part. The classification says to 
 Here are some examples for rules:
 
 ```bash
-ip saddr 8.8.8.8 accept # the source address = 8.8.8.8
+ip saddr 8.8.8.8 ct state new  accept # the source address = 8.8.8.8 and enable ct for this connection
 
 ip daddr 8.8.8.8 drop # daddr = destination address
 
@@ -128,6 +128,10 @@ icmp type echo-responde accept # accept ping response
 tcp dport { http, https, 30 } accept # accept tcp ports to http, https and port 30
 
 limit rate 10/second accept # rate limit
+
+tcp flags == syn accept # only initial tcp connection request 
+
+ct state established,related accept # accept established and related connections (if connection tracking is enabled)
 ```
 
 ### Chains
@@ -283,6 +287,28 @@ chain myforward {
     	ct state new accept
 }
 ```
+
+### NAT
+
+The following enables network address translation (NAT) for addresses
+
+```bash
+define i4nw = 10.109.1.0/24      # Internal IPv4 network
+
+define eifc = ens5               # Interface name to external network
+define e4nw = 10.109.3.0/24      # External IPv4 network
+define e4ad = 10.109.3.5         # External IPv4 address
+
+table ip mynat {
+	chain mysnat {
+		type nat hook postrouting priority 0;
+
+		oifname $eifc ip saddr $i4nw ip daddr $e4nw snat $e4ad
+	}
+}
+```
+
+
 
 ## Port Scanning
 
