@@ -28,6 +28,42 @@ ACL is a list of permissions for each subject.
 
 The standard Linux permissions can be implemented with ACL (but rarely are since they are just bitmasks).
 
+### Posix ACL
+
+ACL in Linux are implemented as an extension on the existing DAC permission model. It must be explicitly be enabled in `/etc/fstab` or while mounting with the `acl` mount option.
+
+If one mounts a disk with ACL permissions without the `acl` flag, they might get **more** permission.
+
+With `getfacl <file>` the ACL permissions of a file can be read, which outputs the following:
+
+```
+# file: meetings/
+# owner: root
+# group: management
+user::rwx
+group::r-x
+other::---
+```
+
+This is the minimal ACL and is what is outputted if no additional ACL rules are set. `user::` represents the owner, `group::` is the group and `other::` represents the other group.
+
+With `setfacl -m user:$user:$permission $file` new user roles can be set. Equally with `setfacl -m group:$user:$permission  $file` new group roles can be set. The same is true for `other`. 
+
+For example: `sudo setfacl -m group:development:rwx meetings`
+
+In the following example, the directory `normal` the group `root` has `rwx`, while the normal group has `r-x`. The mask is equal to all permissions ored and represents the effective permission present on the file system: `drwxrwxr-x+ 2 sebi sebi 40 Jun 18 21:42 normal/`. The `+` tells the user that additional ACL permissions are set.
+
+```
+# file: normal/
+# owner: sebi
+# group: sebi
+user::rwx
+group::r-x
+group:root:rwx
+mask::rwx
+other::r-x
+```
+
 ## Standard Linux Permission Model
 
 On a directory:
@@ -37,6 +73,12 @@ On a directory:
 * `x` allows you to read the inodes of the files and change in the directory
 
 To change the permission of a file, the user needs to be the owner of the file.
+
+Additionally to the three `rwx`, there are setuid, setgid and the sticky bit
+
+* `Setuid` bit (SUID): If set and the file is executed by any user, the process will have the same rights as the owner of the file. If set, an `s` appears after the user portion: `rwsr-xr-x`. It can be set by `chmod u+s`
+* `Setguid` bit (SGID): If set and the file is executed by any user, the process will have the same rights as the group. If a directory has the SGID bit set, it may mean (depending on the system), that newly created file in that directory inherit the group of the directory instead of the user creating it.  If set, an `s` appears after the group portion: `rwr-xsr-x`. It can be set by `chmod g+s`
+* `Sticky` bit: If the sticky bit is set on a directory, a file contained by the directory can only be deleted or renamed by the root or the owner of the file. If set, a `t` appears instead of the last `x`  (`T` if other doesn't have `x` permissions). It can be set by `chmod +t`
 
 ## Linux vs Windows
 
