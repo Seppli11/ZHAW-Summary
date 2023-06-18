@@ -87,7 +87,7 @@ An advantage for EtM is that if an bug in the encryption is found (like a buffer
 
 ## Authenticated Encryption with Additional Data (AEAD)
 
-One example for AEAD is AES-CGM.
+One example for AEAD is AES-GCM.
 
 ![image-20230320110813545](res/4_Integrity and Authentication.md/image-20230320110813545.png)
 

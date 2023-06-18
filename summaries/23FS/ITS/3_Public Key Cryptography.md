@@ -25,6 +25,8 @@ A possible example is residual group (Rest Gruppe) $Zp*=\{1, ..., p-1\}; G=(Zp*,
 
 The group is also abelian as for each element $a+b=b+a$ and $a\times b = b \times a$ is valid.
 
+![image-20230618223155494](res/3_Public Key Cryptography/image-20230618223155494.png)
+
 ## Discrete Logarithm Problem (DLP)
 
 For the discrete logarithm problem, we have a finite cyclic group $(G, \circ)$ with the generator $g$ (any $a\in G$ can be generated with $[k]g$, where $1\le k \le |G|$)

@@ -74,12 +74,6 @@ By this point, the server is **authenticated**.
 
 In `Finished`, the sever sends a hash over all handshake messages. The client does the same and compares. If the hashes match, both have received what the other has sent.
 
-![image-20230607224811576](res/TLS/image-20230607224811576.png)
-
-The client will **encrypt** everything from now on.
-
-![image-20230607224831612](res/TLS/image-20230607224831612.png)
-
 The client sends a hash over all handshake messages which gets checked by the server.
 
 If this passes, both the server and client have proven that the handshakes weren't tampered with.
@@ -131,6 +125,12 @@ To tear down a TLS connection a participant first has to send a `close_notificat
 This is done to prevent truncation attacks, where the attacker injects a TCP `FIN` package to prevent the server or client to send all information. For example a footer on a web page.
 
 ## Security Analysis
+
+An attacker can only read until the `ServerHello` package after which all communication is encrypted. However, these packets don't contain anything interesting for the attacker.
+
+However, an attacker can spoof the initial `ClientHello` to advertise a lower TLS version or insecure ciphers. The server, if missconfigured, might accept an connection with insecure ciphers or an insecure TLS version. This is prevented by the server sending the hash over all handshake messages in the `Finish` package. The client does the same and compares. If an attacker tampered with messages during transit the client would notice and abort the connection.
+
+A further attack is for an attacker to insert, reorder or delete messages. This is prevented by an counter both the server and client maintain. This counter is included int he calculation of the tag sent with every data TLS record. 
 
 ## DTLS
 
