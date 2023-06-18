@@ -66,6 +66,14 @@ other::r-x
 
 ## Standard Linux Permission Model
 
+`rwxrwxrwx` is often displayed as an three octal numbers
+
+* `x` = 1
+* `w` = 2
+* `r` = 4
+
+![image-20230618220745794](res/9_Authorization/image-20230618220745794.png)
+
 On a directory:
 
 * `r` allows you to get the file names in the directory (but not to read it)
@@ -120,7 +128,18 @@ Concrete implementations are SELinux and AppArmor.
 
 <img src="res/9_Authorization/image-20230522112441328.png" alt="image-20230522112441328" style="zoom:67%;" />
 
-Windows has integrity levels (IL), which **TODO**
+*(MIC = Mandatory Integrity Control)*
+
+Windows has integrity levels (IL), which are:
+
+* Installer
+* System (OS Processes)
+* High (administrators)
+* Medium (non-administrators)
+* Low (temporary internet files)
+* Untrusted (logged on anonymously)
+
+These are assigned to objects and processes. Processes inherit their IL from their parent. However, a process can start a process with a reduced IL. The goal of this system is to enforce the **no write-up** rule (e.g. prevent a process started by a user to make arbitrary modifications to the user's files).
 
 The following are some commands used for Windows administration:
 
@@ -132,14 +151,16 @@ The following are some commands used for Windows administration:
 
 Role based access control can be a natural way for "normal" users to express what permissions a user has (e.g. a user should have the role of a developer).
 
-RBAC can support the following three security principles: **TODO details of principles**
+RBAC can support the following three security principles: 
 
 * Principle of least privilege (or authority)
   By defining the roles and associated permissions of these roles in an organisation and then associate each user one ore more roles
 * Separation of duty
-  
+  For example, requiring an accounting clerk and account manager to participate in issuing a check. These two roles must be mutually exclusive
 * Data abstraction
-  
+  Administrating permissions on a high level instead of the lower-level access control mechanisms (like ACL or capabilities) on an object-by-object basis.
+
+However, RBAC is not typically supplied by the OS. Additionally, RBAC doesn't allows for roles based on attributes (e.g. Allows an employee to access a file, if he is at their desk).
 
 ## Attribute Based Access Control (ABAC)
 
