@@ -67,7 +67,7 @@ An example is the following: A system which the two keys `1` and `0`. The attack
 
 Shanon calls this "perfect secrecy".
 
-However, no modern encryption algorithm has this property.
+However, no modern encryption algorithm has this property(, except one-time pad).
 
 ## Computationally Secure
 

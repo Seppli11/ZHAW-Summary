@@ -8,7 +8,7 @@ In the following diagram is shown how a IP packet is wrapped in an ESP IPSec pac
 
 <img src="res/IPSec/image-20230424112320497.png" alt="image-20230424112320497" style="zoom:67%;" />
 
-If the following IPSec packets are received.. **TODO**
+If IPsec receives a duplicate `SeqNr`, then the second packet is dropped.
 
 ![image-20230424112616666](res/IPSec/image-20230424112616666.png)
 

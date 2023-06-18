@@ -30,7 +30,15 @@ The standard Linux permissions can be implemented with ACL (but rarely are since
 
 ## Standard Linux Permission Model
 
-### Linux vs Windows
+On a directory:
+
+* `r` allows you to get the file names in the directory (but not to read it)
+* `w` allows you to modify the file name, as well as create and delete the file. To write to the file `w` on the file is required
+* `x` allows you to read the inodes of the files and change in the directory
+
+To change the permission of a file, the user needs to be the owner of the file.
+
+## Linux vs Windows
 
 ![image-20230522110252369](res/9_Authorization/image-20230522110252369.png)
 

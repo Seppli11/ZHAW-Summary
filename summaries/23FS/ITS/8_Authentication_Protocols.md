@@ -65,6 +65,18 @@ Kerberos allows federated acccess across realms:
 
 <img src="res/8_Authentication_Protocols/image-20230515113124175.png" alt="image-20230515113124175" style="zoom:50%;" />
 
+When logging in, the Authentication Service (AS) grants a Ticket Granting Ticket (TGT). For this, Alice encrypts and send the time to the AC. The AC then creates the TGT and a session key. Both are needed to get access to a server.
+
+![image-20230618142412015](res/8_Authentication_Protocols/image-20230618142412015.png)
+
+Alice sends a the TGT encrypted with the session key to the Ticket-Granting Service (TGS). The TGS response with its own session key which then is used to access the server.
+
+![image-20230618143600751](res/8_Authentication_Protocols/image-20230618143600751.png)
+
+Then Alice can use the sam's session key to access sam's server.
+
+![image-20230618143430115](res/8_Authentication_Protocols/image-20230618143430115.png)
+
 ## Shibboleth
 
 ![image-20230515113210671](res/8_Authentication_Protocols/image-20230515113210671.png)

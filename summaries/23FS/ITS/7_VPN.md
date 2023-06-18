@@ -24,6 +24,8 @@ See [Secure Communication/IPSec.md](Secure Communication/IPSec.md)
 
 OpenVPN operates a virtual network card as an application in user space and packages IP packets into UDP packets. OpenVPN usually is used over UDP since TCP over TCP can lead to very poor performance.
 
+OpenVPN is partly based on TLS.
+
 ### Packets
 
 ![image-20230508103211480](res/7_VPN/image-20230508103211480.png)

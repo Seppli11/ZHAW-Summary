@@ -104,6 +104,8 @@ To  reduce the load on a server, a TLS session can be resumed.
 
 After the `Finished` message, the server **may** send a `NewSessionTicket` message, encrypted by the handshake keys. The contents are a preshared key-**identifier** with which the client can find the preshared key from the last session. Only one session can be opend per `NewSessionTicket`. However, the server can send multiple `NewSessionTickets`.
 
+When the client tries to reconnect the next time, the client sends a "Hi, I'd like to talk to you and I have already a pre-shared key with the following id". From the `Finished` message (sent after `ClientHello`) on, all messages are encrypted.
+
 ![image-20230607230248264](res/TLS/image-20230607230248264.png)
 
 The client response with a preshared key identifier itself.
