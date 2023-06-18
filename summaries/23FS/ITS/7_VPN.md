@@ -16,7 +16,7 @@ This can be a problem if the client uses a dynamic IP, since a firewall can't do
 
 ## IPSec
 
-See [Secure Communication/IPSec.md](Secure Communication/IPSec.md])
+See [Secure Communication/IPSec.md](Secure Communication/IPSec.md)
 
 ## OpenVPN
 

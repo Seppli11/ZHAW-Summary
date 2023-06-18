@@ -128,7 +128,7 @@ To tear down a TLS connection a participant first has to send a `close_notificat
 
 This is done to prevent truncation attacks, where the attacker injects a TCP `FIN` package to prevent the server or client to send all information. For example a footer on a web page.
 
-## $Security Analysis
+## Security Analysis
 
 ## DTLS
 
