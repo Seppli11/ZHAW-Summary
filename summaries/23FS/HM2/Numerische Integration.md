@@ -6,7 +6,9 @@
 
 <img src="res/Numerische Integration/image-20230412081843980.png" alt="image-20230412081843980" style="zoom:50%;" />
 
-Die folgenden formel ziehen ein Rechteck, bzw. Trapez über das ganze Integral.
+Die folgenden formel ziehen ein Rechteck, bzw. Trapez über das ganze Integral. 
+
+
 $$
 \text{Das Integral}\\
 \int_a^b f(x)\mathrm d x\\
@@ -18,6 +20,8 @@ $$
 *(Rf = Rechtecksregel, Tf = Trapezregel)*
 
 Für die summierte Rechteck- & Trapezregel wird das Integral in kleinere Schritte mit der breite $h$ unterteilt.
+
+
 $$
 Rf(h)=h\cdot \sum^{n-1}_{i=0} f(x_i +\frac h 2)\\
 Tf(h)=h\cdot \left(\frac{f(a) + f(b)}{2} +\sum^{n-1}_{i=1} f(x_i) \right)\\
