@@ -1,12 +1,12 @@
 # Differentialgleichungen
 
-Eine gewöhnliche Differentialgleichung ist eine Gleichung, welche nur nach einer Variable abgeleitet wird:
+Eine gewöhnliche Differentialgleichung ist eine Gleichung, welche nur nach einer Variable abgeleitet wird: 
 $$
 \frac{\part y}{\part t} = f(t, y(t))
 $$
 Im oben Beispiel ist es eine gewöhnliche Differentialgleichung 1. Ordnung, da nur einmal Abgeleitet wurde.
 
-Genereller ausgedrückt, folgendes ist eine gewöhnliche Differentialgleichung $n$-ter Ordnung:
+Genereller ausgedrückt, folgendes ist eine gewöhnliche Differentialgleichung $n$-ter Ordnung: 
 $$
 y^{(n)}(x) = f(x, y(x), y'(x), ..., y^{(n-1)}(x))
 $$
