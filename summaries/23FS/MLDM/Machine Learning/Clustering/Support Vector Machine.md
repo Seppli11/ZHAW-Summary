@@ -48,6 +48,8 @@ The following explains all the variables associated with SVM:
 
 ![image-20230329203943887](res/Support Vector Machine/image-20230329203943887.png)
 
+![image-20230620162055544](res/Support Vector Machine/image-20230620162055544.png)
+
 In the cost function every miss-classified sample is summed:
 $$
 \frac 1 2 ||w||^2 + C \sum^m_{i=1}\xi_i\\

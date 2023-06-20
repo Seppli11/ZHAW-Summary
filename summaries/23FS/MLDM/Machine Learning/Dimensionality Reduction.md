@@ -26,7 +26,7 @@ To find the components, first calculate the co-variance matrix $C$ with the stan
 $$
 C=\frac 1 {m - 1} X^TX
 $$
-Afterwards compute the $n$ eigenvectors $\vec w$ and corresponding eigenvalues $\lambda$ of the co-variance matrix. To do this, the following characteristic equation has to be solved:
+Afterwards compute the $n$ eigenvectors $\vec w$ and corresponding eigenvalues $\lambda$ of the co-variance matrix. This is done, since the eigenvectors are equal to the direction of the first principal component. To do this, the following characteristic equation has to be solved:
 $$
 C\vec w - \lambda \vec w = 0
 $$
@@ -34,15 +34,25 @@ Finally, select the $k\le n$ eigenvectors $\vec w$ (components) with the largest
 $$
 \lambda_1 \ge \lambda_2 \ge ... \ge .. \lambda_k \ge .. \ge \lambda_n
 $$
-Each eigenvalue $\lambda_i$ expresses how much of the data's variance is explained by the component $i$.
+Each eigenvalue $\lambda_i$ expresses how much of the data's variance is explained by the component $i$. The eigenvalue is the average of the summed squared distances (in the figure below $d_1^2 + d_2^2 + ... + d_6^2$).
+
+<img src="res/Dimensionality Reduction/image-20230620192434403.png" alt="image-20230620192434403" style="zoom:30%;" />
 
 The chosen $\vec w$ are the columns in the transformation matrix $W\in R^{n\times k}$
 
 To get the transformed data $T$, the following has to be done:
 $$
-T=XW \in R^{m\times k}
+ T=XW \in R^{m\times k}
 $$
 If $k=n$, then $T$ contains the same data as $X$. Otherwise the dimensionality of the data is reduced to $k$ dimensions. Because $W$ has been chosen in way, to reconstruct as much information as possible by sorting after the eigenvalues descending, most information should be retained.
+
+The percentages of how much of the data each principal component explains can be calculated with the following formula:
+$$
+\begin{align}
+\frac{\lambda_i}{\lambda_1 + \lambda_2} && \text{where } i \in \{1, 2\}
+\end{align}
+$$
+
 
 ### Hyper-Parameter Tuning
 
@@ -79,7 +89,9 @@ $$
 T: t_{ij}=x_{i1}w_{1j}+x_{i2}w_{2j}+...+x_{in}w_{nj}
 $$
 
-The score of the principal component $j$ are the values in the column $j$ of the matrix $T$. This means, for each component there are $m$ scores, one score for each sample.
+The score of the principal component $j$ are the values in the column $j$ of the matrix $T$. This means, for each component there are $m$ scores, one score for each sample. 
+
+Effectively, this means it is the distance from the origin to where a sample projects on the component.
 
 ![image-20230424130350773](res/Dimensionality Reduction/image-20230424130350773.png)
 
@@ -95,8 +107,8 @@ Additionally, data points close to the centre are close to the average while dat
 
 ![image-20230424131015056](res/Dimensionality Reduction/image-20230424131015056.png)
 
-From each loading data point can a ling though the origin point be drawn. If a score data point on this line is close to the origin point, then it is close to the average. On the other hand, if the point is far away from the origin point then it is far from the average of the loading data point.
+From each loading data point can a ling though the origin point be drawn. If a score data point projected on this line is close to the origin point, then it is close to the average. On the other hand, if the point is far away from the origin point then it is far from the average of the loading data point.
 
-For example, the data point 21 in the left upper hand corner is far away from the origin on the "oil-loading-line" and thus is far away from the average of oil. On the other hand, the score data point 33 is on the "oil-loading-line" close to the origin point and thus is close to the average.
+For example, the data point 21 in the left upper hand corner is far away from the origin on the "oil-loading-line" and thus is far away from the average of oil. On the other hand, the score data point 42 is on the "oil-loading-line" close to the origin point and thus is close to the average.
 
 ## t-Distributed Stochastic Neighbor Embedding

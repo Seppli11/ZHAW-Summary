@@ -141,10 +141,13 @@ A=\begin{pmatrix}
 2(h_0+g_1) & h_1 \\
 h_1 & 2(h_1+h_2)
 \end{pmatrix} \\
-A \cdot \begin{pmatrix}c_1 \\ c_2 \end{pmatrix} 
-= \begin{pmatrix}
-
-\end{pmatrix}
+\vec z = \begin{pmatrix}
+3\frac{y_2 - y_1}{h_1} - 3\frac{y_1-y_0}{h_0}\\
+3\frac{y_3 - y_2}{h_2} - 3\frac{y_2-y_1}{h_1}\\
+... \\
+3\frac{y_n - y_{n-1}}{h_{n-1}} - 3\frac{y_{n_1}-y_{n-2}}{h_{n-}}\\
+\end{pmatrix}\\
+A \cdot \begin{pmatrix}c_1 \\ c_2 \end{pmatrix} = \vec z
 $$
 
 ## Lineare Ausgleichunsrechnung

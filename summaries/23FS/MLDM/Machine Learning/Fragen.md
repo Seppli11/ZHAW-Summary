@@ -27,3 +27,20 @@ After one vs rest or one vs one, what to do with the different hyper plane? Merg
 **Do we have to produce python code?**
 
 What is a soft-max regression (Neural Network/p.14)
+
+
+
+
+
+* Neurales Network berechnungen
+  * Wieviele Nodes, Pfade, Wheights, freie Parametern
+* Code verstehen
+* Decision Tree: Gini
+* Decision Tree bauen
+* Logistic Regression
+* Fragen über Cost-Function
+* Learning Curve lesen
+* Overfitting und Underfitting erkennen
+* F1, Precission, Recall berechnen
+* Binning
+* Out-of-bag error

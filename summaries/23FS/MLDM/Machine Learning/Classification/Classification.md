@@ -13,7 +13,7 @@ The are multiple metrics to test how well a classification algorithm works:
 * True Positive Rate/Recall: $TPR=\frac{TP}{TP+FN}$
   *Answers how many relevant samples were correctly classified.*
 
-* True Negative Rate/Specificity: $TNR = \frac{TN}{FN + FP}$
+* True Negative Rate/Specificity: $TNR = \frac{TN}{TN + FP}$
 
 * False Positive Rate: $FPR = 1 - TNR = \frac{FP}{TN + FP}$
 

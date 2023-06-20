@@ -45,7 +45,7 @@ Ein Richtungsfeld stellt die Steigung als Pfeile dar. Dafür wurde in diesem Bei
 
 ![image-20230503082525426](res/Differentialgleichungen/image-20230503082525426.png)
 
-Um eine Lösung für eine Differentialgleichung mit einem Richtungsfeld zu finden, kann eine Schrittweite $h$ definiert werden. Jeder Punkt $(x_i, y_i)$ soll nun den Pfeilen im Feld folgen. Dies kann folgendermassen für eine Differentialgleichung $y'=f(x, y)$ erledigt werden:
+Um eine Lösung für eine Differentialgleichung mit einem Richtungsfeld zu finden, kann eine Schrittweite $h$ definiert werden. Jeder Punkt $(x_i, y_i)$ soll nun den Pfeilen im Feld folgen. Dies kann folgendermassen für eine Differentialgleichung $y'=f(x, y)$ erledigt werden:  
 $$
 \begin{align}
 x_{i+1} &= x_i + h\\
@@ -61,7 +61,7 @@ Zusätzlich wird auch noch ein Startpunkt $(x_0, y_0)$ benötigt.
 
 Im Vergleich zum Eulerverfahren, wo die Steigung beim Punkt $(x_i, y_i)$ berechnet wird, wird beim Mittelpunkt-Verfahren die Steigung bei $(x_i+\frac h 2, y_i + \frac h 2)$ berechnet. 
 
-Dafür muss aber der Punkt $(x_i+\frac h 2, y_i + \frac h 2)$ zuerst berechnet werden. Daher ergibt sich folgendes:
+Dafür muss aber der Punkt $(x_i+\frac h 2, y_i + \frac h 2)$ zuerst berechnet werden. Daher ergibt sich folgendes:  
 $$
 \begin{align}
 x_{h/2} &= x_i + \frac h 2\\
