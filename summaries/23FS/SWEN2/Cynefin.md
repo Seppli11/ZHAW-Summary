@@ -1,5 +1,7 @@
 # Cynefin
 
+Cynefin is not a model (represents reality), but a sense making tool (a way to look at reality).
+
 ![image-20230504090919828](res/Cynefin/image-20230504090919828.png)
 
 * **Simple/Clear**: There can exist a step-by-step instructions
