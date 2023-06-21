@@ -38,6 +38,10 @@ Laws, rules and codes create a governing constraint and give a sense of stabilit
 
 ### Internal/External Constraints
 
+*(Unsure what this means...)*
+
+Connections, like hashtags in knowledge management and links in  networks, provide a flexible and adaptive structure but at the cost of  visibility and control. Containers, like categories, spreadsheets cells, and departments, provide clear, reassuring boundary conditions.  Changing connections between people and organisational units is less  costly than trying to restructure or reorganize departments. As new  connections start to provide new ways of dealing with issues, then the  constraints can be tightened and eventually formalized into new units  and departments.
+
 ### Connecting/Containing Constraints
 
 Connections between people or between departments are flexible can be easily changed but invisible and hard to control effectively. On the other side, categories, containers and departments provide a clear structure, but changing them is costly.
