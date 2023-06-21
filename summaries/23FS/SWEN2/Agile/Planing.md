@@ -1,10 +1,25 @@
 #  Planning
 
-## Planning Onion
+## Planning Onion (Level of Planing)
 
-In agile development, there are multiple planing cycles, each being longer than the previous one.
+In agile development, there are multiple planing cycles, each being longer than the previous one. Agile teams plan at the  innermost three levels
 
 ![image-20230309090850446](res/Planing/image-20230309090850446.png)
+
+## Choosing a User Story
+
+To choose a user story multiple factors should be looked:
+
+* value for the end user
+* financial value the feature provide
+  * Internal Rate of Return (IRR)
+  * Net Present value
+* the cost of developing the feature
+* the knowledge gained by developing the feature
+* the risk associated with the feature
+  * scheduling risk (the feature might not be done until April)
+  * cost risk (the feature might cost a lot more)
+  * functionality risk (the feature might be unfeasable)
 
 ## Story Points
 
@@ -24,7 +39,7 @@ The user stories should be estimated by the team without the product owner. The 
 
 A team should re-estimate a user story when its relative size has changed.
 
-## Planning Poker
+## Planning Poker (Techniques for Estimating)
 
 In planing poker, everybody gets cards with the possible story points. The available cards can either be the Fibonacci numbers or $2^n$ (1, 2, 4, 8, ...), but not continuous numbers (1, 2, 3, 4). Additionally, 0 should not be a valid number, as ten tasks with 0 will probably take longer then $10\cdot 0=0$.
 
@@ -60,3 +75,12 @@ When prioritising user stories, different metrics can be used:
 * The amount of risk removed by developing a feature
 
 ![image-20230323092820818](res/Planing/image-20230323092820818.png)
+
+## Kano Model of Customer Satisfaction
+
+![image-20230621111121363](res/Planing/image-20230621111121363.png)
+
+* **Threshold/basic attributes** are must-have features (the mvp of a product)
+* **Performance/linear** are features for which "the more-the better" holds (more levels in a game)
+* **Exciters and delighters:** are features which provide a great customer experience, but come at a price premium (Example: Great graphics in a game)
+

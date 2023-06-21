@@ -4,6 +4,11 @@
 >
 > Or do just enough...
 
+Software architecture can be defined as: 
+
+> The software architecture of a program or computing system is the structure or structures of the system, which comprise software elements, the externally visible properties of those elements, and the relations among them
+> by Simon Brown	
+
 ## Application Architecture
 
 The main concern is the organisation of code. It matters how the code is split into modules, components, layers, ...
@@ -62,8 +67,6 @@ There are different kind of coupling and cohesion. The basic rules, that higher 
 * Control Coupling: The exchange of data between modules controls the control flow
 * Common Coupling: Different modules access the same data (Shared Data)
 * Content Coupling: One module modifies the internal data of another module
-
-
 
 * Coincidental Cohesion: The grouping of the functionality of a module is done by chance.
 * Logical Cohesion: The functionality is grouped in a module, but they do not refer to each other.
@@ -146,3 +149,7 @@ Importantly, **tiers are not layers**. Tiers are where software is running (e.g.
 *  The Transaction Script Pattern organizes and divides the business logic into individual procedures so that each procedure covers a single request from the Presentation Layer.
 * The Domain Model Pattern describes an object model of the problem domain that includes behavior and data.
 * The Table Module Pattern describes a single instance (singleton) that encapsulates the business logic for all rows in a database table or view.
+
+## Properties of Modules
+
+Modules should be integrated that they compile, pass tests, run and deploy. Modularization in general enables team development and makes complex system manageable.

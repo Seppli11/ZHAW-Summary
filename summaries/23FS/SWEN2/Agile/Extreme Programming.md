@@ -1,6 +1,8 @@
 # Extreme Programming
 
-## Four Variables
+Extreme programming (XP) is a software development methodology intended to improve software quality and responsiveness to changing customer requirements.
+
+## Four Variables (Iron Triangle)
 
 There are four variables, time, resources, quality and scope, to develop software.
 
@@ -45,6 +47,8 @@ In a traditional waterfall model, change at a late stage is viewed as expensive.
 ### Metaphor
 
 At the beginning of the project a project vision is written so everybody has the same understanding of the project and its scope. This applies to technical and non-technical people.
+
+*(A metaphor translates to bildliche Beschreibung)*
 
 ### Simple Design
 
@@ -107,3 +111,10 @@ Collective ownership + constant refactoring means that coding practices must be 
 
 <img src="res/Extreme Programming/image-20230612141523438.png" alt="image-20230612141523438" style="zoom:50%;" />
 
+### Slack
+
+Include some minor tasks, which can be dropped if the development team gets behind. This has the goal for establishing trust in the team's ability to deliver on time.
+
+### Incremental Design
+
+Break a problem in small, compact problems instead of solving a big task and reducing waste.

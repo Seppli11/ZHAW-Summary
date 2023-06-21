@@ -12,6 +12,22 @@ Scrum is efficient between 5-9 people. Less then there is no communication probl
 
 Scrum teams should be cross-functional, meaning that people with different jobs should work together (developers, UX designers, testers, ...).
 
+## Scrum Values
+
+* Commitment
+* Focus
+* Openness
+* Respect
+* Courage
+
+## Scrusprint goalscm Ingredients
+
+<img src="res/Scrum/image-20230621121603180.png" alt="image-20230621121603180" style="zoom:60%;" />
+
+### Artifacts
+
+An increment is an amount of work that at the end of the sprint is done. The team commits to the work in an increment.
+
 ## Definition of Done (DoD)
 
 The definition of done is written by the whole team. It can be adjusted (making it more or less rigreous) in the sprint retrospective.
@@ -94,11 +110,19 @@ abilities and skills of individuals, and fostering a Feedback culture
 
 In scrum, there are chickens and pigs. Pigs are commited, while chickens are not. Chickens are allowed to attend the daily meetings, but are disallowed to interfeere.
 
-## Scrum Events
+## Scrum Events (Ceremonies)
 
 In the following table, the **maximum** time each event can take.
 
 <img src="res/Scrum/image-20230406082136686.png" alt="image-20230406082136686" style="zoom:50%;" />
+
+*(Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective)*
+
+### Sprint Planning
+
+In the sprint planning a sprint is planned.
+
+At the end of the sprint planning a Sprint Goal should be formalized. The sprint goal is a short statement of what work the sprint will focuse on.
 
 ### Sprint Review
 

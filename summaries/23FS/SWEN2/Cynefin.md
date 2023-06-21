@@ -16,3 +16,44 @@ Between complicated, complex and chaotic isn't a strict line.
 ## Codefin
 
 ![image-20230504092758899](res/Cynefin/image-20230504092758899.png)
+
+## Exaptation
+
+**Exaptation**, also **radical repurposing**, is the taking of  an idea, concept, tool, method, framework, etc., intended to address one thing, and using it to address a different thing, often in another  domain.
+
+An example is the re-purposing of snorkelling mask as oxygen masks during the Covid-19 crises. Similarly, a Ukrainian web app designed for use for transport, parking and  paying utility bills has been re-purposed to warn of air raids, and  directs people to bomb shelters.
+
+## Constraints
+
+Constraints limit the number of options one have. In the cynefin framework, different stages have different kinds of constraints:
+
+* **Simple Domain**: Rigid constraints
+* **Complicated Domain**: Governing constraints
+* **Complex Domain:** Enabling constraints
+* **Chaotic Domain:** Absence of constraints
+
+### Governing/Enabling Constraints
+
+Laws, rules and codes create a governing constraint and give a sense of stability. However, they are sensitive to change.
+
+### Internal/External Constraints
+
+### Connecting/Containing Constraints
+
+Connections between people or between departments are flexible can be easily changed but invisible and hard to control effectively. On the other side, categories, containers and departments provide a clear structure, but changing them is costly.
+
+One way is to let connections form and then later tighten the constraints and formalise the connections into categories, departments and rules.
+
+### Rigid, Flexible and Permeable Constraints
+
+Rigid constraints cannot be changed. If rigid structures are pressured enough, they fail catastrophically. 
+
+Flexible constraints adjust to pressures constantly.
+
+Both can be enhanced with permeability, which is a special condition that allows for exceptions. This, however, comes with the danger of too many people applying for the exception.
+
+### Dark Constraints
+
+Dark constraints are not officially defined and cannot be seen, only their effects can be observed. [Apparently,] narratives are powerful antidotes against dark constraints.
+
+Dark constraints can somewhat be meassured by looking how much of the past can be explained with the known constraints. The more unexplainable things, the more likely are unexpected and potentially catastrophic surprises.

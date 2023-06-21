@@ -11,7 +11,7 @@
 >
 > That is, while there is value in the items on the right, we value the items on the left more.
 
-* Idividuals and Interactions
+* Individuals and Interactions
   *A fool with a tool is still a fool*. It is important to have a team of good engineers. The team should form bonds.
   A team is self organising (aka. individual).
 * Working Software
@@ -49,3 +49,45 @@ The last sentence is also key: The items on the right still hold values. Develop
     The best architectures, requirements and designs emerge from self-organising teams
 12. Make Time for Reflection
     The team needs to reflect on how to become more effective at regular intervals and then tune and adjust their behaviour accordingly.
+
+## Pyramid of Agile Development
+
+![image-20230621104620741](res/Agile Development/image-20230621104620741.png)
+
+*(Collaboration Practices = Management Practices; Technical Practices = Engineering Practices)*
+
+![image-20230621105715636](res/Agile Development/image-20230621105715636.png)
+
+### Collaboration Practices
+
+#### Agile Champion
+
+An agile champion promotes the agile values to induce the following:
+
+* to lead and inspire agility
+* to help decide necessary changes to switch to agile development and then implement those
+* to convince others of the necessity of a change to agile development
+* to prevent wild-west agile (cowboy agile) and then later back sliding to the former approach
+* remove impediments preventing the change to agile development
+
+#### Collaboration and Communication
+
+Intense and open communication is seen as one of the keys to successful agile projects.
+
+The team should communicate well with:
+
+* them self
+* the customer/end-user
+* management
+
+This is similar to the agile value "transparency and openness".
+
+### Agile Value
+
+#### Organizational Culture
+
+An agile team can work within a componey which has:
+
+* an agile organization and company
+* only an agile company
+* neither an agile organization, nor company
