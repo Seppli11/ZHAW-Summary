@@ -72,5 +72,25 @@ There are two key functions:
 The algorithm does the following:
 
 1. Take the $\varepsilon-closure(s_0)$ and add it to the DFA as the start state
-2. Take the $\varepsilon cloure(Move(s_0, \alpha))$ for each $\alpha \in \Sigma$ and add it to the DFA
-3. Repeat 2. with the new states
+2. Take the $\varepsilon cloure(Move(s_0, \alpha))$ for each $\alpha \in \Sigma$ and add it to the DFA.
+   Importantly, first only $Move(s_i, \alpha)$ is considered (so only states **directly** reachable from $s_i$), and afterwards the $\varepsilon closure(...)$ is calculated.
+3. Repeat 2. with the new states until no new states are added
+4. Mark all states which contain a final state of the NFA as final states of the DFA
+
+**TODO: Insert example construction**
+
+**TODO: Insert pseudo code**
+
+## Fixed-Point Computation
+
+* A monotone construction of some finite set (only add to the set, never remove)
+* Halts when its stops adding to the set
+
+## Hopcroft's Algorithm
+
+The Hopcroft's algorithm reduces the number of states and produces a minimised DFA.
+
+There are two sets: $Q$ with all the "old" states, and $P$ with all the new states.
+
+1. Put all finish states in a state and add it to $P$ and put all non-finish states and add it to $P$
+2. **TODO**
