@@ -10,6 +10,10 @@
 
 ## Properties of Ciphers
 
+A private-key encryption scheme is defined by a **message space** $\mathcal M$ (all legal messages) and three algorithms for generating keys ($Gen$), encrypting ($Enc$) and decrypting ($Dec$). valid 
+
+The set of all possible keys is the **key space** denoted by $\mathcal K$.
+
 A cipher should have the following properties:
 
 * **Correctness**: $Dec(k, Enc(k, m)) = m$
@@ -29,4 +33,3 @@ One-time pad is essentially "just" xor-ing the message $m$ with the key $k$.
   &= m
   \end{align}
   $$
-  

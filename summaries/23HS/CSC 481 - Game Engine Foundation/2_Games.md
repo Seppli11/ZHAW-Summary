@@ -73,6 +73,57 @@ A game engine should have common systems:
 
 A game engine should be a fully featured, reusable software development kit. In addition **efficiency** is important! A game engine also should be able to accomplish the creative vision.
 
+## Pong
+
+1. User Input
+2. I/O System (Load System)
+3. Paddle and Ball 
+4. Rendering System
+5. Collision Detection
+6. Physics
+7. Audio
+8. UI
+   1. Scoring System
+
+* Reset the state of the game
+
+## 2D Platformer
+
+* IO System
+* Collision
+* Physics
+* Gravity
+* Platform-System
+* Input
+* Player
+* Winning/Loosing Condition
+* Level-System
+* UI
+* Render System
+* Animation
+* AI (on the side)
+
+```mermaid
+graph 
+level[Level System] --> io[IO System]
+level --> player
+level --> platforms
+level --> enemies
+collision
+physics --> collision
+gravity --> physics
+platforms --> physics
+
+rendering --> level
+ui --> rendering
+ui --> win[Win Condition]
+
+level_generation[Level Generation] --> level
+
+```
+
+
+
 ## Engine vs Game
 
 An engine is...
@@ -85,3 +136,25 @@ An engine is...
 A game usually does not support this properties (, however, there are exceptions). 
 
 There are properties that both the engine and games should have, like efficiency.
+
+## Optimisations
+
+A game engine can optimises for different things:
+
+* Hardware 
+  A game might be optimised for a console or a PC. Since a console has a very specific set of hardware, optimising for this is easier.
+
+* Style of Games
+
+* Graphics
+  2D or 3D
+
+* Multiplayer
+
+  P2P or server/client
+
+However, one thing to consider, with every optimisation the game engine strays further from generalisbility.
+
+## Deadlines
+
+A game has internal deadlines (e.g. framerate targets, asset loading, ...). Games can, and often do run without meeting these constraint. Thus, this is a soft constraint.

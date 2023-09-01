@@ -44,17 +44,17 @@ op -> "+" | "-"
 
 This will be transformed in the following parse tree:
 
-**TODO: insert image**
+<img src="./res/1_Introduction/image-20230901083236009.png" alt="image-20230901083236009" style="zoom:67%;" />
 
 The parse tree is too big and contains too many details to be used efficiently. Because of this a parse tree is transformed into an abstract syntax tree (AST), which summarises grammatical structure, without including details about the derivation. An AST is one IR form. 
 
-**TODO: insert image**
+<img src="./res/1_Introduction/image-20230901083158771.png" alt="image-20230901083158771" style="zoom:67%;" />
 
 ## The Middle End
 
 The middle end's primary goal is to improve the running time of the compiled code, but might also improve other properties. One important property of a middle end is that is **must** preserve the meaning of the code (however, the definition of meaning varies).
 
-**TODO: insert image**
+<img src="./res/1_Introduction/image-20230901083301600.png" alt="image-20230901083301600" style="zoom: 67%;" />
 
 The middle end is structured in a series of passes. Each pass has one goal
 
@@ -62,6 +62,6 @@ The middle end is structured in a series of passes. Each pass has one goal
 
 The back end translates the IR into the target's machine code.
 
-**TODO: insert image**
+<img src="./res/1_Introduction/image-20230901083317205.png" alt="image-20230901083317205" style="zoom:67%;" />
 
 The back end needs to decide which instructions to use for each IR operation, which values to keep in the registers and ensure the conformance with system interfaces (e.g. calling convention, ...).
