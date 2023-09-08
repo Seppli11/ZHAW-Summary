@@ -50,13 +50,13 @@ If the DFA stops at a non-final state, the DFA should report the last encountere
 
 ## Cycle of  Construction
 
-**TODO: Insert the cycle of construction image**
+![image-20230908080107922](./res/2_Scanner/image-20230908080107922.png)
 
 ## Thompson's Construction
 
 To get from RE to a NFA, Thompson's construction can be used. It is based on the idea that two NFA's can be joined with $\varepsilon$. For each operator and symbol, there is an NFA pattern, which are then joined.
 
-**TODO: Insert NFA patterns**
+<img src="./res/2_Scanner/image-20230908080140508.png" alt="image-20230908080140508" style="zoom:80%;" />
 
 ## Subset Construction
 
@@ -67,7 +67,7 @@ There are two key functions:
 1. $Move(s_i, a)$ is the set of states reachable from $s_i$ by consuming the character `a`
 2. $\varepsilon-closure(s_i)$ is the set of states reachable from $s_i$ by one or more $\varepsilon$. $s_i$ will always be part of the set.
 
-**TODO: Insert example image**
+<img src="./res/2_Scanner/image-20230908080256649.png" alt="image-20230908080256649" style="zoom:67%;" />
 
 The algorithm does the following:
 
@@ -77,9 +77,26 @@ The algorithm does the following:
 3. Repeat 2. with the new states until no new states are added
 4. Mark all states which contain a final state of the NFA as final states of the DFA
 
-**TODO: Insert example construction**
+<img src="./res/2_Scanner/image-20230908080237199.png" alt="image-20230908080237199" style="zoom:67%;" />
 
-**TODO: Insert pseudo code**
+```lua
+s0 = ε-closure(q0);
+S.add(s0);
+Worklist.add(s0);
+
+while (!worklist.empty()) do
+    remove s from Wordlist;
+    
+    foreach c in Σ do
+        t = ε-closure(move(s,c));
+        T[s,c] = t;
+        if (t ∉ S) then
+            S.add(t);
+            worklist.add(t);
+        end;
+    end;
+end;
+```
 
 ## Fixed-Point Computation
 
@@ -93,4 +110,31 @@ The Hopcroft's algorithm reduces the number of states and produces a minimised D
 There are two sets: $Q$ with all the "old" states, and $P$ with all the new states.
 
 1. Put all finish states in a state and add it to $P$ and put all non-finish states and add it to $P$
-2. **TODO**
+2. Take each $S \in P$ and repeat until $P$ doesn't change
+   1. Check if $\alpha \in \Sigma$ splits $S$ into $S_1$ and $S_2$. If yes, replace $S$ with $S_1$ and $S_2$ in $P$
+
+The  following pseudo code represents the algorithm.
+
+```python
+P = { F, {Q without F} }
+while ( P is still changing)
+    T = {}
+    for each set S ∈ P
+        remove S from P
+        T = T ∪ Split(S)
+    P = T
+
+Split(S)
+    for each α ∈ Σ
+        if α splits S into S1 and S2
+        	then return {S1 , S2}
+    return S
+```
+
+The following diagram shows when a set of states is split:
+
+![image-20230908080515061](./res/2_Scanner/image-20230908080515061.png)
+
+The following shows an example:
+
+![image-20230908081559584](./res/2_Scanner/image-20230908081559584.png)

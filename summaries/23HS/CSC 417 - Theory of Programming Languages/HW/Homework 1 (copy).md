@@ -2,7 +2,7 @@
 
 ## Dynamic Scope
 
-Shell script is one of the few languages still in use which has dynamic scoping. According to Wikipedia, `sh` was released in 1979 as a replacement in Unix 7 for the Thompson shell [[1][1]]. Shell scripts are used to this day to automate common sysadmin tasks and can be run on all major desktop platforms. In addition to scripts, `sh` can also be used as a REPL and is a common way to interface with UNIX-like systems.  
+Shell script is one of the few languages still in use which has dynamic scoping. According to Wikipedia, `sh` was released in 1979 as a replacement in Unix 7 for the Thompson shell[^1]. Shell scripts are used to this day to automate common sysadmin tasks and can be run on all major desktop platforms. In addition to scripts, `sh` can also be used as a REPL and is a common way to interface with UNIX-like systems.  
 
 ```bash
 #!/bin/sh
@@ -33,9 +33,9 @@ The example above is a slightly altered version taken from https://riptutorial.c
 
 A type defines properties and ways to access and modify those properties. In OOP languages, this often comes in the form of methods which access and modify fields.
 
-A subtype has to be valid in the same context the super type is valid. So, for example, passing a subtype to a function which expects the subtype's super type should still compile [[3][3]]. This assumes that at least all public properties and the public way to modify and access properties need to be present on a subtype. However, a subtype might choose to change the implementation detail of a method.
+A subtype has to be valid in the same context the super type is valid. So, for example, passing a subtype to a function which expects the subtype's super type should still compile[^3]. This assumes that at least all public properties and the public way to modify and access properties need to be present on a subtype. However, a subtype might choose to change the implementation detail of a method.
 
-Inheritance is a way to "generate" subtypes by creating a type which inherits all the properties and methods from its parents. Since all properties are inherited, the subclass can be used in almost every context the super class is valid. However, there are some exceptions to this rule. For example, method parameters are contravariant, meaning when overriding a method the parameter type may be substituted by its super type, but not its subtype. [[4][4]]
+Inheritance is a way to "generate" subtypes by creating a type which inherits all the properties and methods from its parents. Since all properties are inherited, the subclass can be used in almost every context the super class is valid. However, there are some exceptions to this rule. For example, method parameters are contravariant, meaning when overriding a method the parameter type may be substituted by its super type, but not its subtype.[^4]
 
 The Liskov substitution principle states that the functionality of code should be unchanged if an instance passed to that code is a subtype of the required type.
 
@@ -48,7 +48,7 @@ void deleteAll(List<String> list) {
 }
 ```
 
-The code above defines a method which takes a list of strings and deletes all elements in the list by calling the `List.clear()` method. This code works great, assuming that the given list can be modified. But if the argument is an unmodifiable list, then `List.clear()` will throw an `UnsupportedOperationException` [[5][5]].
+The code above defines a method which takes a list of strings and deletes all elements in the list by calling the `List.clear()` method. This code works great, assuming that the given list can be modified. But if the argument is an unmodifiable list, then `List.clear()` will throw an `UnsupportedOperationException`[^5].
 
 ```java
 List<String> readOnlyList = Collections.unmodifiableList(someList);
@@ -88,7 +88,7 @@ During the lifetime of a program, memory is allocated in multiple location, incl
 
 A stack is a first-in-last-out collection, meaning that the first element pushed on to the stack will be the last to be popped. Because of this property, the stack is used for local variables and the return address. 
 
-When a function is invoked, a new stack frame is pushed on the stack. A frame contains space for local variables and the return address. When a function returns, the top most stack frame will correspond to that function. The CPU uses the return address to know where to jump back to. Additionally, since the stack frame contains local variables, these variables are automatically cleaned up when popping a stack frame. [[6][6]]
+When a function is invoked, a new stack frame is pushed on the stack. A frame contains space for local variables and the return address. When a function returns, the top most stack frame will correspond to that function. The CPU uses the return address to know where to jump back to. Additionally, since the stack frame contains local variables, these variables are automatically cleaned up when popping a stack frame.[^6]
 
 The frames with their return address and local data can be seen in the following image.
 
@@ -108,11 +108,11 @@ One important caveat with languages with manual memory management is, that if a 
 
 ## Reference Counting
 
-Reference counting is a technique where each time a new reference is made, a counter is incremented and each time a reference goes out of scope (or is otherwise deallocated) the counter is decremented. When the counter hits zero, the object is not reachable anymore and can be safely deallocated. [[7][7]]
+Reference counting is a technique where each time a new reference is made, a counter is incremented and each time a reference goes out of scope (or is otherwise deallocated) the counter is decremented. When the counter hits zero, the object is not reachable anymore and can be safely deallocated. [^7]
 
 Reference counting is often used in languages without a garbage collector in situations where an object is "owned" by multiple entities.
 
-Rust implements reference counting in the `Rc<T>` struct. Each time it is cloned, the internal reference counter is incremented. When an `Rc<T>` object is destroyed, then the reference counter is decremented. [[8][8]]
+Rust implements reference counting in the `Rc<T>` struct. Each time it is cloned, the internal reference counter is incremented. When an `Rc<T>` object is destroyed, then the reference counter is decremented. [^8]
 
 ```rust
 struct Owner {
@@ -165,7 +165,7 @@ fn main() {
 
 Rust uses the concept of ownership to decide when an object needs to be deallocated.
 
-The following ownership rules exist [[9][9]]:
+The following ownership rules exist[^9] :
 
 * Each value in Rust has an owner
 * There can only be one owner at a time
@@ -204,29 +204,14 @@ Because of this system, Rust can generate deallocation code for most situations 
 
 One downside of this system is that it explicitly disallows multiple owners. However, there are situations where this is required. For these cases, rust implements reference counting with `Rc<T>` as an escape hatch. Importantly, `Rc<T>` isn't some kind of primitive engraved in Rust's type system. Rather, it is built on top of the type system, and anybody can build a replacement if they choose to do so.
 
-As can be seen in the `Rc<T>` example in the reference counting section, `Rc<T>` wraps the value `T`. The three ownership rules are still upheld, since each owner has their own `Rc<T>` object which in the background uses *unsafe* trickery to allow each `Rc<T>` access to the underlying value. [[8][8]]
+As can be seen in the `Rc<T>` example in the reference counting section, `Rc<T>` wraps the value `T`. The three ownership rules are still upheld, since each owner has their own `Rc<T>` object which in the background uses *unsafe* trickery to allow each `Rc<T>` access to the underlying value. [^8]
 
-## References
-
-[1]: https://en.wikipedia.org/wiki/Bourne_shell  Bourne shell (Accessed Sept. 05, 2023)
-[2]: https://en.wikipedia.org/wiki/Liskov_substitution_principle Liskov substitution principle  (Accessed Sept. 05, 2023)
-[3]: https://en.wikipedia.org/wiki/Subtyping Subtyping  (Accessed Sept. 05, 2023)
-[4]: https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)#Contravariant_method_parameter_type Covariance and contravariance (computer science)  (Accessed Sept. 05, 2023)
-[5]: https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#unmodifiableList-java.util.List- Collections.unmodifableList(...) JavaDoc  (Accessed Sept. 05, 2023)
-[6]: https://en.wikipedia.org/wiki/Stack-based_memory_allocation Stack-based memory allocation  (Accessed Sept. 05, 2023)
-[7]: https://en.wikipedia.org/wiki/Reference_counting#Garbage_collection Reference counting - Garbage collection (Accessed Sept. 05, 2023)
-[8]: https://doc.rust-lang.org/std/rc/index.html Rust Documentation on module std::rc (Accessed Sept. 06, 2023)
-[9]: https://doc.rust-lang.org/stable/book/ch04-01-what-is-ownership.html The Rust Programming Language - What Is Ownership? (Accessed Sept. 06, 2023)
-
-
-
-[1]: https://en.wikipedia.org/wiki/Bourne_shell  "Bourne shell (Accessed Sept. 05, 2023)"
-[2]: https://en.wikipedia.org/wiki/Liskov_substitution_principle "Liskov substitution principle  (Accessed Sept. 05, 2023)"
-[3]: https://en.wikipedia.org/wiki/Subtyping "Subtyping  (Accessed Sept. 05, 2023)"
-[4]: https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)#Contravariant_method_parameter_type "Covariance and contravariance (computer science)  (Accessed Sept. 05, 2023)"
-[5]: https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#unmodifiableList-java.util.List- "Collections.unmodifableList(...) JavaDoc  (Accessed Sept. 05, 2023)"
-[6]: https://en.wikipedia.org/wiki/Stack-based_memory_allocation "Stack-based memory allocation  (Accessed Sept. 05, 2023)"
-
-[7]: https://en.wikipedia.org/wiki/Reference_counting#Garbage_collection	"Reference counting - Garbage collection (Accessed Sept. 05, 2023)"
-[8]: https://doc.rust-lang.org/std/rc/index.html	"Rust Documentation on module std::rc (Accessed Sept. 06, 2023)"
-[9]: https://doc.rust-lang.org/stable/book/ch04-01-what-is-ownership.html	"The Rust Programming Language - What Is Ownership? (Accessed Sept. 06, 2023)"
+[^1]: https://en.wikipedia.org/wiki/Bourne_shell  Bourne shell
+[^ 2]: https://en.wikipedia.org/wiki/Liskov_substitution_principle Liskov substitution principle
+[^3]: https://en.wikipedia.org/wiki/Subtyping Subtyping
+[^4]: https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)#Contravariant_method_parameter_type Covariance and contravariance (computer science)
+[^5]: https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#unmodifiableList-java.util.List- Collections.unmodifableList(...) JavaDoc
+[^6]: https://en.wikipedia.org/wiki/Stack-based_memory_allocation Stack-based memory allocation
+[^7]: https://en.wikipedia.org/wiki/Reference_counting#Garbage_collection
+[^8]: https://doc.rust-lang.org/std/rc/index.html 
+[^9]: https://doc.rust-lang.org/stable/book/ch04-01-what-is-ownership.html

@@ -49,7 +49,4 @@ A method with argument of multiple type is parametic polymoriphic. Basically, ev
 int size(List x) {...} // this is not
 ```
 
-## What Tooling is there available for Java
-
-
 
