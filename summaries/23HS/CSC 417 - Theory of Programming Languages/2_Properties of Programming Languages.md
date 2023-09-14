@@ -49,4 +49,21 @@ A method with argument of multiple type is parametic polymoriphic. Basically, ev
 int size(List x) {...} // this is not
 ```
 
+## Uniformity of Languages
 
+Languages which don't have uniform properties (like python), it makes the language less fit for larger projects. This comes from the fact, that weird oddities arise which are a nightmare to debug in large code bases.
+
+## Expression Types
+
+* Infix-Expression: `4 + x`
+* Prefix-Expression: `+ 4 x`
+* Postfix-Expression: `5 x +`
+
+## Literal Types
+
+1. Pass a value as an argument (`hi(0.5)`)
+2. Assign a value to a variable (`x = 0.5`)
+3. Having a literal representation (`0.5`)
+4. create a new value dynamically
+
+Not all types in every language pass all of this questions. In a lot of language, functions don't pass all of the questions.

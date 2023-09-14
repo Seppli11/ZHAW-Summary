@@ -142,7 +142,8 @@ An algorithm to eliminate left recursion is:
 1. arange the non-terminals into some order $A_1, A_2, ..., A_n$
 2. for $i \leftarrow 1$ to $n$
    1. for $s \leftarrow 1$ to $i - 1$
-      1. replace each production **TODO: finish algorithm**
+      1. replace each production $A_i \to A_s\gamma$ with $A_i \to \delta_1 \gamma \mid \delta_2\gamma \mid ... \mid \delta_k\gamma$, where $A_s \to \delta_1 \mid \delta_2 \mid ... \mid \delta_k$ are all the current productions for $A_s$
+   2. subsitude**TODO: finish algorithm**
 
 
 The following example has an indirect left recursion (E -> T -> E ~ T -> T ~ T -> E ~ T ~ T ...):
@@ -165,6 +166,25 @@ Running the algorithm yields the following:
 
 All of these rewrites and substitutions yield the following result:
 
-**TODO: insert result**
+```
+G 	-> E
+E 	-> T E'
+E' 	-> + T E'
+E' 	-> "" 			// empty string
+T 	-> "id" T'
+T'	-> E' ~ T T'
+T' 	-> "" 			// empty string
+```
+
+#### Another Example
+
+```
+A 	-> B x
+B	-> C y
+C	-> A z | z
+```
+
+1. Order $A, B, C$
+2. 
 
 ### Bottom-Up Parser
