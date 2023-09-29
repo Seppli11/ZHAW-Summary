@@ -14,7 +14,7 @@ Formally a context-free grammar is a four tuple $G = (S, N, T, P)$, where
 * $T$ is a set of terminal symbols
 * $P: N \to (N \cup T)^+$ is a set of productions/rewrite rules
 
-**TODO: insert example of derivation**
+![image-20230915081246345](./res/3_Parser/image-20230915081246345.png)
 
 A sequence of rewrites is called a **derivation**, while the process of discovering a derivation is called **parsing**.
 
@@ -25,7 +25,7 @@ There are two kind of derivations:
 
 A derivation can also be represented in a parse tree. A natural way to compute such a tree, is to walk it in post-order (visit children before the parent).
 
-**TODO: Insert parse tree image**
+<img src="./res/3_Parser/image-20230915081311180.png" alt="image-20230915081311180" style="zoom:67%;" />
 
 ### Precedence in Derivation
 
@@ -97,9 +97,14 @@ A deeper ambiguity like in Matlab `a = f(17)` `f` could be a function or an arra
 
 ## Parser Implementation
 
-**TODO: Insert comparison picture**
+<img src="./res/3_Parser/image-20230915081447986.png" alt="image-20230915081447986" style="zoom:67%;" />
 
-### Top-Down Parser
+* LL = Left-to-right scanning, Leftmost derivation
+* LR = Left-to-right scanning, Rightmost derivation
+* LL(1) is a grammar with one look-adhead token
+* $LL(1) \subset LR(1)$ *(LL(1) is the superset of LR(1))*
+
+## Top-Down Parser
 
 1. Construct the root node of the parse tree
 2. Repeat the following steps
@@ -107,15 +112,15 @@ A deeper ambiguity like in Matlab `a = f(17)` `f` could be a function or an arra
    2. When a terminal symbol is added to the fringe and it doesn't match the fringe of input, **backtrack**
    3. Find the next node to be expanded
 
-**TODO: Insert example**
+<img src="./res/3_Parser/image-20230915081529106.png" alt="image-20230915081529106" style="zoom:67%;" />
 
 Another possibility to derive the grammar can lead to an infinite loop.
 
-**TODO: Insert non-terminating example**
+<img src="./res/3_Parser/image-20230915081657976.png" alt="image-20230915081657976" style="zoom:67%;" />
 
 A top-down parser cannot parse a left-recursion since it uses the leftmost derivation. However, a top down parser can handle right recursive grammars.
 
-#### Convert Left Recursion to Right Recursion
+### Convert Left Recursion to Right Recursion
 
 The following rule can be rewritten:
 
@@ -134,16 +139,18 @@ Fie -> "+" Fie
 
 Both of these grammar accept the same input, but the latter one is right recursive and can be parsed by a top down parser.
 
-**TODO: Other example**
+<img src="./res/3_Parser/image-20230922092241099.png" alt="image-20230922092241099" style="zoom:67%;" />
 
 
 An algorithm to eliminate left recursion is:
 
-1. arange the non-terminals into some order $A_1, A_2, ..., A_n$
+1. arrange the non-terminals into some order $A_1, A_2, ..., A_n$
 2. for $i \leftarrow 1$ to $n$
    1. for $s \leftarrow 1$ to $i - 1$
       1. replace each production $A_i \to A_s\gamma$ with $A_i \to \delta_1 \gamma \mid \delta_2\gamma \mid ... \mid \delta_k\gamma$, where $A_s \to \delta_1 \mid \delta_2 \mid ... \mid \delta_k$ are all the current productions for $A_s$
-   2. subsitude**TODO: finish algorithm**
+   2. rewrite the productions to eliminate any direct left recursion
+
+*(This assumes that the initial grammar has **no** cycles and no epsilon productions)*
 
 
 The following example has an indirect left recursion (E -> T -> E ~ T -> T ~ T -> E ~ T ~ T ...):
@@ -176,7 +183,20 @@ T'	-> E' ~ T T'
 T' 	-> "" 			// empty string
 ```
 
-#### Another Example
+To eliminiate $\varepsilon$-productions, one can replace the $\varepsilon$-production where it occures.
+
+```
+A -> Bb
+B -> C
+B -> a
+B -> ""
+// this can be written as
+A -> Cb
+A -> ab
+A -> b
+```
+
+### Another Example
 
 ```
 A 	-> B x
@@ -187,4 +207,143 @@ C	-> A z | z
 1. Order $A, B, C$
 2. 
 
-### Bottom-Up Parser
+## LL(1) Grammar
+
+The set $FIRST(\alpha)$ contains all the tokens which appear as the first symbol in some string that derives from $\alpha$. This also includes $\varepsilon$.
+
+<img src="./res/3_Parser/image-20230922092751880.png" alt="image-20230922092751880" style="zoom:60%;" />
+
+If $A \to \alpha$ and $A \to \beta$ both appear in the grammar, we would like $FIRST(\alpha) \cup FIRST(\beta) = \{\}$. This allows the parser to make a correct choice with a look-ahead symbol of exactly one symbol, **if** there are **no** $\varepsilon$-productions.
+
+If $A \to \alpha$, $A \to \beta$  and $\varepsilon \in FIRST(\alpha) $, then $FIRST(\beta)$ needs to be disjointed from $FOLLOW(\alpha)$ as well. $FIRST^+(\alpha)$ is defined as $FIRST(\alpha) \cup FOLLOW(\alpha)$ if $\varepsilon \in FIRST(\alpha)$. Otherwise it is just $FIRST(\alpha)$.
+
+More formally, a grammar is $LL(1)$ if $FIRST^+(\alpha) \cup FIRST^+(\beta) = \{\}$ needs to hold.
+
+### Left Factoring
+
+A grammar can be transformed into a LL(1) grammar with the left factoring algorithm.
+
+In the output of this algorithm, $\varepsilon$-productions are allowed.
+
+1. $\forall A \in NT$
+   1. find the longest prefix $\alpha$ that occurs in two or more right-hand sides of $A$
+   2. if $\alpha \neq \varepsilon$ then replace all of the $A$ productions $A \to \alpha \beta_1 \mid \alpha \beta_2 \mid .. \mid \alpha \beta_n \mid \gamma$ with $A \to \alpha Z \mid \gamma$ and $Z \to \beta_1 \mid \beta_2 \mid ... \mid \beta_n$
+2. repeat until no common prefixes remain
+
+A context free grammar which has the possibility to have an unbounded number of characters before the parser can decide to use $A$ or $B$, then the context free grammar cannot be an LL(1) grammar.
+
+![image-20230922161305183](./res/3_Parser/image-20230922161305183.png)
+
+![image-20230922161524540](./res/3_Parser/image-20230922161524540.png)
+
+## Recursive Decent Parsing
+
+1. Build $FIRST$ AND $FOLLOW$ SETS
+2. Massage grammar to have LL(1) condition
+   1. Remove left revursion
+   2. Left factor it
+3. Define a procedure for each non-terminal
+   1. Implement a case for each right-hand side
+   2. Call procedures as needed for non-terminals
+4. Add extra code, as needed
+   1. Perform context-sensitive checking
+   2. Build an IR to record the code
+
+**TODO: Insert pseudo code**
+
+## Table-Driven Top-Down Parser
+
+There is a table with a row for ever non-terminal and a column for every terminal.
+
+To fill the table $TABLE[X, y], X \in NT, y \in T$.
+
+1. entry is the rule $X \to \beta$, if $y \in FIRST(\beta)$
+2. entry is the rule $X\to \beta$, if $y \in FOLLOW(X)$ and $X\to\varepsilon \in G$
+3. otherwise, the entry is an error
+
+**TODO: Insert table**
+
+```
+token <- next_token()
+push EOF onto stack
+push the start symbol, s, onto Stack
+...
+```
+
+**TODO: Insert pseudo code**
+
+## LR(1) Grammar
+
+
+
+## Bottom-Up LR(1) Parser
+
+Bottom-up parsers use handles to decide which rule to use. A handle is a substring $\beta$ in the right-hand side of some production $A \to \beta$. A grammar $G$ is unambiguous, if every sentential form in the rightmost derivation has a unique handle.
+
+An LR(1) parsers are table-driven, shift-reduce parsers which look ahead one token to disambiguate reduce and shift actions. An LR(1) parser recognises languages that have an LR(1) grammar.
+
+**TODO: LR(1) parser psudo code**
+
+*(The reason why the token is pushed, is for book-keeping reason. Otherwise no parse tree could be generated. However, they are always pushed and popped in pairs and could also be represented as a tuple)*
+
+**TODO: Insert GOTO and ACTION table**
+
+## Build an AST during Parsing
+
+## Estimate Cycle Counts
+
+```
+Goal    -> Expr                 $$ = $1
+Expr    -> Expr + Term          $$ = MakeAddNode($1, $3)
+        |  Expr - Term          $$ = MakeSubNode($1, $3)
+        |  Term                 $$ = $1
+
+Term    -> Term * Factor        $$ = MakeMulNode($1, $3)
+	    |  Term / Factor        $$ = MakeDivNode($1, $3)
+        |  Factor               $$ = $1      
+                                             
+Factor -> ( Expr )              $$ = MakeParNode($2)
+        | number                $$ = MakeNumNode($1)      
+        | id                    $$ = MakeIdNode($1)  
+```
+
+## Build LR(1) Tables
+
+There are two steps:
+
+1. Determine the states from a given grammar
+2. Fill the actions for each state into the ACTION-table, and fill the GOTO-table with the state-transitions following reductions
+
+> An **LR(1) item** $[A \to \beta \textbullet\gamma, a]$ represents that the parser is currently matching $A$, has just parsed $\Beta$ and expects to see $\gamma$ next. The $\textbullet$ represents where the parser currently is. $a$ is what is expected after $A$ has been matched. Each state is composed of multiple LR(1) items.
+>
+> A **master item** is the initial state LR(1) item or an item directly derived from other states.
+>
+> **Help items** are from the expasion of existing items and are used for deriving itmes of other states
+>
+> The **canonical collection** is the set of all states 
+
+1. Begin with the initial state master item $[S' \to \textbullet S, EOF]$ and get its help items with the $closure$-function. The master item and its help item for the first state $s_0$
+2. For each symbol in the grammar, compute the master items of the next state with the $goto$-function and get the help items with the $closure$-function. This forms the next state $s_{next}$
+
+
+
+The $closure(s)$ function:
+
+1. while ($s$ is still changing)
+   1. for each item $[A \to \beta \textbullet C\delta, a]\in s$
+      1. for each production $C \to \gamma \in P$
+         1. for each $b \in FIRST(\delta a)$
+            1. $s \to s \cup \{[C \to \textbullet\gamma, b]\}$
+2. returns $s$
+
+**TODO Insert closure example**
+
+The $goto(s, x)$ function:
+
+1. $moved \leftarrow \emptyset$
+2. for each item $i \in s$
+   1. if the form of $i$ is $[\alpha \to \beta \textbullet x\delta, a]$ then
+      1. $moved \leftarrow moved \cup \{[\alpha \to \beta x \textbullet \delta, a]\}$
+3. return $closure(moved)$
+
+**TODO Insert goto example**

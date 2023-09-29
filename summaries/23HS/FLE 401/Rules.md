@@ -24,3 +24,29 @@ For three syllable nouns,  about half are stressed on the first syllable (FAcult
 ## Schwa /ə/
 
 It is the most common vowel sound in English, typically sounds like short "uh" or "ih" and only appears in an unstressed syllable.
+
+## Tricky `t`
+
+* True T
+  Tong is touching the teethes
+
+  Examples: top, attach, true
+
+* Stop T
+  Tong is stopping before touching the teethes
+
+  Examples: Hot, Fit
+
+* Flap T /d/
+  Occurs between two vowels
+  native, party, thirty
+
+* Omitted T
+  The t is emitted entierly
+  Example: internet, winter
+
+## Th Sounds: /ð/ vs /Ɵ/
+
+ð: rather, the, this, worthy
+
+Ɵ: wrath, bath, thorn, worth

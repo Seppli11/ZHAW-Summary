@@ -16,6 +16,8 @@ A language can be described at a high level with the following properties:
 * adaptation
 * tooling, platform (OS and hardware) support (if notable)
 
+## Garbage Collector
+
 A program which runs in the back ground and cleans the heap memory of unused objects. 
 
 The heap is split into multiple "sub-heaps" or called generation. Over time, objects are moved to older generations.
@@ -66,4 +68,4 @@ Languages which don't have uniform properties (like python), it makes the langua
 3. Having a literal representation (`0.5`)
 4. create a new value dynamically
 
-Not all types in every language pass all of this questions. In a lot of language, functions don't pass all of the questions.
+Not all types in every language pass all of this questions. In a lot of language, functions don't pass all of the questions. A value which passes those questions, is called a first-class value/type.
