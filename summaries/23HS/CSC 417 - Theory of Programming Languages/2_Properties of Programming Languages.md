@@ -69,3 +69,9 @@ Languages which don't have uniform properties (like python), it makes the langua
 4. create a new value dynamically
 
 Not all types in every language pass all of this questions. In a lot of language, functions don't pass all of the questions. A value which passes those questions, is called a first-class value/type.
+
+## Eagerness and Laziness
+
+An eager programming language evaluates the arguments before calling a function. So when evaluating `f(x, 1 + y)`, `x` and `1 + y` is evaluated before calling `f`.
+
+An lazy language on the other hand, `x` and `1 + y` will only be called once their value is actually needed.

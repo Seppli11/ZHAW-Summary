@@ -347,3 +347,25 @@ The $goto(s, x)$ function:
 3. return $closure(moved)$
 
 **TODO Insert goto example**
+
+
+
+1. for each state $s_x \in S$
+   1. for each item $i \in s_x$
+      1. if $i$ is $[]$
+
+**TODO Filling in the ACTION and GOTO tables**
+
+## Ad-Hock Translation
+
+**TODO**
+
+## Attribute Grammar
+
+*(Note: The attribution rules for a production doesn't necessarily being run in sequence)*
+
+## Circularity
+
+A strongly non-circular grammar (SNC) is a grammar which can only generate instances with asyclic dependency graphs. This property can be tested in polynomial time. However, failing the test just means that it was inconclusive (**not** that the graph is not an SNC).
+
+**TODO: Insert of cyclic grammar**
