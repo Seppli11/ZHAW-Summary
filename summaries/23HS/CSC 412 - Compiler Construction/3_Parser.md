@@ -249,7 +249,31 @@ A context free grammar which has the possibility to have an unbounded number of 
    1. Perform context-sensitive checking
    2. Build an IR to record the code
 
-**TODO: Insert pseudo code**
+For a grammar like below, the parser would look like the following:
+
+<img src="./res/3_Parser/image-20231006082353962.png" alt="image-20231006082353962" style="zoom:67%;" />
+
+```python
+def Expr():
+    if Term() == False: return False
+	else: return EPrim()
+
+def TPrime():
+    if word == "*" or word == "/":
+        word = NextWord()
+        if Factor() == False:
+            return False
+        else: 
+            return TPrime()
+            
+def Factor():
+    if word == "(":
+        word = NextWord()
+        if Expr() == False:
+            return False
+        else:
+            ...
+```
 
 ## Table-Driven Top-Down Parser
 
@@ -261,16 +285,40 @@ To fill the table $TABLE[X, y], X \in NT, y \in T$.
 2. entry is the rule $X\to \beta$, if $y \in FOLLOW(X)$ and $X\to\varepsilon \in G$
 3. otherwise, the entry is an error
 
-**TODO: Insert table**
+<img src="./res/3_Parser/image-20231006082953874.png" alt="image-20231006082953874" style="zoom:67%;" />
 
-```
+```R
 token <- next_token()
 push EOF onto stack
 push the start symbol, s, onto Stack
 ...
 ```
 
-**TODO: Insert pseudo code**
+The following pseudo-code shows how the table is used:
+
+```python
+push INVALID
+push start state;
+token ← next_token( )
+while (true) do;
+    state ← top of stack;
+    if Action[state, token] = “reduce A→β” then begin;
+        pop 2x|β| symbols;
+        state ← top of stack;
+        push A;
+        push Goto[state, A];
+    end;
+    else if Action[state,token] = “shift si” then begin;
+        push token ;
+        push si;
+        token ← next_token( );
+    end;
+    else if Action[state, token] = “accept”
+    	then break;
+    else Fail();
+end;
+report success;
+```
 
 ## LR(1) Grammar
 
