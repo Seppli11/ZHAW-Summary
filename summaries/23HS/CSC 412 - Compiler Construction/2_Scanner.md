@@ -44,7 +44,7 @@ else
 
 Instead of this, scanners can also use labels and goto-statements to implement the scanner logic. While this is complex and difficult to debug, it is more permanent and good for automatically generated scanners.
 
-Both a scanner based on a DFA or a RE  need to continue consuming characters until the DFA reaches a final or error state or until the RE can't continue matching. Essentially, the longest possible match has to be found.
+Both a scanner based on a DFA or a RE  need to continue consuming characters until the DFA reaches a final or error state or until the RE can't continue matching. Essentially, **the longest possible match has to be found.**
 
 If the DFA stops at a non-final state, the DFA should report the last encountered final state or report an error.
 

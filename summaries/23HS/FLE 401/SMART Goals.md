@@ -3,3 +3,4 @@
 
 2. I will practice pronouncing a list of 10 phrases or words each week. I'll change words once their pronunciation is satisfactory.  I'll record the list each week to track my progress over the semester.
 
+I will practice pronouncing a list of 10 words 5 times a week, in the morning, for a few minutes when I leave for classes in the morning

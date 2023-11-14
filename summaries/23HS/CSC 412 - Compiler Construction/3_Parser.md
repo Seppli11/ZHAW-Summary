@@ -285,16 +285,48 @@ To fill the table $TABLE[X, y], X \in NT, y \in T$.
 2. entry is the rule $X\to \beta$, if $y \in FOLLOW(X)$ and $X\to\varepsilon \in G$
 3. otherwise, the entry is an error
 
-<img src="./res/3_Parser/image-20231006082953874.png" alt="image-20231006082953874" style="zoom:67%;" />
+![image-20231011112553331](./res/3_Parser/image-20231011112553331.png)
+
+The following pseudo-code shows how the table is used:
 
 ```R
 token <- next_token()
 push EOF onto stack
-push the start symbol, s, onto Stack
-...
+push the start symbol, S, onto the stack
+TOS <- top of stack
+
+loop forever {
+    if(TOS == EOF && token == EOF) {
+        report success
+        break
+    } else if(TOS is terminal) {
+        if(TOS matches token) {
+            pop stack
+            token <- next_token()
+        } else {
+            report error looking for TOS
+        }
+    } else {
+        if(TABLE[TOS, token] is (A -> B¹B²...B^k)) {
+            pop stack
+            push (B^k, ..., B²,B¹) # in that order
+        } else {
+            report error expanding TOS
+        }
+    }
+        TOS <- top of stack
+}
 ```
 
-The following pseudo-code shows how the table is used:
+## LR(1) Grammar
+
+
+
+## Bottom-Up LR(1) Parser
+
+Bottom-up parsers use handles to decide which rule to use. A handle is a substring $\beta$ in the right-hand side of some production $A \to \beta$. A grammar $G$ is unambiguous, if every sentential form in the rightmost derivation has a unique handle.
+
+An LR(1) parsers are table-driven, shift-reduce parsers which look ahead one token to disambiguate reduce and shift actions. An LR(1) parser recognises languages that have an LR(1) grammar.
 
 ```python
 push INVALID
@@ -320,21 +352,11 @@ end;
 report success;
 ```
 
-## LR(1) Grammar
-
-
-
-## Bottom-Up LR(1) Parser
-
-Bottom-up parsers use handles to decide which rule to use. A handle is a substring $\beta$ in the right-hand side of some production $A \to \beta$. A grammar $G$ is unambiguous, if every sentential form in the rightmost derivation has a unique handle.
-
-An LR(1) parsers are table-driven, shift-reduce parsers which look ahead one token to disambiguate reduce and shift actions. An LR(1) parser recognises languages that have an LR(1) grammar.
-
-**TODO: LR(1) parser psudo code**
-
 *(The reason why the token is pushed, is for book-keeping reason. Otherwise no parse tree could be generated. However, they are always pushed and popped in pairs and could also be represented as a tuple)*
 
-**TODO: Insert GOTO and ACTION table**
+<img src="./res/3_Parser/image-20231006082953874.png" alt="image-20231006082953874" style="zoom:67%;" />
+
+![image-20231012154330687](./res/3_Parser/image-20231012154330687.png)
 
 ## Build an AST during Parsing
 
@@ -384,7 +406,9 @@ The $closure(s)$ function:
             1. $s \to s \cup \{[C \to \textbullet\gamma, b]\}$
 2. returns $s$
 
-**TODO Insert closure example**
+![image-20231012093939960](./res/3_Parser/image-20231012093939960.png)
+
+with the following grammar: <img src="./res/3_Parser/image-20231012094004904.png" alt="image-20231012094004904" style="zoom:50%;" />
 
 The $goto(s, x)$ function:
 
@@ -394,15 +418,39 @@ The $goto(s, x)$ function:
       1. $moved \leftarrow moved \cup \{[\alpha \to \beta x \textbullet \delta, a]\}$
 3. return $closure(moved)$
 
-**TODO Insert goto example**
+![image-20231012094029480](./res/3_Parser/image-20231012094029480.png)
+
+To create all of the different states, the following algorithm can be used:
+
+1. $cc_0 \leftarrow \emptyset$
+2. for each production of the form $Goal \to \alpha$ do
+   1. $cc_0 \leftarrow cc_0 \cup \{Goal \to \textbullet \alpha, eof\}$
+3. $cc_0 \leftarrow closure(cc_0)$
+4. $CC \leftarrow \{cc_0\}$
+5. while (new sets are still being added to $CC$) do
+   1. for each unmarked set $cc_i \in CC$ do
+      1. mark $cc_i$ as processed
+      2. for each $x$ following a $\textbullet$ in an item in $cc_i$ do
+         1. $temp \leftarrow goto(cc_i, x)$
+         2. if $temp \notin CC then$
+            1. $CC \leftarrow CC \cup \{temp\}$
+         3. record transition from $cc_i$ to $temp$ on $x$
 
 
 
-1. for each state $s_x \in S$
-   1. for each item $i \in s_x$
-      1. if $i$ is $[]$
+To fill the action table, the following algorithm can be used:
 
-**TODO Filling in the ACTION and GOTO tables**
+1. for each state $cc_i \in CC$
+   1. for each item $i \in cc_i$
+      1. if $i$ is $[A \to \beta \textbullet c \gamma, a]$ and $goto(cc_i, c) = cc_j$ then
+         1. $Action[i, c] \leftarrow \text{"shift }j\text{"}$
+      2. else if $i$ is $[A \to \beta \textbullet, a]$ then
+         1. $Action[i, a] \leftarrow \text{"reduce } A \to B\text{"}$
+      3. else if $i$ is $[Goal \to \beta \textbullet, eof]$ then
+         1. $Action[i, eof] \leftarrow \text{"accept"}$
+   2. for each $n \in NT$ do
+      1. if $goto(cc_i, n) = cc_j$ then
+         1. $Goto[i, n] \leftarrow $j
 
 ## Ad-Hock Translation
 

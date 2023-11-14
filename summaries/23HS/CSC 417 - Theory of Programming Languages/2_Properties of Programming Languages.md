@@ -75,3 +75,24 @@ Not all types in every language pass all of this questions. In a lot of language
 An eager programming language evaluates the arguments before calling a function. So when evaluating `f(x, 1 + y)`, `x` and `1 + y` is evaluated before calling `f`.
 
 An lazy language on the other hand, `x` and `1 + y` will only be called once their value is actually needed.
+
+## Call-By-`*`
+
+* Call-by-value
+  A parameter is copied when calling the function. In this case all parameters are eagerly evaluated and then passed in
+
+* Call-by-ref
+
+* Call-by-name
+  Call-by-name just passes the name of a variable in. When the function actually needs the value of the parameter, it is evaluated. This is one way to implement laziness. However, code like
+
+  ```python
+  def f(n, m):
+      m = n + 1
+      p = m * n
+  ```
+
+  In this example above, with call-by-name, `n` is evaluated twice! This behaviour can be simulated by passing in a function as a parameter.
+
+*  Call-by-need
+  This is semantically the same to call-by-name, but the result of an expression is cached. It is what Haskell calls a thunk.

@@ -6,8 +6,8 @@ It is similar to assembly, but at a higher abstractions.
 
 * There are unlimited register (e.g. `%2`, `%3`, ...)
 * LLVM IR has a fully type system for describing data
-
-
+* Register names must follow the SSA form
+* 
 
 ### Types
 
