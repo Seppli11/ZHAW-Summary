@@ -53,7 +53,9 @@ I interviewed Ray Easterlin in the coffee shop at the James B. Hunt Jr. Library.
 
 ## Thoughts/Notes/Surprises
 
-Something I found interesting about him and his life is how much of it has been defined by his work. He seems to be very proud of what he archived in his working life and how this allowed him to support his family. I think this is supported by the fact that he moved multiple times because of work.
+Something I found interesting about him and his life is how much of it has been defined by his work. He seems to be very proud of what he archived in his working life and how this allowed him to support his family. I think this is supported by the fact that he moved multiple times because of work and to be challenged at work.
+
+To balance the job, he always played tennis. This also allowed to him to meet new people, sometimes even international ones.
 
 ## Speech Artefacts
 
@@ -70,3 +72,9 @@ Unknown Words: Juvenile
 I really like this quote, because I think a lot of people struggle with finding their purpose in life and it does seem like everybody else already know what to do.
 
 Additionally, he did eventually find his purpose which made him a better student, and probably explains partly why he feels so passionately about his work.
+
+## Reflection
+
+Overall, the interview went well. I was mostly able to continue with a different related question after my interviewee has responded. When I didn't know how to continue, a quick glance to my prepared questions got my back on track. Ray Easterlin was also a good interviewee and responded with enough details to paint a picture.
+
+As to if I would want to do it again, I certainly enjoyed the experience. However with all the preparation and planing involved, I don't see my self changing my career planing any time soon.

@@ -4,11 +4,11 @@
 
 By walking the AST and emitting the needed instructions for each node in the AST, wTe can generated the instructions with some simple code.
 
-**TODO: insert tree walk example**
+<img src="./res/9_Instruction%20Selection/image-20231117083800156.png" alt="image-20231117083800156" style="zoom:60%;" />
 
 ## Rewrite Rules
 
-**TODO: Rewrite example**
+![image-20231117083816886](./res/9_Instruction%20Selection/image-20231117083816886.png)
 
 Examples:
 
@@ -66,4 +66,8 @@ The basic idea is to have a sliding window, the peephole, which slides over the 
 
 This kind of optimisation provides local optimisations, since it can only see a small amount of code at a time.
 
-**TODO: Insert peephole example**
+The following image shows the rule, with which the example is optimised with:
+
+<img src="./res/9_Instruction%20Selection/image-20231117083912559.png" alt="image-20231117083912559" style="zoom:67%;" />
+
+![image-20231117083847262](./res/9_Instruction%20Selection/image-20231117083847262.png)
