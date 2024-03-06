@@ -20,7 +20,7 @@ Scrum teams should be cross-functional, meaning that people with different jobs 
 * Respect
 * Courage
 
-## Scrusprint goalscm Ingredients
+## Scrum sprint goalscm Ingredients
 
 <img src="res/Scrum/image-20230621121603180.png" alt="image-20230621121603180" style="zoom:60%;" />
 
@@ -60,8 +60,7 @@ A typical definition of ready for a user story looks like this:
 5. Scrum Team accepts User Experience artefacts
 6. Performance criteria identified, where appropriate
 7. Person who will accept the User Story is identified
-8. Team has a good idea what it will mean to Demo the
-User Story
+8. Team has a good idea what it will mean to Demo the User Story
 
 ## Roles
 

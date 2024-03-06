@@ -62,7 +62,7 @@ def tile(n):
 
 ## Peephole Optimisation
 
-The basic idea is to have a sliding window, the peephole, which slides over the code. There are rewrite rules, which match the instructions seen through the peephole and then rewrite them to a more efficient version. 
+The basic idea is to have a sliding window, the peephole, which slides over the code. The re are rewrite rules, which match the instructions seen through the peephole and then rewrite them to a more efficient version. 
 
 This kind of optimisation provides local optimisations, since it can only see a small amount of code at a time.
 
