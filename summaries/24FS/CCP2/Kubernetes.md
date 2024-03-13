@@ -157,6 +157,93 @@ Persistent volumes come in two types:
 
 A persistent volume claim is used to map volumes to pods.
 
+### Config Map
+
+Config map is a key-value object resource in Kubernetes, which can be deployed and then referenced from other objects (e.g. pods, deployments, ...).
+
+This can be applied with `kubectl apply -f <file>`
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+	name: game-demo
+data:
+    # property-like keys; each key maps to a simple value
+    player_lives: "3"
+    properties_file: "ui.properties"
+
+    # file-like keys
+    # the following properties are stored in the file game.properties
+    # the pipe (|) indicates that it is a file
+    game.properties: |
+        enemy.types=aliens,monsters
+        player.maximum-lives=5
+```
+
+Later this file can be referenced:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+	name: configmap-demo-pod
+spec:
+    containers:
+   	- name: demo
+      image: alpine
+      env: # Define the environment variable
+        - name: PLAYER_LIVES
+          valueFrom:
+            configMapKeyRef:
+                name: game-demo	  # The ConfigMap name
+                key: player_lives # The key to fetch.
+    volumeMounts: # Will mount /config/game.properties
+    - name: config # this name is set in volumes with name
+      mountPath: "/config"
+volumes:
+    # from game-demo config-map
+    # specifying the config map in the volume section is only required 
+    # if the config is mounted
+    - name: config
+      configMap:
+    	name: game-demo
+```
+
+### Secretes
+
+A secret is similar to a config map, but the content is encoded. It is usually used for credentials or certificates.
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+	name: db-cred
+type: Opaque
+data:
+    db-user: ZGJ1c2VyCg==
+    db-passwd: ZGJwYXNzCg==
+```
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+	name: secret-demo-pod
+spec:
+    containers:
+    - name: demo
+    env:
+    - name: DB_USER
+      valueFrom:
+          secretKeyRef:
+            name: db-cred
+            key: db-user
+    - name: DB_PASSWD…	
+```
+
+
+
 ## Object Resource API
 
 The basic structure is always the same:
