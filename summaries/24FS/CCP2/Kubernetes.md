@@ -54,6 +54,12 @@ Pods allow tightly coupling containers. An example would be a web container, whi
 
 As one can see in the flow chart above, pods are deployed atomically, meaning either all containers run, or all of them are terminated. If a pod dies (e.g. a container of the pod crashes or the cluster node containing the pod crashes) Kubernetes doesn't bother to bring the pod back up. Instead, a new pod is deployed in its place (and a such, the pod has a new pod ID and a new IP address). Pods are treated as cattle in the analogy *pets vs cattle*.
 
+### Namespace
+
+A namespace can be used to separate different applications. Furthermore, it's possible to write policies which limit the resources for the namespace.
+
+All namespace get be viewed by `kubectl get namespaces`
+
 ### Replication
 
 <img src="./res/Kubernetes/image-20240306083827083.png" alt="image-20240306083827083" style="zoom: 33%;" />
@@ -212,3 +218,12 @@ spec:
                         	number: 80
 ```
 
+## Anatomy of a Kubernetes Cluster
+
+![image-20240306094449110](./res/Kubernetes/image-20240306094449110.png)
+
+On the master node(s) the API server is used by the worker to know what to do and by kubectl. etcd is used as the storage for configuration.  The scheduler selects on which node a pod runs.  The controller manager is the beating heart of kubernetes and core controllers, such as the ReplicationController or DaemonSet controller, run it it.
+
+On the work node, kubelet manages the containers of the local worker. It receives its commands from the API server. `kube-proxy` manages the network of the worker.
+
+The load balancer is managed by the provider and external to the cluster (The ingress could be run on the cluster).

@@ -53,7 +53,7 @@ $$
 
 Sei $f: D \subset \R^n \to \R$ differenzierbar, dann heisst 
 $$
-\mathbf{grad} f(\vec x)=D f(\vec x)^T=
+\mathbf{grad} f(\vec x)=\grad f(\vec x)^T=
 \begin{pmatrix}
 \partial_{x_1} f(\vec x) \\
 \vdots\\
