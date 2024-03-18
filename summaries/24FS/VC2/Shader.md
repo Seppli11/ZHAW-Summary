@@ -66,7 +66,19 @@ In Three.js the following values are defined
 | `position`        | `vec3`  | the current position                                       |
 | `uv`              | `vec2`? | The current texture coordinate of the current vertex       |
 
+## Barycentric Coordinates
 
+Barycentric coordinates are  a way to specify a position in a triangle.
+
+A position consists of three weights $A$, $B$ and $C$:
+$$
+A + B + C = 1
+$$
+To get the position of $\begin{pmatrix}A \\ B \\ C\end{pmatrix}$, the following can be done:
+$$
+P = A \cdot P_1 + B\cdot P_2 + C\cdot P_3
+$$
+where $P_i$, are the corners of the triangle.
 
 ## Shaderes in Three.js
 
@@ -291,3 +303,204 @@ Geometry instancing is a technique where
 <img src="./res/Shader/image-20240311153059709.png" alt="image-20240311153059709" style="zoom:67%;" />
 
 To render 
+
+## Derivatives and Surface-Normal
+
+The `dFdx` and `dFdy` function return the derivative of the position. The cross product will return the surface normal.
+
+```glsl
+vec3 normal = normalize( cross(dFdx(pos), dFdy(pos)) );
+```
+
+## Glow-Effect
+
+![image-20240318142350813](./res/Shader/image-20240318142350813.png)
+
+If just the emmisive and reflective parts are added the result above is produced. This doesn't really look like glowing.
+
+![image-20240318142504906](./res/Shader/image-20240318142504906.png)
+
+This can be solved by first blurring the reflective part and then adding it.
+
+### Linear Blur Filter
+
+A linear blur filter, takes the current position and the neighbouring pixel and averages them.
+
+![image-20240318142658186](./res/Shader/image-20240318142658186.png)
+
+This can be done in the following way:
+
+```glsl
+vec2 uv = …
+vec2 offset = vec2(1) / sizeOfTexture;
+vec4 sum = vec4(0);
+for (int y = -1; y < 2; y++)
+{
+    for (int x = -1; x < 2; x++)
+    {
+        sum += texture2D(tex, uv + vec2(x, y) * offset);
+    }
+}
+return sum / 9;
+```
+
+### Optimized Linear Blur Filter
+
+![image-20240318142905819](./res/Shader/image-20240318142905819.png)
+
+OpenGL can be configured to already average pixels to gether:
+
+```glsl
+vec2 uv = …
+vec2 offset = vec2(0.5) / sizeOfTexture;
+vec4 sum = vec4(0);
+for (int y = -1; y < 2; y += 2)
+{
+    for (int x = -1; x < 2; x += 2)
+    {
+        sum += texture2D(tex, uv + vec2(x, y) * offset);
+    }
+}
+return sum / 4;
+```
+
+### Gaussian Blur
+
+<img src="./res/Shader/image-20240318143012901.png" alt="image-20240318143012901" style="zoom:67%;" />
+
+A way to improve the quality of the blur is to use a higher weight for the centeral pixel. The gaussian blur uses a gauss distribution to get the weights.
+
+![image-20240318143023568](./res/Shader/image-20240318143023568.png)
+
+```glsl
+vec2 uv = …
+vec2 offset = vec2(1) / sizeOfTexture;
+vec4 sum = vec4(0);
+for (int y = -1; y < 2; y++)
+{
+    for (int x = -1; x < 2; x++)
+    {
+        sum += weight(x, y) * texture2D(tex, uv + vec2(x, y) * offset);
+    }
+}
+return sum;
+```
+
+### Separable Gaussian Blur
+
+**TODO**
+
+### Separable Gaussian Blur with TMU Optimization
+
+## Particle Animation
+
+We can use a float image (`GL_FLOAT`) as an input buffer to the fragment shader
+
+
+
+With WebGL2 **TODO**
+
+## Deferred Shading/Rendering
+
+The idea is to split the rendering of the geometry and lighting. This is called deferred shading, since we defere the shading.
+
+We now define three texture outs, one for the position, one for the normals and one for the color value, in this case the albedo value.
+
+![image-20240318145317869](./res/Shader/image-20240318145317869.png)
+
+In a first pass, we render the gemoetry and store the relevant information in the three textures.
+
+```glsl
+// vertex shader
+in vec3 position; attribute vec3 normal; attribute vec3 colour;
+out vec3 vWorldPosition; varying vec3 vNormal; varying vec3 vColour;
+void main(void)
+{
+    vWorldPosition = position;
+    vNormal = normal;
+    vColour = colour;
+}
+
+// fragment shader
+in vec3 vWorldPosition;
+in vec3 vNormal;
+in vec3 vColour;
+void main(void)
+{
+    gl_FragData[0].xyz = vWorldPosition.xyz;
+    gl_FragData[1].xyz = normalize(vNormal);
+    gl_FragData[2].rgb = vColour;
+}
+```
+
+In a second pass, :
+
+```glsl
+uniform LightUniforms {
+    mat4 mvp;
+    vec4 position;
+    vec4 color;
+} uLight;
+
+uniform vec3 uEyePosition;
+uniform sampler2D uPositionBuffer;
+uniform sampler2D uNormalBuffer;
+uniform sampler2D uColourBuffer;
+out vec4 fragColor;
+
+void main(void)
+{
+    ivec2 fragCoord = ivec2(gl_FragCoord.xy);
+    vec3 position = texelFetch(uPositionBuffer, fragCoord, 0).xyz;
+    vec3 normal = normalize(texelFetch(uNormalBuffer, fragCoord, 0).xyz);
+    vec4 albedo = texelFetch(uColourBuffer, fragCoord, 0);
+
+    vec3 eyeDirection = normalize(uEyePosition - position);
+    vec3 lightVec = uLight.position.xyz - position;
+    float att = 1.0 - length(lightVec);
+    vec3 lightDirection = normalize(lightVec);
+    vec3 refl = reflect(-lightDirection, normal);
+    float nDotL = max(dot(lightDirection, normal), 0.0);
+    float ambient = 0.1;
+    vec3 diffuse = nDotL * uLight.color.rgb;
+    vec3 specular = pow(max(dot(refl, eyeDirection), 0.0), 20.0) * uLight.color.rgb;
+
+    fragColor = vec4(att * (ambient + diffuse + specular) * baseColor.rgb, baseColor.a);
+}
+```
+
+The following diagram shows how the game Kill Zone implemented this concept:
+
+![image-20240318145714331](./res/Shader/image-20240318145714331.png)
+
+One disadvantage of this model is, that the same lighting model is used for every scene. This means that every variation needs to be modeled with this. This makes it more memory hungry since not every variable might be used in every scene.
+
+## Geometry Shader
+
+The geometry shader is executed after the vertex shader, but is run once per geometry (e.g. if points are being rendered, once per point; or if triangles are being rendered, once per triangle). It is used to generate geometry.
+
+Two applications are:
+
+* Render billboards
+  First render a point where the billboard should be generated. Afterwards, with the geometry shader, expand the point to a billboard
+  ![image-20240318150639865](./res/Shader/image-20240318150639865.png)
+* Render Hair/Furr
+  Render a mesh normally and then as a point cloud. Each point is then expanded
+  ![image-20240318150752883](./res/Shader/image-20240318150752883.png)
+* Single-pass Cubemap rendering
+
+```glsl
+//Example of a geometry shader
+```
+
+Geometry shaders were designed for simple algorithms and generating geometry is extremely costly. 
+
+## Tessellation Shader
+
+![image-20240318151215316](./res/Shader/image-20240318151215316.png)
+
+Tessellation shaders were introduced around 2012. 
+
+A tessellation shader renders a patch, which consists of a number of points.
+
+![image-20240318151418519](./res/Shader/image-20240318151418519.png)
