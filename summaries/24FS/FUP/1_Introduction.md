@@ -86,3 +86,8 @@ data Shape
 
 ## Type Classes
 
+## Partial Function
+
+A partial function, oppose to a total function, is a function, where the not every input value is not defined. In Java, this is done with `null`  or exceptions. In Haskell, this is done with `data Maybe a = Just a | Nothing`
+
+Another often used type is `data Either a b = Left a | Right b`. Usually is `Left a` the error case, and `Right b` the successful case. 

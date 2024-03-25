@@ -388,9 +388,28 @@ return sum;
 
 ### Separable Gaussian Blur
 
-**TODO**
+One optimisation that can be made is to process the x and y dimensions independently:
+$$
+\frac 1 {16} \begin{bmatrix}
+1 & 2 & 1 \\
+2 & 4 & 2 \\
+1 & 2 & 2
+\end{bmatrix} 
+= 
+\frac 1 {4} \begin{bmatrix}
+1 \\
+2 \\
+1 \\
+\end{bmatrix} \cross
+\frac 1 {4}\begin{bmatrix}
+1 & 2 & 1
+\end{bmatrix}
+$$
+
 
 ### Separable Gaussian Blur with TMU Optimization
+
+
 
 ## Particle Animation
 
@@ -504,3 +523,29 @@ Tessellation shaders were introduced around 2012.
 A tessellation shader renders a patch, which consists of a number of points.
 
 ![image-20240318151418519](./res/Shader/image-20240318151418519.png)
+
+A tessellation shader can be used to generate new geometry:
+
+![image-20240318152322071](./res/Shader/image-20240318152322071.png)
+
+Tessellation is often used for terrain and fur. However, tessellation shaders are not supported on Apple hardware. Furthermore, these applications can more and more be replaced by compute shaders.
+
+## Next-Generation API
+
+OpenGL was designed for CPUs with few cores and multi-threading is very expensive. Furthermore, the API itself is too flexible, which then has to be made sense of by the driver.
+
+The idea of the new APIs is to make the driver leaner and give control to the programmer.
+
+![image-20240318152831967](./res/Shader/image-20240318152831967.png)
+
+Vulkan minimizes the work required for the driver:
+
+* No object life-time management
+* No usage tracking
+* Pre-recorded command buffers
+
+Vulkan also doesn't do state validation. Instead the programmer has to do that them self.
+
+Vulkan is cross-platform, except on MacOS.
+
+![image-20240318153431477](./res/Shader/image-20240318153431477.png)
