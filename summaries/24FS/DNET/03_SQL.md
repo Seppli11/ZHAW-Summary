@@ -475,6 +475,14 @@ Es können gewisse Attribute maskiert werden. Dies kann entweder Dynamisch und j
 
 ![image-20240322153529580](./res/03_SQL/image-20240322153529580.png)
 
+Zusätzlich hat mssql Server bei der Isolationsebene `READ COMMITTED` noch die Option `READ_COMMITED_SNAPSHOT ON|OFF`. 
+
+Wenn `READ_COMMITTED_SNAPSHOT` auf `OFF` gesetzt ist, dann benützt die DB-Engine Lesesperren, um zu verhindern, dass andere Transaktionen Zeilen ändern während die aktuelle Transaktion einen Lesevorgang ausführt. Dies heisst auch, dass andere Transaktionen blockiert werden, modifizierte Zeilen zu lesen, bis die aktuelle Transaktion abeghlossen ist. 
+
+Wenn `READ_COMMITED_SNAPSHOT` auf `ON` gesetzt ist, dann brauch die DB-Engine die Zeilenversionierung, um jeder Anweisung eine transaktions-konsisteten Snapshot der Daten zu präsentieren.
+
+Diese Option kann mit `ALTER DATABASE <name> SET READ_COMMITTED_SNAPSHOT OFF|ON` geändert werden.
+
 ### Verfügbarkeit
 
 *(siehe DNET2_4_5 Folien)*

@@ -80,6 +80,8 @@ The ramifications from the issues from above are all cross-cutting concerns. The
 
 ## Istio
 
+![image-20240327101916984](./res/Service%20Mesh/image-20240327101916984.png)
+
 Istio is an open-source implementation of the service mesh originally developed by IBM, Google, and Lyft
 
 ![image-20240327083844603](./res/Service%20Mesh/image-20240327083844603.png)
