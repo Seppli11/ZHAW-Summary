@@ -44,3 +44,27 @@ Creates a new secrete with the `<name>` and the given key value. `--from-literal
 ### `kubectl delete serete <secrete-name>`
 
 Deletes a secret with the given name
+
+## K3D
+
+### `k3d cluster create`
+
+To create a cluster:
+
+`k3d cluster create --config <path-to-config.yaml> `
+
+With `kubectl cluster-info` one can verify, if the cluster was correctly setup.
+
+### `k3d cluster delete`
+
+This deletes a cluster
+
+`k3d cluster delete [--all]`
+
+## buildpack
+
+### `pack build`
+
+`pack build <image-tag> --path <app-folder-path> --builder paketobuildpacks/builder-jammy-tiny`
+
+`pack build ccp2-order:1 --path ./microservice-order --builder paketobuildpacks/builder-jammy-tiny`

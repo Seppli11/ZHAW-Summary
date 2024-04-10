@@ -235,7 +235,12 @@ A fix point function would be `expF h = h` . Importantly, $h$ is a function and 
 The following is fix point for a function `f`. It is essentially a recursion with out a base case. If applied to `expF`, then the base case of `expF` can be used by `fix`.
 
 ```haskell
+fix :: (t -> t) -> t
 fix f = f (fix f)
+
+-- alternatively, the type can also be expressed as following, where t = t1 -> t2
+fix' :: ((t1 -> t2) -> t1 -> t2) -> t1 -> t2
+fix' f x = f (fix f) x
 ```
 
 For example:
