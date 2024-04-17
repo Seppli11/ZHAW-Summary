@@ -68,3 +68,44 @@ This deletes a cluster
 `pack build <image-tag> --path <app-folder-path> --builder paketobuildpacks/builder-jammy-tiny`
 
 `pack build ccp2-order:1 --path ./microservice-order --builder paketobuildpacks/builder-jammy-tiny`
+
+## Helm
+
+### `helm repo add`
+
+Adds a repository 
+
+* `helm repo add <name> <url>`
+* `helm repo add bitnami https://charts.bitnami.com/bitnami`
+
+### `help search [repo|hub] <what>`
+
+Searches for a chart
+
+### ` helm install [<name>] <chart-name> [--generate-name]`
+
+Installs the given chart.
+
+To install a chart, either a name has to be given explicitly or `--generate-name`  has to be set.
+
+* `helm install bitnami/mysql --generate-name`
+* `helm install test-mysql bitnami/mysql`
+
+### `helm show (chart|readme|values) <chart>`
+
+Shows either the chart, readme file or values of the given chart.
+
+*  `helm show chart bitnami/mysql`
+* `helm show readme bitnami/mysql`
+* `helm show values bitnami/mysql`
+
+### `helm list`
+
+Lists the installed charts
+
+![image-20240417100130240](./res/Cheat%20Sheet/image-20240417100130240.png)
+
+### `helm uinstall <chart>`
+
+Uninstalls the given chart.
+
