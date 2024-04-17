@@ -271,3 +271,7 @@ Even if Haskell didn't support recursion and would only support the `fix` functi
 The following shows why this works every time:
 
 ![image-20240404173941708](./res/2_Recursion/image-20240404173941708.png)
+
+## Memorisation
+
+Memorisation can be implemented using fix points and a functional. An issue which arises with recursive function, is that the recursive call won't be memorisation. However, a functional isn't recursive by itself. Rather it uses a function passed as a parameter. This allows writing a memonisation function which inject itself into the recursive call.
