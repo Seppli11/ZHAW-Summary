@@ -197,8 +197,9 @@ An `Applicative` should follow the following laws:
 
 ```haskell
 class Applicative m => Monad m where
-	(>>=) :: forall a b. m a -> (a -> m b) -> m b
-	(>>) :: forall a b. m a -> m b -> m b 
+	{-# MINIMAL >>= #-}
+	(>>=) :: m a -> (a -> m b) -> m b
+	(>>) :: m a -> m b -> m b 
 	return :: a -> m a
 ```
 

@@ -261,3 +261,75 @@ The following shows the typical marker tracking pipeline.
 ![image-20240415150256178](./res/Intro/image-20240415150256178.png) 
 
 Since the approach with homography jitters a lot, most tracking system use a perspective-$n$-point (PnP) algorithm. This needs four 2d-3d correspaondences. 
+
+## Stereo
+
+![image-20240429141108915](./res/Intro/image-20240429141108915.png)
+
+With stereo, an algorithm takes two pictures and calculates a depth map. The 2.5D image shows where each pixel, according to the depth map, is in room. However, it is not 3D, since one cannot move around and see the back of the model.
+
+![image-20240429141303593](./res/Intro/image-20240429141303593.png)
+
+The model is as seen in the diagram above. The left camera is at $(0, 0, 0)$ where as the camera B is transformed on one axis by $B$.
+
+The following matrix is for the left cam. The left cam is at the origin.
+
+![image-20240429141650490](./res/Intro/image-20240429141650490.png)
+
+The right cam is the same as the left cam, but shifted by $-B$
+
+![image-20240429141727548](./res/Intro/image-20240429141727548.png)
+
+These two equations can be used to solve for the depth for a given point in the scene.
+
+![image-20240429141819103](./res/Intro/image-20240429141819103.png)
+
+![image-20240429142615757](./res/Intro/image-20240429142615757.png)
+
+### Accuracy and Baseline
+
+![image-20240429143116960](./res/Intro/image-20240429143116960.png)
+
+When the distance between the two cameras are small, then there is a bigger overlap in what both camera see. However the accuracy far away decreases. On the other hand, if the cameras are far from each other and the baseline is big, then the accuracy is better, but the cameras have less of an overlap decreasing the area where points overlap.
+
+### Find matches
+
+![image-20240429143321157](./res/Intro/image-20240429143321157.png)
+
+![image-20240429143437022](./res/Intro/image-20240429143437022.png)
+
+To find a match, one has to find a match on the same line. This reduces the problem space to a 2D line.
+
+Since this line is important, it is named **epipolar line**. 
+
+Depending where on the line the point has been found, the depth changes accordingly.
+
+![image-20240429143543493](./res/Intro/image-20240429143543493.png)
+
+One approach is to take a patch, and do normalised cross correlation on the epipolar line. The score is shown in the diagram. Where the score peeks, there is our match.
+
+![image-20240429143736021](./res/Intro/image-20240429143736021.png)
+
+The left rectangle is black, because only one camera can see it. Similarly, The smaller rectangle in the middle can only be seen from one camera, since they have a slightly different perspective.
+
+#### General Case
+
+The assumption is that the cameras are calibrated and as such the intrinsic and extrinsic cameras are known.
+
+![image-20240429145133216](./res/Intro/image-20240429145133216.png)
+
+The epipolar plane between where the point $P$ could be and the two camera. Where the epipolar plane cuts through the camera, there is the epipolar line. Importantly, the epipolar line isn't necessarily horizontal.
+
+<img src="./res/Intro/image-20240429145531921.png" alt="image-20240429145531921" style="zoom:30%;" />
+
+![image-20240429145626850](./res/Intro/image-20240429145626850.png)
+
+*($E$ is a 3x3 matrix, and $p_r$ and $p_l$ are 3D vectors)*
+
+<img src="./res/Intro/image-20240429145727779.png" alt="image-20240429145727779" style="zoom:67%;" />
+
+![image-20240429145937623](./res/Intro/image-20240429145937623.png)
+
+In the example below, the epipolar lines are drawn in green:
+
+![image-20240429151108704](./res/Intro/image-20240429151108704.png)

@@ -24,7 +24,7 @@ primRec g c
 
 ## $n+1$ or $n-1$
 
-The following implements an exponential function:
+The following implem        IntStream.of(1).flatMap(null)ents an exponential function:
 $$
 2^0 &= 1\\
 2^{n} &= 2 \cdot 2^{(n - 1)}
@@ -210,8 +210,8 @@ myMap' f = myMapAcc []
 
 -- with the continuation pattern
 myMap' (a -> b) -> [a] -> [b]
-myMap' f = myMapCont []
-    myMapCont :: [a] -> [a] -> [b]
+myMap' f = myMapCont id
+    myMapCont :: ([a] -> [b]) -> [a] -> [b]
     myMapCont cont [] = cont [] 
     myMapCont cont (a:ax) = myMapCont (\list -> cont (f x : list)) ax
     -- We have more flexibility in the lambda expression, since cont is not a recursive

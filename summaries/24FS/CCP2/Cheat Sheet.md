@@ -11,6 +11,7 @@ where `<obj>` can be:
 * `all` returns all objects
 * `pods`
 * `services`
+* `secrete`
 
 `-o wide` prints more details
 
@@ -44,6 +45,12 @@ Creates a new secrete with the `<name>` and the given key value. `--from-literal
 ### `kubectl delete serete <secrete-name>`
 
 Deletes a secret with the given name
+
+### `kubectl port-forward <service/pod> [-n <namespace>] <external-port>:<internal-port>`
+
+Forwards the `<external-port>` to the `<internal-port>` of the given pod or service
+
+`kubectl port-forward svc/argocd-server -n argocd 8443:443`
 
 ## K3D
 
