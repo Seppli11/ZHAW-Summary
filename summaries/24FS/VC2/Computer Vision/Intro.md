@@ -333,3 +333,7 @@ The epipolar plane between where the point $P$ could be and the two camera. Wher
 In the example below, the epipolar lines are drawn in green:
 
 ![image-20240429151108704](./res/Intro/image-20240429151108704.png)
+
+One needs 8 pairs of corresponding points to compute $F$ linearly. Since there might by many mismatches, $F$ is often found via RANSAC.
+
+Another approach is to use three camera. This gives us trifocal tensor.

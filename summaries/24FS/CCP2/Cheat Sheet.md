@@ -116,3 +116,15 @@ Lists the installed charts
 
 Uninstalls the given chart.
 
+## Prometheus
+
+* `container_cpu_usage_seconds_total{namespace="default"}`
+  Finds all `container_cpu_usage_seconds_total` object where `namespace` equals to `default`.
+* `container_cpu_usage_seconds_total{namespace="default",name=""}[1m]`
+  Returns a vector of results in the given time period
+* `rate(container_cpu_usage_seconds_total{namespace="default",name=""}[1m])`
+  Calculates the rate of change (the first derivation) in the last 1 minute
+* `sum(container_memory_usage_bytes{namespace="default"}) by(pod)`
+  This sums up the memory usage and groups it by the `pod` names. Additional columns can be specified in `by (pod, namespace, ...)`
+
+The `~` means that the following expression is a regex. Thus `field =~ "regex"`, filters if `field` matches the regex. On the other hand `field !~ "regex"`, filters if the `field` does not match the `regex`. 

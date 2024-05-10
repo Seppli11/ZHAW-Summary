@@ -190,3 +190,38 @@ public class ProductController : Controller {
 
 ## Web APIs/REST
 
+## gRPC/Protocol Buffer
+
+gRPC provides a language- and platform-neutral mechanism to specify and serialize data. To archive this, an IDL (interface design language) is provided. This IDL can be compiled to different languages.
+
+### IDL
+
+```protobuf
+syntax="proto3";
+package tutorial;
+
+message Person {
+	string name = 1;
+	int32 id = 2;
+	string email = 3;
+	
+	enum PhoneType {
+		MOBILE = 0;
+		HOME = 1;
+		WORK = 2;
+	}
+	
+	message PhoneNumber {
+		string number = 1;
+		PhoneType type = 2;
+	}
+	
+	repeated PhoneNumber hpone = 4;
+}
+```
+
+![image-20240503151127486](./res/06_ASP.NET/image-20240503151127486.png)
+
+
+
+![image-20240503151155182](./res/06_ASP.NET/image-20240503151155182.png)
