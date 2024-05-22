@@ -305,6 +305,67 @@ spec:
                         	number: 80
 ```
 
+### Custom Resources
+
+Kubernetes allows one to extend their yaml format by custom resources.
+
+```yaml
+apiVersion: apiextensions.k8s.io/v1
+	kind: CustomResourceDefinition
+	metadata:
+		name: shirts.stable.example.com
+	spec:
+		group: stable.example.com
+		scope: Namespaced
+		names:
+			plural: shirts
+			singular: shirt
+			kind: Shirt
+		versions:
+		- name: v1
+			served: true
+			storage: true
+			schema:
+				openAPIV3Schema:
+					type: object
+					properties:
+						spec:
+							type: object
+								properties:
+									color:
+										type: string
+									size:
+										type: string
+			selectableFields:
+			- jsonPath: .spec.color
+			- jsonPath: .spec.size
+			additionalPrinterColumns:
+			- jsonPath: .spec.color
+				name: Color
+				type: string
+			- jsonPath: .spec.size
+				name: Size
+				type: string
+
+	apiVersion: shirts.stable.example.com
+	kind: Shirt
+	metadata:
+		name: myShirt
+	spec:
+		color: blue
+		size: XL
+```
+
+The custom resource is managed by a customised controller. Such a controller is a "normal" kubernetes service, which uses kubernetes APIs to introspect the current state of services, pods, ...  
+
+Such a controller uses the following loop to ensure that the current state doesn't deviate from the desired state:
+
+![image-20240515100810155](./res/Kubernetes/image-20240515100810155.png)
+
+Controllers are categorised into the following categories, depending on their capabilities.
+
+![image-20240515101055208](./res/Kubernetes/image-20240515101055208.png)
+
 ## Anatomy of a Kubernetes Cluster
 
 ![image-20240306094449110](./res/Kubernetes/image-20240306094449110.png)

@@ -1,5 +1,13 @@
 # Intro
 
+> Prüfung:
+>
+> Mischung zwischen K-Prime Fragen und offene Frage. 
+>
+> Es wird eine grosse Aufgabe (für den zweiten Teil und vermutlich auch für den ersten Teil) geben, bei welche man ein Problem gekommt (z.B. man bekommt ein Bild von einem Sudoku und muss etwas anaylsieren und das beschreiben)
+>
+> Philip Ackermann macht auch gerne Fragen, bei welchen man Code analysieren muss.
+
 ![image-20240408140630951](./res/Intro/image-20240408140630951.png)
 
 ![image-20240408140944040](./res/Intro/image-20240408140944040.png)
