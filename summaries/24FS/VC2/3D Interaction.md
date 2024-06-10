@@ -4,9 +4,7 @@
 
 ![image-20240325144030031](./res/3D%20Interaction/image-20240325144030031.png)
 
-When we want to interact with  something in our world, we have to reverse the graphics pipeline. 
-
-There are a few ways to map the  interaction in 2D into the 3D space:
+When we want to interact with  something in our world, we have to reverse the graphics pipeline. There are a few ways to map the  interaction in 2D into the 3D space:
 
 * Restrict to one axis of the coordinate system (X, Y, or Z)
 * Restrict to orthogonal planes of the coordinate system (XY, XZ, YZ, ...)
@@ -17,9 +15,13 @@ There are a few ways to map the  interaction in 2D into the 3D space:
 
 ## Euler Rotation vs Quaternions
 
-**TODO**
+An rotation can be decomposed into an rotation around each axis. These rotations are called Euler angles.
+$$
+R(\theta)=R_z(\theta_z)\cdot R_y(\theta_y)\cdot R_x(\theta_x)
+$$
+A problem with euler angles is that a gimble lock, where each rotation axis is aligned, can occurr. It's not clearly defined, how to get out of the lock. 
 
-Problem is the gimble lock, where each rotation axis is aligned. Now its not clearly defined, how to get out of the lock.
+![image-20240610091712850](./res/3D%20Interaction/image-20240610091712850.png)
 
 ## 
 

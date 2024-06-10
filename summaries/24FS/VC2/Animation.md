@@ -11,7 +11,7 @@ To actually animate there are multiple techniques:
 * Scripts (event-based or defining constraints)
 * Physic simulation
 * Particle system
-* Motion capaturing
+* Motion capturing
 
 ## Animation in Films
 
