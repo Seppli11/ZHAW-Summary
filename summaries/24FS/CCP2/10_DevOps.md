@@ -1,6 +1,6 @@
 # DevOps
 
-When developing software, the current expectation is to deliver continuously. This shortens the feedback loop and the time until money is earned. Another benefit of continuous is the minimisation of risk. Since the delivery process is automated, it is also at least somewhat documented.
+When developing software, the current expectation is to deliver continuously. This shortens the feedback loop and the time until money is earned. Another benefit of continuous delivery is the minimisation of risk. Since the delivery process is automated, it is also at least somewhat documented.
 
 ## Problems with Waterfall
 

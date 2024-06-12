@@ -28,7 +28,7 @@ Container orchestration provides a number of benefits:
 
 ## Concepts
 
-A basic principle of Kubernetes is, that the desired state is configured. Kuberenetes then tries to migrate the current state to the desired state. As such, the user doesn't say "I want three more pods of this type". Instead, the user specifies the number of required pods and Kubernetes will take care of creating and killing the right pods.
+A basic principle of Kubernetes is, that the desired state is configured. Kuberenetes then tries to migrate the current state to the desired state. As such, the user doesn't say "I want three more pods of this type". Instead, the user specifies the number of required pods and Kubernetes will take care of creating and killing the right amount of pods.
 
 ### Pods
 
@@ -233,7 +233,7 @@ The following types are supported:
 Persistent volumes come in two types:
 
 * static: volumes need to be explicitly created by a cluster admin
-* dynamic: a StorageClass is configured by the admin which then can create a specific volume on demand
+* dynamic: a StorageClass is configured by the admin which then creates a specific volume on demand
 
 A persistent volume claim is used to map volumes to pods.
 
@@ -448,7 +448,7 @@ Controllers are categorised into the following categories, depending on their ca
 
 ![image-20240306094449110](./res/Kubernetes/image-20240306094449110.png)
 
-On the master node(s) the API server is used by the worker to know what to do and by kubectl. etcd is used as the storage for configuration.  The scheduler selects on which node a pod runs.  The controller manager is the beating heart of kubernetes and core controllers, such as the ReplicationController or DaemonSet controller, run on it.
+On the master node(s) the API server is used by the worker to know what to do. etcd is used as the storage for configuration.  The scheduler selects on which node a pod runs.  The controller manager is the beating heart of kubernetes and core controllers, such as the ReplicationController or DaemonSet controller, run on it.
 
 On the worker node, kubelet manages the containers of the local worker. It receives its commands from the API server. `kube-proxy` manages the network of the worker.
 

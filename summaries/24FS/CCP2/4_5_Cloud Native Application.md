@@ -115,7 +115,7 @@ Building, releasing and running are separated stages. This enables building the 
 
 Services (processes) are stateless and share nothing.
 
-* A service never assumes that anything is cached in memory or on disk will be available on a future request. This enables that a request can go to any instance, since the instance didn't cache anything
+* A service never assumes that anything is cached in memory or on disk. This enables that a request can go to any instance, since the instance didn't cache anything
 * Any persistent data must be stored in a stateful backing service
 
 ### Port Binding
@@ -246,7 +246,7 @@ In a service-oriented architecture scaling is done by starting multiple service 
 
 In **server-side load balancer**, there is one server, which distributes the traffic to the various instances (in Kubernetes, this is done by a distributed load balancer).
 
-Load-balancing can also be implemented on the client-side, giving us **client-side load balancing**, where each client is accessing the service registry to get a list of all the services and then decide itself which instance to access. This is usually only done for internal services. This elevates the need of a central load balancer.
+Load-balancing can also be implemented on the client-side, giving us **client-side load balancing**, where each client is accessing the service registry to get a list of all the services and then decide itself which instance to access. This is usually only done for internal services. This eliminates the need of a central load balancer.
 
 There are multiple algorithms with different goals:
 

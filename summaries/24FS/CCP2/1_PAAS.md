@@ -19,7 +19,7 @@ The following images show the used capacity of a service:
 
 If the consumption model is very stable and doesn't have huge sudden spikes, it is advantageous to buy the hardware outright.
 
-Matching the required computing power with the actual exiting computing power is hard and over-provisioning is wasting money. Thus having infrastructure that can scale according to the currently required computing power can lead to less money having to spend.
+Matching the required computing power with the actual exiting computing power is hard and over-provisioning is wasting money. Thus having infrastructure that can scale according to the currently required computing power can lead to less money having to be spent.
 
 <img src="./res/PAAS/image-20240221090917375.png" alt="image-20240221090917375" style="zoom:67%;" />
 
@@ -47,7 +47,7 @@ There are multiple models of deployment regarding cloud computing:
 * Public cloud  
   The cloud infrastructure is provisioned for open use by the general public 
 * Hybrid cloud  
-  This is a combination of multiple infrastructures (e.g. having the compute power for 90% of the time, but for burst, go to a public cloud)
+  This is a combination of multiple infrastructures (e.g. having the computing power for 90% of the time, but for burst, go to a public cloud)
 
 These are the service models:
 
@@ -62,7 +62,7 @@ These are the service models:
 * Infrastructure as a Service (IaaS)  
   The cloud provider provides access to processing, storage, network and other fundamental computing resources. 
 
-In the following diagram, one can see what is managed by the customer, what is provided by the providers and what allows the scaling of compute power.
+In the following diagram, one can see what is managed by the customer, what is provided by the providers and what allows the scaling of computing power.
 
 ![image-20240221094453637](./res/PAAS/image-20240221094453637.png)
 
@@ -120,7 +120,7 @@ This aggregates all the logs from the different applications and emits events (l
 
 ### Operations Support and Management Systems (Access Control, ...)
 
-This sub-system allows for multi-tenancy and splitting up the service of the system into different projects for different users and groups. In addition to that, it may does the rating and creation of the bill.
+This sub-system allows for multi-tenancy and splitting up the service of the system into different projects for different users and groups. In addition to that, it may do the rating and creation of the bill.
 
 ## OpenShift
 

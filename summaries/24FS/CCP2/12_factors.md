@@ -53,7 +53,7 @@ Building, releasing and running are separated stages. This enables building the 
 
 Services (processes) are stateless and share nothing.
 
-* A service never assumes that anything is cached in memory or on disk will be available on a future request. This enables that a request can go to any instance, since the instance didn't cache anything
+* A service never assumes that anything is cached in memory or on disk. This enables that a request can go to any instance, since the instance didn't cache anything
 * Any persistent data must be stored in a stateful backing service
 
 ## 7. Port Binding
