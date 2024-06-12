@@ -20,13 +20,13 @@ Pros:
 
 *  Cross-cutting features are implemented outside microservice code, and they are reusable.
 * Solves most of the problems in Microservices architecture which we used to have ad-hoc solutions: Distributed tracing, logging, security, access control etc.
-* More freedom when it comes to selecting a microservices implementation language: You don’t need to worry about whether a given language supports or has libraries to build network application functions.
+* More freedom when it comes to selecting a microservice implementation language: You don’t need to worry about whether a given language supports or has libraries to build network application functions.
 
 Cons:
 
-* Complexity: Having a service mesh drastically increase the number of runtime instances that you have in a given microservice implementation.
+* Complexity: Having a service mesh drastically increases the number of runtime instances that you have in a given microservice implementation.
 * Adding extra hops: Each service call has to go through an extra hop (through service mesh sidecar proxy).
-* Service Meshes address a subset of problems: Service mesh only address a subset of inter-service communication problems, but there are a lot of complex problems such as complex routing, transformation/type mapping, integrating with other services and systems, to be solved at your microservice’s business logic.
+* Service Meshes address a subset of problems: Service mesh only addresses a subset of inter-service communication problems, but there are a lot of complex problems such as complex routing, transformation/type mapping, integrating with other services and systems, to be solved at your microservice’s business logic.
 * Immature: Service mesh technologies are relatively new to be declared as full production ready for large-scale deployments
 
 ## Downsides of Microservices
@@ -47,19 +47,19 @@ Cons:
 ![image-20240327081028361](./res/Service%20Mesh/image-20240327081028361.png)
 
 **Network resilience / Traffic management**
-A service might become a bottle neck. This can be managed by network policies quotes and rate limits for all services. This ensures that one rogue service doesn't make too many calls and overloads the other services or the network.
+A service might become a bottleneck. This can be managed by network policies quotes and rate limits for all services. This ensures that one rogue service doesn't make too many calls and overloads the other services or the network.
 
-Thus, *to effectifely control services, create policies that specify which service can and can't make calls*
+Thus, *to effectively control services, create policies that specify which service can and can't make calls*
 
 **Security**
-Microservices need to authenticate, authorise and encrypt communication.  In comparison to microservices, in a monolith, functions-to-function calls in the monolith are secure by default.
+Microservices need to authenticate, authorise and encrypt communication.  In comparison to microservices, in a monolith, function-to-function calls in the monolith are secure by default.
 
 Thus, *additional auditing tools are needed to trace the service-to-service communication.*
 
 **Observability**
 In a monolith, logs are sufficient to trace what the application is doing. 
 
-However, in a microservice-architecture, this doesn't work nearly as well. Latency, errors and failure can happen in any service within the architecture. Following a call through the different services, isn't a simple task.
+However, in a microservice-architecture, this doesn't work nearly as well. Latency, errors and failures can happen in any service within the architecture. Following a call through the different services, isn't a simple task.
 
 Thus, *developers need logging, network metrics and distributed tracing and topology to investigate problems and pinpoint their location.*
 
@@ -101,7 +101,7 @@ The control plane of Istio is implemented in one deamon and contains the followi
 * Citadel
   Handels the security between services, but also for the end-user. Furthermore credentials and certificate management was handled by citadel
 * Galley
-  Configuration management and inject
+  Configuration management and injection
 
 ### Traffic Management
 
@@ -112,7 +112,7 @@ A large part of what a service mesh is doing is traffic routing. Thus, there are
 * Basic load balancing
 * AB-Testing (with weighted routing)
 * Canary rollouts
-  This provides a more finer grained traffic distribution then what kubernetes provides (See  [Operation.md](Operation.md))
+  This provides a more finer grained traffic distribution than what kubernetes provides (See  [Operation](13_Operation.md))
 * Failure Handling
   A lot of behaviour around failure handling can be configured within the traffic management part of Istio.
   * Timeouts
@@ -121,7 +121,7 @@ A large part of what a service mesh is doing is traffic routing. Thus, there are
   * Retry
   * Health Checks
 * Fault injections
-  Istio can inject failures, such as delays (e..g network latency) or outright failures (HTTP error codes, TCP connection failure). This simulates failures on the network and test how resilient the service mesh is.
+  Istio can inject failures, such as delays (e.g. network latency) or outright failures (HTTP error codes, TCP connection failure). This simulates failures on the network and tests how resilient the service mesh is.
 
 Istio defines a concept called "Virtual Service". Rules, such as traffic rules, can then be specified on the virtual service.
 
@@ -131,7 +131,7 @@ The following diagram is an example of weighted routing. 50% of the traffic is r
 
 ### Observability
 
-Istio generates detailed telemtry and can send those to information panels, such as Grafana, Jager, or Prometheus.
+Istio generates detailed telemetry and can send those to information panels, such as Grafana, Jaeger, or Prometheus.
 
 <img src="./res/Service%20Mesh/image-20240327091204247.png" alt="image-20240327091204247" style="zoom:40%;" />
 
@@ -145,9 +145,9 @@ Istio does automatic service-to-service encryption, in addition to allowing for 
 
 A downside of sidecar-based service meshes is that an intermediate layer is inserted between the network stack and the microservices. This adds complexity and is another process on the CPU.
 
-An alternative is to implement the this as part of the network stack. This means no extra process is needed and less resources and context switches are required.
+An alternative is to implement this as part of the network stack. This means no extra process is needed and less resources and context switches are required.
 
-This can be archived on Linux with eBPF (enhanced Berkeley Packet Filter), which provides the ability to run JIT compiled bytecode in a sandboxed environment in kernel mode.
+This can be achieved on Linux with eBPF (enhanced Berkeley Packet Filter), which provides the ability to run JIT compiled bytecode in a sandboxed environment in kernel mode.
 
 ![image-20240327091816685](./res/Service%20Mesh/image-20240327091816685.png)
 

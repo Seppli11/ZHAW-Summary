@@ -6,16 +6,16 @@ The **runtime** is the component which executes our application. The **runtime e
 
 Using containers for the runtime environment has many benefits:
 
-* it relieves the devs and ops teams from worrying about the specific details of the machines and OS
+* it relieves the devs and ops teams from worrying about the specific details of the machines and OSes
 * It allows for rolling out new hardware and/or upgrading the OS with minimal impact on the application
 
 ## Open Container Initiative (OCI)
 
 OCI is an industry standard to define containers. 
 
-The OCI Image spec specifies the file format of the bundled file system (image manifest(metadata, dependencies, ...), FS layers, image configurations (env variables, arguments)).
+The OCI Image spec specifies the file format of the bundled file system (image manifest (metadata, dependencies, ...), FS layers, image configurations (env variables, arguments)).
 
-The OCI runtime spec detail how an image can be started and run. There are multiple implementations of the OCI runtime specification.
+The OCI runtime spec details how an image can be started and run. There are multiple implementations of the OCI runtime specification.
 
 ### OCI Images 
 
@@ -29,7 +29,7 @@ When this image is being run, an ephemeral R/W layer is mounted on top. This lay
 
 Multi-stage dockerfiles allow multiple independent parts of the dockerfile. This allows us to compile the application in a stage and then copy the application over to the final stage. This reduces the image size drastically.
 
-With `FROM maven:3.9.6-eclipse-temurin-21 as build`, a stage is named. In another stage, with `COPY --from=build $JAR_FILE /app/runner.jar`, files can be copied from a previous stage
+With `FROM maven:3.9.6-eclipse-temurin-21 as build`, a stage named `build` is declared. In another stage, with `COPY --from=build $JAR_FILE /app/runner.jar`, files can be copied from the referenced stage
 
 ### Pros/Cons Docker Files
 
@@ -47,7 +47,7 @@ With `FROM maven:3.9.6-eclipse-temurin-21 as build`, a stage is named. In anothe
 
 <img src="./res/Runtime%20Environment/image-20240410090106574.png" alt="image-20240410090106574" style="zoom:60%;" />
 
-Buildpack scans the application and based on this, builds a OCI image. The platform provider creates and controls the base image, meaning that they can be trusted.
+Buildpack scans the application and based on this, builds an OCI image. The platform provider creates and controls the base image, meaning that they can be trusted.
 
 The build image is the base image to the builder image, which is used to build the source code. The builder image creates the run image, which is then run. Build images and run images come in pairs.
 
@@ -78,6 +78,6 @@ If the stack is run in a VM:
 
 ![image-20240410081104830](./res/Runtime%20Environment/image-20240410081104830.png)
 
-The application and services can be put into contains to create the following diagram:
+The application and services can be put into containers to create the following diagram:
 
 ![image-20240410081206468](./res/Runtime%20Environment/image-20240410081206468.png)

@@ -1,6 +1,6 @@
 # DevOps
 
-When developing software, the current expectation is to delivery continuously. This shortens the feedback loop and the time until money is earned. Another benefit of continuous is the minimisation of risk. Since the delivery process is automated, it is also at least somewhat documented.
+When developing software, the current expectation is to deliver continuously. This shortens the feedback loop and the time until money is earned. Another benefit of continuous is the minimisation of risk. Since the delivery process is automated, it is also at least somewhat documented.
 
 ## Problems with Waterfall
 
@@ -34,7 +34,7 @@ At each stage, automation can be implemented. A step can continue to the next st
 * DevOps
   The production system is operated automatically (config management, infrastructure provisioning, backup, monitoring, ...)
 
-The difference between continuous delivery and continuous deployment, is that in continuous delivery there is a human in the loop which presses a big red button when delivering a release. In continuous deployment this is automated. Continuous deployment is used by very few companies since it requires a lot of trust in their tests.
+The difference between continuous delivery and continuous deployment, is that in continuous delivery there is a human in the loop who presses a big red button when delivering a release. In continuous deployment this is automated. Continuous deployment is used by very few companies since it requires a lot of trust in their tests.
 
 ## Multi-Stage Delivery Environment
 
@@ -56,7 +56,7 @@ The diagram above shows how information flows through a multi-stage environment.
 
 * Code and config changes **always** go to version control
 * Binary artefacts are only built once and are used in all environment
-* Different configs are used to support multiple environment
+* Different configs are used to support multiple environments
 * The same tooling is used across all environment
 
 ## Tools Required
@@ -72,9 +72,9 @@ The diagram above shows how information flows through a multi-stage environment.
 
 ## Tekton Tool
 
-Tekton is build on top of kubernetes. Pipelines are described with custom kubernetes resource descriptions.
+Tekton is built on top of kubernetes. Pipelines are described with custom kubernetes resource descriptions.
 
-Each pipeline consist of tasks, where as each tasks consists of steps. Each step runs in a specified container image. Once all steps are run, the task is completed and the flow continues to the next task. Of course, a task has outputs which can be forwarded to inputs of other tasks. Additionally, parameters can also be passed to pipelines.
+Each pipeline consist of tasks, whereas each tasks consists of steps. Each step runs in a specified container image. Once all steps are run, the task is completed and the flow continues to the next task. Of course, a task has outputs which can be forwarded to inputs of other tasks. Additionally, parameters can also be passed to pipelines.
 
 <img src="./res/DevOps/image-20240424090821747.png" alt="image-20240424090821747" style="zoom: 50%;" />
 

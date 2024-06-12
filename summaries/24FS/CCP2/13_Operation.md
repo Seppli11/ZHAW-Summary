@@ -182,7 +182,7 @@ A controller's job is to mitigate the difference between the current and the des
 
 New software features are deployed to production and then enabled at runtime based on the configuration. 
 
-Typically feature flags are dynamically configurable during runtime. Furthermore, if one feature is toggled, its hierarchy of toggles should all be enabled. This is useful for feature which are dependent on each other. Finally, a feature might depend on context (e.g. user, role, environment, ...).
+Typically feature flags are dynamically configurable during runtime. Furthermore, if one feature is toggled, its hierarchy of toggles should all be enabled. This is useful for features which are dependent on each other. Finally, a feature might depend on context (e.g. user, role, environment, ...).
 
 A feature might be enabled based on a few strategies:
 
@@ -225,13 +225,13 @@ public Spline[] reticulateSplines() {
 #### Categories of Toggles
 
 * Release Toggles
-  Deploy app with new features and then enable them eventually. This toggles are (usually) transitionary and can be removed, once all service migrated to the new feature
+  Deploy app with new features and then enable them eventually. These toggles are (usually) transitionary and can be removed, once all services migrated to the new feature
 * Experiment Toggles
   Enables experimental features and is often used in conjunction with A/B testing. Usually, these are also transitional and should be removed once the a given version is chosen.
 * Ops Toggles
   These are used to control operational aspects (e.g. system outage, deactivate certain functionalities, maintenance mode). Some are transitional, some are long-living.
 * Permission Toggles
-  They are used to enable features for a certain group of people (alpha / beta testers, or internal / external user). These are often long living and dynamic.
+  They are used to enable features for a certain group of people (alpha / beta testers, or internal / external users). These are often long living and dynamic.
 
 <img src="./res/Operation/image-20240522082717184.png" alt="image-20240522082717184" style="zoom:80%;" />
 
@@ -249,7 +249,7 @@ This usually requires multiple releases running in parallel.
 
 <img src="./res/Operation/image-20240522083237530.png" alt="image-20240522083237530" style="zoom:50%;" />
 
-In this model, there are two identical enviroments (blue and green) running. On one environment is running the current productive application. If one wants to migrate to the next release, the new release is deployed to the other environment. Once the app has been deployed, smoke tests can be done. After which, with a switch, all requests can be switched over to the new environment. If something went wrong, the switch can be flicked back. 
+In this model, there are two identical environments (blue and green) running. One environment is running the current productive application. If one wants to migrate to the next release, the new release is deployed to the other environment. Once the app has been deployed, smoke tests can be done. After which, with a switch, all requests can be switched over to the new environment. If something went wrong, the switch can be flicked back. 
 
 The two environments alternate, which is the hot one, every release.
 
@@ -264,7 +264,7 @@ In this model, users are switched over to the new release gradually. This allows
 
 Advantages are that early roll back is possible with only a small number of people affected. Additionally, A/B testing can be done by routing some users to the new release and some to the old release. It's also possible to check if the application meets the capacity requirements gradually. Finally, it is less resource hungry than blue-green deployment.
 
-The disadvantages are that is is harder to manage and imposes further constraints on compatibility between releases with regards to data model migration.
+The disadvantages are that it is harder to manage and imposes further constraints on compatibility between releases with regards to data model migration.
 
 **Rolling updates** (used by kubernetes) is a simplified version of the canary deployment model. Here, a fixed rollout process with limited monitoring and less control of the process.
 
@@ -289,7 +289,7 @@ There are several options:
   Create a copy DB, migrate the schema and run a process which keeps both versions in sync, and then switch the app to the new DB.  Furthermore, for rollbacks, this synchronisation has to be bi-directional
   *This process is error prone and can be problematic for performance*
 * Design the app to allow for migration
-  Plan migrations in several small steps, instead of one large change. Each of those steps needs back and forward compability. There are also well-known building blocks for migration steps (see below).
+  Plan migrations in several small steps, instead of one large change. Each of those steps needs back and forward compatibility. There are also well-known building blocks for migration steps (see below).
   *This needs planning*
 
 ### State Transition Building Blocks
@@ -336,7 +336,7 @@ The following is an example of how to rename `last_name` to `surname`:
 * Use migration tools, like flyway or liquibase
   These tools allow for forward and backwards compatibility. Furthermore, the scheme needs to be in version control.
 * Decouple the database
-  Simpler data base model per microservice, as well as, having less dependencies and side effects helps as well.
+  Simpler data base model per microservice as well as having less dependencies and side effects helps as well.
   ![image-20240522092737439](./res/Operation/image-20240522092737439.png)
 * Use migration-friendly architectures
-  Use Event-Sourcing and CQRS patterns (see CNA lecture (maybe?)), which store the events, instead of the actual data. This allos to (re)create the different view models from the event store
+  Use Event-Sourcing and CQRS patterns (see CNA lecture (maybe?)), which store the events, instead of the actual data. This allows to (re)create the different view models from the event store

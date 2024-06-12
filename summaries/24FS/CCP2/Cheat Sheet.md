@@ -11,7 +11,7 @@ where `<obj>` can be:
 * `all` returns all objects
 * `pods`
 * `services`
-* `secrete`
+* `secrets`
 
 `-o wide` prints more details
 
@@ -36,13 +36,13 @@ Returns the logs of the given pod
 
 Restarts the given deployments in a rolling fashion.
 
-### `kubectl create secrete`
+### `kubectl create secret`
 
-`kubectl create secrete generic <name> [--from-literal=<key>=<value>]` 
+`kubectl create secret generic <name> [--from-literal=<key>=<value>]` 
 
-Creates a new secrete with the `<name>` and the given key value. `--from-literal=...`  can be supplied multiple time.
+Creates a new secret with the `<name>` and the given key value. `--from-literal=...`  can be supplied multiple times.
 
-### `kubectl delete serete <secrete-name>`
+### `kubectl delete secret <secret-name>`
 
 Deletes a secret with the given name
 

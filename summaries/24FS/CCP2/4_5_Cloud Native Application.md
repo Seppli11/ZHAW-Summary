@@ -34,7 +34,7 @@ SAO Principles:
 
 The micro-service architecture is a SOA architectural style with some additional points:
 
-* Each service is "small" and dedicated to one thing (small doesn't necessary mean not a lot of code, but it should be hyper-focused on one thing)
+* Each service is "small" and dedicated to one thing (small doesn't necessarily mean not a lot of code, but it should be hyper-focused on one thing)
 * Each service runs in its own process and can manage itself (self-composed in its own process)
 * Each service is communicating with lightweight (e.g. simple and easy) mechanisms (e.g. REST APIs)
 * Each service can be deployed independently in a fully automatic way
@@ -44,7 +44,7 @@ On the left side, a monolithic application is depicted. All features are packed 
 
 ![image-20240313083033756](./res/Cloud%20Native%20Application/image-20240313083033756.png)
 
-The following shows the difference between a application implemented as a monolith and as a micro-service architecture. 
+The following shows the difference between an application implemented as a monolith and as a micro-service architecture. 
 
 <img src="./res/Cloud%20Native%20Application/image-20240313083239719.png" alt="image-20240313083239719" style="zoom:33%;" />
 
@@ -52,7 +52,7 @@ The following shows the difference between a application implemented as a monoli
 
 > Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.
 
-If an organisation is split into UI specialists, middleware specialits and DB admins, the application also reflects that structure. This is burdensome, as simple changes require cross-team approval.
+If an organisation is split into UI specialists, middleware specialists and DB admins, the application also reflects that structure. This is burdensome, as simple changes require cross-team approval.
 
 ![image-20240313083618165](./res/Cloud%20Native%20Application/image-20240313083618165.png)
 
@@ -89,19 +89,19 @@ Everything that's likely to change between deployments should be stored in an ex
 
 This likely includes:
 
-* Resources, like databases and other backing services
+* Resources like databases and other backing services
 * Credentials to external services (e.g. Amazon S3, Twitter, ...)
 * Per-deploy values (e.g. canonical hostname, ...)
 
-This configurations are strictly separated from the code and are injected into the environment. 12-Factor recommends doing this with environment variables, since they are easy to change without changing code, and they are unlikely to be checked into a repository.
+These configurations are strictly separated from the code and are injected into the environment. 12-Factor recommends doing this with environment variables, since they are easy to change without changing code, and they are unlikely to be checked into a repository.
 
 ### Backing Services
 
 <img src="./res/Cloud%20Native%20Application/image-20240313090257284.png" alt="image-20240313090257284" style="zoom:40%;" />
 
-Backing services should be treated as an attached resource and needs to be configurable as an URL. Importantly, no distinction is made between local and third-party services. 
+Backing services should be treated as an attached resource and need to be configurable as a URL. Importantly, no distinction is made between local and third-party services. 
 
-A backing service is any service the app consumes over the network during its normal operation (DB, messing, SMTP server, cache...)
+A backing service is any service the app consumes over the network during its normal operation (DB, monitoring, SMTP server, cache...)
 
 ### Build, Release, Run
 
@@ -109,7 +109,7 @@ A backing service is any service the app consumes over the network during its no
 
 Building, releasing and running are separated stages. This enables building the image once, then putting it into testing. After testing, the image can be put into production.
 
-*This is mostly likely an artefact of the time, when it was common to directly upload files to the production server.*
+*This is most likely an artefact of the past, when it was common to directly upload files to the production server.*
 
 ### Processes
 
@@ -142,7 +142,7 @@ Additionally, the app should be robust against sudden death, in the case of a fa
 
 Development, staging and production environment should be as similar as possible. This enables effective continuous delivery and deployment and avoid gaps between development and production.
 
-* Avoid time gap: Write code and have it deployed in hours
+* Avoid time gap: Write code and have it deployed within hours
 * Avoid personnel gap: developers who wrote code are closely involved in deploying it and watching its behaviour in production
 * Avoid tool gap: Use the same tools in development and production
 
@@ -166,7 +166,7 @@ These tasks should be tested on a copy of the environment with the same release,
 
 In a service-oriented architecture, one uses many services, runs many service instances and  it can be a challenge to keep track of all of them.
 
-A service registry maintains the state information of each service instances. It stores information like:
+A service registry maintains the state information of each service instance. It stores information like:
 
 * What type of service is provided by an instance
 * What is the function offered
@@ -178,7 +178,7 @@ As can be seen in the diagram below, each service publishes their information to
 
 <img src="./res/Cloud%20Native%20Application/image-20240320081336786.png" alt="image-20240320081336786" style="zoom:67%;" />
 
-There many different service registeries, like Netflix's Eureka, etcd or many more. The benefit of using a separate service registry than Kuberentes' built in registry, is that more information can be put into and read from the registry.
+There are many different service registries, like Netflix's Eureka, etcd or many more. The benefit of using a separate service registry than Kuberentes' built in registry, is that more information can be put into and read from the registry.
 
 #### Eureka
 
@@ -193,7 +193,7 @@ An example implementation could consist of a REST API that offers a few actions 
 
 ![image-20240320082436207](./res/Cloud%20Native%20Application/image-20240320082436207.png)
 
-etcd is a distributed key-value store. The key are strings and can be nested and folders can be used to organise the keys. Values can be pretty much anything.
+etcd is a distributed key-value store. The keys are strings and can be nested and folders can be used to organise the keys. Values can be pretty much anything.
 
 Apart from setting and getting values, keys can also be watched. This enables using etcd as a message queue.
 
@@ -224,7 +224,7 @@ Each service gets the A-Record `<service name>.<namespace>.svc.cluster.local`. P
 
 <img src="./res/Cloud%20Native%20Application/image-20240320083639951.png" alt="image-20240320083639951" style="zoom:50%;" />
 
-A circuit breaker is a intermediate between consumer and producer which detects if a service is unavailable or unresponsive. This then should lead to stop requesting new request to give the producer time to catch up.  
+A circuit breaker is an intermediate between consumer and producer which detects if a service is unavailable or unresponsive. This then should lead to stop sending new requests to give the producer time to catch up.  
 
 Since the circuit breaker will break the connection and immediately response, this gives the requesting service time to use an alternative (instead of a complicated recommendation algorithm, use a simple average).
 
@@ -232,15 +232,15 @@ Since the circuit breaker will break the connection and immediately response, th
 
 If the current state of the circuit breaker is `closed`, then requests are forwarded to the producer service. 
 
-If, when forwarding a request, a failure occures, an internal counter is incremented. If this counter passes a threashold, the circuit breaker will change into the `open` state.
+If, when forwarding a request, a failure occurs, an internal counter is incremented. If this counter passes a threshold, the circuit breaker will change into the `open` state.
 
-In the `open` state, a timeout timer starts and for this time, the circuit breaker immediatly returns an error message. After the timer expired, the circuit breaker changes into `half-open`.
+In the `open` state, a timeout timer starts and for this time, the circuit breaker immediately returns an error message. After the timer expired, the circuit breaker changes into `half-open`.
 
 In the `half-open` state, only a certain percentage of requests are forwarded. If a certain number of requests succeed, then the state changes back into `closed`. However, if there are enough failures, the state can change back into `open`. 
 
 ### Load Balancer
 
-In a service-oriented architecture scaling is done by starting multiple service instances. However, we still would like to access all of the services with one address and port. As such, a load balancer is a mechanism to distribute the aggregate load to the individual members a pool of Services Instances according to a certain distribution algorithm.
+In a service-oriented architecture scaling is done by starting multiple service instances. However, we still would like to access all of the services with one address and port. As such, a load balancer is a mechanism to distribute the aggregate load to the individual members a pool of Service Instances according to a certain distribution algorithm.
 
 ![image-20240320085501535](./res/Cloud%20Native%20Application/image-20240320085501535.png)
 
@@ -294,7 +294,7 @@ Basically Kubernetes deployments and replica-sets.
 
 ![image-20240320091649199](./res/Cloud%20Native%20Application/image-20240320091649199.png)
 
-The  number of requests can spike. For **not time-sensitive** services, requests can be distributed over time. This smooths out the spikes by slowing down some requests. If the peaks are excessive, some requests might be dropped (e.g. returning a 500 status code).
+The  number of requests can spike. For **non time-sensitive** services, requests can be distributed over time. This smooths out the spikes by slowing down some requests. If the peaks are excessive, some requests might be dropped (e.g. returning a 500 status code).
 
 The services can be put behind a load balancer, or alternatively, each service pulls a new request as soon as its done.
 
@@ -302,7 +302,7 @@ The services can be put behind a load balancer, or alternatively, each service p
 
 ![image-20240320091854740](./res/Cloud%20Native%20Application/image-20240320091854740.png)
 
-The same mechanism of queue load-leveling can be used to enable elasticity, by scaling up or down the instances based on the amount of messages in the queue, or how quick the queue fill up.
+The same mechanism of queue load-leveling can be used to enable elasticity, by scaling up or down the instances based on the amount of messages in the queue, or how quick the queue fills up.
 
 Instead of having a fixed amount of services available, we can also automatically scale the amount of services according to the size of the message queue.
 
@@ -312,12 +312,12 @@ Instead of having a fixed amount of services available, we can also automaticall
 
 Instead of storing the current state, the database stores the individual events leading to changes.  This allows one to recreate the state of anytime and gives one an audit trail. 
 
-In the materialised view, the current state is stored to allows for quick look-ups for the current state.
+In the materialised view, the current state is stored to allow for quick look-ups for the current state.
 
-This also allows data that is eventually consistent, which can enable heavily distributed system to track data.
+This also allows data that is eventually consistent, which can enable heavily distributed systems to track data.
 
 ### Command Query Response Segregation (CQRS)
 
-One challenge of a service-oriented architecture can be to optimise for read and write operations. The idea behind CQRS is to provide separate paths for write and read operations. This can allows to scale the read and write part separately. This is useful for applications which have a disproportionate number of read or write requests.
+One challenge of a service-oriented architecture can be to optimise for read and write operations. The idea behind CQRS is to provide separate paths for write and read operations. This allows to scale the read and write part separately. This is useful for applications which have a disproportionate number of read or write requests.
 
 ![image-20240320093257241](./res/Cloud%20Native%20Application/image-20240320093257241.png)

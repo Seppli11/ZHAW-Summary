@@ -19,7 +19,7 @@ The following images show the used capacity of a service:
 
 If the consumption model is very stable and doesn't have huge sudden spikes, it is advantageous to buy the hardware outright.
 
-Matching the required computing power with the actual exiting computing power is hard and over provisioning is wasting money. Thus having infrastructure that can scale according to the currently required computing power, can lead to less money having to spend.
+Matching the required computing power with the actual exiting computing power is hard and over-provisioning is wasting money. Thus having infrastructure that can scale according to the currently required computing power can lead to less money having to spend.
 
 <img src="./res/PAAS/image-20240221090917375.png" alt="image-20240221090917375" style="zoom:67%;" />
 
@@ -30,9 +30,9 @@ Matching the required computing power with the actual exiting computing power is
 * Broad network access
   Capabilities are available over the network
 * Resource pooling (multi-tenancy)
-  The  cloud provider pools computing resources to serve multipe consumer. The consumer has no control over the exact location of the computing power. They may be able to specify a broad area
+  The  cloud provider pools computing resources to serve multiple consumers. The consumer has no control over the exact location of the computing power. They may be able to specify a broad area
 * Rapid elasticity
-  Capabilites can be elastically provisioned and released, in some case automatically, to match demand in computing power.
+  Capabilities can be elastically provisioned and released, in some cases automatically, to match demand in computing power.
 * Measured service (pay-as-you-go)
   Consumed resources are metered and paid-as-you-go
 
@@ -60,9 +60,9 @@ These are the service models:
 * Container as a Service (CaaS)
   The provider provides the capability to run containers in the cloud
 * Infrastructure as a Service (IaaS)
-  The cloud provider provides access to procesing, storage, network and other fundamental computing resources. 
+  The cloud provider provides access to processing, storage, network and other fundamental computing resources. 
 
-In the following diagram, one can see what is managed by the customer, what is provided by the provides and what allows the scaling of compute power.
+In the following diagram, one can see what is managed by the customer, what is provided by the providers and what allows the scaling of compute power.
 
 ![image-20240221094453637](./res/PAAS/image-20240221094453637.png)
 
@@ -80,33 +80,33 @@ The following diagram shows how the different components of IaaS match to the co
 
 ### Staging
 
-In staging an image (e.g. docker image, vm, ...) is built. This is part of the service PaaS provides. This is typically done in the following fashion:
+In staging, an image (e.g. docker image, vm, ...) is built. This is part of the service PaaS provides. This is typically done in the following fashion:
 
 * Spin up temporary runtime
 * run build instructions in the runtime
 * create runtime image
-* save image to store/registery
+* save image to store/registry
 * destroy temporary runtime
 
 ### Networking
 
 Networking allows for communication between two applications in the cluster (which may be located on different nodes in the cluster). At the same time it is also responsible for the communication to the outside through a firewall. 
 
-A important feature to debug, is providing a a tunnel into the cluster. This can allow a user to access information that would be off-limits from the outside.
+An important feature to debug is providing a tunnel into the cluster. This can allow a user to access information that would be off-limits from the outside.
 
 ### Cloud Controller
 
 The cloud controller provides an API to the user. In addition, usually there is also a web ui and a cli tool.
 
-### Heal-Management
+### Health-Management
 
-This sub-system monitors the state of the application (e.g. IO, memory, CPU, health endpoints, number of instances, version numbers, ...) and compares the "intended" with the actual state. If it notices a anomaly it can take corrective actions.
+This sub-system monitors the state of the application (e.g. IO, memory, CPU, health endpoints, number of instances, version numbers, ...) and compares the "intended" with the actual state. If it notices an anomaly it can take corrective actions.
 
 This subsystem might be part of the runtime orchestrator.
 
 ### Messaging-System/Bus
 
-This sub-system provides the communication between all the different sub-systems. This can be a a key-value store, and sub-systems can subscribe and publish event over it.
+This sub-system provides the communication between all the different sub-systems. This can be a a key-value store, and sub-systems can subscribe and publish events over it.
 
 It needs to protect itself at all cost, since if it fails, the whole cluster will stop working.
 
@@ -136,7 +136,7 @@ The following diagram shows how the OpenShift stack maps to the general structur
 
 ## Cloud Foundry
 
-Cloud Foundry is an alternative to OpenShift that is a bit more OS agnostic. Since it has been conceived before docker, it isn't build around kubernetes. Instead they built their own container management system named Diego.
+Cloud Foundry is an alternative to OpenShift that is a bit more OS agnostic. Since it has been conceived before docker, it isn't built around kubernetes. Instead, they built their own container management system named Diego.
 
 ![image-20240228092556675](./res/PAAS/image-20240228092556675.png)
 

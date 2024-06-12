@@ -28,7 +28,7 @@ Container orchestration provides a number of benefits:
 
 ## Concepts
 
-A basic principle of Kubernetes is, that the desired state is configured. Kuberenetes then tries to migrate the current state to the desired state. As such, the user doesn't say, I want three more pods of this type, instead the user specifies the number of required pods and Kubernetes will take care of creating and killing the right pods.
+A basic principle of Kubernetes is, that the desired state is configured. Kuberenetes then tries to migrate the current state to the desired state. As such, the user doesn't say "I want three more pods of this type". Instead, the user specifies the number of required pods and Kubernetes will take care of creating and killing the right pods.
 
 ### Pods
 
@@ -69,13 +69,13 @@ Pods allow tightly coupling containers. An example would be a web container, whi
 
 <img src="./res/Kubernetes/image-20240306083418885.png" alt="image-20240306083418885" style="zoom:33%;" />
 
-As one can see in the flow chart above, pods are deployed atomically, meaning either all containers run, or all of them are terminated. If a pod dies (e.g. a container of the pod crashes or the cluster node containing the pod crashes) Kubernetes doesn't bother to bring the pod back up. Instead, a new pod is deployed in its place (and a such, the pod has a new pod ID and a new IP address). Pods are treated as cattle in the analogy *pets vs cattle*.
+As one can see in the flow chart above, pods are deployed atomically, meaning either all containers run, or all of them are terminated. If a pod dies (e.g. a container of the pod crashes or the cluster node containing the pod crashes) Kubernetes doesn't bother to bring the pod back up. Instead, a new pod is deployed in its place (and as such, the pod has a new pod ID and a new IP address). Pods are treated as cattle in the analogy *pets vs cattle*.
 
 ### Namespace
 
 A namespace can be used to separate different applications. Furthermore, it's possible to write policies which limit the resources for the namespace.
 
-All namespace get be viewed by `kubectl get namespaces`
+All namespaces can be viewed by `kubectl get namespaces`
 
 ### Replication
 
@@ -123,14 +123,14 @@ Deployments enable release management and allow
 There are different strategies how to update and roll back:
 
 * Recreate
-  Kill the existing pods and bring up the new container, but the app as downtime
+  Kill the existing pods and bring up the new container, but the app has a downtime
 * Rolling Update
-  Gradually brings up new pods and kills old pods gradually. During a rolling update, the minimum required number of pods are running. As can be seen in the diagram below, Kubernetes first starts a new `v.2` pod before killing an old `v.1` pod. In the case of a rollback, this process is done in reverse.
+  Brings up new pods and kills old pods gradually. During a rolling update, the minimum required number of pods are running. As can be seen in the diagram below, Kubernetes first starts a new `v.2` pod before killing an old `v.1` pod. In the case of a rollback, this process is done in reverse.
   <img src="./res/Kubernetes/image-20240306084509669.png" alt="image-20240306084509669" style="zoom:50%;" />
 
 ### DaemonSet
 
-A daemon set is a special version of a replica set, which ensures that a pod is running on each working node (or on a specify set of nodes). This is useful for services which need a representation on each node. For example network management, log/metrics collection pods, cluster monitoring, ...
+A daemon set is a special version of a replica set, which ensures that a pod is running on each working node (or on a specified set of nodes). This is useful for services which need a representation on each node. For example network management, log/metrics collection pods, cluster monitoring, ...
 
 ![image-20240306084848790](./res/Kubernetes/image-20240306084848790.png)
 
@@ -177,7 +177,7 @@ Services come in many flavors:
   <img src="./res/Kubernetes/image-20240306091233263.png" alt="image-20240306091233263" style="zoom:50%;" />
 
 * **ExternalName**
-  Maps a DNS CNAME record to an external address. This allows pods in the cluster to access an external resource with one DNS name (e.g. a external DB server)
+  Maps a DNS CNAME record to an external address. This allows pods in the cluster to access an external resource with one DNS name (e.g. an external DB server)
 
 ### Label & Label Selectors
 
@@ -215,7 +215,7 @@ spec:
 
 *(IC=Ingress Controller)*
 
-An ingress controls is a http(s) proxy, which then forwards it to internal pods. Additionally, it can handle SSL certificates.
+An ingress controls is an http(s) proxy, which then forwards it to internal pods. Additionally, it can handle SSL certificates.
 
 ### Volumes
 
@@ -226,13 +226,13 @@ The following types are supported:
 * `emptyDir`: erased at Pod deletion (non-persistent)
 * `hostPath`: path from the host machine (single node only). Is persistent with machine lifetime
 * `local`: local storage device mounted on nodes (persistent)
-* `nfs`,` iscsc`, `fc`: network file system (persistent) 
-* `secret`: used to pass sensitive information, such as passwords, to pods. Secretes can be stored in the Kubernetes API and mounted as files.  Secretes volumes are backed by a tmpfs which is RAM-backed.
+* `nfs`,` iscsi`, `fc`: network file system (persistent) 
+* `secret`: used to pass sensitive information, such as passwords, to pods. Secrets can be stored in the Kubernetes API and mounted as files.  Secret volumes are backed by a tmpfs which is RAM-backed.
 
 Persistent volumes come in two types:
 
 * static: volumes need to be explicitly created by a cluster admin
-* dynamic: a StorageClass is configured by the admin which then can created a specific volume on demand
+* dynamic: a StorageClass is configured by the admin which then can create a specific volume on demand
 
 A persistent volume claim is used to map volumes to pods.
 
@@ -289,7 +289,7 @@ volumes:
     	name: game-demo
 ```
 
-### Secretes
+### Secrets
 
 A secret is similar to a config map, but the content is encoded. It is usually used for credentials or certificates.
 
@@ -355,8 +355,7 @@ spec:
         targetPort: 80 # port on pod
     	nodePort: 30007 # port on node
     selector:
-    	app: nginx
-# reference to deployment
+    	app: nginx # reference to deployment
 ```
 
 To define an ingress server, the following can used:
@@ -388,41 +387,41 @@ Kubernetes allows one to extend their yaml format by custom resources.
 
 ```yaml
 apiVersion: apiextensions.k8s.io/v1
-	kind: CustomResourceDefinition
-	metadata:
-		name: shirts.stable.example.com
-	spec:
-		group: stable.example.com
-		scope: Namespaced
-		names:
-			plural: shirts
-			singular: shirt
-			kind: Shirt
-		versions:
-		- name: v1
-			served: true
-			storage: true
-			schema:
-				openAPIV3Schema:
-					type: object
-					properties:
-						spec:
-							type: object
-								properties:
-									color:
-										type: string
-									size:
-										type: string
-			selectableFields:
-			- jsonPath: .spec.color
-			- jsonPath: .spec.size
-			additionalPrinterColumns:
-			- jsonPath: .spec.color
-				name: Color
-				type: string
-			- jsonPath: .spec.size
-				name: Size
-				type: string
+kind: CustomResourceDefinition
+metadata:
+  name: shirts.stable.example.com
+spec:
+  group: stable.example.com
+  scope: Namespaced
+  names:
+    plural: shirts
+    singular: shirt
+    kind: Shirt
+  versions:
+  - name: v1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+              properties:
+                color:
+                  type: string
+                size:
+                  type: string
+    selectableFields:
+    - jsonPath: .spec.color
+    - jsonPath: .spec.size
+    additionalPrinterColumns:
+    - jsonPath: .spec.color
+      name: Color
+      type: string
+    - jsonPath: .spec.size
+      name: Size
+      type: string
 ---
 
 apiVersion: shirts.stable.example.com
@@ -448,8 +447,8 @@ Controllers are categorised into the following categories, depending on their ca
 
 ![image-20240306094449110](./res/Kubernetes/image-20240306094449110.png)
 
-On the master node(s) the API server is used by the worker to know what to do and by kubectl. etcd is used as the storage for configuration.  The scheduler selects on which node a pod runs.  The controller manager is the beating heart of kubernetes and core controllers, such as the ReplicationController or DaemonSet controller, run it it.
+On the master node(s) the API server is used by the worker to know what to do and by kubectl. etcd is used as the storage for configuration.  The scheduler selects on which node a pod runs.  The controller manager is the beating heart of kubernetes and core controllers, such as the ReplicationController or DaemonSet controller, run on it.
 
-On the work node, kubelet manages the containers of the local worker. It receives its commands from the API server. `kube-proxy` manages the network of the worker.
+On the worker node, kubelet manages the containers of the local worker. It receives its commands from the API server. `kube-proxy` manages the network of the worker.
 
 The load balancer is managed by the provider and external to the cluster (The ingress could be run on the cluster).

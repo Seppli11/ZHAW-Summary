@@ -1,6 +1,6 @@
 # CNA Principles (12 Factor)
 
-The following principles where developed by Heroku in 2011. See https://12factor.net/
+The following principles were developed by Heroku in 2011. See https://12factor.net/
 
 ## 1. Codebase
 
@@ -27,19 +27,19 @@ Everything that's likely to change between deployments should be stored in an ex
 
 This likely includes:
 
-* Resources, like databases and other backing services
+* Resources like databases and other backing services
 * Credentials to external services (e.g. Amazon S3, Twitter, ...)
 * Per-deploy values (e.g. canonical hostname, ...)
 
-This configurations are strictly separated from the code and are injected into the environment. 12-Factor recommends doing this with environment variables, since they are easy to change without changing code, and they are unlikely to be checked into a repository.
+These configurations are strictly separated from the code and are injected into the environment. 12-Factor recommends doing this with environment variables, since they are easy to change without changing code, and they are unlikely to be checked into a repository.
 
 ## 4. Backing Services
 
 <img src="./res/12_factors/image-20240313090257284.png" alt="image-20240313090257284" style="zoom:40%;" />
 
-Backing services should be treated as an attached resource and needs to be configurable as an URL. Importantly, no distinction is made between local and third-party services. 
+Backing services should be treated as an attached resource and need to be configurable as a URL. Importantly, no distinction is made between local and third-party services. 
 
-A backing service is any service the app consumes over the network during its normal operation (DB, messing, SMTP server, cache...)
+A backing service is any service the app consumes over the network during its normal operation (DB, monitoring, SMTP server, cache...)
 
 ## 5. Build, Release, Run
 
@@ -47,7 +47,7 @@ A backing service is any service the app consumes over the network during its no
 
 Building, releasing and running are separated stages. This enables building the image once, then putting it into testing. After testing, the image can be put into production.
 
-*This is mostly likely an artefact of the time, when it was common to directly upload files to the production server.*
+*This is most likely an artefact of the past, when it was common to directly upload files to the production server.*
 
 ## 6. Processes
 
@@ -80,7 +80,7 @@ Additionally, the app should be robust against sudden death, in the case of a fa
 
 Development, staging and production environment should be as similar as possible. This enables effective continuous delivery and deployment and avoid gaps between development and production.
 
-* Avoid time gap: Write code and have it deployed in hours
+* Avoid time gap: Write code and have it deployed within hours
 * Avoid personnel gap: developers who wrote code are closely involved in deploying it and watching its behaviour in production
 * Avoid tool gap: Use the same tools in development and production
 
