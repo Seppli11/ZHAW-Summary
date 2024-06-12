@@ -21,7 +21,7 @@ Container orchestration provides a number of benefits:
 * Create multiple, interconnected containers
 * Deploying containers on multiple hosts to improve redundancy
   * Sometimes one wants to run tightly coupled containers on the same node (affinity)
-  * Redandent containers should **not** run on the same node (anti-affinity)
+  * Redundant containers should **not** run on the same node (anti-affinity)
 * Deploying a new version without service interruption
 * The ability to take down a host for maintenance
 * Health management, which monitors the health of the containers
@@ -31,6 +31,23 @@ Container orchestration provides a number of benefits:
 A basic principle of Kubernetes is, that the desired state is configured. Kuberenetes then tries to migrate the current state to the desired state. As such, the user doesn't say, I want three more pods of this type, instead the user specifies the number of required pods and Kubernetes will take care of creating and killing the right pods.
 
 ### Pods
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+  	 app: <app-label>
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+```
+
+
 
 <img src="./res/Kubernetes/image-20240306082721524.png" alt="image-20240306082721524" style="zoom:33%;" />
 
@@ -66,11 +83,35 @@ All namespace get be viewed by `kubectl get namespaces`
 
 A replication controller deploys a desired number of replicas of a pod definition. The controller monitors if all of the pods are still running and if one dies, the controller will deploy a new one. This ensures that the *correct number of replicas* is always running.
 
-![image-20240306083902314](./res/Kubernetes/image-20240306083902314.png)
+Another way, which is replacing replication containers,  are **replica sets**, which are more flexible. Pods are assigned to replica sets by labels specified on pods. Replica Sets are used by a deployment.
 
-Another way, which is replacing replication containers,  are **replica sets**, which are more flexible. Pods are assigned to replica sets by labels specified on pods. 
+![image-20240306083902314](./res/3_Kubernetes/image-20240306083902314.png)
 
 ### Deployments
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+```
 
 Deployments enable release management and allow
 
@@ -95,6 +136,22 @@ A daemon set is a special version of a replica set, which ensures that a pod is 
 
 ### Service
 
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app.kubernetes.io/name: MyApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+```
+
+
+
 <img src="./res/Kubernetes/image-20240306090016392.png" alt="image-20240306090016392" style="zoom:33%;" />
 
 Services provide a reliable networking endpoint for a set of pods. This allows for pods to be killed and deployed (thus changing their IP address) and still having a reliable IP address and DNS entry to access the pods. The service acts as a load-balancer and balances all requests to the back-end pods.
@@ -106,7 +163,7 @@ Importantly, services are not pods, instead they are part of the network configu
 Services come in many flavors:
 
 * **ClusterIP** *(default)*
-  Exposes the service on an internal IP address int he cluster, making it only reachable from within the cluster
+  Exposes the service on an internal IP address in the cluster, making it only reachable from within the cluster
   <img src="./res/Kubernetes/image-20240306090804054.png" alt="image-20240306090804054" style="zoom: 50%;" />
 
 * **NodePort**
@@ -128,9 +185,31 @@ Services come in many flavors:
 
 A label is a a key-value pair attached to a Kubernetes object. Both the key and value can be freely chosen and objects can have multiple labels.
 
-A label selector can be used to select pods. One example is when defining a servce, the label selector specifies which pods are load-balanced by the service.
+A label selector can be used to select pods. One example is when defining a service, the label selector specifies which pods are load-balanced by the service.
 
 ### Ingress
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minimal-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx-example
+  rules:
+  - http:
+      paths:
+      - path: /testpath
+        pathType: Prefix
+        backend:
+          service:
+            name: test
+            port:
+              number: 80
+
+```
 
 <img src="./res/Kubernetes/image-20240306091652291.png" alt="image-20240306091652291" style="zoom: 33%;" />
 
@@ -242,8 +321,6 @@ spec:
     - name: DB_PASSWD…	
 ```
 
-
-
 ## Object Resource API
 
 The basic structure is always the same:
@@ -273,7 +350,7 @@ metadata:
 spec:
     type: NodePort
     ports:
-        - protocol: TCP
+      - protocol: TCP
         port: 8080 # port of the service
         targetPort: 80 # port on pod
     	nodePort: 30007 # port on node
@@ -293,15 +370,15 @@ metadata:
 		ingress.kubernetes.io/ssl-redirect: "false"
 spec:
     rules:
-    - host: www.mywebpage.com
+  - host: www.mywebpage.com
         http:
             paths:
-                - pathType: Prefix
+              - pathType: Prefix
                 path: "/"
                 backend:
                     service:
                         name: my-nginx-service
-                        port:
+                        port: 
                         	number: 80
 ```
 
@@ -346,14 +423,15 @@ apiVersion: apiextensions.k8s.io/v1
 			- jsonPath: .spec.size
 				name: Size
 				type: string
+---
 
-	apiVersion: shirts.stable.example.com
-	kind: Shirt
-	metadata:
-		name: myShirt
-	spec:
-		color: blue
-		size: XL
+apiVersion: shirts.stable.example.com
+kind: Shirt
+metadata:
+    name: myShirt
+spec:
+    color: blue
+    size: XL
 ```
 
 The custom resource is managed by a customised controller. Such a controller is a "normal" kubernetes service, which uses kubernetes APIs to introspect the current state of services, pods, ...  

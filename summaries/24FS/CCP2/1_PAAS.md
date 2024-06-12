@@ -54,7 +54,7 @@ These are the service models:
 * Software as a Service (SaaS)
   The consumer can use a service, running in a cloud, but doesn't manage it. The consumer is the end-user
 * Function as a Service (FaaS)
-  The consumer deploys a function to the the cloud and invokes it when necessary. This is also sometimes called serverless computing.
+  The consumer deploys a function to the cloud and invokes it when necessary. This is also sometimes called serverless computing.
 * Platform as a Service (PaaS)
   The cloud provider provides the capability to run an application. The consumer doesn't manage or control the underlying cloud infrastructure
 * Container as a Service (CaaS)

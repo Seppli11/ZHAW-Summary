@@ -1,6 +1,8 @@
 # Recursion
 
-## What is recursion
+## What is recursion?
+
+Informally, a recursion is a formula which self-references itself.
 
 The following is a basic recursive function:
 $$
@@ -15,7 +17,7 @@ This is the equivalent haskell code:
 
 ```haskell
 primRec :: (Integer -> Integer) -> Integer -> Integer -> Integer
-primRec g c
+primRec g c n
 	| n == 0 = c
 	| otherwise = g $ rec_ (n-1)
 	where
@@ -24,7 +26,7 @@ primRec g c
 
 ## $n+1$ or $n-1$
 
-The following implem        IntStream.of(1).flatMap(null)ents an exponential function:
+The following implements an exponential function:
 $$
 2^0 &= 1\\
 2^{n} &= 2 \cdot 2^{(n - 1)}
@@ -35,7 +37,7 @@ $$
 exp2 0 = 1
 exp2 n = 2 * exp2 (n-1)
 
-{- this can also be defined with primRec from aboce -}
+{- this can also be defined with primRec from above -}
 exp2' = primRec ((*) 2) 1
 ```
 
@@ -48,8 +50,8 @@ $$
 
 ```haskell
 data Nat 
-	= Zero
-	| Successor Nat
+	= N
+	| S Nat
 	deriving (Show, Eq)
 	
 expN :: Nat -> Nat
@@ -68,15 +70,29 @@ f(n+1, \vec x) &= G(f(n, \vec x), n, \vec x)
 \end{aligned}
 $$
 
+This adds $\vec x$, representing additional parameters to the function. However, $\vec x$ cannot be modified by $G$. Furthermore, $G$ also has access to the current $n$.
+
 This allows us to implement x to the power to y like the following:
 
 ![image-20240321164206497](./res/2_Recursion/image-20240321164206497.png)
 
-However, this doesn't allow all recursive function. For example, a the fibbonaci function requires access to both the last and the second last value.
+In the case of the factorial function, the $n$ parameter can be useful as well:
+
+![image-20240611103425176](./res/2_Recursion/image-20240611103425176.png)
+
+*(G should be defined as $G(a, n) = n \cdot a$)*
+
+However, this does **not** allow all recursive function. For example, a the fibonacci function requires access to both the last and the second last value.
 
 ### Recursive Value Recursion (“Wertverlaufsrekursion”)
 
+A recursive value recursion is similar to a primitive recursion, with the key difference that $G$​ can access all past values instead of just the last one.
+
+> In theory, since finite sequences can be encoded as numbers, every recursive value recursion can be encoded as a primitive recursion.
+
 ![image-20240321164545228](./res/2_Recursion/image-20240321164545228.png)
+
+The following shows an example in haskell:
 
 ```haskell
 valueRec :: ([Integer] -> Integer) -> Integer -> Integer
@@ -227,7 +243,7 @@ As an example, the function $id$ has a fix point for every argument. More graphi
 ```haskell
 expF f x
 	| x == 0 = 1
-	| otherwise = 2 * f (x - 1) -- carfule, expF is not recursive
+	| otherwise = 2 * f (x - 1) -- careful, expF is not recursive
 ```
 
 A fix point function would be `expF h = h` . Importantly, $h$ is a function and `expF h` is a partially applied function.

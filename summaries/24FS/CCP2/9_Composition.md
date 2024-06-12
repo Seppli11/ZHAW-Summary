@@ -16,17 +16,26 @@ Of course, this means that complex applications are composed of small, independe
 
 *(The dashed circles represent subdomains; the circles within the domain are the bounded contexts)*
 
-A domain consists of multiple subdomain, each corresponds to a different part of the business. The following classification can be made:
+Mini Glossary:
+
+* Context: The setting in which a concept appears in
+* Domain: A specific area of knowledge or activity
+* Model: An abstraction that describes a selected aspect of a domain
+* Ubiquitous Language: The language around the domain model
+* Bounded Context: The explicit defined context where a model applies
+
+A domain consists of multiple subdomain, each corresponds to a different part of the business. Sub-domains can be classified into the following categories:
 
 * Core
+  A key differentiator and the most valuable part of an app
 * Supporting
+  Related to what the business does but not a differentiator (either implemented in-house or outsourced)
 * Generic
+  Not specific to the business. Ideally an off-the-shelf solution is used
 
-A part of the domain can be identified as a sub domain, if one of the following things are true:
+To identify subdomains, one requires knowledge about the business. A good starting point when analysing is to look at the organisation structure. Usually, each sub-domain has a key domain object.
 
-* ...
-
-There is usually one service per sub-domain.
+Furthermore, there is usually one service per sub-domain.
 
 ### Example of Decomposition
 
@@ -42,19 +51,23 @@ To get from the monolith to the architecture below, one could start of with the 
 
 ## Centralised Application Composition
 
+![image-20240612130442322](./res/9_Composition/image-20240612130442322.png)
+
 The centralised approach hinges on creating a centralised global model and have a single logically controller that controls the deployment and running of the services. 
 
 This makes managing it easier, since it gives global control and oversight. On the other hand, scalability suffers, since the internet is not centralised.
 
-There are numerous technologies that enable this, like TOSCA.
+There are numerous technologies that enable this, like TOSCA, docker-compose or HELM.
 
 ## Decentralised Application Composition
 
+![image-20240612130729086](./res/9_Composition/image-20240612130729086.png)
+
 Each service is (usually) has its own decentralised local model and is managed by its own controller. Additionally, there is a way to synchronous the different controllers.
 
-A service is this case refers to something like DNS, BGP or P2P. 
+Examples are DNS, BGP or P2P. 
 
-This helps with scalability, but its hard to implement it correctly.
+This helps with scalability, but its hard to implement it correctly. 
 
 ## Composition Interactions
 

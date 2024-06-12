@@ -22,7 +22,17 @@ This can be solved by integrating the operation teams into the development cycle
 
 At each stage, automation can be implemented. A step can continue to the next step, when all tests pass. If a test fails, the responsible people are notified, thus creating a feedback loop.
 
-The diagram above shows which practises cover which steps. *(for a quick rundown of these practices see the 10_DVOP2-DevOps-CD slides)*
+* Build automation
+  A process building individual components, run unit tests, package software, create documentation, ... This is typically run by the developer on their local machine. Usually, the tools used are provided by the programming language used (make for c/c++, maven/gradle for java, ...).
+* Continuous Integration
+  Automatically build, test and integrate components and run integration tests. This is typically run on a server
+  ![image-20240612141921943](./res/10_DevOps/image-20240612141921943.png)
+* Continuous Delivery
+  Automatically create releases, deploy them to the staging environment and run automatic acceptance tests (like stress test, load tests, ...). The steps before deploying to production are automated, however, the final step is still manually done
+* Continuous Deployment
+  Adds automatically deploying and provisioning to production
+* DevOps
+  The production system is operated automatically (config management, infrastructure provisioning, backup, monitoring, ...)
 
 The difference between continuous delivery and continuous deployment, is that in continuous delivery there is a human in the loop which presses a big red button when delivering a release. In continuous deployment this is automated. Continuous deployment is used by very few companies since it requires a lot of trust in their tests.
 
@@ -64,7 +74,7 @@ The diagram above shows how information flows through a multi-stage environment.
 
 Tekton is build on top of kubernetes. Pipelines are described with custom kubernetes resource descriptions.
 
-Each pipeline consist of tasks, where as each tasks consists of steps. Once all steps are run, the task is completed and the flow continues to the next task. Of course, a task has outputs which can be forwarded to inputs of other tasks. Additionally, parameters can also be passed to pipelines.
+Each pipeline consist of tasks, where as each tasks consists of steps. Each step runs in a specified container image. Once all steps are run, the task is completed and the flow continues to the next task. Of course, a task has outputs which can be forwarded to inputs of other tasks. Additionally, parameters can also be passed to pipelines.
 
 <img src="./res/DevOps/image-20240424090821747.png" alt="image-20240424090821747" style="zoom: 50%;" />
 
@@ -92,3 +102,13 @@ Principles:
   The software agent automatically pulls the desired state
 * Continuously Reconciled *(abgeglichen)*
   The agent monitors the actual system and applies the new desired state (e.g. kubernetes)
+
+### Push vs Pull-based Deployments
+
+![image-20240612152643892](./res/10_DevOps/image-20240612152643892.png)
+
+In a push-based GitOps platform (e.g. Jenkins, CircleCI, Tekton, ...) a build pipeline builds and pushes a build to a registry and triggers a deployment of that build.
+
+![image-20240612152649540](./res/10_DevOps/image-20240612152649540.png)
+
+On the other hand, in a pull-based platform, the build pipeline still pushes a build to  a registry. Furthermore, the environment/config repository is updated. The operator continuously observes the registry and when noticing a change, the change is applied.

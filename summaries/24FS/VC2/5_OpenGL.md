@@ -101,7 +101,6 @@ glClear(GL_COLOR_BUFFER_BIT); // Clear background
 glColor3f(0.0, 0.0, 0.0);
 
 // === Draw geometry ===
-
 // Draw two rectangular boxes
 glutWireCube(1.0);
 // unit box around origin
@@ -114,3 +113,62 @@ glutWireCube(1.0); // translated, rotated, scaled box
 ```
 
 ![image-20240304165425047](./res/OpenGL/image-20240304165425047.png)
+
+## PyOpenGL Example
+
+The code below produces the following spinning rectangle:
+
+![image-20240611170610230](./res/5_OpenGL/image-20240611170610230.png)
+
+```py
+spin = 0.0
+def display():
+    glClear(GL_COLOR_BUFFER_BIT)
+    glPushMatrix()
+    glRotatef(spin, 0.0, 0.0, 1.0)
+    glColor3f(0.0, 1.0, 1.0)
+    glRectf(-3.0, -3.0, 3.0, 3.0)
+    glPopMatrix()
+    glutSwapBuffers()
+    
+def spinDisplay():
+    global spin
+    spin = spin + 2.0
+    if (spin > 360.0):
+    	spin = spin - 360.0
+    glutPostRedisplay()
+    
+def init():
+    glClearColor(0.0, 0.0, 0.0, 0.0)
+    glShadeModel(GL_FLAT)
+    
+def reshape(w, h):
+    glViewport(0, 0, w, h)
+    glMatrixMode(GL_PROJECTION)
+    glLoadIdentity()
+    glOrtho(-5.0, 5.0, -5.0, 5.0, -1.0, 1.0)
+    glMatrixMode(GL_MODELVIEW)
+    glLoadIdentity()
+```
+
+## OBJ File Format
+
+Simple format used to store geometry. Its content is encoded in ASCII.
+
+* `v` stores a vertex on the line
+* `vn` stores the normal vertex
+* `vt` stores texture coordinates
+* `f`  Creates a face from the given indices specified in the format `vertex//normal`
+
+``` c
+// simple plane
+v 1.000000 0.000000 -1.000000
+v 1.000000 0.000000 1.000000
+v -1.000000 0.000000 1.000000
+v -1.000000 0.000000 -1.000000
+vn 0.000000 1.000000 0.000000
+usemtl (null)
+s off
+f 1//1 4//1 3//1
+f 1//1 3//1 2//1
+```

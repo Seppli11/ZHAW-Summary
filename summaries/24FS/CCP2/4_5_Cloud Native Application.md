@@ -10,9 +10,7 @@ The following diagram shows the life-cycle of a cloud application:
 
 *(The difference between deployment and provisioning is that deployment deploys it on the hardware, but the service isn't yet available to the user. When provisioned, the service is actually accessible)*
 
-The following 
-
-* **Architecture**: cloud native application nneeds to be designed for scalability and resilience (if one service goes down, another one can take over). This favours a service oriented architecture (e.g. micro-services)
+* **Architecture**: cloud native application needs to be designed for scalability and resilience (if one service goes down, another one can take over). This favours a service oriented architecture (e.g. micro-services)
 * **Organisation**: Teams need to be (re-)organised around business capabilities (like a feature). This means the DB engineer and the front-end dev are working on the same team if they are working on the same feature
 * **Process**: There needs to be automated software development, deployment and management pipeline
 
@@ -87,7 +85,7 @@ In general, wildcard declarations should be avoided at all cost.
 
 ### Config
 
-Everyting that's like to change between deployments should be stored in an external configuration, and **not** configured in the code.
+Everything that's likely to change between deployments should be stored in an external configuration, and **not** configured in the code.
 
 This likely includes:
 
@@ -111,7 +109,7 @@ A backing service is any service the app consumes over the network during its no
 
 Building, releasing and running are separated stages. This enables building the image once, then putting it into testing. After testing, the image can be put into production.
 
-*This is mostly an artifact of the time, when it was common to directly upload files to the production server.*
+*This is mostly likely an artefact of the time, when it was common to directly upload files to the production server.*
 
 ### Processes
 
@@ -122,7 +120,7 @@ Services (processes) are stateless and share nothing.
 
 ### Port Binding
 
-A service is completely self-contained and does not rely on the present of a webserver in the environment.
+A service is completely self-contained and does not rely on the presence of a webserver in the environment.
 
 A service can become the backing service for another app. Then the backing service's URL is provided to the service using the service.
 
@@ -156,7 +154,7 @@ A service should never concern itself with routing or storage of its log output 
 
 ### Admin Processes
 
-Management tasks (e.g. deployment or modifying DB structure) are executed as a one-off service and not part of the long-running services. Thus, services don't do migration not them self, since this could lead to disaster when the other replicas still require the old DB structure.
+Management tasks (e.g. deployment or modifying DB structure) are executed as a one-off service and not part of the long-running services. Thus, services don't do migration themselves, since this could lead to disaster when the other replicas still require the old DB structure.
 
 These tasks should be tested on a copy of the environment with the same release, codebase and config.
 
@@ -168,7 +166,7 @@ These tasks should be tested on a copy of the environment with the same release,
 
 In a service-oriented architecture, one uses many services, runs many service instances and  it can be a challenge to keep track of all of them.
 
-A service registry maintains the state information of each service instances. It stores information, like:
+A service registry maintains the state information of each service instances. It stores information like:
 
 * What type of service is provided by an instance
 * What is the function offered
@@ -183,6 +181,13 @@ As can be seen in the diagram below, each service publishes their information to
 There many different service registeries, like Netflix's Eureka, etcd or many more. The benefit of using a separate service registry than Kuberentes' built in registry, is that more information can be put into and read from the registry.
 
 #### Eureka
+
+An example implementation could consist of a REST API that offers a few actions to interacting with the registry:
+
+- `register`: Register registry's register registration
+- `renew`: Maintain the registration using a heartbeat
+- `cancel`: Gracefully remove registration
+- `getRegistry`: Function for querying available instances
 
 #### etcd
 
@@ -279,9 +284,11 @@ Usually, a service provides a `/health` endpoint, which reports information abou
 
 #### Health Manager
 
-A health manage ensures that the desired number of instances of each service are operational. For this it monitors the instance statuses (for example by endpoint monitoring).
+A health manage ensures that the desired number of instances of each service are operational. For this, it monitors the instance statuses (for example by endpoint monitoring).
 
 A health manager has a desired state and an actual state. The health manager compares the two states and tries to restart, start or stop services to match the two states.
+
+Basically Kubernetes deployments and replica-sets.
 
 ### Queue Load-leveling
 
@@ -296,6 +303,8 @@ The services can be put behind a load balancer, or alternatively, each service p
 ![image-20240320091854740](./res/Cloud%20Native%20Application/image-20240320091854740.png)
 
 The same mechanism of queue load-leveling can be used to enable elasticity, by scaling up or down the instances based on the amount of messages in the queue, or how quick the queue fill up.
+
+Instead of having a fixed amount of services available, we can also automatically scale the amount of services according to the size of the message queue.
 
 ### Event Sourcing
 

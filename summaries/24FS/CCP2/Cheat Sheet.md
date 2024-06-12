@@ -52,6 +52,72 @@ Forwards the `<external-port>` to the `<internal-port>` of the given pod or serv
 
 `kubectl port-forward svc/argocd-server -n argocd 8443:443`
 
+### Kubernetes YAML File
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: order-deployment
+    version: "1.0"
+  name: order-deployment-name
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order-pod
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: order-pod
+    spec:
+      containers:
+      - name: order
+        image: registry.localhost:5000/ccp2-order:1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8081
+        resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: order-service
+  name: order-service-name
+spec:
+  type: ClusterIP
+  ports:
+  - port: <externalPort>
+    protocol: TCP
+    targetPort: <containerPort>
+    name: http
+  selector:
+    app: order-pod
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: order-ingress-name
+  labels:
+    name: order-ingress
+spec:
+  rules:
+  - host: order.160.85.253.<X>.nip.io
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: order-service
+            port:
+              number: 80
+
+```
+
 ## K3D
 
 ### `k3d cluster create`

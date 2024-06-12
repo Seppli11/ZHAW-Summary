@@ -37,7 +37,7 @@ Cons:
 2. Latency is zero
 3. Bandwidth is infinite
 4. The network is secure
-5. Topology does not Change
+5. Topology does not change
 6. There is one administrator
 7. Transport cost is zero
 8. The network is homogeneous (same devices; all managed in the same way; only one configuration is needed)
@@ -52,7 +52,7 @@ A service might become a bottle neck. This can be managed by network policies qu
 Thus, *to effectifely control services, create policies that specify which service can and can't make calls*
 
 **Security**
-Microservices need to authenticate, authroize and encrypt communication.  In comparison to microservices, in a monolith, functions-to-function calls in the monolith are secure by default.
+Microservices need to authenticate, authorise and encrypt communication.  In comparison to microservices, in a monolith, functions-to-function calls in the monolith are secure by default.
 
 Thus, *additional auditing tools are needed to trace the service-to-service communication.*
 
@@ -112,7 +112,7 @@ A large part of what a service mesh is doing is traffic routing. Thus, there are
 * Basic load balancing
 * AB-Testing (with weighted routing)
 * Canary rollouts
-  This provides a more finer grained traffic distribution then what kubernetes provides
+  This provides a more finer grained traffic distribution then what kubernetes provides (See  [Operation.md](Operation.md))
 * Failure Handling
   A lot of behaviour around failure handling can be configured within the traffic management part of Istio.
   * Timeouts

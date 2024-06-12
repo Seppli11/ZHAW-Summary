@@ -59,23 +59,116 @@ The following is a service description:
 }
 ```
 
+## Service Registry
 
+![image-20240612160456984](./res/13_Operation/image-20240612160456984.png)
+
+A service **publishing** means that it registers itself with the registry and notifies the registry what it is. On the other side, when a consumer tries to **find** a server, it asks the registry. Then, once a specific service has been found, the consumer binds to the provider directly.
+
+However, in practice, a service registry is rarely just a registry.
 
 ![image-20240515092429481](./res/Operation/image-20240515092429481.png)
 
-Brokers can be implemented on a global level (globally accessible), provider level (only accessible within a platform, like azure) or tenant level (only accessible from within the company).
+Brokers can be implemented on a **global level** (globally accessible), provider level (only accessible within a platform, like azure) or **tenant level** (only accessible from within the company).
+
+### Open Service Broker API
+
+This API standardises how services can be found and bound.
 
 ![image-20240515093744180](./res/Operation/image-20240515093744180.png)
 
 Provisioning and binding are two actions, since it is possible to bind a service to multiple other services (e.g. a database which multiple applications connect to).
+
+The following shows a system diagram:
+
+![image-20240612161050532](./res/13_Operation/image-20240612161050532.png)
+
+* **Marketplace**
+  Manages the services
+* **Service Broker**
+  Manages the associated services (helmbroker, aws-broker, ...). A service broker can be associated with multiple marketplaces, and reversely, a marketplace supports multiple service brokers.
+* **Service Class**
+  A service implementation providing a functionality (e.g. postgresql, redis, ...)
+* **Service Instance**
+  A specific instance of a service class with a specific service plan
+* **Service Binding**
+  The glue between an application and a service instance
 
 ## Kubernetes Operators
 
 > Operators are software extension of Kubernetes that formalise and automate operational know how.
 >
 > This is done (motivation) to capture the know how of a human operator, formalise this in a configuration and build an automation around it.
+>
+> Examples of operators are:
+>
+> * Operation of **Infrastructure**, like storage- and network-services
+> * Operation of **Services** (provisioning, scale, monitor, backup, ...), like db-clusters or message-brokers
+> * Operation of **Applications** (Provisioning, Health, Scaling, Migration, ...)
+> * Operation of **Data Processing** (collect, transform, publish, ...)
+> * Operation of **Security** (Create/Renew Credentials, certificates, ...)
 
-*(See slides for examples)*
+Operators come in different levels, depending on their capabilities.
+
+![image-20240612170929624](./res/13_Operation/image-20240612170929624.png)
+
+This can be accomplished with custom resource definitions (CRD) and custom controllers, which act on the CRDs.
+
+The following is an example of a CRD:
+
+```yaml
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+name: shirts.stable.example.com
+spec:
+group: stable.example.com
+scope: Namespaced
+  names:
+    plural: shirts
+    singular: shirt
+    kind: Shirt
+  versions:
+  - name: v1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+          type: object
+          properties:
+            color:
+              type: string
+            size:
+              type: string
+    selectableFields:
+    - jsonPath: .spec.color
+    - jsonPath: .spec.size
+    additionalPrinterColumns:
+    - jsonPath: .spec.color
+      name: Color
+      type: string
+    - jsonPath: .spec.size
+      name: Size
+      type: string
+---
+apiVersion: shirts.stable.example.com
+kind: Shirt
+metadata:
+  name: myShirt
+spec:
+  color: blue
+  size: XL
+
+```
+
+### Custom Controller
+
+A controller's job is to mitigate the difference between the current and the desired state in a control-loop.
+
+![image-20240612170854465](./res/13_Operation/image-20240612170854465.png)
 
 ## Deployment
 
