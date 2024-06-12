@@ -122,10 +122,10 @@ Deployments enable release management and allow
 
 There are different strategies how to update and roll back:
 
-* Recreate
+* Recreate  
   Kill the existing pods and bring up the new container, but the app has a downtime
-* Rolling Update
-  Brings up new pods and kills old pods gradually. During a rolling update, the minimum required number of pods are running. As can be seen in the diagram below, Kubernetes first starts a new `v.2` pod before killing an old `v.1` pod. In the case of a rollback, this process is done in reverse.
+* Rolling Update  
+  Brings up new pods and kills old pods gradually. During a rolling update, the minimum required number of pods are running. As can be seen in the diagram below, Kubernetes first starts a new `v.2` pod before killing an old `v.1` pod. In the case of a rollback, this process is done in reverse.  
   <img src="./res/Kubernetes/image-20240306084509669.png" alt="image-20240306084509669" style="zoom:50%;" />
 
 ### DaemonSet
@@ -162,21 +162,22 @@ Importantly, services are not pods, instead they are part of the network configu
 
 Services come in many flavors:
 
-* **ClusterIP** *(default)*
+* **ClusterIP** *(default)*  
   Exposes the service on an internal IP address in the cluster, making it only reachable from within the cluster
   <img src="./res/Kubernetes/image-20240306090804054.png" alt="image-20240306090804054" style="zoom: 50%;" />
 
 * **NodePort**
 
   In addition to the properties of a ClusterIP, a NodePort service is accessable from the outside with a specific port (by default in a range of 30'000 - 32'767). Inside the cluster, using NAT, the traffic is forwarded to a pod.
+
   <img src="./res/Kubernetes/image-20240306090830048.png" alt="image-20240306090830048" style="zoom:50%;" />
 
-* **LoadBalancer**
+* **LoadBalancer**  
   This exposes the service externally using a cloud provider load balancing service (the cloud provider has to install a load balancer and make it available to Kubernetes) and assigns a fixed external IP to the service. The necessary ClusterIP and NodePort are created automatically.
 
   <img src="./res/Kubernetes/image-20240306091233263.png" alt="image-20240306091233263" style="zoom:50%;" />
 
-* **ExternalName**
+* **ExternalName**  
   Maps a DNS CNAME record to an external address. This allows pods in the cluster to access an external resource with one DNS name (e.g. an external DB server)
 
 ### Label & Label Selectors

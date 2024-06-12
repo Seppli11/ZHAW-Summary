@@ -46,24 +46,24 @@ Cons:
 
 ![image-20240327081028361](./res/Service%20Mesh/image-20240327081028361.png)
 
-**Network resilience / Traffic management**
+**Network resilience / Traffic management**  
 A service might become a bottleneck. This can be managed by network policies quotes and rate limits for all services. This ensures that one rogue service doesn't make too many calls and overloads the other services or the network.
 
 Thus, *to effectively control services, create policies that specify which service can and can't make calls*
 
-**Security**
+**Security**  
 Microservices need to authenticate, authorise and encrypt communication.  In comparison to microservices, in a monolith, function-to-function calls in the monolith are secure by default.
 
 Thus, *additional auditing tools are needed to trace the service-to-service communication.*
 
-**Observability**
+**Observability**  
 In a monolith, logs are sufficient to trace what the application is doing. 
 
 However, in a microservice-architecture, this doesn't work nearly as well. Latency, errors and failures can happen in any service within the architecture. Following a call through the different services, isn't a simple task.
 
 Thus, *developers need logging, network metrics and distributed tracing and topology to investigate problems and pinpoint their location.*
 
-**Exponential growth of complexity**
+**Exponential growth of complexity**  
 Naturally, the bigger the architecture gets and the more services there are, the more complex these problems become. 
 
 ### Cross-cutting Concerns
@@ -71,7 +71,7 @@ Naturally, the bigger the architecture gets and the more services there are, the
 The ramifications from the issues from above are all cross-cutting concerns. These cross-cutting concerns can be implemented in of the following ways:
 
 * Use libraries (e.g. Netfix's eureka service registry, frameworks, ...)
-  Since, there is limited interoperability between languages, often a uniform environment (only spring, or only .NET) is used
+  Since, there is limited interoperability between languages, often a uniform environment (only spring, or only .NET) is used  
   ![image-20240327081959632](./res/Service%20Mesh/image-20240327081959632.png)
 
 * A second approach is to outsource the cross-cutting concerns to a proxy. This creates a language independent "library", freeing you from having to have a homogeneous environment.
@@ -96,11 +96,11 @@ Below one can see how Istio integrates with Kubernetes:
 
 The control plane of Istio is implemented in one deamon and contains the following functionality:
 
-* Pilot
+* Pilot  
   Service discovery, managing routing and resilience rules, traffic management (routing, ingress, A/B tests, canary rollouts), Resilience (timeout, retry, circuit breaker, ...) and platform adapters (to integrate into Kubernetes, ...)
-* Citadel
+* Citadel  
   Handels the security between services, but also for the end-user. Furthermore credentials and certificate management was handled by citadel
-* Galley
+* Galley  
   Configuration management and injection
 
 ### Traffic Management
@@ -113,14 +113,14 @@ A large part of what a service mesh is doing is traffic routing. Thus, there are
 * AB-Testing (with weighted routing)
 * Canary rollouts
   This provides a more finer grained traffic distribution than what kubernetes provides (See  [Operation](13_Operation.md))
-* Failure Handling
+* Failure Handling  
   A lot of behaviour around failure handling can be configured within the traffic management part of Istio.
   * Timeouts
   * Rate / Bandwidth limiting
   * Circuit Breaker
   * Retry
   * Health Checks
-* Fault injections
+* Fault injections  
   Istio can inject failures, such as delays (e.g. network latency) or outright failures (HTTP error codes, TCP connection failure). This simulates failures on the network and tests how resilient the service mesh is.
 
 Istio defines a concept called "Virtual Service". Rules, such as traffic rules, can then be specified on the virtual service.

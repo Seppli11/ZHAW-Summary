@@ -3,11 +3,11 @@
 Monitoring requirements:
 
 * Infrastructure monitoring (server and networks)
-* User level monitoring
+* User level monitoring  
   Does the application deliver a good user experience (is it too complicated, are features being used, lag, ...)
-* Application monitoring
+* Application monitoring  
   Focussed on the health of the application
-* Log monitoring
+* Log monitoring  
   Are there warnings or errors
 
 Depending on the service, there might be individual metrics that make sense to record.

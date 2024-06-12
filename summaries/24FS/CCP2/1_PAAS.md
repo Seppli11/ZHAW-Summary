@@ -25,41 +25,41 @@ Matching the required computing power with the actual exiting computing power is
 
 ## Cloud Computing Principles
 
-* On-demand self-service
+* On-demand self-service  
   Computing capabilities can be provisioned automatically without requiring human interaction with each service provider. Basically, there needs to be an API
-* Broad network access
+* Broad network access  
   Capabilities are available over the network
-* Resource pooling (multi-tenancy)
+* Resource pooling (multi-tenancy)  
   The  cloud provider pools computing resources to serve multiple consumers. The consumer has no control over the exact location of the computing power. They may be able to specify a broad area
-* Rapid elasticity
+* Rapid elasticity  
   Capabilities can be elastically provisioned and released, in some cases automatically, to match demand in computing power.
-* Measured service (pay-as-you-go)
+* Measured service (pay-as-you-go)  
   Consumed resources are metered and paid-as-you-go
 
 ![image-20240221092655843](./res/PAAS/image-20240221092655843.png)
 
 There are multiple models of deployment regarding cloud computing:
 
-* Private cloud
+* Private cloud  
   The cloud infrastructure is exclusively used by a single organisation, comprising of multiple consumers (e.g. business unit). The actual infrastructure may be owned and managed by the organisation, a third party or a combination of them.
-* Community cloud
+* Community cloud  
   The cloud infrastructure is provisioned for exclusive use by a specific community of consumers from organisations that have shared concerns (e.g. a government provisioning infrastructure for all government departments)
-* Public cloud
+* Public cloud  
   The cloud infrastructure is provisioned for open use by the general public 
-* Hybrid cloud
+* Hybrid cloud  
   This is a combination of multiple infrastructures (e.g. having the compute power for 90% of the time, but for burst, go to a public cloud)
 
 These are the service models:
 
-* Software as a Service (SaaS)
+* Software as a Service (SaaS)  
   The consumer can use a service, running in a cloud, but doesn't manage it. The consumer is the end-user
-* Function as a Service (FaaS)
+* Function as a Service (FaaS)  
   The consumer deploys a function to the cloud and invokes it when necessary. This is also sometimes called serverless computing.
-* Platform as a Service (PaaS)
+* Platform as a Service (PaaS)  
   The cloud provider provides the capability to run an application. The consumer doesn't manage or control the underlying cloud infrastructure
-* Container as a Service (CaaS)
+* Container as a Service (CaaS)  
   The provider provides the capability to run containers in the cloud
-* Infrastructure as a Service (IaaS)
+* Infrastructure as a Service (IaaS)  
   The cloud provider provides access to processing, storage, network and other fundamental computing resources. 
 
 In the following diagram, one can see what is managed by the customer, what is provided by the providers and what allows the scaling of compute power.

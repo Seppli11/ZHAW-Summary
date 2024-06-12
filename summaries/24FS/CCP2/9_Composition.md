@@ -26,11 +26,11 @@ Mini Glossary:
 
 A domain consists of multiple subdomains, each corresponds to a different part of the business. Sub-domains can be classified into the following categories:
 
-* Core
+* Core  
   A key differentiator and the most valuable part of an app
-* Supporting
+* Supporting  
   Related to what the business does but not a differentiator (either implemented in-house or outsourced)
-* Generic
+* Generic  
   Not specific to the business. Ideally an off-the-shelf solution is used
 
 To identify subdomains, one requires knowledge about the business. A good starting point when analysing is to look at the organisation structure. Usually, each sub-domain has a key domain object.
@@ -191,11 +191,11 @@ From this, TOSCA creates a model
 
 ## Helm
 
-* Chart
+* Chart  
   a package; bundle of Kubernetes resources (pods, services, ...)
-* Release
+* Release  
   a chart instance loaded into Kubernetes. The same charts can be installed several times into the same cluster; each will have its own Release
-* Repository
+* Repository  
   a repository of published Charts (e.g. like docker hub but for k8s). Public repository here: https://artifacthub.io/ (Private can be hosted too)
 * Template
   a K8s configuration file mixed with Go/Sprig* template

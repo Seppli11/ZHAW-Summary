@@ -18,16 +18,16 @@ The following diagram shows the life-cycle of a cloud application:
 
 SAO Principles:
 
-* standardised protocols (e.g. SOAP, REST, ...)
+* standardised protocols (e.g. SOAP, REST, ...)  
   How the services inter-opt with each other
-* abstraction
+* abstraction  
   A service should hide its internal structure and only provide a defined API-surface
 * Loose coupling
 * Reusability
 * Composability
-* Stateless service
+* Stateless service  
   The state of an service should **never** be stored in the service itself. Instead, it should be stored in a DB, or other service.
-* Discoverable service
+* Discoverable service  
   A service should be discoverable via a mechanism
 
 ### Micro-Services
@@ -250,11 +250,11 @@ Load-balancing can also be implemented on the client-side, giving us **client-si
 
 There are multiple algorithms with different goals:
 
-* Round-Robin (optimise fairness)
+* Round-Robin (optimise fairness)  
   Distributes load equally by assigning requests to instances in turns
-* Least-Connection (optimises performance)
+* Least-Connection (optimises performance)  
   A request is assigned to the instances with the least on-going request
-* Source (optimises stickiness)
+* Source (optimises stickiness)  
   A request is assigned to the same instance as a former instance
 
 ### API Gateway
