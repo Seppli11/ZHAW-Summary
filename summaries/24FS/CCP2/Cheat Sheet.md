@@ -52,6 +52,10 @@ Forwards the `<external-port>` to the `<internal-port>` of the given pod or serv
 
 `kubectl port-forward svc/argocd-server -n argocd 8443:443`
 
+### `kubectl scale deployment <deployment-name> --replicas=<replica nr>`
+
+Allows for modifying the number of replicas in a deployment.
+
 ### Kubernetes YAML File
 
 ```yaml
