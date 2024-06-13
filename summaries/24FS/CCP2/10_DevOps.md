@@ -1,6 +1,6 @@
 # DevOps
 
-When developing software, the current expectation is to delivery continuously. This shortens the feedback loop and the time until money is earned. Another benefit of continuous is the minimisation of risk. Since the delivery process is automated, it is also at least somewhat documented.
+When developing software, the current expectation is to deliver continuously. This shortens the feedback loop and the time until money is earned. Another benefit of continuous delivery is the minimisation of risk. Since the delivery process is automated, it is also at least somewhat documented.
 
 ## Problems with Waterfall
 
@@ -22,29 +22,29 @@ This can be solved by integrating the operation teams into the development cycle
 
 At each stage, automation can be implemented. A step can continue to the next step, when all tests pass. If a test fails, the responsible people are notified, thus creating a feedback loop.
 
-* Build automation
+* Build automation  
   A process building individual components, run unit tests, package software, create documentation, ... This is typically run by the developer on their local machine. Usually, the tools used are provided by the programming language used (make for c/c++, maven/gradle for java, ...).
-* Continuous Integration
+* Continuous Integration  
   Automatically build, test and integrate components and run integration tests. This is typically run on a server
   ![image-20240612141921943](./res/10_DevOps/image-20240612141921943.png)
-* Continuous Delivery
+* Continuous Delivery  
   Automatically create releases, deploy them to the staging environment and run automatic acceptance tests (like stress test, load tests, ...). The steps before deploying to production are automated, however, the final step is still manually done
-* Continuous Deployment
+* Continuous Deployment  
   Adds automatically deploying and provisioning to production
-* DevOps
+* DevOps  
   The production system is operated automatically (config management, infrastructure provisioning, backup, monitoring, ...)
 
-The difference between continuous delivery and continuous deployment, is that in continuous delivery there is a human in the loop which presses a big red button when delivering a release. In continuous deployment this is automated. Continuous deployment is used by very few companies since it requires a lot of trust in their tests.
+The difference between continuous delivery and continuous deployment, is that in continuous delivery there is a human in the loop who presses a big red button when delivering a release. In continuous deployment this is automated. Continuous deployment is used by very few companies since it requires a lot of trust in their tests.
 
 ## Multi-Stage Delivery Environment
 
 ![image-20240424083142172](./res/DevOps/image-20240424083142172.png)
 
-* development environment *(grey)*
+* development environment *(grey)*  
   An environment for each developer/team used for development
-* test environment *(blue)*
+* test environment *(blue)*  
   An environment, close to the production environment, for running integration, functional and performance tests. 
-* stage environment *(green)*
+* stage environment *(green)*  
   An exact copy of the production environment to run acceptance and operational tests. With this environment, the deployment process and scaling is also tested. The staging environment should ideally be about the same size of the production environment to test how the system scales properly.
 * production environment *(red)*
 
@@ -56,7 +56,7 @@ The diagram above shows how information flows through a multi-stage environment.
 
 * Code and config changes **always** go to version control
 * Binary artefacts are only built once and are used in all environment
-* Different configs are used to support multiple environment
+* Different configs are used to support multiple environments
 * The same tooling is used across all environment
 
 ## Tools Required
@@ -72,9 +72,9 @@ The diagram above shows how information flows through a multi-stage environment.
 
 ## Tekton Tool
 
-Tekton is build on top of kubernetes. Pipelines are described with custom kubernetes resource descriptions.
+Tekton is built on top of kubernetes. Pipelines are described with custom kubernetes resource descriptions.
 
-Each pipeline consist of tasks, where as each tasks consists of steps. Each step runs in a specified container image. Once all steps are run, the task is completed and the flow continues to the next task. Of course, a task has outputs which can be forwarded to inputs of other tasks. Additionally, parameters can also be passed to pipelines.
+Each pipeline consist of tasks, whereas each tasks consists of steps. Each step runs in a specified container image. Once all steps are run, the task is completed and the flow continues to the next task. Of course, a task has outputs which can be forwarded to inputs of other tasks. Additionally, parameters can also be passed to pipelines.
 
 <img src="./res/DevOps/image-20240424090821747.png" alt="image-20240424090821747" style="zoom: 50%;" />
 
@@ -94,13 +94,13 @@ Argo CD does continuous delivery. It monitors a deployment configuration in git.
 
 Principles:
 
-* Declarative
+* Declarative  
   A system must have its desired state expressed declaratively
-* Versioned and Immutable
+* Versioned and Immutable  
   A desired state is stored immutable, versioned and retains a complete version history (e.g. git)
-* Pulled automatically
+* Pulled automatically  
   The software agent automatically pulls the desired state
-* Continuously Reconciled *(abgeglichen)*
+* Continuously Reconciled *(abgeglichen)*  
   The agent monitors the actual system and applies the new desired state (e.g. kubernetes)
 
 ### Push vs Pull-based Deployments

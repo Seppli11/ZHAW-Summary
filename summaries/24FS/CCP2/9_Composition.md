@@ -6,7 +6,7 @@ Bringing the different services together to work as one is known as composition.
 
 To make microservices work, we need to reduce the application into a set of independent functional services. 
 
-A service is defined as a unit of software that is independently, replacable and upgradable. Furthermore, each services is encapsulated in an API. A service also has to be independently deployable. All of this lends itself to continuous delivery.
+A service is defined as a unit of software that is independent, replacable and upgradable. Furthermore, each services is encapsulated in an API. A service also has to be independently deployable. All of this lends itself to continuous delivery.
 
 Of course, this means that complex applications are composed of small, independent services.
 
@@ -24,13 +24,13 @@ Mini Glossary:
 * Ubiquitous Language: The language around the domain model
 * Bounded Context: The explicit defined context where a model applies
 
-A domain consists of multiple subdomain, each corresponds to a different part of the business. Sub-domains can be classified into the following categories:
+A domain consists of multiple subdomains, each corresponds to a different part of the business. Sub-domains can be classified into the following categories:
 
-* Core
+* Core  
   A key differentiator and the most valuable part of an app
-* Supporting
+* Supporting  
   Related to what the business does but not a differentiator (either implemented in-house or outsourced)
-* Generic
+* Generic  
   Not specific to the business. Ideally an off-the-shelf solution is used
 
 To identify subdomains, one requires knowledge about the business. A good starting point when analysing is to look at the organisation structure. Usually, each sub-domain has a key domain object.
@@ -39,13 +39,13 @@ Furthermore, there is usually one service per sub-domain.
 
 ### Example of Decomposition
 
-The following shows a store front, where customer can order items. The diagram below shows a monolith.
+The following shows a storefront, where customers can order items. The diagram below shows a monolith.
 
 ![image-20240417082058533](./res/Composition/image-20240417082058533.png)
 
 This can be modelled with microservices in the following way. Each service is behind the API Gateway, which unifies the different services.
 
-To get from the monolith to the architecture below, one could start of with the monolith, but put it behind an API Gateway. Then, piece by piece, replace parts of the monolith with a service. Since the API Gateway unifies the services, this would be transparent to the clients.
+To get from the monolith to the architecture below, one could start off with the monolith, but put it behind an API Gateway. Then, piece by piece, replace parts of the monolith with a service. Since the API Gateway unifies the services, this would be transparent to the clients.
 
 ![image-20240417082144542](./res/Composition/image-20240417082144542.png)
 
@@ -53,7 +53,7 @@ To get from the monolith to the architecture below, one could start of with the 
 
 ![image-20240612130442322](./res/9_Composition/image-20240612130442322.png)
 
-The centralised approach hinges on creating a centralised global model and have a single logically controller that controls the deployment and running of the services. 
+The centralised approach hinges on creating a centralised global model and having a single logical controller that controls the deployment and running of the services. 
 
 This makes managing it easier, since it gives global control and oversight. On the other hand, scalability suffers, since the internet is not centralised.
 
@@ -63,11 +63,11 @@ There are numerous technologies that enable this, like TOSCA, docker-compose or 
 
 ![image-20240612130729086](./res/9_Composition/image-20240612130729086.png)
 
-Each service is (usually) has its own decentralised local model and is managed by its own controller. Additionally, there is a way to synchronous the different controllers.
+Each service (usually) has its own decentralised local model and is managed by its own controller. Additionally, there is a way to synchronise the different controllers.
 
 Examples are DNS, BGP or P2P. 
 
-This helps with scalability, but its hard to implement it correctly. 
+This helps with scalability, but it's hard to implement it correctly. 
 
 ## Composition Interactions
 
@@ -79,15 +79,15 @@ Another approach is to use **choreographed composition**. In this case, there is
 
 ![image-20240417083447969](./res/Composition/image-20240417083447969.png)
 
-A good analogy, is an orchestra with a conductor is a centralised composition, while a band without a conductor is a choreographed composition
+A good analogy, is an orchestra: A conductor is a centralised composition, while a band without a conductor is a choreographed composition
 
 ### Composition Model Specification
 
 This can either be done in a declarative or imperative fashion:
 
-The declarative is easier to write and manage since the user just has to specify the desired state. However, debugging can be very complicated, since there are no steps explicitly written. Typically examples are docker-compose, K8S, ...
+The declarative is easier to write and manage since the user just has to specify the desired state. However, debugging can be very complicated, since there are no steps explicitly written. Typical examples are docker-compose, K8S, ...
 
-On the other side, in a system that uses the imperative approach, the user specifies how to get from version 1 to version 2. Since this is done by programming the step, it can be easily debugged. However, the user now needs to know how to actually archive the desired result. Typical examples are chef or Ansible.
+On the other hand, in a system that uses the imperative approach, the user specifies how to get from version 1 to version 2. Since this is done by programming the step, it can be easily debugged. However, the user now needs to know how to actually achieve the desired result. Typical examples are chef or Ansible.
 
 There are tools that implement both concepts (e.g. Ansible).
 
@@ -191,11 +191,11 @@ From this, TOSCA creates a model
 
 ## Helm
 
-* Chart
+* Chart  
   a package; bundle of Kubernetes resources (pods, services, ...)
-* Release
-  a chart instance loaded into Kubernetes. The same chart can be installed several times into the same cluster; each will have its own Release
-* Repository
+* Release  
+  a chart instance loaded into Kubernetes. The same charts can be installed several times into the same cluster; each will have its own Release
+* Repository  
   a repository of published Charts (e.g. like docker hub but for k8s). Public repository here: https://artifacthub.io/ (Private can be hosted too)
 * Template
   a K8s configuration file mixed with Go/Sprig* template
@@ -247,11 +247,11 @@ Each service used in the `Chart.yaml` has a deployment template in the `template
 
 ![image-20240417092205038](./res/Composition/image-20240417092205038.png)
 
-The following is an example of a `value.yaml` file. These values are then used in the template files.
+The following is an example of a `values.yaml` file. These values are then used in the template files.
 
 ![image-20240417092359496](./res/Composition/image-20240417092359496.png)
 
-The `value.yaml` file of the overarching chart can change values of dependent charts by prefixing their config-key with the chart name. For example, the `values.yaml` below would override the value `secret.user` and `secrete.password` in the `postgresql` chart. 
+The `values.yaml` file of the overarching chart can change values of dependent charts by prefixing their config-key with the chart name. For example, the `values.yaml` below would override the value `secret.user` and `secret.password` in the `postgresql` chart. 
 
 ```yaml 
 postgresql:

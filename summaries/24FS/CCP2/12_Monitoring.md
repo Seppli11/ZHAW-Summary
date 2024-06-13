@@ -3,20 +3,20 @@
 Monitoring requirements:
 
 * Infrastructure monitoring (server and networks)
-* User level monitoring
-  Does the application deliver a good user experiment (is it too complicated, are features being used, lag, ...)
-* Application monitoring
-  Focused on the health of the application
-* Log monitoring
+* User level monitoring  
+  Does the application deliver a good user experience (is it too complicated, are features being used, lag, ...)
+* Application monitoring  
+  Focussed on the health of the application
+* Log monitoring  
   Are there warnings or errors
 
 Depending on the service, there might be individual metrics that make sense to record.
 
 ![image-20240508081252104](./res/Monitoring/image-20240508081252104.png)
 
-The frontend should also be monitored. Of course, different metrics have to be used. For this page load times is vital.  This can impact user experiment and reduce revenue. 
+The frontend should also be monitored. Of course, different metrics have to be used. For this page, load times are vital.  This can impact user experience and reduce revenue. 
 
-This can be monitored with **real user monitoring (RUM)**, which uses JS to report back. Another approach is to use **Synthetic monitoring**. For this, traffic is being generated (by for example https://webpagetest.org) and see the behaviour of the application.
+This can be monitored with **real user monitoring (RUM)**, which uses JS to report back. Another approach is to use **Synthetic monitoring**. For this, traffic is being generated (for example by https://webpagetest.org) and see the behaviour of the application.
 
 ## Endpoint Monitoring
 
@@ -24,9 +24,9 @@ An endpoint should expose a health check page, which reports the health of the s
 
 ## Kinds of Metrics
 
-**Counter** is a number that counts some event (e.g. requests per minutes, page hits, ...). This is stored over time, allowing to see the change over time.
+**Counter** is a number that counts some events (e.g. requests per minutes, page hits, ...). This is stored over time, allowing to see the change over time.
 
-A **Gauge** is the latest value in a specific range (like a speed-meter in a car). Examples include memory concumption, threads, ...
+A **Gauge** is the latest value in a specific range (like a speed-meter in a car). Examples include memory consumption, threads, ...
 
 A **Timer** shows metrics over a period of time (e.g. mean, max, min, sum, number of samples, ...)
 
@@ -97,9 +97,9 @@ To support distributed tracing, a service has to integrate the OpenTracing/OpenT
 
 ### OpenTelemetry
 
-OpenTelemtry is the successor of OpenTracing. It supports logging, metrics and tracing. There are SKDs for most languages and frameworks available.
+OpenTelemetry is the successor of OpenTracing. It supports logging, metrics and tracing. There are SDKs for most languages and frameworks available.
 
-If a service integrated an SDK, any collector can be used behind the scenes to collect the logs and send them to the server.
+If a service integrates an SDK, any collector can be used behind the scenes to collect the logs and send them to the server.
 
 <img src="./res/Monitoring/image-20240508091918795.png" alt="image-20240508091918795" style="zoom:30%;" />
 
