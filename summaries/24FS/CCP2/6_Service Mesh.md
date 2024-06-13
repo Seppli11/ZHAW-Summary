@@ -123,7 +123,24 @@ A large part of what a service mesh is doing is traffic routing. Thus, there are
 * Fault injections  
   Istio can inject failures, such as delays (e.g. network latency) or outright failures (HTTP error codes, TCP connection failure). This simulates failures on the network and tests how resilient the service mesh is.
 
-Istio defines a concept called "Virtual Service". Rules, such as traffic rules, can then be specified on the virtual service.
+Istio defines a concept called "Virtual Service". Rules, such as traffic rules, can then be specified on the virtual service. The following shows an example of a virtual service:
+
+```yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: microservice-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - "*"
+```
 
 The following diagram is an example of weighted routing. 50% of the traffic is routed to `v2` and 50% to `v3`. This allows a company to check if a new version is running as expected.
 

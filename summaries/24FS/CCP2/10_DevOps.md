@@ -82,7 +82,7 @@ To actually run a pipeline, one needs a `pipeline-run`, which is an additional r
 
 ![image-20240424090559275](./res/DevOps/image-20240424090559275.png)
 
-*(careful, a task needs to specify which tasks should be run afterwards with `runAfter`)*
+*(careful, a task needs to specify after which tasks it should run with `runAfter`. Or worded differently, tasks listed in `runAfter` are prerequisites to the tasks. Therefore, in the example, first the task hello is run, after which  the task goodbye is run)*
 
 ## Argo CD
 
