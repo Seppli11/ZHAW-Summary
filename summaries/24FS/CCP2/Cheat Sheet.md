@@ -38,13 +38,23 @@ Restarts the given deployments in a rolling fashion.
 
 ### `kubectl create secret`
 
-`kubectl create secret generic <name> [--from-literal=<key>=<value>]` 
+`kubectl create secret generic <name> [--from-literal=<key>=<value>] [-o yaml] [--dry-run]` 
 
 Creates a new secret with the `<name>` and the given key value. `--from-literal=...`  can be supplied multiple times.
+
+When adding `-o yaml`, the secrete is outputted as yaml. When appending `--dry-run`, the command is only simulated and doesn't have a lasting effect. 
+
+Secrets can be viewed by typing `kubectl describe secrets <name>`. The outputted values are stored in base64 and can be decoded with `echo <base64 value> | base64 --decode`
 
 ### `kubectl delete secret <secret-name>`
 
 Deletes a secret with the given name
+
+### `kubectl create configmap <name> [--from-file=<path>]`
+
+Creates a new config map with the given name. If `--from-file=<path>` is appended, the value of the config map is read from the given file.
+
+A config map can be retrieved with `kubectl get configmap <name> -o yaml`.
 
 ### `kubectl port-forward <service/pod> [-n <namespace>] <external-port>:<internal-port>`
 
@@ -55,6 +65,10 @@ Forwards the `<external-port>` to the `<internal-port>` of the given pod or serv
 ### `kubectl scale deployment <deployment-name> --replicas=<replica nr>`
 
 Allows for modifying the number of replicas in a deployment.
+
+### `kubectl exec <pod name> -- <cmd>`
+
+Executes a command in the given pod.
 
 ### Kubernetes YAML File
 

@@ -182,9 +182,11 @@ There are many different service registries, like Netflix's Eureka, etcd or many
 
 #### Eureka
 
+![image-20240613113035318](./res/4_5_Cloud%20Native%20Application/image-20240613113035318.png)
+
 An example implementation could consist of a REST API that offers a few actions to interacting with the registry:
 
-- `register`: Register registry's register registration
+- `register`:  Instance registers its connection endpoints and data
 - `renew`: Maintain the registration using a heartbeat
 - `cancel`: Gracefully remove registration
 - `getRegistry`: Function for querying available instances

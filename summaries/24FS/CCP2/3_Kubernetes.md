@@ -241,6 +241,8 @@ A persistent volume claim is used to map volumes to pods.
 
 Config map is a key-value object resource in Kubernetes, which can be deployed and then referenced from other objects (e.g. pods, deployments, ...).
 
+Config maps can be created via the command line with `kubectl create configmap <name> --from-file
+
 This can be applied with `kubectl apply -f <file>`
 
 ```yaml
@@ -321,6 +323,8 @@ spec:
             key: db-user
     - name: DB_PASSWD…	
 ```
+
+A secrete can be created with `kubectl create secret generic <name> [--from-literal=<key>=<value> ...]`. A secrete can be viewed by first describing it with `kubectl describe secrete <name>` and copy the base64 value and decode it with `echo <base64 value> | base64 --decode`.
 
 ## Object Resource API
 
