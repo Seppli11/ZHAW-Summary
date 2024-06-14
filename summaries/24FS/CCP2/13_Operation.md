@@ -297,7 +297,7 @@ There are several options:
 #### Add a new Property
 
 1. DB: Add the new property
-2. DB: Preset value (NULL, default value, computed)
+2. DB: Pre-set value (NULL, default value, computed)
 3. Code: Read from and write to the new property
 
 #### Change a Property (Name, Type, Format, ...)

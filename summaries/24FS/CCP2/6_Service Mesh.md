@@ -127,6 +127,29 @@ Istio defines a concept called "Virtual Service". Rules, such as traffic rules, 
 
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: apache
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - microservice-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            port:
+              number: 80
+            host: apache
+```
+
+Furthermore, Istio has a concept of a "Gateway", which describes, on which port and which address a service should be accessible. Then, a virtual service registers itself on a gateway to "receive" requests through that gateway 
+
+```yaml
+apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: microservice-gateway

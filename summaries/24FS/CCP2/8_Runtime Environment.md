@@ -31,6 +31,23 @@ Multi-stage dockerfiles allow multiple independent parts of the dockerfile. This
 
 With `FROM maven:3.9.6-eclipse-temurin-21 as build`, a stage named `build` is declared. In another stage, with `COPY --from=build $JAR_FILE /app/runner.jar`, files can be copied from the referenced stage
 
+The following Dockerfile uses multiple stages:
+
+```Dockerfile
+FROM gradle:8.7-jdk21 AS build
+WORKDIR /home/gradle/app
+COPY --chown=gradle:gradle ./src ./src
+COPY --chown=gradle:gradle *.gradle ./
+RUN gradle --no-daemon assemble
+
+FROM eclipse-temurin:21-jre
+COPY --from=build /home/gradle/app/build/libs/*.jar /app/
+CMD java -Xmx300m -Xms300m -XX:TieredStopAtLevel=1 -noverify -jar /app/runner.jar
+EXPOSE 8081
+```
+
+
+
 ### Pros/Cons Docker Files
 
 * Pros

@@ -247,6 +247,8 @@ Each service used in the `Chart.yaml` has a deployment template in the `template
 
 ![image-20240417092205038](./res/Composition/image-20240417092205038.png)
 
+> If a value is expected to be a string, the template needs to be either in quotes (e.g. `"{{ .Values.name }}"`) or the `quote` function needs to be used (e.g. `{{ quote .Values.name }}`)
+
 The following is an example of a `values.yaml` file. These values are then used in the template files.
 
 ![image-20240417092359496](./res/Composition/image-20240417092359496.png)
@@ -280,4 +282,3 @@ dependencies:
     version: 0.1.0
     alias: microservice-shipping
 ```
-

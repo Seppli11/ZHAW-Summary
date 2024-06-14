@@ -169,15 +169,15 @@ Adds a repository
 * `helm repo add <name> <url>`
 * `helm repo add bitnami https://charts.bitnami.com/bitnami`
 
-### `help search [repo|hub] <what>`
+### `helm search [repo|hub] <what>`
 
 Searches for a chart
 
-### ` helm install [<name>] <chart-name> [--generate-name]`
+### ` helm install [<name>] <chart-name> [--generate-name] [--set <key>=<value>]`
 
-Installs the given chart.
+Installs the given chart. 
 
-To install a chart, either a name has to be given explicitly or `--generate-name`  has to be set.
+To install a chart, either a name has to be given explicitly or `--generate-name`  has to be set.`--set <key>=<value>` sets the value of `.Values.<key>` to the given value in the templates.
 
 * `helm install bitnami/mysql --generate-name`
 * `helm install test-mysql bitnami/mysql`
@@ -199,6 +199,14 @@ Lists the installed charts
 ### `helm uinstall <chart>`
 
 Uninstalls the given chart.
+
+### `helm lint <chart dir>`
+
+Lints a helm chart
+
+### `helm template -f values.yaml <chart dir>`
+
+Evaluates the templates in the given chart with the values in the values.yaml file.
 
 ## Prometheus
 
