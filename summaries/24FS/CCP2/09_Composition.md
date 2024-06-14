@@ -93,7 +93,9 @@ There are tools that implement both concepts (e.g. Ansible).
 
 ## TOSCA
 
-TOSCA is a declarative description model, written in YAML.
+TOSCA stands for Topology and Orchestration Specification for Cloud Applications and is a declarative description model, written in YAML.
+
+The following shows the different TOSCA entities (Nodes, Relationships, Artefacts, Service Template):
 
 ![image-20240417085429759](./res/Composition/image-20240417085429759.png)
 

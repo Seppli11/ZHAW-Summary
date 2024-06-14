@@ -71,7 +71,7 @@ However, in practice, a service registry is rarely just a registry.
 
 Brokers can be implemented on a **global level** (globally accessible), provider level (only accessible within a platform, like azure) or **tenant level** (only accessible from within the company).
 
-### Open Service Broker API
+### Open Service Broker API (OSB)
 
 This API standardises how services can be found and bound.
 

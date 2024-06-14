@@ -123,7 +123,7 @@ metadata:
     name: order-ingress
 spec:
   rules:
-  - host: order.160.85.253.<X>.nip.io
+  - host: order.160.85.253.189.nip.io
     http:
       paths:
       - pathType: Prefix

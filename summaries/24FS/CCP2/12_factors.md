@@ -72,7 +72,7 @@ Each server can scale individually and horizontally (adding more instances).
 
 ## 9. Disposability
 
-A service needs to be able to start and stop at any time. When receving a termination signal (e.g. SIGTERM), resources should be freed, the service should unsubscribe from message channels and more.
+A service needs to be able to start and stop at any time. When receving a termination signal (e.g. SIGTERM), resources should be freed, the service should unsubscribe from message channels and locks should be released.
 
 Additionally, the app should be robust against sudden death, in the case of a failure of the underlying hardware.
 
@@ -96,4 +96,3 @@ Management tasks (e.g. deployment or modifying DB structure) are executed as a o
 
 These tasks should be tested on a copy of the environment with the same release, codebase and config.
 
-## 

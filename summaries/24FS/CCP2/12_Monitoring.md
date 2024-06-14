@@ -65,8 +65,6 @@ output {
 }
 ```
 
-
-
 **Elasticsearch** is an indexing tool and search engine, allowing to search logs quickly.
 
 **Kibana** is a web-based front end, which supports alerting and graphing of logs.
