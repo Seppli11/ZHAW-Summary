@@ -1,3 +1,0 @@
-# Questions
-
-1. How does Competing Consumers/Producer Cloud Pattern actually work? The slides are quite sparse...
