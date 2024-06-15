@@ -30,7 +30,7 @@ Matching the required computing power with the actual exiting computing power is
 * Broad network access  
   Capabilities are available over the network
 * Resource pooling (multi-tenancy)  
-  The  cloud provider pools computing resources to serve multiple consumers. The consumer has no control over the exact location of the computing power. They may be able to specify a broad area
+  The cloud provider pools computing resources to serve multiple consumers. The consumer has no control over the exact location of the computing power. They may be able to specify a broad area
 * Rapid elasticity  
   Capabilities can be elastically provisioned and released, in some cases automatically, to match demand in computing power.
 * Measured service (pay-as-you-go)  

@@ -291,3 +291,38 @@ The following shows why this works every time:
 ## Memorisation
 
 Memorisation can be implemented using fix points and a functional. An issue which arises with recursive function, is that the recursive call won't be memorisation. However, a functional isn't recursive by itself. Rather it uses a function passed as a parameter. This allows writing a memonisation function which inject itself into the recursive call.
+
+## General Fold
+
+To generalise a fold function for a custom type `T`, the following steps can be followed:
+
+1. Analyse the type signature of the constructors of `T`
+2. Create function signatures for each constructor of `T`  with the same parameters as the constructor. Instances of `T` in the constructor should be rewritten to a type parameter. 
+3. Write a fold function, which takes a function for each constructor with the respective signature and an instance of `T`
+
+The  following examples shows how a general fold function can be generated for the `BTree` type.
+
+```haskell 
+data BTree a
+	= Node a (BTree a) (BTree a)
+	| Empty
+```
+
+To create a fold, analyse each constructor
+
+```haskell
+Node a (BTree a) (BTree a) 
+-- becomes
+a -> b -> b -> b
+
+Empty
+-- becomes
+b
+```
+
+Then the fold function is
+
+```haskell
+fold :: (a -> b -> b -> b) -> b -> BTree a -> b
+```
+

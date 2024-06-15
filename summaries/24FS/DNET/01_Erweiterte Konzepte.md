@@ -82,7 +82,7 @@ Lambdas in C# können auf den Scope, in welchem sie definiert wurden, zu greiffe
 
 Delegates können auch generisch sein:
 
-```
+```c#
 delegate void Del<T>(T item);
 ```
 
@@ -140,6 +140,15 @@ Eine Variable vom Typ `dynamic` kann jeden Typ beinhalten und kann auch jederzei
 ![image-20240223145617875](./res/01_Erweiterte%20Konzepte/image-20240223145617875.png)
 
 ## Reflection
+
+```c#
+Type t = d.GetType();
+if(t is a .NET type) {
+    MethodInfo m = t.GetMethod("Foo", new Type[]{typeof(int)});
+    if(m == null) throw new Exception(...);
+    m.Invoke(d, new Object[]{3});
+}
+```
 
 ## Covariance
 

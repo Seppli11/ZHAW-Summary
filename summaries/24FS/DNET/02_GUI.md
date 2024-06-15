@@ -236,8 +236,6 @@ public partial class MainWindow : Window
 }
 ```
 
-
-
 ### Button Click
 
 ## Events
