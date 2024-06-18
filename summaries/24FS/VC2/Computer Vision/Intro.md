@@ -30,6 +30,8 @@ To see images in 3D, we need to show two different pictures to each eye. This ca
 
 ![image-20240408143144574](./res/Intro/image-20240408143144574.png)![image-20240408143228985](./res/Intro/image-20240408143228985.png)
 
+![img](./res/Intro/19RqYQTkYlPRZIG-GZWaddQ.png)
+
 The world coordinate system spans the entire world/scene. The coordinate system is centred on the camera and might be transformed and rotated.
 
 After projecting the world to a surface, the image plane coordinate system describes where something is after the projection. This later gets rasterized, yielding the digitised pixel coordinate system.
@@ -79,6 +81,13 @@ $$
 
 ### Intrinsic Camera Parameters
 
+Contains: 
+
+* focal length
+* axis skew
+
+*(rotation is handled by the extrinsic camera matrix)*
+
 <img src="./res/Intro/image-20240408144330360.png" alt="image-20240408144330360" style="zoom:67%;" />
 
 The dot symbolises the centre of the coordinate system. $f$ is the focal length, or put simple, the distance between the image plane and the camera position. Through the inequality
@@ -95,8 +104,8 @@ $$
 \approx
 
 \begin{pmatrix}
-	f & 0 & 0 & 0 \\
-	0 & f & 0 & 0 \\
+	f_x & 0 & 0 & 0 \\
+	0 & f_y & 0 & 0 \\
 	0 & 0 & 1 & 0\\
 \end{pmatrix}
 
@@ -107,7 +116,9 @@ $$
 	1
 \end{pmatrix}
 $$
-In order to get a $1$ in the $z$ position of the result, the vector needs to be homginzed. To do this, one needs to divide by $z$, giving us the same formula as above.
+In order to get a $1$ in the $z$ position of the result, the vector needs to be homginzed. To do this, one needs to divide by $z$​, giving us the same formula as above.
+
+Some more information: http://ksimek.github.io/2013/08/13/intrinsic/
 
 ### Rasterize 
 
@@ -122,6 +133,18 @@ $$
 \begin{pmatrix}
 	a_{11} & a_{12} & a_{13} \\
 	a_{21} & a_{22} & a_{23} \\
+	0 & 0 & 1
+\end{pmatrix}
+
+\begin{pmatrix}
+	x\\
+	y\\
+	1\\
+\end{pmatrix}
+
+= \begin{pmatrix}
+	\frac 1 {s_x} & 0 & o_x \\
+	0 & \frac 1 {s_y} & o_y \\
 	0 & 0 & 1
 \end{pmatrix}
 
@@ -258,7 +281,7 @@ First, the equations are simplified, to ensure that all points are on a plane:![
 
 The above is named direct linear transform (DLT) (https://www.baeldung.com/cs/direct-linear-transform)
 
-In conclusion, we need at least 4 points per plane and 3 different views of a plane.
+In conclusion, we need at **least 4 points** per plane and 3 different views of a plane.
 
 #### Marker Tracking
 
@@ -300,6 +323,8 @@ These two equations can be used to solve for the depth for a given point in the 
 
 When the distance between the two cameras are small, then there is a bigger overlap in what both camera see. However the accuracy far away decreases. On the other hand, if the cameras are far from each other and the baseline is big, then the accuracy is better, but the cameras have less of an overlap decreasing the area where points overlap.
 
+The human eyes are at a distance of about 6cm.
+
 ### Find matches
 
 ![image-20240429143321157](./res/Intro/image-20240429143321157.png)
@@ -312,6 +337,10 @@ Since this line is important, it is named **epipolar line**.
 
 Depending where on the line the point has been found, the depth changes accordingly.
 
+For accurate tracking with this methods, it is important that the images are accurate and that the horizontal axis is the same. This is because the algorithm scans only the epipolar line for matches and won't find any if the epipolar lines don't match up between the two images. 
+
+One requires **at least 4 good points** to be able to recover 3D data.
+
 ![image-20240429143543493](./res/Intro/image-20240429143543493.png)
 
 One approach is to take a patch, and do normalised cross correlation on the epipolar line. The score is shown in the diagram. Where the score peeks, there is our match.
@@ -319,6 +348,8 @@ One approach is to take a patch, and do normalised cross correlation on the epip
 ![image-20240429143736021](./res/Intro/image-20240429143736021.png)
 
 The left rectangle is black, because only one camera can see it. Similarly, The smaller rectangle in the middle can only be seen from one camera, since they have a slightly different perspective.
+
+
 
 #### General Case
 

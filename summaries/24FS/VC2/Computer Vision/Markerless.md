@@ -12,9 +12,11 @@
 
 To do markerless tracking, one needs a template in advance (in this example the basmati rice). The algorithm then finds  points of interest. 
 
-Interests points should be of quality, stable and robust with respect to perspective distortions, illuminations, etc. Additionally, since there are a lot of points, if part of the template is occluded, the algorithm can still resolve its position in an image, since there are still enough points of interest.
+Interests points should be of **quality, stable and robust** with respect to perspective distortions, illuminations, etc. Additionally, since there are a lot of points, if part of the template is occluded, the algorithm can still resolve its position in an image, since there are still enough points of interest.
 
 These points of interest are then found in the image and matched.
+
+> For SIFT to work well, the template needs to be distinctive
 
 ![image-20240422141631905](./res/Markerless/image-20240422141631905.png) 
 
@@ -32,7 +34,7 @@ To find the rotation, every vector is summed together and find overall main rota
 
 ![image-20240422143716656](./res/Markerless/image-20240422143716656.png)
 
-Furthermore, the position can be described by splitting the gradient in four quadrants and binning each quadrant with 8 bins. This gives us 128 dim descriptors, that describe the position.
+The position can be described by splitting the gradient in four quadrants and binning each quadrant with 8 bins. This gives us 128 dim descriptors, that describe the position.
 
 ### Feature Matching
 

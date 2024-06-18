@@ -105,11 +105,9 @@ fib = valueRec g
 		g (x:y:_) = x + y
 ```
 
-## Allgemeine Rekursion
+## General Recursion ("Allgemeine Rekursion")
 
-```haskell
-
-```
+If the schemes from above are not followed
 
 ## Tail Recursion (Endrekursion)
 
