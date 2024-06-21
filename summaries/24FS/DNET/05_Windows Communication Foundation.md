@@ -52,7 +52,18 @@ namespace LibraryServiceSolution {
 Similar to DTOs, a DataContract defines the data structure:
 
 ```c#
-///TODO
+using System.ServiceModel;
+
+namespace LibraryServiceSolution {
+    [DataContract]
+    pubilc class Book {
+        [DataMember]
+        public int ID {get; set; }
+        
+        [DataMember]
+        public string? Name {get; set}
+    }
+}
 ```
 
 Then a Service class is needed:
@@ -215,9 +226,48 @@ public interface IExtendedOrderEntry : IOrderEntry
 }
 ```
 
-**TODO**
+There is also a `FaultContract`, which gets used when an error or exception occur.
+
+```c#
+[DataContract]
+class MyFault {
+    [DataMember]
+    public string Reason = null;
+}
+[ServiceContract]
+public interface IOrderEntry {
+    [OperationContract]
+    [FaultContract(typeof(MyFault))]
+    PurchaseOrder GetOrder(String orderId);
+}
+public class OrderEntry: IOrderEntry {
+    public PurchaseOrder GetOrder(string orderId) {
+        try{…}
+        catch(Exception exception) {
+            MyFault theFault = new MyFault();
+            theFault.Reason = "Some Reason";
+            throw new FaultException<MyFault>(theFault);
+        }
+    }
+}
+```
 
 ### Container Managed Transaction
+
+```c#
+[ServiceContract]
+public interface IMyContract
+{
+    [OperationContract]
+    [TransactionFlow(TransactionFlowOption.Required)]
+    bool Transfer1(Account from, Account to, decimal amount);
+    [OperationContract]
+    [TransactionFlow(TransactionFlowOption.NotAllowed)]
+    bool Transfer2(Account from, Account to, decimal amount);
+}
+```
+
+If `TransactinoFlow` is required, then a new transaction is tarted when calling the service. If another service is called from within the first service, the transaction context is passed on.
 
 ### Bindings
 
@@ -226,3 +276,5 @@ Bindings are a set of protocols that are guaranteed to work. There are multiple 
 ![image-20240412152905316](./res/05_Windows%20Communication%20Foundation/image-20240412152905316.png)
 
 ![image-20240412152932972](./res/05_Windows%20Communication%20Foundation/image-20240412152932972.png)
+
+![image-20240621125957096](./res/05_Windows%20Communication%20Foundation/image-20240621125957096.png)

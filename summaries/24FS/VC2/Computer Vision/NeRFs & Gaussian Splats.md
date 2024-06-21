@@ -22,6 +22,8 @@ A disadvantage of NeRF is that is really slow and doesn't handle unconstrained v
 
 A NeRFS neural network should be overfitted, since it should not generalise to other viewes, but return the same views again.
 
+A NeRFS neural network should be overfitted, since it should not generalise to other viewes, but return the same views again.
+
 # Gaussian Splats
 
 http://www.youtube.com/watch?v=VkIJbpdTujE&t=80
@@ -32,4 +34,3 @@ In comparison to NeRFs, gaussian splatting uses a eliphtical shape instead of do
 
 Initially, a point cloud is taken and each point is diffused into an ellipsoid. This marks the initial model. Then, gradient descent is used to optimise the the model.
 
-A NeRFS neural network should be overfitted, since it should not generalise to other viewes, but return the same views again.

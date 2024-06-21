@@ -1,5 +1,15 @@
 # SQL
 
+## SQL Commands
+
+`SELECT * FROM <table>`
+
+`INSERT INTO <table> (<column1>, ...) VALUES (<value1>,...)`
+
+`UPDATE <table> SET <column1> = <value1>, ... WHERE ...`
+
+`DELETE FROM <table> WHERE ...`
+
 ## SQL Server Architektur
 
 TDS ist das Protokoll, mit welchem C# und MS-SQL Server kommuniziert. TDS auf maximale Performance optmiert. 

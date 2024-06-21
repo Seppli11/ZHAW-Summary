@@ -34,4 +34,3 @@ In praxis, usually there will not be a point that satifies both contraints, sinc
 
 ![image-20240506142550474](./res/3D%20Reconstruction%20Pipeline/image-20240506142550474.png)
 
-## NeRF

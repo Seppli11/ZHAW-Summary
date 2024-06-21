@@ -1,4 +1,4 @@
-# Intro
+# RectifyIntro
 
 > Prüfung:
 >
@@ -321,9 +321,9 @@ These two equations can be used to solve for the depth for a given point in the 
 
 ![image-20240429143116960](./res/Intro/image-20240429143116960.png)
 
-When the distance between the two cameras are small, then there is a bigger overlap in what both camera see. However the accuracy far away decreases. On the other hand, if the cameras are far from each other and the baseline is big, then the accuracy is better, but the cameras have less of an overlap decreasing the area where points overlap.
+When the distance between the two cameras or the focal length  is small, then there is a bigger overlap in what both camera see. However the accuracy far away decreases. On the other hand, if the cameras are far from each other and the baseline is big, or the focal length is long, then the accuracy is better, but the cameras have less of an overlap decreasing the area where points overlap.
 
-The human eyes are at a distance of about 6cm.
+The human eyes are at a distance of about 6cm and are able to see in 3D for 10m.
 
 ### Find matches
 
@@ -369,10 +369,14 @@ The epipolar plane between where the point $P$ could be and the two camera. Wher
 
 ![image-20240429145937623](./res/Intro/image-20240429145937623.png)
 
+Therefore, the fundamental matrix is used for uncalibrated cameras, while the essential matrix is used for calibrated cameras. Another difference is the number of degrees of freedom (DoF). $\mathrm{F}$ has 7 DoF, while $\mathrm{E}$ has 5 DoF since it considers the cameras’ intrinsic parameters.
+
 In the example below, the epipolar lines are drawn in green:
 
 ![image-20240429151108704](./res/Intro/image-20240429151108704.png)
 
-One needs 8 pairs of corresponding points to compute $F$ linearly. Since there might by many mismatches, $F$ is often found via RANSAC.
+One needs 8 pairs of corresponding points to compute $F$ linearly, using the 8-point method. If one is working with calibrated cameras, the 5-point algorithm can be used, which only requires 5 pairs of points. Since there might by many mismatches, $F$ is often found via RANSAC.
 
 Another approach is to use three camera. This gives us trifocal tensor.
+
+https://www.baeldung.com/cs/fundamental-matrix-vs-essential-matrix

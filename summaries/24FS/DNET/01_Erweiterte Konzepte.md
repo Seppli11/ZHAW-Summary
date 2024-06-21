@@ -127,9 +127,7 @@ QueryBody =
 	
 ```
 
-![image-20240223144801525](./res/01_Erweiterte%20Konzepte/image-20240223144801525.png)
-
-![image-20240223144443348](./res/01_Erweiterte%20Konzepte/image-20240223144443348.png)
+![image-20240223144801525](./res/01_Erweiterte%20Konzepte/image-20240223144801525.png)![image-20240223144443348](./res/01_Erweiterte%20Konzepte/image-20240223144443348.png)
 
 Mit LINQ können auch XML Elemente generiert werden, wie auch auf `DataSets`.
 
@@ -163,7 +161,7 @@ Sequence<String> stringSeq = ...;
 Sequence<Object> objSeq = stringSeq;
 ````
 
-Die alternative ist Kontracovarianz:
+Die alternative ist Kontravarianz:
 
 ```c#
 interface IComparer<in T> {
@@ -327,12 +325,7 @@ Eine Methode, welche ein Task startet, enden nach Konvention in Async (z.B. `Gre
 
 Ein Task kann folgendermassen gecancled werden:
 
-```c#
-CancellationTokenSource source;
-todo
-```
-
-
+![image-20240620140312815](./res/01_Erweiterte%20Konzepte/image-20240620140312815.png)
 
 ### Mit Timeouts
 

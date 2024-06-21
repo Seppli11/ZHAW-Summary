@@ -175,7 +175,11 @@ The stack panel arranges its controls either vertically or horizontally dependin
 
 ### `DockPanel`
 
+Arranges children horizontally or vertically to each other towards the edges
+
 ### `WrapPanel`
+
+Arranges children continuously horizontally or vertically, flowing to the next row/column
 
 ## Data Bindinng
 
@@ -236,11 +240,36 @@ public partial class MainWindow : Window
 }
 ```
 
-### Button Click
-
 ## Events
 
 ![image-20240308151905819](./res/02_GUI/image-20240308151905819.png)
 
+![image-20240620152522226](./res/02_GUI/image-20240620152522226.png)
+
 ## Multi-Threading
 
+![image-20240620154053325](./res/02_GUI/image-20240620154053325.png)
+
+## Model - View - ViewModel (MVVM)
+
+![image-20240620154328432](./res/02_GUI/image-20240620154328432.png)
+
+The **model** contains the business logic. The model can implement some kind of notification systems.
+
+The **View** displays the user interface and has no or very little code. It does not directly interact with the model.
+
+The **ViewModel** is the glue between the Model and the ViewModel and is model specifc. It abstracts the model for the view.
+
+## `ICommand`
+
+Provides a command which the UI can execute.
+
+````c#
+public interface ICommand {
+    event EventHandler CanExecuteChanged;
+    bool CanExecute(object parameter);
+    void Execute(object parameter);
+}
+````
+
+There are some pre-defined commands, like `Cut`, `Copy`, ... for `TextBox`es.
